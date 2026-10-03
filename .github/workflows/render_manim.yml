@@ -1,0 +1,156 @@
+name: Render Manim Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      script_file:
+        description: 'Chọn script Manim cần render'
+        required: true
+        default: 'bat_phuong_trinh_hai_an.py'
+        type: choice
+        options:
+          - 'bat_phuong_trinh_hai_an.py'
+          - 'K12-Ch1-TocDoThayDoi.py'
+          - 'duong_tiem_can_toan_12.py'
+          - 'duong_tiem_can_toan_thuc_te.py'
+          - 'toc_do_nuoc_dang_3D_pro.py'
+          - 'toi_uu_hoa_hinh_hoc_va_uon_day.py'
+          - 'khoi_tron_xoay_cat_ghep.py'
+          - 'he_bat_phuong_trinh_hai_an.py'
+          - 'bai_toan_thuc_te_bat_phuong_trinh.py'
+          - 'ung_dung_tiem_can.py'
+          - 'tiem_can_thuc_te_nang_cao.py'
+          - 'toc_do_nuoc_dang.py'
+          - 'custom'
+      custom_file:
+        description: 'Nếu chọn "custom", nhập tên file .py (ví dụ: my_lesson.py)'
+        required: false
+        default: ''
+        type: string
+
+jobs:
+  render:
+    name: Render Manim Video
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Giả lập môi trường Colab & cấu hình quyền hệ thống
+        run: |
+          # 1. Tạo thư mục /content tương thích với các script Google Colab
+          sudo mkdir -p /content
+          sudo chmod 777 /content
+
+          # 2. Tạo wrapper cho apt-get để script Python gọi apt-get tự động chạy dưới quyền sudo
+          sudo tee /usr/local/bin/apt-get > /dev/null << 'EOF'
+          #!/bin/bash
+          exec sudo /usr/bin/apt-get "$@"
+          EOF
+          sudo chmod +x /usr/local/bin/apt-get
+
+      - name: Cài đặt Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Cài đặt công cụ hệ thống (FFmpeg, LaTeX, Fonts, Cairo, Pango)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            ffmpeg \
+            pkg-config \
+            build-essential \
+            python3-dev \
+            libcairo2-dev \
+            libpango1.0-dev \
+            fonts-dejavu \
+            fonts-dejavu-core \
+            fonts-noto-core \
+            fonts-noto-cjk \
+            texlive-latex-base \
+            texlive-latex-recommended \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-science \
+            tipa \
+            dvisvgm \
+            espeak-ng \
+            sox
+
+      - name: Cài đặt thư viện Python (Manim, Edge-TTS, ...)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Xác định script cần chạy
+        id: target
+        run: |
+          SELECTED="${{ inputs.script_file }}"
+          CUSTOM="${{ inputs.custom_file }}"
+          if [ "$SELECTED" = "custom" ]; then
+            if [ -z "$CUSTOM" ]; then
+              echo "::error::Bạn đã chọn 'custom' nhưng chưa nhập tên file trong ô custom_file!"
+              exit 1
+            fi
+            TARGET="$CUSTOM"
+          else
+            TARGET="$SELECTED"
+          fi
+
+          if [ ! -f "$TARGET" ]; then
+            echo "::error::Không tìm thấy file: $TARGET trong thư mục repository!"
+            exit 1
+          fi
+
+          echo "target_script=$TARGET" >> "$GITHUB_OUTPUT"
+          echo "Script được chọn: $TARGET"
+
+      - name: Chạy script render Manim
+        run: |
+          TARGET="${{ steps.target.outputs.target_script }}"
+          echo "=========================================="
+          echo "BẮT ĐẦU RENDER BÀI GIẢNG: $TARGET"
+          echo "=========================================="
+          python "$TARGET"
+
+      - name: Thu thập video xuất bản
+        id: collect_videos
+        run: |
+          mkdir -p ./output_videos
+
+          echo "Tìm kiếm video MP4 hoàn chỉnh..."
+          # Gom file từ /content và từ repo (loại trừ partial_movie_files và thư mục môi trường)
+          find /content -type f -name "*.mp4" -not -path "*/partial_movie_files/*" -exec cp -v {} ./output_videos/ \; 2>/dev/null || true
+          find . -type f -name "*.mp4" -not -path "./.venv/*" -not -path "*/partial_movie_files/*" -not -path "./output_videos/*" -exec cp -v {} ./output_videos/ \; 2>/dev/null || true
+
+          COUNT=$(find ./output_videos -type f -name "*.mp4" | wc -l)
+          echo "Đã tìm thấy $COUNT video."
+          if [ "$COUNT" -eq 0 ]; then
+            echo "::error::Không tìm thấy video .mp4 nào được tạo ra!"
+            exit 1
+          fi
+
+          # Xuất báo cáo tóm tắt ra GitHub Step Summary
+          echo "### 🎬 Danh sách video đã render thành công" >> $GITHUB_STEP_SUMMARY
+          echo "| Tên Video | Dung lượng |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          for f in ./output_videos/*.mp4; do
+            if [ -f "$f" ]; then
+              SIZE=$(ls -lh "$f" | awk '{print $5}')
+              NAME=$(basename "$f")
+              echo "| **$NAME** | $SIZE |" >> $GITHUB_STEP_SUMMARY
+            fi
+          done
+
+      - name: Tải video lên Artifacts (Lưu trữ để tải về)
+        uses: actions/upload-artifact@v4
+        with:
+          name: Manim-Video-${{ steps.target.outputs.target_script }}
+          path: ./output_videos/*.mp4
+          if-no-files-found: error
+          retention-days: 14
