@@ -1,0 +1,80 @@
+name: Render Oxyz video
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: Render quality
+        required: true
+        type: choice
+        default: final
+        options:
+          - preview
+          - standard
+          - final
+      render_jobs:
+        description: Concurrent Manim scenes (more workers use more CPU and memory)
+        required: true
+        type: choice
+        default: '2'
+        options:
+          - '1'
+          - '2'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: render-oxyz-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      MANIM_QUALITY: ${{ inputs.quality }}
+      MANIM_RENDER_JOBS: ${{ inputs.render_jobs }}
+      MANIM_OUTPUT_DIR: /tmp/manim-output
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: manim_codespaces/requirements.txt
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential python3-dev \
+            libcairo2-dev libpango1.0-dev fonts-dejavu-core fonts-noto-core fontconfig \
+            texlive-latex-base texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-science dvisvgm
+
+      - name: Install Python dependencies
+        run: python -m pip install --disable-pip-version-check -r manim_codespaces/requirements.txt
+
+      - name: Validate Manim environment
+        working-directory: manim_codespaces
+        run: python check_environment.py --smoke
+
+      - name: Render and join all Oxyz lessons
+        run: python manim_codespaces/oxyz_tam_ti_cu_hay_la_kho.py
+
+      - name: Upload downloadable video and extras
+        uses: actions/upload-artifact@v4
+        with:
+          name: oxyz-tam-ti-cu-${{ inputs.quality }}
+          path: |
+            /tmp/manim-output/Oxyz_Tam_Ti_Cu/oxyz_tam_ti_cu_hay_la_kho.mp4
+            /tmp/manim-output/Oxyz_Tam_Ti_Cu/oxyz_tam_ti_cu_hay_la_kho.srt
+            /tmp/manim-output/Oxyz_Tam_Ti_Cu/oxyz_tam_ti_cu_hay_la_kho.vtt
+            /tmp/manim-output/Oxyz_Tam_Ti_Cu/oxyz_tam_ti_cu_muc_luc.txt
+            /tmp/manim-output/Oxyz_Tam_Ti_Cu/oxyz_tam_ti_cu_ma_nguon.zip
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 14
