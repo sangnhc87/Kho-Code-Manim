@@ -6,9 +6,10 @@ on:
       script_file:
         description: 'Chọn script Manim cần render'
         required: true
-        default: 'bat_phuong_trinh_hai_an.py'
+        default: 'toc_do_nuoc_dang_3d_dien_tich_mat_thoang.py'
         type: choice
         options:
+          - 'toc_do_nuoc_dang_3d_dien_tich_mat_thoang.py'
           - 'bat_phuong_trinh_hai_an.py'
           - 'K12-Ch1-TocDoThayDoi.py'
           - 'duong_tiem_can_toan_12.py'
@@ -123,10 +124,10 @@ jobs:
         run: |
           mkdir -p ./output_videos
 
-          echo "Tìm kiếm video MP4 hoàn chỉnh..."
+          echo "Tìm kiếm video MP4 và tệp phụ trợ (SRT, VTT, ZIP)..."
           # Gom file từ /content và từ repo (loại trừ partial_movie_files và thư mục môi trường)
-          find /content -type f -name "*.mp4" -not -path "*/partial_movie_files/*" -exec cp -v {} ./output_videos/ \; 2>/dev/null || true
-          find . -type f -name "*.mp4" -not -path "./.venv/*" -not -path "*/partial_movie_files/*" -not -path "./output_videos/*" -exec cp -v {} ./output_videos/ \; 2>/dev/null || true
+          find /content -type f \( -name "*.mp4" -o -name "*.srt" -o -name "*.vtt" -o -name "*.zip" \) -not -path "*/partial_movie_files/*" -exec cp -v {} ./output_videos/ \; 2>/dev/null || true
+          find . -type f \( -name "*.mp4" -o -name "*.srt" -o -name "*.vtt" -o -name "*.zip" \) -not -path "./.venv/*" -not -path "*/partial_movie_files/*" -not -path "./output_videos/*" -exec cp -v {} ./output_videos/ \; 2>/dev/null || true
 
           COUNT=$(find ./output_videos -type f -name "*.mp4" | wc -l)
           echo "Đã tìm thấy $COUNT video."
@@ -136,21 +137,22 @@ jobs:
           fi
 
           # Xuất báo cáo tóm tắt ra GitHub Step Summary
-          echo "### 🎬 Danh sách video đã render thành công" >> $GITHUB_STEP_SUMMARY
-          echo "| Tên Video | Dung lượng |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
-          for f in ./output_videos/*.mp4; do
+          echo "### 🎬 Danh sách tệp đã render thành công" >> $GITHUB_STEP_SUMMARY
+          echo "| Tên tệp | Loại | Dung lượng |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          for f in ./output_videos/*; do
             if [ -f "$f" ]; then
               SIZE=$(ls -lh "$f" | awk '{print $5}')
               NAME=$(basename "$f")
-              echo "| **$NAME** | $SIZE |" >> $GITHUB_STEP_SUMMARY
+              EXT="${NAME##*.}"
+              echo "| **$NAME** | $EXT | $SIZE |" >> $GITHUB_STEP_SUMMARY
             fi
           done
 
-      - name: Tải video lên Artifacts (Lưu trữ để tải về)
+      - name: Tải video và tệp đính kèm lên Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Manim-Video-${{ steps.target.outputs.target_script }}
-          path: ./output_videos/*.mp4
+          name: Manim-Output-${{ steps.target.outputs.target_script }}
+          path: ./output_videos/*
           if-no-files-found: error
           retention-days: 14
