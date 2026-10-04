@@ -10,3 +10,9 @@ __pycache__/
 .env
 venv/
 .venv/
+
+# Rendered outputs (do not commit)
+*.mp4
+*.srt
+*.vtt
+*_ma_nguon.zip
