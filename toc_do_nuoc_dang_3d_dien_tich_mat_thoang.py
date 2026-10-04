@@ -26,6 +26,12 @@ Không áp dụng biểu thức hữu hạn tại các điểm A(h)=0.
 Môi trường: Manim Community 0.19.0, Cairo, Edge TTS, FFmpeg, LaTeX.
 API nguồn: https://github.com/ManimCommunity/manim/tree/v0.19.0/manim
 
+CODESPACES (bộ ZIP kèm setup_codespaces.sh và render.sh):
+- Lần đầu: bash setup_codespaces.sh
+- Render: bash render.sh nuoc final
+- MP4 ở /tmp/manim-video-output, ngoài repo; thêm thư mục vào Explorer để tải.
+- Cài một lần cho cùng môi trường; rebuild/xóa Codespace cần cài lại.
+
 CÁCH CHẠY NHẸ GIAO DIỆN COLAB:
 1. Mở notebook mới trên Colab, dùng runtime do Google cung cấp.
 2. Bảng Files (biểu tượng thư mục) > Upload, chọn tệp .py này.
@@ -49,9 +55,9 @@ GIONG_DOC='vi-VN-NamMinhNeural'
 TOC_DO_DOC='-5%'
 CHE_DO='standard'
 CHON_BAI=[]
-# Chế độ Colab nhẹ: chỉ log ngắn theo chương; xong bấm nút tải MP4.
+# Chế độ Colab/Codespaces nhẹ: chỉ log ngắn theo chương; xong bấm nút tải MP4.
 # Không nhúng video, không tự phát hoặc tự tải; giữ chất lượng CHE_DO.
-CHI_CHAY_TREN_COLAB=True
+CHI_CHAY_TREN_CLOUD=True
 MANIM_VERSION='0.19.0'
 PRESETS={'preview':(854,480,15),'standard':(1280,720,24),'final':(1920,1080,30)}
 
@@ -90,6 +96,51 @@ def footprint(model,h):
         return 'ellipse',p['a']*f,p['b']*f
     if k=='hourglass':r=p['rmin']+p['alpha']*(h-p['c'])**2;return 'ellipse',r,r
     raise ValueError(k)
+
+
+def surface_boundary(model,h,samples=160):
+    """Mặt thoáng NGANG z=h; không dựng ellipse trong hệ màn hình.
+
+    Trụ ngang: hình chữ nhật dài L, rộng 2sqrt(h(2R-h)).
+    Bình cầu: đường tròn x²+y²=h(2R-h), tâm (0,0,h).
+    """
+    H=model['p']['H']
+    if not 0<=h<=H:raise ValueError('Mực nước nằm ngoài bể')
+    shape,a,b=footprint(model,h)
+    if shape=='rectangle':return [(-a,-b,h),(a,-b,h),(a,b,h),(-a,b,h)]
+    return [(a*math.cos(2*math.pi*j/samples),b*math.sin(2*math.pi*j/samples),h) for j in range(samples)]
+
+
+def curved_wall_point(model,u,theta):
+    """Tham số góc u cho cầu/ellipsoid; tham số độ cao cho dạng khác."""
+    p=model['p'];k=model['kind']
+    if k in ('sphere','hemisphere'):
+        r=p['R']*math.sin(u);z=p['R']*(1-math.cos(u))
+        return (r*math.cos(theta),r*math.sin(theta),z)
+    if k=='ellipsoid':
+        return (p['a']*math.sin(u)*math.cos(theta),p['b']*math.sin(u)*math.sin(theta),p['c']*(1-math.cos(u)))
+    _,a,b=footprint(model,u)
+    return (a*math.cos(theta),b*math.sin(theta),u)
+
+
+def wall_parameter(model,h):
+    k=model['kind'];p=model['p']
+    if k in ('sphere','hemisphere'):return math.acos(max(-1,min(1,1-h/p['R'])))
+    if k=='ellipsoid':return math.acos(max(-1,min(1,1-h/p['c'])))
+    return h
+
+
+def wall_normal(model,h,theta):
+    """Pháp tuyến ra ngoài để xét nét thấy/khuất trên mặt lồi."""
+    k=model['kind'];p=model['p'];_,a,b=footprint(model,h)
+    c=math.cos(theta);t=math.sin(theta)
+    if k in ('sphere','hemisphere'):return (a*c,a*t,h-p['R'])
+    if k=='ellipsoid':return (a*c/p['a']**2,b*t/p['b']**2,(h-p['c'])/p['c']**2)
+    if k=='cone_down':slope=p['R']/p['H']
+    elif k=='frustum':slope=(p['r1']-p['r0'])/p['H']
+    elif k=='hourglass':slope=2*p['alpha']*(h-p['c'])
+    else:slope=0
+    return (c,t,-slope)
 
 
 def area(model,h):
@@ -168,6 +219,38 @@ def validate_math():
     assert area(MODELS[8],.75)<area(MODELS[8],2.25)
     assert area(MODELS[9],.75)>area(MODELS[9],2.25)
     print('KIỂM CHỨNG: 12 diện tích mặt thoáng, V′(h)=A(h), quỹ đạo nước dâng và 24 đáp số: đạt.')
+
+
+def validate_geometry():
+    for model in MODELS:
+        H=model['p']['H'];p=model['p'];k=model['kind']
+        for f in [.1,.25,.5,.75,.9]:
+            h=f*H;points=surface_boundary(model,h,192)
+            assert all(abs(v[2]-h)<1e-12 for v in points)
+            polygon_area=abs(sum(x[0]*y[1]-y[0]*x[1] for x,y in zip(points,points[1:]+points[:1])))/2
+            assert math.isclose(polygon_area,area(model,h),rel_tol=2e-4),model['id']
+            if k in ('sphere','hemisphere'):
+                for x,y,z in points:assert math.isclose(x*x+y*y+(z-p['R'])**2,p['R']**2,rel_tol=1e-12)
+            if k=='ellipsoid':
+                for x,y,z in points:assert math.isclose((x/p['a'])**2+(y/p['b'])**2+((z-p['c'])/p['c'])**2,1,rel_tol=1e-12)
+            if k=='horizontal':
+                for x,y,z in points:assert math.isclose(y*y+(z-p['R'])**2,p['R']**2,rel_tol=1e-12)
+            if k not in ('box','pyramid','trough','horizontal'):
+                u=wall_parameter(model,h)
+                for theta in [.2,1.4,2.7,4.5]:
+                    x,y,z=curved_wall_point(model,u,theta)
+                    assert math.isclose(z,h,abs_tol=1e-10)
+                    _,a,b=footprint(model,h)
+                    assert math.isclose((x/a)**2+(y/b)**2,1,rel_tol=1e-12)
+                    # Normal is perpendicular to both shell tangents.
+                    eps=1e-6
+                    def difference(a,b):return [(x-y)/(2*eps) for x,y in zip(a,b)]
+                    du=difference(curved_wall_point(model,u+eps,theta),curved_wall_point(model,u-eps,theta))
+                    dt=difference(curved_wall_point(model,u,theta+eps),curved_wall_point(model,u,theta-eps))
+                    n=wall_normal(model,h,theta)
+                    assert abs(sum(x*y for x,y in zip(n,du)))<1e-6
+                    assert abs(sum(x*y for x,y in zip(n,dt)))<1e-6
+    print('HÌNH HỌC: 12 biên mặt thoáng; mặt cầu/ellipsoid; trụ ngang; pháp tuyến: đạt.')
 
 
 # ========================== KỊCH BẢN GIẢNG ==========================
@@ -533,9 +616,7 @@ class TankView:
         rotation=scene.camera.generate_rotation_matrix()
         sample=[]
         for z in np.linspace(0,self.H,19):
-            _,a,b=footprint(model,z)
-            for t in np.linspace(0,TAU,25):sample.append(pt(a*np.cos(t),b*np.sin(t),z-self.H/2))
-            for x,y in [(-a,-b),(-a,b),(a,-b),(a,b)]:sample.append(pt(x,y,z-self.H/2))
+            for x,y,_ in surface_boundary(model,float(z),64):sample.append(pt(x,y,z-self.H/2))
         projected=np.array(sample)@rotation.T
         # Equal scaling in all 3 dimensions, chosen by projected bounding box.
         self.scale=min(4.8/np.ptp(projected[:,0]),3.1/np.ptp(projected[:,1]))
@@ -555,7 +636,12 @@ class TankView:
     def W(self,x,y,z):return self.anchor+self.scale*pt(x,y,z-self.H/2)
     def level(self):return height_from_volume(self.model,self.capacity*self.clock.get_value())
     def polygon(self,points,color=BLUE,opacity=.08,width=1):
-        return shaded(Polygon(*[self.W(*p) for p in points],color=color,stroke_width=width,
+        unique=[]
+        for p in points:
+            if not unique or np.linalg.norm(np.array(p)-np.array(unique[-1]))>1e-9:unique.append(p)
+        if len(unique)>1 and np.linalg.norm(np.array(unique[0])-np.array(unique[-1]))<1e-9:unique.pop()
+        if len(unique)<3:return VGroup()
+        return shaded(Polygon(*[self.W(*p) for p in unique],color=color,stroke_width=width,
                        fill_color=color,fill_opacity=opacity))
     def ring(self,z,color=BLUE,opacity=1):
         shape,a,b=footprint(self.model,z)
@@ -565,31 +651,71 @@ class TankView:
             # Rear-side edges are muted/dashed; foreground edges are solid.
             for i in range(4):
                 p=points[i];q=points[(i+1)%4]
-                near=(p[0]+q[0])*.64-(p[1]+q[1])*.77>0
+                view=self.scene.camera.generate_rotation_matrix()[2]
+                eps=self.H*1e-5;lo=max(0,z-eps);hi=min(self.H,z+eps)
+                _,al,bl=footprint(self.model,lo);_,ah,bh=footprint(self.model,hi)
+                da=(ah-al)/(hi-lo);db=(bh-bl)/(hi-lo)
+                mx=(p[0]+q[0])/2;my=(p[1]+q[1])/2
+                normal=pt(np.sign(mx),0,-da) if abs(mx)>1e-9 else pt(0,np.sign(my),-db)
+                near=np.dot(normal,view)>=0
                 line=Line(self.W(*p),self.W(*q),color=color,stroke_width=1.8) if near else DashedLine(self.W(*p),self.W(*q),color=MUTED,dash_length=.08,stroke_width=1.1)
                 g.add(shaded(line).set_opacity(opacity))
             return g
-        g=VGroup();theta=-50*DEGREES
-        for front in (True,False):
-            start=theta-PI/2 if front else theta+PI/2
-            curve=ParametricFunction(lambda t:self.W(a*np.cos(t),b*np.sin(t),z),
-                t_range=[start,start+PI],color=color if front else MUTED,stroke_width=1.8 if front else 1.1)
-            if not front:curve=DashedVMobject(curve,num_dashes=22,dashed_ratio=.5)
-            g.add(shaded(curve).set_opacity(opacity))
+        g=VGroup();view=self.scene.camera.generate_rotation_matrix()[2]
+        # Runs share their boundary vertex; no gaps where a visible arc changes.
+        thetas=np.linspace(0,TAU,193)
+        visible=[np.dot(wall_normal(self.model,z,float(t)),view)>=0 for t in thetas]
+        start=0
+        for stop in range(1,len(thetas)):
+            if visible[stop]!=visible[start] or stop==len(thetas)-1:
+                end=stop
+                points=[self.W(a*np.cos(t),b*np.sin(t),z) for t in thetas[start:end+1]]
+                if len(points)>1:
+                    curve=VMobject(color=color if visible[start] else MUTED,stroke_width=1.9 if visible[start] else 1.0)
+                    curve.set_points_as_corners(points)
+                    if not visible[start]:curve=DashedVMobject(curve,num_dashes=max(2,int((end-start)/3)),dashed_ratio=.45)
+                    g.add(shaded(curve).set_opacity(opacity))
+                start=stop
         return g
+
+    def quadric_outline(self):
+        # Exact apparent contour: x=Dq, |q|=1, (D^-1 view).q=0.
+        p=self.p;k=self.kind
+        dims=np.array([p['a'],p['b'],p['c']]) if k=='ellipsoid' else np.array([p['R']]*3)
+        center=np.array([0.,0.,p['c'] if k=='ellipsoid' else p['R']])
+        view=self.scene.camera.generate_rotation_matrix()[2];n=view/dims;n/=np.linalg.norm(n)
+        seed=np.array([0.,0.,1.]) if abs(n[2])<.9 else np.array([1.,0.,0.])
+        e=np.cross(n,seed);e/=np.linalg.norm(e);f=np.cross(n,e)
+        pts=[center+dims*(e*np.cos(t)+f*np.sin(t)) for t in np.linspace(0,TAU,257)]
+        if k=='hemisphere':pts=[p for p in pts if p[2]<=self.H+1e-8]
+        if k=='hemisphere':
+            # Below-equator contour may consist of two runs; draw clipped spans.
+            g=VGroup();run=[]
+            allpts=[center+dims*(e*np.cos(t)+f*np.sin(t)) for t in np.linspace(0,TAU,257)]
+            for pnt in allpts:
+                if pnt[2]<=self.H+1e-8:run.append(self.W(*pnt))
+                elif run:
+                    if len(run)>1:g.add(VMobject(color=BLUE,stroke_width=2.1).set_points_as_corners(run))
+                    run=[]
+            if len(run)>1:g.add(VMobject(color=BLUE,stroke_width=2.1).set_points_as_corners(run))
+            return g
+        return shaded(VMobject(color=BLUE,stroke_width=2.1).set_points_as_corners([self.W(*p) for p in pts]))
+
     def make_wall(self):
         k=self.kind;H=self.H;p=self.p;g=VGroup();res=SETTINGS['wall_resolution']
         if k=='horizontal':
             R=p['R'];L=p['L']
             wall=Surface(lambda u,v:self.W(u,R*np.sin(v),R-R*np.cos(v)),
-                u_range=[-L/2,L/2],v_range=[-PI,PI],resolution=(6,res),
-                checkerboard_colors=[BLUE,BLUE],fill_opacity=.055,stroke_width=.35,stroke_opacity=.14)
+                u_range=[-L/2,L/2],v_range=[-PI,PI],resolution=(8,64),
+                checkerboard_colors=[BLUE,BLUE],fill_opacity=.035,stroke_width=0)
             g.add(wall)
             for x in [-L/2,L/2]:
                 ring=ParametricFunction(lambda t,x=x:self.W(x,R*np.sin(t),R-R*np.cos(t)),
                       t_range=[-PI,PI],color=BLUE,stroke_width=2)
                 g.add(shaded(ring))
-            for theta in [-PI,-PI/2,0,PI/2]:
+            view=self.scene.camera.generate_rotation_matrix()[2]
+            tangent=math.atan2(view[2],view[1])
+            for theta in [tangent,tangent+PI]:
                 g.add(shaded(Line(self.W(-L/2,R*np.sin(theta),R-R*np.cos(theta)),
                                   self.W(L/2,R*np.sin(theta),R-R*np.cos(theta)),color=MUTED,stroke_width=1)))
         elif k in ('box','pyramid','trough'):
@@ -600,25 +726,35 @@ class TankView:
             for i in range(4):
                 j=(i+1)%4
                 g.add(self.polygon([low[i],low[j],high[j],high[i]],opacity=.05,width=.8))
-                edge=Line(self.W(*low[i]),self.W(*high[i]),color=BLUE,stroke_width=2)
+                da=(a1-a0)/H;db=(b1-b0)/H;view=self.scene.camera.generate_rotation_matrix()[2]
+                sx=np.sign(high[i][0]);sy=np.sign(high[i][1])
+                near=max(np.dot(pt(sx,0,-da),view),np.dot(pt(0,sy,-db),view))>=0
+                edge=Line(self.W(*low[i]),self.W(*high[i]),color=BLUE,stroke_width=2) if near else DashedLine(self.W(*low[i]),self.W(*high[i]),color=MUTED,stroke_width=1,dash_length=.08)
                 g.add(shaded(edge))
             if a0*b0>1e-8:g.add(self.ring(0))
             g.add(self.ring(H))
         else:
-            eps=H*1e-5
-            def shell(z,t):
-                _,a,b=footprint(self.model,z)
-                return self.W(a*np.cos(t),b*np.sin(t),z)
-            wall=Surface(shell,u_range=[eps,H-eps],v_range=[0,TAU],resolution=(12,res),
-                checkerboard_colors=[BLUE,BLUE],fill_opacity=.055,stroke_width=.4,stroke_opacity=.13)
+            rounded=k in ('sphere','hemisphere','ellipsoid')
+            uend=wall_parameter(self.model,H)
+            # Angular latitude sampling avoids the large polar facets of uniform z.
+            wall=Surface(lambda u,t:self.W(*curved_wall_point(self.model,u,t)),
+                u_range=[1e-5,uend-1e-5],v_range=[0,TAU],resolution=(32,64),
+                checkerboard_colors=[BLUE,BLUE],fill_opacity=.035,stroke_width=0)
             g.add(wall)
-            for fraction in [.0,.25,.5,.75,1.]:
-                z=H*fraction;_,a,b=footprint(self.model,z)
-                if a*b>1e-8:g.add(self.ring(z,opacity=1 if fraction in (0.,1.) else .45))
-            for t in [0,PI/2,PI,3*PI/2]:
-                curve=ParametricFunction(lambda z,t=t:shell(z,t),t_range=[eps,H-eps],
-                        color=BLUE,stroke_width=1.5,stroke_opacity=.65)
-                g.add(shaded(curve))
+            if rounded:g.add(self.quadric_outline())
+            else:
+                # Actual generator at the silhouette of an axial straight/conic wall.
+                view=self.scene.camera.generate_rotation_matrix()[2];az=math.atan2(view[1],view[0])
+                rho=math.hypot(view[0],view[1])
+                def tangent(z,sign):
+                    slope=-wall_normal(self.model,z,0)[2]
+                    t=az+sign*math.acos(max(-1,min(1,slope*view[2]/rho)))
+                    return self.W(*curved_wall_point(self.model,z,t))
+                for sign in [-1,1]:
+                    g.add(shaded(ParametricFunction(lambda z,sign=sign:tangent(z,sign),
+                        t_range=[0,H,.012],color=BLUE,stroke_width=2)))
+            for z in [0.,H]:
+                if area(self.model,z)>1e-8:g.add(self.ring(z))
         return g
     def water_body(self,h):
         k=self.kind;model=self.model;p=self.p;g=VGroup()
@@ -639,20 +775,17 @@ class TankView:
                 g.add(self.polygon([bottom[i],bottom[j],top[j],top[i]],CYAN,.16,0))
             if a0*b0>0:g.add(self.polygon(bottom,CYAN,.10,0))
         else:
-            def shell(z,t):
-                _,a,b=footprint(model,z)
-                return self.W(a*np.cos(t),b*np.sin(t),z)
-            g.add(Surface(shell,u_range=[self.H*1e-6,h],v_range=[0,TAU],resolution=(6,18),
-                checkerboard_colors=[CYAN,CYAN],fill_opacity=.17,stroke_width=0))
-            _,a0,b0=footprint(model,0)
-            if a0*b0>1e-10:g.add(self.free_surface(0,CYAN,.10))
+            uend=wall_parameter(model,h)
+            if uend>1e-7:
+                g.add(Surface(lambda u,t:self.W(*curved_wall_point(model,u,t)),
+                    u_range=[1e-6,uend],v_range=[0,TAU],resolution=(16,48),
+                    checkerboard_colors=[CYAN,CYAN],fill_opacity=.13,stroke_width=0))
+            if area(model,0)>1e-10:g.add(self.free_surface(0,CYAN,.08))
         return g
-    def free_surface(self,h,color=CYAN,opacity=.58):
-        shape,a,b=footprint(self.model,h)
-        if shape=='rectangle':return self.polygon([(-a,-b,h),(a,-b,h),(a,b,h),(-a,b,h)],color,opacity,2.5)
-        cap=Ellipse(width=2*a*self.scale,height=2*b*self.scale,color=color,
-                    fill_color=color,fill_opacity=opacity,stroke_width=2.5)
-        cap.move_to(self.W(0,0,h));return shaded(cap)
+    def free_surface(self,h,color=CYAN,opacity=.44):
+        points=surface_boundary(self.model,h,192)
+        if area(self.model,h)<1e-10:return VGroup()
+        return self.polygon(points,color,opacity,2.3)
     def top_view(self,h):
         shape,a,b=footprint(self.model,h)
         dims=[footprint(self.model,z)[1:] for z in np.linspace(0,self.H,81)]
@@ -677,8 +810,7 @@ class TankView:
         if not force and self.last is not None and abs(h-self.last)<1e-8:return
         self.last=h
         self.water.become(self.water_body(h));self.surface.become(VGroup(self.free_surface(h)))
-        _,a,b=footprint(self.model,self.H*.5)
-        dx=max(a,b)+.3
+        dx=max(max(footprint(self.model,float(z))[1:]) for z in np.linspace(0,self.H,65))+.25
         bottom=self.W(dx,0,0);upper=self.W(dx,0,h)
         d=VGroup(shaded(DashedLine(bottom,upper,color=GOLD,dash_length=.08,stroke_width=1.6)),
                  shaded(Line(bottom+LEFT*.07,bottom+RIGHT*.07,color=GOLD,stroke_width=1.2)),
@@ -730,7 +862,7 @@ class TankView:
         self.scene.wait(1.2)
         self.scene.play(Transform(self.surface,VGroup(self.free_surface(h))),run_time=.8)
     def slice(self):
-        h=self.level();dh=.07*self.H
+        h=self.level();dh=min(.07*self.H,self.H-h)
         upper=self.free_surface(h+dh,GOLD,.28)
         lo=volume(self.model,h);hi=volume(self.model,h+dh)
         badge=mtx(r'\Delta V\approx A(h)\,\Delta h',24,GOLD).move_to(pt(-3.8,2.2))
@@ -744,7 +876,8 @@ class WaterLesson(ThreeDScene):
     def construct(self):
         lesson=next(s for s in LESSONS if s['id']==self.lesson_id)
         self.events=[]
-        self.set_camera_orientation(phi=66*DEGREES,theta=-50*DEGREES,focal_distance=1000,zoom=1)
+        self.set_camera_orientation(phi=66*DEGREES,theta=-50*DEGREES,focal_distance=1e9,zoom=1)
+        self.camera.reset_rotation_matrix()
         title=fit(txt(lesson['title'],33,INK,True),12.8,.5).move_to(pt(0,3.5))
         subtitle=txt('TỐC ĐỘ NƯỚC DÂNG • DIỆN TÍCH MẶT THOÁNG',16,BLUE).move_to(pt(0,3.07))
         # Left border has transparent fill: fixed-in-frame opaque plates would hide 3D objects.
@@ -821,6 +954,37 @@ class WaterLesson(ThreeDScene):
             model.highlight()
             self.wait(2)
 
+class GeometryAudit(ThreeDScene):
+    model_id='B04'
+    fraction=.5
+    def construct(self):
+        import copy
+        lesson=next(s for s in LESSONS if s['id']==self.model_id)
+        data=copy.deepcopy(lesson['model']);data['h']=self.fraction*data['p']['H']
+        self.set_camera_orientation(phi=66*DEGREES,theta=-50*DEGREES,focal_distance=1e9,zoom=1)
+        self.camera.reset_rotation_matrix()
+        title=fit(txt(lesson['title']+' • Kiểm tra hình',31,INK,True),12.7,.5).move_to(pt(0,3.5))
+        self.add_fixed_in_frame_mobjects(title)
+        model=TankView(self,data);self.add(model.world)
+        self.add_fixed_orientation_mobjects(model.height_label)
+        self.add_fixed_in_frame_mobjects(model.inset,model.hud)
+        note=txt('MẶT THOÁNG NẰM NGANG',17,CYAN,True).move_to(pt(-3.8,2.65))
+        top=txt('NHÌN TỪ TRÊN',14,CYAN).move_to(pt(-5.4,-1.62))
+        shape,a,b=footprint(data,data['h'])
+        expr=r'A=\pi a_hb_h' if shape=='ellipse' else r'A=(2a_h)(2b_h)'
+        lines=[mtx(r'h='+str(round(data['h'],4)),32),mtx(r'a_h='+str(round(a,4))+r',\ b_h='+str(round(b,4)),32),mtx(expr,32,GOLD)]
+        if data['kind'] in ('sphere','hemisphere'):
+            lines.insert(0,mtx(r'r^2=h(2R-h)',34,GOLD))
+        if data['kind']=='horizontal':
+            lines.insert(0,mtx(r'w=2\sqrt{h(2R-h)}',34,GOLD))
+            lines[-1]=mtx(r'A=Lw',34,GOLD)
+        if data['kind']=='ellipsoid':lines.insert(0,mtx(r'\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{(z-c)^2}{c^2}=1',30,GOLD))
+        equations=VGroup(*lines).arrange(DOWN,buff=.5).move_to(pt(3,.5))
+        for line in lines:fit(line,6.2,.85)
+        self.add_fixed_in_frame_mobjects(note,top,equations)
+        model.world.clear_updaters(recursive=True)
+        self.wait(.1)
+
 # LESSON_CLASSES
 '''
 
@@ -843,7 +1007,7 @@ def duration(path):
 def setup(root):
     os.environ['DEBIAN_FRONTEND']='noninteractive'
     marker=root/'environment_019.ok'
-    if Path('/content').exists() and not marker.exists():
+    if is_colab() and not marker.exists():
         print('BƯỚC 1/5 — Cài môi trường 3D, LaTeX, tiếng Việt, FFmpeg...')
         command(['apt-get','update','-qq'],root/'apt_update.log')
         command(['apt-get','install','-y','-qq','ffmpeg','pkg-config','python3-dev',
@@ -854,10 +1018,12 @@ def setup(root):
             'edge-tts>=7,<8','nest_asyncio','ipywidgets'],root/'pip_install.log')
         command([sys.executable,'-c','import manim,edge_tts;print(manim.__version__)'],root/'env_check.log')
         marker.write_text(MANIM_VERSION)
+    remedy='Chạy bash setup_codespaces.sh, rồi bash render.sh oxyz hoặc bash render.sh nuoc.'
     for name in ['ffmpeg','ffprobe','latex','dvisvgm']:
-        if not shutil.which(name):raise RuntimeError('Thiếu '+name+'. Chạy trên Google Colab để tự cài môi trường.')
-    r=subprocess.run([sys.executable,'-c','import manim;print(manim.__version__)'],capture_output=True,text=True,check=True)
-    if r.stdout.strip()!=MANIM_VERSION:raise RuntimeError('Cần manim=='+MANIM_VERSION)
+        if not shutil.which(name):raise RuntimeError('Thiếu '+name+'. '+remedy)
+    r=subprocess.run([sys.executable,'-c','import manim,edge_tts,nest_asyncio;print(manim.__version__)'],capture_output=True,text=True)
+    if r.returncode or r.stdout.strip()!=MANIM_VERSION:
+        raise RuntimeError('Môi trường Python chưa sẵn sàng cho Manim '+MANIM_VERSION+'. '+remedy+'\n'+r.stderr[-1500:])
 
 
 async def audio_all(lessons,root):
@@ -913,23 +1079,37 @@ def captions(events,stem):
 
 def scene_code(lessons):
     import inspect
-    common='\n\n'.join(inspect.getsource(fn) for fn in [footprint,area,volume,height_from_volume,rise])
+    common='\n\n'.join(inspect.getsource(fn) for fn in [footprint,surface_boundary,curved_wall_point,wall_parameter,wall_normal,area,volume,height_from_volume,rise])
     classes='\n'.join(f"class C_{s['id']}(WaterLesson):\n    lesson_id={s['id']!r}\n" for s in lessons)
     return SCENE_SOURCE.replace('# MODEL_FUNCTIONS',common).replace('# LESSON_CLASSES',classes)
 
 
-def require_render_environment():
-    """Chặn việc vô tình chạy bản render này trực tiếp trên máy cá nhân.
+def is_codespaces():
+    return os.environ.get('CODESPACES','').lower()=='true'
 
-    /content là đường dẫn của runtime Colab thông thường. Đây là kiểm tra
-    môi trường, không phải cam kết máy người dùng không tiêu thụ CPU.
-    """
-    if CHI_CHAY_TREN_COLAB and (sys.platform != 'linux' or not Path('/content').is_dir()):
-        raise RuntimeError(
-            'Bản này mặc định render trên Colab. Hãy tải tệp .py lên Colab '
-            'và chạy bằng runpy.run_path; không chạy bằng Python trên máy cá nhân. '
-            'Lệnh --check vẫn dùng được trên máy cá nhân.'
-        )
+
+def is_actions():
+    return os.environ.get('GITHUB_ACTIONS','').lower()=='true'
+
+
+def is_colab():
+    return not is_codespaces() and sys.platform=='linux' and Path('/content').is_dir()
+
+
+def require_render_environment():
+    """Mặc định cho phép Codespaces/Colab, chặn vô tình render trên Mac."""
+    if CHI_CHAY_TREN_CLOUD and not (is_codespaces() or is_colab() or is_actions()):
+        raise RuntimeError('Hãy chạy trên GitHub Actions, Codespaces hoặc Colab. Lệnh --check vẫn chạy được trên máy cá nhân.')
+
+
+def output_root(folder):
+    override=os.environ.get('MANIM_OUTPUT_DIR')
+    if override:return Path(override).expanduser().resolve()/folder
+    if is_actions():return Path(os.environ.get('RUNNER_TEMP','/tmp'))/'manim-video-output'/folder
+    if is_colab():return Path('/content')/folder
+    if is_codespaces():return Path('/tmp/manim-video-output')/folder
+    base=Path(__file__).resolve().parent if '__file__' in globals() else Path.cwd()
+    return base/'renders'/folder
 
 
 def show_downloads(final,archive):
@@ -938,8 +1118,18 @@ def show_downloads(final,archive):
     files.download chỉ được gọi sau khi người dùng bấm một nút.
     Không có vòng lặp JavaScript, timer, keep-alive hay polling giao diện.
     """
+    if is_actions():
+        print('TẢI VỀ: trang lần chạy GitHub Actions > Artifacts > video đã xuất.')
+        return
+    if is_codespaces():
+        print('Video và cache nằm ngoài repo. Thêm thư mục kết quả vào Explorer bằng:')
+        import shlex
+        print('code --add '+shlex.quote(str(final.parent.parent)))
+        print('Explorer > thư mục bài > chuột phải MP4 > Download. Không cần mở video.')
+        print('Tải và kiểm tra xong: bash cleanup_outputs.sh để dọn dữ liệu tạm.')
+        return
     print('Video đã sẵn sàng. Bấm Tải video MP4; không cần mở xem trong Colab.')
-    if not Path('/content').is_dir():return
+    if not is_colab():return
     try:
         from google.colab import files
         import ipywidgets as widgets
@@ -955,8 +1145,42 @@ def show_downloads(final,archive):
     display(widgets.HBox(buttons))
 
 
+def geometry_previews(root):
+    lessons=build_lessons()
+    for i,l in enumerate(lessons,1):l['order']=i;l['total']=len(lessons)
+    work=root/'geometry_check';work.mkdir(parents=True,exist_ok=True)
+    settings={'teacher':TEN_THAY,'width':1280,'height':720,'fps':15,'wall_resolution':64}
+    (work/'lessons.json').write_text(json.dumps(lessons,ensure_ascii=False),encoding='utf-8')
+    (work/'settings.json').write_text(json.dumps(settings),encoding='utf-8')
+    names=[];classes=[]
+    for model in MODELS:
+        for tag,fraction in [('low',.25),('mid',.5),('high',.75)]:
+            name='Audit_'+model['id']+'_'+tag;names.append(name)
+            classes.append(f"class {name}(GeometryAudit):\n    model_id={model['id']!r}\n    fraction={fraction}\n")
+    source=work/'geometry_scene.py';source.write_text(scene_code(lessons)+'\n'+'\n'.join(classes),encoding='utf-8')
+    command([sys.executable,'-m','manim','--renderer','cairo','--save_last_frame','--progress_bar','none',
+        '--verbosity','WARNING','-r','1280,720','--media_dir',work/'media',source,*names],work/'geometry_render.log',cwd=work)
+    from PIL import Image,ImageOps,ImageDraw
+    images=[]
+    for name in names:
+        candidates=list((work/'media').rglob(name+'*.png'))
+        if not candidates:raise RuntimeError('Thiếu ảnh kiểm tra '+name)
+        destination=work/(name+'.png');shutil.copy2(candidates[-1],destination);images.append(destination)
+    sheet=Image.new('RGB',(1280,12*260),'#0B1120');draw=ImageDraw.Draw(sheet)
+    for i,path in enumerate(images):
+        thumbnail=ImageOps.contain(Image.open(path).convert('RGB'),(426,240))
+        x=(i%3)*426;y=(i//3)*260;sheet.paste(thumbnail,(x,y));draw.text((x+8,y+240),path.stem,fill='white')
+    sheet.save(work/'all_models_contact_sheet.png')
+    print('Đã render 36 ảnh kiểm tra từ chính TankView của video:',work)
+
+
 def main():
+    global CHE_DO,CHON_BAI
+    CHE_DO=os.environ.get('MANIM_QUALITY',CHE_DO)
+    if 'MANIM_LESSONS' in os.environ:
+        CHON_BAI=[x.strip() for x in os.environ['MANIM_LESSONS'].split(',') if x.strip()]
     validate_math()
+    validate_geometry()
     if '--check' in sys.argv:return
     require_render_environment()
     if CHE_DO not in PRESETS:raise ValueError('CHE_DO không hợp lệ.')
@@ -965,14 +1189,16 @@ def main():
     if set(CHON_BAI)-known:raise ValueError('Mã bài không tồn tại: '+str(set(CHON_BAI)-known))
     if CHON_BAI:lessons=[s for s in lessons if s['id'] in CHON_BAI]
     for i,s in enumerate(lessons,1):s['order']=i;s['total']=len(lessons)
-    root=Path('/content/Nuoc_Dang_3D_Mat_Thoang') if Path('/content').exists() else Path.cwd()/'Nuoc_Dang_3D_Mat_Thoang'
+    root=output_root('Nuoc_Dang_3D_Mat_Thoang')
     root.mkdir(exist_ok=True,parents=True);setup(root)
+    if '--geometry-preview' in sys.argv:
+        geometry_previews(root);return
     print('BƯỚC 2/5 — Chuẩn bị giọng nam tiếng Việt và đo thời lượng từng câu...')
     import nest_asyncio
     nest_asyncio.apply()
     spoken=asyncio.run(audio_all(lessons,root))
     settings={'teacher':TEN_THAY,'width':width,'height':height,'fps':fps,
-              'voice':GIONG_DOC,'rate':TOC_DO_DOC,'wall_resolution':32 if CHE_DO=='final' else 24}
+              'voice':GIONG_DOC,'rate':TOC_DO_DOC,'wall_resolution':64}
     code=scene_code(lessons)
     digest=hashlib.sha256((code+json.dumps(settings,sort_keys=True)+json.dumps(lessons,ensure_ascii=False,sort_keys=True)).encode()).hexdigest()[:16]
     work=root/('render_'+digest);work.mkdir(exist_ok=True);(work/'events').mkdir(exist_ok=True);(work/'clips').mkdir(exist_ok=True)
