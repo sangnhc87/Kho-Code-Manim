@@ -1,4 +1,5 @@
 name: Render Manim Video
+run-name: Render ${{ inputs.script_file == 'custom' && inputs.custom_file || inputs.script_file }}
 
 on:
   workflow_dispatch:
