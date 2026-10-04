@@ -10,7 +10,10 @@ on:
         default: 'toc_do_nuoc_dang_3d_dien_tich_mat_thoang.py'
         type: choice
         options:
+          - 'bai_12_2_01_oxyz_vecto.py'
+          - 'chuyen_de_toc_do_nuoc_dang_3d_ban_moi.py'
           - 'toc_do_nuoc_dang_3d_dien_tich_mat_thoang.py'
+          - 'oxyz_tam_ti_cu_hay_la_kho.py'
           - 'bat_phuong_trinh_hai_an.py'
           - 'K12-Ch1-TocDoThayDoi.py'
           - 'duong_tiem_can_toan_12.py'
@@ -35,6 +38,8 @@ jobs:
     name: Render Manim Video
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    env:
+      MANIM_OUTPUT_DIR: /tmp/manim-output
 
     steps:
       - name: Checkout repository
@@ -42,9 +47,9 @@ jobs:
 
       - name: Giả lập môi trường Colab & cấu hình quyền hệ thống
         run: |
-          # 1. Tạo thư mục /content tương thích với các script Google Colab
-          sudo mkdir -p /content
-          sudo chmod 777 /content
+          # 1. Tạo thư mục /content và /tmp/manim-output tương thích mọi loại script
+          sudo mkdir -p /content /tmp/manim-output
+          sudo chmod -R 777 /content /tmp/manim-output
 
           # 2. Tạo wrapper cho apt-get để script Python gọi apt-get tự động chạy dưới quyền sudo
           sudo tee /usr/local/bin/apt-get > /dev/null << 'EOF'
@@ -109,8 +114,10 @@ jobs:
             exit 1
           fi
 
+          BASE_NAME=$(basename "$TARGET" .py)
           echo "target_script=$TARGET" >> "$GITHUB_OUTPUT"
-          echo "Script được chọn: $TARGET"
+          echo "target_name=$BASE_NAME" >> "$GITHUB_OUTPUT"
+          echo "Script được chọn: $TARGET (Tên: $BASE_NAME)"
 
       - name: Chạy script render Manim
         run: |
@@ -124,17 +131,38 @@ jobs:
         id: collect_videos
         if: always()
         run: |
-          echo "Tìm kiếm video MP4 và tệp phụ trợ (SRT, VTT, ZIP) từ /content và workspace..."
-          # Gom file từ /content ra workspace để artifact upload có thể quét thấy
-          find /content -type f \( -name "*.mp4" -o -name "*.srt" -o -name "*.vtt" -o -name "*.zip" \) -not -path "*/partial_movie_files/*" -exec cp -v {} . \; 2>/dev/null || true
+          echo "Thu thập tất cả video MP4 và tệp phụ trợ (SRT, VTT, ZIP) từ mọi thư mục đầu ra..."
+          
+          # Danh sách tất cả các nơi script Manim có thể xuất video ra
+          SEARCH_DIRS=(
+            "/tmp/manim-output"
+            "/tmp/manim-video-output"
+            "${RUNNER_TEMP:-/tmp}/manim-video-output"
+            "${RUNNER_TEMP:-/tmp}"
+            "/content"
+            "/tmp"
+            "${{ github.workspace }}/renders"
+          )
+          
+          for d in "${SEARCH_DIRS[@]}"; do
+            if [ -d "$d" ]; then
+              echo "==> Đang quét và gom tệp từ: $d"
+              find "$d" -type f \( -name "*.mp4" -o -name "*.srt" -o -name "*.vtt" -o -name "*.zip" \) \
+                -not -path "*/partial_movie_files/*" \
+                -not -path "*/.venv/*" \
+                -not -path "*/.git/*" \
+                -exec cp -vn {} . \; 2>/dev/null || true
+            fi
+          done
 
           COUNT=$(find . -maxdepth 2 -type f -name "*.mp4" -not -path "*/partial_movie_files/*" -not -path "./.venv/*" | wc -l)
-          echo "Đã tìm thấy $COUNT video."
+          echo "Đã tìm thấy tổng cộng $COUNT video trong workspace."
 
           # Xuất báo cáo tóm tắt ra GitHub Step Summary
           echo "### 🎬 Danh sách tệp đã tạo thành công" >> $GITHUB_STEP_SUMMARY
           echo "| Tên tệp | Loại | Dung lượng |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          FOUND=0
           for f in *; do
             case "$f" in
               *.mp4|*.srt|*.vtt|*_ma_nguon.zip)
@@ -143,24 +171,33 @@ jobs:
                   NAME=$(basename "$f")
                   EXT="${NAME##*.}"
                   echo "| **$NAME** | $EXT | $SIZE |" >> $GITHUB_STEP_SUMMARY
+                  FOUND=1
                 fi
                 ;;
             esac
           done
+          if [ "$FOUND" -eq 0 ]; then
+            echo "| *(Chưa tìm thấy tệp nào)* | - | - |" >> $GITHUB_STEP_SUMMARY
+          fi
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "👉 **[Nhấn vào đây để tải tệp Artifacts manim-render-output](#artifacts)** (hoặc cuộn xuống cuối trang này ở mục **Artifacts**)." >> $GITHUB_STEP_SUMMARY
+          echo "👉 **[Nhấn vào đây để tải tệp Artifacts](#artifacts)** (hoặc cuộn xuống cuối trang này ở mục **Artifacts**)." >> $GITHUB_STEP_SUMMARY
 
       - name: Upload rendered videos
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: manim-render-output
+          name: manim-${{ steps.target.outputs.target_name || 'render-output' }}
           path: |
+            *.mp4
+            *.srt
+            *.vtt
+            *_ma_nguon.zip
             **/*.mp4
             **/*.srt
             **/*.vtt
             **/*_ma_nguon.zip
+            /tmp/manim-output/**
             !**/partial_movie_files/**
             !**/.venv/**
-          if-no-files-found: error
-          retention-days: 7
+          if-no-files-found: warn
+          retention-days: 14
