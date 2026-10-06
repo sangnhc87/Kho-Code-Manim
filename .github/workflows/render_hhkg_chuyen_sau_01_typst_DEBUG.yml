@@ -1,0 +1,127 @@
+name: Render HHKG Chuyen Sau 01 - Typst DEBUG
+
+on:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg \
+            libcairo2-dev \
+            libpango1.0-dev \
+            pkg-config \
+            fonts-dejavu-core \
+            fonts-noto-core
+
+      - name: Install Manim Typst and TTS
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "manim==0.21.0" "typst>=0.14" "edge-tts==7.2.8"
+
+      - name: Print versions
+        run: |
+          python - <<'PY'
+          import sys
+          import manim
+          import typst
+          from manim import MathTypst, Typst
+          print("Python:", sys.version)
+          print("Manim:", manim.__version__)
+          print("typst module:", typst)
+          print("MathTypst:", MathTypst)
+          print("Typst:", Typst)
+          PY
+
+      - name: Syntax check lesson
+        run: |
+          python -m py_compile Manim-Typst/hhkg_chuyen_sau_01_manim_typst_STANDALONE.py
+
+      - name: Create real Typst render smoke test
+        run: |
+          cat > _typst_smoke.py <<'PY'
+          from manim import *
+
+          config.pixel_width = 854
+          config.pixel_height = 480
+          config.frame_rate = 15
+          config.background_color = "#0B1120"
+
+          class TypstSmoke(Scene):
+              def construct(self):
+                  title = Text("Typst render test", font="DejaVu Sans", font_size=38)
+                  eq = MathTypst(r"x^2 + y^2 = 1", font_size=64, color=YELLOW)
+                  g = VGroup(title, eq).arrange(DOWN, buff=0.5)
+                  self.play(FadeIn(title), Write(eq), run_time=1.0)
+                  self.wait(0.5)
+          PY
+
+      - name: Render real Typst smoke MP4
+        shell: bash
+        run: |
+          set -o pipefail
+          manim render -ql _typst_smoke.py TypstSmoke 2>&1 | tee typst_smoke.log
+          SMOKE=$(find media -type f -name '*.mp4' | head -n 1)
+          test -n "$SMOKE"
+          echo "Typst smoke video: $SMOKE"
+          ffprobe -v error -show_entries stream=codec_type,width,height -show_entries format=duration,size -of json "$SMOKE"
+
+      - name: Clean smoke media
+        run: |
+          rm -rf media
+          mkdir -p media
+
+      - name: Render HHKG lesson
+        shell: bash
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          set -o pipefail
+          python Manim-Typst/hhkg_chuyen_sau_01_manim_typst_STANDALONE.py 2>&1 | tee render.log
+
+      - name: Find and verify final video
+        shell: bash
+        run: |
+          VIDEO=$(find media -type f -name 'hhkg_chuyen_sau_01_manim_typst_1080p_WITH_AUDIO.mp4' | head -n 1)
+          test -n "$VIDEO"
+          echo "Final video: $VIDEO"
+          ffprobe -v error \
+            -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+
+      - name: Upload final MP4
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-chuyen-sau-01-typst
+          path: ${{ env.VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload debug logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-typst-debug-logs
+          path: |
+            typst_smoke.log
+            render.log
+          if-no-files-found: ignore
+          retention-days: 7
