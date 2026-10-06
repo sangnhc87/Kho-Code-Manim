@@ -352,7 +352,7 @@ class SangLesson(ThreeDScene):
         self.set_camera_orientation(phi=0*DEGREES, theta=-90*DEGREES, zoom=1.0)
         title = txt("HHKG CHUYÊN SÂU 01", 47, GOLD, BOLD)
         sub = txt("MỘT CẤU HÌNH – NHIỀU ĐẠI LƯỢNG", 37, INK, BOLD)
-        line = mty("angle  -  dihedral  -  distance  -  volume  -  ratio", 34, CYAN)
+        line = txt("angle  -  dihedral  -  distance  -  volume  -  ratio", 34, CYAN)
         note = txt("Học cách nhìn hình trước khi chọn công thức", 27, MUTED)
         brand = txt(TEN_THAY, 21, MUTED)
         g = VGroup(title, sub, line, note, brand).arrange(DOWN, buff=0.28)
@@ -418,7 +418,7 @@ class SangLesson(ThreeDScene):
 
         box = self.formula_box([
             txt("Bước 1: tìm hình chiếu", 24, GOLD, BOLD),
-            mty("proj_(A B C D)(S C) = A C", 31, CYAN),
+            mty('"proj"_(A B C D)(S C) = A C', 31, CYAN),
             mty("A C = 4 sqrt(2)", 34, INK),
             mty("tan alpha = (S A)/(A C)", 34, INK),
             mty("tan alpha = 3/(4 sqrt(2))", 37, GOLD),
@@ -504,7 +504,7 @@ class SangLesson(ThreeDScene):
             txt("Đáy là hình vuông", 24, GOLD, BOLD),
             mty("S_(A B C D) = 4^2 = 16", 34, CYAN),
             mty("h = S A = 3", 34, GREEN),
-            mty("V = 1/3 S_(base) h", 35, INK),
+            mty('V = 1/3 S_("base") h', 35, INK),
             mty("V = 1/3 times 16 times 3 = 16", 37, GOLD),
         ], width=5.25, height=4.25, shift=RIGHT*3.85 + DOWN*0.1)
 
@@ -634,7 +634,7 @@ class SangLesson(ThreeDScene):
             mty("sin beta = 3/5", 31, INK),
             mty("V = 16", 33, INK),
             mty("d(D,(S B C)) = 12/5", 31, INK),
-            mty("V_(small)/V_(large) = 1/8", 31, INK),
+            mty('V_("small")/V_("large") = 1/8', 31, INK),
         ).arrange(DOWN,buff=0.28).shift(RIGHT*3.0 + UP*0.08)
         self.add_fixed_in_frame_mobjects(right)
         self.play(FadeIn(right), run_time=0.8)
@@ -663,7 +663,7 @@ class SangLesson(ThreeDScene):
         end = VGroup(
             txt("HHKG CHUYÊN SÂU", 45, GOLD, BOLD),
             txt("Nhìn đúng cấu hình → lời giải ngắn lại", 30, CYAN),
-            mty("projection  →  section  →  ratio", 34, INK),
+            txt("projection  →  section  →  ratio", 34, INK),
             txt(TEN_THAY, 21, MUTED),
         ).arrange(DOWN,buff=0.30)
         self.add_fixed_in_frame_mobjects(end)
