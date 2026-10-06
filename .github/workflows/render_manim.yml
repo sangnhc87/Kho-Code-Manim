@@ -89,6 +89,12 @@ jobs:
             espeak-ng \
             sox
 
+      - name: Cài đặt Typst
+        run: |
+          wget -q https://github.com/typst/typst/releases/download/v0.11.1/typst-x86_64-unknown-linux-musl.tar.xz
+          tar -xf typst-x86_64-unknown-linux-musl.tar.xz
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+
       - name: Cài đặt thư viện Python (Manim, Edge-TTS, ...)
         run: |
           python -m pip install --upgrade pip
