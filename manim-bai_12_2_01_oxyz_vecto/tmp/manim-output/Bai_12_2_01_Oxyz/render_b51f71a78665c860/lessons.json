@@ -1,0 +1,2773 @@
+[
+  {
+    "id": "C01",
+    "title": "Từ hình không gian đến bộ ba tọa độ",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "M": [
+          3,
+          2,
+          3
+        ],
+        "H": [
+          3,
+          2,
+          0
+        ],
+        "X": [
+          3,
+          0,
+          0
+        ],
+        "Y": [
+          0,
+          2,
+          0
+        ],
+        "Z": [
+          0,
+          0,
+          3
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "M",
+          "gold"
+        ]
+      ],
+      "edges": [
+        [
+          "M",
+          "H",
+          "dash"
+        ],
+        [
+          "H",
+          "X",
+          "dash"
+        ],
+        [
+          "H",
+          "Y",
+          "dash"
+        ],
+        [
+          "M",
+          "Z",
+          "dash"
+        ]
+      ],
+      "faces": [],
+      "poses": [
+        "base",
+        "components"
+      ],
+      "components": "M"
+    },
+    "pages": [
+      {
+        "title": "Lộ trình tự học",
+        "rows": [
+          {
+            "kind": "text",
+            "text": "Nhìn hình → hiểu bản chất → tính toán → tự giải.",
+            "voice": "Chào các em. Đây là bài đầu tiên của chuyên đề tọa độ không gian. Ta sẽ học hệ trục, tọa độ điểm và vectơ, tích vô hướng, rồi mở rộng đến tích có hướng. Mỗi ví dụ đều có lời giải. Các em chưa cần biết phương trình đường thẳng, mặt phẳng hay mặt cầu.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/de19942ae85323ea8f8200f3e566f2f4883c68e33fa68fa6fdf8a5282ade6e17.mp3",
+            "duration": 19.248
+          },
+          {
+            "kind": "text",
+            "text": "Dừng video khi có câu hỏi; xem lời giải sau.",
+            "voice": "Khi gặp bài tập, hãy dừng video, viết dữ kiện và thử làm. Khi xem lời giải, đối chiếu cả cách lập luận, không chỉ kết quả. Màu xanh biểu diễn vectơ thứ nhất, màu ngọc biểu diễn vectơ thứ hai, màu vàng nhấn mạnh kết quả.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/240c0aaeeb4c4293efa7ebba6acbbebf580ea9f3fd14097ab994a85fb4507375.mp3",
+            "duration": 16.536
+          },
+          {
+            "kind": "text",
+            "text": "Hình phối cảnh không bảo toàn góc trên màn hình.",
+            "voice": "Hình bên trái là mô hình ba chiều được chiếu lên màn hình. Hai đường vuông góc trong không gian có thể không trông vuông góc trên ảnh. Ta kiểm chứng bằng mô hình toán học và ký hiệu góc vuông, không đo góc trực tiếp trên màn hình.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/891c160075d6a40c9664d862d723036ddab5a9d4653c3898bf20fb62544a828d.mp3",
+            "duration": 14.256
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Hệ trục vuông góc và cùng đơn vị",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "Ox\\perp Oy,\\quad Oy\\perp Oz,\\quad Oz\\perp Ox",
+            "voice": "Ba trục tọa độ đôi một vuông góc, cùng gốc O và cùng đơn vị độ dài. Mô hình trong video cũng dùng cùng một tỉ lệ trên cả ba trục.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/598d2534ee83ced4ab8cda97dc24dfaf68917a2220c3f3b1d1e2d0b78686675f.mp3",
+            "duration": 9.696
+          },
+          {
+            "kind": "math",
+            "text": "\\vec i=(1;0;0),\\ \\vec j=(0;1;0),\\ \\vec k=(0;0;1)",
+            "voice": "Vectơ i, j, k là ba vectơ đơn vị theo chiều dương của các trục x, y, z. Trong phần tích có hướng, ta dùng hệ trục thuận, theo quy tắc bàn tay phải.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/2570ac12c1d301c99c3f5de4a5bc817f6bc3e5da737118890fa0f8af805afd66.mp3",
+            "duration": 10.752
+          },
+          {
+            "kind": "math",
+            "text": "M(x;y;z)\\iff\\overrightarrow{OM}=x\\vec i+y\\vec j+z\\vec k",
+            "voice": "Tọa độ điểm M chính là ba hệ số của vectơ O M theo ba vectơ đơn vị. Đọc x trước, y sau, z cuối. Tọa độ có dấu, không phải lúc nào cũng là độ dài dương.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/ffa8808e5ae6b884178cd5605ea474767f9426ca8d3d164b39b27fe3077e08d1.mp3",
+            "duration": 13.32
+          }
+        ],
+        "action": "components"
+      },
+      {
+        "title": "Ví dụ 1 · Đọc tọa độ và hình chiếu",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "M(3;2;3)",
+            "voice": "Điểm M có tọa độ ba, hai, ba. Từ gốc, đi ba đơn vị theo chiều dương x, hai đơn vị theo chiều dương y, rồi ba đơn vị theo chiều dương z.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/136cb607b34d185c3ea3d8ab6de755bb58c8514140448e01e6766f2cc9e25c4d.mp3",
+            "duration": 11.256
+          },
+          {
+            "kind": "math",
+            "text": "H_{Oxy}=(3;2;0),\\quad H_{Ox}=(3;0;0)",
+            "voice": "Hình chiếu vuông góc lên mặt phẳng tọa độ O x y giữ x và y, cho z bằng không. Hình chiếu lên trục O x giữ x, cho y và z bằng không. Ta đang dùng hình học của hệ trục, chưa cần phương trình mặt phẳng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/2924335816efb75ebe929d98c011392f997133092f9aa5d07963cd2f4ec432f8.mp3",
+            "duration": 15.072
+          },
+          {
+            "kind": "math",
+            "text": "H_{Oyz}=(0;2;3),\\quad H_{Oxz}=(3;0;3)",
+            "voice": "Tương tự, lên O y z thì cho x bằng không. Lên O x z thì cho y bằng không. Em hãy tự chỉ vị trí hai hình chiếu còn lại trên hình.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d267538ada9e7a945453f93b3b5824420163e6556a75352112eec9ff93c1d5bb.mp3",
+            "duration": 11.4
+          }
+        ],
+        "action": "components"
+      }
+    ],
+    "order": 1,
+    "total": 14
+  },
+  {
+    "id": "C02",
+    "title": "Vectơ: hướng, độ dài và phép trừ tọa độ",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "A": [
+          1,
+          -1,
+          2
+        ],
+        "B": [
+          4,
+          1,
+          3
+        ],
+        "U": [
+          3,
+          2,
+          1
+        ]
+      },
+      "vectors": [
+        [
+          "A",
+          "B",
+          "blue"
+        ],
+        [
+          "O",
+          "U",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "O",
+          "A",
+          "dash"
+        ],
+        [
+          "O",
+          "B",
+          "dash"
+        ]
+      ],
+      "faces": [],
+      "poses": [
+        "base",
+        "components"
+      ],
+      "components": "U"
+    },
+    "pages": [
+      {
+        "title": "Một vectơ có thể tịnh tiến",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=\\overrightarrow{OB}-\\overrightarrow{OA}",
+            "voice": "Theo quy tắc ba điểm, O A cộng A B bằng O B. Vì thế A B bằng O B trừ O A. Hai vectơ bằng nhau khi cùng hướng và cùng độ dài; không cần cùng điểm đặt.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/b06c69c21e3ffd2221109dd46ca6349a8c6f414d484e7b05b4b74d6f114f2359.mp3",
+            "duration": 10.248
+          },
+          {
+            "kind": "math",
+            "text": "A(x_A;y_A;z_A),\\quad B(x_B;y_B;z_B)",
+            "voice": "Ghi rõ tọa độ điểm đầu A và điểm cuối B trước khi trừ.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/0aba456e948191d58113c3c264b10c32c7aedf16e5ce577f2652a2fffbc875d9.mp3",
+            "duration": 4.224
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=(x_B-x_A;y_B-y_A;z_B-z_A)",
+            "voice": "Tọa độ vectơ bằng tọa độ điểm cuối trừ tọa độ điểm đầu. Cả ba thành phần đều theo cùng thứ tự này.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4b84f02e131a80db2431757a8ac8955eebb2bfe20d06304c6c04355a56f44e30.mp3",
+            "duration": 7.176
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Ví dụ 2 · Hai chiều của đoạn thẳng",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(1;-1;2),\\quad B(4;1;3)",
+            "voice": "Cho A một, âm một, hai; B bốn, một, ba. Tính vectơ A B, vectơ B A và độ dài A B. Hãy dừng video để làm.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8fbcffe0b0b20b1d3ae1898e3baacb0f8907896a846c98e724eaa1cb493cee1f.mp3",
+            "duration": 11.088
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=(4-1;1-(-1);3-2)=(3;2;1)",
+            "voice": "Lấy B trừ A. Thành phần y là một trừ âm một, bằng hai, không phải bằng không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/30ad165d6b69c2ccb6233b4f1d16858de98959b112c244d7a2cf98b63673aee3.mp3",
+            "duration": 6.096
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{BA}=(-3;-2;-1)=-\\overrightarrow{AB}",
+            "voice": "Đổi chiều đoạn thẳng làm đổi dấu tất cả các thành phần.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4d0b9ff0648c77767e57ad63b1339ae9a96372b550aa1d2c7a78ee6258c32e33.mp3",
+            "duration": 3.936
+          },
+          {
+            "kind": "math",
+            "text": "AB=\\sqrt{3^2+2^2+1^2}=\\sqrt{14}",
+            "voice": "Độ dài là căn tổng bình phương ba thành phần, suy ra căn mười bốn. Hai vectơ ngược chiều vẫn có cùng độ dài.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/5715d849570933cf6eec879c51285b3aa089e588d894f36657c5bcc2cace6802.mp3",
+            "duration": 7.968
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Phân biệt điểm và vectơ",
+        "rows": [
+          {
+            "kind": "text",
+            "text": "Điểm là vị trí; vectơ là độ dời có hướng.",
+            "voice": "Cặp hình bên trái biểu diễn cùng một độ dời ba, hai, một. Mũi tên A B và mũi tên O U bằng nhau, dù đặt ở hai nơi khác nhau. Đừng biến tọa độ một điểm thành một vectơ mà quên nói vectơ từ đâu đến đâu.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/46069bb24469a462e11b42e7d8ba77b316c9c9d7f350107d7c2eb10418a28566.mp3",
+            "duration": 15.264
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u=(a;b;c),\\quad |\\vec u|=\\sqrt{a^2+b^2+c^2}",
+            "voice": "Công thức độ dài áp dụng cho mọi vectơ trong hệ trục vuông góc cùng đơn vị.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8b5bce390adb0a8273d26f60957ad2761a043648accd083778cbce73ce288438.mp3",
+            "duration": 4.944
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u|=0\\iff\\vec u=\\vec0",
+            "voice": "Vectơ không là vectơ có độ dài bằng không. Nó không có hướng xác định. Đây là điều kiện cần nhớ khi tính góc hoặc xét cùng phương.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/b04ebf63fd80e21caff3df998a5307d860dc956aa5078a2e0225f0303a66dd1e.mp3",
+            "duration": 9.816
+          }
+        ],
+        "action": "components"
+      }
+    ],
+    "order": 2,
+    "total": 14
+  },
+  {
+    "id": "C03",
+    "title": "Cộng vectơ, nhân số và quy tắc hình bình hành",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          3,
+          0,
+          1
+        ],
+        "V": [
+          0,
+          2,
+          1
+        ],
+        "S": [
+          3,
+          2,
+          2
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ],
+        [
+          "U",
+          "S",
+          "cyan"
+        ],
+        [
+          "O",
+          "S",
+          "gold"
+        ]
+      ],
+      "edges": [
+        [
+          "V",
+          "S",
+          "solid"
+        ]
+      ],
+      "faces": [
+        [
+          "O",
+          "U",
+          "S",
+          "V"
+        ]
+      ],
+      "poses": [
+        "base",
+        "sum",
+        "parallelogram"
+      ],
+      "aliases": {
+        "parallelogram": {
+          "O": "A",
+          "U": "B",
+          "V": "D",
+          "S": "C"
+        }
+      }
+    },
+    "pages": [
+      {
+        "title": "Cộng và nhân theo từng thành phần",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(a;b;c),\\quad\\vec v=(d;e;f)",
+            "voice": "Hai vectơ có ba thành phần. Phép cộng được thực hiện độc lập trên từng trục.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/01d124ddcbaeffdeeb0a58d12f515fd822b66770fb83f3220271d8f96ced5cdc.mp3",
+            "duration": 5.712
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u+\\vec v=(a+d;b+e;c+f)",
+            "voice": "Cộng x với x, y với y, z với z. Trong hình, ghép đuôi vectơ thứ hai vào đầu vectơ thứ nhất; vectơ tổng đi từ điểm xuất phát đến điểm kết thúc.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/e755a337d3ea00d18b5114a923cea72c9ddcbb5bd63825ad8b0c4d818bd70fb1.mp3",
+            "duration": 9.6
+          },
+          {
+            "kind": "math",
+            "text": "\\lambda\\vec u=(\\lambda a;\\lambda b;\\lambda c)",
+            "voice": "Nhân số lambda vào tất cả thành phần. Nếu lambda dương thì giữ chiều, nếu âm thì ngược chiều; độ dài được nhân với trị tuyệt đối của lambda.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/748969b6b4c127d8ba27eed05232dbf360449b09eb9351f85e87027fbf3943fe.mp3",
+            "duration": 10.056
+          }
+        ],
+        "action": "sum"
+      },
+      {
+        "title": "Ví dụ 3 · Tổ hợp tuyến tính",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(3;0;1),\\quad\\vec v=(0;2;1)",
+            "voice": "Với hai vectơ trên hình, hãy tính tổng, hiệu và hai u trừ ba v.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/ea1a307920aeecc1f98394b90b9c6d9a6dab2b6a272113b41c3be80fd7d21015.mp3",
+            "duration": 5.28
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u+\\vec v=(3;2;2),\\quad\\vec u-\\vec v=(3;-2;0)",
+            "voice": "Tổng là ba, hai, hai. Hiệu là ba, âm hai, không. Hiệu không phải độ dài trừ độ dài.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/3b43acf39d7cf82cec362551c7baa730027b7719f36de001041737c65d8fd817.mp3",
+            "duration": 9.456
+          },
+          {
+            "kind": "math",
+            "text": "2\\vec u-3\\vec v=(6;0;2)-(0;6;3)=(6;-6;-1)",
+            "voice": "Nhân từng vectơ với hệ số trước, rồi mới trừ. Kết quả sáu, âm sáu, âm một.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/481674edc892d86494587a878e5f84bfd4a054379680d2034f6e7916dd0fabf1.mp3",
+            "duration": 7.344
+          }
+        ],
+        "action": "sum"
+      },
+      {
+        "title": "Ví dụ 4 · Tìm đỉnh hình bình hành",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(0;0;0),\\ B(3;0;1),\\ D(0;2;1)",
+            "voice": "Cho ba đỉnh A, B, D. Tìm C để A B C D, đúng theo thứ tự đó, là hình bình hành.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/76760ba99d38d743bfc7dfe8da08ab158dd1fb151b8116b9d65fc016303551d7.mp3",
+            "duration": 7.848
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AC}=\\overrightarrow{AB}+\\overrightarrow{AD}",
+            "voice": "Đường chéo xuất phát từ A bằng tổng hai cạnh xuất phát từ A.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/53909eb4432995ce06281647d999f5151721ed02468fa42c2b45bb3ed8923e10.mp3",
+            "duration": 4.656
+          },
+          {
+            "kind": "math",
+            "text": "C=B+D-A=(3;2;2)",
+            "voice": "Theo từng tọa độ, C bằng B cộng D trừ A, được ba, hai, hai. Kiểm tra B C bằng A D và D C bằng A B.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/da9b081be4413f38a73ae3262d1390b0154f3d6c8698a07a635aa42fd479aa4a.mp3",
+            "duration": 9.912
+          },
+          {
+            "kind": "text",
+            "text": "Thứ tự tên đỉnh quyết định công thức.",
+            "voice": "Nếu đổi thứ tự đỉnh, điểm cần tìm có thể khác. Đừng học công thức ba điểm cộng trừ mà bỏ qua hai cạnh cùng xuất phát từ đâu.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/dd1556bd0462a0f769bf5b4a6cb318a89873c10dd60a71c26b5ade5c6123729c.mp3",
+            "duration": 8.952
+          }
+        ],
+        "action": "parallelogram"
+      }
+    ],
+    "order": 3,
+    "total": 14
+  },
+  {
+    "id": "C04",
+    "title": "Trung điểm, trọng tâm và cùng phương",
+    "model": {
+      "points": {
+        "A": [
+          0,
+          0,
+          0
+        ],
+        "B": [
+          4,
+          0,
+          2
+        ],
+        "C": [
+          1,
+          3,
+          1
+        ],
+        "I": [
+          2,
+          0,
+          1
+        ],
+        "G": [
+          1.6666666666666667,
+          1,
+          1
+        ]
+      },
+      "vectors": [],
+      "edges": [
+        [
+          "A",
+          "B",
+          "solid"
+        ],
+        [
+          "B",
+          "C",
+          "solid"
+        ],
+        [
+          "C",
+          "A",
+          "solid"
+        ],
+        [
+          "C",
+          "I",
+          "dash"
+        ]
+      ],
+      "faces": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "poses": [
+        "base",
+        "parallel"
+      ],
+      "variants": {
+        "parallel": {
+          "points": {
+            "O": [
+              0,
+              0,
+              0
+            ],
+            "U": [
+              2,
+              0,
+              -1
+            ],
+            "V": [
+              -6,
+              0,
+              3
+            ]
+          },
+          "vectors": [
+            [
+              "O",
+              "U",
+              "blue"
+            ],
+            [
+              "O",
+              "V",
+              "cyan"
+            ]
+          ],
+          "edges": [],
+          "faces": [],
+          "poses": [
+            "base"
+          ]
+        }
+      }
+    },
+    "pages": [
+      {
+        "title": "Ví dụ 5 · Trung điểm và trọng tâm",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(0;0;0),\\ B(4;0;2),\\ C(1;3;1)",
+            "voice": "Tìm trung điểm I của A B và trọng tâm G của tam giác A B C. Hãy dừng để tự làm.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/87a8e37124139e02c8247126df1ee59c2b52117db877c058cb05b30739069bec.mp3",
+            "duration": 5.976
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{OI}=\\tfrac12(\\overrightarrow{OA}+\\overrightarrow{OB})",
+            "voice": "Trung điểm có vectơ vị trí là trung bình cộng hai vectơ vị trí hai đầu mút. Do đó tọa độ cũng là trung bình cộng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/f5b89d6c134d560c3d0f4e08390f95594acddcf1f846bce661cd16fa87c371fc.mp3",
+            "duration": 8.016
+          },
+          {
+            "kind": "math",
+            "text": "I(2;0;1)",
+            "voice": "Ta được trung điểm I hai, không, một.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/2c99f6340ab7dfb36a92f6f5e5b1c0e40f7c4067007f1125360db8dcbc9e7779.mp3",
+            "duration": 3.768
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Giải thích công thức trọng tâm",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{CG}=\\tfrac23\\overrightarrow{CI}",
+            "voice": "Trọng tâm chia trung tuyến theo tỉ lệ C G trên C I bằng hai phần ba.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8be0afff7407d3fffa9ab700e52d409803715fbca091328c4824ea18c3381073.mp3",
+            "duration": 5.064
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{OG}=\\overrightarrow{OC}+\\tfrac23(\\overrightarrow{OI}-\\overrightarrow{OC})",
+            "voice": "Viết O G bằng O C cộng C G, rồi thay C G bằng hai phần ba của O I trừ O C.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/3fa052042934c181f184c169e8d21136e81952b4f0c9c4c9215cfee83c7402e2.mp3",
+            "duration": 6.864
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{OG}=\\tfrac13(\\overrightarrow{OA}+\\overrightarrow{OB}+\\overrightarrow{OC})",
+            "voice": "Thay công thức trung điểm, rút gọn được trung bình cộng ba vectơ vị trí.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/b32a684ca1c45aee5478d5680e82bc6deba84169a2690a1278b8e45a6fc4a9b9.mp3",
+            "duration": 4.92
+          },
+          {
+            "kind": "math",
+            "text": "G\\left(\\tfrac53;1;1\\right)",
+            "voice": "Vậy G có tọa độ năm phần ba, một, một. Đây là kết quả có lý do từ trung tuyến, không chỉ là công thức thuộc lòng.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/7cebdadda23bb796c13c5a6a311c2a6794f388a35ab0b7a90adacdc201687b33.mp3",
+            "duration": 9.024
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Ví dụ 6 · Cùng phương, không chia cho số không",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(2;0;-1),\\quad\\vec v=(m;0;3)",
+            "voice": "Tìm m để u và v cùng phương. Hai vectơ đều khác vectơ không. Thành phần giữa bằng không, nên cách chia tỉ số từng tọa độ dễ dẫn tới phép chia không xác định.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/b935ac67b707757a3caaa4f4ffe3b6bf4d3349c901cd5fa43755d5b5897f73e6.mp3",
+            "duration": 12.048
+          },
+          {
+            "kind": "math",
+            "text": "\\vec v=\\lambda\\vec u\\Rightarrow(m;0;3)=(2\\lambda;0;-\\lambda)",
+            "voice": "Cách chắc chắn là đặt v bằng lambda u.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4d33b5ade9848eab845f66c2e154ecf7af207db5f97787c6330b3db094727615.mp3",
+            "duration": 3.288
+          },
+          {
+            "kind": "math",
+            "text": "-\\lambda=3\\Rightarrow\\lambda=-3\\Rightarrow m=-6",
+            "voice": "Từ thành phần z, lambda bằng âm ba. Từ thành phần x, m bằng âm sáu. Hai vectơ ngược hướng.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/9f700a5038a1fb326ec40ec92c26db6270f4038a844906ba0bf87b31b5de5e9b.mp3",
+            "duration": 9.264
+          },
+          {
+            "kind": "math",
+            "text": "\\vec v=-3\\vec u\\Rightarrow\\vec u\\times\\vec v=\\vec0",
+            "voice": "Sau khi học tích có hướng, ta có thêm phép kiểm tra: tích có hướng bằng vectơ không. Hiện tại, hệ thức v bằng âm ba u đã đủ chứng minh.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/bc440c41e7cf5d8074445b0fe9a9b7780302dcf9b77531de8a91dabaa3c97da6.mp3",
+            "duration": 9.696
+          }
+        ],
+        "action": "parallel"
+      }
+    ],
+    "order": 4,
+    "total": 14
+  },
+  {
+    "id": "C05",
+    "title": "Tích vô hướng: từ góc đến tọa độ",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          3,
+          0,
+          0
+        ],
+        "V": [
+          2,
+          2,
+          1
+        ],
+        "H": [
+          2,
+          0,
+          0
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "V",
+          "H",
+          "dash"
+        ]
+      ],
+      "faces": [],
+      "poses": [
+        "base",
+        "projection"
+      ],
+      "projection": [
+        "U",
+        "V"
+      ],
+      "angle": [
+        "U",
+        "V"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Bản chất hình học",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec v=|\\vec u|\\,|\\vec v|\\cos\\theta",
+            "voice": "Tích vô hướng của hai vectơ khác không bằng tích độ dài nhân cô sin góc giữa chúng. Góc từ không đến một trăm tám mươi độ. Kết quả là một số, có thể dương, bằng không hoặc âm.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d305db75f4ed862bb1342004d32f79998a26613076fbaa11fc5d212a8cef6b4c.mp3",
+            "duration": 12.672
+          },
+          {
+            "kind": "math",
+            "text": "\\theta\\in[0;\\pi],\\quad\\vec u\\ne\\vec0,\\ \\vec v\\ne\\vec0",
+            "voice": "Điều kiện khác vectơ không cần để nói đến góc. Tích vô hướng vẫn được định nghĩa nếu một vectơ bằng không, và khi đó bằng không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/9dfdb4c656f7463153aac82a72f9312f967bbf66f03687732f3f69ce91871d75.mp3",
+            "duration": 8.352
+          },
+          {
+            "kind": "math",
+            "text": "\\ell_{\\vec u}(\\vec v)=|\\vec v|\\cos\\theta,\\quad\\vec u\\cdot\\vec v=|\\vec u|\\ell_{\\vec u}(\\vec v)",
+            "voice": "Đặt hai vectơ cùng gốc. Hình chiếu có dấu của v lên chiều u bằng độ dài v nhân cô sin góc. Vì thế tích vô hướng đo mức độ hai vectơ cùng chiều theo phương u.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/07f483fceb3266136a82ba76c8738da95d06fdc312283d32b8c6020af7292bfc.mp3",
+            "duration": 11.304
+          }
+        ],
+        "action": "projection"
+      },
+      {
+        "title": "Vì sao cộng ba tích tọa độ?",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec i\\cdot\\vec i=\\vec j\\cdot\\vec j=\\vec k\\cdot\\vec k=1",
+            "voice": "Ba vectơ cơ sở đều có độ dài một, nên tích vô hướng với chính nó bằng một.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/c7bc0aac0779ab6dbfc12b9b38a2437b045845d60ceeff8517d624ef2a38381e.mp3",
+            "duration": 5.208
+          },
+          {
+            "kind": "math",
+            "text": "\\vec i\\cdot\\vec j=\\vec j\\cdot\\vec k=\\vec k\\cdot\\vec i=0",
+            "voice": "Ba trục vuông góc, nên mọi tích giữa hai vectơ cơ sở khác nhau đều bằng không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/c9bfa8f7f5a629e98603c13880e4f653bb48a177efa938b509bb799ce83ba4f8.mp3",
+            "duration": 5.112
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u=(a;b;c),\\ \\vec v=(d;e;f)\\Rightarrow\\vec u\\cdot\\vec v=ad+be+cf",
+            "voice": "Khai triển bằng tính phân phối. Các tích chéo đều bằng không, chỉ còn a d cộng b e cộng c f.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/96b8337b8ba0bde5d06e6c2023b301935feb4adb1b671ee6655429b75d3ff294.mp3",
+            "duration": 7.752
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Các tính chất dùng khi biến đổi",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec v=\\vec v\\cdot\\vec u",
+            "voice": "Tích vô hướng có tính giao hoán. Đổi thứ tự hai vectơ vẫn giữ nguyên số kết quả.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/42dd824e50e893cc3780700953bea30f546a0d7f381d43302f58e739ff354a14.mp3",
+            "duration": 6.528
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot(\\vec v+\\vec w)=\\vec u\\cdot\\vec v+\\vec u\\cdot\\vec w",
+            "voice": "Tích vô hướng phân phối đối với phép cộng. Nhờ đó ta khai triển bình phương độ dài tổng và hiệu.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/ea9fcf9425572d109e7e95105b0a3de1a266c09ff73dd65741ab0e28b907cae1.mp3",
+            "duration": 7.224
+          },
+          {
+            "kind": "math",
+            "text": "(\\lambda\\vec u)\\cdot\\vec v=\\lambda(\\vec u\\cdot\\vec v),\\quad\\vec u\\cdot\\vec u=|\\vec u|^2",
+            "voice": "Hệ số số thực có thể đưa ra ngoài tích. Tích một vectơ với chính nó bằng bình phương độ dài.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4bb5481ff3a8f1a8f358e28138ecb494046459ddcfe5012c547f2dd6699758b4.mp3",
+            "duration": 6.768
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Công cụ tính góc và vuông góc",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\cos\\theta=\\dfrac{ad+be+cf}{\\sqrt{a^2+b^2+c^2}\\sqrt{d^2+e^2+f^2}}",
+            "voice": "Chia tích vô hướng cho tích hai độ dài để tính cô sin góc. Kiểm tra hai mẫu số khác không trước khi dùng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/1b8987815d2926b0b2041402b7935337359d88dd75b59e35b54ce3317b34fa48.mp3",
+            "duration": 7.368
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u,\\vec v\\ne\\vec0:\\quad\\vec u\\perp\\vec v\\iff\\vec u\\cdot\\vec v=0",
+            "voice": "Với hai vectơ khác không, vuông góc khi và chỉ khi tích vô hướng bằng không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/f0be171f148fc0210f36630d8e1aa34c1c0e2b5fc87e54d87ca92f26f82266ed.mp3",
+            "duration": 5.016
+          },
+          {
+            "kind": "text",
+            "text": "Dương: góc nhọn. Âm: góc tù. Không: góc vuông.",
+            "voice": "Dấu của tích vô hướng cho biết góc nhọn, tù hay vuông. Khi góc bằng không hoặc một trăm tám mươi độ, hai vectơ cùng hoặc ngược hướng.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/0255822a10c43fa16adf837e93e2598277ff24b64aacdbe2d3de4cd4915cc359.mp3",
+            "duration": 9.24
+          }
+        ],
+        "action": "base"
+      }
+    ],
+    "order": 5,
+    "total": 14
+  },
+  {
+    "id": "C06",
+    "title": "Tính góc và giải điều kiện vuông góc",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          1,
+          1,
+          0
+        ],
+        "V": [
+          1,
+          0,
+          1
+        ],
+        "W": [
+          -1,
+          0,
+          -1
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ]
+      ],
+      "edges": [],
+      "faces": [],
+      "poses": [
+        "base",
+        "obtuse",
+        "perp"
+      ],
+      "alternate": [
+        "O",
+        "W"
+      ],
+      "angle": [
+        "U",
+        "V"
+      ],
+      "variants": {
+        "perp": {
+          "points": {
+            "O": [
+              0,
+              0,
+              0
+            ],
+            "U": [
+              4,
+              2,
+              -1
+            ],
+            "V": [
+              1,
+              -1,
+              2
+            ]
+          },
+          "vectors": [
+            [
+              "O",
+              "U",
+              "blue"
+            ],
+            [
+              "O",
+              "V",
+              "cyan"
+            ]
+          ],
+          "edges": [],
+          "faces": [],
+          "poses": [
+            "base"
+          ],
+          "angle": [
+            "U",
+            "V"
+          ]
+        }
+      }
+    },
+    "pages": [
+      {
+        "title": "Ví dụ 7 · Một góc đẹp trong không gian",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(1;1;0),\\quad\\vec v=(1;0;1)",
+            "voice": "Tính góc giữa u một, một, không và v một, không, một. Hãy tính tích vô hướng và hai độ dài riêng biệt.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/6ce026fa6456927878ef551450e1303f21e9d5f7bbba47eec43e3f29800fea2e.mp3",
+            "duration": 8.664
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec v=1,\\quad|\\vec u|=|\\vec v|=\\sqrt2",
+            "voice": "Tích vô hướng bằng một. Hai độ dài đều bằng căn hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/bc8e484891ed19d83a356248a3cec4534fe33f975a7c6b5042000ea9542ea7c2.mp3",
+            "duration": 5.112
+          },
+          {
+            "kind": "math",
+            "text": "\\cos\\theta=\\frac1{\\sqrt2\\sqrt2}=\\frac12\\Rightarrow\\theta=60^\\circ",
+            "voice": "Cô sin góc bằng một phần hai, nên góc giữa hai vectơ bằng sáu mươi độ. Hình chiếu trên màn hình không nhất thiết tạo góc sáu mươi độ.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/1d892fc873174226cba7f21c20e045fd8cbd3e0aac85538b3b694cedf46bda6d.mp3",
+            "duration": 8.856
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Đổi chiều một vectơ thì góc thay đổi",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec w=-\\vec v=(-1;0;-1)",
+            "voice": "Giữ u, đảo chiều v thành w. Ta sẽ nhìn thấy mũi tên vàng theo chiều đối diện.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/7422c8ed500bec89277200ec13c3706effbde79bd9dfb21ead6655d40cfeb610.mp3",
+            "duration": 6.144
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec w=-1\\Rightarrow\\cos\\varphi=-\\tfrac12",
+            "voice": "Tích vô hướng đổi dấu thành âm một, cô sin bằng âm một phần hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/7a890f78b502de730b42e0afc949c498b34e8ea137918132cdb5f4138d000e89.mp3",
+            "duration": 4.848
+          },
+          {
+            "kind": "math",
+            "text": "\\varphi=120^\\circ",
+            "voice": "Góc mới bằng một trăm hai mươi độ, không phải sáu mươi. Không lấy trị tuyệt đối tích vô hướng khi đề hỏi góc giữa hai vectơ.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/bfc818d30f7f95bcef406745da79ac703fdffa4db1c5a352c76884ffdfa2ce4f.mp3",
+            "duration": 8.472
+          }
+        ],
+        "action": "obtuse"
+      },
+      {
+        "title": "Ví dụ 8 · Tìm tham số",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec a=(m;2;-1),\\quad\\vec b=(1;-1;2)",
+            "voice": "Tìm m để a và b vuông góc. Cả hai đều khác vectơ không với mọi m vì a có thành phần thứ hai bằng hai, b có thành phần thứ nhất bằng một.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/c7cbe8ff7df61b422ad425fbee448614073febf542bcfc615f462e37bd1b5468.mp3",
+            "duration": 10.056
+          },
+          {
+            "kind": "math",
+            "text": "\\vec a\\cdot\\vec b=m-2-2=m-4",
+            "voice": "Nhân các thành phần tương ứng rồi cộng, được m trừ bốn.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/7979fb8fda376501b07265bfb8c0f4785a1af9b332fa9d600fd4be042ce79fec.mp3",
+            "duration": 4.704
+          },
+          {
+            "kind": "math",
+            "text": "\\vec a\\perp\\vec b\\iff m-4=0\\iff m=4",
+            "voice": "Điều kiện vuông góc cho m bằng bốn. Thay lại, bốn trừ hai trừ hai bằng không.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8fb2ec63faa407dbe1462d9e1e2ad03d898235b4cc9e6a36f8986e7d5f058cb1.mp3",
+            "duration": 6.816
+          }
+        ],
+        "action": "perp"
+      }
+    ],
+    "order": 6,
+    "total": 14
+  },
+  {
+    "id": "C07",
+    "title": "Tích vô hướng giải tam giác và độ dài",
+    "model": {
+      "points": {
+        "A": [
+          0,
+          0,
+          0
+        ],
+        "B": [
+          1,
+          1,
+          0
+        ],
+        "C": [
+          1,
+          0,
+          1
+        ]
+      },
+      "vectors": [
+        [
+          "A",
+          "B",
+          "blue"
+        ],
+        [
+          "A",
+          "C",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "A",
+          "B",
+          "solid"
+        ],
+        [
+          "A",
+          "C",
+          "solid"
+        ],
+        [
+          "B",
+          "C",
+          "solid"
+        ]
+      ],
+      "faces": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "poses": [
+        "base",
+        "length"
+      ],
+      "angle": [
+        "B",
+        "C"
+      ],
+      "variants": {
+        "length": {
+          "points": {
+            "O": [
+              0,
+              0,
+              0
+            ],
+            "U": [
+              3,
+              0,
+              0
+            ],
+            "V": [
+              1,
+              1.7320508075688772,
+              0
+            ],
+            "S": [
+              5,
+              -1.7320508075688772,
+              0
+            ]
+          },
+          "vectors": [
+            [
+              "O",
+              "U",
+              "blue"
+            ],
+            [
+              "O",
+              "V",
+              "cyan"
+            ],
+            [
+              "O",
+              "S",
+              "gold"
+            ]
+          ],
+          "edges": [],
+          "faces": [],
+          "poses": [
+            "base"
+          ],
+          "angle": [
+            "U",
+            "V"
+          ]
+        }
+      }
+    },
+    "pages": [
+      {
+        "title": "Độ dài tổng: phải giữ hạng chéo",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "|\\vec u+\\vec v|^2=(\\vec u+\\vec v)\\cdot(\\vec u+\\vec v)",
+            "voice": "Bình phương độ dài bằng tích vô hướng của vectơ với chính nó. Khai triển như bình phương một tổng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/f2fdea07e99cf952ffdfa30b353d89b4d88815480076320258b5e315626d8e9d.mp3",
+            "duration": 6.864
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u+\\vec v|^2=|\\vec u|^2+2\\vec u\\cdot\\vec v+|\\vec v|^2",
+            "voice": "Hạng chéo bằng hai lần tích vô hướng. Chỉ khi vuông góc, hạng chéo mới bằng không.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/0d0a1f5939271e548868c1ac5ca87879657327c59342b7c7dd94a44329d4ed0f.mp3",
+            "duration": 6.624
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u-\\vec v|^2=|\\vec u|^2-2\\vec u\\cdot\\vec v+|\\vec v|^2",
+            "voice": "Với hiệu, hạng chéo đổi sang dấu trừ. Đây là cầu nối giữa vectơ và định lý cô sin.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/68896aadd80714d0f4f5dc8bbd928a1f38a8a79e6cafcb4bafeecd2769240aaa.mp3",
+            "duration": 7.032
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Ví dụ 9 · Nhận dạng tam giác",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(0;0;0),\\quad B(1;1;0),\\quad C(1;0;1)",
+            "voice": "Xét tam giác A B C. Hãy tính ba cạnh và góc B A C. Góc tại A phải dùng hai vectơ cùng xuất phát từ A.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/26ed3ce4812172f52d863728c789b4324878e3a350eac0d456008277981a3e89.mp3",
+            "duration": 7.272
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=(1;1;0),\\quad\\overrightarrow{AC}=(1;0;1)",
+            "voice": "Hai vectơ cạnh tại A chính là u và v của ví dụ vừa rồi.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/9303ce63c140d0d06018fdf2d0e6f2cfa1fe497f44b360b95082331020d7b68c.mp3",
+            "duration": 4.392
+          },
+          {
+            "kind": "math",
+            "text": "AB=AC=\\sqrt2,\\quad\\overrightarrow{BC}=(0;-1;1)\\Rightarrow BC=\\sqrt2",
+            "voice": "Ba cạnh đều bằng căn hai. Vì ba điểm không thẳng hàng, đây là tam giác đều.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d4fd73eaae49d3cf79d0a6d6d4c2722f8daf08ce45055ea53fd11b1a60cdc00f.mp3",
+            "duration": 6.648
+          },
+          {
+            "kind": "math",
+            "text": "\\cos\\widehat{BAC}=\\frac{1}{2}\\Rightarrow\\widehat{BAC}=60^\\circ",
+            "voice": "Tích vô hướng của A B và A C bằng một, tích độ dài bằng hai. Góc tại A bằng sáu mươi độ, khớp với kết luận tam giác đều.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/1ecc61a0fa7a3d3c3039d145146d82cd88ae00bb7333cdf6068482dd9f8670f1.mp3",
+            "duration": 9.72
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Ví dụ 10 · Suy ra độ dài không cần tọa độ",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "|\\vec u|=3,\\quad|\\vec v|=2,\\quad\\theta=60^\\circ",
+            "voice": "Cho u dài ba, v dài hai, góc sáu mươi độ. Tính độ dài hai u trừ v. Bài này không cần gán tọa độ.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/f1931877d4572fbea27b6ef2e3f951909975daeb158d4fd0d87cfb2afcc1ebbc.mp3",
+            "duration": 8.88
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec v=3\\cdot2\\cdot\\tfrac12=3",
+            "voice": "Tích vô hướng bằng ba.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/0ac769a132148fdfd47b0ab7b6dad873ca73988d775caac8dafa4292e8b8c38d.mp3",
+            "duration": 2.472
+          },
+          {
+            "kind": "math",
+            "text": "\\begin{aligned}|2\\vec u-\\vec v|^2&=4|\\vec u|^2-4\\vec u\\cdot\\vec v+|\\vec v|^2\\\\&=36-12+4=28\\end{aligned}",
+            "voice": "Khai triển đúng hệ số: bốn lần bình phương u, trừ bốn lần tích vô hướng, cộng bình phương v. Bằng ba mươi sáu trừ mười hai cộng bốn, được hai mươi tám.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/03cff4dc0b693485e413d65f4ff5262a1ed8b963719e94a6fd14c8ab35b4eead.mp3",
+            "duration": 9.792
+          },
+          {
+            "kind": "math",
+            "text": "|2\\vec u-\\vec v|=2\\sqrt7",
+            "voice": "Độ dài không âm, nên lấy căn dương. Kết quả hai căn bảy.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/bfef6d459fc48534f7aad4eb28ea9f70ed8abbdcc8ee550f1181529dd6f094b0.mp3",
+            "duration": 5.832
+          }
+        ],
+        "action": "length"
+      }
+    ],
+    "order": 7,
+    "total": 14
+  },
+  {
+    "id": "C08",
+    "title": "Hình chiếu vectơ và khoảng cách sơ cấp",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          1,
+          1,
+          0
+        ],
+        "V": [
+          3,
+          1,
+          2
+        ],
+        "H": [
+          2,
+          2,
+          0
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ],
+        [
+          "O",
+          "H",
+          "gold"
+        ]
+      ],
+      "edges": [
+        [
+          "V",
+          "H",
+          "dash"
+        ]
+      ],
+      "faces": [],
+      "poses": [
+        "base",
+        "projection"
+      ],
+      "projection": [
+        "U",
+        "V"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Ví dụ 11 · Tìm chân chiếu bằng tích vô hướng",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(1;1;0),\\quad\\overrightarrow{OV}=(3;1;2)",
+            "voice": "Tìm hình chiếu H của V lên đường qua O có hướng u. Ta chỉ dùng hệ thức vectơ, chưa học phương trình đường thẳng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/25db12d6c3f8e1bf0f4718e8977b482652bbcc6697c9f07baccedd7a84bcbaf1.mp3",
+            "duration": 6.936
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{OH}=t\\vec u,\\quad\\overrightarrow{HV}=\\overrightarrow{OV}-t\\vec u",
+            "voice": "Vì H nằm theo phương u từ O, đặt O H bằng t u. Vectơ H V bằng O V trừ O H.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/630cad82a7d8115f6ac636bda91748998f910f68384c3e49306d1dbd00c8ce74.mp3",
+            "duration": 6.576
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{HV}\\cdot\\vec u=0\\Rightarrow4-2t=0\\Rightarrow t=2",
+            "voice": "H V vuông góc u. Nhân vô hướng cho phương trình bốn trừ hai t bằng không, suy ra t bằng hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8fbe6d29eeec230df7857ebd549ce2977c3381fd3746456aa8bf13120849a369.mp3",
+            "duration": 6.504
+          },
+          {
+            "kind": "math",
+            "text": "H(2;2;0),\\quad HV=\\sqrt{1^2+(-1)^2+2^2}=\\sqrt6",
+            "voice": "Chân chiếu H hai, hai, không. Vectơ H V một, âm một, hai, nên khoảng cách V H bằng căn sáu.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/44aaede4b23ce2ead28180342fbc89e184a141125530490d73351acce0336af9.mp3",
+            "duration": 9.264
+          }
+        ],
+        "action": "projection"
+      },
+      {
+        "title": "Vì sao chân chiếu cho khoảng cách ngắn nhất?",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{OQ}=s\\vec u:\\quad VQ^2=VH^2+HQ^2\\ge VH^2",
+            "voice": "Với bất kỳ Q trên phương u qua O, tam giác V H Q vuông ở H. Định lý Py ta go cho V Q bình phương bằng V H bình phương cộng H Q bình phương. Vì thế khoảng cách nhỏ nhất tại H.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/885b7cade5e97542584e509d724f5e644ee6c42f0c5590931601925fced77039.mp3",
+            "duration": 12.192
+          },
+          {
+            "kind": "math",
+            "text": "\\operatorname{proj}_{\\vec u}\\vec v=\\frac{\\vec v\\cdot\\vec u}{|\\vec u|^2}\\vec u\\quad(\\vec u\\ne\\vec0)",
+            "voice": "Công thức tổng quát của hình chiếu vectơ: tích vô hướng chia bình phương độ dài hướng chiếu, rồi nhân với hướng chiếu. Kết quả là một vectơ, khác với hình chiếu có dấu là một số.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/e0c9692381ee47e1c161b79d49e14e61a1ec399ed8d5ec7a701d06ecf9988f2e.mp3",
+            "duration": 11.4
+          },
+          {
+            "kind": "text",
+            "text": "Nếu hệ số âm, chân chiếu ở phía ngược chiều.",
+            "voice": "Hệ số t có thể âm. Khi đó chân chiếu ở phía ngược chiều dương của u. Không thay t bằng trị tuyệt đối; làm vậy sẽ dời chân chiếu sang một điểm khác.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/454c2b2269d16fcaeafbf1b60ae40adf285aeeca9e720835317305dc185bd9e4.mp3",
+            "duration": 9.984
+          }
+        ],
+        "action": "projection"
+      }
+    ],
+    "order": 8,
+    "total": 14
+  },
+  {
+    "id": "C09",
+    "title": "Mở rộng: tích có hướng và quy tắc bàn tay phải",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          2,
+          0,
+          0
+        ],
+        "V": [
+          0,
+          2,
+          0
+        ],
+        "S": [
+          2,
+          2,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          3
+        ],
+        "R": [
+          0,
+          0,
+          -3
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "U",
+          "S",
+          "solid"
+        ],
+        [
+          "V",
+          "S",
+          "solid"
+        ]
+      ],
+      "faces": [
+        [
+          "O",
+          "U",
+          "S",
+          "V"
+        ]
+      ],
+      "poses": [
+        "base",
+        "normal",
+        "reverse"
+      ],
+      "normal": [
+        "O",
+        "N"
+      ],
+      "reverse": [
+        "O",
+        "R"
+      ],
+      "angle": [
+        "U",
+        "V"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Một phép toán trả về vectơ",
+        "rows": [
+          {
+            "kind": "text",
+            "text": "Tích vô hướng → số. Tích có hướng → vectơ.",
+            "voice": "Từ đây là phần mở rộng. Tích có hướng của u và v là một vectơ vuông góc cả hai vectơ. Ta dùng ký hiệu u nhân có hướng v. Đừng nhầm với tích vô hướng, vốn trả về một số.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/872a74310ac523e235d4f562aee2da74ae30fd0c18ec86b8bcfef9c9a5868dd1.mp3",
+            "duration": 12.72
+          },
+          {
+            "kind": "math",
+            "text": "\\vec n=\\vec u\\times\\vec v,\\quad\\vec n\\perp\\vec u,\\quad\\vec n\\perp\\vec v",
+            "voice": "Khi u và v không cùng phương, tích có hướng khác vectơ không, vuông góc với cả hai. Hình minh họa mũi tên vàng có hướng pháp tuyến, đã thu ngắn để bố cục rõ; độ lớn thật luôn tính bằng công thức.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/bfc3c10a5f2ca93f2ecb138e85ad7ddbeaf3ad49d3900aaf32ab641f65e32ae4.mp3",
+            "duration": 12.96
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u\\times\\vec v|=|\\vec u|\\,|\\vec v|\\sin\\theta",
+            "voice": "Độ lớn tích có hướng bằng tích hai độ dài nhân sin góc, cũng chính là diện tích hình bình hành dựng trên hai vectơ.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/a0a70d51841aaba4cfdf3717e48823f3518c8454728021e85db886824ce678dd.mp3",
+            "duration": 6.816
+          }
+        ],
+        "action": "normal"
+      },
+      {
+        "title": "Hướng do thứ tự quyết định",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec i\\times\\vec j=\\vec k,\\quad\\vec j\\times\\vec k=\\vec i,\\quad\\vec k\\times\\vec i=\\vec j",
+            "voice": "Trong hệ trục thuận, thứ tự tuần hoàn i, j, k cho kết quả dương. Quy tắc bàn tay phải: cuộn các ngón từ vectơ thứ nhất sang vectơ thứ hai theo góc nhỏ hơn một trăm tám mươi độ, ngón cái chỉ hướng tích có hướng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/53e1c6f0aef8bb4ee332385995dee26e9af300bbd9fc3255cbc89d64daf4f815.mp3",
+            "duration": 14.208
+          },
+          {
+            "kind": "math",
+            "text": "\\vec v\\times\\vec u=-(\\vec u\\times\\vec v)",
+            "voice": "Đổi thứ tự hai vectơ thì đổi hướng kết quả. Trên hình, mũi tên đảo từ phía dương sang phía âm z.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/c2955d87aaa05ac29b53a01094f846ae74b82e02de395527bd7408fac769874e.mp3",
+            "duration": 7.776
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u,\\vec v\\ne\\vec0:\\quad\\vec u\\times\\vec v=\\vec0\\iff\\vec v=\\lambda\\vec u",
+            "voice": "Tích có hướng bằng vectơ không khi hai vectơ phụ thuộc tuyến tính. Nếu cả hai khác không, điều đó nghĩa là cùng phương. Nếu có vectơ không, tích cũng bằng không và không có hướng pháp tuyến xác định.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/ec5de1195a7591568ef0e887adf3ff1daf0816a49d1a206ef1d5437faba12242.mp3",
+            "duration": 13.176
+          }
+        ],
+        "action": "reverse"
+      },
+      {
+        "title": "Công thức tọa độ, chú ý thành phần giữa",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(a;b;c),\\quad\\vec v=(d;e;f)",
+            "voice": "Ghi tọa độ theo cùng thứ tự x, y, z.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/67c10811e746621e5de02e18c7e3a76b6ff99ff46ea935319addb97d454b698a.mp3",
+            "duration": 3.888
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\times\\vec v=(bf-ce;\\ cd-af;\\ ae-bd)",
+            "voice": "Thành phần x bằng b f trừ c e, thành phần y bằng c d trừ a f, thành phần z bằng a e trừ b d. Thành phần giữa rất hay sai dấu.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/995d9c22ba1b2ab1c5c03dbc7f8104db20245e8673f15b2add7d51e7141e8bf1.mp3",
+            "duration": 9.6
+          },
+          {
+            "kind": "math",
+            "text": "\\begin{vmatrix}\\vec i&\\vec j&\\vec k\\\\a&b&c\\\\d&e&f\\end{vmatrix}",
+            "voice": "Có thể dùng bảng định thức để nhớ, nhưng học sinh chưa học định thức chỉ cần công thức tọa độ và cách kiểm tra vuông góc. Khai triển hàng đầu có dấu cộng, trừ, cộng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/6ed87e3d5122de72e734bc7cb84961be35e3cb7620a206297cdf61542d4e4e1a.mp3",
+            "duration": 11.16
+          }
+        ],
+        "action": "base"
+      }
+    ],
+    "order": 9,
+    "total": 14
+  },
+  {
+    "id": "C10",
+    "title": "Tính tích có hướng và kiểm tra bằng hình học",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          1,
+          2,
+          0
+        ],
+        "V": [
+          0,
+          1,
+          2
+        ],
+        "S": [
+          1,
+          3,
+          2
+        ],
+        "N": [
+          2,
+          -1,
+          0.5
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "U",
+          "S",
+          "solid"
+        ],
+        [
+          "V",
+          "S",
+          "solid"
+        ]
+      ],
+      "faces": [
+        [
+          "O",
+          "U",
+          "S",
+          "V"
+        ]
+      ],
+      "poses": [
+        "base",
+        "normal"
+      ],
+      "normal": [
+        "O",
+        "N"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Ví dụ 12 · Tính và kiểm chứng",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(1;2;0),\\quad\\vec v=(0;1;2)",
+            "voice": "Tính tích có hướng của hai vectơ. Sau đó kiểm tra kết quả có vuông góc cả hai hay không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8e4a6f85c0c2a0b423221405b6aa9be2aa8723d79c1d41e64431cdedea7aff30.mp3",
+            "duration": 6.528
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\times\\vec v=(2\\cdot2-0\\cdot1;0\\cdot0-1\\cdot2;1\\cdot1-2\\cdot0)",
+            "voice": "Lần lượt thay vào ba thành phần, chú ý phần y là không trừ hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/59e56579749aa6e924c70f2118edb09c7d32075f3761c81c21b5ffaf0eb5cf98.mp3",
+            "duration": 4.752
+          },
+          {
+            "kind": "math",
+            "text": "\\vec n=(4;-2;1)",
+            "voice": "Kết quả bốn, âm hai, một.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/5716d48cd0b5949922cf20b61004166c1da1c38b5014523f833e448341d15dc5.mp3",
+            "duration": 3.312
+          },
+          {
+            "kind": "math",
+            "text": "\\vec n\\cdot\\vec u=4-4=0,\\quad\\vec n\\cdot\\vec v=-2+2=0",
+            "voice": "Nhân vô hướng với u và v đều bằng không. Hai phép kiểm tra này giúp bắt lỗi dấu hoặc thứ tự.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/6170a5dac4c34449d7188d7991a0642ca88113d4b2d33d3c35248d7d8f9fc49e.mp3",
+            "duration": 7.224
+          }
+        ],
+        "action": "normal"
+      },
+      {
+        "title": "Kiểm tra độ lớn độc lập",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "|\\vec n|^2=16+4+1=21",
+            "voice": "Bình phương độ dài kết quả bằng hai mươi mốt.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/8a64557a4db21f673961f0d37a154ed51e008f96b43ed3c9bcbce08605e2c5a8.mp3",
+            "duration": 3.432
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u|^2=5,\\quad|\\vec v|^2=5,\\quad\\vec u\\cdot\\vec v=2",
+            "voice": "Hai vectơ ban đầu đều có bình phương độ dài bằng năm và tích vô hướng bằng hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/13da54f10a2687ca6bb6facda3556ae3158cf7138c74b50d17979649a36eca65.mp3",
+            "duration": 5.064
+          },
+          {
+            "kind": "math",
+            "text": "\\begin{aligned}|\\vec u\\times\\vec v|^2&=|\\vec u|^2|\\vec v|^2-(\\vec u\\cdot\\vec v)^2\\\\&=25-4=21\\end{aligned}",
+            "voice": "Đẳng thức La grăng cho cùng kết quả hai mươi mốt. Nó xuất phát từ sin bình phương cộng cô sin bình phương bằng một. Phép kiểm tra độc lập này còn giúp tính diện tích khi không cần hướng.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/0f92ee11b504cb9c25565515df4733fb91340c305311848b6d767057c012c92e.mp3",
+            "duration": 12.6
+          }
+        ],
+        "action": "normal"
+      }
+    ],
+    "order": 10,
+    "total": 14
+  },
+  {
+    "id": "C11",
+    "title": "Diện tích tam giác và thể tích tứ diện",
+    "model": {
+      "points": {
+        "A": [
+          0,
+          0,
+          0
+        ],
+        "B": [
+          2,
+          0,
+          0
+        ],
+        "C": [
+          0,
+          3,
+          0
+        ],
+        "D": [
+          1,
+          1,
+          4
+        ],
+        "H": [
+          1,
+          1,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          2.8
+        ]
+      },
+      "vectors": [],
+      "edges": [
+        [
+          "A",
+          "B",
+          "solid"
+        ],
+        [
+          "B",
+          "C",
+          "solid"
+        ],
+        [
+          "C",
+          "A",
+          "dash"
+        ],
+        [
+          "D",
+          "A",
+          "solid"
+        ],
+        [
+          "D",
+          "B",
+          "solid"
+        ],
+        [
+          "D",
+          "C",
+          "solid"
+        ],
+        [
+          "D",
+          "H",
+          "dash"
+        ]
+      ],
+      "faces": [
+        [
+          "A",
+          "B",
+          "C"
+        ]
+      ],
+      "poses": [
+        "base",
+        "normal",
+        "volume"
+      ],
+      "normal": [
+        "A",
+        "N"
+      ],
+      "height": [
+        "D",
+        "H"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Ví dụ 13 · Diện tích trong không gian",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(0;0;0),\\quad B(2;0;0),\\quad C(0;3;0)",
+            "voice": "Tính diện tích tam giác A B C bằng tích có hướng. Hai vectơ cạnh phải có chung điểm đầu A.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/2dbaa5fa9acc26275ca02ef690d07cec2b414e7e43f3a0d68ee2bc7135379a95.mp3",
+            "duration": 6.936
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=(2;0;0),\\quad\\overrightarrow{AC}=(0;3;0)",
+            "voice": "Hai cạnh theo chiều x và y, độ dài hai và ba.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/a4c14c0618cec428fbca3b77422b5748eb1461deae9a1516165c3b38715f937e.mp3",
+            "duration": 4.296
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}\\times\\overrightarrow{AC}=(0;0;6)",
+            "voice": "Tích có hướng hướng dương z và có độ dài sáu. Mũi tên minh họa hướng đã thu ngắn, không dùng để đo độ lớn.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/97ee84ec6d2536052e1f636e989f12724defb82a5f6cac7f6b8691875bf8140b.mp3",
+            "duration": 8.328
+          },
+          {
+            "kind": "math",
+            "text": "S_{ABC}=\\tfrac12|\\overrightarrow{AB}\\times\\overrightarrow{AC}|=3",
+            "voice": "Diện tích tam giác bằng một nửa diện tích hình bình hành, nên bằng ba đơn vị diện tích.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4151c3ec0bb06307df926cc2fdb3f6ec897cb054310c9c206f08a13133e5b6d4.mp3",
+            "duration": 5.664
+          }
+        ],
+        "action": "normal"
+      },
+      {
+        "title": "Ví dụ 14 · Đáy, chiều cao và thể tích",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "D(1;1;4),\\quad H(1;1;0),\\quad DH=4",
+            "voice": "Thêm D một, một, bốn. Đáy A B C nằm trong mặt phẳng tọa độ O x y. H một, một, không là chân chiếu của D, nên chiều cao bằng bốn.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4e950dfcc0ad7246a2ebd57b24382fc48951346941f71752270b249385fb6c5f.mp3",
+            "duration": 11.304
+          },
+          {
+            "kind": "math",
+            "text": "V_{ABCD}=\\tfrac13S_{ABC}\\cdot DH=\\tfrac13\\cdot3\\cdot4=4",
+            "voice": "Thể tích tứ diện bằng một phần ba diện tích đáy nhân chiều cao, được bốn.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/023a68d1e527f3128870f0c10b33243c61038c3a9a3eadff6b67abdc28165441.mp3",
+            "duration": 5.064
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AD}=(1;1;4),\\quad(\\overrightarrow{AB}\\times\\overrightarrow{AC})\\cdot\\overrightarrow{AD}=24",
+            "voice": "Tích hỗn hợp bằng tích vô hướng của pháp tuyến đáy với vectơ A D. Sáu nhân bốn bằng hai mươi bốn.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/cdc24cc0bf911abcbe491a52ff25a7f4f6e315592de2695c3cf6d05fce1f9fd7.mp3",
+            "duration": 6.288
+          }
+        ],
+        "action": "volume"
+      },
+      {
+        "title": "Công thức tổng quát và ý nghĩa hệ số",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "V_{ABCD}=\\frac16\\left|(\\overrightarrow{AB}\\times\\overrightarrow{AC})\\cdot\\overrightarrow{AD}\\right|",
+            "voice": "Tổng quát, thể tích tứ diện bằng một phần sáu trị tuyệt đối tích hỗn hợp. Tích hỗn hợp có dấu theo hướng, nhưng thể tích phải không âm.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/5cb41146ad55a7eaa44781780d228c95b33dff13f41b6ff2d1ccbdc2deec00ca.mp3",
+            "duration": 9.168
+          },
+          {
+            "kind": "text",
+            "text": "Hình hộp: hệ số một. Tứ diện: hệ số một phần sáu.",
+            "voice": "Tích có hướng cho diện tích hình bình hành. Nhân với thành phần chiều cao cho thể tích hình hộp. Tam giác đáy chỉ bằng một nửa hình bình hành; khối chóp lại nhân một phần ba. Vì thế tứ diện có hệ số một phần sáu.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d2c036f000b917cdaaa81e870fca07cc781dec0ea86e86fe51e7b8c38885ed30.mp3",
+            "duration": 15.024
+          },
+          {
+            "kind": "math",
+            "text": "(\\overrightarrow{AB}\\times\\overrightarrow{AC})\\cdot\\overrightarrow{AD}=0\\Rightarrow V=0",
+            "voice": "Nếu tích hỗn hợp bằng không, khối suy biến. Nếu A B C không thẳng hàng thì điều này nói D cùng mặt phẳng với A B C. Không được gọi đó là tứ diện có thể tích dương.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/b01c68d31ed095ba0da1bcd83dd509efc38cf2d3d84dfe38ba1c5cacaa8f2976.mp3",
+            "duration": 11.328
+          }
+        ],
+        "action": "volume"
+      }
+    ],
+    "order": 11,
+    "total": 14
+  },
+  {
+    "id": "C12",
+    "title": "Bài tổng hợp: diện tích nghiêng và điểm đồng phẳng",
+    "model": {
+      "points": {
+        "A": [
+          1,
+          0,
+          1
+        ],
+        "B": [
+          2,
+          2,
+          1
+        ],
+        "C": [
+          1,
+          1,
+          3
+        ],
+        "D": [
+          2,
+          3,
+          3
+        ],
+        "N": [
+          3,
+          -1,
+          1.5
+        ]
+      },
+      "vectors": [
+        [
+          "A",
+          "B",
+          "blue"
+        ],
+        [
+          "A",
+          "C",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "A",
+          "B",
+          "solid"
+        ],
+        [
+          "B",
+          "D",
+          "solid"
+        ],
+        [
+          "D",
+          "C",
+          "solid"
+        ],
+        [
+          "C",
+          "A",
+          "solid"
+        ],
+        [
+          "B",
+          "C",
+          "dash"
+        ]
+      ],
+      "faces": [
+        [
+          "A",
+          "B",
+          "D",
+          "C"
+        ]
+      ],
+      "poses": [
+        "base",
+        "normal"
+      ],
+      "normal": [
+        "A",
+        "N"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Ví dụ 15 · Diện tích một tam giác nghiêng",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(1;0;1),\\quad B(2;2;1),\\quad C(1;1;3)",
+            "voice": "Tam giác lần này nghiêng trong không gian. Tính diện tích, sau đó tìm t để D hai, ba, t cùng mặt phẳng với A B C. Không cần biết phương trình mặt phẳng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/5a1354e842e8d5c072037d3129a19508c0f92cb4a70e9b1d3e1aa6b5a2ec42f8.mp3",
+            "duration": 10.992
+          },
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=(1;2;0),\\quad\\overrightarrow{AC}=(0;1;2)",
+            "voice": "Luôn trừ A khỏi B và C. Đây chính là cặp vectơ đã tính ở ví dụ mười hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/295c65507e1e476a9137da79d2b04c85e0f8137dfc7bbab81a2bf31d0faf90e2.mp3",
+            "duration": 5.808
+          },
+          {
+            "kind": "math",
+            "text": "\\vec n=\\overrightarrow{AB}\\times\\overrightarrow{AC}=(4;-2;1)",
+            "voice": "Vectơ vuông góc mặt phẳng chứa tam giác là bốn, âm hai, một.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/56bf61ff81d8294b8158e3b107d89812ad185176c170f7ad2edf1cd066c0fb8e.mp3",
+            "duration": 4.92
+          },
+          {
+            "kind": "math",
+            "text": "S_{ABC}=\\frac{\\sqrt{21}}2",
+            "voice": "Độ dài n bằng căn hai mươi mốt. Chia hai, được diện tích căn hai mươi mốt trên hai.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/c981a12a61a0aea9788daf0b086bc86ba5de94f390739d9ba52eb8b352c18c0c.mp3",
+            "duration": 7.104
+          }
+        ],
+        "action": "normal"
+      },
+      {
+        "title": "Ví dụ 16 · Cùng mặt phẳng bằng tích hỗn hợp",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "D(2;3;t)\\Rightarrow\\overrightarrow{AD}=(1;3;t-1)",
+            "voice": "Viết vectơ A D bằng một, ba, t trừ một.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/3428fdab9c194e4216febdfa603e434abe5da75d281cd08ef48ad0638d59ccb3.mp3",
+            "duration": 4.2
+          },
+          {
+            "kind": "math",
+            "text": "\\vec n\\cdot\\overrightarrow{AD}=4-6+(t-1)=t-3",
+            "voice": "Lấy tích vô hướng với n, được t trừ ba. Vì tam giác A B C không suy biến, D cùng mặt phẳng khi và chỉ khi tích này bằng không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/215cead87a0102ddd52467fb9f6f6d08d421450ef2aa991dc3afddeaffd95e48.mp3",
+            "duration": 10.152
+          },
+          {
+            "kind": "math",
+            "text": "t-3=0\\Rightarrow t=3",
+            "voice": "Suy ra t bằng ba.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/87dd3c57d17adc88f9a95ba922e7e97da1276815a85ccd46d6536270de9c9087.mp3",
+            "duration": 2.376
+          },
+          {
+            "kind": "math",
+            "text": "t=3:\\quad\\overrightarrow{AD}=\\overrightarrow{AB}+\\overrightarrow{AC}",
+            "voice": "Kiểm tra lại bằng hình bình hành: một, ba, hai bằng một, hai, không cộng không, một, hai. D chính là đỉnh thứ tư của hình bình hành A B D C, nên chắc chắn đồng phẳng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/69165937742d1dec966fbf0af3c9a8e6e0a8438fe25a730741dee7ea881f224a.mp3",
+            "duration": 13.152
+          }
+        ],
+        "action": "base"
+      }
+    ],
+    "order": 12,
+    "total": 14
+  },
+  {
+    "id": "C13",
+    "title": "Tự luyện có lời giải · Từ cơ bản đến tổng hợp",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "A": [
+          1,
+          2,
+          0
+        ],
+        "B": [
+          3,
+          0,
+          2
+        ],
+        "I": [
+          2,
+          1,
+          1
+        ],
+        "U": [
+          1,
+          0,
+          1
+        ],
+        "V": [
+          0,
+          2,
+          0
+        ],
+        "S": [
+          1,
+          2,
+          1
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "A",
+          "B",
+          "solid"
+        ],
+        [
+          "U",
+          "S",
+          "solid"
+        ],
+        [
+          "V",
+          "S",
+          "solid"
+        ]
+      ],
+      "faces": [
+        [
+          "O",
+          "U",
+          "S",
+          "V"
+        ]
+      ],
+      "poses": [
+        "base",
+        "points",
+        "orthogonal",
+        "obtuse_sum"
+      ],
+      "variants": {
+        "points": {
+          "points": {
+            "O": [
+              0,
+              0,
+              0
+            ],
+            "A": [
+              1,
+              2,
+              0
+            ],
+            "B": [
+              3,
+              0,
+              2
+            ],
+            "I": [
+              2,
+              1,
+              1
+            ]
+          },
+          "vectors": [],
+          "edges": [
+            [
+              "A",
+              "B",
+              "solid"
+            ]
+          ],
+          "faces": [],
+          "poses": [
+            "base"
+          ]
+        },
+        "orthogonal": {
+          "points": {
+            "O": [
+              0,
+              0,
+              0
+            ],
+            "U": [
+              1,
+              0,
+              1
+            ],
+            "V": [
+              0,
+              2,
+              0
+            ],
+            "S": [
+              1,
+              2,
+              1
+            ]
+          },
+          "vectors": [
+            [
+              "O",
+              "U",
+              "blue"
+            ],
+            [
+              "O",
+              "V",
+              "cyan"
+            ]
+          ],
+          "edges": [
+            [
+              "U",
+              "S",
+              "solid"
+            ],
+            [
+              "V",
+              "S",
+              "solid"
+            ]
+          ],
+          "faces": [
+            [
+              "O",
+              "U",
+              "S",
+              "V"
+            ]
+          ],
+          "poses": [
+            "base"
+          ],
+          "angle": [
+            "U",
+            "V"
+          ]
+        },
+        "obtuse_sum": {
+          "points": {
+            "O": [
+              0,
+              0,
+              0
+            ],
+            "U": [
+              2,
+              0,
+              0
+            ],
+            "V": [
+              -1.5,
+              2.598076211353316,
+              0
+            ],
+            "S": [
+              0.5,
+              2.598076211353316,
+              0
+            ]
+          },
+          "vectors": [
+            [
+              "O",
+              "U",
+              "blue"
+            ],
+            [
+              "O",
+              "V",
+              "cyan"
+            ],
+            [
+              "O",
+              "S",
+              "gold"
+            ]
+          ],
+          "edges": [
+            [
+              "U",
+              "S",
+              "solid"
+            ],
+            [
+              "V",
+              "S",
+              "solid"
+            ]
+          ],
+          "faces": [
+            [
+              "O",
+              "U",
+              "S",
+              "V"
+            ]
+          ],
+          "poses": [
+            "base"
+          ],
+          "angle": [
+            "U",
+            "V"
+          ]
+        }
+      }
+    },
+    "pages": [
+      {
+        "title": "Bài 17 · Điểm và vectơ",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "A(1;2;0),\\quad B(3;0;2)",
+            "voice": "Bài tự luyện một. Tính A B, độ dài A B và trung điểm I. Dừng video và làm trong khoảng một phút.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/ddd9c9b202182f9490bb821826c9701bba29a5e556c80ee86e6c9ca238d72488.mp3",
+            "duration": 8.016
+          },
+          {
+            "kind": "text",
+            "text": "Tự giải trước khi xem bước tiếp theo.",
+            "voice": "Gợi ý: điểm cuối trừ điểm đầu, căn tổng bình phương, rồi trung bình cộng tọa độ.",
+            "pause": 8,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/9c81c284d30a599ebd23652148b0e2e11db73c4efeac2f27092c4fd361f0929d.mp3",
+            "duration": 6.168
+          }
+        ],
+        "action": "points"
+      },
+      {
+        "title": "Lời giải bài 17",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=(2;-2;2)",
+            "voice": "Ba trừ một bằng hai, không trừ hai bằng âm hai, hai trừ không bằng hai.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/bf6e8adfc4ce08935d26c95ac9d6c76766b40c68f2014f07fc5dc9617059937a.mp3",
+            "duration": 5.472
+          },
+          {
+            "kind": "math",
+            "text": "AB=\\sqrt{4+4+4}=2\\sqrt3",
+            "voice": "Căn mười hai bằng hai căn ba.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/5b370eee45f1b21b72c87088519dedcadb66fc6f9c186571bcbcc02c613597e7.mp3",
+            "duration": 2.856
+          },
+          {
+            "kind": "math",
+            "text": "I\\left(\\frac{1+3}2;\\frac{2+0}2;\\frac{0+2}2\\right)=(2;1;1)",
+            "voice": "Trung điểm I hai, một, một. Các em có thể kiểm tra vectơ A I bằng vectơ I B.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/5bb7a1edfad0db2ed41a87b702c414699f05e0d3af47e7a7419052acd8412854.mp3",
+            "duration": 7.104
+          }
+        ],
+        "action": "points"
+      },
+      {
+        "title": "Bài 18 · Góc và diện tích",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u=(1;0;1),\\quad\\vec v=(0;2;0)",
+            "voice": "Tính góc giữa u và v, rồi diện tích hình bình hành trên hai vectơ. Hãy dừng video để tự làm.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/f4568358fb906527c1297266f87ab0e1797507ecb4d400d51f0097ec0774f369.mp3",
+            "duration": 7.392
+          },
+          {
+            "kind": "text",
+            "text": "Góc dùng tích vô hướng; diện tích dùng tích có hướng.",
+            "voice": "Trước hết xác định u chấm v, sau đó tính u nhân có hướng v. Không nhầm số với vectơ.",
+            "pause": 8,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/556c69e92e5bb1408dca93c1ff7ca9f2120bd56dc4a345e8dbfcbaf1bb681397.mp3",
+            "duration": 6.12
+          }
+        ],
+        "action": "orthogonal"
+      },
+      {
+        "title": "Lời giải bài 18",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec v=0,\\quad|\\vec u|=\\sqrt2,\\quad|\\vec v|=2",
+            "voice": "Hai vectơ đều khác không và tích vô hướng bằng không.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d83d479034b5d597fb3fbe6b06c52c6d5a5a20d839eb07c3248005e23170808d.mp3",
+            "duration": 3.696
+          },
+          {
+            "kind": "math",
+            "text": "\\theta=90^\\circ",
+            "voice": "Vậy góc giữa hai vectơ bằng chín mươi độ.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/a254d9a12f1be73a92ee127d88de3de38066f96242022a410b962348f061e692.mp3",
+            "duration": 3.216
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\times\\vec v=(-2;0;2)\\Rightarrow S=2\\sqrt2",
+            "voice": "Tích có hướng âm hai, không, hai. Độ lớn bằng hai căn hai, cũng là diện tích hình bình hành. Kiểm tra bằng tích hai cạnh vuông góc: căn hai nhân hai.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/22698512a94436e12dc3ac32645a2467724e078ad5b77c1687f7044858d362ac.mp3",
+            "duration": 12.096
+          }
+        ],
+        "action": "orthogonal"
+      },
+      {
+        "title": "Bài 19 · Công thức tổng quát",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "|\\vec u|=2,\\quad|\\vec v|=3,\\quad\\vec u\\cdot\\vec v=-3",
+            "voice": "Cho độ dài u bằng hai, v bằng ba, tích vô hướng âm ba. Tính góc, độ dài tổng và diện tích tam giác dựng trên hai vectơ. Hãy tự giải rồi xem lời giải.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/4639606b7bd16759114dfb676efc21ad89aedb62ae8fd2c4475c1bc7ea16ab78.mp3",
+            "duration": 12.336
+          },
+          {
+            "kind": "text",
+            "text": "Kiểm tra dấu của góc và hệ số một phần hai.",
+            "voice": "Góc sẽ tù vì tích vô hướng âm. Diện tích tam giác phải bằng một nửa diện tích hình bình hành.",
+            "pause": 8,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/157afc10d2d7a74448ce7fa96f2d01b4f598c252d439efc1f0170f02fe2b03e9.mp3",
+            "duration": 6.984
+          }
+        ],
+        "action": "obtuse_sum"
+      },
+      {
+        "title": "Lời giải bài 19 · Góc và độ dài",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\cos\\theta=\\frac{-3}{2\\cdot3}=-\\frac12\\Rightarrow\\theta=120^\\circ",
+            "voice": "Cô sin bằng âm một phần hai, góc một trăm hai mươi độ.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/e69aa66bd90bc96b62a0ecf5b3b8167a525d3a1ce3a599892553d70fe1799a4b.mp3",
+            "duration": 4.416
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u+\\vec v|^2=4+9+2(-3)=7",
+            "voice": "Bình phương độ dài tổng bằng bốn cộng chín trừ sáu, được bảy.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/11eaafbce81e4432392a8990624fb3e499c8d2f54849965fac571692fdaf68c5.mp3",
+            "duration": 4.704
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u+\\vec v|=\\sqrt7",
+            "voice": "Độ dài tổng bằng căn bảy.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/c164102ac227ff0c3660980803ddb943fa1449504cd951d092e1eede2129ae6a.mp3",
+            "duration": 2.784
+          }
+        ],
+        "action": "obtuse_sum"
+      },
+      {
+        "title": "Lời giải bài 19 · Diện tích",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "|\\vec u\\times\\vec v|^2=4\\cdot9-(-3)^2=27",
+            "voice": "Dùng đẳng thức La grăng: ba mươi sáu trừ chín bằng hai mươi bảy.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/9e043d41f804eb98fc7ea6e48dc4bded50ca28c3ea7cfc23c1008239ae9aab53.mp3",
+            "duration": 4.848
+          },
+          {
+            "kind": "math",
+            "text": "S_{\\triangle}=\\tfrac12\\sqrt{27}=\\frac{3\\sqrt3}{2}",
+            "voice": "Diện tích tam giác bằng ba căn ba trên hai.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/685b0ba00af1a30b674053b6de34599832e1c18bb07596a0fa724c575029b5bb.mp3",
+            "duration": 3.552
+          },
+          {
+            "kind": "math",
+            "text": "\\tfrac12\\cdot2\\cdot3\\sin120^\\circ=\\frac{3\\sqrt3}{2}",
+            "voice": "Kiểm tra theo công thức nửa tích hai cạnh nhân sin góc xen giữa, cũng được cùng kết quả.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/db661e590a37e003e05383b9d954f779d490f9e4dc83c2c482b73f9b687e1355.mp3",
+            "duration": 5.688
+          }
+        ],
+        "action": "obtuse_sum"
+      }
+    ],
+    "order": 13,
+    "total": 14
+  },
+  {
+    "id": "C14",
+    "title": "Chốt kiến thức và sửa lỗi thường gặp",
+    "model": {
+      "points": {
+        "O": [
+          0,
+          0,
+          0
+        ],
+        "U": [
+          2,
+          0,
+          0
+        ],
+        "V": [
+          0,
+          2,
+          0
+        ],
+        "S": [
+          2,
+          2,
+          0
+        ],
+        "N": [
+          0,
+          0,
+          2
+        ]
+      },
+      "vectors": [
+        [
+          "O",
+          "U",
+          "blue"
+        ],
+        [
+          "O",
+          "V",
+          "cyan"
+        ]
+      ],
+      "edges": [
+        [
+          "U",
+          "S",
+          "solid"
+        ],
+        [
+          "V",
+          "S",
+          "solid"
+        ]
+      ],
+      "faces": [
+        [
+          "O",
+          "U",
+          "S",
+          "V"
+        ]
+      ],
+      "poses": [
+        "base",
+        "normal"
+      ],
+      "normal": [
+        "O",
+        "N"
+      ]
+    },
+    "pages": [
+      {
+        "title": "Sơ đồ lựa chọn công cụ",
+        "rows": [
+          {
+            "kind": "text",
+            "text": "Vị trí, trung điểm, trọng tâm → tọa độ.",
+            "voice": "Nếu đề hỏi vị trí điểm, hãy dùng phép trừ tọa độ, trung điểm hoặc trọng tâm. Viết hệ thức vectơ trước để chọn đúng thứ tự điểm.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/ca681f67616263b42261fd5c9a27085509dc571004f16ac2e6d78ec775d235be.mp3",
+            "duration": 9.456
+          },
+          {
+            "kind": "text",
+            "text": "Góc, vuông góc, bình phương độ dài → tích vô hướng.",
+            "voice": "Nếu hỏi góc, vuông góc hoặc bình phương độ dài, ưu tiên tích vô hướng. Nhớ điều kiện khác vectơ không khi tính góc.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/61ac53f9c96228af098bfc69f3b800ad7ee0181cea17d0260f99879f4bdda55e.mp3",
+            "duration": 8.52
+          },
+          {
+            "kind": "text",
+            "text": "Pháp tuyến, diện tích, thể tích → tích có hướng.",
+            "voice": "Nếu cần một vectơ vuông góc hai hướng, diện tích hoặc thể tích, dùng tích có hướng rồi tích hỗn hợp. Tích có hướng thuộc phần mở rộng, có thể ôn sau khi phần cơ bản đã chắc.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/1297972050e8cdade9a138d694bdeee744ec122f58a826ee5d928fb19451ceee.mp3",
+            "duration": 11.448
+          }
+        ],
+        "action": "base"
+      },
+      {
+        "title": "Những lỗi phải tự kiểm tra",
+        "rows": [
+          {
+            "kind": "math",
+            "text": "\\overrightarrow{AB}=B-A,\\quad\\overrightarrow{BA}=A-B",
+            "voice": "Lỗi đầu tiên là trừ ngược điểm. Luôn nói thành lời: điểm cuối trừ điểm đầu.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/765e6639436b7752d8c86c0466113f08c3f099b8f93adfc28a292d530e889018.mp3",
+            "duration": 6.432
+          },
+          {
+            "kind": "math",
+            "text": "|\\vec u+\\vec v|^2=|\\vec u|^2+|\\vec v|^2+2\\vec u\\cdot\\vec v",
+            "voice": "Lỗi thứ hai là cộng độ dài thay vì cộng vectơ. Đẳng thức này không đúng nói chung. Muốn tính độ dài tổng, bình phương rồi dùng tích vô hướng.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/b2cff5d4730e5c7b64661fe51c83cc5fb68ca2e6e2df58ae0c9fcb43faae22ca.mp3",
+            "duration": 10.728
+          },
+          {
+            "kind": "math",
+            "text": "\\vec u\\cdot\\vec v\\in\\mathbb R,\\quad\\vec u\\times\\vec v\\in\\mathbb R^3",
+            "voice": "Lỗi thứ ba là nhầm kiểu kết quả. Tích vô hướng là số; tích có hướng là vectơ ba thành phần.",
+            "gold": false,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/97a24dd86c1764786672d6dd56f76db8a18875b24bdb4ff9ac180d21d1290c7e.mp3",
+            "duration": 7.44
+          },
+          {
+            "kind": "math",
+            "text": "S_\\triangle=\\tfrac12|\\vec u\\times\\vec v|,\\quad V_{\\rm tetra}=\\tfrac16|(\\vec u\\times\\vec v)\\cdot\\vec w|",
+            "voice": "Lỗi cuối là quên hệ số một phần hai hoặc một phần sáu, hay quên trị tuyệt đối khi tính thể tích.",
+            "gold": true,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d084fb85c88d9c1a37b0d3f42383b806340578992afa64df63063f7f511c198e.mp3",
+            "duration": 6.144
+          }
+        ],
+        "action": "normal"
+      },
+      {
+        "title": "Em đã sẵn sàng cho bài tiếp theo",
+        "rows": [
+          {
+            "kind": "text",
+            "text": "Giải thích được công thức bằng hình học.",
+            "voice": "Trước khi chuyển bài, em hãy tự giải thích vì sao tọa độ vectơ là điểm cuối trừ điểm đầu; vì sao tích vô hướng tính góc; vì sao độ lớn tích có hướng là diện tích hình bình hành.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/6e8468cb851e23a1f071a0bbdd7d19e99f625f64db7ad7d0d60a61dab69589fe.mp3",
+            "duration": 10.464
+          },
+          {
+            "kind": "text",
+            "text": "Làm lại ba bài tự luyện mà không nhìn lời giải.",
+            "voice": "Làm lại các bài mười bảy, mười tám, mười chín trên giấy. Nếu còn sai dấu, trở lại đúng chương trong mục lục. Video có phụ đề và các chương để em tự học từng phần.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/42fc77a42cd76354a530f90739237e8e7cc2d6865e9b56f6a835d2f2534b9cbb.mp3",
+            "duration": 12.912
+          },
+          {
+            "kind": "text",
+            "text": "Bài 12.2.02: từ vectơ pháp tuyến đến mặt phẳng.",
+            "voice": "Trong bài tiếp theo, ta dùng vectơ pháp tuyến đã hiểu ở đây để xây dựng phương trình mặt phẳng. Cảm ơn các em đã học cùng thầy Nguyễn Văn Sang.",
+            "pause": 0,
+            "audio": "/tmp/manim-output/Bai_12_2_01_Oxyz/audio_cache/d01f311baee01cbdb5dce808ed4c681c766e90db42e62928ba8c27b159939b07.mp3",
+            "duration": 9.072
+          }
+        ],
+        "action": "base"
+      }
+    ],
+    "order": 14,
+    "total": 14
+  }
+]

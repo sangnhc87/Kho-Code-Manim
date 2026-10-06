@@ -1,0 +1,10 @@
+<frozen runpy>:128: RuntimeWarning: 'manim.__main__' found in sys.modules after import of package 'manim', but prior to execution of 'manim.__main__'; this may result in unpredictable behaviour
+Manim Community v0.19.0
+
+[10/04/26 06:14:27] WARNING  Some options were not      scene_file_writer.py:801
+                             used: {'shortest': '1',                            
+                             'metadata':                                        
+                             'comment=Rendered with                             
+                             Manim Community v0.19.0'}                          
+You are using manim version v0.19.0, but version v0.21.0 is available.
+You should consider upgrading via pip install -U manim

@@ -1739,48 +1739,51 @@ print(f"Video: {VIDEO_PATH}")
 print(f"Thời lượng: {minutes:02d}:{seconds:05.2f}")
 print(f"Dung lượng: {VIDEO_PATH.stat().st_size / 1024**2:.1f} MB")
 
-import ipywidgets as widgets
-from IPython.display import display
-from google.colab import files
+try:
+    import ipywidgets as widgets
+    from IPython.display import display
+    from google.colab import files
 
-print("\n------------------------------------------------------")
-print("BẤM VÀO ĐÂY NẾU TRÌNH DUYỆT CHẶN TẢI XUỐNG:")
+    print("\n------------------------------------------------------")
+    print("BẤM VÀO ĐÂY NẾU TRÌNH DUYỆT CHẶN TẢI XUỐNG:")
 
-video_button = widgets.Button(
-    description="Tải video MP4",
-    button_style="success",
-    layout=widgets.Layout(width="180px")
-)
+    video_button = widgets.Button(
+        description="Tải video MP4",
+        button_style="success",
+        layout=widgets.Layout(width="180px")
+    )
 
-source_button = widgets.Button(
-    description="Tải mã nguồn (.py)",
-    button_style="info",
-    layout=widgets.Layout(width="190px")
-)
+    source_button = widgets.Button(
+        description="Tải mã nguồn (.py)",
+        button_style="info",
+        layout=widgets.Layout(width="190px")
+    )
 
-transcript_button = widgets.Button(
-    description="Tải kịch bản lời đọc",
-    layout=widgets.Layout(width="200px")
-)
+    transcript_button = widgets.Button(
+        description="Tải kịch bản lời đọc",
+        layout=widgets.Layout(width="200px")
+    )
 
-video_button.on_click(
-    lambda _: files.download(str(VIDEO_PATH))
-)
+    video_button.on_click(
+        lambda _: files.download(str(VIDEO_PATH))
+    )
 
-source_button.on_click(
-    lambda _: files.download(str(SCRIPT))
-)
+    source_button.on_click(
+        lambda _: files.download(str(SCRIPT))
+    )
 
-transcript_button.on_click(
-    lambda _: files.download(str(WORK / "kich_ban_loi_doc.txt"))
-)
+    transcript_button.on_click(
+        lambda _: files.download(str(WORK / "kich_ban_loi_doc.txt"))
+    )
 
-display(widgets.HBox([
-    video_button,
-    source_button,
-    transcript_button
-]))
+    display(widgets.HBox([
+        video_button,
+        source_button,
+        transcript_button
+    ]))
 
-print("\nĐang gửi yêu cầu tải video về máy...")
-print("Nếu trình duyệt chặn tải tự động, thầy bấm nút 'Tải video MP4'.")
-files.download(str(VIDEO_PATH))
+    print("\nĐang gửi yêu cầu tải video về máy...")
+    print("Nếu trình duyệt chặn tải tự động, thầy bấm nút 'Tải video MP4'.")
+    files.download(str(VIDEO_PATH))
+except ImportError:
+    print("\nKhông chạy trên Google Colab nên bỏ qua bước tải file tự động.")
