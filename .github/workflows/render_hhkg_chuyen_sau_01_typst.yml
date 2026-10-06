@@ -1,0 +1,83 @@
+name: Render HHKG Chuyen Sau 01 - Manim Typst
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Manim-Typst/hhkg_chuyen_sau_01_manim_typst_STANDALONE.py"
+      - ".github/workflows/render_hhkg_chuyen_sau_01_typst.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg \
+            libcairo2-dev \
+            libpango1.0-dev \
+            pkg-config \
+            fonts-dejavu-core \
+            fonts-noto-core
+
+      - name: Install Manim with Typst support
+        run: |
+          python -m pip install --upgrade pip
+          pip install "manim[typst]==0.21.0" "edge-tts==7.2.8"
+
+      - name: Install Typst Binary
+        run: |
+          wget -q https://github.com/typst/typst/releases/download/v0.11.1/typst-x86_64-unknown-linux-musl.tar.xz
+          tar -xf typst-x86_64-unknown-linux-musl.tar.xz
+          sudo mv typst-x86_64-unknown-linux-musl/typst /usr/local/bin/
+
+      - name: Syntax check
+        run: |
+          python -m py_compile Manim-Typst/hhkg_chuyen_sau_01_manim_typst_STANDALONE.py
+
+      - name: Typst smoke test
+        run: |
+          python - <<'PY'
+          from manim import MathTypst
+          x = MathTypst("x^2 + y^2 = 1")
+          print("MathTypst OK:", type(x).__name__)
+          PY
+
+      - name: Render lesson
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python Manim-Typst/hhkg_chuyen_sau_01_manim_typst_STANDALONE.py
+
+      - name: Find and verify final video
+        shell: bash
+        run: |
+          VIDEO=$(find media -type f -name 'hhkg_chuyen_sau_01_manim_typst_1080p_WITH_AUDIO.mp4' | head -n 1)
+          test -n "$VIDEO"
+          echo "Final video: $VIDEO"
+          ffprobe -v error \
+            -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+
+      - name: Upload final MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-chuyen-sau-01-manim-typst
+          path: ${{ env.VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
