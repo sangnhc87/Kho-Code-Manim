@@ -702,7 +702,7 @@ class TraiPhang16Master(BaseLesson):
         self.clear_all(); self.add_hud("Đi men theo các cạnh có dài hơn không?","11 / 12"); self.add(roof_shell())
         edge_path=VGroup(solid(W(RAW["A"]),W(RAW["S"]),RED,4.8),solid(W(RAW["S"]),W(RAW["S1"]),RED,4.8),solid(W(RAW["S1"]),W(RAW["B1"]),RED,4.8))
         route,_=folded_route(); self.add(edge_path,route)
-        card=lesson_card("SO SÁNH",[("math","L_ed=5+8+5=18",27,RED),("math","L_(min)=2 sqrt(41)",31,GOLD),("math","2 sqrt(41)<18",29,GREEN),("text","Không cần bám theo các cạnh mái.",18,INK)],GREEN)
+        card=lesson_card("SO SÁNH",[("math","L_e=5+8+5=18",27,RED),("math","L_(min)=2 sqrt(41)",31,GOLD),("math","2 sqrt(41)<18",29,GREEN),("text","Không cần bám theo các cạnh mái.",18,INK)],GREEN)
         self.add_fixed_in_frame_mobjects(card)
         self.narrate("Nếu đi men theo cạnh mái lên nóc, chạy dọc hết đường nóc rồi xuống phía bên kia, độ dài là mười tám.",1.8)
         self.narrate("Hai căn bốn mươi mốt nhỏ hơn mười tám. Đường ngắn nhất thực sự đi chéo qua cả hai mặt mái.",1.7)

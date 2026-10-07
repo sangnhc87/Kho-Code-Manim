@@ -312,7 +312,7 @@ def layout_preflight(sample_cards, verbose=True):
 # Without the long-way constraint:
 #   delta_sh = pi/3 = 60 degrees
 #   alpha_sh = pi/5 = 36 degrees
-#   L_sh = 20*sin(pi/10), and this chord stays outside the hole.
+#   L_s = 20*sin(pi/10), and this chord stays outside the hole.
 # ==========================================================
 
 R_BOTTOM = 6.0
@@ -1203,7 +1203,7 @@ class TraiPhang14Master(BaseLesson):
         card=lesson_card("CHIỀU NGẮN CHỈ 60°",[
             ("math","delta_S=frac(pi,3)",27,CYAN),
             ("math","alpha_S=frac(pi,5)",27,CYAN),
-            ("math","L_sh=20 sin frac(pi,10)",27,GOLD),
+            ("math","L_s=20 sin frac(pi,10)",27,GOLD),
             ("text","Đoạn thẳng này không chạm lỗ.",18,GREEN),
         ],GREEN)
         self.add_fixed_in_frame_mobjects(card)
