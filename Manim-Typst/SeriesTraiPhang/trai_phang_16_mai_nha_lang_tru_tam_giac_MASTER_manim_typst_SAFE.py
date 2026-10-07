@@ -240,9 +240,9 @@ def intro_card(video_no, lines, subtitle):
     ).move_to(RIGHT_CENTER)
     n = txt(f"TRẢI PHẲNG {video_no:02d}", 24, GOLD, BOLD)
     titles = VGroup(*[fit_width(txt(x, 31, INK, BOLD), 4.55) for x in lines])
-    titles.arrange(DOWN, aligned_edge=LEFT, buff=0.10)
+    titles.arrange(DOWN, aligned_ed=LEFT, buff=0.10)
     sub = fit_width(txt(subtitle, 18, CYAN), 4.55)
-    g = VGroup(n, titles, sub).arrange(DOWN, aligned_edge=LEFT, buff=0.25)
+    g = VGroup(n, titles, sub).arrange(DOWN, aligned_ed=LEFT, buff=0.25)
     g.move_to(bg.get_center()).align_to(bg, LEFT).shift(RIGHT * 0.45)
     return VGroup(bg, g)
 
@@ -439,7 +439,7 @@ def solid(a,b,color=EDGE,width=4.0,opacity=0.96):
     return Line(np.array(a,float),np.array(b,float),color=color,stroke_width=width,stroke_opacity=opacity)
 
 
-def hidden_edge(a,b,color=DIM,width=2.5,opacity=0.62):
+def hidden_ed(a,b,color=DIM,width=2.5,opacity=0.62):
     return DashedLine(np.array(a,float),np.array(b,float),color=color,stroke_width=width,stroke_opacity=opacity,dash_length=0.11,dashed_ratio=0.56)
 
 
@@ -458,7 +458,7 @@ def roof_shell():
         solid(p["A1"],p["S1"],EDGE,3.7), solid(p["S1"],p["B1"],EDGE,3.7),
         solid(p["A"],p["A1"],EDGE,3.5), solid(p["B"],p["B1"],EDGE,3.5),
         solid(p["S"],p["S1"],GOLD,5.0),
-        hidden_edge(p["A"],p["B"],DIM,2.4), hidden_edge(p["A1"],p["B1"],DIM,2.4),
+        hidden_ed(p["A"],p["B"],DIM,2.4), hidden_ed(p["A1"],p["B1"],DIM,2.4),
     )
     return VGroup(fills,edges)
 
@@ -698,11 +698,11 @@ class TraiPhang16Master(BaseLesson):
         self.narrate_play("Khi gấp mái lại, đoạn thẳng trên bản trải trở thành một đường gấp tại M trên đường nóc.",MoveAlongPath(ant,Line(W(pts[0]),W(pts[1]))),min_time=2.6,rate_func=linear)
         self.narrate_play("Từ M, sợi cáp tiếp tục trên mái phải tới B phẩy. Tổng chiều dài vẫn là hai căn bốn mươi mốt.",MoveAlongPath(ant,Line(W(pts[1]),W(pts[2]))),min_time=2.6,rate_func=linear)
 
-    def compare_edges(self):
+    def compare_eds(self):
         self.clear_all(); self.add_hud("Đi men theo các cạnh có dài hơn không?","11 / 12"); self.add(roof_shell())
         edge_path=VGroup(solid(W(RAW["A"]),W(RAW["S"]),RED,4.8),solid(W(RAW["S"]),W(RAW["S1"]),RED,4.8),solid(W(RAW["S1"]),W(RAW["B1"]),RED,4.8))
         route,_=folded_route(); self.add(edge_path,route)
-        card=lesson_card("SO SÁNH",[("math","L_(edge)=5+8+5=18",27,RED),("math","L_(min)=2 sqrt(41)",31,GOLD),("math","2 sqrt(41)<18",29,GREEN),("text","Không cần bám theo các cạnh mái.",18,INK)],GREEN)
+        card=lesson_card("SO SÁNH",[("math","L_ed=5+8+5=18",27,RED),("math","L_(min)=2 sqrt(41)",31,GOLD),("math","2 sqrt(41)<18",29,GREEN),("text","Không cần bám theo các cạnh mái.",18,INK)],GREEN)
         self.add_fixed_in_frame_mobjects(card)
         self.narrate("Nếu đi men theo cạnh mái lên nóc, chạy dọc hết đường nóc rồi xuống phía bên kia, độ dài là mười tám.",1.8)
         self.narrate("Hai căn bốn mươi mốt nhỏ hơn mười tám. Đường ngắn nhất thực sự đi chéo qua cả hai mặt mái.",1.7)
@@ -716,7 +716,7 @@ class TraiPhang16Master(BaseLesson):
         self.narrate("Do đó chiều dài cáp nhỏ nhất bằng căn của bốn lần tổng a bình phương và h bình phương, cộng d bình phương. Trong cấu hình hai đầu đối xứng, cáp luôn cắt đường nóc tại trung điểm.",2.0)
 
     def construct(self):
-        self.intro(); self.dimensions(); self.full_model(); self.invalid_direct(); self.arbitrary_x(); self.unfold(); self.net(); self.straight_line(); self.ridge_crossing(); self.segment_lengths(); self.fold_walk(); self.compare_edges(); self.general_formula()
+        self.intro(); self.dimensions(); self.full_model(); self.invalid_direct(); self.arbitrary_x(); self.unfold(); self.net(); self.straight_line(); self.ridge_crossing(); self.segment_lengths(); self.fold_walk(); self.compare_eds(); self.general_formula()
 
 
 class Smoke16(ThreeDScene):

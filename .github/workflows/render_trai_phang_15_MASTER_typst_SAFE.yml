@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py"
+      - "Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py"
       - ".github/workflows/render_trai_phang_15_MASTER_typst_SAFE.yml"
 
 jobs:
@@ -40,11 +40,11 @@ jobs:
 
       - name: Python syntax check
         run: |
-          python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py
+          python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py
 
       - name: Student narration lint
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py --narration-lint
+          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py --narration-lint
 
       - name: Reject known-bad Typst math syntax
         run: |
@@ -53,7 +53,7 @@ jobs:
           import ast
           import re
 
-          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           expressions = []
 
@@ -102,14 +102,14 @@ jobs:
 
           tests = [
               "r=3",
-              "h_(tru)=4",
+              "h_tr=4",
               "h_(non)=4",
               "l=5",
               "Delta theta=frac(2 pi,3)",
               "Delta s=r Delta theta=2 pi",
               "Delta z=4",
-              "L_(tru)^2=(2 pi)^2+4^2",
-              "L_(tru)=2 sqrt(pi^2+4)",
+              "L_tr^2=(2 pi)^2+4^2",
+              "L_tr=2 sqrt(pi^2+4)",
               "rho_B=frac(5,2)",
               "delta=frac(5 pi,6)",
               "alpha=frac(3,5) delta=frac(pi,2)",
@@ -117,13 +117,13 @@ jobs:
               "S B=frac(5,2)",
               "hat(M S B)=frac(pi,2)",
               "L_(non)=frac(5 sqrt(5),2)",
-              "L_(min)=L_(tru)+L_(non)",
+              "L_(min)=L_tr+L_(non)",
               "L_(min)=2 sqrt(pi^2+4)+frac(5 sqrt(5),2)",
-              "L_(A M)>=L_(tru)",
+              "L_(A M)>=L_tr",
               "L_(M B)>=L_(non)",
           ]
 
-          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           extracted = []
 
@@ -166,11 +166,11 @@ jobs:
 
       - name: Geometry preflight
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py --geometry-preflight
+          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py --geometry-preflight
 
       - name: Layout preflight
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py --layout-preflight
+          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py --layout-preflight
 
       - name: 480p smoke render
         env:
@@ -178,7 +178,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_15_master.log
+          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_15_master.log
           SMOKE=$(find media_smoke -type f -name 'trai_phang_15_master_smoke.mp4' | head -n 1)
           test -n "$SMOKE"
           ffprobe -v error \
@@ -192,12 +192,12 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tru_non_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_15_master.log
+          python Manim-Typst/SeriesTraiPhang/trai_phang_15_silo_tr_non_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_15_master.log
 
       - name: Find and verify final video
         shell: bash
         run: |
-          VIDEO=$(find media -type f -name 'trai_phang_15_silo_tru_non_MASTER_1080p_WITH_AUDIO.mp4' | head -n 1)
+          VIDEO=$(find media -type f -name 'trai_phang_15_silo_tr_non_MASTER_1080p_WITH_AUDIO.mp4' | head -n 1)
           test -n "$VIDEO"
           echo "Final video: $VIDEO"
           ffprobe -v error \

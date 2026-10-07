@@ -310,9 +310,9 @@ def layout_preflight(sample_cards, verbose=True):
 #   L_long = 10*sqrt(3) + 5*pi/3.
 #
 # Without the long-way constraint:
-#   delta_short = pi/3 = 60 degrees
-#   alpha_short = pi/5 = 36 degrees
-#   L_short = 20*sin(pi/10), and this chord stays outside the hole.
+#   delta_sh = pi/3 = 60 degrees
+#   alpha_sh = pi/5 = 36 degrees
+#   L_sh = 20*sin(pi/10), and this chord stays outside the hole.
 # ==========================================================
 
 R_BOTTOM = 6.0
@@ -413,7 +413,7 @@ def rho_psi_from_flat_xy(xy):
     return rho, psi
 
 
-def mapped_shortest_raw(t, s=RATIO):
+def mapped_shest_raw(t, s=RATIO):
     """Piecewise shortest valid path in the prescribed long class."""
     len_tan = math.sqrt(OUTER_RHO**2 - INNER_RHO**2)
     len_arc = INNER_RHO * INNER_ARC_ANGLE
@@ -438,7 +438,7 @@ def mapped_shortest_raw(t, s=RATIO):
 
 def shortest_long_curve(color=GOLD, width=6.0):
     return ParametricFunction(
-        lambda t: W(mapped_shortest_raw(t, RATIO)),
+        lambda t: W(mapped_shest_raw(t, RATIO)),
         t_range=[0,1],
         color=color,
         stroke_width=width,
@@ -551,7 +551,7 @@ def unfold_wire_group(s):
 
 def unfold_path_group(s):
     pts = [
-        W(mapped_shortest_raw(k/120, s))
+        W(mapped_shest_raw(k/120, s))
         for k in range(121)
     ]
     path = VMobject(color=GOLD, stroke_width=6.1)
@@ -651,7 +651,7 @@ def short_class_sector():
     center = SECTOR_CENTER
     scale = SECTOR_VIS_SCALE
 
-    # Use A at psi=0.40 and B at +alpha_short.
+    # Use A at psi=0.40 and B at +alpha_sh.
     pa = 0.55
     pb = pa + ALPHA_SHORT
 
@@ -743,11 +743,11 @@ def geometry_preflight(verbose=True):
     if not (short_min_radius > INNER_RHO):
         raise AssertionError("Short-class chord should stay outside the hole")
 
-    expected_short = 20.0*math.sin(math.pi/10.0)
-    if abs(short_len-expected_short) > tol:
+    expected_sh = 20.0*math.sin(math.pi/10.0)
+    if abs(short_len-expected_sh) > tol:
         raise AssertionError("Short-class chord length mismatch")
 
-    if not (expected_short < expected_long):
+    if not (expected_sh < expected_long):
         raise AssertionError("Unrestricted short class should be shorter")
 
     # Metric verification of isometric unrolling family.
@@ -1203,7 +1203,7 @@ class TraiPhang14Master(BaseLesson):
         card=lesson_card("CHIỀU NGẮN CHỈ 60°",[
             ("math","delta_S=frac(pi,3)",27,CYAN),
             ("math","alpha_S=frac(pi,5)",27,CYAN),
-            ("math","L_(short)=20 sin frac(pi,10)",27,GOLD),
+            ("math","L_sh=20 sin frac(pi,10)",27,GOLD),
             ("text","Đoạn thẳng này không chạm lỗ.",18,GREEN),
         ],GREEN)
         self.add_fixed_in_frame_mobjects(card)
