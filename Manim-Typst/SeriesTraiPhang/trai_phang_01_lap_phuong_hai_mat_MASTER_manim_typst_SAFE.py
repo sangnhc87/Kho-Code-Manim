@@ -800,7 +800,7 @@ class TraiPhang01Master(ThreeDScene):
         add_vertex_label(self, "C'", C1, RED, (0.12, 0.10, 0.16))
 
         t = ValueTracker(0.16)
-        X = always_redraw(lambda: B + t.get_value() * (C - B))
+        X = lambda: B + t.get_value() * (C - B)
         xdot = always_redraw(lambda: Dot3D(X(), radius=0.075, color=GOLD))
         path = always_redraw(
             lambda: VGroup(
@@ -909,7 +909,7 @@ class TraiPhang01Master(ThreeDScene):
         )
 
         t = ValueTracker(0.18)
-        X = always_redraw(lambda: B + t.get_value() * (C - B))
+        X = lambda: B + t.get_value() * (C - B)
         xdot = always_redraw(lambda: Dot(X(), radius=0.07, color=ORANGE))
         broken = always_redraw(
             lambda: VGroup(
