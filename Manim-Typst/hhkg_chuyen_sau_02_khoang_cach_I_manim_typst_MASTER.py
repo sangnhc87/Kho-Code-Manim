@@ -737,7 +737,7 @@ class SangLesson(ThreeDScene):
         self.play(Create(ah),FadeIn(hdot),FadeIn(mark),run_time=0.6)
         sol=self.card("Lời giải","Mặt phụ biến điểm–mặt thành điểm–đường",[
             ("math","(A B B' A') perp (B C D')",27,GREEN),
-            ("math","(A B B' A') sect (B C D') = B A'",26,INK),
+            ("math","(A B B' A') intersect (B C D') = B A'",26,INK),
             ("math","A H perp B A'",29,CYAN),
             ("math","d(A,(B C D')) = A H",28,GOLD),
             ("math","B A' = a sqrt(2)",28,INK),
