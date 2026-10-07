@@ -1,0 +1,169 @@
+name: Render HHKG Chuyen Sau 04 - Typst SAFE
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Manim-Typst/hhkg_chuyen_sau_04_goc_trong_khong_gian_manim_typst_SAFE.py"
+      - ".github/workflows/render_hhkg_chuyen_sau_04_typst_SAFE.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 80
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg \
+            libcairo2-dev \
+            libpango1.0-dev \
+            pkg-config \
+            fonts-dejavu-core \
+            fonts-noto-core
+
+      - name: Install Manim Typst and Edge TTS
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "manim==0.21.0" "typst>=0.14" "edge-tts==7.2.8"
+
+      - name: Print versions
+        run: |
+          python - <<'PY'
+          import manim, typst, edge_tts
+          print("Manim:", manim.__version__)
+          print("Typst module:", typst)
+          print("Edge TTS:", edge_tts.__version__)
+          PY
+
+      - name: Python syntax check
+        run: |
+          python -m py_compile Manim-Typst/hhkg_chuyen_sau_04_goc_trong_khong_gian_manim_typst_SAFE.py
+
+      - name: Reject known-bad Typst math tokens
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast
+          import re
+
+          path = Path("Manim-Typst/hhkg_chuyen_sau_04_goc_trong_khong_gian_manim_typst_SAFE.py")
+          tree = ast.parse(path.read_text(encoding="utf-8"))
+          expressions = []
+          for node in ast.walk(tree):
+              if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "mty":
+                  if node.args and isinstance(node.args[0], ast.Constant) and isinstance(node.args[0].value, str):
+                      expressions.append(node.args[0].value)
+              if isinstance(node, ast.Tuple) and len(node.elts) >= 2:
+                  a, b = node.elts[0], node.elts[1]
+                  if (isinstance(a, ast.Constant) and a.value == "math" and
+                      isinstance(b, ast.Constant) and isinstance(b.value, str)):
+                      expressions.append(b.value)
+
+          forbidden = re.compile(r"(?<![A-Za-z])(sect|intersect|angle|mid)(?![A-Za-z])")
+          bad = [expr for expr in expressions if forbidden.search(expr)]
+          if bad:
+              print("Invalid or disallowed Typst math expressions:")
+              for expr in bad:
+                  print(" -", expr)
+              raise SystemExit("Use inter, hat(...), and prose instead of sect/intersect/angle/mid.")
+          print(f"Checked {len(expressions)} static math expressions: no forbidden tokens.")
+          PY
+
+      - name: Typst math preflight
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast
+          import re
+          from manim import MathTypst
+
+          tests = [
+              "A C inter O O' = O",
+              "(A C D') inter (A B C D) = A C",
+              "B D perp (A C C' A')",
+              "A C' -> A C",
+              "alpha = hat(C' A C, size: #145%)",
+              "gamma = hat(C S B, size: #145%)",
+              "beta = hat(D O D', size: #145%)",
+              "tan alpha = frac(1, sqrt(2))",
+              "sin alpha = frac(1, sqrt(3))",
+              "tan gamma = frac(4, 5)",
+              "O D = frac(a, sqrt(2))",
+              "tan beta = sqrt(2)",
+              "M C inter M D = M",
+              "A B perp (M C D)",
+              "tan theta = frac(u, sqrt(2))",
+              "u = sqrt(frac(2, 3))",
+          ]
+
+          path = Path("Manim-Typst/hhkg_chuyen_sau_04_goc_trong_khong_gian_manim_typst_SAFE.py")
+          tree = ast.parse(path.read_text(encoding="utf-8"))
+          extracted = []
+          for node in ast.walk(tree):
+              if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id == "mty":
+                  if node.args and isinstance(node.args[0], ast.Constant) and isinstance(node.args[0].value, str):
+                      extracted.append(node.args[0].value)
+              if isinstance(node, ast.Tuple) and len(node.elts) >= 2:
+                  a, b = node.elts[0], node.elts[1]
+                  if (isinstance(a, ast.Constant) and a.value == "math" and
+                      isinstance(b, ast.Constant) and isinstance(b.value, str)):
+                      extracted.append(b.value)
+
+          expressions = list(dict.fromkeys(tests + extracted))
+          forbidden = re.compile(r"(?<![A-Za-z])(sect|intersect|angle|mid)(?![A-Za-z])")
+          for expr in expressions:
+              if forbidden.search(expr):
+                  raise SystemExit(f"Forbidden Typst token in: {expr!r}")
+              MathTypst(expr)
+              print("OK:", expr)
+          print(f"Preflight complete: {len(expressions)} Typst expressions compiled.")
+          PY
+
+      - name: Render lesson
+        env:
+          PYTHONUNBUFFERED: "1"
+        shell: bash
+        run: |
+          set -o pipefail
+          python Manim-Typst/hhkg_chuyen_sau_04_goc_trong_khong_gian_manim_typst_SAFE.py 2>&1 | tee render_hhkg04.log
+
+      - name: Find and verify final video
+        shell: bash
+        run: |
+          VIDEO=$(find media -type f -name 'hhkg_chuyen_sau_04_goc_trong_khong_gian_typst_SAFE_1080p_WITH_AUDIO.mp4' | head -n 1)
+          test -n "$VIDEO"
+          echo "Final video: $VIDEO"
+          ffprobe -v error \
+            -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+
+      - name: Upload final MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-chuyen-sau-04-goc-trong-khong-gian-typst-safe
+          path: ${{ env.VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload render log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-04-render-log
+          path: render_hhkg04.log
+          if-no-files-found: ignore
+          retention-days: 7
