@@ -1,0 +1,218 @@
+name: Render Trai Phang 06 MASTER
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py"
+      - ".github/workflows/render_trai_phang_06_MASTER_typst_SAFE.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg \
+            libcairo2-dev \
+            libpango1.0-dev \
+            pkg-config \
+            fonts-dejavu-core \
+            fonts-noto-core
+
+      - name: Install Manim Typst and Edge TTS
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "manim==0.21.0" "typst>=0.14" "edge-tts==7.2.8" "pyyaml>=6.0"
+
+      - name: Python syntax check
+        run: |
+          python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py
+
+      - name: Student narration lint
+        run: |
+          python Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py --narration-lint
+
+      - name: Reject known-bad Typst math syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast
+          import re
+
+          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py")
+          tree = ast.parse(path.read_text(encoding="utf-8"))
+          expressions = []
+
+          for node in ast.walk(tree):
+              if isinstance(node, ast.Call):
+                  fname = node.func.id if isinstance(node.func, ast.Name) else (
+                      node.func.attr if isinstance(node.func, ast.Attribute) else None
+                  )
+                  if (
+                      fname == "mty"
+                      and node.args
+                      and isinstance(node.args[0], ast.Constant)
+                      and isinstance(node.args[0].value, str)
+                  ):
+                      expressions.append(node.args[0].value)
+
+              if isinstance(node, ast.Tuple) and len(node.elts) >= 2:
+                  a, b = node.elts[0], node.elts[1]
+                  if (
+                      isinstance(a, ast.Constant)
+                      and a.value == "math"
+                      and isinstance(b, ast.Constant)
+                      and isinstance(b.value, str)
+                  ):
+                      expressions.append(b.value)
+
+          expressions = list(dict.fromkeys(expressions))
+          forbidden = re.compile(r"(?<![A-Za-z])(sect|intersect|angle)(?![A-Za-z])")
+          bad = [expr for expr in expressions if forbidden.search(expr) or "/" in expr]
+          if bad:
+              print("Invalid Typst math expressions:")
+              for expr in bad:
+                  print(" -", expr)
+              raise SystemExit("Use inter, hat(...), and frac(..., ...).")
+
+          print(f"Checked {len(expressions)} static MathTypst expressions: policy OK.")
+          PY
+
+      - name: Typst math preflight
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast
+          import re
+          from manim import MathTypst
+
+          tests = [
+              "A B=B C=C D=D E=E F=F A=a",
+              "A A'=h",
+              "L_2=sqrt((2a)^2+h^2)",
+              "L_4=sqrt((4a)^2+h^2)",
+              "L_4^2-L_2^2=12a^2",
+              "B X=frac(h,2)",
+              "F X_1=frac(h,4)",
+              "E X_2=frac(h,2)",
+              "D X_3=frac(3h,4)",
+              "L=sqrt((3a)^2+h^2)",
+              "L_m=sqrt((m a)^2+h^2)",
+              "L_(6-m)=sqrt(((6-m)a)^2+h^2)",
+          ]
+
+          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py")
+          tree = ast.parse(path.read_text(encoding="utf-8"))
+          extracted = []
+
+          for node in ast.walk(tree):
+              if isinstance(node, ast.Call):
+                  fname = node.func.id if isinstance(node.func, ast.Name) else (
+                      node.func.attr if isinstance(node.func, ast.Attribute) else None
+                  )
+                  if (
+                      fname == "mty"
+                      and node.args
+                      and isinstance(node.args[0], ast.Constant)
+                      and isinstance(node.args[0].value, str)
+                  ):
+                      extracted.append(node.args[0].value)
+
+              if isinstance(node, ast.Tuple) and len(node.elts) >= 2:
+                  a, b = node.elts[0], node.elts[1]
+                  if (
+                      isinstance(a, ast.Constant)
+                      and a.value == "math"
+                      and isinstance(b, ast.Constant)
+                      and isinstance(b.value, str)
+                  ):
+                      extracted.append(b.value)
+
+          expressions = list(dict.fromkeys(tests + extracted))
+          forbidden = re.compile(r"(?<![A-Za-z])(sect|intersect|angle)(?![A-Za-z])")
+
+          for expr in expressions:
+              if forbidden.search(expr):
+                  raise SystemExit(f"Forbidden Typst token in {expr!r}")
+              if "/" in expr:
+                  raise SystemExit(f"Slash fraction forbidden in {expr!r}")
+              MathTypst(expr)
+              print("OK:", expr)
+
+          print(f"Preflight complete: {len(expressions)} Typst expressions compiled.")
+          PY
+
+      - name: Geometry preflight
+        run: |
+          python Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py --geometry-preflight
+
+      - name: Layout preflight
+        run: |
+          python Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py --layout-preflight
+
+      - name: 480p smoke render
+        env:
+          PYTHONUNBUFFERED: "1"
+        shell: bash
+        run: |
+          set -o pipefail
+          python Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_06_master.log
+          SMOKE=$(find media_smoke -type f -name 'trai_phang_06_master_smoke.mp4' | head -n 1)
+          test -n "$SMOKE"
+          ffprobe -v error \
+            -show_entries stream=codec_type,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json "$SMOKE"
+
+      - name: Render full lesson
+        env:
+          PYTHONUNBUFFERED: "1"
+        shell: bash
+        run: |
+          set -o pipefail
+          python Manim-Typst/SeriesTraiPhang/trai_phang_06_lang_tru_luc_giac_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_06_master.log
+
+      - name: Find and verify final video
+        shell: bash
+        run: |
+          VIDEO=$(find media -type f -name 'trai_phang_06_lang_tru_luc_giac_MASTER_1080p_WITH_AUDIO.mp4' | head -n 1)
+          test -n "$VIDEO"
+          echo "Final video: $VIDEO"
+          ffprobe -v error \
+            -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+
+      - name: Upload final MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: trai-phang-06-master-lang-tru-luc-giac
+          path: ${{ env.VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload debug logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trai-phang-06-master-debug
+          path: |
+            smoke_trai_phang_06_master.log
+            render_trai_phang_06_master.log
+          if-no-files-found: ignore
+          retention-days: 7
