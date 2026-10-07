@@ -560,10 +560,8 @@ class SangLesson(ThreeDScene):
             lab.add_updater(lambda mob, i=idx: mob.move_to(pts()[i] + np.array([0.10,0.06,0.08])))
             self.add_fixed_orientation_mobjects(lab)
             moving_labels.append(lab)
-        k_num=DecimalNumber(tracker.get_value(),num_decimal_places=2,font_size=26,color=CYAN)
-        k_num.add_updater(lambda m: m.set_value(tracker.get_value()))
-        k2_num=DecimalNumber(tracker.get_value()**2,num_decimal_places=2,font_size=26,color=GOLD)
-        k2_num.add_updater(lambda m: m.set_value(tracker.get_value()**2))
+        k_num=always_redraw(lambda: txt(f"{tracker.get_value():.2f}",18,CYAN,BOLD))
+        k2_num=always_redraw(lambda: txt(f"{tracker.get_value()**2:.2f}",18,GOLD,BOLD))
         live=VGroup(txt("k =",18,CYAN,BOLD),k_num,txt("k² =",18,GOLD,BOLD),k2_num).arrange(RIGHT,buff=0.12).move_to(LEFT*2.65+DOWN*2.22)
         self.add_fixed_in_frame_mobjects(live)
         self.card("Đề bài", "M, N, P, Q cùng chia bốn cạnh bên theo tỷ số k", [
