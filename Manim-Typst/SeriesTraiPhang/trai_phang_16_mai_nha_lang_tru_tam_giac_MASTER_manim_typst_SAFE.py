@@ -240,9 +240,9 @@ def intro_card(video_no, lines, subtitle):
     ).move_to(RIGHT_CENTER)
     n = txt(f"TRẢI PHẲNG {video_no:02d}", 24, GOLD, BOLD)
     titles = VGroup(*[fit_width(txt(x, 31, INK, BOLD), 4.55) for x in lines])
-    titles.arrange(DOWN, aligned_ed=LEFT, buff=0.10)
+    titles.arrange(DOWN, aligned_edge=LEFT, buff=0.10)
     sub = fit_width(txt(subtitle, 18, CYAN), 4.55)
-    g = VGroup(n, titles, sub).arrange(DOWN, aligned_ed=LEFT, buff=0.25)
+    g = VGroup(n, titles, sub).arrange(DOWN, aligned_edge=LEFT, buff=0.25)
     g.move_to(bg.get_center()).align_to(bg, LEFT).shift(RIGHT * 0.45)
     return VGroup(bg, g)
 
