@@ -1,0 +1,90 @@
+name: Render Trai Phang 01 REBUILT - Lap Phuong 2 3 Mat
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Manim-Typst/SeriesTraiPhang/trai_phang_01_lap_phuong_2_3_mat_REBUILT_manim_typst_SAFE.py"
+      - ".github/workflows/render_trai_phang_01_REBUILT_typst_SAFE.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config fonts-dejavu-core fonts-noto-core
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "manim==0.21.0" "typst>=0.14" "edge-tts==7.2.8" "pyyaml>=6.0"
+      - name: Python syntax check
+        run: python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_01_lap_phuong_2_3_mat_REBUILT_manim_typst_SAFE.py
+      - name: Typst source policy and compile preflight
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import ast, re
+          from manim import MathTypst
+          path=Path("Manim-Typst/SeriesTraiPhang/trai_phang_01_lap_phuong_2_3_mat_REBUILT_manim_typst_SAFE.py")
+          tree=ast.parse(path.read_text(encoding="utf-8"))
+          exprs=[]
+          for node in ast.walk(tree):
+              if isinstance(node,ast.Call):
+                  fname=node.func.id if isinstance(node.func,ast.Name) else (node.func.attr if isinstance(node.func,ast.Attribute) else None)
+                  if fname=="mty" and node.args and isinstance(node.args[0],ast.Constant) and isinstance(node.args[0].value,str): exprs.append(node.args[0].value)
+              if isinstance(node,ast.Tuple) and len(node.elts)>=2:
+                  a,b=node.elts[0],node.elts[1]
+                  if isinstance(a,ast.Constant) and a.value=="math" and isinstance(b,ast.Constant) and isinstance(b.value,str): exprs.append(b.value)
+          tests=["(P) inter (Q) = d","a perp b","a parallel (P)","hat(A B C, size: #155%)","frac(a,2)"]
+          exprs=list(dict.fromkeys(tests+exprs))
+          badword=re.compile(r"(?<![A-Za-z])(sect|intersect|angle)(?![A-Za-z])")
+          for e in exprs:
+              if badword.search(e) or "/" in e: raise SystemExit(f"Forbidden Typst syntax: {e}")
+              MathTypst(e); print("OK:",e)
+          print("Typst expressions compiled:",len(exprs))
+          PY
+      - name: Geometry preflight
+        run: python Manim-Typst/SeriesTraiPhang/trai_phang_01_lap_phuong_2_3_mat_REBUILT_manim_typst_SAFE.py --geometry-preflight
+      - name: 480p geometry smoke render
+        env: {PYTHONUNBUFFERED: "1"}
+        shell: bash
+        run: |
+          set -o pipefail
+          python Manim-Typst/SeriesTraiPhang/trai_phang_01_lap_phuong_2_3_mat_REBUILT_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_01_rebuilt.log
+      - name: Render full 1080p lesson
+        env: {PYTHONUNBUFFERED: "1"}
+        shell: bash
+        run: |
+          set -o pipefail
+          python Manim-Typst/SeriesTraiPhang/trai_phang_01_lap_phuong_2_3_mat_REBUILT_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_01_rebuilt.log
+      - name: Find final video
+        shell: bash
+        run: |
+          VIDEO=$(find media -type f -name 'trai_phang_01_lap_phuong_2_3_mat_REBUILT_1080p_WITH_AUDIO.mp4' | head -n 1)
+          test -n "$VIDEO"
+          ffprobe -v error -show_entries stream=codec_type,codec_name,width,height,r_frame_rate -show_entries format=duration,size -of json "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trai-phang-01-rebuilt
+          path: ${{ env.VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trai-phang-01-rebuilt-debug
+          path: |
+            smoke_trai_phang_01_rebuilt.log
+            render_trai_phang_01_rebuilt.log
+          if-no-files-found: ignore
+          retention-days: 7
