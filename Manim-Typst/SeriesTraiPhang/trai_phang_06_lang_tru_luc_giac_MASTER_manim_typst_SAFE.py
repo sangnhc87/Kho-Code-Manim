@@ -942,8 +942,8 @@ class TraiPhang06Master(BaseLesson):
         self.add_hud("Quy tắc tổng quát cho lục giác đều","10 / 12")
         self.add(prism_shell())
         card=lesson_card("GỌI m LÀ SỐ CẠNH THEO MỘT CHIỀU",[
-            ("math","L_m=sqrt((ma)^2+h^2)",28,GOLD),
-            ("math","L_(6-m)=sqrt(((6-m)a)^2+h^2)",27,CYAN),
+            ("math","L_m=sqrt((m a)^2+h^2)",28,GOLD),
+            ("math","L_(6-m)=sqrt(((6-m) a)^2+h^2)",27,CYAN),
             ("text","Xét m = 1, 2 hoặc 3.",19,INK),
             ("text","Chọn chiều có số cạnh nhỏ hơn.",19,GREEN),
         ],GREEN)
