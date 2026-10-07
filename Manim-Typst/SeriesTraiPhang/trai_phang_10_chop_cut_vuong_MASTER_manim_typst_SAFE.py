@@ -1257,7 +1257,7 @@ class TraiPhang10Master(BaseLesson):
 
         card = lesson_card("ĐIỀU KIỆN CHỈ ĐI MẶT BÊN",[
             ("math","A C=6 sqrt(2)",29,RED),
-            ("math","L_("side")=frac(18 sqrt(10),5)",26,GOLD),
+            ("math","L_(\"side\")=frac(18 sqrt(10),5)",26,GOLD),
             ("math","6 sqrt(2)<frac(18 sqrt(10),5)",24,GREEN),
             ("text","Đường chéo đáy ngắn hơn nhưng không hợp lệ.",17,INK),
         ],RED)
