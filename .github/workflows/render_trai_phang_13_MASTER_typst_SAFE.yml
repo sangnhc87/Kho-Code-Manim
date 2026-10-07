@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py"
+      - "Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py"
       - ".github/workflows/render_trai_phang_13_MASTER_typst_SAFE.yml"
 
 jobs:
@@ -40,11 +40,11 @@ jobs:
 
       - name: Python syntax check
         run: |
-          python -m py_compile Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py
+          python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py
 
       - name: Student narration lint
         run: |
-          python Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --narration-lint
+          python Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --narration-lint
 
       - name: Reject known-bad Typst math syntax
         run: |
@@ -53,7 +53,7 @@ jobs:
           import ast
           import re
 
-          path = Path("Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           expressions = []
 
@@ -121,7 +121,7 @@ jobs:
               "Phi=frac(2 pi r,l)",
           ]
 
-          path = Path("Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           extracted = []
 
@@ -164,11 +164,11 @@ jobs:
 
       - name: Geometry preflight
         run: |
-          python Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --geometry-preflight
+          python Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --geometry-preflight
 
       - name: Layout preflight
         run: |
-          python Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --layout-preflight
+          python Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --layout-preflight
 
       - name: 480p exact-unroll smoke render
         env:
@@ -176,7 +176,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_13_master.log
+          python Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_13_master.log
           SMOKE=$(find media_smoke -type f -name 'trai_phang_13_master_smoke.mp4' | head -n 1)
           test -n "$SMOKE"
           ffprobe -v error \
@@ -190,7 +190,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_13_master.log
+          python Manim-Typst/SeriesTraiPhang/trai_phang_13_hinh_non_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_13_master.log
 
       - name: Find and verify final video
         shell: bash
