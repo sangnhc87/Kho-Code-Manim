@@ -1037,7 +1037,7 @@ class TraiPhang10Master(BaseLesson):
             ("math","A B=6",27,INK),
             ("math","A' B'=4",27,INK),
             ("text","Mỗi bên lệch vào 1.",18,CYAN),
-            ("math","h_("trap")=3",29,GOLD),
+            ("math","h_(\"trap\")=3",29,GOLD),
             ("math","B B'=sqrt(10)",29,GREEN),
         ],GREEN)
         self.add_fixed_in_frame_mobjects(card)
