@@ -1113,7 +1113,7 @@ class TraiPhang08Master(BaseLesson):
 
         card=lesson_card("RÀNG BUỘC RẤT QUAN TRỌNG",[
             ("math","A C=6 sqrt(2)",29,RED),
-            ("math","L_("side")=frac(48,5)",29,GOLD),
+            ("math","L_(\"side\")=frac(48,5)",29,GOLD),
             ("math","6 sqrt(2)<frac(48,5)",27,GREEN),
             ("text","Vì bài yêu cầu chỉ đi trên các mặt bên.",18,INK),
         ],RED)
