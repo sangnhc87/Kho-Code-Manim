@@ -1,0 +1,106 @@
+name: Render HHKG Chuyen Sau 01 - Manim Typst MASTER
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "Manim-Typst/hhkg_chuyen_sau_01_manim_typst_MASTER.py"
+      - ".github/workflows/render_hhkg_chuyen_sau_01_typst_MASTER.yml"
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            ffmpeg \
+            libcairo2-dev \
+            libpango1.0-dev \
+            pkg-config \
+            fonts-dejavu-core \
+            fonts-noto-core
+
+      - name: Install Manim Typst and TTS
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "manim==0.21.0" "typst>=0.14" "edge-tts==7.2.8"
+
+      - name: Show versions
+        run: |
+          python - <<'PY'
+          import manim
+          import typst
+          print("Manim:", manim.__version__)
+          print("Typst module:", typst)
+          PY
+
+      - name: Python syntax check
+        run: |
+          python -m py_compile Manim-Typst/hhkg_chuyen_sau_01_manim_typst_MASTER.py
+
+      - name: MathTypst preflight
+        run: |
+          python - <<'PY'
+          from manim import MathTypst
+          tests = [
+              "frac(3, 4 sqrt(2))",
+              "alpha = hat(S C A, size: #145%)",
+              "beta = hat(A B S, size: #145%)",
+              "frac(S M, S A) = frac(S N, S B) = frac(1, 2)",
+              "frac(S_(M N P Q), S_(A B C D)) = frac(1, 2)^2 = frac(1, 4)",
+              "frac(V_(S M N P Q), V_(S A B C D)) = frac(1, 8)",
+          ]
+          for expr in tests:
+              MathTypst(expr)
+              print("OK:", expr)
+          PY
+
+      - name: Render lesson
+        env:
+          PYTHONUNBUFFERED: "1"
+        shell: bash
+        run: |
+          set -o pipefail
+          python Manim-Typst/hhkg_chuyen_sau_01_manim_typst_MASTER.py 2>&1 | tee render.log
+
+      - name: Find and verify final video
+        shell: bash
+        run: |
+          VIDEO=$(find media -type f -name 'hhkg_chuyen_sau_01_manim_typst_MASTER_1080p_WITH_AUDIO.mp4' | head -n 1)
+          test -n "$VIDEO"
+          echo "Final video: $VIDEO"
+          ffprobe -v error \
+            -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+
+      - name: Upload final MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-chuyen-sau-01-typst-master
+          path: ${{ env.VIDEO }}
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload render log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hhkg-01-render-log
+          path: render.log
+          if-no-files-found: ignore
+          retention-days: 7
