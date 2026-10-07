@@ -1009,7 +1009,7 @@ class TraiPhang13Master(BaseLesson):
 
         card=lesson_card("TAM GIÁC CÂN SAB",[
             ("math","S A=S B=5",28,CYAN),
-            ("math","widehat(A S B)=frac(pi,2)",28,CYAN),
+            ("math","hat(A S B)=frac(pi,2)",28,CYAN),
             ("math","A B=sqrt(5^2+5^2)",28,INK),
             ("math","A B=5 sqrt(2)",35,GOLD),
         ],GOLD)
