@@ -1,0 +1,775 @@
+1
+00:00:00,000 --> 00:00:07,700
+Hãy tưởng tượng tám học sinh được xếp thành hai đội: đội đỏ có ba người và đội xanh có năm người.
+
+2
+00:00:07,700 --> 00:00:15,050
+Hai đội có tên cố định, vì thế nhóm đỏ gồm A B C khác nhóm đỏ gồm A B D.
+
+3
+00:00:15,050 --> 00:00:19,600
+Ta chưa cần xếp hàng trong mỗi đội, chỉ phải chọn thành viên.
+
+4
+00:00:19,600 --> 00:00:24,500
+Chúng ta sẽ đếm sao cho mỗi phương án được tính đúng một lần.
+
+5
+00:00:24,500 --> 00:00:28,986
+Để lập một cách chia, trước hết chọn ba người cho đội đỏ.
+
+6
+00:00:28,986 --> 00:00:33,472
+Khi đã chọn, cả năm người không được chọn phải thuộc đội xanh.
+
+7
+00:00:33,472 --> 00:00:42,444
+Như vậy mỗi bộ ba được chọn tạo đúng một cách chia hai đội, và ngược lại mỗi cách chia xác định duy nhất đội đỏ.
+
+8
+00:00:42,444 --> 00:00:49,000
+Đây là một tương ứng một một giữa tập cách chia và tập tổ hợp chập ba của tám.
+
+9
+00:00:49,000 --> 00:00:58,188
+Theo công thức tổ hợp của Series, tám chọn ba bằng tám giai thừa chia cho ba giai thừa và năm giai thừa, bằng năm mươi sáu.
+
+10
+00:00:58,188 --> 00:01:05,674
+Một sai lầm phổ biến là sau khi chọn đội đỏ còn nhân thêm số cách chọn năm người từ năm người.
+
+11
+00:01:05,674 --> 00:01:08,396
+Số ấy bằng một nên không thay đổi.
+
+12
+00:01:08,396 --> 00:01:13,500
+Nếu coi thứ tự học sinh trong đội là quan trọng, ta sẽ đếm thừa.
+
+13
+00:01:13,500 --> 00:01:17,583
+Giờ hãy chú ý điều gì xảy ra khi đổi tên hai đội.
+
+14
+00:01:17,583 --> 00:01:26,692
+Nếu hai đội có nhiệm vụ khác nhau, việc đội đỏ nhận một tập học sinh thay vì đội xanh thực hiện nhiệm vụ là một kết quả mới.
+
+15
+00:01:26,692 --> 00:01:31,718
+Tuy nhiên trong bài ba và năm người, kích thước còn tự phân biệt vai trò.
+
+16
+00:01:31,718 --> 00:01:38,000
+Ở chương tiếp theo ta sẽ dùng hai đội cùng bốn người để thấy tác dụng thực sự của nhãn.
+
+17
+00:01:38,000 --> 00:01:42,363
+Giả sử đội đỏ ngoài ba thành viên còn phải có đội trưởng.
+
+18
+00:01:42,363 --> 00:01:49,411
+Trước tiên có năm mươi sáu cách chọn đội, rồi trong chính đội đỏ vừa chọn có ba cách chọn trưởng.
+
+19
+00:01:49,411 --> 00:01:55,452
+Hai công đoạn tạo nên năm mươi sáu nhân ba, tức một trăm sáu mươi tám phương án.
+
+20
+00:01:55,452 --> 00:02:02,500
+Chú ý chúng ta không được chọn trưởng từ cả tám người, vì đội trưởng bắt buộc phải thuộc đội đỏ.
+
+21
+00:02:02,500 --> 00:02:06,897
+Điều cần ghi nhớ ở chương thứ nhất là vai trò của nhãn nhóm.
+
+22
+00:02:06,897 --> 00:02:12,237
+Khi nói đội đỏ và đội xanh, tên gọi xác định nơi mỗi thành viên phải đến.
+
+23
+00:02:12,237 --> 00:02:18,833
+Một phương án được đếm dựa trên tập thành viên của các đội, không dựa trên thứ tự trong mỗi đội.
+
+24
+00:02:18,833 --> 00:02:27,000
+Bài chia nhóm không phải bài hoán vị người trên một hàng ghế; chỉ khi đề yêu cầu xếp chỗ ta mới tính đến thứ tự.
+
+25
+00:02:27,000 --> 00:02:33,770
+Bây giờ tám học sinh vẫn giữ nguyên, nhưng hai nhóm đều có bốn người và hoàn toàn không có tên.
+
+26
+00:02:33,770 --> 00:02:44,408
+Nếu ta nói một nhóm là A B C D và nhóm kia là E F G H, rồi đổi thứ tự trình bày hai nhóm, kết quả thực tế không thay đổi.
+
+27
+00:02:44,408 --> 00:02:51,500
+Đó là khác biệt quan trọng với bài có nhãn, và là lý do xuất hiện phép chia cho hai giai thừa.
+
+28
+00:02:51,500 --> 00:02:56,727
+Ta thử chọn bốn người vào nhóm thứ nhất trên giấy, được bảy mươi tập con.
+
+29
+00:02:56,727 --> 00:03:01,627
+Nhưng vì nhóm không mang tên, cùng một cách chia sẽ xuất hiện hai lần.
+
+30
+00:03:01,627 --> 00:03:07,833
+Lần thứ nhất ta chọn bộ A B C D, lần thứ hai chọn bộ E F G H.
+
+31
+00:03:07,833 --> 00:03:12,733
+Chúng là hai tập con khác nhau nhưng tạo ra cùng hai nhóm không nhãn.
+
+32
+00:03:12,733 --> 00:03:16,000
+Hình động sẽ nối những cặp kết quả trùng nhau.
+
+33
+00:03:16,000 --> 00:03:26,638
+Bởi vì mỗi cách chia thành hai nhóm bốn người xuất hiện đúng hai lần và không có ngoại lệ, ta chia bảy mươi cho hai giai thừa, được ba mươi lăm cách.
+
+34
+00:03:26,638 --> 00:03:29,217
+Phép chia này không phải mẹo học thuộc.
+
+35
+00:03:29,217 --> 00:03:34,375
+Nó xuất phát từ việc đếm chính xác số lần mỗi kết quả được liệt kê.
+
+36
+00:03:34,375 --> 00:03:40,500
+Nếu số lần trùng không đều nhau, chúng ta không thể lấy tổng chia một con số cố định.
+
+37
+00:03:40,500 --> 00:03:48,866
+Hãy nhìn hai dòng trên màn hình: A B C D đứng bên trái và E F G H đứng bên phải, rồi chúng đổi chỗ cho nhau.
+
+38
+00:03:48,866 --> 00:03:55,439
+Trong cả hai lần, bốn người ở nhóm A B C D vẫn đi cùng nhau và bốn người kia cũng vậy.
+
+39
+00:03:55,439 --> 00:04:00,220
+Vì không có đội đỏ hay đội xanh, hai dòng biểu diễn đúng một phương án.
+
+40
+00:04:00,220 --> 00:04:05,000
+Hoạt hình đổi nhóm này chính là lời chứng minh trực quan của việc chia hai.
+
+41
+00:04:05,000 --> 00:04:11,770
+Cùng tám người chia hai nhóm bốn, nếu hai nhóm làm nhiệm vụ đỏ và xanh thì có bảy mươi cách.
+
+42
+00:04:11,770 --> 00:04:17,250
+Nếu hai nhóm chỉ là hai tập học sinh không tên thì còn ba mươi lăm cách.
+
+43
+00:04:17,250 --> 00:04:25,954
+Như vậy, trước khi áp dụng công thức, ta nhất thiết phải xác định đổi tên các nhóm có tạo ra một cách chia mới hay không.
+
+44
+00:04:25,954 --> 00:04:29,500
+Chính câu hỏi ấy sẽ theo suốt bài học hôm nay.
+
+45
+00:04:29,500 --> 00:04:39,114
+Với hai k người được chia thành hai nhóm đều k người và không có tên, trước hết có tổ hợp chọn k trong hai k cách chọn nhóm thứ nhất.
+
+46
+00:04:39,114 --> 00:04:45,006
+Mỗi kết quả phân nhóm lại được gặp hai lần khi lấy một trong hai nhóm làm nhóm đầu.
+
+47
+00:04:45,006 --> 00:04:49,968
+Bởi vậy công thức tổng quát là tổ hợp chập k của hai k chia hai.
+
+48
+00:04:49,968 --> 00:04:54,000
+Công thức chỉ áp dụng khi hai nhóm thực sự không phân biệt.
+
+49
+00:04:54,000 --> 00:05:01,955
+Một câu hỏi dễ nhầm xuất hiện: tám người chia thành một nhóm ba và một nhóm năm, cả hai nhóm đều không có tên.
+
+50
+00:05:01,955 --> 00:05:08,000
+Ta có nên lấy năm mươi sáu chia hai như chương trước hay không? Câu trả lời là không.
+
+51
+00:05:08,000 --> 00:05:18,500
+Dù không có tên, nhóm ba và nhóm năm có kích thước khác nhau nên không thể hoán đổi vai trò kích thước của chúng mà tạo ra cùng lựa chọn ban đầu.
+
+52
+00:05:18,500 --> 00:05:21,364
+Ta chỉ cần chọn ba người làm nhóm nhỏ.
+
+53
+00:05:21,364 --> 00:05:27,727
+Không thể nhầm nhóm nhỏ đó với nhóm lớn vì một nhóm có ba và nhóm kia có năm người.
+
+54
+00:05:27,727 --> 00:05:33,455
+Mỗi cách chia tương ứng đúng một bộ ba, và bộ ba ấy quyết định phần còn lại.
+
+55
+00:05:33,455 --> 00:05:36,000
+Do đó có năm mươi sáu cách chia.
+
+56
+00:05:36,000 --> 00:05:43,000
+Nếu chia thêm cho hai, ta sẽ mất một nửa những phương án hợp lệ mà không hề có sự đếm trùng.
+
+57
+00:05:43,000 --> 00:05:49,860
+Trên hình, hai khối ba người và năm người có thể di chuyển từ trái qua phải và đổi vị trí.
+
+58
+00:05:49,860 --> 00:05:57,700
+Nhưng chúng vẫn mang kích thước ba và năm, nên có thể nhận ra đâu là nhóm nhỏ mà không cần nhãn đỏ xanh.
+
+59
+00:05:57,700 --> 00:06:01,947
+Việc chọn nhóm nhỏ để đếm đã giải quyết trọn vẹn bài toán.
+
+60
+00:06:01,947 --> 00:06:07,500
+Ta sẽ không đếm hai lần vì không bao giờ coi nhóm năm là một bộ ba.
+
+61
+00:06:07,500 --> 00:06:11,222
+Cùng tám học sinh nhưng chia ba năm khác chia bốn bốn.
+
+62
+00:06:11,222 --> 00:06:16,494
+Khi ba năm, kích thước phân biệt nhóm nên mỗi lựa chọn được tính đúng một lần.
+
+63
+00:06:16,494 --> 00:06:24,867
+Khi bốn bốn, hai nhóm có cùng kích thước và không có tên nên mỗi phân hoạch được liệt kê hai lần nếu chọn nhóm đầu tiên.
+
+64
+00:06:24,867 --> 00:06:32,000
+Sự khác biệt nằm ở tính đối xứng của phân hoạch, không phải ở việc đề có dùng chữ chia nhóm hay không.
+
+65
+00:06:32,000 --> 00:06:40,704
+Mở rộng từ hai nhóm sang ba nhóm, giả sử chín học sinh chia thành nhóm hai, nhóm ba và nhóm bốn, tất cả không có tên.
+
+66
+00:06:40,704 --> 00:06:48,118
+Vì mỗi cỡ xuất hiện đúng một lần, bộ thành viên của nhóm cỡ hai, ba và bốn đều được xác định riêng.
+
+67
+00:06:48,118 --> 00:06:56,500
+Số cách bằng chín giai thừa chia cho tích hai giai thừa, ba giai thừa và bốn giai thừa, tức một nghìn hai trăm sáu mươi.
+
+68
+00:06:56,500 --> 00:07:06,816
+Ta vừa có một nguyên tắc rất hữu ích: ghi rõ kích thước của từng nhóm và xác định các nhóm nào có thể hoán đổi mà không thay đổi kết quả.
+
+69
+00:07:06,816 --> 00:07:11,329
+Với những nhóm cùng cỡ và không tên, phép đổi chỗ gây đếm trùng.
+
+70
+00:07:11,329 --> 00:07:14,875
+Với các nhóm khác cỡ, kích thước tự phân biệt chúng.
+
+71
+00:07:14,875 --> 00:07:21,000
+Ở chương tiếp theo, ba nhóm cùng cỡ sẽ tạo ra sáu cách gọi tên cho một phân hoạch.
+
+72
+00:07:21,000 --> 00:07:26,866
+Giả sử lớp có chín học sinh và cần chia thành ba nhóm, mỗi nhóm ba người.
+
+73
+00:07:26,866 --> 00:07:31,352
+Không có nhóm một, nhóm hai hay nhóm ba với nhiệm vụ riêng.
+
+74
+00:07:31,352 --> 00:07:39,634
+Nếu chỉ ghi một phân hoạch thành ba dòng rồi thay đổi thứ tự ba dòng ấy, thực tế phân chia không thay đổi.
+
+75
+00:07:39,634 --> 00:07:45,500
+Chính sự đối xứng giữa ba nhóm làm cho công thức phải chia cho ba giai thừa.
+
+76
+00:07:45,500 --> 00:07:49,243
+Để dễ đếm, ta tạm gắn nhãn nhóm một, hai, ba.
+
+77
+00:07:49,243 --> 00:07:53,326
+Nhóm thứ nhất lấy ba trong chín, có tám mươi bốn cách.
+
+78
+00:07:53,326 --> 00:08:00,472
+Nhóm thứ hai lấy ba trong sáu người còn lại, có hai mươi cách. Nhóm cuối nhận ba người còn lại.
+
+79
+00:08:00,472 --> 00:08:10,000
+Nhân hai số được một nghìn sáu trăm tám mươi cách, nhưng đó là số cách cho các nhóm có tên, chưa phải kết quả của bài gốc.
+
+80
+00:08:10,000 --> 00:08:14,486
+Hãy quan sát ba bộ ba được đổi vị trí trên màn hình.
+
+81
+00:08:14,486 --> 00:08:19,662
+Có sáu hoán vị của ba dòng, nhưng thành viên từng bộ ba không đổi.
+
+82
+00:08:19,662 --> 00:08:27,599
+Vì cả ba nhóm cùng cỡ và không tên, mỗi phân hoạch được ghi đúng sáu lần khi ta tạm đặt tên nhóm.
+
+83
+00:08:27,599 --> 00:08:34,500
+Do vậy chia một nghìn sáu trăm tám mươi cho sáu, nhận hai trăm tám mươi cách chia thực sự.
+
+84
+00:08:34,500 --> 00:08:49,730
+Công thức tổng quát rất đáng nhớ: với n bằng r nhân k phần tử phân biệt, chia thành r nhóm cùng k phần tử và không đặt tên, số cách là n giai thừa chia cho k giai thừa mũ r và r giai thừa.
+
+85
+00:08:49,730 --> 00:08:59,000
+Mẫu số có hai ý nghĩa khác nhau: thứ tự các phần tử trong từng nhóm không quan trọng, và thứ tự r nhóm cũng không quan trọng.
+
+86
+00:08:59,000 --> 00:09:06,224
+Nếu ba nhóm có nhiệm vụ khác nhau, chẳng hạn trực lớp, học tập và trang trí, ta không được chia cho sáu.
+
+87
+00:09:06,224 --> 00:09:09,679
+Nhóm A làm trực lớp khác nhóm A làm trang trí.
+
+88
+00:09:09,679 --> 00:09:14,705
+Khi ba nhóm có tên, một nghìn sáu trăm tám mươi kết quả đều phân biệt.
+
+89
+00:09:14,705 --> 00:09:18,160
+Khi không tên, chỉ có hai trăm tám mươi phân hoạch.
+
+90
+00:09:18,160 --> 00:09:23,500
+Như vậy nhãn nhóm thực sự là dữ kiện toán học, không phải chi tiết ngôn từ.
+
+91
+00:09:23,500 --> 00:09:29,774
+Một lưu ý quan trọng để tránh sai lầm: không thấy ba nhóm là tự động chia cho ba giai thừa.
+
+92
+00:09:29,774 --> 00:09:38,439
+Cần hỏi ba nhóm có cùng kích thước hay không, có nhãn hoặc nhiệm vụ riêng hay không, và đổi chỗ có giữ nguyên một cách chia hay không.
+
+93
+00:09:38,439 --> 00:09:43,220
+Công thức được suy ra bằng đếm trùng, không phải dùng theo hình thức của đề.
+
+94
+00:09:43,220 --> 00:09:48,000
+Sang chương sau ta sẽ ghép cặp, trường hợp điển hình của nhiều nhóm không nhãn.
+
+95
+00:09:48,000 --> 00:09:54,806
+Bài ghép cặp xuất hiện trong phân công trực nhật, bốc thăm thi đấu hoặc chia bạn học theo đôi.
+
+96
+00:09:54,806 --> 00:10:00,931
+Sáu học sinh cần ghép thành ba cặp, không có cặp số một, số hai hay số ba.
+
+97
+00:10:00,931 --> 00:10:09,438
+Khi A ghép với B, việc viết B A không tạo cặp mới, và đổi vị trí các cặp cũng không tạo kết quả mới.
+
+98
+00:10:09,438 --> 00:10:12,500
+Ta phải loại cả hai kiểu đếm trùng ấy.
+
+99
+00:10:12,500 --> 00:10:24,577
+Ta bắt đầu bằng sáu giai thừa dãy có thứ tự, rồi ghép hai vị trí đầu thành cặp một, hai vị trí tiếp thành cặp hai và hai vị trí cuối thành cặp ba.
+
+100
+00:10:24,577 --> 00:10:28,718
+Trong mỗi cặp, đổi chỗ hai người không thay đổi cặp đó.
+
+101
+00:10:28,718 --> 00:10:37,000
+Có hai cách viết cho mỗi cặp, tổng cộng hai giai thừa mũ ba cách viết khác nhau cho cùng thứ tự ba cặp.
+
+102
+00:10:37,000 --> 00:10:45,522
+Sau khi bỏ thứ tự trong từng cặp, ta vẫn còn sự trùng nhau do ba cặp được viết theo thứ tự khác nhau.
+
+103
+00:10:45,522 --> 00:10:52,268
+Vì ba cặp không có tên, sáu hoán vị của ba cặp đều biểu diễn cùng một phép ghép.
+
+104
+00:10:52,268 --> 00:11:01,500
+Do vậy số cách ghép sáu người là sáu giai thừa chia cho hai giai thừa mũ ba và chia ba giai thừa, bằng mười lăm.
+
+105
+00:11:01,500 --> 00:11:05,243
+Có một cách đếm trực tiếp không cần giai thừa lớn.
+
+106
+00:11:05,243 --> 00:11:09,667
+Ta bắt đầu với A; người ghép cùng A có năm khả năng.
+
+107
+00:11:09,667 --> 00:11:17,153
+Lấy người đứng đầu theo thứ tự chữ cái trong bốn người còn lại, người ấy có ba lựa chọn ghép cặp.
+
+108
+00:11:17,153 --> 00:11:19,875
+Hai người cuối bắt buộc ghép với nhau.
+
+109
+00:11:19,875 --> 00:11:26,000
+Như vậy tổng cộng năm nhân ba, đúng bằng mười lăm, kiểm chứng phương pháp chia đếm trùng.
+
+110
+00:11:26,000 --> 00:11:29,500
+Với tám người, ta chia thành bốn cặp không nhãn.
+
+111
+00:11:29,500 --> 00:11:40,700
+Cách tính tương tự: tám giai thừa chia cho hai giai thừa mũ bốn để bỏ thứ tự trong cặp, rồi chia bốn giai thừa để bỏ thứ tự giữa bốn cặp.
+
+112
+00:11:40,700 --> 00:11:42,800
+Kết quả một trăm lẻ năm.
+
+113
+00:11:42,800 --> 00:11:50,500
+Nếu liệt kê trực tiếp bằng cách chọn bạn cho người đầu tiên, chúng ta cũng nhận bảy nhân năm nhân ba.
+
+114
+00:11:50,500 --> 00:11:58,326
+Một bài toán hai bước: trong chín học sinh, chọn sáu người tham gia rồi ghép sáu người thành ba cặp không tên.
+
+115
+00:11:58,326 --> 00:12:03,090
+Bước thứ nhất là tổ hợp chập sáu của chín, bằng tám mươi bốn.
+
+116
+00:12:03,090 --> 00:12:08,194
+Với mỗi nhóm sáu người đã chọn, bước ghép cặp có mười lăm kết quả.
+
+117
+00:12:08,194 --> 00:12:15,000
+Quy tắc nhân cho ta tám mươi bốn nhân mười lăm bằng một nghìn hai trăm sáu mươi phương án.
+
+118
+00:12:15,000 --> 00:12:23,055
+Khi một bài toán yêu cầu vừa chia nhóm vừa phân công chức vụ, ta đang thực hiện hai công đoạn đếm liên tiếp.
+
+119
+00:12:23,055 --> 00:12:29,767
+Chẳng hạn chọn đội ba học sinh từ tám người, sau đó chỉ định một đội trưởng trong đội ấy.
+
+120
+00:12:29,767 --> 00:12:36,479
+Hình động sẽ chọn ba thẻ vào khung nhóm trước, rồi đặt ngôi sao trưởng lên một trong ba thẻ.
+
+121
+00:12:36,479 --> 00:12:39,500
+Đó là cách trực quan hóa quy tắc nhân.
+
+122
+00:12:39,500 --> 00:12:42,879
+Có năm mươi sáu cách chọn bộ ba không xét thứ tự.
+
+123
+00:12:42,879 --> 00:12:49,356
+Khi đã có bộ ba, vị trí đội trưởng mang vai trò khác hai thành viên còn lại, nên có ba lựa chọn.
+
+124
+00:12:49,356 --> 00:12:52,736
+Nhân năm mươi sáu với ba được một trăm sáu mươi tám.
+
+125
+00:12:52,736 --> 00:12:58,368
+Một phương án được xác định bởi cặp dữ liệu là tập thành viên và người được chọn làm trưởng.
+
+126
+00:12:58,368 --> 00:13:04,000
+Không được nhân thêm ba giai thừa bởi hai thành viên không giữ chức vụ vẫn hoàn toàn bình đẳng.
+
+127
+00:13:04,000 --> 00:13:09,206
+Tiếp tục chia chín học sinh thành ba nhóm ba người không mang tên như chương bốn.
+
+128
+00:13:09,206 --> 00:13:11,350
+Có hai trăm tám mươi phân hoạch.
+
+129
+00:13:11,350 --> 00:13:19,925
+Trong mỗi phân hoạch, ba nhóm xác định bởi bộ thành viên; ta chọn một người làm trưởng của từng nhóm, có ba nhân ba nhân ba cách.
+
+130
+00:13:19,925 --> 00:13:25,744
+Vì các trưởng gắn với từng nhóm cụ thể, không nhân thêm số cách đổi thứ tự các nhóm.
+
+131
+00:13:25,744 --> 00:13:28,500
+Kết quả là bảy nghìn năm trăm sáu mươi.
+
+132
+00:13:28,500 --> 00:13:34,333
+Có thể có bạn muốn nhân thêm ba giai thừa vì ba nhóm đều có trưởng. Điều đó không đúng.
+
+133
+00:13:34,333 --> 00:13:39,292
+Một trưởng nhóm là vai trò bên trong nhóm, còn bản thân ba nhóm vẫn vô danh.
+
+134
+00:13:39,292 --> 00:13:47,167
+Nếu ta đổi thứ tự trình bày ba nhóm, mọi thành viên và trưởng của từng nhóm đều giữ nguyên, nên kết quả hoàn toàn giống trước.
+
+135
+00:13:47,167 --> 00:13:53,000
+Chúng ta chỉ được nhân các lựa chọn trưởng, không được hồi sinh sự đếm trùng do hoán đổi nhóm.
+
+136
+00:13:53,000 --> 00:13:58,582
+Về nguyên tắc ta có thể chọn các trưởng nhóm trước rồi phân thành viên cho từng trưởng.
+
+137
+00:13:58,582 --> 00:14:06,646
+Tuy nhiên ba nhóm không có tên, nên cách ấy đòi hỏi một quy ước rõ ràng để tránh đếm lại do thứ tự chọn trưởng.
+
+138
+00:14:06,646 --> 00:14:12,228
+Cách chọn phân hoạch trước rồi chọn một trưởng trong từng nhóm đơn giản và minh bạch hơn.
+
+139
+00:14:12,228 --> 00:14:17,500
+Trong bài học tổ hợp, chọn cách đếm ít sai sót là một kĩ năng quan trọng.
+
+140
+00:14:17,500 --> 00:14:26,994
+Để tránh mọi nhầm lẫn, ta phân biệt hai loại đối xứng: đổi thứ tự các thành viên trong một nhóm và đổi thứ tự các nhóm cùng cỡ không tên.
+
+141
+00:14:26,994 --> 00:14:32,812
+Khi bổ nhiệm trưởng, những người làm trưởng được phân biệt trong nhóm, vì thế tạo thêm số cách.
+
+142
+00:14:32,812 --> 00:14:36,488
+Nhưng điều đó không biến nhóm vô danh thành nhóm có tên.
+
+143
+00:14:36,488 --> 00:14:42,000
+Đây là nền tảng để xét các bài có ràng buộc A và B ở chương tiếp theo.
+
+144
+00:14:42,000 --> 00:14:49,048
+Bây giờ hai nhóm bốn không có tên, nhưng ta đưa thêm điều kiện A và B phải ở cùng nhóm.
+
+145
+00:14:49,048 --> 00:14:54,418
+Chính cặp A B tạo ra một điểm mốc để phân biệt nhóm chứa cả hai.
+
+146
+00:14:54,418 --> 00:15:00,795
+Ta chỉ cần chọn hai người nữa trong sáu người còn lại để ghép vào cùng A và B.
+
+147
+00:15:00,795 --> 00:15:06,500
+Bốn người chưa chọn sẽ thành nhóm còn lại, không có trường hợp nào bị đếm lặp.
+
+148
+00:15:06,500 --> 00:15:09,013
+Có sáu học sinh ngoài A và B.
+
+149
+00:15:09,013 --> 00:15:17,179
+Để hoàn thành nhóm bốn chứa hai bạn ấy, ta chọn đúng hai trong sáu người, được tổ hợp chập hai của sáu bằng mười lăm.
+
+150
+00:15:17,179 --> 00:15:21,891
+Một khi nhóm này được chọn, bốn học sinh còn lại hình thành nhóm kia.
+
+151
+00:15:21,891 --> 00:15:31,000
+Vì chỉ có một nhóm chứa đồng thời A và B, mỗi kết quả được đếm đúng một lần mà không cần chia hai như bài không điều kiện.
+
+152
+00:15:31,000 --> 00:15:36,628
+Nếu yêu cầu A và B phải khác nhóm, ta có thể dùng kết quả vừa tìm.
+
+153
+00:15:36,628 --> 00:15:41,926
+Toàn bộ cách chia tám người thành hai nhóm bốn vô danh là ba mươi lăm.
+
+154
+00:15:41,926 --> 00:15:50,534
+Mỗi phân hoạch hoặc đưa A và B vào cùng nhóm, hoặc đưa hai người vào hai nhóm khác nhau, không có trường hợp thứ ba.
+
+155
+00:15:50,534 --> 00:15:55,500
+Vậy số cách khác nhóm là ba mươi lăm trừ mười lăm, bằng hai mươi.
+
+156
+00:15:55,500 --> 00:16:00,135
+Ta còn có thể đếm trực tiếp: lấy nhóm chứa A làm điểm mốc.
+
+157
+00:16:00,135 --> 00:16:08,081
+Vì B phải ở nhóm kia, ta chọn ba thành viên cho nhóm chứa A trong sáu người còn lại ngoài A và B.
+
+158
+00:16:08,081 --> 00:16:14,041
+Có tổ hợp chập ba của sáu bằng hai mươi. Nhóm có B nhận bốn người còn lại.
+
+159
+00:16:14,041 --> 00:16:20,000
+Cách đếm không dựa vào phần bù nhưng cho cùng đáp số, giúp kiểm tra tính chính xác.
+
+160
+00:16:20,000 --> 00:16:23,182
+Xét chín người chia ba nhóm ba không có tên.
+
+161
+00:16:23,182 --> 00:16:30,500
+Nếu A và B phải cùng nhóm, nhóm ấy chỉ còn một vị trí nên có bảy cách chọn học sinh thứ ba.
+
+162
+00:16:30,500 --> 00:16:34,955
+Sáu người còn lại được chia hai nhóm ba vô danh, có mười cách.
+
+163
+00:16:34,955 --> 00:16:37,818
+Nhân bảy với mười được bảy mươi phân hoạch.
+
+164
+00:16:37,818 --> 00:16:44,500
+Một lần nữa nhóm có A và B được xác định duy nhất, do đó không cần chia thêm cho ba.
+
+165
+00:16:44,500 --> 00:16:47,149
+Vẫn là chín người chia ba nhóm ba.
+
+166
+00:16:47,149 --> 00:16:53,439
+Trong tổng hai trăm tám mươi phân hoạch, bảy mươi phân hoạch để A và B ở cùng nhóm.
+
+167
+00:16:53,439 --> 00:16:58,736
+Vậy có hai trăm mười phân hoạch tách A và B sang hai nhóm khác nhau.
+
+168
+00:16:58,736 --> 00:17:09,000
+Kết quả này có thể đối chiếu trực tiếp bằng cách chọn hai người cho nhóm của A và hai người cho nhóm của B, được hai mươi mốt nhân mười.
+
+169
+00:17:09,000 --> 00:17:16,470
+Bài cuối kết hợp toàn bộ tư duy đã học: chia chín học sinh thành ba nhóm, mỗi nhóm ba người và không có tên.
+
+170
+00:17:16,470 --> 00:17:23,043
+Hai học sinh A và B phải ở hai nhóm khác nhau. Sau khi chia xong, mỗi nhóm chọn một nhóm trưởng.
+
+171
+00:17:23,043 --> 00:17:25,433
+Ta sẽ giải bằng hai cách độc lập.
+
+172
+00:17:25,433 --> 00:17:33,500
+Quan trọng là một cách chia và các trưởng tương ứng phải được xác định rõ, không bị tính trùng khi đổi thứ tự trình bày nhóm.
+
+173
+00:17:33,500 --> 00:17:37,046
+Ở cách thứ nhất, ta sử dụng kết quả chương bảy.
+
+174
+00:17:37,046 --> 00:17:41,559
+Ba nhóm ba người vô danh có hai trăm tám mươi cách phân chia.
+
+175
+00:17:41,559 --> 00:17:47,362
+Trong số đó, bảy mươi cách đặt A và B cùng một nhóm và không đáp ứng đề.
+
+176
+00:17:47,362 --> 00:17:54,454
+Loại hết các trường hợp ấy, ta còn hai trăm mười cách chia mà A và B ở hai nhóm khác nhau.
+
+177
+00:17:54,454 --> 00:17:58,000
+Bước tiếp theo mới là phân công trưởng cho từng nhóm.
+
+178
+00:17:58,000 --> 00:18:04,045
+Với mỗi phân hoạch hợp lệ, ba nhóm có ba người nên mỗi nhóm có ba lựa chọn trưởng.
+
+179
+00:18:04,045 --> 00:18:08,818
+Các lựa chọn này độc lập, tạo ba mũ ba, bằng hai mươi bảy cách.
+
+180
+00:18:08,818 --> 00:18:14,864
+Nhân hai trăm mười với hai mươi bảy, chúng ta nhận năm nghìn sáu trăm bảy mươi phương án.
+
+181
+00:18:14,864 --> 00:18:22,500
+Không nhân thêm ba giai thừa vì các nhóm vẫn không có tên; các trưởng được gắn với đúng tập thành viên của mình.
+
+182
+00:18:22,500 --> 00:18:25,767
+Để kiểm chứng độc lập, chúng ta đếm trực tiếp.
+
+183
+00:18:25,767 --> 00:18:35,893
+Nhóm chứa A được phân biệt tự nhiên bởi thành viên A, nên chọn thêm hai người trong bảy người khác ngoài A và B, có hai mươi mốt lựa chọn.
+
+184
+00:18:35,893 --> 00:18:40,467
+Khi nhóm này được xác định, còn lại B và năm học sinh khác.
+
+185
+00:18:40,467 --> 00:18:47,000
+Ta sẽ chọn nhóm chứa B ở bước tiếp theo, nhờ vậy không bao giờ hoán đổi nhầm hai nhóm.
+
+186
+00:18:47,000 --> 00:18:48,815
+Tiếp theo chọn nhóm chứa B.
+
+187
+00:18:48,815 --> 00:18:55,772
+Ngoài B còn năm học sinh đang chờ, ta chọn hai trong năm để cùng B thành nhóm ba người, có mười cách.
+
+188
+00:18:55,772 --> 00:18:58,494
+Ba học sinh cuối tự tạo nhóm còn lại.
+
+189
+00:18:58,494 --> 00:19:05,753
+Như vậy có hai mươi mốt nhân mười bằng hai trăm mười phân hoạch hợp lệ, đúng bằng kết quả đếm theo phần bù.
+
+190
+00:19:05,753 --> 00:19:11,500
+Mỗi cách chia xuất hiện một lần vì nhóm chứa A và nhóm chứa B được nhận diện riêng.
+
+191
+00:19:11,500 --> 00:19:15,824
+Từ hai cách đếm, ta có cùng kết quả năm nghìn sáu trăm bảy mươi.
+
+192
+00:19:15,824 --> 00:19:25,047
+Phương pháp thứ nhất loại các phân hoạch sai rồi chọn trưởng; phương pháp thứ hai trực tiếp xây dựng từng nhóm nhờ hai học sinh A và B làm điểm mốc.
+
+193
+00:19:25,047 --> 00:19:33,406
+Bài học quan trọng nhất không nằm ở con số lớn, mà ở việc chứng minh các trường hợp đầy đủ, không giao nhau và không bị đếm lặp.
+
+194
+00:19:33,406 --> 00:19:36,000
+Đây là nền tảng cho tổ hợp nâng cao.

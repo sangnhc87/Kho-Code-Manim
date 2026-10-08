@@ -42,3 +42,10 @@ Kiểm thử toán, toàn bộ unit tests và cú pháp Python được thực h
 - 48 nhịp giảng; 8 chương; trên 19 phút nền, 1080p/30 fps khi chọn fullhd.
 - Bài cuối: chữ số 0..5, 4 chữ số khác nhau, lớn hơn 3000, chia hết 15: 24 số.
 - Thời lượng thực tế/độ hoàn thiện thị giác vẫn phải kiểm chứng sau khi render trên GitHub Actions.
+
+
+## Video 16 · Chia nhóm và phân công vai trò (COMB16 V2)
+
+Đã bổ sung mã Manim–Typst cho 8 chương/48 nhịp với đầy đủ lời giảng, công thức, phụ đề, kiểm thử và workflow `render-comb16-v2.yml`. Xem `HUONG_DAN_RENDER_COMB16_V2.md` để chạy.
+
+Video 16: 9 học sinh, 3 nhóm 3 vô danh, A và B phải khác nhóm, mỗi nhóm chọn 1 trưởng: **5670 cách**. Bản code cần được render và nghiệm thu MP4 trên GitHub Actions.
