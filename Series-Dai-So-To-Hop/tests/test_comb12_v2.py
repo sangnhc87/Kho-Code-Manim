@@ -74,7 +74,7 @@ class TestCOMB12(unittest.TestCase):
         tree=ast.parse((ROOT/'episodes/comb12_block_method.py').read_text(encoding='utf8'))
         self.assertIn('COMB12',[x.name for x in tree.body if isinstance(x,ast.ClassDef)])
     def test_workflow(self):
-        w=(ROOT/'.github/workflows/render-comb12-v2.yml').read_text(encoding='utf8')
+        w=(ROOT.parent/'.github/workflows/render-comb12-v2.yml').read_text(encoding='utf8')
         for item in ('workflow_dispatch:', 'COMB12','comb12_block_method.py','qa_comb12_v2.py','quality:','voice:','upload-artifact'):
             self.assertIn(item,w)
     def test_preserve_episodes(self):

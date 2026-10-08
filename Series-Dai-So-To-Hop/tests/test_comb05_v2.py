@@ -64,7 +64,7 @@ class Production(unittest.TestCase):
     def test_prepare_parse(self):ast.parse((ROOT/'scripts/prepare_comb05_v2.py').read_text())
     def test_qa_parse(self):ast.parse((ROOT/'scripts/qa_comb05_v2.py').read_text())
     def test_workflow_wired(self):
-        text=(ROOT/'.github/workflows/render-comb05-v2.yml').read_text()
+        text=(ROOT.parent/'.github/workflows/render-comb05-v2.yml').read_text()
         for value in ('COMB05','comb05_permutations.py','prepare_comb05_v2.py','qa_comb05_v2.py'):
             self.assertIn(value,text)
     def test_old_assets_preserved(self):

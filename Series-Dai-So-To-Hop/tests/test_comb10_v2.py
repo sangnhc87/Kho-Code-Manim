@@ -45,7 +45,7 @@ class TestCOMB10(unittest.TestCase):
     def test_typst_notation(self):self.assertIn('C^(4)_(3)',FORMULAS['gaps4'])
     def test_scene(self):self.assertIn('class COMB10(Scene):',(ROOT/'episodes/comb10_multiset_permutations.py').read_text())
     def test_workflow(self):
-        wf=(ROOT/'.github/workflows/render-comb10-v2.yml').read_text()
+        wf=(ROOT.parent/'.github/workflows/render-comb10-v2.yml').read_text()
         for t in ('workflow_dispatch:', 'quality:', 'voice:', 'COMB10.mp4','prepare_comb10_v2.py','qa_comb10_v2.py'):
             self.assertIn(t,wf)
     def test_docs(self):self.assertTrue((ROOT/'HUONG_DAN_RENDER_COMB10_V2.md').is_file())

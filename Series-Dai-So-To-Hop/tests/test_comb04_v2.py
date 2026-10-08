@@ -69,7 +69,7 @@ class Production(unittest.TestCase):
     def test_prepare_python_syntax(self):ast.parse((ROOT/'scripts/prepare_comb04_v2.py').read_text(encoding='utf-8'))
     def test_qa_python_syntax(self):ast.parse((ROOT/'scripts/qa_comb04_v2.py').read_text(encoding='utf-8'))
     def test_workflow_and_scene(self):
-        w=(ROOT/'.github/workflows/render-comb04-v2.yml').read_text()
+        w=(ROOT.parent/'.github/workflows/render-comb04-v2.yml').read_text()
         self.assertIn('episodes/comb04_order_matters.py COMB04',w)
         self.assertIn('scripts/prepare_comb04_v2.py',w)
         self.assertIn('scripts/qa_comb04_v2.py',w)
