@@ -1,9 +1,6 @@
 name: Render COMB09 V2 - Chon co lap va lap day n mu k
 
 on:
-  push:
-    paths:
-      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
