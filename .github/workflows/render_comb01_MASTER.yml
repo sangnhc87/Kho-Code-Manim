@@ -59,11 +59,11 @@ jobs:
         run: python scripts/build_formulas.py
 
       - name: Render draft video
-        if: ${{ inputs.quality == "preview" }}
+        if: ${{ inputs.quality == 'preview' }}
         run: manim -ql episodes/comb01_rule_of_sum.py COMB01
 
       - name: Render Full HD video
-        if: ${{ inputs.quality == "fullhd" }}
+        if: ${{ inputs.quality == 'fullhd' }}
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb01_rule_of_sum.py COMB01
 
       - name: Upload MP4 artifact
