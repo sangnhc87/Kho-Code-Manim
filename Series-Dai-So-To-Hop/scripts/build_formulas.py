@@ -25,6 +25,13 @@ FORMULAS = {
     'combination': (symbol('C', 'n', 'k') + ' = frac(n!, k! (n-k)!)', PALETTE['cyan']),
     'a63': (symbol('A', '6', '3') + ' = 6 dot 5 dot 4 = 120', PALETTE['cyan']),
     'c53': (symbol('C', '5', '3') + ' = 10', PALETTE['cyan']),
+    # COMB02 - rule of product. No A/C notation occurs in this episode.
+    'comb02_product6': ('3 dot 2 = 6', PALETTE['cyan']),
+    'comb02_productgeneral': ('m dot n', PALETTE['cyan']),
+    'comb02_product12': ('3 dot 2 dot 2 = 12', PALETTE['cyan']),
+    'comb02_forbidden5': ('6 - 1 = 5', PALETTE['gold']),
+    'comb02_branch5': ('1 + 2 + 2 = 5', PALETTE['green']),
+    'comb02_quiz12': ('2 dot 3 dot 2 = 12', PALETTE['cyan']),
 }
 
 
@@ -42,10 +49,16 @@ def write_typ(name: str, expression: str, color: str) -> Path:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument('--write-only', action='store_true')
+    ap.add_argument('--only-prefix', default=None,
+                    help='Optional prefix to compile formulas for one episode')
     args = ap.parse_args()
     output = ROOT / 'assets' / 'rendered'
     output.mkdir(parents=True, exist_ok=True)
-    for name, (expr, color) in FORMULAS.items():
+    selected = [(name, item) for name, item in FORMULAS.items()
+                if args.only_prefix is None or name.startswith(args.only_prefix)]
+    if not selected:
+        raise ValueError('No formula names matched --only-prefix')
+    for name, (expr, color) in selected:
         source = write_typ(name, expr, color)
         if not args.write_only:
             outfile = output / f'{name}.png'
@@ -61,7 +74,7 @@ def main() -> None:
             bbox = (max(0,bbox[0]-margin), max(0,bbox[1]-margin),
                     min(im.width,bbox[2]+margin), min(im.height,bbox[3]+margin))
             im.crop(bbox).save(outfile)
-    print(f'Prepared {len(FORMULAS)} Typst formulas. compile={not args.write_only}')
+    print(f'Prepared {len(selected)} Typst formulas. compile={not args.write_only}')
 
 
 if __name__ == '__main__':

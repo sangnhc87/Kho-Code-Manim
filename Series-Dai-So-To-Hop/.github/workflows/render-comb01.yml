@@ -24,9 +24,6 @@ jobs:
   render:
     runs-on: ubuntu-latest
     timeout-minutes: 180
-    defaults:
-      run:
-        working-directory: Series-Dai-So-To-Hop
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -1,0 +1,60 @@
+name: Render GEO01 - Point Inside Triangle - Manim Typst
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: 'Render quality'
+        required: true
+        default: preview
+        type: choice
+        options:
+          - preview
+          - fullhd
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install system dependencies and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev fonts-noto-core
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+      - name: Install Python packages
+        run: python -m pip install -r requirements.txt
+      - name: Run mathematics unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Typst formulas (required)
+        run: python scripts/build_geo_formulas.py
+      - name: Preview render
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim -ql --fps 24 episodes/geo01_point_inside_triangle.py GEO01
+      - name: Full HD render
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim -qh -r 1920,1080 --fps 30 episodes/geo01_point_inside_triangle.py GEO01
+      - name: Collect video and 8 inspection frames
+        run: |
+          mkdir -p dist/GEO01_keyframes
+          VIDEO=$(find media/videos -type f -name 'GEO01.mp4' | head -n 1)
+          test -n "$VIDEO"
+          cp "$VIDEO" dist/GEO01.mp4
+          python scripts/extract_geo_keyframes.py --video dist/GEO01.mp4 --out dist/GEO01_keyframes
+      - name: Upload downloadable MP4 and screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: GEO01-${{ inputs.quality }}-MP4-and-QA
+          path: dist/
+          retention-days: 7
+          if-no-files-found: error

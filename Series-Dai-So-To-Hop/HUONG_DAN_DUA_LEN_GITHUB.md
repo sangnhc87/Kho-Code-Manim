@@ -1,44 +1,16 @@
-# CACH DUA COMB01 LEN GITHUB ACTIONS
+# CÀI COMB01 V2 LÊN GITHUB (KHÔNG CẦN CODEX CLOUD)
 
-## Da co code cho bao nhieu tap?
+**Đây là bản Video 01 đã viết lại để xử lý lỗi video quá ngắn.** Không dùng workflow COMB01 cũ khi render.
 
-- Co ma Manim co the render: COMB01 (Quy tac cong).
-- COMB02-COMB08: moi co de cuong; KHONG CO code Manim trong goi nay.
-- Scene duoc render: `COMB01` trong `episodes/comb01_rule_of_sum.py`.
-- Workflow can chay: `.github/workflows/render-comb01.yml`.
+1. Giải nén file `SangMath_COMB01_V2_GitHubReady.zip`.
+2. Chép **toàn bộ nội dung đã giải nén**, kể cả thư mục ẩn `.github`, vào gốc repository GitHub đang lưu COMB01, COMB02, GEO01. Giữ nguyên vị trí thư mục `episodes`, `scripts`, `tests`.
+3. Khi hệ thống hỏi, chọn **ghi đè** các file COMB01 trùng tên. Các mã COMB02 và GEO01 vẫn được giữ.
+4. Commit và push thay đổi.
+5. Vào **Actions → Render COMB01 V2 - Bai giang day du Manim Typst → Run workflow**.
+6. Chạy trước với `quality=preview`, `voice=on`. Nếu dịch vụ tạo giọng đọc lỗi mạng, chọn `voice=off` để duyệt riêng hình.
+7. Ở cuối tác vụ, vào Artifacts, tải `COMB01-V2-preview-voice-on`. Trong đó có MP4, 8 ảnh chụp từng chương, ảnh tổng hợp và báo cáo kiểm tra thời lượng.
+8. Sau khi xem preview thực tế, chạy lại workflow chọn `quality=fullhd` để xuất 1920×1080, 30 FPS.
 
-## Cach don gian voi GitHub Desktop (khuyen dung)
+**Định lượng bắt buộc:** bài có 42 nhịp, 8 phần, video tối thiểu 11 phút. File đã bật tiếng phải có audio stream. Workflow dùng `ffprobe` kiểm tra hai điều kiện này.
 
-1. Giai nen ZIP 'SangMath_COMB01_GitHub_Ready.zip'.
-2. Mo GitHub Desktop. Chon File > Add Local Repository, chon thu muc da giai nen. Neu ung dung thong bao thu muc chua la git repository, bam Create a Repository Here.
-3. Commit to main (neu co thay doi chua commit), sau do bam Publish repository.
-4. Mo repository tren GitHub, chon Actions.
-5. Chon 'Render COMB01 - Manim + Typst' (ten hien thi co the co dau cham giua), bam Run workflow.
-6. Chon `quality: preview` va `notation: user`, sau do bam Run workflow.
-7. Khi hoan thanh, bam lan chay -> Artifacts -> tai goi `COMB01-preview-user` de lay MP4.
-8. Neu ban preview dat yeu cau, chay lai workflow va chon `quality: fullhd`.
-
-## Cach dung terminal khi da tao repository trong GitHub
-
-Mo Terminal tai thu muc goc da giai nen (thu muc co `README.md` va `.github`):
-
-```
-git init
-git add -A
-git commit -m "Add COMB01 Manim Typst"
-git branch -M main
-git remote add origin https://github.com/TEN_TAI_KHOAN/TEN_REPOSITORY.git
-git push -u origin main
-```
-
-Thay TEN_TAI_KHOAN va TEN_REPOSITORY bang thong tin that. Repository tren GitHub nen rong, chua co README/commit ban dau, de tranh loi push.
-
-## Luu y quan trong
-
-- KHONG tai len nguyen file ZIP: GitHub khong tu giai nen thanh source code.
-- KHONG dat cac file trong them mot thu muc cha ben trong repository. `README.md`, `requirements.txt`, `.github`, `episodes`, `scripts` phai o GOC repository.
-- Tren macOS, `.github` co the bi an trong Finder; dung GitHub Desktop hoac `git add -A` se giu duoc thu muc nay.
-- Workflow se cai Manim va Typst trong Ubuntu runner, khong can cai Manim tren Mac.
-- `COMB_NOTATION=user` su dung `C^(n)_(k)`, `A^(n)_(k)` nhu da yeu cau (n o tren k o duoi). `sgk` chuyen ve `C_(n)^(k)`.
-- MP4 hien tai la animation CHUA co am thanh/giong doc va CHUA can duoc nhac theo kich ban 11 phut. Can duyet ket qua run dau tien, roi moi hoan thien thoi luong.
-- Workflow chua duoc thu render Manim thuc su; lan chay dau tien la buoc kiem chung.
+**Lưu ý kỹ thuật:** bộ code đã được kiểm tra toán, cú pháp Python, cấu trúc YAML. Môi trường đóng gói thiếu Manim/Typst nên chưa thể xác nhận render thực tế. Khi GH báo lỗi Manim/Typst/TTS, gửi log để sửa đúng lỗi. Không khẳng định video hoàn thiện khi chưa xem MP4.
