@@ -2,9 +2,6 @@ name: Render COMB10 V2 - Hoan vi cac phan tu giong nhau
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".trigger_runs"
     inputs:
       quality:
         description: '480p preview or 1080p Full HD'

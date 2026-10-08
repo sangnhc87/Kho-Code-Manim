@@ -2,9 +2,6 @@ name: Render COMB12 V2 - Gop khoi - phan tu dung canh
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - ".trigger_runs"
     inputs:
       quality:
         description: '480p preview or 1080p Full HD'
