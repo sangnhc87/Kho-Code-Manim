@@ -53,7 +53,7 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Prepare PNG formula sheets, voice and synchronized subtitles
         env:
-          COMB11_VOICE: ${ inputs.voice || 'off' }
+          COMB11_VOICE: ${{ inputs.voice || 'off' }}
         run: python scripts/prepare_comb11_v2.py --voice "$COMB11_VOICE"
       - name: Render preview 854x480 24 fps
         if: ${{ inputs.quality == 'preview' || github.event_name == 'push' }}
@@ -63,7 +63,7 @@ jobs:
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb11_circular_permutations.py COMB11
       - name: Verify MP4 time, audio stream, frame captures
         env:
-          COMB11_VOICE: ${ inputs.voice || 'off' }
+          COMB11_VOICE: ${{ inputs.voice || 'off' }}
         run: |
           VIDEO=$(find media/videos -type f -name 'COMB11.mp4' | head -n 1)
           test -n "$VIDEO"
@@ -72,7 +72,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: COMB11-V2-${{ inputs.quality }}-voice-${ inputs.voice || 'off' }
+          name: COMB11-V2-${{ inputs.quality }}-voice-${{ inputs.voice || 'off' }}
           path: |
             Series-Dai-So-To-Hop/media/videos/**/COMB11.mp4
             Series-Dai-So-To-Hop/qa_comb11_v2/
