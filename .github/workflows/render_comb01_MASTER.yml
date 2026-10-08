@@ -1,0 +1,75 @@
+name: Render COMB01 · Manim + Typst
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: "Choose render quality"
+        required: true
+        default: "preview"
+        type: choice
+        options:
+          - preview
+          - fullhd
+      notation:
+        description: "Index convention: user => C^n_k, sgk => C_n^k"
+        required: true
+        default: "user"
+        type: choice
+        options:
+          - user
+          - sgk
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    defaults:
+      run:
+        working-directory: Series-Dai-So-To-Hop
+    env:
+      COMB_NOTATION: ${{ inputs.notation }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: System dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev fonts-noto-core
+
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Setup Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: "^0.14.0"
+
+      - name: Install Python packages
+        run: python -m pip install -r requirements.txt
+
+      - name: Test mathematical results and notation
+        run: python -m unittest discover -s tests -v
+
+      - name: Render Typst formulas to transparent PNG
+        run: python scripts/build_formulas.py
+
+      - name: Render draft video
+        if: ${{ inputs.quality == "preview" }}
+        run: manim -ql episodes/comb01_rule_of_sum.py COMB01
+
+      - name: Render Full HD video
+        if: ${{ inputs.quality == "fullhd" }}
+        run: manim -qh -r 1920,1080 --fps 30 episodes/comb01_rule_of_sum.py COMB01
+
+      - name: Upload MP4 artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: COMB01-${{ inputs.quality }}-${{ inputs.notation }}
+          path: Series-Dai-So-To-Hop/media/videos/**/COMB01.mp4
+          if-no-files-found: error
+          retention-days: 7

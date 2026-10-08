@@ -1,0 +1,16 @@
+{
+  "series": "SANG MATH - DAI SO TO HOP",
+  "season": 1,
+  "layout": "2 columns: visual left, problem/proof right",
+  "render": {"width": 1920, "height": 1080, "fps": 30},
+  "episodes": [
+    {"id":"COMB01","title":"Quy tac cong","status":"source_and_storyboard_ready","scene":"COMB01","source":"episodes/comb01_rule_of_sum.py"},
+    {"id":"COMB02","title":"Quy tac nhan","status":"storyboard_planned"},
+    {"id":"COMB03","title":"So do cay va khong gian mau","status":"storyboard_planned"},
+    {"id":"COMB04","title":"Thu tu co quan trong khong?","status":"storyboard_planned"},
+    {"id":"COMB05","title":"Hoan vi","status":"storyboard_planned"},
+    {"id":"COMB06","title":"Chinh hop","status":"storyboard_planned"},
+    {"id":"COMB07","title":"To hop","status":"storyboard_planned"},
+    {"id":"COMB08","title":"Phan biet hoan vi chinh hop to hop","status":"storyboard_planned"}
+  ]
+}
