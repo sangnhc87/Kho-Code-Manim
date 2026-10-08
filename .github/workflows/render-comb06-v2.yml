@@ -1,9 +1,6 @@
 name: Render COMB06 V2 - Bai giang day du Manim Typst
 
 on:
-  push:
-    paths:
-      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
