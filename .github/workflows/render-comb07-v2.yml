@@ -1,6 +1,9 @@
 name: Render COMB07 V2 - Bai giang To Hop Manim Typst
 
 on:
+  push:
+    paths:
+      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
