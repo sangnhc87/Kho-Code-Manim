@@ -8,7 +8,7 @@
   "evenodd_0": "E+O=2^n",
   "evenodd_1": "E-O=0",
   "evenodd_2": "E=O=2^(n-1) quad (n>=1)",
-  "evenodd_3": "N_(\"chan\")=N_(\"le\")",
+  "evenodd_3": "N_(chan)=N_(le)",
   "evenodd_4": "sum_(j=0)^4 C^(8)_(2j)=128",
   "evenodd_5": "1+omega+omega^2=0",
   "firstmark_0": "S_1=sum_(k=0)^n k C^(n)_(k)",
@@ -46,5 +46,5 @@
   "challenge_2": "S=F'(1)+F''(1)",
   "challenge_3": "F'(1)=12 times 5^5=37500",
   "challenge_4": "F''(1)=120 times 5^4=75000",
-  "challenge_5": "S=112500"
+  "challenge_5": "boxed(S=112500)"
 }

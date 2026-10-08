@@ -1,0 +1,213 @@
+{
+  "version": "COMB23-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "three_sets"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "three_sets"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "three_sets"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "three_sets"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "three_sets"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "three_sets"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "derange"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "derange"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "derange"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "derange"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "derange"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "derange"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "fixed_ban"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "fixed_ban"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "fixed_ban"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "fixed_ban"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "fixed_ban"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "fixed_ban"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "diagonal"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "diagonal"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "diagonal"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "diagonal"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "diagonal"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "diagonal"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "board"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "board"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "board"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "board"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "board"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "board"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "rencontres"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "rencontres"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "rencontres"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "rencontres"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "rencontres"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "rencontres"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "rook_recurrence"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "rook_recurrence"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "rook_recurrence"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "rook_recurrence"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "rook_recurrence"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "rook_recurrence"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "menage"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "menage"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "menage"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "menage"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "menage"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "menage"
+    }
+  },
+  "target_seconds": 1349.2,
+  "tts_words": 3992,
+  "chapter_seconds": {
+    "three_sets": 0.0,
+    "derange": 168.0,
+    "fixed_ban": 336.0,
+    "diagonal": 504.0,
+    "board": 672.0,
+    "rencontres": 840.0,
+    "rook_recurrence": 1008.0,
+    "menage": 1176.0
+  }
+}

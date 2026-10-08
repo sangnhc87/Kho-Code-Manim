@@ -18,19 +18,24 @@
     15,
     16,
     17,
-    18
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
   ],
   "rendered_and_visual_QA_done": [],
   "latest": {
-    "episode": "COMB18",
-    "topic": "Tam giac Pascal va cac tinh chat",
+    "episode": "COMB23",
+    "topic": "Bao ham-loai tru nang cao va da thuc xe",
     "chapters": 8,
     "beats": 48,
-    "narration_words": 3289,
-    "silent_target_seconds": 1157.2,
-    "scene": "episodes/comb18_pascal_triangle.py",
-    "class": "COMB18",
-    "workflow": ".github/workflows/render-comb18-v2.yml"
+    "narration_words": 3992,
+    "silent_target_seconds": 1349.2,
+    "scene": "episodes/comb23_inclusion_rook.py",
+    "class": "COMB23",
+    "workflow": ".github/workflows/render-comb23-v2.yml"
   },
   "caveat": "Math/Python tests passed; real Manim/Typst rendering and audiovisual QA must be checked on GitHub Actions."
 }

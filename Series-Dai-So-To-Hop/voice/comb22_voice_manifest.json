@@ -1,0 +1,213 @@
+{
+  "version": "COMB22-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "grid"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "grid"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "grid"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "grid"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "grid"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "grid"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "obstacle"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "obstacle"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "obstacle"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "obstacle"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "obstacle"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "obstacle"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "tiling"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "tiling"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "tiling"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "tiling"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "tiling"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "tiling"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "binary"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "binary"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "binary"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "binary"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "binary"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "binary"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "automaton"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "automaton"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "automaton"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "automaton"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "automaton"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "automaton"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "bitmask"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "bitmask"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "bitmask"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "bitmask"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "bitmask"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "bitmask"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "matrix"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "matrix"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "matrix"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "matrix"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "matrix"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "matrix"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "capstone"
+    }
+  },
+  "target_seconds": 1349.2,
+  "tts_words": 4165,
+  "chapter_seconds": {
+    "grid": 0.0,
+    "obstacle": 168.0,
+    "tiling": 336.0,
+    "binary": 504.0,
+    "automaton": 672.0,
+    "bitmask": 840.0,
+    "matrix": 1008.0,
+    "capstone": 1176.0
+  }
+}

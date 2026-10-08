@@ -133,3 +133,32 @@ Video 16: 9 học sinh, 3 nhóm 3 vô danh, A và B phải khác nhóm, mỗi nh
 - Lộ trình 5 tập Olympic: `LO_TRINH_COMB21_25_OLYMPIAD.md`.
 - Tổng ở bài cuối: `Σ k² C^(6)_(k) 2^k 3^(6-k) = 112500`.
 - Trạng thái: mã và toán đã kiểm thử; Manim/Typst thực tế cần chạy trên GitHub Actions.
+
+
+## COMB22 V2 – QUY HOẠCH ĐỘNG TRONG TỔ HỢP
+
+Mã mới: `episodes/comb22_dynamic_programming.py`, bài học `comb22_lesson_data.py`, dữ liệu công thức Typst và workflow `.github/workflows/render-comb22-v2.yml`.
+
+Bài học gồm 48 nhịp / 8 chương (22 phút 29 giây nền, TTS có thể dài hơn). Đã kiểm chứng thuật toán: đường đi (35), chướng ngại (17), lát gạch (13), tránh 11 (21), tránh 101 (37), DP bitmask (9), ma trận vòng (47), capstone (48).
+
+Bắt đầu xem `HUONG_DAN_RENDER_COMB22_V2.md`; code **chưa được render/duyệt MP4 Manim thật** tại môi trường phát triển.
+
+
+## COMB23 V2 – BAO HÀM–LOẠI TRỪ VÀ ĐA THỨC XE
+
+- 8 chương, 48 nhịp, 3.992 từ lời giảng, thời lượng nền khoảng 22:29.
+- Mô hình: ba tập có giao; thư/phong bì, derangements; bảng 4×4; đa thức xe; số rencontres; truy hồi đa thức xe; bài Olympic với 5 ghế đánh số.
+- Bài cuối: đa thức xe `1+10x+35x²+50x³+25x⁴+2x⁵` cho **13** hoán vị hợp lệ.
+- Mã: `episodes/comb23_inclusion_rook.py`; workflow: `.github/workflows/render-comb23-v2.yml`.
+- Tài liệu: `HUONG_DAN_RENDER_COMB23_V2.md`; storyboard: `preview/comb23_v2/storyboard_8_chapters.png`.
+- Mã và toán đã kiểm thử; phải chạy Manim + Typst bằng GitHub Actions và duyệt MP4 thật trước khi công bố.
+
+
+## COMB24 V2 · Catalan / Dyck / Reflection
+- Source: `episodes/comb24_catalan_reflection.py` (Scene `COMB24`).
+- Pure Python lesson and models: `comb24_lesson_data.py`.
+- Prepare voice/Typst: `scripts/prepare_comb24_v2.py`.
+- QA: `scripts/qa_comb24_v2.py`.
+- GitHub Actions: `.github/workflows/render-comb24-v2.yml`.
+- Test: `tests/test_comb24_catalan_reflection.py`.
+- Teacher guide: `HUONG_DAN_RENDER_COMB24_V2.md`.
