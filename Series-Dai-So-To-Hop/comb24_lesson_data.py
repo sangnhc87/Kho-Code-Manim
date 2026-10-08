@@ -127,7 +127,7 @@ add('dyck',[
  'Một đường Dyck là dãy hai n bước, gồm đúng n bước lên và n bước xuống, nhưng không bao giờ có tổng độ cao âm. Khi xem hình, học sinh có thể kéo theo đầu bút từ trái sang phải và quan sát chỉ số độ cao từng bước. Nếu đường chạm trục, nó vẫn hợp lệ; chỉ bước xuống dưới trục mới vi phạm. Quy ước này giúp phân biệt đường Dyck với bài toán lá phiếu nghiêm ngặt sẽ xuất hiện sau.'),
  ('Mở cây lựa chọn',('Tại độ cao 0 không được chọn D','Ở độ cao dương có thể U hoặc D','Đủ n bước mỗi loại thì dừng'),'Cắt nhánh sai sớm tránh liệt kê thừa.','C_3=5',
  'Ta mở một cây lựa chọn từng bước. Ở gốc, nếu đi xuống, chiều cao âm ngay, vì thế nhánh ấy bị loại tức thì. Tại độ cao dương, có thể lên hoặc xuống, miễn là không dùng quá n bước mỗi loại. Mỗi nhánh hoàn chỉnh kết thúc ở độ cao không tương ứng một đường Dyck. Cách dựng từng nhánh này cũng giống quy hoạch động: ta chỉ lưu những trạng thái còn hợp lệ.'),
- ('Cùng một kết quả, hai ngôn ngữ',('Dãy (()()) là ngoặc đúng','Đường UUDUDD tương ứng','Hai biểu diễn mã hóa cùng một đối tượng'),'Đây là một song ánh tự nhiên.','L=UUDUDD',
+ ('Cùng một kết quả, hai ngôn ngữ',('Dãy (()()) là ngoặc đúng','Đường UUDUDD tương ứng','Hai biểu diễn mã hóa cùng một đối tượng'),'Đây là một song ánh tự nhiên.','L="UUDUDD"',
  'Một cấu trúc ngoặc như mở mở đóng mở đóng đóng được ánh xạ thành lên lên xuống lên xuống xuống. Ánh xạ có thể đảo lại từng bước nên không mất thông tin. Mỗi dãy ngoặc đúng cho đúng một đường Dyck, và mỗi đường Dyck cho đúng một dãy ngoặc đúng. Trong tổ hợp, một phép ghép tương ứng một-một như vậy gọi là song ánh, rất mạnh vì biến phép đếm của đối tượng khó thành phép đếm của đối tượng dễ.'),
  ('Các đường bị loại',('Nếu tiền tố âm lần đầu xuất hiện','Đánh dấu bước đầu tiên chạm mức −1','Chúng ta có thể phản xạ tiền tố ấy'),'Chỉ cần biết lần vi phạm đầu tiên.','h_t=-1',
  'Trong nhóm đường sai, đánh dấu thời điểm đầu tiên chiều cao bằng âm một. Vì đường bắt đầu tại không và thay đổi từng đơn vị, lần đầu xuống âm luôn phải xuống đúng âm một. Trước thời điểm đó đường vẫn ở mức không hoặc dương. Bước đánh dấu tạo điểm mốc rất rõ ràng để dựng một phép biến đổi có thể đảo ngược, thay vì cố đếm hàng loạt hình gấp khúc khác nhau.'),
@@ -213,7 +213,7 @@ add('ballot',[
 ])
 
 add('narayana',[
- ('Đếm theo số đỉnh',('Một đỉnh là cặp bước UD','Không phải mọi Dyck có cùng số đỉnh','Chia đường Dyck thành các lớp rời nhau'),'Các lớp tinh chỉnh của Catalan gọi là Narayana.','peaks(w)=#(UD)',
+ ('Đếm theo số đỉnh',('Một đỉnh là cặp bước UD','Không phải mọi Dyck có cùng số đỉnh','Chia đường Dyck thành các lớp rời nhau'),'Các lớp tinh chỉnh của Catalan gọi là Narayana.','"peaks"(w)=#("UD")',
  'Đến đây số Catalan chỉ cho tổng số đường hợp lệ. Nhưng trong nhiều bài toán Olympic, đề bài còn yêu cầu một tham số phụ, chẳng hạn chính xác bao nhiêu lần đường đổi từ bước lên sang bước xuống. Mỗi lần xuất hiện liên tiếp hai bước U rồi D tạo một đỉnh. Hai đường có cùng số cặp bước nhưng số đỉnh khác nhau. Nếu phân loại theo số đỉnh, ta nhận được một tam giác số mới, tinh tế hơn số Catalan thông thường.'),
  ('Ba cặp bước',('UUUDDD có 1 đỉnh','UUDUDD có 2 đỉnh','UDUDUD có 3 đỉnh'),'Số đỉnh là thống kê trên đường Dyck.','C_3=1+3+1=5',
  'Xét năm đường Dyck có ba bước lên. Một đường đi lên ba bước rồi xuống ba bước có đúng một đỉnh. Những đường chứa hai cặp chuyển U sang D có hai đỉnh. Cuối cùng đường lên xuống luân phiên có ba đỉnh. Khi nhóm lại, ta được một đường có một đỉnh, ba đường có hai đỉnh và một đường có ba đỉnh. Tổng một cộng ba cộng một trả lại năm, tức Catalan bậc ba.'),

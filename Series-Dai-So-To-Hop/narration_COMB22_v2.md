@@ -259,7 +259,7 @@ Tại một mặt nạ cụ thể, số bit đang bật cho biết chúng ta đ�
 
 Các mặt nạ được chia thành từng lớp theo số bit một. Lớp đầu là mặt nạ không, biểu thị chưa giao nhiệm vụ nào. Chỉ từ những trạng thái có một bit ta mới sinh trạng thái có hai bit, rồi đến ba và bốn bit. Bằng cách cập nhật theo lớp, ta luôn biết số cách của trạng thái cũ trước khi dùng nó. Nhiều trình tự phân công khác nhau có thể dẫn đến cùng mặt nạ, và phép cộng trong DP giữ lại toàn bộ chúng.
 
-**Trên màn hình:** Bắt đầu dp[0000] bằng 1 | Lần lượt tới các lớp có 1,2,3,4 bit | Cùng một mặt nạ cộng các đường đi
+**Trên màn hình:** Bắt đầu "dp"[0000] bằng 1 | Lần lượt tới các lớp có 1,2,3,4 bit | Cùng một mặt nạ cộng các đường đi
 **Ghi nhớ:** Quy hoạch động tránh tính lặp tập đã dùng.
 
 ### Nhịp 35 · 15:52 · Đọc kết quả và kiểm chứng
