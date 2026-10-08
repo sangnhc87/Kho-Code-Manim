@@ -1,0 +1,667 @@
+1
+00:00:00,000 --> 00:00:04,881
+Ta có bốn thẻ mang các chữ A, A, B và C.
+
+2
+00:00:04,881 --> 00:00:13,831
+Hai thẻ A giống hệt nhau, nên nhìn vào hàng xếp ta không thể nhận ra thẻ A nào được đặt trước.
+
+3
+00:00:13,831 --> 00:00:24,000
+Câu hỏi là có bao nhiêu hàng chữ khác nhau, chứ không phải bao nhiêu cách di chuyển bốn vật đã được đánh số ngầm.
+
+4
+00:00:24,000 --> 00:00:29,560
+Hãy tưởng tượng ta bí mật gắn nhãn một và hai lên hai thẻ A.
+
+5
+00:00:29,560 --> 00:00:36,233
+Bây giờ bốn thẻ đều phân biệt nên có bốn giai thừa, tức hai mươi bốn thứ tự.
+
+6
+00:00:36,233 --> 00:00:39,569
+Nhưng đề bài gốc không có các nhãn ấy.
+
+7
+00:00:39,569 --> 00:00:45,500
+Chúng chỉ giúp chúng ta đếm trước để nhận diện những thứ tự bị tính lặp.
+
+8
+00:00:45,500 --> 00:00:51,785
+Khi đổi vị trí A một và A hai, ta tạo ra hai cách xếp có nhãn khác nhau.
+
+9
+00:00:51,785 --> 00:00:58,731
+Nếu xóa nhãn, cả hai đều trở thành hàng A A B C. Điều này xảy ra với mọi hàng chữ.
+
+10
+00:00:58,731 --> 00:01:07,000
+Không có hàng nào được ưu tiên hơn; mỗi hàng kết quả bị liệt kê đúng hai lần trong hai mươi bốn cách ban đầu.
+
+11
+00:01:07,000 --> 00:01:13,672
+Ta gom những thứ tự chỉ khác nhau do hoán đổi hai thẻ A thành cùng một nhóm.
+
+12
+00:01:13,672 --> 00:01:18,491
+Mỗi nhóm có đúng hai giai thừa, bằng hai thứ tự có nhãn.
+
+13
+00:01:18,491 --> 00:01:28,500
+Vì hai mươi bốn được chia thành các nhóm cùng kích thước hai, ta lấy hai mươi bốn chia hai, được mười hai hàng chữ phân biệt.
+
+14
+00:01:28,500 --> 00:01:37,100
+Ta có thể kiểm tra bằng cách liệt kê mọi chuỗi độ dài bốn chứa đúng hai chữ A, một chữ B và một chữ C.
+
+15
+00:01:37,100 --> 00:01:41,069
+Mỗi chuỗi được viết duy nhất bằng chính các chữ của nó.
+
+16
+00:01:41,069 --> 00:01:46,031
+Bảng xuất hiện mười hai chuỗi, khớp với lập luận chia cho hai giai thừa.
+
+17
+00:01:46,031 --> 00:01:50,000
+Đây là bước kiểm chứng rất cần thiết trước khi tổng quát.
+
+18
+00:01:50,000 --> 00:01:53,071
+Quy tắc chia không được sử dụng tùy tiện.
+
+19
+00:01:53,071 --> 00:01:59,897
+Nếu hai người cùng tên A nhưng có nhiệm vụ khác nhau, họ vẫn là hai đối tượng phân biệt.
+
+20
+00:01:59,897 --> 00:02:06,040
+Trong bài này, chỉ có hai thẻ A thực sự giống nhau về mặt kết quả đang đếm.
+
+21
+00:02:06,040 --> 00:02:11,500
+Ở chương sau, ta xét trường hợp có hai nhóm phần tử giống nhau cùng lúc.
+
+22
+00:02:11,500 --> 00:02:17,100
+Từ MAMA gồm bốn ký tự nhưng không có bốn ký tự khác nhau.
+
+23
+00:02:17,100 --> 00:02:22,300
+Chữ M xuất hiện hai lần, chữ A cũng xuất hiện hai lần.
+
+24
+00:02:22,300 --> 00:02:32,300
+Nếu xếp tất cả thành hàng, ta cần loại bớt những thứ tự chỉ đổi chỗ giữa hai chữ M hoặc giữa hai chữ A.
+
+25
+00:02:32,300 --> 00:02:35,500
+Hai kiểu đếm trùng tồn tại đồng thời.
+
+26
+00:02:35,500 --> 00:02:42,325
+Ta lại đánh nhãn tạm thời cho các chữ giống nhau: M một, M hai, A một và A hai.
+
+27
+00:02:42,325 --> 00:02:46,079
+Bốn vật có nhãn tạo ra hai mươi bốn hoán vị.
+
+28
+00:02:46,079 --> 00:02:50,516
+Nhưng sau khi bỏ nhãn, một số kết quả sẽ giống hệt nhau.
+
+29
+00:02:50,516 --> 00:02:57,000
+Số hai mươi bốn chỉ là kết quả phụ để từ đó xác định số cách đếm thực sự.
+
+30
+00:02:57,000 --> 00:03:00,877
+Xét bất kỳ hàng chữ nào như M A M A.
+
+31
+00:03:00,877 --> 00:03:07,221
+Hai vị trí chứa M có thể được gắn nhãn M một và M hai theo hai cách.
+
+32
+00:03:07,221 --> 00:03:12,861
+Độc lập với việc đó, hai vị trí chứa A cũng nhận nhãn theo hai cách.
+
+33
+00:03:12,861 --> 00:03:18,500
+Vậy hàng chữ đang xét sinh ra bốn hoán vị có nhãn, không phải chỉ hai.
+
+34
+00:03:18,500 --> 00:03:26,318
+Từ hai mươi bốn hoán vị có nhãn, ta gom mỗi bốn trường hợp vào một kết quả không nhãn.
+
+35
+00:03:26,318 --> 00:03:35,309
+Vì cả hai nhóm M và A đều giống nhau trong từng nhóm, ta chia cho hai giai thừa nhân hai giai thừa.
+
+36
+00:03:35,309 --> 00:03:40,000
+Kết quả bằng sáu từ phân biệt, thay vì hai mươi bốn.
+
+37
+00:03:40,000 --> 00:03:49,801
+Ta liệt kê đúng sáu từ: A A M M, A M A M, A M M A, M A A M, M A M A và M M A A.
+
+38
+00:03:49,801 --> 00:03:55,809
+Không một từ nào bị lặp lại, và tất cả đều có hai chữ M cùng hai chữ A.
+
+39
+00:03:55,809 --> 00:04:01,500
+Đây là cách kiểm tra trực quan rõ nhất cho phép chia hai giai thừa của từng nhóm.
+
+40
+00:04:01,500 --> 00:04:04,523
+Chúng ta vừa có hai ví dụ liên tiếp.
+
+41
+00:04:04,523 --> 00:04:09,562
+A A B C chỉ có một cặp trùng nên chia cho hai giai thừa.
+
+42
+00:04:09,562 --> 00:04:15,945
+M A M A có hai cặp trùng nên chia cho tích hai giai thừa với hai giai thừa.
+
+43
+00:04:15,945 --> 00:04:23,000
+Bản chất không hề thay đổi: tính đủ với nhãn, rồi loại những cách chỉ khác nhau ở nhãn tưởng tượng.
+
+44
+00:04:23,000 --> 00:04:26,724
+Ví dụ trung tâm tiếp theo là từ BANANA.
+
+45
+00:04:26,724 --> 00:04:35,828
+Ta không vội lấy sáu giai thừa mà kiểm tra từng loại chữ: B một lần, A ba lần, N hai lần.
+
+46
+00:04:35,828 --> 00:04:38,310
+Tổng cộng có sáu vị trí.
+
+47
+00:04:38,310 --> 00:04:47,000
+Ta phải tính số hàng chữ thực sự phân biệt khi những bản sao của A và N không có nhãn.
+
+48
+00:04:47,000 --> 00:04:53,450
+Ta bí mật đánh số ba chữ A từ một đến ba, rồi đánh số hai chữ N.
+
+49
+00:04:53,450 --> 00:05:00,258
+Khi đó sáu vật đều phân biệt và có sáu giai thừa, tức bảy trăm hai mươi cách sắp.
+
+50
+00:05:00,258 --> 00:05:08,500
+Nhưng các hoán đổi giữa những A với nhau hoặc những N với nhau không thay đổi từ nhìn thấy trên màn hình.
+
+51
+00:05:08,500 --> 00:05:13,539
+Xét một từ đã được xếp xong, chẳng hạn B A N A N A.
+
+52
+00:05:13,539 --> 00:05:20,930
+Ba vị trí đang chứa A có thể nhận các nhãn A một, A hai, A ba theo ba giai thừa cách.
+
+53
+00:05:20,930 --> 00:05:26,977
+Các cách gắn nhãn ấy khác nhau trong bài phụ nhưng hoàn toàn giống nhau trong bài gốc.
+
+54
+00:05:26,977 --> 00:05:30,000
+Vì vậy hệ số trùng do A là sáu.
+
+55
+00:05:30,000 --> 00:05:34,904
+Không chỉ ba chữ A, ta còn có hai chữ N giống nhau.
+
+56
+00:05:34,904 --> 00:05:42,825
+Hai vị trí N được gắn nhãn theo hai giai thừa cách, hoàn toàn độc lập với các nhãn của A.
+
+57
+00:05:42,825 --> 00:05:51,500
+Do đó mỗi từ không nhãn tương ứng với ba giai thừa nhân hai giai thừa, bằng mười hai hoán vị có nhãn.
+
+58
+00:05:51,500 --> 00:05:54,095
+Bây giờ phép đếm đã hoàn chỉnh.
+
+59
+00:05:54,095 --> 00:06:05,586
+Lấy bảy trăm hai mươi hoán vị có nhãn chia cho mười hai cách gắn nhãn sinh ra cùng một từ, ta được sáu mươi hoán vị khác nhau của BANANA.
+
+60
+00:06:05,586 --> 00:06:13,000
+Không có yếu tố ngẫu nhiên ở đây; mỗi kết quả có đúng mười hai đại diện được đánh nhãn.
+
+61
+00:06:13,000 --> 00:06:16,468
+Ta có thể giải độc lập bằng chọn vị trí.
+
+62
+00:06:16,468 --> 00:06:22,363
+Trước hết chọn ba trong sáu vị trí để đặt các chữ A, được hai mươi cách.
+
+63
+00:06:22,363 --> 00:06:28,952
+Trong ba ô còn trống, chọn hai ô cho N, được ba cách. Vị trí cuối cùng là B.
+
+64
+00:06:28,952 --> 00:06:34,500
+Nhân hai mươi với ba cũng được sáu mươi, xác nhận lời giải hoán vị lặp.
+
+65
+00:06:34,500 --> 00:06:41,250
+Giả sử có n vật được xếp thành hàng, nhưng một số vật giống nhau theo từng nhóm.
+
+66
+00:06:41,250 --> 00:06:49,500
+Nhóm thứ nhất có k một bản sao, nhóm thứ hai có k hai bản sao, và tương tự đến nhóm cuối.
+
+67
+00:06:49,500 --> 00:06:53,625
+Tổng tất cả số lần xuất hiện phải đúng bằng n.
+
+68
+00:06:53,625 --> 00:06:58,500
+Chúng ta sẽ chứng minh công thức cho mọi cấu hình như vậy.
+
+69
+00:06:58,500 --> 00:07:06,562
+Để đếm chắc chắn không bỏ sót, ta giả vờ rằng cả n vật đều khác nhau, kể cả các bản sao cùng loại.
+
+70
+00:07:06,562 --> 00:07:09,250
+Khi đó có n giai thừa thứ tự.
+
+71
+00:07:09,250 --> 00:07:20,000
+Mọi cách xếp không nhãn đều có ít nhất một đại diện có nhãn trong danh sách này; nhiệm vụ còn lại là biết mỗi kết quả bị lặp bao nhiêu lần.
+
+72
+00:07:20,000 --> 00:07:29,070
+Với một thứ tự kết quả đã cố định, các vị trí mang cùng loại thứ nhất có thể nhận nhãn theo k một giai thừa cách.
+
+73
+00:07:29,070 --> 00:07:32,430
+Nhóm thứ hai tương tự với k hai giai thừa.
+
+74
+00:07:32,430 --> 00:07:36,797
+Vì các nhóm độc lập nên nhân tất cả các hệ số này.
+
+75
+00:07:36,797 --> 00:07:41,500
+Điều then chốt là số đại diện trùng giống nhau cho mọi kết quả.
+
+76
+00:07:41,500 --> 00:07:57,361
+Vậy số hoán vị phân biệt của n phần tử với các nhóm giống nhau gồm k một, k hai và tiếp tục cho đến k r bằng n giai thừa chia cho tích k một giai thừa, k hai giai thừa và cứ thế.
+
+77
+00:07:57,361 --> 00:08:03,000
+Ta không chia cho số nhóm mà chia cho số cách hoán đổi trong từng nhóm.
+
+78
+00:08:03,000 --> 00:08:11,873
+Nếu mọi vật đều khác nhau thì mỗi nhóm chỉ có một phần tử, và mẫu số là tích các số một giai thừa, bằng một.
+
+79
+00:08:11,873 --> 00:08:17,333
+Nếu tất cả giống nhau, mẫu số chính bằng n giai thừa, kết quả chỉ một.
+
+80
+00:08:17,333 --> 00:08:24,500
+Hai trường hợp biên này giúp chúng ta phát hiện rất nhanh những công thức bị viết ngược tử và mẫu.
+
+81
+00:08:24,500 --> 00:08:32,644
+Những bài xếp chữ khó thường yêu cầu các chữ đứng cạnh nhau, không đứng cạnh nhau hoặc thỏa điều kiện ở đầu và cuối.
+
+82
+00:08:32,644 --> 00:08:36,553
+Khi đó công thức cơ bản chỉ đếm tập lớn ban đầu.
+
+83
+00:08:36,553 --> 00:08:41,439
+Ta cần thêm phương pháp gộp khối, đặt vào khoảng trống hay lấy phần bù.
+
+84
+00:08:41,439 --> 00:08:46,000
+Hai chương tiếp theo sẽ trình diễn những thao tác ấy bằng hình động.
+
+85
+00:08:46,000 --> 00:08:52,915
+Quay lại sáu chữ trong BANANA, nhưng yêu cầu cả ba chữ A phải đứng liên tiếp.
+
+86
+00:08:52,915 --> 00:08:59,424
+Thay vì đánh dấu từng cặp A, ta gộp ba chữ A thành một khối AAA.
+
+87
+00:08:59,424 --> 00:09:06,339
+Vì ba chữ A giống nhau nên bên trong khối không có thêm thứ tự khác nhau.
+
+88
+00:09:06,339 --> 00:09:10,000
+Bài toán trở thành xếp những đối tượng mới.
+
+89
+00:09:10,000 --> 00:09:20,033
+Khi khối AAA được coi là một đối tượng, chúng ta còn bốn đối tượng: khối AAA, chữ B, chữ N thứ nhất và chữ N thứ hai.
+
+90
+00:09:20,033 --> 00:09:27,200
+Nhưng hai chữ N vẫn không phân biệt trong kết quả, nên không được quên chia cho hai giai thừa.
+
+91
+00:09:27,200 --> 00:09:31,500
+Số đối tượng không phải sáu nữa mà giảm xuống còn bốn.
+
+92
+00:09:31,500 --> 00:09:36,319
+Xếp bốn đối tượng khác nhau tạm thời được bốn giai thừa cách.
+
+93
+00:09:36,319 --> 00:09:41,138
+Do hai chữ N trùng nhau, mỗi hàng thật bị tính hai lần.
+
+94
+00:09:41,138 --> 00:09:46,698
+Vì vậy số cách bằng bốn giai thừa chia hai giai thừa, bằng mười hai.
+
+95
+00:09:46,698 --> 00:09:53,000
+Không nhân thêm ba giai thừa bên trong khối A bởi ba chữ A là giống nhau.
+
+96
+00:09:53,000 --> 00:10:00,167
+Ta cũng có thể xác minh bằng cách di chuyển khối AAA qua các vị trí bắt đầu hợp lệ.
+
+97
+00:10:00,167 --> 00:10:09,842
+Sau khi vị trí khối cố định, ba chữ còn lại là B, N, N, có ba giai thừa chia hai giai thừa bằng ba cách xếp.
+
+98
+00:10:09,842 --> 00:10:14,500
+Có bốn vị trí đặt khối, nên bốn nhân ba bằng mười hai.
+
+99
+00:10:14,500 --> 00:10:21,325
+Bài không điều kiện có sáu mươi từ. Bài ba chữ A tạo thành một khối có mười hai từ.
+
+100
+00:10:21,325 --> 00:10:27,127
+Do đó có bốn mươi tám từ không chứa cả ba A ở một khối liên tiếp.
+
+101
+00:10:27,127 --> 00:10:33,952
+Nhưng cần chú ý: trong bốn mươi tám từ đó vẫn có thể có hai chữ A đứng cạnh nhau.
+
+102
+00:10:33,952 --> 00:10:36,000
+Hai điều kiện là khác nhau.
+
+103
+00:10:36,000 --> 00:10:44,269
+Hãy so sánh câu “ba chữ A không đứng liên tiếp thành một khối” với câu “không có hai chữ A nào đứng cạnh nhau”.
+
+104
+00:10:44,269 --> 00:10:49,231
+Câu thứ nhất chỉ loại mười hai từ, còn câu thứ hai loại nhiều hơn.
+
+105
+00:10:49,231 --> 00:10:54,192
+Đổi một cụm từ trong đề có thể làm đáp án thay đổi hoàn toàn.
+
+106
+00:10:54,192 --> 00:10:57,500
+Ta sẽ tính điều kiện thứ hai ở chương sau.
+
+107
+00:10:57,500 --> 00:11:04,008
+Bây giờ đề bài yêu cầu không có bất cứ hai chữ A nào kề nhau.
+
+108
+00:11:04,008 --> 00:11:12,551
+Vì có ba chữ A giống nhau, ta cần ít nhất một chữ khác nằm giữa hai chữ A liên tiếp.
+
+109
+00:11:12,551 --> 00:11:21,500
+Cách tư duy phù hợp là xếp trước những chữ không phải A, rồi sử dụng các khoảng trống để đặt A.
+
+110
+00:11:21,500 --> 00:11:26,966
+Ta tạm gỡ cả ba chữ A khỏi bàn. Còn lại B, N và N.
+
+111
+00:11:26,966 --> 00:11:37,169
+Đây là ba phần tử trong đó hai N giống nhau, nên có ba giai thừa chia hai giai thừa, bằng ba cách xếp: BNN, NBN và NNB.
+
+112
+00:11:37,169 --> 00:11:43,000
+Mỗi cách như vậy tạo ra một khung sườn để lắp các chữ A trở lại.
+
+113
+00:11:43,000 --> 00:11:45,966
+Nhìn vào một khung sườn B N N.
+
+114
+00:11:45,966 --> 00:11:53,750
+Chúng ta có bốn khoảng trống: trước B, giữa B với N thứ nhất, giữa hai N, và sau N cuối.
+
+115
+00:11:53,750 --> 00:11:59,681
+Để không có hai A cạnh nhau, mỗi khoảng được điền tối đa một chữ A.
+
+116
+00:11:59,681 --> 00:12:04,500
+Vì có ba chữ A, ta chỉ cần chọn ba trong bốn khoảng.
+
+117
+00:12:04,500 --> 00:12:10,742
+Chúng ta chọn ba trong bốn khoảng mà không xét thứ tự, vì ba chữ A giống nhau.
+
+118
+00:12:10,742 --> 00:12:17,331
+Số cách là tổ hợp ba của bốn theo ký hiệu của Series: bốn ở trên, ba ở dưới.
+
+119
+00:12:17,331 --> 00:12:18,718
+Kết quả bằng bốn.
+
+120
+00:12:18,718 --> 00:12:26,000
+Không nhân ba giai thừa cho cách xếp ba A, vì như vậy sẽ đếm lại chính một từ nhiều lần.
+
+121
+00:12:26,000 --> 00:12:33,849
+Hai công đoạn độc lập theo nghĩa mỗi khung sườn B N N có đúng bốn cách chọn khoảng cho ba chữ A.
+
+122
+00:12:33,849 --> 00:12:37,603
+Ta nhân ba với bốn, được mười hai từ phân biệt.
+
+123
+00:12:37,603 --> 00:12:41,698
+Kết quả này đã được kiểm tra bằng liệt kê trực tiếp.
+
+124
+00:12:41,698 --> 00:12:47,500
+Hình động cho thấy rõ mỗi A đi vào một khoảng và không thể tạo cặp AA.
+
+125
+00:12:47,500 --> 00:12:56,570
+Một điểm thú vị là số từ có cả ba A liền nhau và số từ không có hai A nào liền nhau đều bằng mười hai.
+
+126
+00:12:56,570 --> 00:13:01,945
+Tuy hai kết quả bằng nhau, chúng là hai tập trường hợp hoàn toàn khác nhau.
+
+127
+00:13:01,945 --> 00:13:09,000
+Vẫn còn ba mươi sáu từ nằm giữa hai cực đoan ấy: có một cặp AA nhưng không có khối AAA.
+
+128
+00:13:09,000 --> 00:13:16,273
+Khi yêu cầu từ BANANA bắt đầu bằng B, ta đặt cố định chữ B tại vị trí đầu tiên.
+
+129
+00:13:16,273 --> 00:13:21,000
+Năm vị trí còn lại chứa ba chữ A và hai chữ N.
+
+130
+00:13:21,000 --> 00:13:27,909
+Áp dụng hoán vị lặp năm giai thừa chia ba giai thừa nhân hai giai thừa, được mười cách.
+
+131
+00:13:27,909 --> 00:13:33,000
+Cố định trước điều kiện sẽ giúp bài toán trở nên đơn giản hơn.
+
+132
+00:13:33,000 --> 00:13:43,932
+Nếu từ phải kết thúc bằng A, ta sử dụng một trong ba chữ A để đặt vào ô cuối; chúng hoàn toàn giống nhau nên không nhân thêm ba.
+
+133
+00:13:43,932 --> 00:13:47,941
+Năm ô còn lại chứa B, hai A và hai N.
+
+134
+00:13:47,941 --> 00:13:54,500
+Số hoán vị bằng năm giai thừa chia hai giai thừa nhân hai giai thừa, là ba mươi.
+
+135
+00:13:54,500 --> 00:14:02,044
+Xét các từ vừa bắt đầu bằng B vừa kết thúc bằng A. Hai vị trí biên đã cố định.
+
+136
+00:14:02,044 --> 00:14:11,851
+Bốn vị trí giữa chứa hai A và hai N, nên có bốn giai thừa chia hai giai thừa nhân hai giai thừa, bằng sáu cách.
+
+137
+00:14:11,851 --> 00:14:16,000
+Đây chính là phần giao của hai nhóm từ đang xét.
+
+138
+00:14:16,000 --> 00:14:25,516
+Nếu đề bài hỏi bắt đầu bằng B hoặc kết thúc bằng A, từ “hoặc” ở đây cho phép một từ đồng thời thỏa hai điều kiện.
+
+139
+00:14:25,516 --> 00:14:31,156
+Khi cộng mười với ba mươi, sáu từ ở phần giao đã bị đếm hai lần.
+
+140
+00:14:31,156 --> 00:14:37,500
+Ta phải trừ bớt sáu để mỗi từ hợp lệ xuất hiện đúng một lần trong kết quả.
+
+141
+00:14:37,500 --> 00:14:44,015
+Áp dụng quy tắc cộng có hiệu chỉnh phần giao: mười cộng ba mươi trừ sáu, bằng ba mươi bốn.
+
+142
+00:14:44,015 --> 00:14:50,205
+Trên hình, nhóm bắt đầu B và nhóm kết thúc A có vùng giao được tô màu đặc biệt.
+
+143
+00:14:50,205 --> 00:14:59,000
+Đây là sự kết nối giữa hoán vị lặp và nguyên lý bao hàm – loại trừ sẽ còn xuất hiện nhiều ở những tập nâng cao.
+
+144
+00:14:59,000 --> 00:15:10,382
+Một lần nữa hãy phân biệt hai cách hỏi: bắt đầu bằng B và kết thúc bằng A cho sáu cách, còn bắt đầu bằng B hoặc kết thúc bằng A cho ba mươi bốn cách.
+
+145
+00:15:10,382 --> 00:15:15,125
+Hai từ nối rất ngắn nhưng biểu diễn hai phép toán tập hợp khác nhau.
+
+146
+00:15:15,125 --> 00:15:20,500
+Khi giải toán đếm, đọc chính xác điều kiện quan trọng không kém việc tính giai thừa.
+
+147
+00:15:20,500 --> 00:15:25,788
+Bài cuối tập sử dụng năm chữ A, A, B, B và C.
+
+148
+00:15:25,788 --> 00:15:30,669
+Hai chữ A giống nhau và hai chữ B cũng giống nhau.
+
+149
+00:15:30,669 --> 00:15:36,771
+Câu hỏi chính là bao nhiêu cách xếp không có hai A đứng cạnh nhau.
+
+150
+00:15:36,771 --> 00:15:44,500
+Chúng ta sẽ đếm toàn bộ trước, rồi trừ những trường hợp chứa khối AA để được đáp án.
+
+151
+00:15:44,500 --> 00:15:51,059
+Theo công thức hoán vị lặp, năm chữ được đánh nhãn tạm thời có năm giai thừa cách.
+
+152
+00:15:51,059 --> 00:15:59,076
+Vì có hai chữ A giống nhau và hai chữ B giống nhau, ta chia cho hai giai thừa của mỗi nhóm.
+
+153
+00:15:59,076 --> 00:16:06,000
+Số từ phân biệt khi chưa có điều kiện là ba mươi, làm nền cho phép đếm phần bù.
+
+154
+00:16:06,000 --> 00:16:11,954
+Những từ có hai chữ A liền nhau được tạo bằng cách gộp A A thành một khối.
+
+155
+00:16:11,954 --> 00:16:17,577
+Cùng với B, B và C, ta có bốn đối tượng trong đó hai B giống nhau.
+
+156
+00:16:17,577 --> 00:16:22,208
+Số cách xếp là bốn giai thừa chia hai giai thừa, bằng mười hai.
+
+157
+00:16:22,208 --> 00:16:27,500
+Hai A chỉ có một cặp, nên mỗi từ vi phạm được tính đúng một lần.
+
+158
+00:16:27,500 --> 00:16:35,607
+Vì mọi từ hoặc có cặp A A kề nhau hoặc không có, hai nhóm tách biệt và phủ hết ba mươi từ.
+
+159
+00:16:35,607 --> 00:16:41,951
+Ta lấy ba mươi trừ mười hai, được mười tám cách xếp mà hai A không đứng cạnh.
+
+160
+00:16:41,951 --> 00:16:49,000
+Hoạt hình lần lượt đổi màu mười hai từ vi phạm, rồi chỉ giữ lại mười tám từ hợp lệ.
+
+161
+00:16:49,000 --> 00:16:56,784
+Bây giờ tăng độ khó: không được có hai A cạnh nhau và cũng không được có hai B cạnh nhau.
+
+162
+00:16:56,784 --> 00:17:04,940
+Có mười hai từ chứa AA, mười hai từ chứa BB, nhưng sáu từ chứa cả hai khối bị trừ hai lần.
+
+163
+00:17:04,940 --> 00:17:10,500
+Ta cộng lại phần giao sáu, nên kết quả là mười hai từ hợp lệ.
+
+164
+00:17:10,500 --> 00:17:17,667
+Chúng ta đã đi từ hai thẻ A giống nhau, qua MAMA, BANANA, rồi đến các bài xếp chữ có điều kiện.
+
+165
+00:17:17,667 --> 00:17:23,205
+Bản chất của hoán vị lặp là loại các cách gắn nhãn không tạo kết quả mới.
+
+166
+00:17:23,205 --> 00:17:28,417
+Khi có ràng buộc, ta kết hợp gộp khối, chọn khoảng trống hoặc đếm phần bù.
+
+167
+00:17:28,417 --> 00:17:32,000
+Hãy giải thích lý do chia trước khi dùng công thức.

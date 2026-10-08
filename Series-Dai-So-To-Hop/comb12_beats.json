@@ -1,0 +1,674 @@
+[
+  {
+    "section": "pair",
+    "state": 0,
+    "heading": "BÀI TOÁN MỞ ĐẦU",
+    "lines": [
+      "Năm học sinh A, B, C, D, E.",
+      "Xếp thành một hàng.",
+      "A và B bắt buộc đứng liền nhau."
+    ],
+    "takeaway": "HÃY BẮT ĐẦU TỪ ĐIỀU KIỆN, CHƯA VIẾT CÔNG THỨC.",
+    "narration": "Có năm học sinh mang tên A, B, C, D và E. Chúng ta muốn xếp cả năm thành một hàng, nhưng A và B phải đứng cạnh nhau. Nếu chỉ dùng năm giai thừa, tức một trăm hai mươi cách, thì ta đã đếm cả những hàng có A, B đứng cách xa nhau. Hãy tìm mô hình buộc điều kiện đứng cạnh được giữ đúng ngay từ đầu.",
+    "formula": "all5",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "pair",
+    "state": 1,
+    "heading": "THỬ ĐẶT HAI BẠN CẠNH NHAU",
+    "lines": [
+      "Xếp mẫu A – B – C – D – E.",
+      "Đổi A, B thành B – A.",
+      "Cả hai đều thỏa điều kiện."
+    ],
+    "takeaway": "ĐỨNG CẠNH KHÔNG CÓ NGHĨA LÀ CỐ ĐỊNH THỨ TỰ.",
+    "narration": "Khi quan sát hai bạn A và B, ta thấy hai cách xuất hiện trong một hàng: A đứng trước B hoặc B đứng trước A. Hai cách đó đều hợp lệ. Nếu chỉ gộp thành ký hiệu AB rồi quên cách BA, kết quả sẽ bị thiếu đúng một nửa. Chúng ta sẽ giữ lại sự lựa chọn thứ tự bên trong khối.",
+    "formula": "ab_ba",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "pair",
+    "state": 2,
+    "heading": "GỘP A VÀ B THÀNH MỘT KHỐI",
+    "lines": [
+      "Đặt [AB] cạnh C, D, E.",
+      "Từ 5 người thành 4 đối tượng.",
+      "Bốn đối tượng có 4! thứ tự."
+    ],
+    "takeaway": "KHỐI [AB] KHÔNG THỂ BỊ TÁCH RA KHI XẾP.",
+    "narration": "Thay vì cố xếp từng người và kiểm tra cặp đứng cạnh sau đó, ta tạm xem A và B như một thẻ mới mang tên khối AB. Bên cạnh khối là ba bạn C, D, E, vậy có tất cả bốn đối tượng phân biệt. Xếp bốn đối tượng này thành hàng sẽ tạo bốn giai thừa thứ tự và luôn bảo đảm A, B cùng một vị trí liên tiếp.",
+    "formula": "block4",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "pair",
+    "state": 3,
+    "heading": "NHÂN SỐ CÁCH TRONG KHỐI",
+    "lines": [
+      "Thứ tự bốn đối tượng: 4!.",
+      "Trong khối có AB hoặc BA: 2!.",
+      "Tổng 2! × 4! = 48."
+    ],
+    "takeaway": "NHÂN HOÁN VỊ CÁC KHỐI VỚI HOÁN VỊ BÊN TRONG.",
+    "narration": "Đối với mỗi cách đặt khối AB cùng C, D, E, ta lại có hai cách sắp xếp nội bộ khối: A trước B hoặc B trước A. Hai việc lựa chọn nối tiếp nhau, vì thế phải nhân hai với bốn giai thừa. Kết quả là bốn mươi tám cách. Mỗi hàng hợp lệ xác định duy nhất một vị trí khối và một thứ tự trong khối nên không bị tính trùng.",
+    "formula": "pair48",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "pair",
+    "state": 4,
+    "heading": "CHỨNG MINH LẠI BẰNG VỊ TRÍ",
+    "lines": [
+      "Cặp AB có thể bắt đầu ở vị trí 1–4.",
+      "Mỗi vị trí có 2 thứ tự AB, BA.",
+      "Ba người còn lại có 3! cách."
+    ],
+    "takeaway": "HAI CÁCH ĐẾM CÙNG CHO RA 48.",
+    "narration": "Ta hãy kiểm tra kết quả bằng phương pháp khác. Trong hàng năm chỗ, cặp A B đứng cạnh có thể chiếm các vị trí một và hai, hai và ba, ba và bốn, hoặc bốn và năm. Nghĩa là có bốn cách chọn chỗ bắt đầu của cặp, hai cách hoán đổi A B, và ba giai thừa cách xếp ba người còn lại. Tích cũng bằng bốn mươi tám.",
+    "formula": "direct48",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "pair",
+    "state": 5,
+    "heading": "KHÁI QUÁT HAI NGƯỜI TRONG n NGƯỜI",
+    "lines": [
+      "Tất cả n người phân biệt, n ≥ 2.",
+      "Gộp hai người thành một khối.",
+      "Có 2 × (n − 1)! cách."
+    ],
+    "takeaway": "CHỈ ÁP DỤNG KHI ĐÚNG HAI NGƯỜI PHẢI ĐỨNG LIỀN.",
+    "narration": "Với n người phân biệt có hai người A, B bắt buộc đứng cạnh, ta có một khối và n trừ hai người riêng lẻ. Tổng số đối tượng là n trừ một, nên có n trừ một giai thừa cách xếp chúng. Nhân thêm hai thứ tự bên trong khối, ta được hai nhân n trừ một giai thừa. Công thức này dành cho một hàng thẳng, chưa phải bàn tròn.",
+    "formula": "pairgeneral",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "triple",
+    "state": 0,
+    "heading": "NẾU BA NGƯỜI PHẢI LIỀN NHAU?",
+    "lines": [
+      "Sáu học sinh A, B, C, D, E, F.",
+      "A, B, C đứng thành một đoạn liên tiếp.",
+      "Bên trong chưa quy định thứ tự."
+    ],
+    "takeaway": "THAY BA NGƯỜI BẰNG MỘT KHỐI.",
+    "narration": "Tình huống tiếp theo có sáu học sinh. Ba bạn A, B, C phải đứng thành một đoạn liên tiếp, không yêu cầu ai đứng trước ai. Đây vẫn là kỹ thuật gộp khối, nhưng số cách sắp xếp bên trong khối đã khác. Trước khi tính, ta cần biết có bao nhiêu đối tượng sau khi gộp và bao nhiêu hoán vị bên trong khối ba người.",
+    "formula": "tripleintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "triple",
+    "state": 1,
+    "heading": "ĐẾM SỐ ĐỐI TƯỢNG SAU GỘP",
+    "lines": [
+      "Khối [ABC], D, E, F.",
+      "Chỉ còn 4 đối tượng.",
+      "Sắp xếp ngoài khối: 4! cách."
+    ],
+    "takeaway": "BA NGƯỜI CHIẾM MỘT ĐOẠN KHÔNG BỊ CHIA CẮT.",
+    "narration": "Sau khi gộp A, B, C, ta có khối ABC cùng ba học sinh D, E, F. Tất cả chỉ có bốn đối tượng cần sắp hàng, vì vậy số cách đặt khối là bốn giai thừa. Đáng chú ý, gộp ba người làm số đối tượng giảm hai, không giảm ba. Công thức ngoài khối phụ thuộc chính xác vào số phần tử đã được gộp.",
+    "formula": "triplefour",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "triple",
+    "state": 2,
+    "heading": "HOÁN VỊ BÊN TRONG KHỐI",
+    "lines": [
+      "ABC, ACB, BAC, BCA, CAB, CBA.",
+      "Có 3! = 6 thứ tự nội bộ.",
+      "Tất cả vẫn là ba người liền nhau."
+    ],
+    "takeaway": "KHÔNG ĐƯỢC QUÊN 3! THỨ TỰ TRONG KHỐI.",
+    "narration": "Bây giờ giữ nguyên vị trí của khối trên hàng. Ta vẫn có thể xếp ba bạn A, B, C theo sáu thứ tự khác nhau. Khi lấy một thứ tự ngoài khối và một thứ tự bên trong, ta được đúng một hàng thỏa điều kiện. Do đó, ngoài bốn giai thừa, phải nhân thêm ba giai thừa.",
+    "formula": "inner6",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "triple",
+    "state": 3,
+    "heading": "SÁU NGƯỜI, BA NGƯỜI ĐI LIỀN",
+    "lines": [
+      "Ngoài khối có 4! cách.",
+      "Bên trong khối có 3! cách.",
+      "Tổng cộng 3! × 4! = 144."
+    ],
+    "takeaway": "BA NGƯỜI TÙY Ý: ĐẾM ĐỦ SÁU THỨ TỰ.",
+    "narration": "Ghép hai công đoạn, ta có ba giai thừa nhân bốn giai thừa, bằng một trăm bốn mươi bốn cách. Nếu lỡ coi cụm ABC đã cố định thứ tự, ta chỉ tìm được hai mươi bốn và bỏ sót năm phần sáu số hàng. Hình động sẽ cho thấy khối đứng yên trong khi ba thẻ bên trong liên tục hoán đổi vị trí.",
+    "formula": "triple144",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "triple",
+    "state": 4,
+    "heading": "NẾU BẮT BUỘC ĐÚNG ABC",
+    "lines": [
+      "A phải trước B, B phải trước C.",
+      "Chỉ còn một thứ tự trong khối.",
+      "Có đúng 4! = 24 hàng."
+    ],
+    "takeaway": "ĐIỀU KIỆN THỨ TỰ THAY ĐỔI ĐÁP SỐ.",
+    "narration": "Chỉ thay đổi một cụm từ của đề bài, đáp số đã giảm mạnh. Nếu yêu cầu ba người xuất hiện đúng theo thứ tự A rồi B rồi C và phải kề nhau, bên trong khối chỉ có một cách. Ta vẫn có bốn đối tượng ngoài khối nên số hàng là bốn giai thừa, bằng hai mươi bốn. Hãy phân biệt rõ đứng thành một nhóm với đứng đúng thứ tự.",
+    "formula": "ordered24",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "triple",
+    "state": 5,
+    "heading": "CÔNG THỨC MỘT KHỐI k NGƯỜI",
+    "lines": [
+      "n người phân biệt; k người tạo một khối.",
+      "Bên ngoài: (n − k + 1)! cách.",
+      "Bên trong: k! cách."
+    ],
+    "takeaway": "k! × (n − k + 1)! NẾU KHÔNG RÀNG BUỘC THỨ TỰ.",
+    "narration": "Với n người phân biệt, khi k người chỉ cần đứng liền nhau theo thứ tự tùy ý, ta thay nhóm k người bằng một khối. Số đối tượng còn n trừ k cộng một. Các đối tượng này có n trừ k cộng một giai thừa cách xếp; trong khối có k giai thừa hoán vị. Nhân lại ta được công thức chung, với một không nhỏ hơn k và k không lớn hơn n.",
+    "formula": "generalblock",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "double",
+    "state": 0,
+    "heading": "HAI CẶP KHÁC NHAU",
+    "lines": [
+      "A, B phải đứng cạnh nhau.",
+      "C, D cũng phải đứng cạnh nhau.",
+      "Có sáu học sinh phân biệt."
+    ],
+    "takeaway": "GỘP THÀNH HAI KHỐI KHÔNG GIAO NHAU.",
+    "narration": "Giờ đây ta có sáu học sinh A đến F, và đồng thời yêu cầu A ngồi cạnh B, C đứng cạnh D. Hai cặp không có người chung nên có thể tạo thành hai khối riêng biệt. Điều quan trọng là phân biệt số cách xếp bốn đối tượng ngoài khối và hai số cách hoán vị bên trong hai khối.",
+    "formula": "doubleintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "double",
+    "state": 1,
+    "heading": "VẼ HAI KHỐI ĐỘC LẬP",
+    "lines": [
+      "[AB], [CD], E, F.",
+      "Có bốn đối tượng phân biệt.",
+      "Sắp xếp ngoài khối: 4! cách."
+    ],
+    "takeaway": "HAI KHỐI LÀ HAI ĐỐI TƯỢNG RIÊNG.",
+    "narration": "Sau khi gộp, ta còn khối AB, khối CD và hai người E, F. Bốn đối tượng này có bốn giai thừa cách sắp thành hàng. Lúc này không nên mở khối quá sớm, vì nếu hoán đổi A với D giữa hai khối, chúng ta không còn giữ điều kiện cặp ban đầu. Đầu tiên hãy xếp các khối nguyên vẹn.",
+    "formula": "outer4",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "double",
+    "state": 2,
+    "heading": "HAI HOÁN VỊ BÊN TRONG",
+    "lines": [
+      "Khối AB có 2 thứ tự.",
+      "Khối CD cũng có 2 thứ tự.",
+      "Tổng 2 × 2 × 4! = 96."
+    ],
+    "takeaway": "CÁC KHỐI RỜI NHAU THÌ NHÂN ĐƯỢC CÁC SỐ CÁCH.",
+    "narration": "Khi vị trí các khối đã được chọn, bên trong khối AB có hai thứ tự AB và BA, khối CD có hai thứ tự CD và DC. Chúng là các lựa chọn độc lập, vì hai cặp không có người chung. Ta nhân bốn giai thừa với hai và hai, nhận chín mươi sáu cách. Đây là điểm khác biệt lớn với những khối có phần tử chung ở chương sau.",
+    "formula": "double96",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "double",
+    "state": 3,
+    "heading": "NẾU HAI KHỐI ĐÃ CỐ ĐỊNH THỨ TỰ",
+    "lines": [
+      "Phải là AB, không được BA.",
+      "Phải là CD, không được DC.",
+      "Chỉ còn 4! = 24 cách."
+    ],
+    "takeaway": "KHÔNG NHÂN HOÁN VỊ NỘI BỘ KHI THỨ TỰ ĐÃ CỐ ĐỊNH.",
+    "narration": "Nếu đề yêu cầu A đứng ngay trước B đồng thời C đứng ngay trước D, ta không được nhân thêm hai lựa chọn nội bộ cho từng cặp. Chỉ có đúng khối AB và đúng khối CD. Bên ngoài vẫn có bốn đối tượng nên số cách là hai mươi bốn. Khi đọc đề, từ ngay trước khác hẳn cụm từ đứng cạnh.",
+    "formula": "fixed24",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "double",
+    "state": 4,
+    "heading": "BA CẶP TRONG SÁU NGƯỜI",
+    "lines": [
+      "[AB], [CD], [EF].",
+      "Ba khối phân biệt xếp 3! cách.",
+      "Mỗi khối có 2 thứ tự."
+    ],
+    "takeaway": "3! × 2³ = 48 CÁCH.",
+    "narration": "Với sáu người được chia thành ba cặp AB, CD và EF, nếu cả ba cặp đều phải liền nhau, ta có đúng ba khối. Bên ngoài ba khối hoán vị theo ba giai thừa cách. Bên trong mỗi khối có hai cách, tổng là hai mũ ba. Do đó có bốn mươi tám cách, không phải hai nhân sáu giai thừa.",
+    "formula": "threepairs48",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "double",
+    "state": 5,
+    "heading": "MỞ RỘNG n NGƯỜI, r KHỐI RỜI",
+    "lines": [
+      "Các khối có kích thước k₁, ..., kᵣ.",
+      "Số đối tượng còn n − ∑(kᵢ − 1).",
+      "Nhân với ∏kᵢ! nếu được đổi nội bộ."
+    ],
+    "takeaway": "ĐẢM BẢO CÁC KHỐI KHÔNG CÓ PHẦN TỬ CHUNG.",
+    "narration": "Trong bài toán tổng quát, nhiều nhóm người không giao nhau lần lượt có k một, k hai, đến k r phần tử bắt buộc đứng liền. Mỗi khối làm giảm số đối tượng đi k i trừ một. Khi các khối sắp tự do, ta nhân giai thừa của số đối tượng còn lại với tích các giai thừa kích thước khối. Cách này chỉ đúng nếu các khối độc lập và không bị điều kiện vị trí khác cản trở.",
+    "formula": "multiblock",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "overlap",
+    "state": 0,
+    "heading": "HAI CẶP CÓ CHUNG B",
+    "lines": [
+      "A cạnh B và B cạnh C.",
+      "B tham gia cả hai điều kiện.",
+      "Không thể tạo hai khối độc lập [AB], [BC]."
+    ],
+    "takeaway": "KHỐI GIAO NHAU CẦN XÉT CẤU TRÚC LIÊN TIẾP.",
+    "narration": "Chúng ta thay đổi yêu cầu: A phải cạnh B và B phải cạnh C. Hai cặp này cùng chứa người B, nên nếu xem chúng như hai khối tách rời AB và BC, ta đã dùng B hai lần. Đây là lỗi rất phổ biến khi vận dụng công thức gộp khối. Hãy nhìn vị trí của B trên hàng để dựng lại cấu trúc đúng.",
+    "formula": "sharedintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "overlap",
+    "state": 1,
+    "heading": "AI PHẢI Ở GIỮA?",
+    "lines": [
+      "B phải đứng cạnh cả A và C.",
+      "Trong hàng, B có tối đa hai hàng xóm.",
+      "Chỉ có A – B – C hoặc C – B – A."
+    ],
+    "takeaway": "PHẢI CHUNG MỘT KHỐI BA NGƯỜI.",
+    "narration": "Để B đứng cạnh cả A lẫn C trong một hàng, hai bạn kia phải đứng ở hai phía khác nhau của B. Nghĩa là bộ ba chỉ có hai thứ tự hợp lệ: A B C hoặc C B A. Nếu xếp B ở một đầu, B chỉ có một hàng xóm trong đoạn ba người và không thể cùng lúc cạnh cả A và C. Điều kiện giao nhau đã xác định vị trí chính giữa.",
+    "formula": "twopaths",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "overlap",
+    "state": 2,
+    "heading": "ĐẾM HÀNG CÓ SÁU NGƯỜI",
+    "lines": [
+      "[ABC] có đúng 2 dạng được phép.",
+      "Ngoài khối là D, E, F: 4 đối tượng.",
+      "Số cách 2 × 4! = 48."
+    ],
+    "takeaway": "KHÔNG PHẢI 2² × 4! VÌ HAI CẶP KHÔNG ĐỘC LẬP.",
+    "narration": "Bây giờ xếp sáu người. Ta dùng một khối gồm A, B, C với hai thứ tự A B C và C B A, cùng ba học sinh D, E, F. Có bốn đối tượng nên có bốn giai thừa thứ tự ở ngoài, nhân hai ở trong. Kết quả là bốn mươi tám cách. Hệ số hai này bắt nguồn từ toàn bộ ba người, không phải nhân hai lần cho hai cặp.",
+    "formula": "shared48",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "overlap",
+    "state": 3,
+    "heading": "NẾU A CẠNH C VÀ A CẠNH B",
+    "lines": [
+      "A phải là người ở giữa.",
+      "Khối có B – A – C hoặc C – A – B.",
+      "Cũng có 2 × 4! = 48."
+    ],
+    "takeaway": "ĐỌC ĐÚNG ĐỈNH CHUNG CỦA HAI ĐIỀU KIỆN.",
+    "narration": "Khi đổi điều kiện thành A cạnh B và A cạnh C, chính A phải đứng giữa. Hai dạng hợp lệ trong đoạn ba người lúc này là B A C hoặc C A B. Số cách vẫn là bốn mươi tám, nhưng người ở giữa đã thay đổi. Đây là cách kiểm tra ý nghĩa hình học của điều kiện trước khi đưa vào phép tính.",
+    "formula": "ashared48",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "overlap",
+    "state": 4,
+    "heading": "CẢ BA CẶP ĐỀU CẠNH NHAU?",
+    "lines": [
+      "A cạnh B, B cạnh C, A cạnh C.",
+      "Trong một hàng ba người chỉ có hai cặp kề.",
+      "Không có cách nào thỏa mãn."
+    ],
+    "takeaway": "KHÔNG PHẢI HỆ ĐIỀU KIỆN NÀO CŨNG CÓ NGHIỆM.",
+    "narration": "Nếu đồng thời đòi A cạnh B, B cạnh C và A cạnh C trên một hàng, bài toán trở nên bất khả thi. Trong ba vị trí liên tiếp, chỉ có hai cặp vị trí kề nhau. Không thể biến ba người thành ba cặp đôi một đều kề nhau trên đường thẳng. Vì vậy đáp số là không, và ta phải phát hiện điều này trước khi cố gộp khối.",
+    "formula": "impossible0",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "overlap",
+    "state": 5,
+    "heading": "NHẬN DIỆN KHỐI CHỒNG LẤN",
+    "lines": [
+      "Vẽ đồ thị điều kiện kề.",
+      "Các cạnh AB và BC nối thành đường A–B–C.",
+      "Dựa vào cấu trúc để đếm thứ tự hợp lệ."
+    ],
+    "takeaway": "VẼ ĐIỀU KIỆN TRƯỚC, RỒI MỚI GỘP.",
+    "narration": "Một mẹo hữu ích là vẽ mỗi học sinh thành một đỉnh và mỗi yêu cầu đứng cạnh thành một cạnh nối. Nếu các cạnh tạo một đường A B C, nhóm bắt buộc phải xuất hiện theo đường ấy hoặc theo chiều ngược lại. Nếu xuất hiện một chu trình ba cạnh như tam giác, không thể đặt toàn bộ các cạnh thành quan hệ kề nhau trong một hàng. Đây là công cụ nhận diện rất mạnh cho các bài khó.",
+    "formula": "graph",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "union",
+    "state": 0,
+    "heading": "Ít NHẤT MỘT CẶP PHẢI KỀ",
+    "lines": [
+      "Sáu người A, B, C, D, E, F.",
+      "A đứng cạnh B hoặc C đứng cạnh D.",
+      "Có thể cả hai cặp cùng đứng cạnh."
+    ],
+    "takeaway": "CHỮ HOẶC CẦN KIỂM TRA PHẦN GIAO.",
+    "narration": "Ta trở lại hai cặp AB và CD, nhưng chỉ yêu cầu ít nhất một cặp đứng cạnh nhau. Có thể chỉ cặp AB đứng cạnh, chỉ cặp CD đứng cạnh, hoặc cả hai cùng thỏa. Vì hai biến cố có phần giao, nếu cộng số cách của từng cặp riêng rẽ thì những hàng có cả hai cặp sẽ được tính hai lần.",
+    "formula": "unionintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "union",
+    "state": 1,
+    "heading": "ĐẶT HAI BIẾN CỐ",
+    "lines": [
+      "E₁: A cạnh B.",
+      "E₂: C cạnh D.",
+      "Mỗi biến cố có 2 × 5! = 240."
+    ],
+    "takeaway": "HAI SỐ 240 CHƯA PHẢI ĐÁP SỐ CẦN TÌM.",
+    "narration": "Kí hiệu E một là biến cố A cạnh B, E hai là biến cố C cạnh D. Với sáu người, mỗi biến cố có hai nhân năm giai thừa, bằng hai trăm bốn mươi cách. Nếu cộng hai số này, ta được bốn trăm tám mươi. Nhưng số đó chưa đúng, vì mọi hàng có cả AB và CD liền nhau đều xuất hiện trong cả hai nhóm.",
+    "formula": "each240",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "union",
+    "state": 2,
+    "heading": "TÍNH PHẦN GIAO",
+    "lines": [
+      "E₁ ∩ E₂: cả hai cặp đều kề.",
+      "Gộp [AB], [CD], E, F.",
+      "Phần giao có 2² × 4! = 96."
+    ],
+    "takeaway": "PHẦN GIAO ĐÃ BỊ ĐẾM HAI LẦN.",
+    "narration": "Phần giao chính là bài toán hai khối rời nhau ở chương ba. Ta có các đối tượng AB, CD, E, F. Chúng có bốn giai thừa thứ tự ngoài và hai lựa chọn bên trong mỗi cặp. Do đó phần giao có chín mươi sáu cách. Đây là những hàng đã bị cộng hai lần khi ta lấy hai trăm bốn mươi cộng hai trăm bốn mươi.",
+    "formula": "intersection96",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "union",
+    "state": 3,
+    "heading": "ÁP DỤNG BAO HÀM–LOẠI TRỪ",
+    "lines": [
+      "|E₁ ∪ E₂| = |E₁| + |E₂| − |E₁ ∩ E₂|.",
+      "Thay số: 240 + 240 − 96.",
+      "Kết quả 384 cách."
+    ],
+    "takeaway": "TRỪ MỘT LẦN PHẦN GIAO ĐỂ HẾT ĐẾM TRÙNG.",
+    "narration": "Ta áp dụng công thức đếm phần hợp của hai tập: số phần tử nhóm thứ nhất cộng số phần tử nhóm thứ hai rồi trừ phần giao. Thay số, hai trăm bốn mươi cộng hai trăm bốn mươi trừ chín mươi sáu bằng ba trăm tám mươi bốn. Mỗi hàng hợp lệ giờ được đếm đúng một lần, kể cả những hàng thỏa đồng thời hai điều kiện.",
+    "formula": "union384",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "union",
+    "state": 4,
+    "heading": "KHÔNG CẶP NÀO ĐƯỢC KỀ",
+    "lines": [
+      "Tất cả sáu người: 6! = 720.",
+      "Có ít nhất một cặp kề: 384.",
+      "Không cặp nào kề: 720 − 384 = 336."
+    ],
+    "takeaway": "PHẦN BÙ LÀ CÁCH ĐẾM MẠNH KHI CÓ CHỮ KHÔNG.",
+    "narration": "Nếu đề hỏi ngược lại rằng A không cạnh B và C không cạnh D, ta có thể dùng phần bù của biến cố ít nhất một cặp kề. Tổng số cách xếp sáu người là sáu giai thừa, bằng bảy trăm hai mươi. Trừ ba trăm tám mươi bốn trường hợp vi phạm, ta còn ba trăm ba mươi sáu hàng hợp lệ.",
+    "formula": "neither336",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "union",
+    "state": 5,
+    "heading": "KIỂM CHỨNG BẰNG LIỆT KÊ",
+    "lines": [
+      "Duyệt tất cả 720 hoán vị.",
+      "Đếm riêng hai biến cố và phần giao.",
+      "384 + 336 = 720."
+    ],
+    "takeaway": "HAI NHÓM KẾT QUẢ PHÂN HOẠCH TOÀN BỘ CÁC HÀNG.",
+    "narration": "Để yên tâm rằng không nhầm điều kiện, ta có thể dùng Python duyệt toàn bộ bảy trăm hai mươi hoán vị và đánh dấu những hàng có AB hoặc CD kề nhau. Kết quả nhóm có ít nhất một cặp là ba trăm tám mươi bốn, nhóm không cặp nào kề là ba trăm ba mươi sáu. Tổng trở lại đúng bảy trăm hai mươi, tạo một phép kiểm tra độc lập.",
+    "formula": "partition720",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "exact",
+    "state": 0,
+    "heading": "ĐÚNG MỘT TRONG HAI CẶP",
+    "lines": [
+      "AB đứng kề hoặc CD đứng kề.",
+      "Nhưng không được đồng thời cả hai.",
+      "Đây là điều kiện hoặc loại trừ."
+    ],
+    "takeaway": "KHÁC HẲN CỤM TỪ ÍT NHẤT MỘT.",
+    "narration": "Một đề bài rất dễ bị nhầm là chỉ được đúng một trong hai cặp AB, CD đứng cạnh nhau. Điều này khác với ít nhất một cặp, vì khi cả hai đều kề nhau thì không còn hợp lệ. Ta sẽ tách thành hai trường hợp rời nhau: AB kề nhưng CD không kề, hoặc CD kề nhưng AB không kề.",
+    "formula": "exactintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "exact",
+    "state": 1,
+    "heading": "TRƯỜNG HỢP AB CÓ, CD KHÔNG",
+    "lines": [
+      "AB kề: 240 cách.",
+      "AB và CD cùng kề: 96 cách.",
+      "Còn 240 − 96 = 144 cách."
+    ],
+    "takeaway": "TRỪ PHẦN GIAO NGAY TRONG NHÓM AB.",
+    "narration": "Với trường hợp thứ nhất, ta đếm tất cả hàng có AB đứng cạnh, được hai trăm bốn mươi. Trong số đó có chín mươi sáu hàng mà CD cũng đứng cạnh; chúng phải bị loại bỏ vì vi phạm yêu cầu đúng một. Số cách còn lại là một trăm bốn mươi bốn. Đây là phép đếm phần bù trong phạm vi nhóm AB.",
+    "formula": "abonly144",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "exact",
+    "state": 2,
+    "heading": "TRƯỜNG HỢP CD CÓ, AB KHÔNG",
+    "lines": [
+      "Tương tự trường hợp trước.",
+      "Có 240 − 96 = 144 cách.",
+      "Hai trường hợp không giao nhau."
+    ],
+    "takeaway": "DÙNG QUY TẮC CỘNG CHO HAI NHÓM RỜI NHAU.",
+    "narration": "Trường hợp thứ hai hoàn toàn tương tự: CD đứng cạnh nhưng AB không đứng cạnh. Số cách cũng là hai trăm bốn mươi trừ chín mươi sáu, bằng một trăm bốn mươi bốn. Hai nhóm không có hàng chung, vì một hàng không thể vừa có AB kề, CD không kề, vừa có CD kề, AB không kề. Ta được phép áp dụng quy tắc cộng.",
+    "formula": "cdonly144",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "exact",
+    "state": 3,
+    "heading": "TỔNG HỢP KẾT QUẢ",
+    "lines": [
+      "Đúng một cặp kề: 144 + 144.",
+      "Kết quả 288 cách.",
+      "Có thể lấy 384 − 96 để kiểm tra."
+    ],
+    "takeaway": "ĐẾM ĐÚNG MỘT = ĐẾM ÍT NHẤT MỘT − ĐẾM CẢ HAI.",
+    "narration": "Cộng hai nhóm rời nhau, ta có hai trăm tám mươi tám cách. Ngoài ra, từ kết quả phần hợp ba trăm tám mươi bốn ở chương trước, ta chỉ cần trừ đi chín mươi sáu hàng mà cả hai cặp đều kề, cũng nhận đúng hai trăm tám mươi tám. Hai hướng đi khác nhau cùng cho kết quả, nên đây là một phép đối chiếu tốt.",
+    "formula": "exact288",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "exact",
+    "state": 4,
+    "heading": "BÀI BIẾN THỂ: AB CÓ, CD KHÔNG",
+    "lines": [
+      "Không yêu cầu đổi vai trò hai cặp.",
+      "Chỉ đếm một trong hai nhóm.",
+      "Kết quả riêng là 144 cách."
+    ],
+    "takeaway": "CẦN XEM ĐỀ NÓI ĐÚNG MỘT HAY ĐÚNG CẶP CHỈ ĐỊNH.",
+    "narration": "Hãy đọc thật kỹ sự khác biệt: nếu đề chỉ yêu cầu AB phải đứng cạnh còn CD không được đứng cạnh, kết quả chỉ là một trăm bốn mươi bốn. Ta không được nhân đôi vì trường hợp đối xứng CD kề, AB không kề đã không được đề cho phép. Đây là lỗi đọc đề có thể khiến đáp án bị gấp đôi.",
+    "formula": "specific144",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "exact",
+    "state": 5,
+    "heading": "NÂNG CAO: E ĐỨNG TRƯỚC F",
+    "lines": [
+      "AB và CD đều đứng cạnh nhau.",
+      "E phải xuất hiện trước F.",
+      "96 : 2 = 48 cách."
+    ],
+    "takeaway": "DÙNG PHÉP ĐỔI CHỖ E VÀ F ĐỂ CHIA ĐÔI.",
+    "narration": "Ta thêm một điều kiện thứ tự vào bài hai khối AB và CD đều kề nhau: E phải đứng trước F. Trong chín mươi sáu hàng hợp lệ, việc đổi tên E và F tạo một song ánh giữa nhóm E đứng trước F và nhóm F đứng trước E. Hai nhóm có kích thước bằng nhau, vì vậy số hàng thỏa yêu cầu mới là chín mươi sáu chia hai, bằng bốn mươi tám.",
+    "formula": "half48",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "circle",
+    "state": 0,
+    "heading": "KHI KHỐI ĐƯỢC XẾP QUANH BÀN",
+    "lines": [
+      "Sáu người ngồi bàn tròn không đánh số.",
+      "A và B bắt buộc ngồi kề.",
+      "Hai cách chỉ khác phép quay xem như một."
+    ],
+    "takeaway": "KHÔNG ÁP DỤNG CÔNG THỨC HÀNG NGANG NGUYÊN XI.",
+    "narration": "Sau những bài xếp thành hàng, ta chuyển sang bàn tròn không đánh số ghế. Sáu người phân biệt ngồi quanh bàn, A và B cần kề nhau, và hai cách chỉ khác bởi phép quay được xem như một. Phần khó là xác định số đối tượng sau khi gộp khối rồi đếm theo vòng, chứ không dùng giai thừa của hàng ngang.",
+    "formula": "circleintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "circle",
+    "state": 1,
+    "heading": "GỘP AB TRÊN BÀN TRÒN",
+    "lines": [
+      "Khối [AB], C, D, E, F.",
+      "Có 5 đối tượng trên vòng.",
+      "Chỉ xét phép quay: (5 − 1)! cách."
+    ],
+    "takeaway": "CỐ ĐỊNH MỘT KHỐI LÀM MỐC.",
+    "narration": "Gộp A, B thành một đối tượng. Khi ấy quanh bàn có năm đối tượng phân biệt gồm khối AB và C, D, E, F. Muốn đếm cách xếp vòng, ta có thể cố định khối AB như một mốc rồi hoán vị bốn người còn lại. Số thứ tự vòng bên ngoài khối là bốn giai thừa, không phải năm giai thừa.",
+    "formula": "circleouter",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "circle",
+    "state": 2,
+    "heading": "ĐẾM HAI CHIỀU TRONG KHỐI",
+    "lines": [
+      "AB hoặc BA vẫn khác nhau.",
+      "Nhân 2 với 4!.",
+      "Có 48 cách ngồi vòng."
+    ],
+    "takeaway": "CÙNG LÀ 48 NHƯ VÍ DỤ NĂM NGƯỜI XẾP HÀNG, NHƯNG LÝ DO KHÁC.",
+    "narration": "Ở mỗi vị trí của khối trên bàn tròn, A và B vẫn có hai thứ tự quanh chiều kim đồng hồ. Nhân hai với bốn giai thừa ta được bốn mươi tám cách. Con số vô tình bằng bài năm người đứng hàng lúc đầu, nhưng hai bài có số người và mô hình đếm khác nhau. Ta phải hiểu điều kiện, không học thuộc một đáp số cố định.",
+    "formula": "circle48",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "circle",
+    "state": 3,
+    "heading": "HAI KHỐI RỜI NHAU TRÊN VÒNG",
+    "lines": [
+      "[AB], [CD], E, F.",
+      "Bốn đối tượng vòng tròn: 3!.",
+      "Nhân 2² được 24 cách."
+    ],
+    "takeaway": "CÔNG THỨC VÒNG TRÒN DÙNG (SỐ ĐỐI TƯỢNG − 1)!",
+    "narration": "Nếu hai cặp AB và CD đều phải ngồi cạnh nhau, ta gộp thành hai khối cùng E, F, tổng cộng bốn đối tượng quanh vòng. Số thứ tự vòng là ba giai thừa. Hai khối mỗi khối có hai cách đổi chỗ nội bộ, nên có bốn nhân ba giai thừa, bằng hai mươi bốn cách. Không được lấy chín mươi sáu của bài xếp hàng.",
+    "formula": "circle24",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "circle",
+    "state": 4,
+    "heading": "BA NGƯỜI LIỀN NHAU TRÊN VÒNG",
+    "lines": [
+      "[ABC] cùng D, E, F: 4 đối tượng.",
+      "3! thứ tự vòng ngoài khối.",
+      "3! thứ tự trong khối: 36 cách."
+    ],
+    "takeaway": "ĐẾM VÒNG VÀ ĐẾM BÊN TRONG LÀ HAI BƯỚC.",
+    "narration": "Ba bạn A, B, C cần ngồi thành ba vị trí liên tiếp quanh bàn và không bị cố định thứ tự. Gộp thành một khối cùng D, E, F, tổng cộng bốn đối tượng. Bên ngoài có ba giai thừa cách xếp vòng; bên trong có ba giai thừa cách đổi ba bạn. Tích bằng ba mươi sáu cách.",
+    "formula": "circletriple36",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "circle",
+    "state": 5,
+    "heading": "LƯU Ý NGƯỜI NÀO LÀM MỐC",
+    "lines": [
+      "Bàn tròn chỉ đồng nhất phép quay.",
+      "Không đồng nhất phép lật trái–phải.",
+      "Ghế đánh số thì cách đếm thay đổi."
+    ],
+    "takeaway": "PHẢI NÊU RÕ QUY ƯỚC CỦA BÀI TOÁN VÒNG.",
+    "narration": "Các công thức vừa sử dụng giả thiết rằng cách xếp quanh bàn tròn chỉ được đồng nhất khi có phép quay. Nếu mặt bàn hay ghế có số thứ tự cố định, phép quay không còn cho cùng cách phân công ghế. Nếu đề cho phép lật mặt vòng hạt, lại phải xét ảnh gương. Vì thế trước khi gộp khối trong bài vòng tròn, hãy kiểm tra kỹ quy ước của phép đếm.",
+    "formula": "circlegeneral",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "challenge",
+    "state": 0,
+    "heading": "BÀI TỔNG HỢP BẢY NGƯỜI",
+    "lines": [
+      "A, B, C, D, E, F, G xếp hàng.",
+      "Không AB, không CD, không EF kề.",
+      "Tìm số cách hợp lệ."
+    ],
+    "takeaway": "BA ĐIỀU KIỆN CẤM KHÔNG THỂ TRỪ ĐỘC LẬP.",
+    "narration": "Đến bài tổng hợp cuối, ta có bảy người phân biệt và ba cặp AB, CD, EF đều không được đứng cạnh nhau. Nếu chỉ lấy tổng số cách trừ riêng số hàng có từng cặp kề, ta sẽ trừ lặp những hàng vi phạm hai hoặc ba cặp. Đây là lúc sử dụng nguyên lý bao hàm – loại trừ với ba biến cố.",
+    "formula": "challengeintro",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "challenge",
+    "state": 1,
+    "heading": "TỔNG VÀ MỘT BIẾN CỐ VI PHẠM",
+    "lines": [
+      "Tổng số hàng là 7! = 5040.",
+      "Mỗi cặp kề: 2 × 6! = 1440.",
+      "Ba cặp: trừ 3 × 1440."
+    ],
+    "takeaway": "PHẢI ĐẾM ĐƯỢC CẢ TRƯỜNG HỢP GIAO NHAU.",
+    "narration": "Tổng số cách xếp bảy người là bảy giai thừa, tức năm nghìn không trăm bốn mươi. Xét mỗi biến cố một cặp đứng cạnh, ta gộp hai người thành một khối nên có hai nhân sáu giai thừa, bằng một nghìn bốn trăm bốn mươi cách. Có ba biến cố như vậy; trước tiên trừ ba lần con số đó. Nhưng đây chưa phải đáp số cuối.",
+    "formula": "single1440",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "challenge",
+    "state": 2,
+    "heading": "HAI CẶP CÙNG VI PHẠM",
+    "lines": [
+      "Chọn hai cặp trong ba: 3 cách.",
+      "Hai khối, còn 5 đối tượng.",
+      "Mỗi giao có 2² × 5! = 480."
+    ],
+    "takeaway": "CỘNG LẠI VÌ VỪA BỊ TRỪ HAI LẦN.",
+    "narration": "Khi cả hai cặp chỉ định đều đứng cạnh, ta có hai khối cỡ hai cùng ba người riêng, tức năm đối tượng xếp hàng. Các khối có hai lựa chọn nội bộ mỗi khối, cho bốn nhân năm giai thừa bằng bốn trăm tám mươi cách. Chọn hai trong ba cặp được ba giao đôi. Mỗi hàng thuộc giao đôi đã bị trừ hai lần nên phải cộng lại một lần.",
+    "formula": "pairs480",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "challenge",
+    "state": 3,
+    "heading": "CẢ BA CẶP CÙNG VI PHẠM",
+    "lines": [
+      "Khối [AB], [CD], [EF], và G.",
+      "Có 4 đối tượng và 2³ dạng nội bộ.",
+      "Giao ba biến cố: 2³ × 4! = 192."
+    ],
+    "takeaway": "TRỪ PHẦN GIAO BA LẦN CUỐI CÙNG.",
+    "narration": "Nếu cả ba cặp đều kề nhau, ta có ba khối AB, CD, EF và một người G, tổng là bốn đối tượng. Có bốn giai thừa thứ tự ngoài và hai mũ ba thứ tự bên trong ba khối. Phần giao ba biến cố có một trăm chín mươi hai cách. Trong công thức bao hàm – loại trừ ba tập, phần giao này phải bị trừ ở bước cuối.",
+    "formula": "triple192",
+    "min_seconds": 23.3
+  },
+  {
+    "section": "challenge",
+    "state": 4,
+    "heading": "RÚT GỌN BIỂU THỨC",
+    "lines": [
+      "5040 − 3×1440 + 3×480 − 192.",
+      "Tính được 1968.",
+      "Kiểm tra bằng liệt kê đủ 7! hàng."
+    ],
+    "takeaway": "ĐÁP SỐ CUỐI CÙNG LÀ 1968 CÁCH.",
+    "narration": "Tập hợp các hàng hợp lệ là phần bù của ba biến cố kề nhau. Theo nguyên lý bao hàm – loại trừ, ta lấy năm nghìn không trăm bốn mươi trừ ba nhân một nghìn bốn trăm bốn mươi, cộng ba nhân bốn trăm tám mươi, rồi trừ một trăm chín mươi hai. Kết quả là một nghìn chín trăm sáu mươi tám cách.",
+    "formula": "answer1968",
+    "min_seconds": 22.0
+  },
+  {
+    "section": "challenge",
+    "state": 5,
+    "heading": "PHƯƠNG PHÁP CHO BÀI KHÓ TIẾP THEO",
+    "lines": [
+      "Nhận diện các nhóm bắt buộc / bị cấm.",
+      "Xét khối rời hay khối giao nhau.",
+      "Dùng phần bù và bao hàm–loại trừ khi cần."
+    ],
+    "takeaway": "MỖI PHÉP NHÂN PHẢI GẮN VỚI MỘT SONG ÁNH ĐÚNG.",
+    "narration": "Hãy kết thúc bài bằng một quy trình bốn bước: xác định điều kiện, mô hình hóa các cặp và khối, đếm số cách của từng nhóm hợp lệ hoặc vi phạm, rồi kiểm tra trùng lặp. Gộp khối rất hiệu quả khi các phần tử phải đứng cạnh nhau, nhưng không phải một công thức máy móc. Đó là nền tảng để học các bài cấm đứng cạnh ở tập tiếp theo.",
+    "formula": "closing",
+    "min_seconds": 23.3
+  }
+]

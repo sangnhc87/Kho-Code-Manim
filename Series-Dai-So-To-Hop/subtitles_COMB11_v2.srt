@@ -1,0 +1,639 @@
+1
+00:00:00,000 --> 00:00:05,685
+Hãy hình dung bốn người A, B, C, D ngồi quanh một chiếc bàn tròn.
+
+2
+00:00:05,685 --> 00:00:16,677
+Nếu ta chụp ảnh sau khi quay bàn một góc, các vị trí trên ảnh thay đổi, nhưng ai ngồi bên trái và bên phải ai vẫn giữ nguyên.
+
+3
+00:00:16,677 --> 00:00:23,500
+Vì vậy cách xếp quanh bàn khác hẳn cách xếp theo hàng có vị trí đầu và cuối.
+
+4
+00:00:23,500 --> 00:00:28,910
+Bắt đầu từ vị trí có chữ A ta đọc được A B C D.
+
+5
+00:00:28,910 --> 00:00:36,844
+Nếu dịch điểm bắt đầu sang B, sang C hoặc sang D, ta nhận những dãy khác nhau khi viết thành hàng.
+
+6
+00:00:36,844 --> 00:00:40,811
+Nhưng khi ngồi quanh bàn, đây vẫn là cùng một vòng.
+
+7
+00:00:40,811 --> 00:00:45,500
+Ta phải gom bốn cách viết lại trước khi xác định kết quả.
+
+8
+00:00:45,500 --> 00:00:51,204
+Ta đếm trước toàn bộ hai mươi bốn cách viết bốn tên thành hàng.
+
+9
+00:00:51,204 --> 00:01:00,981
+Mỗi cách xếp vòng tròn xuất hiện đúng bốn lần, vì có bốn vị trí có thể chọn làm nơi bắt đầu đọc tên.
+
+10
+00:01:00,981 --> 00:01:07,500
+Bằng phép chia thành các nhóm bằng nhau, số vòng thực sự khác nhau là sáu.
+
+11
+00:01:07,500 --> 00:01:12,738
+Một cách khác gọn hơn là cố định bạn A làm mốc trên sơ đồ.
+
+12
+00:01:12,738 --> 00:01:20,071
+Lúc này B, C, D có thể chiếm ba vị trí theo chiều kim đồng hồ theo ba giai thừa cách.
+
+13
+00:01:20,071 --> 00:01:29,500
+Phương pháp cố định người mốc không làm bỏ sót vòng nào bởi mỗi vòng có đúng một phép quay đưa A về vị trí ta chọn.
+
+14
+00:01:29,500 --> 00:01:37,086
+Sự khác biệt giữa hai mươi bốn và sáu không xuất phát từ việc ngồi tròn có ít ghế hơn.
+
+15
+00:01:37,086 --> 00:01:45,052
+Số người vẫn là bốn, nhưng ta coi những cách chỉ khác nhau bởi phép quay là cùng một kết quả.
+
+16
+00:01:45,052 --> 00:01:51,500
+Chỉ khi đề bài coi ảnh gương giống nhau ta mới có thêm phép chia cho hai.
+
+17
+00:01:51,500 --> 00:01:59,532
+Với ba người A, B, C, hãy tự đặt A làm mốc rồi xác định hai chiều có thể sắp B và C.
+
+18
+00:01:59,532 --> 00:02:05,817
+Ta thu hai vòng khác nhau: A B C và A C B theo chiều kim đồng hồ.
+
+19
+00:02:05,817 --> 00:02:13,500
+Nếu không quan tâm hướng ngồi, hai vòng có thể trở thành một, nhưng đó là giả thiết khác cần nói rõ.
+
+20
+00:02:13,500 --> 00:02:17,417
+Hãy xét sáu học sinh với các tên khác nhau.
+
+21
+00:02:17,417 --> 00:02:23,683
+Khi liệt kê theo hàng, ta có sáu giai thừa, bằng bảy trăm hai mươi dãy.
+
+22
+00:02:23,683 --> 00:02:29,950
+Trên bàn tròn không đánh số, mỗi vòng lại có sáu điểm bắt đầu khác nhau.
+
+23
+00:02:29,950 --> 00:02:37,000
+Nếu xem các dãy này là sáu kết quả riêng biệt, ta sẽ đếm trùng đúng sáu lần.
+
+24
+00:02:37,000 --> 00:02:42,593
+Ta chọn bạn A làm mốc ở vị trí mười hai giờ trên màn hình.
+
+25
+00:02:42,593 --> 00:02:51,915
+Đây chỉ là thao tác đại diện cho mọi phép quay, không có nghĩa ngoài đời A bắt buộc ngồi ở một ghế cụ thể.
+
+26
+00:02:51,915 --> 00:02:59,000
+Sau khi đặt mốc, năm người còn lại được phép hoán đổi tự do quanh chiều kim đồng hồ.
+
+27
+00:02:59,000 --> 00:03:05,679
+Sau khi cố định A, ta duyệt các vị trí còn lại theo chiều kim đồng hồ.
+
+28
+00:03:05,679 --> 00:03:11,964
+Đầu tiên có năm người để chọn, tiếp theo còn bốn, rồi ba, hai và một.
+
+29
+00:03:11,964 --> 00:03:17,071
+Mỗi dãy lựa chọn xác định đúng một vòng có A làm mốc.
+
+30
+00:03:17,071 --> 00:03:21,000
+Vì vậy tổng số cách là một trăm hai mươi.
+
+31
+00:03:21,000 --> 00:03:26,677
+Lập luận vừa rồi mở rộng cho n người phân biệt, với ít nhất ba người.
+
+32
+00:03:26,677 --> 00:03:34,484
+Ta cố định một người và sắp n trừ một người còn lại, thu được công thức n trừ một giai thừa.
+
+33
+00:03:34,484 --> 00:03:43,000
+Điều kiện quan trọng là chỉ đồng nhất các cách xếp do quay cả vòng, chứ không đồng nhất hai chiều quay đối xứng.
+
+34
+00:03:43,000 --> 00:03:49,387
+Thay vì giữ cố định A, ta có thể bắt đầu từ n giai thừa dãy tuyến tính.
+
+35
+00:03:49,387 --> 00:03:58,613
+Một vòng có đúng n đại diện tuyến tính do chọn n điểm bắt đầu khác nhau, và mỗi đại diện đều xuất hiện một lần.
+
+36
+00:03:58,613 --> 00:04:05,000
+Vì thế ta chia n giai thừa cho n. Kết quả cũng là n trừ một giai thừa.
+
+37
+00:04:05,000 --> 00:04:18,514
+Nếu sáu chiếc ghế đã đánh số rõ ràng, chẳng hạn ghế số một đặt gần cửa và ghế số hai gần cửa sổ, hoán đổi vị trí mọi người sau một phép quay thực sự tạo ra cách phân công ghế khác.
+
+38
+00:04:18,514 --> 00:04:21,657
+Ta không thể cố định A để chia cho sáu.
+
+39
+00:04:21,657 --> 00:04:27,000
+Với các ghế phân biệt và không có điều kiện khác, có bảy trăm hai mươi cách.
+
+40
+00:04:27,000 --> 00:04:32,393
+Hãy nhìn hai sơ đồ bên trái, đều cố định A tại đỉnh vòng.
+
+41
+00:04:32,393 --> 00:04:41,254
+Ở sơ đồ thứ nhất, người kề A theo chiều kim đồng hồ là B; ở sơ đồ thứ hai, đó là F.
+
+42
+00:04:41,254 --> 00:04:46,262
+Một phép quay bàn không biến trật tự này thành trật tự kia.
+
+43
+00:04:46,262 --> 00:04:50,500
+Chỉ một phép phản xạ gương mới làm được điều đó.
+
+44
+00:04:50,500 --> 00:04:57,375
+Trong bài xếp người quanh bàn, người bên trái và bên phải của A thường đóng vai trò phân biệt.
+
+45
+00:04:57,375 --> 00:05:04,594
+Nhưng nếu đếm vòng hạt có thể lật mặt, hai cấu hình đối xứng nhau có thể được coi là một.
+
+46
+00:05:04,594 --> 00:05:12,500
+Vì vậy tên gọi vòng tròn chưa đủ để quyết định có chia hai hay không; phải xét phép biến đổi được phép.
+
+47
+00:05:12,500 --> 00:05:22,976
+Với sáu phần tử hoàn toàn phân biệt, không có cấu hình vòng nào trùng chính nó sau khi phản xạ và xoay nếu chiều dài vòng ít nhất ba.
+
+48
+00:05:22,976 --> 00:05:29,262
+Do đó một trăm hai mươi vòng định hướng có thể ghép thành sáu mươi cặp ảnh gương.
+
+49
+00:05:29,262 --> 00:05:34,500
+Việc chia hai này chỉ hợp lệ trong bài toán có đồng nhất phép lật.
+
+50
+00:05:34,500 --> 00:05:40,254
+Cùng sáu người, nhưng ba cách định nghĩa kết quả tạo ra ba con số khác nhau.
+
+51
+00:05:40,254 --> 00:05:44,654
+Nếu có sáu ghế đánh số, kết quả là bảy trăm hai mươi.
+
+52
+00:05:44,654 --> 00:05:48,715
+Nếu chỉ bỏ phép quay, kết quả là một trăm hai mươi.
+
+53
+00:05:48,715 --> 00:05:52,438
+Nếu bỏ luôn phép lật gương, kết quả còn sáu mươi.
+
+54
+00:05:52,438 --> 00:05:56,500
+Học sinh cần nói được giả thiết trước khi viết phép tính.
+
+55
+00:05:56,500 --> 00:06:06,278
+Nếu vòng hạt có nhiều hạt cùng màu, một hình có thể trùng ảnh phản xạ của chính nó, làm các nhóm tương đương không còn đồng đều.
+
+56
+00:06:06,278 --> 00:06:10,119
+Ta không được lấy số vòng rồi chia hai máy móc.
+
+57
+00:06:10,119 --> 00:06:18,500
+Những bài có nhiều màu trùng, quay và lật sẽ được học kỹ hơn trong phần nguyên lý Burnside ở các tập chuyên sâu.
+
+58
+00:06:18,500 --> 00:06:27,230
+Thầy cô hãy dừng ở ba câu hỏi trên màn hình và yêu cầu học sinh giải thích bằng lời, chưa cần bấm máy tính.
+
+59
+00:06:27,230 --> 00:06:33,516
+Mỗi đáp án chỉ hợp lý sau khi xác định thế nào là hai cách xếp giống nhau.
+
+60
+00:06:33,516 --> 00:06:40,500
+Đây là năng lực cốt lõi của phép đếm, quan trọng hơn việc ghi nhớ riêng lẻ ba công thức.
+
+61
+00:06:40,500 --> 00:06:48,975
+Bây giờ xét sáu người A, B, C, D, E, F ngồi vòng tròn, yêu cầu A và B ngồi cạnh nhau.
+
+62
+00:06:48,975 --> 00:06:55,910
+Nếu tiếp tục dùng năm giai thừa rồi giữ nguyên kết quả, ta đã bỏ qua điều kiện.
+
+63
+00:06:55,910 --> 00:07:04,000
+Ta sẽ gộp A và B thành một khối để bảo đảm hai người không bị tách ra khi sắp vòng.
+
+64
+00:07:04,000 --> 00:07:12,295
+Sau khi coi A và B như một vật ghép, danh sách gồm khối A B và bốn người C, D, E, F.
+
+65
+00:07:12,295 --> 00:07:15,541
+Tổng cộng còn năm vật để xếp vòng tròn.
+
+66
+00:07:15,541 --> 00:07:21,311
+Theo công thức vừa chứng minh, ta có bốn giai thừa cách xếp các vật ấy.
+
+67
+00:07:21,311 --> 00:07:26,000
+Mỗi cách đều bảo đảm hai thành viên trong khối ngồi kề nhau.
+
+68
+00:07:26,000 --> 00:07:36,633
+Trong mỗi cách xếp năm vật, khối A B có thể đặt theo thứ tự A rồi B hoặc B rồi A khi nhìn theo chiều kim đồng hồ.
+
+69
+00:07:36,633 --> 00:07:43,967
+Đây là hai cách ngồi khác nhau bởi hai người có thể đổi bên trái và bên phải trong khối.
+
+70
+00:07:43,967 --> 00:07:48,000
+Vì thế ta phải nhân thêm hai giai thừa, tức hai.
+
+71
+00:07:48,000 --> 00:07:53,690
+Bốn giai thừa bằng hai mươi bốn, nhân hai cho đúng bốn mươi tám cách.
+
+72
+00:07:53,690 --> 00:08:03,552
+Ta có thể kiểm chứng bằng cách cố định A, lúc ấy B chỉ có hai vị trí kề A là bên trái hoặc bên phải.
+
+73
+00:08:03,552 --> 00:08:10,000
+Bốn người còn lại hoán vị tự do, nên cũng thu được hai nhân bốn giai thừa.
+
+74
+00:08:10,000 --> 00:08:13,667
+Phép đếm thứ hai hoàn toàn không cần dùng khối.
+
+75
+00:08:13,667 --> 00:08:22,833
+Sau khi cố định A để loại phép quay, B có đúng hai lựa chọn hợp lệ: ngồi bên trái hoặc ngồi bên phải A.
+
+76
+00:08:22,833 --> 00:08:28,333
+Bốn người khác xếp vào bốn vị trí còn lại theo hai mươi bốn cách.
+
+77
+00:08:28,333 --> 00:08:32,000
+Nhân lại ta được bốn mươi tám, khớp hoàn toàn.
+
+78
+00:08:32,000 --> 00:08:35,046
+Qua ví dụ này, hãy ghi nhớ ba bước.
+
+79
+00:08:35,046 --> 00:08:40,123
+Thứ nhất, dùng một khối để áp đặt điều kiện các thành viên đứng cạnh.
+
+80
+00:08:40,123 --> 00:08:44,862
+Thứ hai, đếm số cách xếp vòng của các khối và vật còn lại.
+
+81
+00:08:44,862 --> 00:08:50,277
+Cuối cùng, nhân số thứ tự bên trong từng khối nếu các thành viên khác nhau.
+
+82
+00:08:50,277 --> 00:08:54,000
+Ta sẽ vận dụng ngay với trường hợp không kề nhau.
+
+83
+00:08:54,000 --> 00:08:59,092
+Đề bài bây giờ yêu cầu A và B không ngồi cạnh nhau.
+
+84
+00:08:59,092 --> 00:09:08,100
+Ta chia tất cả các vòng thành hai nhóm rời nhau: A và B ngồi cạnh, hoặc A và B không ngồi cạnh.
+
+85
+00:09:08,100 --> 00:09:13,583
+Không có vòng nào thuộc cả hai nhóm và cũng không thiếu trường hợp.
+
+86
+00:09:13,583 --> 00:09:17,500
+Vì vậy lấy tổng trừ đi số cách đứng cạnh.
+
+87
+00:09:17,500 --> 00:09:26,230
+Ta đã tính tổng số cách xếp sáu người là một trăm hai mươi và số cách A, B kề nhau là bốn mươi tám.
+
+88
+00:09:26,230 --> 00:09:31,119
+Lấy một trăm hai mươi trừ bốn mươi tám, ta được bảy mươi hai.
+
+89
+00:09:31,119 --> 00:09:39,500
+Tuy nhiên, phép trừ chỉ đúng khi tập các trường hợp cấm đã đếm đủ và không có tình huống chồng lấn nào khác.
+
+90
+00:09:39,500 --> 00:09:42,155
+Hãy cố định A ở đỉnh vòng.
+
+91
+00:09:42,155 --> 00:09:48,983
+Còn năm vị trí trống, nhưng hai vị trí ngay hai bên A bị cấm đối với B.
+
+92
+00:09:48,983 --> 00:09:52,776
+Do đó B chỉ có ba lựa chọn hợp lệ.
+
+93
+00:09:52,776 --> 00:10:01,500
+Với mỗi vị trí của B, bốn người C, D, E, F được xếp tùy ý vào bốn vị trí trống còn lại.
+
+94
+00:10:01,500 --> 00:10:07,087
+Số trường hợp trực tiếp bằng ba nhân bốn giai thừa, cũng là bảy mươi hai.
+
+95
+00:10:07,087 --> 00:10:14,071
+Hai lời giải khác nhau nhưng cùng đếm chính xác tập các vòng có A và B không kề nhau.
+
+96
+00:10:14,071 --> 00:10:23,500
+Việc giải cùng một bài bằng hai phương pháp là cách tuyệt vời để học sinh tự kiểm tra mình có nhân hoặc trừ sai hay không.
+
+97
+00:10:23,500 --> 00:10:37,433
+Có một lỗi rất hay gặp: đưa sáu người thành một hàng rồi kiểm tra các cặp ngồi cạnh trong hàng mà quên người đầu và cuối của hàng vốn ngồi cạnh nhau khi ghép thành vòng tròn.
+
+98
+00:10:37,433 --> 00:10:45,500
+Bởi thế ta luôn dùng mô hình vòng khép kín hoặc cố định một người trước khi xét điều kiện kề nhau.
+
+99
+00:10:45,500 --> 00:10:50,468
+Nếu thêm một bạn G, số vòng không điều kiện là sáu giai thừa.
+
+100
+00:10:50,468 --> 00:10:57,210
+Các vòng A, B đứng cạnh có hai nhân năm giai thừa cách, vì khi gộp còn sáu vật.
+
+101
+00:10:57,210 --> 00:11:01,468
+Lấy tổng trừ phần bị cấm sẽ được bốn trăm tám mươi.
+
+102
+00:11:01,468 --> 00:11:07,500
+Thầy cô có thể cho học sinh dừng hình và làm trước khi đáp án xuất hiện.
+
+103
+00:11:07,500 --> 00:11:16,079
+Xét ba học sinh nam và ba học sinh nữ đều phân biệt, ngồi quanh bàn tròn sao cho nam nữ xen kẽ.
+
+104
+00:11:16,079 --> 00:11:23,913
+Nếu cứ xếp sáu người tùy ý rồi lọc từng trường hợp, ta sẽ có quá nhiều vòng để kiểm tra.
+
+105
+00:11:23,913 --> 00:11:31,000
+Phương pháp thông minh hơn là xếp trước một nhóm, từ đó tạo ra những khoảng trống bắt buộc.
+
+106
+00:11:31,000 --> 00:11:34,967
+Đầu tiên, chỉ xét ba học sinh nam M1, M2, M3.
+
+107
+00:11:34,967 --> 00:11:41,820
+Ta cố định M1 làm mốc, hai nam còn lại có hai cách sắp theo chiều kim đồng hồ.
+
+108
+00:11:41,820 --> 00:11:46,148
+Đó là hai cách xếp vòng khác nhau nếu phân biệt chiều.
+
+109
+00:11:46,148 --> 00:11:53,000
+Trong mỗi vòng nam, ta nhìn thấy chính xác ba khoảng trống giữa những người nam ngồi liên tiếp.
+
+110
+00:11:53,000 --> 00:12:00,452
+Khi ba nam đã cố định, yêu cầu xen kẽ buộc mỗi khoảng giữa hai nam phải chứa đúng một nữ.
+
+111
+00:12:00,452 --> 00:12:06,129
+Ta sắp ba nữ phân biệt vào ba khoảng theo ba giai thừa, tức sáu cách.
+
+112
+00:12:06,129 --> 00:12:15,000
+Không có cách nào vi phạm xen kẽ; cũng không có cách nào bị đếm lặp khi thứ tự nam làm mốc đã xác định.
+
+113
+00:12:15,000 --> 00:12:21,947
+Theo quy tắc nhân, mỗi cách xếp ba nam tạo ra sáu cách xếp ba nữ phù hợp.
+
+114
+00:12:21,947 --> 00:12:33,140
+Hai nhóm lựa chọn ở hai giai đoạn nối tiếp nhau và mỗi kết quả cuối cùng có duy nhất một cặp dữ liệu nam vòng, nữ trong khoảng.
+
+115
+00:12:33,140 --> 00:12:37,000
+Ta được hai nhân sáu, bằng mười hai cách ngồi.
+
+116
+00:12:37,000 --> 00:12:43,175
+Trong bài này, ta phân biệt hai chiều trái và phải, nên không chia thêm hai.
+
+117
+00:12:43,175 --> 00:12:53,596
+Nhưng cũng không nhân thêm hai vì chọn nam làm người ngồi trước hay nữ làm người ngồi trước: bàn tròn vốn không có người đầu tiên.
+
+118
+00:12:53,596 --> 00:12:59,000
+Cách xếp nam rồi chèn nữ đã liệt kê mọi vòng đúng một lần.
+
+119
+00:12:59,000 --> 00:13:11,262
+Với m nam và m nữ đều phân biệt, giả sử m ít nhất hai và hai giới phải xen kẽ, ta xếp m nam quanh vòng theo m trừ một giai thừa cách.
+
+120
+00:13:11,262 --> 00:13:17,393
+Sau đó có m khoảng trống và m nữ phân biệt, cho m giai thừa cách điền.
+
+121
+00:13:17,393 --> 00:13:21,000
+Công thức tổng quát là tích hai giai thừa ấy.
+
+122
+00:13:21,000 --> 00:13:30,792
+Ở bài cuối cấp độ vận dụng cao, ta có ba cặp vợ chồng, ký hiệu A với a, B với b, C với c.
+
+123
+00:13:30,792 --> 00:13:36,667
+Mục tiêu là đếm những vòng mà không cặp vợ chồng nào ngồi cạnh nhau.
+
+124
+00:13:36,667 --> 00:13:44,500
+Nếu trừ từng điều kiện cấm riêng lẻ, các vòng có hai cặp kề nhau sẽ bị trừ hai lần.
+
+125
+00:13:44,500 --> 00:13:47,914
+Trước hết ta chưa xét ba điều kiện cấm.
+
+126
+00:13:47,914 --> 00:13:56,259
+Sáu người khác nhau có năm giai thừa cách ngồi quanh bàn tròn không đánh số ghế, tức một trăm hai mươi.
+
+127
+00:13:56,259 --> 00:14:01,190
+Mọi vòng thỏa hoặc vi phạm điều kiện đều nằm trong tập này.
+
+128
+00:14:01,190 --> 00:14:06,500
+Đây là tổng thể để ta lấy phần bù của hợp ba biến cố.
+
+129
+00:14:06,500 --> 00:14:09,746
+Gọi E1 là biến cố A ngồi cạnh a.
+
+130
+00:14:09,746 --> 00:14:15,877
+Khi gộp hai người thành một khối, còn năm vật xếp vòng theo bốn giai thừa cách.
+
+131
+00:14:15,877 --> 00:14:21,648
+Hai thứ tự trong khối tạo hệ số hai, nên E1 có bốn mươi tám cách.
+
+132
+00:14:21,648 --> 00:14:28,500
+Hai biến cố E2 và E3 tương ứng các cặp B–b, C–c cũng có số trường hợp như vậy.
+
+133
+00:14:28,500 --> 00:14:39,307
+Nếu E1 và E2 đồng thời xảy ra, ta gộp A–a thành một khối và B–b thành khối thứ hai, còn C và c là hai vật riêng.
+
+134
+00:14:39,307 --> 00:14:43,939
+Như vậy có bốn vật xếp vòng, cho ba giai thừa cách.
+
+135
+00:14:43,939 --> 00:14:50,500
+Hai khối đều có hai thứ tự bên trong, nên ta nhân bốn, được hai mươi bốn.
+
+136
+00:14:50,500 --> 00:14:57,300
+Khi cả ba cặp đều ngồi cạnh nhau, ta có ba khối phân biệt ngồi quanh bàn.
+
+137
+00:14:57,300 --> 00:15:00,900
+Số vòng của ba khối là hai giai thừa.
+
+138
+00:15:00,900 --> 00:15:09,300
+Mỗi khối có hai cách hoán đổi người bên trong, tất cả ba khối cho hai lũy thừa ba, bằng tám.
+
+139
+00:15:09,300 --> 00:15:12,500
+Nhân tám với hai ta được mười sáu.
+
+140
+00:15:12,500 --> 00:15:18,992
+Ta lấy tổng một trăm hai mươi trừ ba biến cố cấm, mỗi biến cố bốn mươi tám.
+
+141
+00:15:18,992 --> 00:15:27,287
+Sau đó cộng lại ba phần giao đôi, mỗi phần có hai mươi bốn, bởi lúc trước ta đã trừ chúng hai lần.
+
+142
+00:15:27,287 --> 00:15:34,500
+Cuối cùng phải trừ giao của cả ba biến cố để sửa sự đếm thừa, thu được ba mươi hai.
+
+143
+00:15:34,500 --> 00:15:44,629
+Trước khi đếm, cần hiểu từ đối diện ở đây nghĩa là hai vị trí cách nhau ba bước quanh vòng sáu ghế đều đặn.
+
+144
+00:15:44,629 --> 00:15:51,922
+Cố định A ở vị trí trên cùng. B bị buộc vào đúng vị trí phía đối diện.
+
+145
+00:15:51,922 --> 00:15:58,000
+Bốn người còn lại có thể xếp tùy ý vào bốn chỗ trống quanh bàn.
+
+146
+00:15:58,000 --> 00:16:06,067
+Sau khi chọn A làm mốc quay, B không có quyền lựa chọn vị trí khác bởi phải ngồi đối diện A.
+
+147
+00:16:06,067 --> 00:16:15,600
+Bốn người còn lại được hoán vị vào bốn ghế phân biệt tương đối với A, nên có bốn giai thừa, tức hai mươi bốn cách.
+
+148
+00:16:15,600 --> 00:16:20,000
+Không có hệ số hai nào cần nhân thêm trong bài này.
+
+149
+00:16:20,000 --> 00:16:28,203
+Với bảy người, nếu ba người A, B, C phải ngồi liên tiếp nhau, ta gộp họ thành một khối duy nhất.
+
+150
+00:16:28,203 --> 00:16:33,797
+Bên cạnh khối có bốn người còn lại, tổng cộng là năm vật phân biệt.
+
+151
+00:16:33,797 --> 00:16:42,000
+Các vật này xếp quanh bàn theo bốn giai thừa cách, nhưng bên trong khối có các thứ tự cần tính riêng.
+
+152
+00:16:42,000 --> 00:16:50,161
+Từ bốn giai thừa cách xếp năm vật quanh bàn, ta nhân ba giai thừa thứ tự của A, B, C trong khối.
+
+153
+00:16:50,161 --> 00:16:54,065
+Hai mươi bốn nhân sáu bằng một trăm bốn mươi bốn.
+
+154
+00:16:54,065 --> 00:17:04,000
+Từng cấu hình hợp lệ có một đoạn gồm ba người liền nhau, nên cách gộp ba người xác định đúng một kết quả trong mô hình này.
+
+155
+00:17:04,000 --> 00:17:11,446
+Trước khi giải mọi bài ngồi vòng, hãy lần lượt xét ba câu hỏi. Thứ nhất, ghế đã được gán nhãn chưa.
+
+156
+00:17:11,446 --> 00:17:16,523
+Thứ hai, đề bài có coi các hình ảnh gương là như nhau hay không.
+
+157
+00:17:16,523 --> 00:17:21,600
+Thứ ba, ràng buộc cần xử lý bằng khối, chọn khoảng trống hay phần bù.
+
+158
+00:17:21,600 --> 00:17:26,000
+Sau khi trả lời, công thức sẽ xuất hiện một cách tự nhiên.
+
+159
+00:17:26,000 --> 00:17:34,123
+Kết thúc bài học, hãy tự giải lại ví dụ sáu người không nhìn lời giải, rồi kiểm chứng bằng một phương pháp khác.
+
+160
+00:17:34,123 --> 00:17:48,000
+Cốt lõi của hoán vị vòng tròn không phải thuộc riêng công thức n trừ một giai thừa, mà là hiểu vì sao quay không sinh kết quả mới và cách những ràng buộc thay đổi tập kết quả cần đếm.

@@ -1,0 +1,703 @@
+1
+00:00:00,000 --> 00:00:03,994
+Có năm học sinh mang tên A, B, C, D và E.
+
+2
+00:00:03,994 --> 00:00:09,653
+Chúng ta muốn xếp cả năm thành một hàng, nhưng A và B phải đứng cạnh nhau.
+
+3
+00:00:09,653 --> 00:00:18,307
+Nếu chỉ dùng năm giai thừa, tức một trăm hai mươi cách, thì ta đã đếm cả những hàng có A, B đứng cách xa nhau.
+
+4
+00:00:18,307 --> 00:00:23,300
+Hãy tìm mô hình buộc điều kiện đứng cạnh được giữ đúng ngay từ đầu.
+
+5
+00:00:23,300 --> 00:00:32,237
+Khi quan sát hai bạn A và B, ta thấy hai cách xuất hiện trong một hàng: A đứng trước B hoặc B đứng trước A.
+
+6
+00:00:32,237 --> 00:00:34,300
+Hai cách đó đều hợp lệ.
+
+7
+00:00:34,300 --> 00:00:40,831
+Nếu chỉ gộp thành ký hiệu AB rồi quên cách BA, kết quả sẽ bị thiếu đúng một nửa.
+
+8
+00:00:40,831 --> 00:00:45,300
+Chúng ta sẽ giữ lại sự lựa chọn thứ tự bên trong khối.
+
+9
+00:00:45,300 --> 00:00:53,856
+Thay vì cố xếp từng người và kiểm tra cặp đứng cạnh sau đó, ta tạm xem A và B như một thẻ mới mang tên khối AB.
+
+10
+00:00:53,856 --> 00:00:59,356
+Bên cạnh khối là ba bạn C, D, E, vậy có tất cả bốn đối tượng phân biệt.
+
+11
+00:00:59,356 --> 00:01:07,300
+Xếp bốn đối tượng này thành hàng sẽ tạo bốn giai thừa thứ tự và luôn bảo đảm A, B cùng một vị trí liên tiếp.
+
+12
+00:01:07,300 --> 00:01:16,116
+Đối với mỗi cách đặt khối AB cùng C, D, E, ta lại có hai cách sắp xếp nội bộ khối: A trước B hoặc B trước A.
+
+13
+00:01:16,116 --> 00:01:21,154
+Hai việc lựa chọn nối tiếp nhau, vì thế phải nhân hai với bốn giai thừa.
+
+14
+00:01:21,154 --> 00:01:23,358
+Kết quả là bốn mươi tám cách.
+
+15
+00:01:23,358 --> 00:01:30,600
+Mỗi hàng hợp lệ xác định duy nhất một vị trí khối và một thứ tự trong khối nên không bị tính trùng.
+
+16
+00:01:30,600 --> 00:01:33,699
+Ta hãy kiểm tra kết quả bằng phương pháp khác.
+
+17
+00:01:33,699 --> 00:01:42,375
+Trong hàng năm chỗ, cặp A B đứng cạnh có thể chiếm các vị trí một và hai, hai và ba, ba và bốn, hoặc bốn và năm.
+
+18
+00:01:42,375 --> 00:01:50,741
+Nghĩa là có bốn cách chọn chỗ bắt đầu của cặp, hai cách hoán đổi A B, và ba giai thừa cách xếp ba người còn lại.
+
+19
+00:01:50,741 --> 00:01:52,600
+Tích cũng bằng bốn mươi tám.
+
+20
+00:01:52,600 --> 00:02:00,690
+Với n người phân biệt có hai người A, B bắt buộc đứng cạnh, ta có một khối và n trừ hai người riêng lẻ.
+
+21
+00:02:00,690 --> 00:02:06,515
+Tổng số đối tượng là n trừ một, nên có n trừ một giai thừa cách xếp chúng.
+
+22
+00:02:06,515 --> 00:02:12,017
+Nhân thêm hai thứ tự bên trong khối, ta được hai nhân n trừ một giai thừa.
+
+23
+00:02:12,017 --> 00:02:15,900
+Công thức này dành cho một hàng thẳng, chưa phải bàn tròn.
+
+24
+00:02:15,900 --> 00:02:18,641
+Tình huống tiếp theo có sáu học sinh.
+
+25
+00:02:18,641 --> 00:02:25,151
+Ba bạn A, B, C phải đứng thành một đoạn liên tiếp, không yêu cầu ai đứng trước ai.
+
+26
+00:02:25,151 --> 00:02:30,976
+Đây vẫn là kỹ thuật gộp khối, nhưng số cách sắp xếp bên trong khối đã khác.
+
+27
+00:02:30,976 --> 00:02:39,200
+Trước khi tính, ta cần biết có bao nhiêu đối tượng sau khi gộp và bao nhiêu hoán vị bên trong khối ba người.
+
+28
+00:02:39,200 --> 00:02:44,782
+Sau khi gộp A, B, C, ta có khối ABC cùng ba học sinh D, E, F.
+
+29
+00:02:44,782 --> 00:02:51,349
+Tất cả chỉ có bốn đối tượng cần sắp hàng, vì vậy số cách đặt khối là bốn giai thừa.
+
+30
+00:02:51,349 --> 00:02:56,275
+Đáng chú ý, gộp ba người làm số đối tượng giảm hai, không giảm ba.
+
+31
+00:02:56,275 --> 00:03:01,200
+Công thức ngoài khối phụ thuộc chính xác vào số phần tử đã được gộp.
+
+32
+00:03:01,200 --> 00:03:04,929
+Bây giờ giữ nguyên vị trí của khối trên hàng.
+
+33
+00:03:04,929 --> 00:03:10,895
+Ta vẫn có thể xếp ba bạn A, B, C theo sáu thứ tự khác nhau.
+
+34
+00:03:10,895 --> 00:03:18,725
+Khi lấy một thứ tự ngoài khối và một thứ tự bên trong, ta được đúng một hàng thỏa điều kiện.
+
+35
+00:03:18,725 --> 00:03:23,200
+Do đó, ngoài bốn giai thừa, phải nhân thêm ba giai thừa.
+
+36
+00:03:23,200 --> 00:03:30,369
+Ghép hai công đoạn, ta có ba giai thừa nhân bốn giai thừa, bằng một trăm bốn mươi bốn cách.
+
+37
+00:03:30,369 --> 00:03:39,331
+Nếu lỡ coi cụm ABC đã cố định thứ tự, ta chỉ tìm được hai mươi bốn và bỏ sót năm phần sáu số hàng.
+
+38
+00:03:39,331 --> 00:03:46,500
+Hình động sẽ cho thấy khối đứng yên trong khi ba thẻ bên trong liên tục hoán đổi vị trí.
+
+39
+00:03:46,500 --> 00:03:50,719
+Chỉ thay đổi một cụm từ của đề bài, đáp số đã giảm mạnh.
+
+40
+00:03:50,719 --> 00:03:58,856
+Nếu yêu cầu ba người xuất hiện đúng theo thứ tự A rồi B rồi C và phải kề nhau, bên trong khối chỉ có một cách.
+
+41
+00:03:58,856 --> 00:04:04,582
+Ta vẫn có bốn đối tượng ngoài khối nên số hàng là bốn giai thừa, bằng hai mươi bốn.
+
+42
+00:04:04,582 --> 00:04:08,500
+Hãy phân biệt rõ đứng thành một nhóm với đứng đúng thứ tự.
+
+43
+00:04:08,500 --> 00:04:16,471
+Với n người phân biệt, khi k người chỉ cần đứng liền nhau theo thứ tự tùy ý, ta thay nhóm k người bằng một khối.
+
+44
+00:04:16,471 --> 00:04:19,230
+Số đối tượng còn n trừ k cộng một.
+
+45
+00:04:19,230 --> 00:04:25,975
+Các đối tượng này có n trừ k cộng một giai thừa cách xếp; trong khối có k giai thừa hoán vị.
+
+46
+00:04:25,975 --> 00:04:31,800
+Nhân lại ta được công thức chung, với một không nhỏ hơn k và k không lớn hơn n.
+
+47
+00:04:31,800 --> 00:04:40,444
+Giờ đây ta có sáu học sinh A đến F, và đồng thời yêu cầu A ngồi cạnh B, C đứng cạnh D.
+
+48
+00:04:40,444 --> 00:04:46,081
+Hai cặp không có người chung nên có thể tạo thành hai khối riêng biệt.
+
+49
+00:04:46,081 --> 00:04:55,100
+Điều quan trọng là phân biệt số cách xếp bốn đối tượng ngoài khối và hai số cách hoán vị bên trong hai khối.
+
+50
+00:04:55,100 --> 00:05:00,068
+Sau khi gộp, ta còn khối AB, khối CD và hai người E, F.
+
+51
+00:05:00,068 --> 00:05:04,326
+Bốn đối tượng này có bốn giai thừa cách sắp thành hàng.
+
+52
+00:05:04,326 --> 00:05:14,261
+Lúc này không nên mở khối quá sớm, vì nếu hoán đổi A với D giữa hai khối, chúng ta không còn giữ điều kiện cặp ban đầu.
+
+53
+00:05:14,261 --> 00:05:17,100
+Đầu tiên hãy xếp các khối nguyên vẹn.
+
+54
+00:05:17,100 --> 00:05:25,656
+Khi vị trí các khối đã được chọn, bên trong khối AB có hai thứ tự AB và BA, khối CD có hai thứ tự CD và DC.
+
+55
+00:05:25,656 --> 00:05:29,933
+Chúng là các lựa chọn độc lập, vì hai cặp không có người chung.
+
+56
+00:05:29,933 --> 00:05:34,211
+Ta nhân bốn giai thừa với hai và hai, nhận chín mươi sáu cách.
+
+57
+00:05:34,211 --> 00:05:39,100
+Đây là điểm khác biệt lớn với những khối có phần tử chung ở chương sau.
+
+58
+00:05:39,100 --> 00:05:49,658
+Nếu đề yêu cầu A đứng ngay trước B đồng thời C đứng ngay trước D, ta không được nhân thêm hai lựa chọn nội bộ cho từng cặp.
+
+59
+00:05:49,658 --> 00:05:52,934
+Chỉ có đúng khối AB và đúng khối CD.
+
+60
+00:05:52,934 --> 00:05:58,031
+Bên ngoài vẫn có bốn đối tượng nên số cách là hai mươi bốn.
+
+61
+00:05:58,031 --> 00:06:02,400
+Khi đọc đề, từ ngay trước khác hẳn cụm từ đứng cạnh.
+
+62
+00:06:02,400 --> 00:06:11,271
+Với sáu người được chia thành ba cặp AB, CD và EF, nếu cả ba cặp đều phải liền nhau, ta có đúng ba khối.
+
+63
+00:06:11,271 --> 00:06:15,174
+Bên ngoài ba khối hoán vị theo ba giai thừa cách.
+
+64
+00:06:15,174 --> 00:06:19,432
+Bên trong mỗi khối có hai cách, tổng là hai mũ ba.
+
+65
+00:06:19,432 --> 00:06:24,400
+Do đó có bốn mươi tám cách, không phải hai nhân sáu giai thừa.
+
+66
+00:06:24,400 --> 00:06:32,072
+Trong bài toán tổng quát, nhiều nhóm người không giao nhau lần lượt có k một, k hai, đến k r phần tử bắt buộc đứng liền.
+
+67
+00:06:32,072 --> 00:06:35,482
+Mỗi khối làm giảm số đối tượng đi k i trừ một.
+
+68
+00:06:35,482 --> 00:06:42,301
+Khi các khối sắp tự do, ta nhân giai thừa của số đối tượng còn lại với tích các giai thừa kích thước khối.
+
+69
+00:06:42,301 --> 00:06:47,700
+Cách này chỉ đúng nếu các khối độc lập và không bị điều kiện vị trí khác cản trở.
+
+70
+00:06:47,700 --> 00:06:52,916
+Chúng ta thay đổi yêu cầu: A phải cạnh B và B phải cạnh C.
+
+71
+00:06:52,916 --> 00:07:01,610
+Hai cặp này cùng chứa người B, nên nếu xem chúng như hai khối tách rời AB và BC, ta đã dùng B hai lần.
+
+72
+00:07:01,610 --> 00:07:06,131
+Đây là lỗi rất phổ biến khi vận dụng công thức gộp khối.
+
+73
+00:07:06,131 --> 00:07:11,000
+Hãy nhìn vị trí của B trên hàng để dựng lại cấu trúc đúng.
+
+74
+00:07:11,000 --> 00:07:17,487
+Để B đứng cạnh cả A lẫn C trong một hàng, hai bạn kia phải đứng ở hai phía khác nhau của B.
+
+75
+00:07:17,487 --> 00:07:22,564
+Nghĩa là bộ ba chỉ có hai thứ tự hợp lệ: A B C hoặc C B A.
+
+76
+00:07:22,564 --> 00:07:29,897
+Nếu xếp B ở một đầu, B chỉ có một hàng xóm trong đoạn ba người và không thể cùng lúc cạnh cả A và C.
+
+77
+00:07:29,897 --> 00:07:33,000
+Điều kiện giao nhau đã xác định vị trí chính giữa.
+
+78
+00:07:33,000 --> 00:07:34,486
+Bây giờ xếp sáu người.
+
+79
+00:07:34,486 --> 00:07:42,216
+Ta dùng một khối gồm A, B, C với hai thứ tự A B C và C B A, cùng ba học sinh D, E, F.
+
+80
+00:07:42,216 --> 00:07:47,270
+Có bốn đối tượng nên có bốn giai thừa thứ tự ở ngoài, nhân hai ở trong.
+
+81
+00:07:47,270 --> 00:07:49,351
+Kết quả là bốn mươi tám cách.
+
+82
+00:07:49,351 --> 00:07:55,000
+Hệ số hai này bắt nguồn từ toàn bộ ba người, không phải nhân hai lần cho hai cặp.
+
+83
+00:07:55,000 --> 00:08:00,912
+Khi đổi điều kiện thành A cạnh B và A cạnh C, chính A phải đứng giữa.
+
+84
+00:08:00,912 --> 00:08:07,172
+Hai dạng hợp lệ trong đoạn ba người lúc này là B A C hoặc C A B.
+
+85
+00:08:07,172 --> 00:08:12,040
+Số cách vẫn là bốn mươi tám, nhưng người ở giữa đã thay đổi.
+
+86
+00:08:12,040 --> 00:08:18,300
+Đây là cách kiểm tra ý nghĩa hình học của điều kiện trước khi đưa vào phép tính.
+
+87
+00:08:18,300 --> 00:08:25,633
+Nếu đồng thời đòi A cạnh B, B cạnh C và A cạnh C trên một hàng, bài toán trở nên bất khả thi.
+
+88
+00:08:25,633 --> 00:08:29,911
+Trong ba vị trí liên tiếp, chỉ có hai cặp vị trí kề nhau.
+
+89
+00:08:29,911 --> 00:08:34,800
+Không thể biến ba người thành ba cặp đôi một đều kề nhau trên đường thẳng.
+
+90
+00:08:34,800 --> 00:08:40,300
+Vì vậy đáp số là không, và ta phải phát hiện điều này trước khi cố gộp khối.
+
+91
+00:08:40,300 --> 00:08:46,476
+Một mẹo hữu ích là vẽ mỗi học sinh thành một đỉnh và mỗi yêu cầu đứng cạnh thành một cạnh nối.
+
+92
+00:08:46,476 --> 00:08:52,933
+Nếu các cạnh tạo một đường A B C, nhóm bắt buộc phải xuất hiện theo đường ấy hoặc theo chiều ngược lại.
+
+93
+00:08:52,933 --> 00:09:00,231
+Nếu xuất hiện một chu trình ba cạnh như tam giác, không thể đặt toàn bộ các cạnh thành quan hệ kề nhau trong một hàng.
+
+94
+00:09:00,231 --> 00:09:03,600
+Đây là công cụ nhận diện rất mạnh cho các bài khó.
+
+95
+00:09:03,600 --> 00:09:10,517
+Ta trở lại hai cặp AB và CD, nhưng chỉ yêu cầu ít nhất một cặp đứng cạnh nhau.
+
+96
+00:09:10,517 --> 00:09:16,706
+Có thể chỉ cặp AB đứng cạnh, chỉ cặp CD đứng cạnh, hoặc cả hai cùng thỏa.
+
+97
+00:09:16,706 --> 00:09:26,900
+Vì hai biến cố có phần giao, nếu cộng số cách của từng cặp riêng rẽ thì những hàng có cả hai cặp sẽ được tính hai lần.
+
+98
+00:09:26,900 --> 00:09:32,639
+Kí hiệu E một là biến cố A cạnh B, E hai là biến cố C cạnh D.
+
+99
+00:09:32,639 --> 00:09:38,378
+Với sáu người, mỗi biến cố có hai nhân năm giai thừa, bằng hai trăm bốn mươi cách.
+
+100
+00:09:38,378 --> 00:09:41,886
+Nếu cộng hai số này, ta được bốn trăm tám mươi.
+
+101
+00:09:41,886 --> 00:09:48,900
+Nhưng số đó chưa đúng, vì mọi hàng có cả AB và CD liền nhau đều xuất hiện trong cả hai nhóm.
+
+102
+00:09:48,900 --> 00:09:56,018
+Phần giao chính là bài toán hai khối rời nhau ở chương ba. Ta có các đối tượng AB, CD, E, F.
+
+103
+00:09:56,018 --> 00:10:01,194
+Chúng có bốn giai thừa thứ tự ngoài và hai lựa chọn bên trong mỗi cặp.
+
+104
+00:10:01,194 --> 00:10:04,106
+Do đó phần giao có chín mươi sáu cách.
+
+105
+00:10:04,106 --> 00:10:10,900
+Đây là những hàng đã bị cộng hai lần khi ta lấy hai trăm bốn mươi cộng hai trăm bốn mươi.
+
+106
+00:10:10,900 --> 00:10:20,355
+Ta áp dụng công thức đếm phần hợp của hai tập: số phần tử nhóm thứ nhất cộng số phần tử nhóm thứ hai rồi trừ phần giao.
+
+107
+00:10:20,355 --> 00:10:27,446
+Thay số, hai trăm bốn mươi cộng hai trăm bốn mươi trừ chín mươi sáu bằng ba trăm tám mươi bốn.
+
+108
+00:10:27,446 --> 00:10:34,200
+Mỗi hàng hợp lệ giờ được đếm đúng một lần, kể cả những hàng thỏa đồng thời hai điều kiện.
+
+109
+00:10:34,200 --> 00:10:44,169
+Nếu đề hỏi ngược lại rằng A không cạnh B và C không cạnh D, ta có thể dùng phần bù của biến cố ít nhất một cặp kề.
+
+110
+00:10:44,169 --> 00:10:49,325
+Tổng số cách xếp sáu người là sáu giai thừa, bằng bảy trăm hai mươi.
+
+111
+00:10:49,325 --> 00:10:56,200
+Trừ ba trăm tám mươi bốn trường hợp vi phạm, ta còn ba trăm ba mươi sáu hàng hợp lệ.
+
+112
+00:10:56,200 --> 00:11:06,733
+Để yên tâm rằng không nhầm điều kiện, ta có thể dùng Python duyệt toàn bộ bảy trăm hai mươi hoán vị và đánh dấu những hàng có AB hoặc CD kề nhau.
+
+113
+00:11:06,733 --> 00:11:14,712
+Kết quả nhóm có ít nhất một cặp là ba trăm tám mươi bốn, nhóm không cặp nào kề là ba trăm ba mươi sáu.
+
+114
+00:11:14,712 --> 00:11:19,500
+Tổng trở lại đúng bảy trăm hai mươi, tạo một phép kiểm tra độc lập.
+
+115
+00:11:19,500 --> 00:11:27,016
+Một đề bài rất dễ bị nhầm là chỉ được đúng một trong hai cặp AB, CD đứng cạnh nhau.
+
+116
+00:11:27,016 --> 00:11:34,532
+Điều này khác với ít nhất một cặp, vì khi cả hai đều kề nhau thì không còn hợp lệ.
+
+117
+00:11:34,532 --> 00:11:42,800
+Ta sẽ tách thành hai trường hợp rời nhau: AB kề nhưng CD không kề, hoặc CD kề nhưng AB không kề.
+
+118
+00:11:42,800 --> 00:11:49,231
+Với trường hợp thứ nhất, ta đếm tất cả hàng có AB đứng cạnh, được hai trăm bốn mươi.
+
+119
+00:11:49,231 --> 00:11:57,692
+Trong số đó có chín mươi sáu hàng mà CD cũng đứng cạnh; chúng phải bị loại bỏ vì vi phạm yêu cầu đúng một.
+
+120
+00:11:57,692 --> 00:12:04,800
+Số cách còn lại là một trăm bốn mươi bốn. Đây là phép đếm phần bù trong phạm vi nhóm AB.
+
+121
+00:12:04,800 --> 00:12:10,054
+Trường hợp thứ hai hoàn toàn tương tự: CD đứng cạnh nhưng AB không đứng cạnh.
+
+122
+00:12:10,054 --> 00:12:15,964
+Số cách cũng là hai trăm bốn mươi trừ chín mươi sáu, bằng một trăm bốn mươi bốn.
+
+123
+00:12:15,964 --> 00:12:24,173
+Hai nhóm không có hàng chung, vì một hàng không thể vừa có AB kề, CD không kề, vừa có CD kề, AB không kề.
+
+124
+00:12:24,173 --> 00:12:26,800
+Ta được phép áp dụng quy tắc cộng.
+
+125
+00:12:26,800 --> 00:12:31,254
+Cộng hai nhóm rời nhau, ta có hai trăm tám mươi tám cách.
+
+126
+00:12:31,254 --> 00:12:44,275
+Ngoài ra, từ kết quả phần hợp ba trăm tám mươi bốn ở chương trước, ta chỉ cần trừ đi chín mươi sáu hàng mà cả hai cặp đều kề, cũng nhận đúng hai trăm tám mươi tám.
+
+127
+00:12:44,275 --> 00:12:50,100
+Hai hướng đi khác nhau cùng cho kết quả, nên đây là một phép đối chiếu tốt.
+
+128
+00:12:50,100 --> 00:13:00,592
+Hãy đọc thật kỹ sự khác biệt: nếu đề chỉ yêu cầu AB phải đứng cạnh còn CD không được đứng cạnh, kết quả chỉ là một trăm bốn mươi bốn.
+
+129
+00:13:00,592 --> 00:13:07,700
+Ta không được nhân đôi vì trường hợp đối xứng CD kề, AB không kề đã không được đề cho phép.
+
+130
+00:13:07,700 --> 00:13:12,100
+Đây là lỗi đọc đề có thể khiến đáp án bị gấp đôi.
+
+131
+00:13:12,100 --> 00:13:18,845
+Ta thêm một điều kiện thứ tự vào bài hai khối AB và CD đều kề nhau: E phải đứng trước F.
+
+132
+00:13:18,845 --> 00:13:27,736
+Trong chín mươi sáu hàng hợp lệ, việc đổi tên E và F tạo một song ánh giữa nhóm E đứng trước F và nhóm F đứng trước E.
+
+133
+00:13:27,736 --> 00:13:35,400
+Hai nhóm có kích thước bằng nhau, vì vậy số hàng thỏa yêu cầu mới là chín mươi sáu chia hai, bằng bốn mươi tám.
+
+134
+00:13:35,400 --> 00:13:40,861
+Sau những bài xếp thành hàng, ta chuyển sang bàn tròn không đánh số ghế.
+
+135
+00:13:40,861 --> 00:13:49,962
+Sáu người phân biệt ngồi quanh bàn, A và B cần kề nhau, và hai cách chỉ khác bởi phép quay được xem như một.
+
+136
+00:13:49,962 --> 00:13:58,700
+Phần khó là xác định số đối tượng sau khi gộp khối rồi đếm theo vòng, chứ không dùng giai thừa của hàng ngang.
+
+137
+00:13:58,700 --> 00:14:01,144
+Gộp A, B thành một đối tượng.
+
+138
+00:14:01,144 --> 00:14:07,430
+Khi ấy quanh bàn có năm đối tượng phân biệt gồm khối AB và C, D, E, F.
+
+139
+00:14:07,430 --> 00:14:15,113
+Muốn đếm cách xếp vòng, ta có thể cố định khối AB như một mốc rồi hoán vị bốn người còn lại.
+
+140
+00:14:15,113 --> 00:14:20,700
+Số thứ tự vòng bên ngoài khối là bốn giai thừa, không phải năm giai thừa.
+
+141
+00:14:20,700 --> 00:14:27,517
+Ở mỗi vị trí của khối trên bàn tròn, A và B vẫn có hai thứ tự quanh chiều kim đồng hồ.
+
+142
+00:14:27,517 --> 00:14:31,235
+Nhân hai với bốn giai thừa ta được bốn mươi tám cách.
+
+143
+00:14:31,235 --> 00:14:38,672
+Con số vô tình bằng bài năm người đứng hàng lúc đầu, nhưng hai bài có số người và mô hình đếm khác nhau.
+
+144
+00:14:38,672 --> 00:14:42,700
+Ta phải hiểu điều kiện, không học thuộc một đáp số cố định.
+
+145
+00:14:42,700 --> 00:14:51,742
+Nếu hai cặp AB và CD đều phải ngồi cạnh nhau, ta gộp thành hai khối cùng E, F, tổng cộng bốn đối tượng quanh vòng.
+
+146
+00:14:51,742 --> 00:14:54,524
+Số thứ tự vòng là ba giai thừa.
+
+147
+00:14:54,524 --> 00:15:02,522
+Hai khối mỗi khối có hai cách đổi chỗ nội bộ, nên có bốn nhân ba giai thừa, bằng hai mươi bốn cách.
+
+148
+00:15:02,522 --> 00:15:06,000
+Không được lấy chín mươi sáu của bài xếp hàng.
+
+149
+00:15:06,000 --> 00:15:14,067
+Ba bạn A, B, C cần ngồi thành ba vị trí liên tiếp quanh bàn và không bị cố định thứ tự.
+
+150
+00:15:14,067 --> 00:15:18,833
+Gộp thành một khối cùng D, E, F, tổng cộng bốn đối tượng.
+
+151
+00:15:18,833 --> 00:15:25,800
+Bên ngoài có ba giai thừa cách xếp vòng; bên trong có ba giai thừa cách đổi ba bạn.
+
+152
+00:15:25,800 --> 00:15:28,000
+Tích bằng ba mươi sáu cách.
+
+153
+00:15:28,000 --> 00:15:34,835
+Các công thức vừa sử dụng giả thiết rằng cách xếp quanh bàn tròn chỉ được đồng nhất khi có phép quay.
+
+154
+00:15:34,835 --> 00:15:41,359
+Nếu mặt bàn hay ghế có số thứ tự cố định, phép quay không còn cho cùng cách phân công ghế.
+
+155
+00:15:41,359 --> 00:15:45,397
+Nếu đề cho phép lật mặt vòng hạt, lại phải xét ảnh gương.
+
+156
+00:15:45,397 --> 00:15:51,300
+Vì thế trước khi gộp khối trong bài vòng tròn, hãy kiểm tra kỹ quy ước của phép đếm.
+
+157
+00:15:51,300 --> 00:15:59,545
+Đến bài tổng hợp cuối, ta có bảy người phân biệt và ba cặp AB, CD, EF đều không được đứng cạnh nhau.
+
+158
+00:15:59,545 --> 00:16:08,865
+Nếu chỉ lấy tổng số cách trừ riêng số hàng có từng cặp kề, ta sẽ trừ lặp những hàng vi phạm hai hoặc ba cặp.
+
+159
+00:16:08,865 --> 00:16:14,600
+Đây là lúc sử dụng nguyên lý bao hàm – loại trừ với ba biến cố.
+
+160
+00:16:14,600 --> 00:16:20,100
+Tổng số cách xếp bảy người là bảy giai thừa, tức năm nghìn không trăm bốn mươi.
+
+161
+00:16:20,100 --> 00:16:29,806
+Xét mỗi biến cố một cặp đứng cạnh, ta gộp hai người thành một khối nên có hai nhân sáu giai thừa, bằng một nghìn bốn trăm bốn mươi cách.
+
+162
+00:16:29,806 --> 00:16:36,600
+Có ba biến cố như vậy; trước tiên trừ ba lần con số đó. Nhưng đây chưa phải đáp số cuối.
+
+163
+00:16:36,600 --> 00:16:44,239
+Khi cả hai cặp chỉ định đều đứng cạnh, ta có hai khối cỡ hai cùng ba người riêng, tức năm đối tượng xếp hàng.
+
+164
+00:16:44,239 --> 00:16:50,961
+Các khối có hai lựa chọn nội bộ mỗi khối, cho bốn nhân năm giai thừa bằng bốn trăm tám mươi cách.
+
+165
+00:16:50,961 --> 00:16:53,711
+Chọn hai trong ba cặp được ba giao đôi.
+
+166
+00:16:53,711 --> 00:16:58,600
+Mỗi hàng thuộc giao đôi đã bị trừ hai lần nên phải cộng lại một lần.
+
+167
+00:16:58,600 --> 00:17:06,148
+Nếu cả ba cặp đều kề nhau, ta có ba khối AB, CD, EF và một người G, tổng là bốn đối tượng.
+
+168
+00:17:06,148 --> 00:17:11,727
+Có bốn giai thừa thứ tự ngoài và hai mũ ba thứ tự bên trong ba khối.
+
+169
+00:17:11,727 --> 00:17:15,665
+Phần giao ba biến cố có một trăm chín mươi hai cách.
+
+170
+00:17:15,665 --> 00:17:21,900
+Trong công thức bao hàm – loại trừ ba tập, phần giao này phải bị trừ ở bước cuối.
+
+171
+00:17:21,900 --> 00:17:26,977
+Tập hợp các hàng hợp lệ là phần bù của ba biến cố kề nhau.
+
+172
+00:17:26,977 --> 00:17:40,177
+Theo nguyên lý bao hàm – loại trừ, ta lấy năm nghìn không trăm bốn mươi trừ ba nhân một nghìn bốn trăm bốn mươi, cộng ba nhân bốn trăm tám mươi, rồi trừ một trăm chín mươi hai.
+
+173
+00:17:40,177 --> 00:17:43,900
+Kết quả là một nghìn chín trăm sáu mươi tám cách.
+
+174
+00:17:43,900 --> 00:17:55,710
+Hãy kết thúc bài bằng một quy trình bốn bước: xác định điều kiện, mô hình hóa các cặp và khối, đếm số cách của từng nhóm hợp lệ hoặc vi phạm, rồi kiểm tra trùng lặp.
+
+175
+00:17:55,710 --> 00:18:02,412
+Gộp khối rất hiệu quả khi các phần tử phải đứng cạnh nhau, nhưng không phải một công thức máy móc.
+
+176
+00:18:02,412 --> 00:18:07,200
+Đó là nền tảng để học các bài cấm đứng cạnh ở tập tiếp theo.

@@ -1,0 +1,29 @@
+{
+  "project": "SangMath - Đại số tổ hợp",
+  "episodes_ready_as_source": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "rendered_and_visual_QA_done": [],
+  "latest": {
+    "episode": "COMB11",
+    "topic": "Hoán vị vòng tròn",
+    "chapters": 8,
+    "beats": 48,
+    "narration_words": 2922,
+    "silent_target_seconds": 1073.2,
+    "scene": "episodes/comb11_circular_permutations.py",
+    "class": "COMB11",
+    "workflow": ".github/workflows/render-comb11-v2.yml"
+  },
+  "caveat": "All sources require first real Manim/Typst render on GitHub Actions for QA."
+}

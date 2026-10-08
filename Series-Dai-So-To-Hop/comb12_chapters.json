@@ -1,0 +1,42 @@
+[
+  [
+    "pair",
+    "01 · TỪ HAI NGƯỜI ĐẾN MỘT KHỐI",
+    "Gộp hai phần tử buộc cạnh nhau thành một đối tượng mới, rồi trả lại trật tự bên trong khối."
+  ],
+  [
+    "triple",
+    "02 · BA NGƯỜI ĐỨNG LIỀN NHAU",
+    "Phân biệt ba phần tử bất kỳ đứng liền nhau và ba phần tử phải xuất hiện đúng thứ tự."
+  ],
+  [
+    "double",
+    "03 · HAI KHỐI RỜI NHAU",
+    "Khi hai nhóm phần tử khác nhau cùng phải đứng cạnh, đếm các khối và số thứ tự nội bộ."
+  ],
+  [
+    "overlap",
+    "04 · HAI ĐIỀU KIỆN CÓ CHUNG PHẦN TỬ",
+    "Không thể gộp thành hai khối độc lập khi những cặp bị ràng buộc có chung một người."
+  ],
+  [
+    "union",
+    "05 · ÍT NHẤT MỘT CẶP ĐỨNG CẠNH",
+    "Dùng bao hàm–loại trừ để tránh đếm hai lần khi các biến cố được thỏa đồng thời."
+  ],
+  [
+    "exact",
+    "06 · ĐÚNG MỘT CẶP ĐỨNG CẠNH",
+    "Tách hai trường hợp rời nhau và vận dụng phương pháp phần bù bên trong từng trường hợp."
+  ],
+  [
+    "circle",
+    "07 · GỘP KHỐI KHI XẾP VÒNG TRÒN",
+    "Chuyển công thức hàng ngang sang bàn tròn; không quên cố định mốc sau khi gộp khối."
+  ],
+  [
+    "challenge",
+    "08 · BA CẶP CẤM KỀ NHAU",
+    "Phối hợp nhiều khối, phần bù và bao hàm–loại trừ để giải bài bảy người."
+  ]
+]
