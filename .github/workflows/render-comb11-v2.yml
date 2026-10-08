@@ -2,6 +2,9 @@ name: Render COMB11 V2 - Hoan vi vong tron
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - ".trigger_runs"
     inputs:
       quality:
         description: '480p preview or 1080p Full HD'
