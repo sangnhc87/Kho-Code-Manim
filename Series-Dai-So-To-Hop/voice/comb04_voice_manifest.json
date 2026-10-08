@@ -1,0 +1,213 @@
+{
+  "version": "COMB04-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "ordered"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "ordered"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "ordered"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "ordered"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "ordered"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "ordered"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "unordered"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "unordered"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "unordered"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "unordered"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "unordered"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "unordered"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "swap"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "swap"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "swap"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "swap"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "swap"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "swap"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "choose3"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "choose3"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "choose3"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "choose3"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "choose3"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "choose3"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "choose6"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "choose6"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "choose6"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "choose6"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "choose6"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "choose6"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "practice"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "practice"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "practice"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "practice"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "practice"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "practice"
+    }
+  },
+  "target_seconds": 850.0,
+  "tts_words": 2497,
+  "chapter_seconds": {
+    "intro": 0.0,
+    "ordered": 105.6,
+    "unordered": 211.2,
+    "swap": 316.8,
+    "choose3": 422.4,
+    "choose6": 528.0,
+    "captain": 633.6,
+    "practice": 739.2
+  }
+}

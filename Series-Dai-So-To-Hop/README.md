@@ -1,3 +1,40 @@
+# SANG MATH · ĐẠI SỐ TỔ HỢP — COMB01 đến COMB09 (V2)
+
+**Mới:** COMB09 — Chọn có lặp, dãy có thứ tự và quy tắc n^k.
+
+- Manim: `episodes/comb09_repetition.py` → `COMB09`
+- Nội dung chính xác: `comb09_lesson_data.py`, `comb09_beats.json`
+- Chuẩn bị Typst, giọng đọc và phụ đề: `scripts/prepare_comb09_v2.py`
+- Kiểm tra MP4: `scripts/qa_comb09_v2.py`
+- GitHub Actions: `.github/workflows/render-comb09-v2.yml`
+- Tài liệu: `HUONG_DAN_RENDER_COMB09_V2.md`
+
+Bản này giữ nguyên mã nguồn tập 01–08 V2 và video phụ GEO01.
+
+**Trạng thái:** mã đã kiểm thử Python; phải chạy preview trên GitHub Actions để duyệt Manim/Typst thực tế.
+
+---
+
+# COMB08 V2 - TONG HOP / SEASON 1 FINALE
+
+**Video moi nhat:** COMB08 - Hoan vi, Chinh hop, To hop; 48 nhip / 8 chuong / nen 16:53 / 3.522 tu tieng Viet. Cac ket qua chinh: 720, 30, 15, 168, 180, 31, 18, 30 va 87. Co hai cach dem cho capstone 87.
+
+**Nguon Manim:** `episodes/comb08_synthesis.py` (scene `COMB08`); **workflow GitHub:** `.github/workflows/render-comb08-v2.yml`; **huong dan:** `HUONG_DAN_RENDER_COMB08_V2.md`; **storyboard:** `preview/comb08_v2/storyboard_8_chapters.png`.
+
+Bo code nay **giu nguyen COMB01-COMB07 V2 va GEO01**. Python + kiem thu toan hoc da chay, chua co MP4 Manim thuc te da render tai moi truong dong goi. Phai duyet video tu Actions truoc khi dua len lop.
+
+---
+
+# COMB07 V2 – TỔ HỢP (bản mới nhất)
+
+**Tập mới:** 48 nhịp / 8 chương / khoảng 15 phút 29 giây không giọng đọc; 3.035 từ thuyết minh tiếng Việt, giọng TTS và SRT theo nhịp; 25 biểu thức Typst biên dịch trong workflow; bộ kiểm thử toán học liệt kê độc lập.
+
+**Render:** `.github/workflows/render-comb07-v2.yml`. **Mã:** `episodes/comb07_combinations.py`. **Hướng dẫn:** `HUONG_DAN_RENDER_COMB07_V2.md`.
+
+Bản này **giữ nguyên COMB01–COMB06 V2 và GEO01**. Chưa có MP4 Manim nghiệm thu; cần chạy GitHub Actions và kiểm tra ảnh QA.
+
+---
+
 # SANG MATH — MANIM–TYPST · ĐẠI SỐ TỔ HỢP (MÙA 1)
 
 ## MỚI: COMB02 V2 — QUY TẮC NHÂN (BÀI GIẢNG ĐẦY ĐỦ)
@@ -81,3 +118,34 @@ Chú trọng **bản chất phép đếm**, không kéo dài bằng animation tr
 - `HUONG_DAN_RENDER_COMB03_V2.md` – hướng dẫn thao tác chi tiết.
 
 Các video COMB01 V2, COMB02 V2 và GEO01 vẫn được giữ nguyên trong gói. COMB03 chưa được render và nghiệm thu thực tế trong môi trường tạo mã nguồn.
+---
+
+## COMB04 V2 — Khi nào thứ tự quan trọng? (MỚI)
+
+Tập này có 48 nhịp, 8 chương, 2.497 từ lời giảng và thời lượng nền **14:10**. Mã Scene: `episodes/comb04_order_matters.py` / `COMB04`. Workflow mới: `.github/workflows/render-comb04-v2.yml`. Gói giữ nguyên toàn bộ mã COMB01 V2, COMB02 V2, COMB03 V2, GEO01. Xem **`HUONG_DAN_RENDER_COMB04_V2.md`** để render.
+
+Kết quả toán trọng tâm: 4×3=12 phân công; 12÷2=6 nhóm; 5×4×3=60 dãy, 60÷3!=10 nhóm; 6×5=30 phân công và 15 nhóm; chọn đội có trưởng từ 8 học sinh bằng 8×21=56×3=168. Bài 04 chưa dùng ký hiệu A/C để học sinh tiếp cận bản chất trước khi học công thức. Khi dùng từ tập sau, n ở trên k ở dưới theo ví dụ người dùng.
+
+**Chú ý nghiệm thu:** Gói hiện là mã nguồn đã kiểm thử Python, chưa render được MP4 bằng Manim/Typst trong môi trường đóng gói. Hãy chạy workflow ở chế độ preview trước.
+
+
+## COMB05 V2 — Hoán vị (mới)
+
+- Video 05: 8 chương / 48 nhịp, tối thiểu ~14:58, có tùy chọn giọng đọc tiếng Việt.
+- Scene: `episodes/comb05_permutations.py`, class `COMB05`.
+- Script: `scripts/prepare_comb05_v2.py`; QA: `scripts/qa_comb05_v2.py`.
+- GitHub Actions: `.github/workflows/render-comb05-v2.yml`.
+- Hướng dẫn: `HUONG_DAN_RENDER_COMB05_V2.md`.
+- Storyboard: `preview/comb05_v2/storyboard_8_chapters.png`.
+- Nội dung: hoán vị `P_n=n!`, 24 hoán vị bốn phần tử, khối AB (48), A/B không kề (72) theo hai cách, A trước B (60), bài ràng buộc nâng cao.
+- Sau khi chạy Actions, phải duyệt video MP4 và ảnh QA bằng mắt; kiểm thử Python không thay cho render.
+
+---
+
+## COMB06 V2 — CHỈNH HỢP (MỚI)
+
+Đã bổ sung `episodes/comb06_arrangements.py` / Scene `COMB06`, **48 nhịp trong 8 chương**, 2.944 từ thuyết minh và thời lượng nền 15 phút 22,7 giây. Bài giảng đi từ 6 học sinh nhận ba giải khác nhau, giải thích chỉnh hợp và công thức `A^(n)_(k)`, đến bài toán chức vụ có ràng buộc, lập số không lặp và phân biệt hoán vị–chỉnh hợp–tổ hợp.
+
+**Render:** vào GitHub → Actions → **Render COMB06 V2 - Bai giang day du Manim Typst**. Xem `HUONG_DAN_RENDER_COMB06_V2.md`. Bản này kế thừa COMB01–COMB05 V2 và GEO01, không thay thế workflow các tập cũ.
+
+**Trạng thái:** kiểm thử toán học và cấu trúc Python đã chạy. Storyboard chỉ là ảnh mô phỏng. Cần GitHub Actions render Manim, sau đó duyệt tiếng và hình trước khi công bố.

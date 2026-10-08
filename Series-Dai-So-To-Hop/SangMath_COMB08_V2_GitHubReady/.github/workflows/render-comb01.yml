@@ -1,0 +1,79 @@
+name: Render COMB01 V2 - Bai giang day du Manim Typst
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: 'Preview 480p or Full HD 1080p'
+        required: true
+        type: choice
+        options:
+          - preview
+          - fullhd
+        default: preview
+      voice:
+        description: 'Vietnamese narration via Edge TTS (on requires network)'
+        required: true
+        type: choice
+        options:
+          - 'on'
+          - 'off'
+        default: 'on'
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: System packages for Manim
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra libavcodec-dev libavformat-dev libavutil-dev \
+            libswscale-dev libswresample-dev
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      - name: Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Validate math and lesson data
+        run: python -m unittest discover -s tests -v
+      - name: Compile Typst and prepare synchronized Vietnamese narration
+        env:
+          VIDEO_VOICE: ${{ inputs.voice }}
+        run: python scripts/prepare_comb01_v2.py --voice "$VIDEO_VOICE"
+      - name: Render preview
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim -ql -r 854,480 --fps 24 episodes/comb01_rule_of_sum.py COMB01
+      - name: Render Full HD
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim -qh -r 1920,1080 --fps 30 episodes/comb01_rule_of_sum.py COMB01
+      - name: Find video and validate duration/audio; extract eight chapters
+        env:
+          VIDEO_VOICE: ${{ inputs.voice }}
+        run: |
+          VIDEO=$(find media/videos -type f -name 'COMB01.mp4' | head -1)
+          test -n "$VIDEO"
+          python scripts/qa_comb01_v2.py --video "$VIDEO" --voice "$VIDEO_VOICE"
+      - name: Upload video, subtitles script and image evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: COMB01-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          path: |
+            media/videos/**/COMB01.mp4
+            qa_comb01_v2/
+            narration_COMB01_v2.md
+            voice/comb01_voice_manifest.json
+          if-no-files-found: warn
+          retention-days: 7

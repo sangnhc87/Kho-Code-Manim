@@ -1,0 +1,213 @@
+{
+  "version": "COMB08-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "compare"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "compare"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "compare"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "compare"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "compare"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "compare"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "diagnose"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "diagnose"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "diagnose"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "diagnose"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "diagnose"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "diagnose"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "roles"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "roles"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "roles"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "roles"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "roles"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "roles"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "captain"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "forbidden"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "forbidden"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "forbidden"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "forbidden"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "forbidden"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "forbidden"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "gender"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "gender"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "gender"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "gender"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "gender"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "gender"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "digits"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "digits"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "digits"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "digits"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "digits"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "digits"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "capstone"
+    }
+  },
+  "target_seconds": 1013.2,
+  "tts_words": 3522,
+  "chapter_seconds": {
+    "compare": 0.0,
+    "diagnose": 126.0,
+    "roles": 252.0,
+    "captain": 378.0,
+    "forbidden": 504.0,
+    "gender": 630.0,
+    "digits": 756.0,
+    "capstone": 882.0
+  }
+}

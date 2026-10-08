@@ -1,0 +1,80 @@
+name: Render COMB02 V2 - Bai giang day du Manim Typst
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: 'preview 480p or fullhd 1080p'
+        type: choice
+        required: true
+        default: preview
+        options: [preview, fullhd]
+      voice:
+        description: 'Vietnamese voice. on requires TTS service network availability.'
+        type: choice
+        required: true
+        default: 'on'
+        options: ['on', 'off']
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Manim system dependencies and Vietnamese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra libavcodec-dev libavformat-dev libavutil-dev \
+            libswscale-dev libswresample-dev
+          fc-match 'Noto Sans'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Set up Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+      - name: Install Python requirements
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Verify maths, script and workflow data
+        run: python -m unittest discover -s tests -v
+      - name: Compile Typst and create Vietnamese speech plus SRT subtitles
+        env:
+          COMB02_VOICE: ${{ inputs.voice }}
+        run: python scripts/prepare_comb02_v2.py --voice "$COMB02_VOICE"
+      - name: Render Manim preview
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim -ql -r 854,480 --fps 24 episodes/comb02_rule_of_product.py COMB02
+      - name: Render Manim full HD
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim -qh -r 1920,1080 --fps 30 episodes/comb02_rule_of_product.py COMB02
+      - name: Verify MP4 duration and narration; extract eight chapter frames
+        env:
+          COMB02_VOICE: ${{ inputs.voice }}
+        run: |
+          VIDEO=$(find media/videos -type f -name 'COMB02.mp4' | head -n 1)
+          test -n "$VIDEO"
+          python scripts/qa_comb02_v2.py --video "$VIDEO" --voice "$COMB02_VOICE"
+      - name: Upload rendered MP4, subtitles, chapter images and audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: COMB02-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          path: |
+            media/videos/**/COMB02.mp4
+            qa_comb02_v2/
+            narration_COMB02_v2.md
+            subtitles_COMB02_v2.srt
+            voice/comb02_voice_manifest.json
+          if-no-files-found: warn
+          retention-days: 7

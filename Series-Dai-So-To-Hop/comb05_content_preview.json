@@ -1,0 +1,36 @@
+{
+  "chapters": {
+    "intro": "01  TỪ BÀI TOÁN ĐẾN KHÁI NIỆM",
+    "slots": "02  QUY TẮC NHÂN TỪ CÁC VỊ TRÍ",
+    "grid": "03  NHÌN THẤY TẤT CẢ 24 HOÁN VỊ",
+    "factorial": "04  ĐỊNH NGHĨA HOÁN VỊ VÀ GIAI THỪA",
+    "block": "05  KỸ THUẬT GỘP KHỐI",
+    "complement": "06  KHÔNG ĐỨNG CẠNH: HAI CÁCH GIẢI",
+    "advanced": "07  CÁC ĐIỀU KIỆN KHÁC TRONG HOÁN VỊ",
+    "practice": "08  TỰ KIỂM TRA VÀ TỔNG KẾT"
+  },
+  "formulas": {
+    "four": "4",
+    "fourthree": "4 times 3 = 12",
+    "fourthreetwo": "4 times 3 times 2 = 24",
+    "twentyfour": "P_4 = 4! = 24",
+    "six": "3! = 6",
+    "fourtimesix": "4 times 3! = 24",
+    "general": "P_n = n! = n times (n-1) times dots.c times 1",
+    "five": "P_5 = 5! = 120",
+    "zero": "0! = 1",
+    "recurrence": "P_n = n times P_(n-1)",
+    "block24": "4! = 24",
+    "two": "2! = 2",
+    "adjacent48": "4! times 2! = 48",
+    "small4": "2! times 2! = 4",
+    "apart72": "5! - 2 times 4! = 72",
+    "threebase": "3! = 6",
+    "gaps": "binom(4, 2) = 6",
+    "gaps72": "3! times binom(4, 2) times 2! = 72",
+    "before60": "frac(5!, 2) = 60",
+    "ends48": "2! times 4! = 48",
+    "apart480": "6! - 2 times 5! = 480"
+  },
+  "duration": 893.3
+}

@@ -1,0 +1,213 @@
+{
+  "version": "COMB09-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "repeat"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "repeat"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "repeat"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "repeat"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "repeat"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "repeat"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "strings"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "strings"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "strings"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "strings"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "strings"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "strings"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "pin"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "pin"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "pin"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "pin"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "pin"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "pin"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "norepeat"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "norepeat"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "norepeat"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "norepeat"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "norepeat"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "norepeat"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "multiset"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "multiset"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "multiset"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "multiset"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "multiset"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "multiset"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "atleast"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "atleast"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "atleast"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "atleast"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "atleast"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "atleast"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "exact"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "exact"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "exact"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "exact"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "exact"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "exact"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "adjacency"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "adjacency"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "adjacency"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "adjacency"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "adjacency"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "adjacency"
+    }
+  },
+  "target_seconds": 989.2,
+  "tts_words": 2742,
+  "chapter_seconds": {
+    "repeat": 0.0,
+    "strings": 123.0,
+    "pin": 246.0,
+    "norepeat": 369.0,
+    "multiset": 492.0,
+    "atleast": 615.0,
+    "exact": 738.0,
+    "adjacency": 861.0
+  }
+}
