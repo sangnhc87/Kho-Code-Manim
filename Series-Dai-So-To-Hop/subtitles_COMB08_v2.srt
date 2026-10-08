@@ -1,0 +1,811 @@
+1
+00:00:00,000 --> 00:00:03,000
+Có sáu học sinh A, B, C, D, E và F.
+
+2
+00:00:03,000 --> 00:00:06,818
+Ta không thay đổi các học sinh, chỉ thay đổi nhiệm vụ đặt ra.
+
+3
+00:00:06,818 --> 00:00:10,091
+Nếu xếp cả sáu người thành hàng, kết quả là một dãy.
+
+4
+00:00:10,091 --> 00:00:14,182
+Nếu giao hai chức vụ, ta chỉ dùng hai người nhưng vẫn xét thứ tự.
+
+5
+00:00:14,182 --> 00:00:18,545
+Nếu chọn hai bạn đi thi, hai bạn tạo thành một nhóm không xét thứ tự.
+
+6
+00:00:18,545 --> 00:00:21,000
+Chúng ta sẽ giải từng bài rồi đối chiếu.
+
+7
+00:00:21,000 --> 00:00:25,603
+Bài thứ nhất yêu cầu xếp cả sáu người vào sáu vị trí của một hàng.
+
+8
+00:00:25,603 --> 00:00:31,932
+Vị trí đầu có sáu lựa chọn, vị trí thứ hai chỉ còn năm, và cứ thế cho đến vị trí cuối.
+
+9
+00:00:31,932 --> 00:00:36,534
+Vì mọi vị trí đều phân biệt, đổi chỗ hai bạn tạo một kết quả mới.
+
+10
+00:00:36,534 --> 00:00:42,000
+Theo quy tắc nhân, ta được sáu giai thừa, bằng bảy trăm hai mươi cách. Đây là hoán vị.
+
+11
+00:00:42,000 --> 00:00:46,200
+Bài thứ hai chỉ giao hai chức vụ: một trưởng nhóm và một thư ký.
+
+12
+00:00:46,200 --> 00:00:49,840
+Trưởng nhóm có sáu cách chọn, sau đó thư ký còn năm cách.
+
+13
+00:00:49,840 --> 00:00:56,000
+Nếu A làm trưởng và B làm thư ký, kết quả khác trường hợp B làm trưởng và A làm thư ký.
+
+14
+00:00:56,000 --> 00:01:03,000
+Vì chọn một phần của sáu học sinh và phân biệt vai trò, ta dùng chỉnh hợp chập hai của sáu, bằng ba mươi cách.
+
+15
+00:01:03,000 --> 00:01:05,852
+Bài thứ ba chỉ yêu cầu chọn hai bạn dự thi.
+
+16
+00:01:05,852 --> 00:01:10,259
+Nếu đội gồm A và B thì đổi vị trí hai thẻ vẫn là đúng đội đó.
+
+17
+00:01:10,259 --> 00:01:14,667
+Ba mươi dãy chọn có thứ tự ở bài vừa rồi đã tính mỗi đội hai lần.
+
+18
+00:01:14,667 --> 00:01:19,593
+Chia cho hai giai thừa, ta nhận được mười lăm nhóm. Đây là tổ hợp chập hai của sáu.
+
+19
+00:01:19,593 --> 00:01:24,000
+Hãy quan sát sự khác biệt xuất phát từ đề bài, không phải từ tập học sinh.
+
+20
+00:01:24,000 --> 00:01:29,182
+Trên cùng một màn hình, ta có ba kết quả bảy trăm hai mươi, ba mươi và mười lăm.
+
+21
+00:01:29,182 --> 00:01:34,091
+Chúng khác nhau không phải vì công thức nào mạnh hơn, mà vì đối tượng đếm khác nhau.
+
+22
+00:01:34,091 --> 00:01:39,000
+Hoán vị dùng mọi người và có thứ tự. Chỉnh hợp dùng một phần nhưng có vai trò.
+
+23
+00:01:39,000 --> 00:01:45,000
+Tổ hợp chọn một phần mà không xét thứ tự. Đây là câu hỏi nền tảng trước mọi bài toán tổ hợp.
+
+24
+00:01:45,000 --> 00:01:46,329
+Thử một tình huống mới.
+
+25
+00:01:46,329 --> 00:01:52,975
+Chọn ba bạn từ sáu bạn trực nhật, nếu ba bạn cùng làm một nhiệm vụ thì đó là chọn nhóm, không xét thứ tự.
+
+26
+00:01:52,975 --> 00:01:59,620
+Nhưng nếu mỗi bạn giữ một vị trí khác nhau như quét lớp, lau bảng và chăm cây, ta phải phân công ba nhiệm vụ.
+
+27
+00:01:59,620 --> 00:02:02,278
+Số phân công của mỗi nhóm bằng ba giai thừa.
+
+28
+00:02:02,278 --> 00:02:06,000
+Từ suy luận này xuất hiện quan hệ giữa chỉnh hợp và tổ hợp.
+
+29
+00:02:06,000 --> 00:02:09,549
+Ta xây dựng một cây quyết định dùng xuyên suốt Mùa một.
+
+30
+00:02:09,549 --> 00:02:15,761
+Câu hỏi đầu tiên: có dùng toàn bộ n phần tử để xếp vào các vị trí khác nhau hay không?
+
+31
+00:02:15,761 --> 00:02:21,380
+Nếu có, đó là hoán vị, số cách bằng n giai thừa. Ví dụ sáu người xếp một hàng.
+
+32
+00:02:21,380 --> 00:02:27,000
+Nếu chỉ chọn một số người, chúng ta chuyển sang câu hỏi thứ hai, liên quan đến thứ tự.
+
+33
+00:02:27,000 --> 00:02:31,200
+Giả sử ta chọn k phần tử từ n phần tử phân biệt, không hoàn lại.
+
+34
+00:02:31,200 --> 00:02:33,825
+Hãy thử đổi vị trí hai phần tử đã chọn.
+
+35
+00:02:33,825 --> 00:02:38,812
+Nếu kết quả thay đổi, nghĩa là các vị trí hoặc vai trò khác nhau, thì dùng chỉnh hợp.
+
+36
+00:02:38,812 --> 00:02:40,912
+Chẳng hạn chọn giải nhất, nhì và ba.
+
+37
+00:02:40,912 --> 00:02:48,000
+Ta có n nhân n trừ một, cho đến n trừ k cộng một, tương đương công thức n giai thừa chia n trừ k giai thừa.
+
+38
+00:02:48,000 --> 00:02:53,915
+Nếu đổi vị trí các thành viên mà đối tượng được chọn không thay đổi, ta đang đếm tổ hợp.
+
+39
+00:02:53,915 --> 00:02:58,648
+Ví dụ chọn ba học sinh dự thi thành một đội không phân công nhiệm vụ.
+
+40
+00:02:58,648 --> 00:03:03,380
+Cùng một bộ ba có nhiều thứ tự viết tên, nhưng chỉ được tính một lần.
+
+41
+00:03:03,380 --> 00:03:09,000
+Vì vậy số tổ hợp chập k của n bằng số chỉnh hợp tương ứng chia k giai thừa.
+
+42
+00:03:09,000 --> 00:03:13,958
+Cây quyết định vừa xây dựng dựa trên các phần tử phân biệt và không chọn lặp.
+
+43
+00:03:13,958 --> 00:03:20,958
+Nếu đề cho phép lấy cùng một chữ số nhiều lần, hoặc các nhóm có người giống nhau, mô hình đếm phải thay đổi.
+
+44
+00:03:20,958 --> 00:03:25,917
+Nếu có điều kiện cấm, ta cần tiếp tục phân nhánh hoặc trừ trường hợp vi phạm.
+
+45
+00:03:25,917 --> 00:03:30,000
+Công thức chỉ là bước cuối của việc thiết lập mô hình chính xác.
+
+46
+00:03:30,000 --> 00:03:32,800
+Hãy tự phân loại ba câu mà chưa cần tính.
+
+47
+00:03:32,800 --> 00:03:37,560
+Xếp năm quyển sách khác nhau là hoán vị vì dùng cả năm và xét vị trí.
+
+48
+00:03:37,560 --> 00:03:43,160
+Trao ba huy chương khác nhau cho bảy người là chỉnh hợp vì chỉ chọn ba người có thứ bậc.
+
+49
+00:03:43,160 --> 00:03:47,920
+Chọn ba người vào ban đại diện, nếu họ có vai trò như nhau, là tổ hợp.
+
+50
+00:03:47,920 --> 00:03:51,000
+Thứ tự diễn đạt của đề quyết định loại phép đếm.
+
+51
+00:03:51,000 --> 00:03:55,407
+Một sai lầm thường gặp là muốn gán một công thức duy nhất cho mọi bài toán.
+
+52
+00:03:55,407 --> 00:04:01,630
+Có bài yêu cầu vừa chọn nhóm vừa phân công đội trưởng, hoặc chọn chữ số có hạn chế ở một vài vị trí.
+
+53
+00:04:01,630 --> 00:04:06,815
+Khi đó ta phân tích kết quả cuối thành các thông tin cần ghi nhận và đếm theo giai đoạn.
+
+54
+00:04:06,815 --> 00:04:12,000
+Các giai đoạn phù hợp dùng phép nhân, còn các trường hợp loại trừ nhau phù hợp dùng phép cộng.
+
+55
+00:04:12,000 --> 00:04:14,333
+Ta phóng to một cặp A và B.
+
+56
+00:04:14,333 --> 00:04:19,583
+Nếu hỏi ai cùng tham gia thì đội A B và đội B A thực chất giống nhau.
+
+57
+00:04:19,583 --> 00:04:24,542
+Nhưng nếu hỏi ai làm trưởng và ai làm phó thì hai cách phân công khác nhau.
+
+58
+00:04:24,542 --> 00:04:28,917
+Khi đổi hai vị trí, nhãn vai trò không đổi mà học sinh đổi chỗ.
+
+59
+00:04:28,917 --> 00:04:33,000
+Nhìn vào phép đổi đó, ta biết thứ tự có ý nghĩa hay không.
+
+60
+00:04:33,000 --> 00:04:36,182
+Ta điền hai ô chức vụ từ trái sang phải.
+
+61
+00:04:36,182 --> 00:04:43,182
+Ô đầu tiên có sáu lựa chọn, ô thứ hai còn năm vì không ai giữ đồng thời cả hai vai trò.
+
+62
+00:04:43,182 --> 00:04:48,273
+Sơ đồ cây có sáu nhánh tầng đầu và mỗi nhánh có năm nhánh tầng hai.
+
+63
+00:04:48,273 --> 00:04:54,000
+Tổng số lá là ba mươi, tương ứng ba mươi phân công khác nhau, không có lá trùng.
+
+64
+00:04:54,000 --> 00:04:57,957
+Bây giờ xóa nhãn trưởng và phó, chỉ giữ tên hai thành viên.
+
+65
+00:04:57,957 --> 00:05:02,217
+Hai lá ghi A B và B A rơi vào cùng một khung đội.
+
+66
+00:05:02,217 --> 00:05:08,000
+Điều tương tự xảy ra với mọi cặp gồm hai học sinh phân biệt, không riêng A và B.
+
+67
+00:05:08,000 --> 00:05:15,000
+Vì mỗi đội được biểu diễn bởi đúng hai dãy có thứ tự, ba mươi chia hai cho mười lăm đội khác nhau.
+
+68
+00:05:15,000 --> 00:05:21,818
+Với một đội có k thành viên phân biệt, ta có k giai thừa cách gắn k vai trò khác nhau cho các thành viên.
+
+69
+00:05:21,818 --> 00:05:28,091
+Do đó nếu đếm kết quả có đủ thành viên và vai trò, ta có thể chọn đội trước rồi phân công sau.
+
+70
+00:05:28,091 --> 00:05:30,000
+Hoặc đếm trực tiếp bằng chỉnh hợp.
+
+71
+00:05:30,000 --> 00:05:36,000
+Hai cách dẫn tới cùng một tập kết quả, vì vậy số chỉnh hợp bằng số tổ hợp nhân k giai thừa.
+
+72
+00:05:36,000 --> 00:05:38,333
+Hệ thức vừa viết cần đọc cùng giả thiết.
+
+73
+00:05:38,333 --> 00:05:42,741
+Ta đang chọn không hoàn lại, mọi người đều phân biệt và k vai trò khác nhau.
+
+74
+00:05:42,741 --> 00:05:48,704
+Nếu hai vị trí chỉ là hai chỗ ngồi giống nhau thì việc đổi người có thể không tạo ra kết quả mới.
+
+75
+00:05:48,704 --> 00:05:54,926
+Còn nếu một học sinh được kiêm hai vai trò thì sau lần chọn thứ nhất không nhất thiết phải giảm số ứng viên.
+
+76
+00:05:54,926 --> 00:05:57,000
+Hãy luôn kiểm tra điều kiện thực tế.
+
+77
+00:05:57,000 --> 00:06:01,038
+Ba công thức bây giờ được đặt cạnh nhau để ta thấy mối liên hệ.
+
+78
+00:06:01,038 --> 00:06:03,731
+Hoán vị của n phần tử bằng n giai thừa.
+
+79
+00:06:03,731 --> 00:06:07,500
+Chỉnh hợp chập k của n đếm các dãy k phần tử phân biệt.
+
+80
+00:06:07,500 --> 00:06:11,000
+Tổ hợp chập k của n đếm các tập con k phần tử.
+
+81
+00:06:11,000 --> 00:06:18,000
+Trường hợp k bằng n, chỉnh hợp trở thành hoán vị; còn chọn toàn bộ n phần tử thành một nhóm thì chỉ có một cách.
+
+82
+00:06:18,000 --> 00:06:24,160
+Xét tám học sinh A đến H. Cần chọn một đội ba người và trong đội chỉ định đúng một đội trưởng.
+
+83
+00:06:24,160 --> 00:06:27,240
+Hai thành viên còn lại không có chức vụ khác nhau.
+
+84
+00:06:27,240 --> 00:06:33,120
+Vậy một kết quả cuối là một cặp thông tin gồm tập ba thành viên và người được chọn làm trưởng.
+
+85
+00:06:33,120 --> 00:06:39,000
+Ta phải đếm đúng mỗi cặp thông tin một lần; không được vô tình xếp thứ tự hai thành viên thường.
+
+86
+00:06:39,000 --> 00:06:44,400
+Cách đầu tiên chọn đội trước. Có tổ hợp chập ba của tám bằng năm mươi sáu đội.
+
+87
+00:06:44,400 --> 00:06:51,900
+Khi đã có một đội cụ thể, ví dụ A, B, C, ta chỉ định một trong ba người làm trưởng, được ba khả năng.
+
+88
+00:06:51,900 --> 00:07:00,000
+Mỗi đội đều có đúng ba khả năng như vậy nên theo quy tắc nhân, năm mươi sáu nhân ba bằng một trăm sáu mươi tám cách.
+
+89
+00:07:00,000 --> 00:07:05,727
+Ta thử đổi thứ tự hai công đoạn. Chọn đội trưởng trước trong tám người, được tám cách.
+
+90
+00:07:05,727 --> 00:07:10,500
+Đội trưởng đã có, cần chọn thêm hai thành viên từ bảy người còn lại.
+
+91
+00:07:10,500 --> 00:07:16,864
+Hai người này không phân biệt chức danh nên dùng tổ hợp chập hai của bảy, bằng hai mươi mốt.
+
+92
+00:07:16,864 --> 00:07:21,000
+Nhân tám với hai mươi mốt vẫn được một trăm sáu mươi tám.
+
+93
+00:07:21,000 --> 00:07:27,708
+Hai phép nhân nhìn khác nhau nhưng đều mô tả một kết quả duy nhất: ba người trong đó một người làm trưởng.
+
+94
+00:07:27,708 --> 00:07:34,708
+Chọn đội rồi trưởng hay trưởng rồi hai người còn lại chỉ thay cách tổ chức phép đếm, không làm đổi tập kết quả.
+
+95
+00:07:34,708 --> 00:07:37,042
+Đây là kỹ thuật đếm bằng hai cách.
+
+96
+00:07:37,042 --> 00:07:42,000
+Trong nhiều bài khó, đổi thứ tự chọn sẽ làm phép tính trở nên đơn giản hơn.
+
+97
+00:07:42,000 --> 00:07:46,785
+Một đáp số sai thường gặp là tám nhân bảy nhân sáu, bằng ba trăm ba mươi sáu.
+
+98
+00:07:46,785 --> 00:07:51,835
+Phép tính này ngầm xem hai thành viên thường có vị trí thứ hai và thứ ba khác nhau.
+
+99
+00:07:51,835 --> 00:07:53,962
+Nhưng đề bài không hề phân biệt họ.
+
+100
+00:07:53,962 --> 00:08:00,608
+Mỗi đội có trưởng cố định bị đếm đúng hai lần do hoán đổi hai thành viên thường, nên phải chia cho hai giai thừa.
+
+101
+00:08:00,608 --> 00:08:03,000
+Khi đó trở lại một trăm sáu mươi tám.
+
+102
+00:08:03,000 --> 00:08:07,200
+Hãy thay đổi chỉ một chi tiết: ngoài đội trưởng, còn có một đội phó.
+
+103
+00:08:07,200 --> 00:08:14,200
+Khi đó chọn trưởng có tám cách, chọn phó trong bảy người còn lại, rồi chọn thêm một thành viên trong sáu người còn lại.
+
+104
+00:08:14,200 --> 00:08:18,960
+Ba người đã được phân biệt bằng hai chức vụ và một vị trí thành viên thường.
+
+105
+00:08:18,960 --> 00:08:24,000
+Số cách là tám nhân bảy nhân sáu, bằng ba trăm ba mươi sáu, gấp đôi bài gốc.
+
+106
+00:08:24,000 --> 00:08:29,642
+Ta có bảy học sinh, phân công ba chức vụ khác nhau là trưởng, phó và thư ký.
+
+107
+00:08:29,642 --> 00:08:32,149
+Mỗi học sinh chỉ nhận một chức vụ.
+
+108
+00:08:32,149 --> 00:08:38,731
+Bài toán có thêm ràng buộc: A không được làm trưởng, nhưng A vẫn có thể làm phó hoặc thư ký.
+
+109
+00:08:38,731 --> 00:08:45,000
+Hãy gắn nhãn cấm lên đúng vị trí trưởng thay vì loại A khỏi toàn bộ danh sách ứng viên.
+
+110
+00:08:45,000 --> 00:08:49,141
+Với vị trí trưởng, ta không được dùng A nên chỉ có sáu cách.
+
+111
+00:08:49,141 --> 00:08:57,718
+Sau khi đã chọn một trưởng không phải A, còn lại sáu học sinh, trong đó có thể có A, nên vị trí phó vẫn có sáu lựa chọn.
+
+112
+00:08:57,718 --> 00:09:00,085
+Vị trí thư ký tiếp tục còn năm.
+
+113
+00:09:00,085 --> 00:09:06,000
+Theo quy tắc nhân, số kết quả hợp lệ bằng sáu nhân sáu nhân năm, bằng một trăm tám mươi.
+
+114
+00:09:06,000 --> 00:09:11,000
+Cách thứ hai bắt đầu từ tất cả phân công, tạm bỏ điều kiện cấm.
+
+115
+00:09:11,000 --> 00:09:17,667
+Ba vị trí lần lượt có bảy, sáu và năm ứng viên, nên tổng cộng hai trăm mười phân công.
+
+116
+00:09:17,667 --> 00:09:23,000
+Trong số đó, một phần bị cấm vì người giữ vị trí trưởng chính là A.
+
+117
+00:09:23,000 --> 00:09:27,000
+Ta sẽ đếm chính xác phần bị cấm rồi trừ khỏi tổng.
+
+118
+00:09:27,000 --> 00:09:33,811
+Khi A đã cố định ở ô trưởng, hai ô phó và thư ký phải chọn từ sáu người khác và không trùng nhau.
+
+119
+00:09:33,811 --> 00:09:38,919
+Ô phó có sáu cách, ô thư ký còn năm; số phân công bị cấm là ba mươi.
+
+120
+00:09:38,919 --> 00:09:48,000
+Không thể lấy bảy người rồi trừ một ở mọi vị trí, vì điều kiện chỉ cấm A ở đúng chức vụ trưởng, không cấm A ở hai vị trí còn lại.
+
+121
+00:09:48,000 --> 00:09:54,708
+Lấy hai trăm mười phân công tất cả trừ ba mươi phân công có A làm trưởng, ta còn một trăm tám mươi.
+
+122
+00:09:54,708 --> 00:09:57,042
+Kết quả trùng với cách đếm trực tiếp.
+
+123
+00:09:57,042 --> 00:10:01,708
+Việc đối chiếu rất có giá trị: ta xác nhận đã loại đúng điều kiện cấm.
+
+124
+00:10:01,708 --> 00:10:09,000
+Khi có nhiều điều kiện, cần cẩn thận vì các nhóm vi phạm có thể giao nhau và phép trừ đơn giản không còn đủ.
+
+125
+00:10:09,000 --> 00:10:13,257
+Qua bài này, ta rút ra hai hướng tiếp cận cho bài có ràng buộc.
+
+126
+00:10:13,257 --> 00:10:18,365
+Hướng thứ nhất là điền vị trí bị hạn chế trước để mỗi bước còn lại đơn giản.
+
+127
+00:10:18,365 --> 00:10:22,622
+Hướng thứ hai là đếm toàn bộ rồi trừ những trường hợp không hợp lệ.
+
+128
+00:10:22,622 --> 00:10:25,459
+Hãy chọn hướng nào làm phép tính minh bạch hơn.
+
+129
+00:10:25,459 --> 00:10:30,000
+Đừng quên kiểm tra rằng một kết quả bị cấm chỉ bị trừ đúng một lần.
+
+130
+00:10:30,000 --> 00:10:34,697
+Một lớp có bốn học sinh nam và ba học sinh nữ, tất cả đều phân biệt.
+
+131
+00:10:34,697 --> 00:10:38,566
+Cần chọn một đội ba người và đội phải có ít nhất một nữ.
+
+132
+00:10:38,566 --> 00:10:42,434
+Vì chỉ hỏi đội gồm ai, không phân vai trò, ta dùng tổ hợp.
+
+133
+00:10:42,434 --> 00:10:46,855
+Hãy nhìn vùng lựa chọn: trường hợp không có nữ chính là đội gồm toàn nam.
+
+134
+00:10:46,855 --> 00:10:51,000
+Điều kiện ít nhất một nữ rất thuận lợi để dùng phép đếm phần bù.
+
+135
+00:10:51,000 --> 00:10:54,957
+Tạm quên điều kiện và chọn tùy ý ba trong bảy học sinh.
+
+136
+00:10:54,957 --> 00:10:58,913
+Số nhóm là tổ hợp chập ba của bảy, bằng ba mươi lăm.
+
+137
+00:10:58,913 --> 00:11:03,783
+Ta có thể hình dung toàn bộ ba mươi lăm đội nằm thành một tập lớn.
+
+138
+00:11:03,783 --> 00:11:12,000
+Bây giờ yêu cầu ít nhất một nữ không phải là công thức mới; nó chỉ bảo ta bỏ đi những đội không có một nữ nào.
+
+139
+00:11:12,000 --> 00:11:16,900
+Những đội không hợp lệ là đội gồm ba nam và không có nữ.
+
+140
+00:11:16,900 --> 00:11:24,600
+Vì lớp có bốn nam phân biệt nên số đội như vậy bằng tổ hợp chập ba của bốn, tức bốn đội.
+
+141
+00:11:24,600 --> 00:11:33,000
+Không cần đếm riêng từng đội có một, hai hoặc ba nữ nếu mục tiêu chỉ là loại toàn bộ phần không có nữ.
+
+142
+00:11:33,000 --> 00:11:39,176
+Từ ba mươi lăm đội bất kỳ, ta loại bốn đội toàn nam và giữ lại ba mươi mốt đội.
+
+143
+00:11:39,176 --> 00:11:45,353
+Đây là một cách làm ngắn gọn vì biến cố đối lập của ít nhất một nữ rất đơn giản.
+
+144
+00:11:45,353 --> 00:11:50,603
+Hãy chú ý cụm từ ít nhất: một, hai hoặc cả ba nữ đều được chấp nhận.
+
+145
+00:11:50,603 --> 00:11:54,000
+Nếu chỉ chọn đúng một nữ thì đáp số phải khác.
+
+146
+00:11:54,000 --> 00:11:58,027
+Bây giờ thay điều kiện: đội phải có đúng hai nam và một nữ.
+
+147
+00:11:58,027 --> 00:12:03,205
+Chọn hai nam trong bốn được sáu cách; sau đó chọn một nữ trong ba được ba cách.
+
+148
+00:12:03,205 --> 00:12:08,096
+Một đội hợp lệ được xác định duy nhất bởi cặp nam và bạn nữ được chọn.
+
+149
+00:12:08,096 --> 00:12:10,397
+Nhân sáu với ba được mười tám đội.
+
+150
+00:12:10,397 --> 00:12:15,000
+Bài toán này không nên lấy ba mươi mốt vì điều kiện đã được thay đổi.
+
+151
+00:12:15,000 --> 00:12:27,600
+Ta có thể kiểm tra kết quả ba mươi mốt bằng cách chia theo số nữ: đúng một nữ có mười tám đội; đúng hai nữ có bốn cách chọn nam nhân ba cách chọn nữ, bằng mười hai; đúng ba nữ có một đội.
+
+152
+00:12:27,600 --> 00:12:32,360
+Ba nhóm trường hợp rời nhau, cộng mười tám, mười hai và một bằng ba mươi mốt.
+
+153
+00:12:32,360 --> 00:12:36,000
+Kỹ thuật phân trường hợp và phần bù hỗ trợ kiểm tra nhau.
+
+154
+00:12:36,000 --> 00:12:42,273
+Ta chuyển sang một kiểu bài rất phổ biến trong kiểm tra THPT: lập số tự nhiên từ các chữ số cho trước.
+
+155
+00:12:42,273 --> 00:12:47,455
+Có năm chữ số không, một, hai, ba, bốn; lập số có ba chữ số đôi một khác nhau.
+
+156
+00:12:47,455 --> 00:12:53,727
+Điểm đặc biệt là chữ số hàng trăm không thể là không, vì như vậy số được viết chỉ còn hai chữ số.
+
+157
+00:12:53,727 --> 00:12:57,000
+Do đó ta phải xử lý vị trí hàng trăm cẩn thận.
+
+158
+00:12:57,000 --> 00:13:02,667
+Điền từ trái qua phải. Hàng trăm có bốn cách chọn là một, hai, ba hoặc bốn.
+
+159
+00:13:02,667 --> 00:13:09,333
+Sau khi đã chọn hàng trăm, hàng chục có bốn cách gồm các chữ số còn lại, kể cả không.
+
+160
+00:13:09,333 --> 00:13:13,667
+Hàng đơn vị còn ba cách vì các chữ số không được lặp.
+
+161
+00:13:13,667 --> 00:13:18,000
+Nhân bốn nhân bốn nhân ba, có bốn mươi tám số khác nhau.
+
+162
+00:13:18,000 --> 00:13:23,833
+Bây giờ yêu cầu số lập được phải chẵn. Hàng đơn vị chỉ có thể là không, hai hoặc bốn.
+
+163
+00:13:23,833 --> 00:13:35,500
+Nhưng nếu hàng đơn vị bằng không thì hàng trăm có bốn lựa chọn, còn nếu hàng đơn vị bằng hai hoặc bốn thì hàng trăm chỉ có ba lựa chọn không bằng không và không trùng hàng đơn vị.
+
+164
+00:13:35,500 --> 00:13:39,000
+Vì số lựa chọn khác nhau, ta cần tách hai trường hợp.
+
+165
+00:13:39,000 --> 00:13:41,739
+Trường hợp thứ nhất, hàng đơn vị bằng không.
+
+166
+00:13:41,739 --> 00:13:46,000
+Hàng trăm chọn từ bốn chữ số một, hai, ba, bốn, được bốn cách.
+
+167
+00:13:46,000 --> 00:13:48,739
+Hàng chục chọn trong ba chữ số chưa dùng.
+
+168
+00:13:48,739 --> 00:13:53,000
+Vậy có bốn nhân ba bằng mười hai số chẵn kết thúc bằng không.
+
+169
+00:13:53,000 --> 00:14:00,000
+Ta đã xét hết trường hợp này vì hàng đơn vị cố định, hai vị trí còn lại được điền không trùng nhau.
+
+170
+00:14:00,000 --> 00:14:03,769
+Trường hợp thứ hai, hàng đơn vị chọn hai hoặc bốn, có hai cách.
+
+171
+00:14:03,769 --> 00:14:09,423
+Sau khi chọn, hàng trăm phải khác không và khác chữ số hàng đơn vị nên chỉ còn ba lựa chọn.
+
+172
+00:14:09,423 --> 00:14:14,538
+Hàng chục được phép là không và phải khác hai chữ số đã dùng, nên còn ba lựa chọn.
+
+173
+00:14:14,538 --> 00:14:17,500
+Nhân hai nhân ba nhân ba ta được mười tám số.
+
+174
+00:14:17,500 --> 00:14:21,000
+Trường hợp này không trùng với trường hợp hàng đơn vị bằng không.
+
+175
+00:14:21,000 --> 00:14:26,753
+Hai trường hợp xét theo hàng đơn vị loại trừ nhau và bao phủ mọi số chẵn có thể lập.
+
+176
+00:14:26,753 --> 00:14:29,630
+Cộng mười hai và mười tám bằng ba mươi số.
+
+177
+00:14:29,630 --> 00:14:36,822
+Có thể kiểm chứng độc lập bằng cách liệt kê bốn mươi tám số có ba chữ số khác nhau và lọc các số chẵn.
+
+178
+00:14:36,822 --> 00:14:42,000
+Phần còn lại gồm mười tám số lẻ, tổng ba mươi cộng mười tám bằng bốn mươi tám.
+
+179
+00:14:42,000 --> 00:14:47,890
+Ở bài cuối Mùa một, từ tám học sinh A đến H, chọn một đội ba người và chỉ định một đội trưởng.
+
+180
+00:14:47,890 --> 00:14:51,988
+Điều kiện thứ nhất: đội phải có ít nhất một trong hai bạn A hoặc B.
+
+181
+00:14:51,988 --> 00:14:54,549
+Điều kiện thứ hai: A không được làm đội trưởng.
+
+182
+00:14:54,549 --> 00:15:01,207
+Hai điều kiện này cùng tác động đến tập kết quả, nên không thể lấy công thức chọn đội rồi nhân ba một cách máy móc.
+
+183
+00:15:01,207 --> 00:15:03,000
+Hãy thiết kế phép đếm rõ ràng.
+
+184
+00:15:03,000 --> 00:15:09,646
+Nếu tạm bỏ hai điều kiện, số cách chọn đội rồi chọn trưởng bằng năm mươi sáu nhân ba, tức một trăm sáu mươi tám.
+
+185
+00:15:09,646 --> 00:15:13,367
+Để dùng phần bù, ta cần chỉ rõ các nhóm kết quả vi phạm.
+
+186
+00:15:13,367 --> 00:15:16,291
+Nhóm thứ nhất là đội không có cả A lẫn B.
+
+187
+00:15:16,291 --> 00:15:20,013
+Nhóm thứ hai là những kết quả trong đó A giữ chức đội trưởng.
+
+188
+00:15:20,013 --> 00:15:24,000
+Chúng ta sẽ kiểm tra xem hai nhóm vi phạm có giao nhau hay không.
+
+189
+00:15:24,000 --> 00:15:31,219
+Khi đội không có cả A và B, ba thành viên đều chọn từ sáu người C, D, E, F, G, H.
+
+190
+00:15:31,219 --> 00:15:34,828
+Có tổ hợp chập ba của sáu, bằng hai mươi đội.
+
+191
+00:15:34,828 --> 00:15:39,422
+Với mỗi đội, chưa có giới hạn người trưởng nên có ba lựa chọn.
+
+192
+00:15:39,422 --> 00:15:45,000
+Nhân lại được sáu mươi kết quả vi phạm điều kiện có ít nhất A hoặc B.
+
+193
+00:15:45,000 --> 00:15:52,099
+Nếu A là đội trưởng, ta chỉ cần chọn hai thành viên còn lại từ bảy người khác, được hai mươi mốt kết quả.
+
+194
+00:15:52,099 --> 00:15:59,789
+Lưu ý một đội có A làm trưởng chắc chắn chứa A, vì thế không thể đồng thời là một đội không có A và B.
+
+195
+00:15:59,789 --> 00:16:06,000
+Hai nhóm vi phạm được trừ là rời nhau. Đây là chỗ quyết định để phép trừ không bị đếm trùng.
+
+196
+00:16:06,000 --> 00:16:12,417
+Vì hai nhóm vi phạm không giao nhau nên số kết quả hợp lệ bằng tổng trừ lần lượt hai nhóm ấy.
+
+197
+00:16:12,417 --> 00:16:17,958
+Ta lấy một trăm sáu mươi tám trừ sáu mươi rồi trừ hai mươi mốt, được tám mươi bảy.
+
+198
+00:16:17,958 --> 00:16:20,583
+Đây mới là đáp số theo cách thứ nhất.
+
+199
+00:16:20,583 --> 00:16:27,000
+Để tránh phụ thuộc vào phép trừ, ta tiếp tục đếm trực tiếp theo việc đội có A hay không có A.
+
+200
+00:16:27,000 --> 00:16:31,534
+Trường hợp một, đội có A: chọn hai bạn từ bảy người còn lại, được hai mươi mốt đội.
+
+201
+00:16:31,534 --> 00:16:35,830
+A không được làm trưởng nên mỗi đội chỉ có hai cách chọn trưởng, thành bốn mươi hai.
+
+202
+00:16:35,830 --> 00:16:44,420
+Trường hợp hai, đội không có A thì buộc có B: chọn thêm hai người từ sáu người C đến H, được mười lăm đội; mỗi đội có ba người làm trưởng, thành bốn mươi lăm.
+
+203
+00:16:44,420 --> 00:16:48,000
+Cộng lại đúng tám mươi bảy. Hai cách độc lập đã khép lại bài học.

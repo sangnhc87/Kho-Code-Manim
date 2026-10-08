@@ -1,0 +1,707 @@
+1
+00:00:00,000 --> 00:00:04,036
+Có năm học sinh được ký hiệu A, B, C, D và E.
+
+2
+00:00:04,036 --> 00:00:08,694
+Nhà trường cần chọn một đội ba học sinh để tham gia hoạt động chung.
+
+3
+00:00:08,694 --> 00:00:12,419
+Trong đội không phân công đội trưởng hay thứ tự ưu tiên.
+
+4
+00:00:12,419 --> 00:00:19,250
+Hãy thử chọn A, B, C và quan sát: đổi chỗ ba bạn trên hình có tạo ra một đội mới không?
+
+5
+00:00:19,250 --> 00:00:22,688
+Ta đặt ba thẻ A, B, C vào khung đội.
+
+6
+00:00:22,688 --> 00:00:28,531
+Bây giờ đảo thứ tự các thẻ thành B, A, C, rồi chuyển sang C, A, B.
+
+7
+00:00:28,531 --> 00:00:34,375
+Dù các thẻ di chuyển liên tục, nhóm vẫn chỉ có ba học sinh A, B, C.
+
+8
+00:00:34,375 --> 00:00:38,500
+Tình huống này khác hoàn toàn bảng xếp hạng ở tập trước.
+
+9
+00:00:38,500 --> 00:00:40,864
+So sánh thật kỹ hai thao tác.
+
+10
+00:00:40,864 --> 00:00:48,294
+Nếu thay C bằng D, ta được nhóm A, B, D; đó là một cách chọn mới vì thành viên thay đổi.
+
+11
+00:00:48,294 --> 00:00:52,684
+Nhưng nếu chỉ đổi A và B cho nhau, kết quả không đổi.
+
+12
+00:00:52,684 --> 00:00:57,750
+Tiêu chí đếm chính là tập hợp thành viên, không phải thứ tự đặt thẻ.
+
+13
+00:00:57,750 --> 00:01:01,111
+Nếu lấy năm nhân bốn nhân ba, ta được sáu mươi.
+
+14
+00:01:01,111 --> 00:01:06,306
+Nhưng sáu mươi chính là số dãy ba người có thứ tự, khi chọn không hoàn lại.
+
+15
+00:01:06,306 --> 00:01:09,361
+Bài toán chỉ hỏi các nhóm không có vai trò.
+
+16
+00:01:09,361 --> 00:01:13,639
+Do đó dùng ngay kết quả sáu mươi sẽ đếm mỗi nhóm nhiều lần.
+
+17
+00:01:13,639 --> 00:01:17,000
+Hãy tìm xem mỗi nhóm đã xuất hiện bao nhiêu lần.
+
+18
+00:01:17,000 --> 00:01:23,852
+Khi ba ô lần lượt ghi vị trí một, hai và ba, dãy A B C khác dãy B A C.
+
+19
+00:01:23,852 --> 00:01:28,746
+Khi không có vai trò thì cả hai biểu diễn cùng tập ba thành viên.
+
+20
+00:01:28,746 --> 00:01:32,987
+Ta đang đếm tập con ba phần tử của tập năm học sinh.
+
+21
+00:01:32,987 --> 00:01:36,250
+Đây chính là bối cảnh tự nhiên của tổ hợp.
+
+22
+00:01:36,250 --> 00:01:40,421
+Trước khi học công thức, ta cần giải được câu hỏi then chốt.
+
+23
+00:01:40,421 --> 00:01:48,121
+Với một nhóm cố định gồm ba bạn phân biệt, có thể sắp các bạn vào ba vị trí theo bao nhiêu thứ tự?
+
+24
+00:01:48,121 --> 00:01:50,367
+Không cần chọn lại thành viên mới.
+
+25
+00:01:50,367 --> 00:01:55,500
+Ta chỉ sắp lại ba bạn đang có và dùng công thức hoán vị vừa học.
+
+26
+00:01:55,500 --> 00:02:03,320
+Hãy quan sát sáu cách sắp xếp A B C, A C B, B A C, B C A, C A B và C B A.
+
+27
+00:02:03,320 --> 00:02:07,230
+Trong bài phân công vai trò đó là sáu kết quả khác nhau.
+
+28
+00:02:07,230 --> 00:02:12,043
+Nhưng trong bài chọn đội, sáu dãy đều dẫn đến cùng một nhóm A B C.
+
+29
+00:02:12,043 --> 00:02:14,750
+Vì vậy ta gộp cả sáu vào một ô.
+
+30
+00:02:14,750 --> 00:02:17,758
+Các thẻ ghi sáu thứ tự đang nằm rời nhau.
+
+31
+00:02:17,758 --> 00:02:21,668
+Chúng di chuyển về chung một khung có nhãn nhóm A B C.
+
+32
+00:02:21,668 --> 00:02:27,383
+Thao tác gom nhóm không làm mất kết quả chọn đội: ta vẫn giữ một đại diện duy nhất.
+
+33
+00:02:27,383 --> 00:02:34,000
+Hãy lưu ý đây không phải bỏ ngẫu nhiên năm trường hợp, mà là loại năm bản sao của cùng một nhóm.
+
+34
+00:02:34,000 --> 00:02:38,347
+Với một bộ ba người đã chọn, vị trí đầu có ba lựa chọn.
+
+35
+00:02:38,347 --> 00:02:44,867
+Sau khi cố định người đầu, vị trí thứ hai chỉ còn hai lựa chọn, rồi người cuối là duy nhất.
+
+36
+00:02:44,867 --> 00:02:50,145
+Theo quy tắc nhân, số thứ tự bằng ba nhân hai nhân một, tức ba giai thừa.
+
+37
+00:02:50,145 --> 00:02:53,250
+Lý do này đúng với mọi bộ ba phân biệt.
+
+38
+00:02:53,250 --> 00:02:56,355
+Chúng ta có sáu mươi dãy chọn ba từ năm.
+
+39
+00:02:56,355 --> 00:03:01,633
+Mỗi nhóm được đại diện bởi đúng sáu thứ tự, không ít hơn và không nhiều hơn.
+
+40
+00:03:01,633 --> 00:03:07,532
+Hơn nữa, một dãy không thể thuộc hai nhóm khác nhau, vì bộ thành viên xác định duy nhất.
+
+41
+00:03:07,532 --> 00:03:12,500
+Do đó sáu mươi dãy được chia thành các lớp sáu phần tử; thương bằng mười.
+
+42
+00:03:12,500 --> 00:03:21,323
+Một cảnh báo rất quan trọng: chia cho ba giai thừa chỉ phù hợp khi ba đối tượng đã chọn phân biệt, không được chọn lặp và kết quả chỉ xét thành viên.
+
+43
+00:03:21,323 --> 00:03:25,066
+Nếu có vai trò khác nhau thì thứ tự tạo ra kết quả mới.
+
+44
+00:03:25,066 --> 00:03:30,146
+Nếu cho phép lặp phần tử, các nhóm còn có thể có số thứ tự biểu diễn khác nhau.
+
+45
+00:03:30,146 --> 00:03:31,750
+Không được áp dụng máy móc.
+
+46
+00:03:31,750 --> 00:03:35,098
+Ta vừa chứng minh bản chất quan hệ giữa hai phép đếm.
+
+47
+00:03:35,098 --> 00:03:41,514
+Muốn đi từ một nhóm k thành viên sang một dãy có thứ tự, ta xếp k người theo k giai thừa cách.
+
+48
+00:03:41,514 --> 00:03:45,141
+Vì vậy số chỉnh hợp bằng số tổ hợp nhân k giai thừa.
+
+49
+00:03:45,141 --> 00:03:51,000
+Công thức không phải một ký hiệu cần học thuộc trước, mà là kết quả của việc đếm bằng hai cách.
+
+50
+00:03:51,000 --> 00:03:53,586
+Bây giờ hãy tự kiểm chứng con số mười.
+
+51
+00:03:53,586 --> 00:04:03,067
+Ta lập các bộ ba có ký hiệu xếp theo thứ tự chữ cái: A B C, A B D, A B E, A C D, A C E và cứ tiếp tục.
+
+52
+00:04:03,067 --> 00:04:10,250
+Quy tắc ghi theo thứ tự chữ cái chỉ dùng để tránh trùng khi liệt kê, không biến bài toán thành đếm có thứ tự.
+
+53
+00:04:10,250 --> 00:04:15,383
+Chúng ta chia các nhóm thành hai lớp, nhóm có A và nhóm không có A.
+
+54
+00:04:15,383 --> 00:04:21,800
+Khi bắt buộc có A, ta chỉ cần chọn thêm hai thành viên từ bốn bạn B, C, D, E.
+
+55
+00:04:21,800 --> 00:04:29,500
+Có thể liệt kê sáu cặp B C, B D, B E, C D, C E và D E, do đó có sáu nhóm.
+
+56
+00:04:29,500 --> 00:04:34,312
+Nếu nhóm không chứa A thì ba thành viên đều thuộc B, C, D, E.
+
+57
+00:04:34,312 --> 00:04:41,050
+Lấy ba trong bốn, ta có bốn nhóm B C D, B C E, B D E và C D E.
+
+58
+00:04:41,050 --> 00:04:45,862
+Hai lớp có A và không có A rời nhau, bao phủ mọi khả năng.
+
+59
+00:04:45,862 --> 00:04:48,750
+Theo quy tắc cộng, sáu cộng bốn bằng mười.
+
+60
+00:04:48,750 --> 00:04:53,125
+Khi kiểm tra phép liệt kê, ta không chỉ đếm số thẻ trên màn hình.
+
+61
+00:04:53,125 --> 00:04:59,833
+Cần xác nhận từng thẻ ứng với đúng một nhóm hợp lệ và ngược lại, nhóm nào cũng được viết thành một thẻ.
+
+62
+00:04:59,833 --> 00:05:08,000
+Viết tên thành viên theo thứ tự chữ cái tạo ra một đại diện duy nhất; đó là cách kiểm tra không trùng lặp và không bỏ sót.
+
+63
+00:05:08,000 --> 00:05:09,805
+Có một cách nhìn thú vị.
+
+64
+00:05:09,805 --> 00:05:17,023
+Khi chọn ba học sinh vào đội trong tổng số năm người, đồng thời ta xác định đúng hai học sinh không được chọn.
+
+65
+00:05:17,023 --> 00:05:22,738
+Và khi chỉ định hai học sinh ở lại, ba người vào đội cũng được xác định hoàn toàn.
+
+66
+00:05:22,738 --> 00:05:27,250
+Hai mô hình có sự ghép đôi một một, nên cho cùng số kết quả.
+
+67
+00:05:27,250 --> 00:05:30,665
+Ta đã có ba con đường để chứng minh đáp số.
+
+68
+00:05:30,665 --> 00:05:39,048
+Chia sáu mươi dãy thành các lớp sáu, liệt kê nhóm theo thành viên A, hoặc thay việc chọn ba người bằng chọn hai người ở lại.
+
+69
+00:05:39,048 --> 00:05:46,500
+Khi ba cách đếm độc lập đều cho mười, chúng giúp chúng ta tin tưởng không có lỗi mất trường hợp hoặc tính lặp.
+
+70
+00:05:46,500 --> 00:05:50,463
+Bây giờ thay năm bằng một số n bất kỳ và ba bằng k.
+
+71
+00:05:50,463 --> 00:05:56,974
+Cho một tập n phần tử phân biệt, ta chọn đúng k phần tử, không chọn lặp và không phân công vị trí.
+
+72
+00:05:56,974 --> 00:05:59,805
+Mỗi tập con k phần tử được tính một lần.
+
+73
+00:05:59,805 --> 00:06:05,750
+Theo quy ước của Series này, n được ghi ở chỉ số trên, k ở chỉ số dưới của chữ C.
+
+74
+00:06:05,750 --> 00:06:10,028
+Đầu tiên ta đếm các dãy có thứ tự như trong tập Chỉnh hợp.
+
+75
+00:06:10,028 --> 00:06:16,750
+Vị trí thứ nhất có n cách, vị trí thứ hai còn n trừ một, tiếp tục đến vị trí thứ k.
+
+76
+00:06:16,750 --> 00:06:21,028
+Mỗi kết quả được ghi dưới dạng một dãy k phần tử phân biệt.
+
+77
+00:06:21,028 --> 00:06:25,000
+Sau đó chúng ta mới gom những dãy có cùng tập thành viên.
+
+78
+00:06:25,000 --> 00:06:31,316
+Với bất kỳ nhóm k thành viên phân biệt, có đúng k giai thừa thứ tự để liệt kê nhóm đó.
+
+79
+00:06:31,316 --> 00:06:39,738
+Mỗi dãy có thứ tự xác định duy nhất nhóm phần tử của nó, vì vậy các nhóm chia toàn bộ tập dãy thành những phần bằng nhau.
+
+80
+00:06:39,738 --> 00:06:44,250
+Do đó số tổ hợp phải bằng số chỉnh hợp chia cho k giai thừa.
+
+81
+00:06:44,250 --> 00:06:52,176
+Thay biểu thức của chỉnh hợp vào phép chia vừa có, ta được n giai thừa chia cho tích k giai thừa và n trừ k giai thừa.
+
+82
+00:06:52,176 --> 00:06:53,875
+Đó là công thức tổ hợp.
+
+83
+00:06:53,875 --> 00:06:58,688
+Điều kiện cần nhớ là n và k nguyên không âm với k không vượt quá n.
+
+84
+00:06:58,688 --> 00:07:03,500
+Công thức được chứng minh từ một phép đếm một-một, không phải đoán từ các con số.
+
+85
+00:07:03,500 --> 00:07:07,472
+Nếu không chọn phần tử nào, kết quả duy nhất là tập rỗng.
+
+86
+00:07:07,472 --> 00:07:12,667
+Nếu chọn tất cả n phần tử, kết quả duy nhất là toàn bộ tập ban đầu.
+
+87
+00:07:12,667 --> 00:07:16,333
+Bởi thế cả hai số tổ hợp ở biên đều bằng một.
+
+88
+00:07:16,333 --> 00:07:22,750
+Kết quả này cũng phù hợp với quy ước không giai thừa bằng một, giúp công thức hoạt động nhất quán.
+
+89
+00:07:22,750 --> 00:07:27,262
+Khi k bằng một, nhóm chỉ có một thành viên nên có n lựa chọn.
+
+90
+00:07:27,262 --> 00:07:34,480
+Khi n bằng năm và k bằng ba, công thức cho năm giai thừa chia ba giai thừa nhân hai giai thừa, bằng mười.
+
+91
+00:07:34,480 --> 00:07:38,090
+Ta đã trực tiếp liệt kê đúng mười nhóm ở chương trước.
+
+92
+00:07:38,090 --> 00:07:42,000
+Giờ công thức tổng quát được kiểm nghiệm trên trường hợp cụ thể.
+
+93
+00:07:42,000 --> 00:07:47,806
+Mỗi khi chọn k người trong n, ta đồng thời xác định tập n trừ k người còn lại.
+
+94
+00:07:47,806 --> 00:07:54,222
+Không có lựa chọn nào bị bỏ sót: biết nhóm được chọn thì biết ngay nhóm ở lại, và ngược lại.
+
+95
+00:07:54,222 --> 00:08:01,250
+Đây là một song ánh rất tự nhiên, chứng minh số cách chọn k người bằng số cách chọn n trừ k người.
+
+96
+00:08:01,250 --> 00:08:07,556
+Có bảy học sinh. Chọn hai người đi thi cũng giống như quyết định năm người không đi thi.
+
+97
+00:08:07,556 --> 00:08:11,871
+Mỗi cặp được chọn tương ứng đúng một nhóm năm người còn lại.
+
+98
+00:08:11,871 --> 00:08:20,500
+Nhờ phép ghép đôi ấy, tổ hợp chập hai của bảy bằng tổ hợp chập năm của bảy, và cả hai cùng bằng hai mươi mốt.
+
+99
+00:08:20,500 --> 00:08:24,410
+Bây giờ cố định một người A trong danh sách n học sinh.
+
+100
+00:08:24,410 --> 00:08:29,523
+Một đội k người hoặc có A, hoặc không có A; không có khả năng thứ ba.
+
+101
+00:08:29,523 --> 00:08:34,035
+Hai trường hợp này không giao nhau, nên ta có thể đếm riêng rồi cộng.
+
+102
+00:08:34,035 --> 00:08:39,750
+Ta sẽ dùng quy tắc cộng ở Video 01 để suy ra một đồng nhất thức rất quan trọng.
+
+103
+00:08:39,750 --> 00:08:43,992
+Nếu đội bắt buộc có A, ta xem như đã lấp một suất.
+
+104
+00:08:43,992 --> 00:08:50,191
+Để đủ k thành viên, chỉ cần chọn k trừ một người trong n trừ một người còn lại.
+
+105
+00:08:50,191 --> 00:08:56,390
+Vì không xét thứ tự, số cách chính là tổ hợp chập k trừ một của n trừ một.
+
+106
+00:08:56,390 --> 00:08:59,000
+Đây là nhánh thứ nhất trong chứng minh.
+
+107
+00:08:59,000 --> 00:09:04,454
+Nếu không có A, cả k thành viên phải được chọn trong n trừ một người khác.
+
+108
+00:09:04,454 --> 00:09:07,983
+Số cách là tổ hợp chập k của n trừ một.
+
+109
+00:09:07,983 --> 00:09:13,758
+Cộng kết quả có A với kết quả không có A, ta nhận được đồng nhất thức Pascal.
+
+110
+00:09:13,758 --> 00:09:18,250
+Điều quan trọng là hai trường hợp vừa rời nhau vừa bao phủ hết.
+
+111
+00:09:18,250 --> 00:09:25,081
+Hãy thay n bằng sáu và k bằng ba. Đội có A thì chọn thêm hai từ năm người, được mười cách.
+
+112
+00:09:25,081 --> 00:09:29,117
+Đội không A thì chọn ba từ năm người, cũng được mười cách.
+
+113
+00:09:29,117 --> 00:09:32,222
+Tổng hai mươi bằng tổ hợp chập ba của sáu.
+
+114
+00:09:32,222 --> 00:09:37,500
+Như vậy hình động hai nhóm trên màn hình cũng chính là một chứng minh bằng đếm.
+
+115
+00:09:37,500 --> 00:09:44,528
+Ta xét sáu học sinh A, B, C, D, E, F và chọn một đội ba người, không có phân công vai trò.
+
+116
+00:09:44,528 --> 00:09:48,500
+Điều kiện là A và B không được cùng xuất hiện trong đội.
+
+117
+00:09:48,500 --> 00:09:56,750
+Đây không phải điều kiện cấm từng người riêng lẻ: A có thể tham gia, B cũng có thể tham gia, nhưng không được có cả hai.
+
+118
+00:09:56,750 --> 00:10:02,350
+Nếu bỏ điều kiện, ta có tổ hợp chập ba của sáu, bằng hai mươi đội.
+
+119
+00:10:02,350 --> 00:10:08,300
+Bây giờ trên hình, chúng ta đánh dấu đỏ những đội có đồng thời A và B.
+
+120
+00:10:08,300 --> 00:10:16,000
+Cách đếm bằng phần bù rất hữu ích khi số trường hợp bị cấm dễ tính hơn số trường hợp hợp lệ.
+
+121
+00:10:16,000 --> 00:10:19,397
+Trong một đội vi phạm, A và B đều đã có mặt.
+
+122
+00:10:19,397 --> 00:10:24,210
+Chỉ còn chọn đúng một người thứ ba từ C, D, E, F, có bốn lựa chọn.
+
+123
+00:10:24,210 --> 00:10:29,022
+Không được nhân thêm hai hay sáu do hoán đổi chỗ, vì đội không có vai trò.
+
+124
+00:10:29,022 --> 00:10:35,250
+Các đội A B C, A B D, A B E và A B F là toàn bộ trường hợp phải loại.
+
+125
+00:10:35,250 --> 00:10:41,877
+Lấy hai mươi đội ban đầu trừ bốn đội chứa cả A và B, ta còn mười sáu đội hợp lệ.
+
+126
+00:10:41,877 --> 00:10:47,242
+Quan sát các thẻ đỏ biến mất và bộ đếm giảm từ hai mươi xuống mười sáu.
+
+127
+00:10:47,242 --> 00:10:54,500
+Ta đã dùng phép trừ tập hợp chứ không áp dụng công thức tổ hợp không có điều kiện một cách máy móc.
+
+128
+00:10:54,500 --> 00:10:56,746
+Ta kiểm chứng bằng một cách khác.
+
+129
+00:10:56,746 --> 00:11:03,804
+Đội hợp lệ hoặc không có A lẫn B, nghĩa là chọn cả ba từ C, D, E, F, được bốn đội.
+
+130
+00:11:03,804 --> 00:11:12,146
+Hoặc có đúng một trong A, B, có hai cách chọn người đó và chọn thêm hai từ bốn bạn còn lại, được mười hai đội.
+
+131
+00:11:12,146 --> 00:11:13,750
+Tổng vẫn là mười sáu.
+
+132
+00:11:13,750 --> 00:11:20,071
+Hãy thay điều kiện bằng một bài toán khác: chọn ba trong bảy học sinh, bắt buộc có A và cấm B.
+
+133
+00:11:20,071 --> 00:11:25,243
+Khi A đã được chọn, B bị loại khỏi danh sách, còn năm học sinh đủ điều kiện.
+
+134
+00:11:25,243 --> 00:11:28,978
+Ta chỉ chọn thêm hai bạn trong năm người ấy, có mười đội.
+
+135
+00:11:28,978 --> 00:11:33,000
+Chú ý điều kiện mới khác hẳn cấm A và B cùng có mặt.
+
+136
+00:11:33,000 --> 00:11:39,520
+Ta có tám học sinh, cần chọn một đội ba người rồi chỉ định một đội trưởng trong ba bạn ấy.
+
+137
+00:11:39,520 --> 00:11:46,661
+Vì đội trưởng có vai trò đặc biệt, kết quả gồm hai dữ kiện: tập ba thành viên và người làm đội trưởng.
+
+138
+00:11:46,661 --> 00:11:52,250
+Chỉ đổi đội trưởng, dù thành viên không đổi, cũng tạo ra một kết quả phân công mới.
+
+139
+00:11:52,250 --> 00:11:55,804
+Ở bước thứ nhất ta chưa quan tâm ai làm đội trưởng.
+
+140
+00:11:55,804 --> 00:12:01,727
+Chỉ chọn ba người từ tám nên số đội là tổ hợp chập ba của tám, bằng năm mươi sáu.
+
+141
+00:12:01,727 --> 00:12:05,577
+Đây chính là phần chọn nhóm không có thứ tự của bài toán.
+
+142
+00:12:05,577 --> 00:12:11,500
+Hãy quan sát năm mươi sáu đội được biểu diễn bằng bộ đếm thay vì hiện chật kín màn hình.
+
+143
+00:12:11,500 --> 00:12:17,516
+Với mỗi đội ba thành viên cố định, bất kỳ một trong ba người đều có thể làm đội trưởng.
+
+144
+00:12:17,516 --> 00:12:21,426
+Vậy một nhóm sinh ra đúng ba kết quả phân công vai trò.
+
+145
+00:12:21,426 --> 00:12:28,344
+Vì có năm mươi sáu nhóm, theo quy tắc nhân ta được năm mươi sáu nhân ba, tức một trăm sáu mươi tám.
+
+146
+00:12:28,344 --> 00:12:30,750
+Vai trò tạo ra tầng lựa chọn mới.
+
+147
+00:12:30,750 --> 00:12:34,896
+Ta có thể đếm ngược lại. Chọn đội trưởng trước, có tám lựa chọn.
+
+148
+00:12:34,896 --> 00:12:42,892
+Sau khi trưởng đã được xác định, cần chọn thêm hai thành viên không có chức vụ từ bảy người còn lại, có hai mươi mốt nhóm.
+
+149
+00:12:42,892 --> 00:12:47,038
+Nhân tám với hai mươi mốt ta cũng được một trăm sáu mươi tám.
+
+150
+00:12:47,038 --> 00:12:50,000
+Đây là hai cách đếm cùng một tập kết quả.
+
+151
+00:12:50,000 --> 00:12:55,414
+Một kết quả cuối cùng luôn gồm đúng một người đội trưởng và đúng hai thành viên thường.
+
+152
+00:12:55,414 --> 00:13:01,129
+Nếu đếm theo đội trước hoặc trưởng trước, mỗi kết quả vẫn được tạo ra chính xác một lần.
+
+153
+00:13:01,129 --> 00:13:06,543
+Hai phương pháp không chỉ tình cờ bằng số, mà vì chúng mô tả cùng một cấu trúc.
+
+154
+00:13:06,543 --> 00:13:09,250
+Đây là cách chứng minh bằng đếm hai lần.
+
+155
+00:13:09,250 --> 00:13:13,333
+Nếu trả lời năm mươi sáu thì ta đã quên vai trò đội trưởng.
+
+156
+00:13:13,333 --> 00:13:20,625
+Nếu lấy số dãy có thứ tự của ba người thì lại phân biệt cả hai thành viên còn lại một cách không cần thiết.
+
+157
+00:13:20,625 --> 00:13:25,583
+Kết quả đúng phải vừa xét đội trưởng, vừa không xét thứ tự hai thành viên thường.
+
+158
+00:13:25,583 --> 00:13:28,500
+Bài toán kết hợp tổ hợp và quy tắc nhân.
+
+159
+00:13:28,500 --> 00:13:36,134
+Bài tập thứ nhất: từ sáu học sinh, chọn đúng hai bạn cùng trực nhật, không phân công ai quét và ai lau.
+
+160
+00:13:36,134 --> 00:13:41,444
+Hãy tự nghĩ trong vài giây: khi đổi tên hai bạn, kết quả có khác không?
+
+161
+00:13:41,444 --> 00:13:47,750
+Vì không có vai trò, ta dùng tổ hợp chập hai của sáu, được mười lăm cặp khác nhau.
+
+162
+00:13:47,750 --> 00:13:54,562
+Bài tập thứ hai: nhóm học sinh có bốn nam và ba nữ, chọn một đội ba người với ít nhất một nữ.
+
+163
+00:13:54,562 --> 00:14:00,485
+Đếm tất cả ba trong bảy có ba mươi lăm đội, rồi trừ những đội toàn nam, có bốn đội.
+
+164
+00:14:00,485 --> 00:14:07,000
+Do đó đáp số là ba mươi mốt. Đây là một ví dụ đặc biệt hiệu quả của phương pháp phần bù.
+
+165
+00:14:07,000 --> 00:14:14,058
+Bài tập thứ ba: vẫn từ bốn nam và ba nữ, chọn đội ba người phải có đúng hai nam một nữ.
+
+166
+00:14:14,058 --> 00:14:21,438
+Đầu tiên chọn hai nam trong bốn, có sáu nhóm; độc lập với đó, chọn một nữ trong ba, có ba lựa chọn.
+
+167
+00:14:21,438 --> 00:14:26,250
+Theo quy tắc nhân, số đội hợp lệ bằng sáu nhân ba, tức mười tám.
+
+168
+00:14:26,250 --> 00:14:31,792
+Dừng hình và tự đánh giá ba câu hỏi. Kết quả cần đếm có xét vai trò hay không?
+
+169
+00:14:31,792 --> 00:14:37,917
+Có chọn lặp phần tử hay không? Điều kiện bổ sung có thể tách thành những trường hợp rời nhau không?
+
+170
+00:14:37,917 --> 00:14:45,500
+Nếu trả lời đúng ba câu này, ta thường tránh được những lỗi nghiêm trọng nhất khi vận dụng hoán vị, chỉnh hợp và tổ hợp.
+
+171
+00:14:45,500 --> 00:14:48,165
+Có một ý tưởng dẫn sang nhị thức Newton.
+
+172
+00:14:48,165 --> 00:14:55,865
+Với mỗi phần tử của tập năm người, ta quyết định chọn hoặc không chọn, nên có hai mũ năm, bằng ba mươi hai tập con.
+
+173
+00:14:55,865 --> 00:15:02,085
+Mặt khác, chia các tập con theo kích thước từ không đến năm, ta được tổng các tổ hợp tương ứng.
+
+174
+00:15:02,085 --> 00:15:04,750
+Hai cách đếm cho cùng số ba mươi hai.
+
+175
+00:15:04,750 --> 00:15:07,789
+Hôm nay chúng ta không chỉ ghi nhớ công thức tổ hợp.
+
+176
+00:15:07,789 --> 00:15:17,161
+Ta đã chứng minh tại sao phải chia cho k giai thừa, kiểm tra bằng liệt kê, xây dựng tính đối xứng và hệ thức Pascal, đồng thời giải bài có điều kiện và có đội trưởng.
+
+177
+00:15:17,161 --> 00:15:24,000
+Trong Video 08, chúng ta sẽ dùng cả ba công cụ hoán vị, chỉnh hợp và tổ hợp để lựa chọn phương pháp nhanh và chính xác.

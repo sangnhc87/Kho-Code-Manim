@@ -1,0 +1,615 @@
+1
+00:00:00,000 --> 00:00:04,375
+Trước hết hãy quan sát ba chiếc áo và hai chiếc quần trên hình.
+
+2
+00:00:04,375 --> 00:00:07,500
+Mỗi chiếc đều được phân biệt bằng một nhãn riêng.
+
+3
+00:00:07,500 --> 00:00:11,875
+Công việc chúng ta phải thực hiện không phải chỉ chọn một món đồ.
+
+4
+00:00:11,875 --> 00:00:17,500
+Ta cần chọn một áo và đồng thời chọn một quần để tạo thành một bộ trang phục.
+
+5
+00:00:17,500 --> 00:00:22,188
+Một bộ trang phục được xác định bởi cặp gồm nhãn áo và nhãn quần.
+
+6
+00:00:22,188 --> 00:00:26,250
+Chẳng hạn, áo một đi cùng quần một tạo thành một kết quả.
+
+7
+00:00:26,250 --> 00:00:30,000
+Áo một đi cùng quần hai tạo thành một kết quả khác.
+
+8
+00:00:30,000 --> 00:00:35,000
+Ta cần xác định đúng đối tượng đang được đếm trước khi nghĩ đến công thức.
+
+9
+00:00:35,000 --> 00:00:40,509
+Hãy tạm cố định chiếc áo thứ nhất. Ta có thể chọn quần một, hoặc quần hai.
+
+10
+00:00:40,509 --> 00:00:44,722
+Vì hai chiếc quần khác nhau, hai bộ nhận được cũng khác nhau.
+
+11
+00:00:44,722 --> 00:00:49,259
+Như vậy, chỉ riêng lựa chọn áo một đã sinh ra hai kết quả.
+
+12
+00:00:49,259 --> 00:00:52,500
+Các bộ sẽ xuất hiện lần lượt ở phần hình.
+
+13
+00:00:52,500 --> 00:00:56,798
+Đổi sang áo thứ hai, ta vẫn có cả hai chiếc quần để ghép.
+
+14
+00:00:56,798 --> 00:01:00,175
+Do đó áo hai sinh ra thêm hai bộ trang phục.
+
+15
+00:01:00,175 --> 00:01:04,781
+Không bộ nào trùng với các bộ của áo một, bởi nhãn áo đã khác.
+
+16
+00:01:04,781 --> 00:01:10,000
+Đây là lý do phép đếm theo từng áo có thể thực hiện một cách chắc chắn.
+
+17
+00:01:10,000 --> 00:01:13,365
+Tương tự, áo thứ ba tạo ra hai bộ nữa.
+
+18
+00:01:13,365 --> 00:01:19,760
+Em hãy nhìn ba nhóm kết quả, mỗi nhóm có đúng hai bộ và các nhóm không trùng nhau.
+
+19
+00:01:19,760 --> 00:01:23,125
+Nếu cộng hai cộng hai cộng hai, ta được sáu.
+
+20
+00:01:23,125 --> 00:01:27,500
+Có cách nào diễn đạt gọn hơn phép cộng lặp lại này không?
+
+21
+00:01:27,500 --> 00:01:33,221
+Ta có ba cách chọn áo; với mỗi cách chọn áo, lại có hai cách chọn quần.
+
+22
+00:01:33,221 --> 00:01:36,587
+Vì vậy số bộ bằng ba nhân hai, bằng sáu.
+
+23
+00:01:36,587 --> 00:01:42,644
+Nếu lấy ba cộng hai, ta chỉ đang đếm số món đồ, không phải số bộ áo quần.
+
+24
+00:01:42,644 --> 00:01:45,000
+Sự khác biệt này rất quan trọng.
+
+25
+00:01:45,000 --> 00:01:51,604
+Để không bỏ sót hoặc đếm trùng, chúng ta chuyển các bộ áo quần thành một bảng hình chữ nhật.
+
+26
+00:01:51,604 --> 00:01:56,226
+Ba hàng tương ứng ba chiếc áo, hai cột tương ứng hai chiếc quần.
+
+27
+00:01:56,226 --> 00:02:02,500
+Mỗi ô được xác định duy nhất bởi một hàng và một cột, tức là duy nhất một bộ.
+
+28
+00:02:02,500 --> 00:02:08,571
+Hàng đầu tiên có hai ô: áo một với quần một và áo một với quần hai.
+
+29
+00:02:08,571 --> 00:02:12,143
+Không có lựa chọn quần thứ ba trong bài toán.
+
+30
+00:02:12,143 --> 00:02:20,000
+Cách xếp theo hàng giúp ta nhìn thấy rõ số lựa chọn tiếp theo khi đã xác định lựa chọn ban đầu.
+
+31
+00:02:20,000 --> 00:02:27,989
+Hàng thứ hai cũng có hai ô, nhưng chúng là những bộ có áo hai, nên không trùng với hàng trước.
+
+32
+00:02:27,989 --> 00:02:31,413
+Đến lúc này đã có bốn bộ khác nhau.
+
+33
+00:02:31,413 --> 00:02:37,500
+Từng ô trong bảng đều đại diện cho một kết quả hợp lệ của bài toán.
+
+34
+00:02:37,500 --> 00:02:40,819
+Khi điền hàng thứ ba, cả sáu ô đã xuất hiện.
+
+35
+00:02:40,819 --> 00:02:47,155
+Mọi bộ hợp lệ phải nằm trong đúng một ô, vì mỗi bộ có một nhãn áo và một nhãn quần.
+
+36
+00:02:47,155 --> 00:02:51,681
+Cách lập bảng đã chứng minh kết quả, chứ không chỉ minh họa đáp số.
+
+37
+00:02:51,681 --> 00:02:55,000
+Ta thật sự biết rằng không thiếu và không đếm trùng.
+
+38
+00:02:55,000 --> 00:02:57,917
+Cộng hai ba lần chính là lấy ba nhân hai.
+
+39
+00:02:57,917 --> 00:03:03,458
+Mỗi hàng có cùng số ô, nên ta có thể thay một phép cộng dài bằng một phép nhân.
+
+40
+00:03:03,458 --> 00:03:12,500
+Hình chữ nhật giúp ta ghi nhớ không phải vì áo và quần đứng cạnh nhau, mà vì từng lựa chọn đầu tạo ra số lựa chọn tiếp theo bằng nhau.
+
+41
+00:03:12,500 --> 00:03:16,389
+Bây giờ ta biểu diễn cùng bài toán bằng sơ đồ cây.
+
+42
+00:03:16,389 --> 00:03:20,278
+Từ gốc, ba nhánh đầu tiên tương ứng ba cách chọn áo.
+
+43
+00:03:20,278 --> 00:03:24,815
+Ở bước tiếp theo, từ mỗi nhánh áo lại có những lựa chọn quần.
+
+44
+00:03:24,815 --> 00:03:30,000
+Một đường đi hoàn chỉnh từ gốc tới lá tương ứng với một bộ trang phục.
+
+45
+00:03:30,000 --> 00:03:37,000
+Ta chỉ vẽ tầng thứ nhất. Có ba nhánh, nhưng hiện tại ta mới chọn được áo, chưa hoàn thành công việc.
+
+46
+00:03:37,000 --> 00:03:39,545
+Đây là điểm khác với quy tắc cộng.
+
+47
+00:03:39,545 --> 00:03:44,318
+Trong quy tắc cộng ở video trước, ta chọn một phương án là hoàn thành.
+
+48
+00:03:44,318 --> 00:03:47,500
+Còn ở đây phải đi tiếp sang bước chọn quần.
+
+49
+00:03:47,500 --> 00:03:50,472
+Từ áo một, cây tách ra hai nhánh quần.
+
+50
+00:03:50,472 --> 00:03:56,415
+Hai lá ở cuối lần lượt biểu diễn cặp áo một quần một và áo một quần hai.
+
+51
+00:03:56,415 --> 00:04:01,368
+Chỉ những điểm cuối của đường đi đầy đủ mới được đếm là kết quả.
+
+52
+00:04:01,368 --> 00:04:05,000
+Các nhánh áo đứng riêng không được đếm thêm lần nữa.
+
+53
+00:04:05,000 --> 00:04:10,185
+Từ áo hai lại mở đúng hai nhánh quần. Lúc này sơ đồ có bốn lá.
+
+54
+00:04:10,185 --> 00:04:15,370
+Dù nhãn quần lặp lại, kết quả vẫn khác, bởi đường đi có nhãn áo khác.
+
+55
+00:04:15,370 --> 00:04:22,500
+Việc theo dõi cả đường đi giúp học sinh tránh nhầm hai bộ chỉ vì chúng cùng sử dụng một chiếc quần.
+
+56
+00:04:22,500 --> 00:04:27,990
+Khi mở nốt hai nhánh xuất phát từ áo ba, cây có tổng cộng sáu lá.
+
+57
+00:04:27,990 --> 00:04:33,480
+Quan sát cấu trúc cây, ta thấy mỗi nhánh áo đều tạo ra đúng hai lá.
+
+58
+00:04:33,480 --> 00:04:40,000
+Bởi vậy số lá của cây bằng số nhánh ở tầng thứ nhất nhân với số nhánh tiếp theo.
+
+59
+00:04:40,000 --> 00:04:44,038
+Sơ đồ cây còn giúp ta kiểm tra tính đầy đủ và không trùng lặp.
+
+60
+00:04:44,038 --> 00:04:50,231
+Mỗi cách chọn áo quần cho một đường đi duy nhất; ngược lại mỗi đường đi trọn vẹn cho một bộ hợp lệ.
+
+61
+00:04:50,231 --> 00:04:54,808
+Vì thế đếm số đường đi hay đếm số bộ trang phục là cùng một bài toán.
+
+62
+00:04:54,808 --> 00:04:57,500
+Đó là bản chất toán học của quy tắc nhân.
+
+63
+00:04:57,500 --> 00:05:03,042
+Ta trừu tượng bài toán vừa giải. Giả sử một công việc được thực hiện qua hai công đoạn.
+
+64
+00:05:03,042 --> 00:05:05,083
+Công đoạn thứ nhất có m cách.
+
+65
+00:05:05,083 --> 00:05:10,333
+Sau mỗi cách chọn ở công đoạn thứ nhất, công đoạn thứ hai đều có đúng n cách.
+
+66
+00:05:10,333 --> 00:05:15,000
+Cụm từ sau mỗi cách chọn là điều kiện quan trọng nhất của quy tắc nhân.
+
+67
+00:05:15,000 --> 00:05:19,136
+Ta hãy tưởng tượng một cây với m nhánh ở bước thứ nhất.
+
+68
+00:05:19,136 --> 00:05:22,636
+Mỗi nhánh lại sinh ra đúng n kết quả hoàn chỉnh.
+
+69
+00:05:22,636 --> 00:05:29,318
+Vì kết quả thuộc những nhánh khác nhau không trùng nhau, ta có thể cộng số kết quả của từng nhánh.
+
+70
+00:05:29,318 --> 00:05:32,500
+Kết quả là n cộng n, lặp lại m lần.
+
+71
+00:05:32,500 --> 00:05:36,734
+Theo định nghĩa của phép nhân, n được cộng m lần bằng m nhân n.
+
+72
+00:05:36,734 --> 00:05:46,895
+Ta rút ra quy tắc nhân: nếu bước một có m cách, và sau mỗi lựa chọn của bước một, bước hai có n cách, thì số cách hoàn thành công việc bằng m nhân n.
+
+73
+00:05:46,895 --> 00:05:50,000
+Đây là định lý đếm, không phải mẹo đoán phép tính.
+
+74
+00:05:50,000 --> 00:05:53,000
+Chúng ta không nên chỉ nhìn thấy chữ và rồi vội nhân.
+
+75
+00:05:53,000 --> 00:06:04,500
+Phải kiểm tra ba điều: mỗi kết quả có được tạo qua đủ các bước không; liệu một kết quả có bị đếm theo nhiều đường đi không; và số cách ở bước tiếp theo có bằng nhau sau mọi lựa chọn đầu tiên hay không.
+
+76
+00:06:04,500 --> 00:06:07,500
+Nếu điều kiện cuối bị thay đổi, cần đếm theo từng nhánh.
+
+77
+00:06:07,500 --> 00:06:13,423
+Đặt hai câu hỏi cạnh nhau. Nếu chỉ chọn một món đồ là áo hoặc quần, có năm lựa chọn riêng biệt.
+
+78
+00:06:13,423 --> 00:06:16,923
+Nếu phải tạo một bộ có cả áo và quần, có sáu bộ.
+
+79
+00:06:16,923 --> 00:06:21,769
+Cùng những đồ vật ban đầu nhưng đối tượng cần đếm thay đổi, nên phép tính thay đổi.
+
+80
+00:06:21,769 --> 00:06:25,000
+Đây là cách phân biệt quy tắc cộng với quy tắc nhân.
+
+81
+00:06:25,000 --> 00:06:31,250
+Ta mở rộng bài toán. Ngoài ba áo và hai quần, bây giờ còn có hai chiếc mũ khác nhau.
+
+82
+00:06:31,250 --> 00:06:38,125
+Một bộ trang phục đầy đủ phải gồm một áo, một quần và một mũ. Hãy dự đoán số kết quả mới.
+
+83
+00:06:38,125 --> 00:06:42,500
+Ta sẽ giữ nguyên sáu bộ áo quần cũ rồi thêm bước chọn mũ.
+
+84
+00:06:42,500 --> 00:06:44,688
+Giữ cặp áo một quần một.
+
+85
+00:06:44,688 --> 00:06:51,615
+Với cặp ấy, ta có thể đội mũ một hoặc mũ hai, tạo ra hai kết quả khác nhau.
+
+86
+00:06:51,615 --> 00:07:00,000
+Chú ý rằng hai mũ khác nhau phải được xét riêng vì chúng dẫn đến hai bộ trang phục đầy đủ khác nhau.
+
+87
+00:07:00,000 --> 00:07:05,219
+Không chỉ bộ thứ nhất, cả sáu bộ áo quần đều có đúng hai cách chọn mũ.
+
+88
+00:07:05,219 --> 00:07:11,667
+Mỗi bộ cũ tạo thành hai bộ mới. Vì vậy số bộ hoàn chỉnh là sáu nhân hai, bằng mười hai.
+
+89
+00:07:11,667 --> 00:07:17,500
+Ở đây ta đã gộp hai bước đầu thành một công đoạn rồi nhân với công đoạn chọn mũ.
+
+90
+00:07:17,500 --> 00:07:22,685
+Ta có thể tính trực tiếp bằng ba bước. Đầu tiên có ba cách chọn áo.
+
+91
+00:07:22,685 --> 00:07:29,491
+Sau mỗi cách chọn áo, có hai cách chọn quần. Sau mỗi cặp áo quần, lại có hai cách chọn mũ.
+
+92
+00:07:29,491 --> 00:07:35,000
+Nhân các số cách theo từng bước ta được ba nhân hai nhân hai, bằng mười hai.
+
+93
+00:07:35,000 --> 00:07:38,447
+Với nhiều hơn hai công đoạn, ta lặp lại lập luận tương tự.
+
+94
+00:07:38,447 --> 00:07:47,727
+Nếu ở mỗi bước, số lựa chọn là một số xác định như nhau đối với mọi lịch sử lựa chọn hợp lệ trước đó, số kết quả bằng tích số cách của các bước.
+
+95
+00:07:47,727 --> 00:07:52,500
+Điều kiện này phải được kiểm tra, đặc biệt khi có những ràng buộc giữa các lựa chọn.
+
+96
+00:07:52,500 --> 00:07:59,434
+Trở lại bài toán chỉ có áo và quần, nhưng thêm điều kiện: áo hai không được ghép với quần hai.
+
+97
+00:07:59,434 --> 00:08:05,377
+Nếu quên điều kiện, ta có sáu bộ. Vậy điều kiện cấm đã loại bỏ những bộ nào?
+
+98
+00:08:05,377 --> 00:08:10,000
+Hãy quan sát bảng tất cả các bộ trước khi quyết định phép tính.
+
+99
+00:08:10,000 --> 00:08:13,632
+Ô ở hàng áo hai, cột quần hai được tô đỏ.
+
+100
+00:08:13,632 --> 00:08:19,575
+Đó là đúng một bộ bị cấm, không phải cả hàng áo hai hay cả cột quần hai.
+
+101
+00:08:19,575 --> 00:08:21,887
+Năm bộ khác vẫn được sử dụng.
+
+102
+00:08:21,887 --> 00:08:27,500
+Vì vậy lấy sáu bộ ban đầu trừ một trường hợp không hợp lệ, ta còn năm.
+
+103
+00:08:27,500 --> 00:08:31,516
+Cách thứ nhất là đếm gián tiếp, còn gọi là đếm qua phần bù.
+
+104
+00:08:31,516 --> 00:08:37,541
+Ta biết tổng số bộ khi không có điều kiện. Tìm riêng trường hợp bị cấm, rồi trừ khỏi tổng số.
+
+105
+00:08:37,541 --> 00:08:41,844
+Ở bài này chỉ có một cặp không được phép, nên kết quả là năm.
+
+106
+00:08:41,844 --> 00:08:45,000
+Phương pháp rất có ích khi phần bị loại dễ đếm.
+
+107
+00:08:45,000 --> 00:08:51,157
+Cách thứ hai là chia theo lựa chọn áo. Nếu chọn áo một, ta có hai lựa chọn quần.
+
+108
+00:08:51,157 --> 00:08:56,667
+Nếu chọn áo hai, chỉ còn quần một. Nếu chọn áo ba, lại có hai lựa chọn.
+
+109
+00:08:56,667 --> 00:09:02,500
+Ba trường hợp không trùng nhau nên số cách bằng hai cộng một cộng hai, cũng bằng năm.
+
+110
+00:09:02,500 --> 00:09:04,612
+Đây là một điểm rất dễ sai.
+
+111
+00:09:04,612 --> 00:09:10,043
+Bước chọn quần không còn luôn có hai cách: riêng sau áo hai chỉ có một lựa chọn.
+
+112
+00:09:10,043 --> 00:09:15,474
+Do vậy không thể áp dụng trực tiếp công thức ba nhân hai cho số bộ hợp lệ.
+
+113
+00:09:15,474 --> 00:09:20,000
+Thay vào đó, phải cộng số kết quả của từng nhánh hoặc đếm phần bù.
+
+114
+00:09:20,000 --> 00:09:24,667
+Hãy đối chiếu hai phép tính. Cách đếm phần bù cho sáu trừ một bằng năm.
+
+115
+00:09:24,667 --> 00:09:28,458
+Cách cộng các nhánh cho hai cộng một cộng hai cũng bằng năm.
+
+116
+00:09:28,458 --> 00:09:34,000
+Khi hai lập luận độc lập dẫn tới cùng đáp số, chúng ta có thêm một cách kiểm tra.
+
+117
+00:09:34,000 --> 00:09:37,500
+Quan trọng nhất vẫn là hiểu tại sao mỗi phép tính đúng.
+
+118
+00:09:37,500 --> 00:09:43,227
+Ta xét một tình huống hoàn toàn mới. Với áo một, chỉ có hai loại quần phù hợp.
+
+119
+00:09:43,227 --> 00:09:48,955
+Với áo hai, chỉ có một loại. Nhưng với áo ba, có tới ba loại quần phù hợp.
+
+120
+00:09:48,955 --> 00:09:55,000
+Số cách chọn quần sau từng loại áo không còn bằng nhau. Bây giờ sẽ đếm như thế nào?
+
+121
+00:09:55,000 --> 00:10:00,385
+Quan sát nhánh của áo một. Có đúng hai nhãn quần ở cuối hai đường đi.
+
+122
+00:10:00,385 --> 00:10:06,106
+Vì một bộ được xác định bởi cả áo và quần, hai đường đi tạo hai bộ.
+
+123
+00:10:06,106 --> 00:10:12,500
+Ta đặt một bộ đếm nhỏ ngay cạnh nhánh áo một để ghi nhận số cách của nhóm này.
+
+124
+00:10:12,500 --> 00:10:15,741
+Chuyển tới áo hai, ta chỉ vẽ một nhánh quần.
+
+125
+00:10:15,741 --> 00:10:22,546
+Không được tự thêm một nhánh nữa cho đủ hai như ở bài toán đầu, vì nhánh đó không hợp lệ.
+
+126
+00:10:22,546 --> 00:10:26,759
+Đến đây số bộ của hai nhóm là hai cộng một, bằng ba.
+
+127
+00:10:26,759 --> 00:10:30,000
+Hình động cần phản ánh đúng ràng buộc đề bài.
+
+128
+00:10:30,000 --> 00:10:33,182
+Nhánh áo ba có tới ba kết quả hoàn chỉnh.
+
+129
+00:10:33,182 --> 00:10:37,636
+Cộng với hai và một kết quả trước đó, tổng số bộ là sáu.
+
+130
+00:10:37,636 --> 00:10:44,000
+Ta không tìm một con số nhân chung cho cả ba nhánh, vì các nhánh không có cùng số lá.
+
+131
+00:10:44,000 --> 00:10:47,500
+Quy tắc cộng theo trường hợp là lựa chọn phù hợp.
+
+132
+00:10:47,500 --> 00:10:56,532
+Trong tình huống tổng quát, nếu lựa chọn thứ i ở công đoạn một tạo ra r i kết quả, số kết quả hoàn chỉnh là tổng tất cả các r i.
+
+133
+00:10:56,532 --> 00:11:00,766
+Khi mọi r i đều bằng n, tổng ấy rút gọn thành m nhân n.
+
+134
+00:11:00,766 --> 00:11:05,000
+Đây là mối liên hệ chính xác giữa quy tắc cộng và quy tắc nhân.
+
+135
+00:11:05,000 --> 00:11:12,241
+Bài kiểm tra thứ nhất: dùng các chữ số một, hai, ba, bốn để lập số tự nhiên có hai chữ số khác nhau.
+
+136
+00:11:12,241 --> 00:11:22,500
+Trước khi nhìn lời giải, em hãy tự hỏi công việc có mấy bước, mỗi bước có bao nhiêu lựa chọn, và có chữ số nào bị cấm ở vị trí hàng chục không.
+
+137
+00:11:22,500 --> 00:11:27,167
+Vị trí hàng chục có bốn lựa chọn, vì cả bốn chữ số đều khác không.
+
+138
+00:11:27,167 --> 00:11:31,833
+Sau khi chọn hàng chục, hàng đơn vị phải khác nên còn đúng ba lựa chọn.
+
+139
+00:11:31,833 --> 00:11:35,333
+Theo quy tắc nhân có bốn nhân ba, bằng mười hai số.
+
+140
+00:11:35,333 --> 00:11:40,000
+Số lựa chọn bước hai luôn bằng ba, dù đã chọn chữ số hàng chục nào.
+
+141
+00:11:40,000 --> 00:11:45,000
+Bài tiếp theo nhìn rất giống tình huống áo quần, nhưng công việc đã thay đổi.
+
+142
+00:11:45,000 --> 00:11:51,875
+Có ba chiếc bút và hai cuốn vở phân biệt. Một học sinh chỉ chọn đúng một món, hoặc bút hoặc vở.
+
+143
+00:11:51,875 --> 00:11:57,500
+Theo em ta nên cộng hay nhân? Hãy xác định thế nào là một kết quả hoàn chỉnh.
+
+144
+00:11:57,500 --> 00:12:03,640
+Chỉ cần lấy một món là hoàn thành, nên các phương án bút và vở là thay thế cho nhau.
+
+145
+00:12:03,640 --> 00:12:08,860
+Chọn một trong ba bút hoặc một trong hai vở tạo ra năm kết quả khác nhau.
+
+146
+00:12:08,860 --> 00:12:15,000
+Vì vậy phải lấy ba cộng hai, không lấy ba nhân hai. Luôn đọc kỹ động từ của đề bài.
+
+147
+00:12:15,000 --> 00:12:19,136
+Bài cuối nâng độ khó. Có bốn áo và ba quần phân biệt.
+
+148
+00:12:19,136 --> 00:12:24,227
+Áo một không được đi cùng quần hai và cũng không được đi cùng quần ba.
+
+149
+00:12:24,227 --> 00:12:28,682
+Hãy tránh sai lầm loại cả áo một. Ta chỉ cấm đúng hai cặp.
+
+150
+00:12:28,682 --> 00:12:32,500
+Em hãy thử giải bằng hai cách trước khi nghe đáp số.
+
+151
+00:12:32,500 --> 00:12:35,784
+Tổng số bộ khi chưa xét điều kiện là mười hai.
+
+152
+00:12:35,784 --> 00:12:39,366
+Có đúng hai cặp bị cấm, nên còn mười bộ hợp lệ.
+
+153
+00:12:39,366 --> 00:12:46,828
+Nếu đếm theo từng áo, áo một có một lựa chọn quần; ba áo còn lại, mỗi áo có ba lựa chọn, cũng được mười.
+
+154
+00:12:46,828 --> 00:12:52,500
+Kết thúc bài học, hãy nhớ đếm đủ, không trùng và kiểm tra số nhánh sau mỗi lựa chọn.

@@ -1,0 +1,603 @@
+1
+00:00:00,000 --> 00:00:03,148
+Bài toán đầu tiên của chúng ta rất quen thuộc.
+
+2
+00:00:03,148 --> 00:00:08,185
+Tung một đồng xu ba lần, mỗi lần ghi ngửa là N và sấp là S.
+
+3
+00:00:08,185 --> 00:00:11,019
+Hãy dự đoán có bao nhiêu dãy kết quả.
+
+4
+00:00:11,019 --> 00:00:17,000
+Chú ý rằng N rồi S khác S rồi N vì thứ tự các lần tung có ý nghĩa.
+
+5
+00:00:17,000 --> 00:00:26,759
+Khi ta viết N S N, ký hiệu thứ nhất là lần gieo đầu, ký hiệu thứ hai là lần gieo tiếp theo, ký hiệu cuối là lần gieo thứ ba.
+
+6
+00:00:26,759 --> 00:00:30,537
+Thay đổi thứ tự ký hiệu có thể tạo kết quả mới.
+
+7
+00:00:30,537 --> 00:00:34,000
+Một kết quả hoàn chỉnh không thể thiếu vị trí nào.
+
+8
+00:00:34,000 --> 00:00:39,898
+Nếu liệt kê ngẫu nhiên, em có thể viết trùng một dãy hoặc quên một dãy khác.
+
+9
+00:00:39,898 --> 00:00:44,061
+Sơ đồ cây giúp mỗi bước chọn có một nhánh rõ ràng.
+
+10
+00:00:44,061 --> 00:00:51,000
+Chúng ta sẽ nhìn tận mắt cách cây phát triển để biết tất cả kết quả xuất hiện từ đâu.
+
+11
+00:00:51,000 --> 00:00:57,926
+Với mô hình đồng xu thông thường, ở mỗi lần tung ta ghi lại một trong hai ký hiệu N hoặc S.
+
+12
+00:00:57,926 --> 00:01:02,648
+Ta không giả định kết quả lần trước sẽ hạn chế kết quả lần sau.
+
+13
+00:01:02,648 --> 00:01:08,000
+Vì vậy mỗi bước luôn có hai lựa chọn, và ta cần đi qua cả ba bước.
+
+14
+00:01:08,000 --> 00:01:14,375
+Ta đã học quy tắc nhân ở bài trước. Nhưng ở đây hãy tạm chưa dùng công thức.
+
+15
+00:01:14,375 --> 00:01:25,000
+Hãy cùng xây dựng từng tầng của cây lựa chọn, đếm số lá cuối cùng rồi mới giải thích vì sao phép nhân hai nhân hai nhân hai xuất hiện.
+
+16
+00:01:25,000 --> 00:01:30,543
+Để đọc hình nhanh, chúng ta thống nhất N màu xanh và S màu vàng.
+
+17
+00:01:30,543 --> 00:01:34,978
+Các vòng tròn ở giữa chỉ là trạng thái chưa hoàn thành.
+
+18
+00:01:34,978 --> 00:01:42,000
+Chỉ khi đi đủ ba nhánh, ta mới có một dãy đầy đủ để đưa vào không gian mẫu.
+
+19
+00:01:42,000 --> 00:01:49,480
+Đầu cây là trạng thái chưa ghi nhận lần tung nào. Từ đó mở ra hai khả năng của lần tung đầu.
+
+20
+00:01:49,480 --> 00:01:56,280
+Đi theo N là bắt đầu một dãy bằng ngửa. Đi theo S là bắt đầu một dãy bằng sấp.
+
+21
+00:01:56,280 --> 00:01:59,000
+Cả hai vẫn cần hai lần tung nữa.
+
+22
+00:01:59,000 --> 00:02:06,022
+Từ nhánh N, lần tung thứ hai cho NN hoặc NS. Từ nhánh S, ta có SN hoặc SS.
+
+23
+00:02:06,022 --> 00:02:09,717
+Vậy sau hai lần đã có bốn dãy tạm thời.
+
+24
+00:02:09,717 --> 00:02:16,000
+Mỗi dãy tạm thời khác nhau ở ít nhất một vị trí, nên không bị đếm trùng.
+
+25
+00:02:16,000 --> 00:02:19,255
+Giờ cây tiếp tục mọc thêm tầng thứ ba.
+
+26
+00:02:19,255 --> 00:02:25,766
+Chẳng hạn từ NN, ta nối thêm N để có NNN, hoặc nối thêm S để có NNS.
+
+27
+00:02:25,766 --> 00:02:33,000
+Tương tự cho NS, SN và SS. Mỗi tiền tố dài hai sinh ra đúng hai kết quả hoàn chỉnh.
+
+28
+00:02:33,000 --> 00:02:36,333
+Quan sát tất cả lá ở cột phải của cây.
+
+29
+00:02:36,333 --> 00:02:43,000
+Ta có tám dãy, bắt đầu từ NNN và kết thúc bằng SSS. Không cần nhớ thuộc lòng danh sách.
+
+30
+00:02:43,000 --> 00:02:50,000
+Ta chỉ cần biết rằng có hai nhánh ở mỗi tầng và mỗi đường đi đến đúng một lá cuối cùng.
+
+31
+00:02:50,000 --> 00:02:55,333
+Ta thử chọn ngửa ở lần một, sấp ở lần hai, rồi ngửa ở lần ba.
+
+32
+00:02:55,333 --> 00:03:01,333
+Dấu chỉ dẫn đi theo nhánh N, sau đó S, sau đó N và dừng tại lá NSN.
+
+33
+00:03:01,333 --> 00:03:07,000
+Đây là cách đọc một kết quả từ sơ đồ cây, theo đúng thứ tự thời gian.
+
+34
+00:03:07,000 --> 00:03:10,740
+Sơ đồ cây chính là hình ảnh của quy tắc nhân.
+
+35
+00:03:10,740 --> 00:03:17,200
+Mỗi lần gieo làm số đường đi có thể tăng gấp đôi. Một, rồi hai, rồi bốn, rồi tám.
+
+36
+00:03:17,200 --> 00:03:24,000
+Kết luận là hai mũ ba bằng tám, bởi có ba bước và mỗi bước đều có hai lựa chọn.
+
+37
+00:03:24,000 --> 00:03:28,983
+Bây giờ ta đặt tên cho tập hợp tất cả các kết quả có thể xảy ra.
+
+38
+00:03:28,983 --> 00:03:33,379
+Trong xác suất, tập đó gọi là không gian mẫu, ký hiệu ô mê ga.
+
+39
+00:03:33,379 --> 00:03:41,000
+Với phép tung đồng xu ba lần, mỗi phần tử của không gian mẫu là một dãy có thứ tự gồm ba chữ N hoặc S.
+
+40
+00:03:41,000 --> 00:03:48,286
+Hãy đọc các lá của cây từ trên xuống. Ta thu được NNN, NNS, NSN, NSS, SNN, SNS, SSN và SSS.
+
+41
+00:03:48,286 --> 00:03:51,755
+Đây là toàn bộ không gian mẫu của thí nghiệm.
+
+42
+00:03:51,755 --> 00:03:58,000
+Ta không tự thêm dãy khác, và cũng không bỏ đi kết quả chỉ vì nó ít gặp.
+
+43
+00:03:58,000 --> 00:04:02,811
+Dấu gạch hai bên ô mê ga biểu thị số phần tử của tập hợp.
+
+44
+00:04:02,811 --> 00:04:08,906
+Sơ đồ cây cho biết số phần tử ấy bằng tám. Đến đây chúng ta mới làm phép đếm.
+
+45
+00:04:08,906 --> 00:04:15,000
+Muốn nói về xác suất, ta còn phải kiểm tra các kết quả có đồng khả năng hay không.
+
+46
+00:04:15,000 --> 00:04:19,407
+Mỗi lá được nhận diện bằng đúng ba lựa chọn trên đường từ gốc.
+
+47
+00:04:19,407 --> 00:04:27,278
+Ngược lại, từ một dãy bất kỳ như S N S, ta lần lượt chọn nhánh S, N, S và tới một lá duy nhất.
+
+48
+00:04:27,278 --> 00:04:32,000
+Sự tương ứng hai chiều ấy chứng minh phép đếm là đầy đủ, không trùng.
+
+49
+00:04:32,000 --> 00:04:37,763
+Nếu đồng xu cân đối và các lần tung độc lập, tám dãy có cùng xác suất một phần tám.
+
+50
+00:04:37,763 --> 00:04:44,678
+Nếu đồng xu bị lệch, chúng ta vẫn có tám kết quả có thể xảy ra, nhưng chúng có thể không cùng xác suất.
+
+51
+00:04:44,678 --> 00:04:49,000
+Vì thế đếm không gian mẫu và tính xác suất là hai việc khác nhau.
+
+52
+00:04:49,000 --> 00:04:54,453
+Ví dụ, biến cố xuất hiện đúng hai lần ngửa gồm một số dãy trong tám dãy.
+
+53
+00:04:54,453 --> 00:05:01,189
+Ta không cần tạo không gian mẫu mới. Chỉ cần chọn những lá thỏa điều kiện bên trong cây đã có.
+
+54
+00:05:01,189 --> 00:05:06,000
+Cách nhìn này sẽ giúp giải bài toán có ràng buộc ở phần tiếp theo.
+
+55
+00:05:06,000 --> 00:05:09,849
+Bây giờ hãy tìm những dãy có chính xác hai lần ngửa.
+
+56
+00:05:09,849 --> 00:05:16,906
+Từ chính xác rất quan trọng: dãy ba lần ngửa không được tính. Ta nhìn từng lá và đếm số chữ N.
+
+57
+00:05:16,906 --> 00:05:23,000
+Những dãy có đúng hai chữ N sẽ được tô xanh, còn các dãy khác tạm thời mờ đi.
+
+58
+00:05:23,000 --> 00:05:24,020
+Xét dãy NNS.
+
+59
+00:05:24,020 --> 00:05:31,840
+Có hai chữ N ở hai vị trí đầu và một chữ S ở cuối, nên đây là một kết quả cần đếm.
+
+60
+00:05:31,840 --> 00:05:40,000
+Ta chọn chính lá đó trong cây, không tô cả nhánh NN vì nhánh NN còn dẫn đến dãy NNN không thỏa điều kiện.
+
+61
+00:05:40,000 --> 00:05:47,596
+Tiếp theo là NSN. Vẫn có đúng hai lần ngửa, nhưng chúng xuất hiện ở hai thời điểm khác với NNS.
+
+62
+00:05:47,596 --> 00:05:57,000
+Vì thứ tự các lần tung tạo ra các dãy khác nhau, NSN phải được tính thêm như một kết quả riêng biệt trong biến cố.
+
+63
+00:05:57,000 --> 00:06:02,551
+Dãy SNN có một lần sấp ở đầu và hai lần ngửa liên tiếp phía sau.
+
+64
+00:06:02,551 --> 00:06:07,755
+Bài này chỉ yêu cầu đúng hai lần ngửa, không cấm chúng đứng cạnh nhau.
+
+65
+00:06:07,755 --> 00:06:14,000
+Vì vậy SNN vẫn là kết quả hợp lệ. Ta có đủ ba dãy NNS, NSN và SNN.
+
+66
+00:06:14,000 --> 00:06:19,564
+Ta gom ba dãy được tô sáng thành biến cố A. Số kết quả thuận lợi là ba.
+
+67
+00:06:19,564 --> 00:06:24,818
+Hãy phân biệt số ba này với tổng số kết quả có thể xảy ra là tám.
+
+68
+00:06:24,818 --> 00:06:31,000
+Hai số có vai trò khác nhau: một số đếm điều kiện, số còn lại đếm cả không gian mẫu.
+
+69
+00:06:31,000 --> 00:06:36,186
+Khi đồng xu cân đối và mỗi lần gieo độc lập, cả tám dãy là đồng khả năng.
+
+70
+00:06:36,186 --> 00:06:42,237
+Xác suất của biến cố A bằng số kết quả thuận lợi chia tổng số kết quả, tức ba phần tám.
+
+71
+00:06:42,237 --> 00:06:48,000
+Nếu không có giả thiết cân đối, ta không được tự động kết luận xác suất là ba phần tám.
+
+72
+00:06:48,000 --> 00:06:52,407
+Bài toán mới không hỏi số lần ngửa, mà hỏi vị trí của chúng.
+
+73
+00:06:52,407 --> 00:06:56,500
+Trong ba lần tung, không được có hai chữ N nằm liền nhau.
+
+74
+00:06:56,500 --> 00:07:03,426
+Điều này buộc ta kiểm tra cặp vị trí một và hai, đồng thời kiểm tra cặp vị trí hai và ba.
+
+75
+00:07:03,426 --> 00:07:05,000
+Hãy cùng lọc trên cây.
+
+76
+00:07:05,000 --> 00:07:07,667
+Ta quan sát hai lần tung đầu tiên.
+
+77
+00:07:07,667 --> 00:07:13,000
+Nếu hai ký hiệu đầu là NN, điều kiện đã bị vi phạm ngay lập tức.
+
+78
+00:07:13,000 --> 00:07:16,667
+Bất kể lần thứ ba là gì, dãy không hợp lệ.
+
+79
+00:07:16,667 --> 00:07:22,000
+Vì vậy cả NNN và NNS đều bị loại, đúng hai lá chứ không phải một.
+
+80
+00:07:22,000 --> 00:07:25,896
+Còn một lỗi có thể nằm ở hai vị trí cuối.
+
+81
+00:07:25,896 --> 00:07:32,271
+Dãy SNN bắt đầu bằng S, nhưng hai lần tung tiếp theo đều ngửa nên vẫn vi phạm.
+
+82
+00:07:32,271 --> 00:07:39,000
+Ta loại thêm dãy SNN. Đến đây ba lá bị loại là NNN, NNS và SNN, không trùng nhau.
+
+83
+00:07:39,000 --> 00:07:43,804
+Quan sát năm lá còn sáng xanh: NSN, NSS, SNS, SSN và SSS.
+
+84
+00:07:43,804 --> 00:07:49,717
+Hãy tự đọc từng dãy để chắc chắn không có hai lần ngửa đứng cạnh nhau.
+
+85
+00:07:49,717 --> 00:07:56,000
+Ta đã loại tất cả trường hợp sai mà không vô tình xóa một trường hợp đúng.
+
+86
+00:07:56,000 --> 00:08:01,758
+Có thể đếm bằng cách khác. Bắt đầu với toàn bộ tám dãy. Nhóm vi phạm điều kiện có ba dãy.
+
+87
+00:08:01,758 --> 00:08:04,774
+Khi lấy tám trừ ba, ta còn năm dãy hợp lệ.
+
+88
+00:08:04,774 --> 00:08:13,000
+Tuy nhiên, khi đếm phần bù phải lưu ý một dãy có thể vi phạm ở nhiều vị trí; ở đây danh sách đã loại trùng một cách cẩn thận.
+
+89
+00:08:13,000 --> 00:08:18,368
+Nếu đồng xu cân đối và ba lần tung độc lập, mỗi dãy có xác suất bằng nhau.
+
+90
+00:08:18,368 --> 00:08:22,842
+Lúc ấy xác suất không có hai lần ngửa liên tiếp là năm phần tám.
+
+91
+00:08:22,842 --> 00:08:30,000
+Nếu chỉ có yêu cầu đếm số dãy, đáp số của bài toán vẫn là năm, không cần giả thiết đồng xu cân đối.
+
+92
+00:08:30,000 --> 00:08:34,474
+Một sơ đồ cây chỉ đáng tin khi nó liệt kê hết các trường hợp.
+
+93
+00:08:34,474 --> 00:08:39,544
+Tại mỗi nút chưa kết thúc, chúng ta đều mở đủ hai khả năng N và S.
+
+94
+00:08:39,544 --> 00:08:47,000
+Vì mọi dãy ba lần tung là một chuỗi gồm ba lựa chọn như thế, nhất định nó xuất hiện tại một lá của cây.
+
+95
+00:08:47,000 --> 00:08:49,088
+Giả sử hai đường đi khác nhau.
+
+96
+00:08:49,088 --> 00:08:53,860
+Sẽ tồn tại một tầng đầu tiên mà chúng tách sang hai nhánh N và S.
+
+97
+00:08:53,860 --> 00:08:57,737
+Từ đó hai dãy cuối cùng phải khác nhau tại vị trí ấy.
+
+98
+00:08:57,737 --> 00:09:04,000
+Vì thế hai lá khác nhau không thể đại diện cho cùng một kết quả. Ta tránh được lỗi đếm trùng.
+
+99
+00:09:04,000 --> 00:09:06,519
+Đây là chứng minh bằng tương ứng một-một.
+
+100
+00:09:06,519 --> 00:09:12,500
+Mỗi đường đi trọn vẹn cho một dãy, và từ mỗi dãy ta khôi phục đúng đường đi ấy.
+
+101
+00:09:12,500 --> 00:09:14,704
+Không cần một công thức phức tạp.
+
+102
+00:09:14,704 --> 00:09:21,000
+Chỉ cần chứng minh đầy đủ và duy nhất, phép đếm trên cây đã chặt chẽ về mặt toán học.
+
+103
+00:09:21,000 --> 00:09:28,328
+Khi điều kiện của bài toán cấm hai lần ngửa liên tiếp, một nhánh bắt đầu bằng NN chắc chắn không thể được chấp nhận.
+
+104
+00:09:28,328 --> 00:09:31,552
+Ta có thể cắt nhánh này ngay tại tầng thứ hai.
+
+105
+00:09:31,552 --> 00:09:38,000
+Cách cắt sớm giúp sơ đồ gọn hơn, nhưng phải chứng minh rằng mọi phần mở rộng của nhánh ấy đều sai.
+
+106
+00:09:38,000 --> 00:09:42,554
+Hãy xem tiền tố NS. Nó có một chữ N nhưng chưa có cặp NN.
+
+107
+00:09:42,554 --> 00:09:47,107
+Nếu vội cắt chỉ vì thấy chữ N, ta sẽ bỏ sót NSN và NSS.
+
+108
+00:09:47,107 --> 00:09:55,000
+Vì vậy điều kiện cắt nhánh phải dựa trên vi phạm chắc chắn, chứ không dựa trên cảm giác một nhánh có vẻ không thuận lợi.
+
+109
+00:09:55,000 --> 00:10:00,569
+Chốt lại ba câu hỏi quan trọng. Cây đã mở đủ tất cả lựa chọn ở mỗi bước chưa?
+
+110
+00:10:00,569 --> 00:10:03,793
+Một kết quả có tương ứng đúng một lá hay không?
+
+111
+00:10:03,793 --> 00:10:08,190
+Và nếu có điều kiện cấm, ta đã loại chính xác các nhánh sai chưa?
+
+112
+00:10:08,190 --> 00:10:12,000
+Trả lời được ba điều ấy, em có thể tin vào phép đếm.
+
+113
+00:10:12,000 --> 00:10:15,400
+Ta thử kéo dài thí nghiệm thành bốn lần tung.
+
+114
+00:10:15,400 --> 00:10:23,900
+Nếu không ràng buộc, mỗi dãy ba ký hiệu có thể nối thêm N hoặc S, nên số dãy tăng gấp đôi thành mười sáu.
+
+115
+00:10:23,900 --> 00:10:29,000
+Đây là bước mở rộng hoàn toàn tương tự quy tắc nhân ở video trước.
+
+116
+00:10:29,000 --> 00:10:33,093
+Bây giờ tiếp tục yêu cầu không có hai lần ngửa liên tiếp.
+
+117
+00:10:33,093 --> 00:10:37,500
+Với bốn vị trí, danh sách mười sáu dãy rất dễ kiểm tra nhầm.
+
+118
+00:10:37,500 --> 00:10:46,000
+Ta có thể lọc từng kết quả, nhưng một cách chặt chẽ hơn là chia theo ký hiệu cuối cùng, tạo ra hai nhóm không giao nhau.
+
+119
+00:10:46,000 --> 00:10:50,093
+Nhóm đầu tiên gồm các dãy bốn ký hiệu kết thúc bằng S.
+
+120
+00:10:50,093 --> 00:10:56,389
+Để có một dãy như vậy, chỉ cần lấy một dãy ba ký hiệu hợp lệ rồi nối thêm S.
+
+121
+00:10:56,389 --> 00:11:03,000
+Chữ S không tạo cặp NN mới, nên cả năm dãy ba ký hiệu hợp lệ đều được phép sử dụng.
+
+122
+00:11:03,000 --> 00:11:06,091
+Nhóm thứ hai gồm các dãy kết thúc bằng N.
+
+123
+00:11:06,091 --> 00:11:10,109
+Để không có NN, ký hiệu ngay trước N buộc phải là S.
+
+124
+00:11:10,109 --> 00:11:13,200
+Như vậy hai ký hiệu cuối phải là S N.
+
+125
+00:11:13,200 --> 00:11:20,000
+Hai vị trí đầu được chọn thành một dãy dài hai không có NN, có ba khả năng: NS, SN hoặc SS.
+
+126
+00:11:20,000 --> 00:11:26,800
+Hai nhóm này không trùng nhau, vì một nhóm kết thúc bằng S còn nhóm kia kết thúc bằng N.
+
+127
+00:11:26,800 --> 00:11:33,260
+Đồng thời chúng bao phủ mọi dãy hợp lệ, bởi một dãy phải kết thúc bằng S hoặc N.
+
+128
+00:11:33,260 --> 00:11:37,000
+Theo quy tắc cộng, năm cộng ba bằng tám kết quả.
+
+129
+00:11:37,000 --> 00:11:42,016
+Lập luận chia theo ký hiệu cuối áp dụng cho mọi độ dài n từ hai trở lên.
+
+130
+00:11:42,016 --> 00:11:47,869
+Nhóm cuối S tương ứng dãy dài n trừ một; nhóm cuối S N tương ứng dãy dài n trừ hai.
+
+131
+00:11:47,869 --> 00:11:54,000
+Vì thế xuất hiện hệ thức truy hồi Fibonacci. Đây là một cánh cửa dẫn đến các bài tổ hợp khó hơn.
+
+132
+00:11:54,000 --> 00:11:59,440
+Bài kiểm tra thứ nhất: tung đồng xu ba lần, chỉ có đúng một lần ngửa.
+
+133
+00:11:59,440 --> 00:12:03,860
+Hãy tự tìm các lá thỏa điều kiện trước khi xem đáp án.
+
+134
+00:12:03,860 --> 00:12:11,000
+Em nên hỏi chữ N đứng ở vị trí nào, và hai vị trí còn lại phải mang ký hiệu gì.
+
+135
+00:12:11,000 --> 00:12:17,333
+Muốn chỉ có đúng một lần ngửa, chữ N có thể nằm ở vị trí đầu, giữa hoặc cuối.
+
+136
+00:12:17,333 --> 00:12:20,000
+Tương ứng ta được NSS, SNS và SSN.
+
+137
+00:12:20,000 --> 00:12:25,667
+Cả ba dãy có đúng một chữ N, và không còn vị trí nào khác để đặt.
+
+138
+00:12:25,667 --> 00:12:28,000
+Vậy có ba kết quả thuận lợi.
+
+139
+00:12:28,000 --> 00:12:31,469
+Bài tiếp theo yêu cầu lần đầu tiên phải sấp.
+
+140
+00:12:31,469 --> 00:12:39,796
+Trên sơ đồ cây, ta chỉ cần giữ lại nhánh bắt đầu bằng S, vì mọi dãy bắt đầu bằng N đều vi phạm.
+
+141
+00:12:39,796 --> 00:12:45,000
+Trong nhánh S, hai lần tung tiếp theo vẫn tự do chọn N hoặc S.
+
+142
+00:12:45,000 --> 00:12:51,120
+Từ nhánh S ở tầng một, hai vị trí còn lại mỗi vị trí có hai lựa chọn.
+
+143
+00:12:51,120 --> 00:12:55,200
+Vì vậy ta có bốn kết quả: SNN, SNS, SSN và SSS.
+
+144
+00:12:55,200 --> 00:13:02,000
+Có thể đếm bốn lá của nhánh S hoặc lấy hai nhân hai. Hai cách cho cùng một đáp số.
+
+145
+00:13:02,000 --> 00:13:06,250
+Bài cuối liên hệ lại quy tắc nhân. Có ba lựa chọn món chính.
+
+146
+00:13:06,250 --> 00:13:12,625
+Với món thứ nhất, có hai thức uống phù hợp; món thứ hai chỉ có một; món thứ ba có ba.
+
+147
+00:13:12,625 --> 00:13:19,000
+Hãy vẽ ba nhánh và đếm số lá của từng nhánh, thay vì lấy ba nhân một con số tùy ý.
+
+148
+00:13:19,000 --> 00:13:23,459
+Ba nhánh ứng với ba món chính có lần lượt hai, một và ba kết quả.
+
+149
+00:13:23,459 --> 00:13:26,803
+Vì ba nhóm không trùng nhau, tổng số suất ăn là sáu.
+
+150
+00:13:26,803 --> 00:13:31,541
+Hôm nay chúng ta đã thấy sơ đồ cây là một phương pháp chứng minh phép đếm.
+
+151
+00:13:31,541 --> 00:13:36,000
+Tập tiếp theo sẽ tìm hiểu khi nào việc đổi thứ tự tạo kết quả mới.

@@ -1,0 +1,583 @@
+1
+00:00:00,000 --> 00:00:03,520
+Chúng ta có bốn học sinh A, B, C và D.
+
+2
+00:00:03,520 --> 00:00:07,680
+Nếu chọn hai bạn vào một đội trực nhật, có bao nhiêu nhóm?
+
+3
+00:00:07,680 --> 00:00:12,800
+Còn nếu chọn một trưởng nhóm và một phó nhóm, có bao nhiêu cách phân công?
+
+4
+00:00:12,800 --> 00:00:17,600
+Ta hãy đừng bấm máy; hãy quan sát xem vai trò thay đổi điều gì.
+
+5
+00:00:17,600 --> 00:00:22,629
+Trong câu hỏi thứ nhất, kết quả chỉ là một nhóm gồm hai người.
+
+6
+00:00:22,629 --> 00:00:28,016
+Nhóm A và B có cùng hai thành viên dù em nói B và A.
+
+7
+00:00:28,016 --> 00:00:35,200
+Việc đọc tên trước hay sau không tạo ra nhóm mới; chỉ cần xác định chính xác ai thuộc nhóm.
+
+8
+00:00:35,200 --> 00:00:40,615
+Ở câu hỏi thứ hai, A làm trưởng và B làm phó là một kết quả.
+
+9
+00:00:40,615 --> 00:00:46,708
+Khi đổi lại B làm trưởng và A làm phó, công việc của hai bạn đã thay đổi.
+
+10
+00:00:46,708 --> 00:00:52,800
+Vậy dù đều chọn A và B, ta phải xem đây là hai cách phân công khác nhau.
+
+11
+00:00:52,800 --> 00:01:00,392
+Vậy bản chất không nằm ở việc có bao nhiêu người. Nó nằm ở kết quả được định nghĩa như thế nào.
+
+12
+00:01:00,392 --> 00:01:04,188
+Với đội không có chức vụ, chỉ có tập thành viên.
+
+13
+00:01:04,188 --> 00:01:10,400
+Với hai chức vụ khác nhau, vị trí thứ nhất và thứ hai mang ý nghĩa khác nhau.
+
+14
+00:01:10,400 --> 00:01:17,000
+Nhiều bạn chỉ thấy chữ chọn là nghĩ ngay đến tổ hợp, hoặc thấy chữ xếp là nghĩ đến hoán vị.
+
+15
+00:01:17,000 --> 00:01:21,714
+Ta cần thói quen tốt hơn: giả sử hoán đổi hai phần tử đã chọn.
+
+16
+00:01:21,714 --> 00:01:28,000
+Nếu câu trả lời của bài toán thay đổi, thứ tự quan trọng; nếu không, thứ tự không quan trọng.
+
+17
+00:01:28,000 --> 00:01:38,057
+Ta đã nhìn thấy ít nhất một ví dụ: nhóm gồm A và B chỉ được tính một lần, trong khi phân công A B và B A được tính hai lần.
+
+18
+00:01:38,057 --> 00:01:42,771
+Em hãy dự đoán số cách phân công có gấp đôi số nhóm hay không.
+
+19
+00:01:42,771 --> 00:01:45,600
+Ta sẽ kiểm tra trên tất cả kết quả.
+
+20
+00:01:45,600 --> 00:01:49,633
+Bây giờ ta đếm bài toán phân công hai chức vụ.
+
+21
+00:01:49,633 --> 00:01:55,867
+Hãy điền ô trưởng nhóm trước, vì bốn học sinh đều có thể nhận nhiệm vụ này.
+
+22
+00:01:55,867 --> 00:02:03,200
+Sau khi chọn trưởng, ta mới xét người làm phó. Hai bước có thứ tự thời gian rất rõ ràng.
+
+23
+00:02:03,200 --> 00:02:11,267
+Nếu A là trưởng, A không thể đồng thời làm phó. Chỉ còn B, C hoặc D cho vị trí thứ hai.
+
+24
+00:02:11,267 --> 00:02:16,767
+Ta nhận được ba cặp có thứ tự: A B, A C và A D.
+
+25
+00:02:16,767 --> 00:02:20,800
+Chữ đầu luôn biểu thị trưởng, chữ sau biểu thị phó.
+
+26
+00:02:20,800 --> 00:02:29,200
+Nếu trưởng là B, ô phó vẫn có ba khả năng. Lần này ta có B A, B C, B D.
+
+27
+00:02:29,200 --> 00:02:38,400
+Đặc biệt B A không thể gộp với A B trong bài toán phân công, bởi trưởng và phó đã đổi cho nhau.
+
+28
+00:02:38,400 --> 00:02:45,440
+Chúng ta mở đủ cả bốn hàng theo người giữ chức trưởng. Mỗi hàng có đúng ba cặp hợp lệ.
+
+29
+00:02:45,440 --> 00:02:51,424
+Các hàng không thể trùng vì tên trưởng khác nhau; trong mỗi hàng, tên phó cũng khác.
+
+30
+00:02:51,424 --> 00:02:56,000
+Vì vậy tổng cộng có bốn nhân ba bằng mười hai kết quả.
+
+31
+00:02:56,000 --> 00:02:59,143
+Vì sao sơ đồ mười hai ô là đáng tin?
+
+32
+00:02:59,143 --> 00:03:04,486
+Mọi cách phân công phải có đúng một trưởng, nên xuất hiện trong một hàng xác định.
+
+33
+00:03:04,486 --> 00:03:08,886
+Khi đã biết trưởng, người phó xác định đúng một cột của hàng đó.
+
+34
+00:03:08,886 --> 00:03:13,600
+Không có cách phân công hợp lệ nào bị bỏ sót hoặc đếm hai lần.
+
+35
+00:03:13,600 --> 00:03:17,686
+Bây giờ hai thẻ A và B đổi vị trí trên mô hình.
+
+36
+00:03:17,686 --> 00:03:21,771
+Ở trạng thái đầu, A đứng trong ô trưởng, B trong ô phó.
+
+37
+00:03:21,771 --> 00:03:25,543
+Ở trạng thái sau, B trở thành trưởng và A là phó.
+
+38
+00:03:25,543 --> 00:03:31,200
+Cảnh hoán đổi khiến ta thấy hai kết quả khác nhau vì tên chức vụ là cố định.
+
+39
+00:03:31,200 --> 00:03:33,400
+Giờ ta xóa nhãn chức vụ.
+
+40
+00:03:33,400 --> 00:03:40,733
+Nếu chọn A và B đi trực nhật, nhắc tên A trước hay B trước đều chỉ cùng một nhóm.
+
+41
+00:03:40,733 --> 00:03:48,800
+Vì kết quả không chứa thông tin về thứ tự, liệt kê mười hai cặp như trước sẽ lặp lại mỗi nhóm.
+
+42
+00:03:48,800 --> 00:03:52,467
+Hãy quan sát hai cặp A B và B A.
+
+43
+00:03:52,467 --> 00:03:57,967
+Manim sẽ kéo cả hai cặp về cùng một thẻ nhóm chứa A và B.
+
+44
+00:03:57,967 --> 00:04:06,400
+Đó là một cách để nhận ra hai bản ghi khác nhau có thể đại diện cho cùng một đối tượng cần đếm.
+
+45
+00:04:06,400 --> 00:04:13,992
+Ta tiếp tục nối các cặp trong bảng mười hai ô. Mỗi cặp có thứ tự tìm được một cặp ngược lại.
+
+46
+00:04:13,992 --> 00:04:18,133
+Chẳng hạn A C gặp C A, B D gặp D B.
+
+47
+00:04:18,133 --> 00:04:24,000
+Mỗi đôi cặp như vậy đại diện cho một nhóm hai học sinh không có chức vụ.
+
+48
+00:04:24,000 --> 00:04:32,800
+Sau khi bỏ phần thứ tự dư thừa, ta chỉ còn sáu nhóm: A B, A C, A D, B C, B D và C D.
+
+49
+00:04:32,800 --> 00:04:38,215
+Mỗi nhóm từ hai người phân biệt chỉ sinh ra hai cách xếp theo thứ tự.
+
+50
+00:04:38,215 --> 00:04:41,600
+Vậy số nhóm bằng mười hai chia hai, tức sáu.
+
+51
+00:04:41,600 --> 00:04:45,120
+Ở đây phép chia cho hai không phải mẹo nhớ.
+
+52
+00:04:45,120 --> 00:04:52,512
+Ta chia vì mỗi kết quả cần đếm đã bị tính đúng hai lần khi dùng bảng cặp có thứ tự.
+
+53
+00:04:52,512 --> 00:04:59,200
+Sự tương ứng đều đặn này cho phép gom hai cặp thành một nhóm, không thừa cũng không thiếu.
+
+54
+00:04:59,200 --> 00:05:05,322
+Hãy so sánh hai lời giải tưởng như mâu thuẫn: mười hai cách và sáu cách.
+
+55
+00:05:05,322 --> 00:05:09,913
+Cả hai đều đúng nhưng dành cho hai câu hỏi khác nhau.
+
+56
+00:05:09,913 --> 00:05:16,800
+Kỹ năng quan trọng nhất là mô tả chính xác một kết quả trước khi chọn phép toán.
+
+57
+00:05:16,800 --> 00:05:20,941
+Ta tách hình thành hai trường hợp cùng có A và B.
+
+58
+00:05:20,941 --> 00:05:28,188
+Trường hợp thứ nhất là hai vị trí trưởng, phó rõ ràng. Trường hợp thứ hai chỉ là một khung nhóm.
+
+59
+00:05:28,188 --> 00:05:34,400
+Hãy nhìn thẻ học sinh hoán đổi; nội dung toán học phụ thuộc ý nghĩa của khung chứa.
+
+60
+00:05:34,400 --> 00:05:37,920
+Đặt A vào ô trưởng và B vào ô phó.
+
+61
+00:05:37,920 --> 00:05:44,256
+Sau một lần đổi chỗ, nhãn trưởng và phó đứng yên còn tên học sinh đổi vị trí.
+
+62
+00:05:44,256 --> 00:05:52,000
+Vì thế kết quả mới có nghĩa khác kết quả cũ. Trong bài toán giao việc, phải tính cả hai thứ tự.
+
+63
+00:05:52,000 --> 00:05:56,912
+Bây giờ bỏ hai nhãn chức vụ, chỉ giữ một khung nhóm.
+
+64
+00:05:56,912 --> 00:06:03,870
+Dù A đứng bên trái hay bên phải, hai người được chọn vẫn là A và B.
+
+65
+00:06:03,870 --> 00:06:09,600
+Phép đổi chỗ không tạo thông tin mới, nên không làm tăng số nhóm.
+
+66
+00:06:09,600 --> 00:06:17,502
+Ta có một tương ứng rất hữu ích. Từ mỗi nhóm hai bạn, có hai cách chỉ định ai trưởng, ai phó.
+
+67
+00:06:17,502 --> 00:06:23,249
+Ngược lại, quên chức vụ từ một cách phân công thì thu được đúng một nhóm.
+
+68
+00:06:23,249 --> 00:06:27,200
+Bởi vậy số cách phân công bằng hai lần số nhóm.
+
+69
+00:06:27,200 --> 00:06:41,567
+Ta có thể viết sáu nhóm bằng bốn nhân ba chia hai, nhưng trước hết phải hiểu ý nghĩa từng thừa số: chọn người thứ nhất, rồi người thứ hai; sau đó khử hai thứ tự của cùng một nhóm.
+
+70
+00:06:41,567 --> 00:06:44,800
+Các con số chỉ xuất hiện sau phép đếm.
+
+71
+00:06:44,800 --> 00:06:50,771
+Một cảnh báo quan trọng: khi chọn hai người không xét thứ tự, mỗi nhóm có hai cách ghi.
+
+72
+00:06:50,771 --> 00:06:54,543
+Nhưng nếu chọn ba người, mỗi nhóm có nhiều thứ tự hơn.
+
+73
+00:06:54,543 --> 00:07:02,400
+Do đó không thể sử dụng phép chia hai cho mọi bài toán chọn nhóm; ta sẽ khám phá quy luật này ở phần sau.
+
+74
+00:07:02,400 --> 00:07:06,637
+Ta tăng độ khó lên một bậc: từ năm bạn, chọn ba người.
+
+75
+00:07:06,637 --> 00:07:10,548
+Nếu chỉ thành lập nhóm, thứ tự gọi tên không quan trọng.
+
+76
+00:07:10,548 --> 00:07:14,785
+Nếu phân công ba vị trí khác nhau, thứ tự lại quan trọng.
+
+77
+00:07:14,785 --> 00:07:20,000
+Hai bài dùng cùng tập học sinh nhưng số kết quả chắc chắn không bằng nhau.
+
+78
+00:07:20,000 --> 00:07:25,747
+Khi ba vai trò được phân biệt, ta có năm cách điền vị trí thứ nhất.
+
+79
+00:07:25,747 --> 00:07:32,571
+Sau khi chọn xong, còn bốn người cho vị trí thứ hai và ba người cho vị trí cuối.
+
+80
+00:07:32,571 --> 00:07:37,600
+Theo quy tắc nhân, ta có sáu mươi cách phân công ba vai trò.
+
+81
+00:07:37,600 --> 00:07:40,160
+Hãy xét riêng bộ ba A, B, C.
+
+82
+00:07:40,160 --> 00:07:48,800
+Khi ghi ra có thứ tự, ta thấy A B C, A C B, B A C, B C A, C A B và C B A.
+
+83
+00:07:48,800 --> 00:07:55,200
+Cả sáu dãy đều có cùng thành viên, nên khi chỉ chọn nhóm ta gộp lại thành một kết quả.
+
+84
+00:07:55,200 --> 00:08:01,572
+Không chỉ nhóm A B C, mọi nhóm gồm ba học sinh phân biệt đều có sáu cách sắp thành dãy.
+
+85
+00:08:01,572 --> 00:08:08,855
+Trong mỗi nhóm, ba khả năng ở vị trí đầu nhân hai khả năng ở vị trí thứ hai, rồi một khả năng cuối.
+
+86
+00:08:08,855 --> 00:08:12,800
+Đây là lý do chia cho sáu, không phải một sự tình cờ.
+
+87
+00:08:12,800 --> 00:08:22,139
+Bởi mỗi nhóm ba người xuất hiện đúng sáu lần trong danh sách sáu mươi dãy có thứ tự, ta gom sáu dãy thành một nhóm.
+
+88
+00:08:22,139 --> 00:08:25,371
+Sáu mươi chia sáu bằng mười nhóm khác nhau.
+
+89
+00:08:25,371 --> 00:08:30,400
+Đây là nguyên lý mà bài tổ hợp ở video sau sẽ tổng quát.
+
+90
+00:08:30,400 --> 00:08:33,920
+Hai người cho hai thứ tự. Ba người cho sáu thứ tự.
+
+91
+00:08:33,920 --> 00:08:40,667
+Khi các phần tử phân biệt và không lặp, chọn k người rồi đổi thứ tự có k giai thừa cách sắp xếp.
+
+92
+00:08:40,667 --> 00:08:48,000
+Ý tưởng chia cho k giai thừa là cánh cửa dẫn đến công thức tổ hợp, nhưng ở đây ta chỉ cần hiểu lý do.
+
+93
+00:08:48,000 --> 00:08:51,951
+Bây giờ có sáu học sinh và cần lấy hai người.
+
+94
+00:08:51,951 --> 00:08:58,057
+Một yêu cầu chỉ cần đội trực nhật; yêu cầu kia phân hai chức vụ khác nhau.
+
+95
+00:08:58,057 --> 00:09:05,600
+Trước khi đếm, em hãy tự hỏi việc đổi vị trí hai người có làm thay đổi đáp án hay không.
+
+96
+00:09:05,600 --> 00:09:10,988
+Với bài giao trưởng và phó, mỗi học sinh đều có thể nhận chức trưởng.
+
+97
+00:09:10,988 --> 00:09:16,735
+Sau đó còn năm lựa chọn cho phó vì không ai kiêm cả hai vị trí.
+
+98
+00:09:16,735 --> 00:09:23,200
+Hai bước được nhân với nhau, nên số cách phân công là sáu nhân năm bằng ba mươi.
+
+99
+00:09:23,200 --> 00:09:31,633
+Nếu đề chỉ cần chọn hai thành viên của đội, mỗi cặp đã bị đếm hai lần trong ba mươi cách vừa rồi.
+
+100
+00:09:31,633 --> 00:09:36,033
+Hai bản ghi A B và B A thuộc cùng một đội.
+
+101
+00:09:36,033 --> 00:09:40,800
+Vậy ta chia ba mươi cho hai và nhận được mười lăm nhóm.
+
+102
+00:09:40,800 --> 00:09:45,573
+Ta cần đọc kĩ giả thiết: chọn hai học sinh khác nhau trong sáu học sinh.
+
+103
+00:09:45,573 --> 00:09:49,451
+Vì không ai xuất hiện hai lần, ta không có cặp A A.
+
+104
+00:09:49,451 --> 00:09:58,400
+Nếu bài cho phép chọn lặp, số cách sẽ đổi, và phép chia hai cũng không dùng nguyên xi; vì vậy phải nói rõ điều kiện trước khi áp dụng.
+
+105
+00:09:58,400 --> 00:10:03,200
+Ta hãy kiểm chứng không chỉ bằng công thức mà còn bằng danh sách nhóm.
+
+106
+00:10:03,200 --> 00:10:09,600
+Có mười lăm cặp học sinh khác nhau, mỗi cặp sinh ra đúng hai phân công ai trưởng ai phó.
+
+107
+00:10:09,600 --> 00:10:16,000
+Nhân ngược mười lăm với hai cho ba mươi, khớp hoàn toàn với phép đếm từ hai ô chức vụ.
+
+108
+00:10:16,000 --> 00:10:21,984
+Với cùng sáu học sinh, hai đáp số ba mươi và mười lăm đều có lý do.
+
+109
+00:10:21,984 --> 00:10:25,504
+Chúng khác nhau vì yêu cầu trả lời khác nhau.
+
+110
+00:10:25,504 --> 00:10:33,600
+Từ giờ, trước mỗi bài toán đếm, hãy viết mô tả chính xác một kết quả hợp lệ rồi mới chọn công thức.
+
+111
+00:10:33,600 --> 00:10:41,186
+Đây là bài vận dụng cao hơn: từ tám học sinh, lập đội ba người và chỉ định một đội trưởng của chính đội đó.
+
+112
+00:10:41,186 --> 00:10:46,952
+Đội không có thứ tự giữa các thành viên còn lại, nhưng chức vụ đội trưởng lại quan trọng.
+
+113
+00:10:46,952 --> 00:10:51,200
+Ta cần đếm đúng mà không phân biệt vô ích hai thành viên thường.
+
+114
+00:10:51,200 --> 00:10:56,443
+Ở cách thứ nhất, ta chỉ định đội trưởng trước. Có tám lựa chọn.
+
+115
+00:10:56,443 --> 00:11:02,060
+Khi đã có trưởng, ta chọn thêm hai thành viên từ bảy người còn lại.
+
+116
+00:11:02,060 --> 00:11:08,800
+Hai người này không có vai trò phân biệt, nên số cách là bảy nhân sáu chia hai.
+
+117
+00:11:08,800 --> 00:11:17,600
+Vì hai thành viên thường tạo thành một nhóm không thứ tự, ta có hai mươi mốt khả năng sau khi chọn đội trưởng.
+
+118
+00:11:17,600 --> 00:11:26,400
+Với tám đội trưởng khả dĩ, số đội có phân công trưởng là tám nhân hai mươi mốt, bằng một trăm sáu mươi tám.
+
+119
+00:11:26,400 --> 00:11:30,196
+Ở cách thứ hai, ta chọn đội trước, chưa phân vai.
+
+120
+00:11:30,196 --> 00:11:40,549
+Bắt đầu từ tám nhân bảy nhân sáu dãy có thứ tự rồi chia sáu vì mỗi nhóm ba người có sáu thứ tự, ta được năm mươi sáu nhóm.
+
+121
+00:11:40,549 --> 00:11:44,000
+Từ mỗi nhóm, có ba cách chỉ định đội trưởng.
+
+122
+00:11:44,000 --> 00:11:48,738
+Hai con đường đếm khác nhau nhưng cùng cho một trăm sáu mươi tám.
+
+123
+00:11:48,738 --> 00:11:52,462
+Đây là một cách kiểm tra rất mạnh trong tổ hợp.
+
+124
+00:11:52,462 --> 00:12:01,600
+Mỗi kết quả cuối cùng gồm một bộ ba và một thành viên được đánh dấu làm đội trưởng, không phụ thuộc cách ta xây dựng nó.
+
+125
+00:12:01,600 --> 00:12:07,760
+Một sai lầm thường gặp là nhân tám nhân bảy nhân sáu rồi coi cả ba vị trí đều khác nhau.
+
+126
+00:12:07,760 --> 00:12:12,453
+Thực tế chỉ có đội trưởng là đặc biệt; hai thành viên còn lại ngang hàng.
+
+127
+00:12:12,453 --> 00:12:17,440
+Mỗi đội có trưởng đã bị ghi hai lần do đổi vị trí hai thành viên thường.
+
+128
+00:12:17,440 --> 00:12:19,200
+Chia hai sẽ sửa được lỗi.
+
+129
+00:12:19,200 --> 00:12:24,359
+Câu thứ nhất: có bốn học sinh và chọn hai bạn đi dự thi, không phân vai.
+
+130
+00:12:24,359 --> 00:12:31,034
+Vì nhóm A B và B A là một, em hãy tự đếm các nhóm. Có tất cả sáu nhóm khác nhau.
+
+131
+00:12:31,034 --> 00:12:36,800
+Nếu em ra mười hai, hãy kiểm tra xem mình có đếm hai thứ tự của mỗi nhóm không.
+
+132
+00:12:36,800 --> 00:12:42,240
+Câu thứ hai: trao giải nhất và nhì cho hai học sinh khác nhau trong năm bạn.
+
+133
+00:12:42,240 --> 00:12:48,640
+Giải nhất và giải nhì có ý nghĩa khác nhau, nên đổi người nhận giải sẽ tạo kết quả mới.
+
+134
+00:12:48,640 --> 00:12:54,400
+Ta có năm lựa chọn giải nhất rồi bốn lựa chọn giải nhì, tổng cộng hai mươi cách.
+
+135
+00:12:54,400 --> 00:12:59,643
+Câu thứ ba: chọn ba học sinh từ năm bạn không phân chức vụ.
+
+136
+00:12:59,643 --> 00:13:06,383
+Đếm có thứ tự được sáu mươi, mỗi nhóm bị ghi sáu lần. Vậy số nhóm là mười.
+
+137
+00:13:06,383 --> 00:13:12,000
+Em cần giải thích được hệ số sáu đến từ ba nhân hai nhân một.
+
+138
+00:13:12,000 --> 00:13:16,086
+Trước khi bấm máy hoặc viết công thức, hãy tự hỏi ba điều.
+
+139
+00:13:16,086 --> 00:13:22,686
+Kết quả có ghi vai trò hoặc vị trí không? Đổi chỗ hai phần tử có tạo kết quả mới không?
+
+140
+00:13:22,686 --> 00:13:29,600
+Có được dùng một phần tử nhiều lần không? Ba câu này giúp tránh phần lớn nhầm lẫn giữa các bài đếm.
+
+141
+00:13:29,600 --> 00:13:36,579
+Nhìn lại đường đi của bài học: ta bắt đầu từ một tình huống rất quen rồi tách thành hai loại kết quả.
+
+142
+00:13:36,579 --> 00:13:42,648
+Khi kết quả có vai trò, giữ thứ tự; khi không có vai trò, gộp các thứ tự trùng nhau.
+
+143
+00:13:42,648 --> 00:13:47,200
+Khi chọn ba phần tử, mỗi nhóm có sáu thứ tự, chứ không phải hai.
+
+144
+00:13:47,200 --> 00:13:53,572
+Video tiếp theo sẽ nghiên cứu trường hợp sắp xếp toàn bộ các phần tử khác nhau, gọi là hoán vị.
+
+145
+00:13:53,572 --> 00:13:57,214
+Sau đó ta lần lượt hình thành chỉnh hợp và tổ hợp.
+
+146
+00:13:57,214 --> 00:14:04,800
+Nhưng kiến thức quan trọng nhất hôm nay đã có: hiểu thế nào là một kết quả, rồi mới quyết định đếm nó ra sao.

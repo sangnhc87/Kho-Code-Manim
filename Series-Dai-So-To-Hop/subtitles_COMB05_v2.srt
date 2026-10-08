@@ -1,0 +1,627 @@
+1
+00:00:00,000 --> 00:00:05,083
+Trên bàn có bốn cuốn sách khác nhau mang tên A, B, C và D.
+
+2
+00:00:05,083 --> 00:00:09,828
+Chúng ta cần xếp tất cả lên bốn vị trí theo một hàng ngang.
+
+3
+00:00:09,828 --> 00:00:13,556
+Hãy thử dự đoán: có bao nhiêu cách xếp khác nhau?
+
+4
+00:00:13,556 --> 00:00:18,300
+Đừng vội dùng công thức giai thừa; hãy nhìn vào từng vị trí trước.
+
+5
+00:00:18,300 --> 00:00:25,325
+Nếu hai cuốn A và B đổi chỗ, ta được thứ tự B, A, C, D thay vì A, B, C, D.
+
+6
+00:00:25,325 --> 00:00:30,753
+Cả hai đều có đúng bốn cuốn sách như nhau, nhưng vị trí của chúng khác nhau.
+
+7
+00:00:30,753 --> 00:00:36,500
+Vì thế đây là hai cách xếp khác nhau. Điều kiện phân biệt kết quả là thứ tự.
+
+8
+00:00:36,500 --> 00:00:42,845
+Ở bài này, không có cuốn sách nào bị bỏ lại, cũng không được đặt một cuốn vào hai ô.
+
+9
+00:00:42,845 --> 00:00:47,921
+Mỗi cách xếp là một phép ghép một-một giữa bốn cuốn sách và bốn vị trí.
+
+10
+00:00:47,921 --> 00:00:54,900
+Đặc điểm dùng hết các phần tử rất quan trọng: nó giúp phân biệt hoán vị với chỉnh hợp ở video sau.
+
+11
+00:00:54,900 --> 00:00:58,255
+Ta quyết định điền ô thứ nhất từ trái sang phải.
+
+12
+00:00:58,255 --> 00:01:02,525
+Chúng ta có thể chọn A, B, C hoặc D, đúng bốn khả năng.
+
+13
+00:01:02,525 --> 00:01:08,320
+Sau khi chọn xong cuốn đầu tiên, cuốn ấy đã được sử dụng, không thể tiếp tục chọn lại.
+
+14
+00:01:08,320 --> 00:01:13,200
+Bây giờ hãy quan sát số khả năng của ô tiếp theo thay đổi thế nào.
+
+15
+00:01:13,200 --> 00:01:19,764
+Một kết quả của bài toán phải là một dãy bốn ký hiệu khác nhau được lấy từ A, B, C, D.
+
+16
+00:01:19,764 --> 00:01:22,449
+Nếu đổi thứ tự, ta được kết quả mới.
+
+17
+00:01:22,449 --> 00:01:26,626
+Nếu bỏ bớt một ký hiệu, ta không còn trả lời đúng đề bài.
+
+18
+00:01:26,626 --> 00:01:31,400
+Bây giờ ta sẽ dùng quy tắc nhân để đếm tất cả các dãy như vậy.
+
+19
+00:01:31,400 --> 00:01:34,176
+Hãy giữ hình ảnh bốn ô trống trước mắt.
+
+20
+00:01:34,176 --> 00:01:39,112
+Ta sẽ quyết định nội dung của từng ô theo thứ tự từ trái qua phải.
+
+21
+00:01:39,112 --> 00:01:43,122
+Mỗi lần điền xong một ô, số sách chưa dùng giảm đi một.
+
+22
+00:01:43,122 --> 00:01:49,600
+Cách đếm theo từng bước như thế chính là ứng dụng trực tiếp quy tắc nhân đã học ở Video 02.
+
+23
+00:01:49,600 --> 00:01:52,505
+Ở ô đầu tiên, ta có bốn khả năng.
+
+24
+00:01:52,505 --> 00:01:58,316
+Khi đặt chẳng hạn cuốn B vào vị trí đó, trong kho chỉ còn A, C và D.
+
+25
+00:01:58,316 --> 00:02:08,000
+Mọi lựa chọn đầu tiên đều để lại đúng ba cuốn, vì thế số khả năng ở bước hai không phụ thuộc vào việc ta đã chọn cuốn nào trước.
+
+26
+00:02:08,000 --> 00:02:15,216
+Với mỗi cách chọn cuốn đầu tiên, chúng ta có đúng ba lựa chọn khác nhau cho cuốn thứ hai.
+
+27
+00:02:15,216 --> 00:02:26,400
+Vì hai bước nối tiếp nhau và mỗi nhánh có ba khả năng ở bước sau, quy tắc nhân cho bốn nhân ba bằng mười hai cách điền hai ô đầu.
+
+28
+00:02:26,400 --> 00:02:33,579
+Sau khi hai ô đầu đã có sách, chỉ còn hai cuốn trong kho. Ta có hai cách điền ô thứ ba.
+
+29
+00:02:33,579 --> 00:02:39,453
+Do vậy mỗi một trong mười hai kết quả trước đây lại sinh ra hai kết quả mới.
+
+30
+00:02:39,453 --> 00:02:45,000
+Sau ba bước có bốn nhân ba nhân hai, tức hai mươi bốn trường hợp tạm thời.
+
+31
+00:02:45,000 --> 00:02:51,662
+Ở ô thứ tư, chỉ còn một cuốn sách nên chúng ta bắt buộc đặt cuốn ấy vào ô còn lại.
+
+32
+00:02:51,662 --> 00:02:58,641
+Bước cuối có đúng một khả năng. Ta thu được bốn nhân ba nhân hai nhân một bằng hai mươi bốn cách.
+
+33
+00:02:58,641 --> 00:03:03,400
+Không được cộng bốn, ba, hai, một vì đây là bốn công đoạn liên tiếp.
+
+34
+00:03:03,400 --> 00:03:09,183
+Bất kỳ cách xếp nào cũng xác định duy nhất cuốn ở ô một, ô hai, ô ba và ô bốn.
+
+35
+00:03:09,183 --> 00:03:12,762
+Vì vậy nó ứng với đúng một đường đi trong cây lựa chọn.
+
+36
+00:03:12,762 --> 00:03:18,545
+Hai đường đi khác nhau phải khác nhau ở ít nhất một vị trí nên cho hai cách xếp khác nhau.
+
+37
+00:03:18,545 --> 00:03:22,400
+Đây là lập luận bảo đảm chúng ta không bỏ sót, không đếm trùng.
+
+38
+00:03:22,400 --> 00:03:32,815
+Nếu liệt kê bằng máy tính tất cả các dãy bốn chữ A, B, C, D, mỗi chữ xuất hiện đúng một lần, ta được đúng hai mươi bốn dãy.
+
+39
+00:03:32,815 --> 00:03:40,800
+Phương pháp liệt kê không thay thế chứng minh, nhưng kiểm tra được số lượng và giúp thấy rõ mô hình đang xét.
+
+40
+00:03:40,800 --> 00:03:47,550
+Khi cuốn A ở ô đầu, ba cuốn B, C, D có thể hoán đổi cho nhau theo sáu cách.
+
+41
+00:03:47,550 --> 00:03:51,938
+Ta có thể viết lần lượt ABCD, ABDC, ACBD, ACDB, ADBC và ADCB.
+
+42
+00:03:51,938 --> 00:03:59,700
+Nhìn vào nhóm này, em sẽ thấy sau khi cố định một vị trí, bài toán trở thành xếp ba vật còn lại.
+
+43
+00:03:59,700 --> 00:04:07,400
+Bây giờ đặt B ở ô đầu tiên. Các cuốn A, C và D còn lại cũng có sáu cách xếp.
+
+44
+00:04:07,400 --> 00:04:11,433
+Điều tương tự đúng nếu cuốn đầu là C hoặc D.
+
+45
+00:04:11,433 --> 00:04:18,400
+Vậy toàn bộ hai mươi bốn dãy có thể chia thành bốn nhóm rời nhau, mỗi nhóm sáu dãy.
+
+46
+00:04:18,400 --> 00:04:23,354
+Một dãy không thể vừa bắt đầu bằng A, vừa bắt đầu bằng B.
+
+47
+00:04:23,354 --> 00:04:30,431
+Vì thế bốn nhóm theo chữ đứng đầu không giao nhau. Chúng bao phủ tất cả các dãy hợp lệ.
+
+48
+00:04:30,431 --> 00:04:36,800
+Ta có sáu cộng sáu cộng sáu cộng sáu, bằng bốn nhân sáu, vẫn được hai mươi bốn.
+
+49
+00:04:36,800 --> 00:04:43,229
+Hãy quan sát ABCD và ADCB. Hai dãy đều bắt đầu bằng A nhưng ba vị trí sau khác nhau.
+
+50
+00:04:43,229 --> 00:04:47,407
+Chúng không được gộp lại như khi chỉ chọn một nhóm học sinh.
+
+51
+00:04:47,407 --> 00:04:54,800
+Tập này nghiên cứu phép sắp xếp, nên chỉ cần đổi vị trí của hai cuốn sách đã tạo ra kết quả mới.
+
+52
+00:04:54,800 --> 00:04:59,407
+Sơ đồ ô trống cho công thức bốn nhân ba nhân hai nhân một.
+
+53
+00:04:59,407 --> 00:05:06,647
+Bảng hai mươi bốn dãy cho cách khác: bốn nhóm có cùng sáu dãy. Mà sáu bằng ba nhân hai nhân một.
+
+54
+00:05:06,647 --> 00:05:12,900
+Hai lập luận này thống nhất, giúp ta tin tưởng rằng công thức không phải một mẹo ghi nhớ.
+
+55
+00:05:12,900 --> 00:05:15,596
+Ta đã biết kết quả với bốn sách.
+
+56
+00:05:15,596 --> 00:05:24,696
+Nếu có năm, sáu hoặc n vật phân biệt thì nguyên tắc vẫn giống hệt: điền lần lượt các vị trí, không dùng lại vật đã chọn.
+
+57
+00:05:24,696 --> 00:05:31,100
+Số khả năng giảm từ n xuống n trừ một, rồi tiếp tục giảm từng đơn vị tới một.
+
+58
+00:05:31,100 --> 00:05:38,497
+Một hoán vị của n phần tử phân biệt là một cách sắp xếp tất cả n phần tử đó theo một thứ tự.
+
+59
+00:05:38,497 --> 00:05:44,969
+Bản chất của hoán vị không phải là chọn bớt đối tượng, mà là dùng hết rồi quyết định thứ tự.
+
+60
+00:05:44,969 --> 00:05:49,900
+Đây là cách phát biểu mà học sinh nên hiểu trước khi học thuộc công thức.
+
+61
+00:05:49,900 --> 00:05:59,891
+Áp dụng quy tắc nhân cho n ô, vị trí đầu có n cách; vị trí thứ hai có n trừ một cách; cứ như vậy tới vị trí cuối cùng còn một cách.
+
+62
+00:05:59,891 --> 00:06:05,474
+Số hoán vị là tích n nhân n trừ một nhân các số nguyên dương còn lại tới một.
+
+63
+00:06:05,474 --> 00:06:09,000
+Ta ký hiệu là P chỉ số n, bằng n giai thừa.
+
+64
+00:06:09,000 --> 00:06:13,549
+Ví dụ, năm học sinh khác nhau cùng xếp thành một hàng để chụp ảnh.
+
+65
+00:06:13,549 --> 00:06:19,311
+Ta có năm cách chọn người đứng đầu, bốn cách chọn người thứ hai và tiếp tục như vậy.
+
+66
+00:06:19,311 --> 00:06:23,254
+Kết quả là năm giai thừa, bằng một trăm hai mươi cách xếp.
+
+67
+00:06:23,254 --> 00:06:27,500
+Nhớ rằng không phân biệt vị trí thì không còn là bài toán này.
+
+68
+00:06:27,500 --> 00:06:30,890
+Tại sao người ta quy ước không giai thừa bằng một?
+
+69
+00:06:30,890 --> 00:06:35,821
+Khi không có phần tử nào, chỉ có đúng một cách xếp: không đặt gì cả.
+
+70
+00:06:35,821 --> 00:06:41,677
+Quy ước này cũng khiến các công thức truy hồi và công thức tổ hợp về sau nhất quán.
+
+71
+00:06:41,677 --> 00:06:46,300
+Đây không phải vì số không nhân ra số một theo phép tính thông thường.
+
+72
+00:06:46,300 --> 00:06:51,752
+Ta cũng có thể chứng minh bằng cách chọn người đứng đầu trước, gồm n lựa chọn.
+
+73
+00:06:51,752 --> 00:06:57,845
+Sau đó n trừ một người còn lại được sắp xếp theo P chỉ số n trừ một cách.
+
+74
+00:06:57,845 --> 00:07:04,900
+Vì hai công đoạn nối tiếp nhau, ta được P chỉ số n bằng n nhân P chỉ số n trừ một.
+
+75
+00:07:04,900 --> 00:07:14,894
+Trước khi dùng giai thừa, hãy tự hỏi ba điều: các phần tử có phân biệt không, ta có xếp tất cả chúng hay không, và đổi thứ tự có tạo ra kết quả khác không.
+
+76
+00:07:14,894 --> 00:07:18,781
+Nếu cả ba điều đều đúng, đây là mô hình hoán vị đơn giản.
+
+77
+00:07:18,781 --> 00:07:23,500
+Các bài có phần tử giống nhau hoặc chỉ chọn một phần sẽ cần sửa cách đếm.
+
+78
+00:07:23,500 --> 00:07:29,293
+Bây giờ tăng mức độ khó. Có năm học sinh A, B, C, D, E xếp thành một hàng.
+
+79
+00:07:29,293 --> 00:07:31,733
+Yêu cầu A và B đứng cạnh nhau.
+
+80
+00:07:31,733 --> 00:07:37,221
+Nếu cứ liệt kê cả một trăm hai mươi hoán vị rồi tìm, ta rất dễ bỏ sót.
+
+81
+00:07:37,221 --> 00:07:42,100
+Một cách thông minh hơn là tạm coi A và B như một khối duy nhất.
+
+82
+00:07:42,100 --> 00:07:50,157
+Khi gộp A và B thành một khối, ta có bốn đối tượng cần xếp: khối AB, người C, người D và người E.
+
+83
+00:07:50,157 --> 00:07:56,200
+Bốn đối tượng này đều phân biệt, nên có bốn giai thừa, bằng hai mươi bốn cách sắp.
+
+84
+00:07:56,200 --> 00:08:00,900
+Nhưng như thế chúng ta vẫn chưa tính mọi thứ tự bên trong khối.
+
+85
+00:08:00,900 --> 00:08:07,391
+Một khối đứng ở một vị trí cố định vẫn có thể chứa A rồi B, hoặc B rồi A.
+
+86
+00:08:07,391 --> 00:08:11,935
+Hai cách này khác nhau vì A và B là hai người phân biệt.
+
+87
+00:08:11,935 --> 00:08:19,400
+Nếu chỉ tính bốn giai thừa mà không nhân thêm hai, ta đã bỏ mất đúng một nửa các cách xếp hợp lệ.
+
+88
+00:08:19,400 --> 00:08:24,737
+Đầu tiên, ta có hai mươi bốn cách xếp khối cùng ba bạn còn lại.
+
+89
+00:08:24,737 --> 00:08:30,073
+Ứng với mỗi cách xếp khối, có hai cách sắp A và B trong khối.
+
+90
+00:08:30,073 --> 00:08:37,900
+Theo quy tắc nhân, số cách A và B đứng cạnh nhau là hai mươi bốn nhân hai, bằng bốn mươi tám.
+
+91
+00:08:37,900 --> 00:08:44,091
+Để kiểm tra kỹ thuật gộp khối, hãy xét ví dụ nhỏ chỉ ba học sinh A, B, C.
+
+92
+00:08:44,091 --> 00:08:48,328
+Ta thấy bốn cách xếp hợp lệ là ABC, BAC, CAB và CBA.
+
+93
+00:08:48,328 --> 00:08:55,497
+Trong cách gộp khối, hai đối tượng gồm khối AB và C có hai cách xếp, rồi khối có hai cách đảo.
+
+94
+00:08:55,497 --> 00:08:56,800
+Tích đúng bằng bốn.
+
+95
+00:08:56,800 --> 00:09:02,416
+Ta chỉ gộp A và B khi muốn đếm các cách có A, B đứng liền nhau.
+
+96
+00:09:02,416 --> 00:09:10,345
+Nếu đề yêu cầu không đứng cạnh, kết quả bốn mươi tám là số cách bị cấm chứ không phải số cách cần tìm.
+
+97
+00:09:10,345 --> 00:09:15,300
+Lát nữa ta sẽ dùng chính con số này để giải bài toán ngược lại.
+
+98
+00:09:15,300 --> 00:09:21,852
+Vẫn là năm học sinh như trước nhưng yêu cầu đổi thành A và B không được đứng cạnh nhau.
+
+99
+00:09:21,852 --> 00:09:27,093
+Bây giờ nếu gộp khối A, B thì đó là những trường hợp cần loại bỏ.
+
+100
+00:09:27,093 --> 00:09:34,300
+Có hai hướng giải hiệu quả: lấy tổng trừ phần bù, hoặc xếp ba bạn còn lại trước rồi chọn khoảng trống.
+
+101
+00:09:34,300 --> 00:09:38,349
+Không có ràng buộc, năm người có một trăm hai mươi cách xếp.
+
+102
+00:09:38,349 --> 00:09:42,087
+Số cách A và B đứng cạnh nhau là bốn mươi tám.
+
+103
+00:09:42,087 --> 00:09:48,005
+Mọi cách xếp hoặc thuộc nhóm đứng cạnh, hoặc thuộc nhóm không đứng cạnh, không thể thuộc cả hai.
+
+104
+00:09:48,005 --> 00:09:53,300
+Vì vậy đáp án là một trăm hai mươi trừ bốn mươi tám, bằng bảy mươi hai.
+
+105
+00:09:53,300 --> 00:09:59,066
+Trong cách thứ hai, hãy xếp ba bạn C, D, E trước. Có sáu thứ tự.
+
+106
+00:09:59,066 --> 00:10:06,274
+Dù thứ tự nào, ta đều có bốn khoảng trống: trước người đầu, giữa các người và sau người cuối.
+
+107
+00:10:06,274 --> 00:10:12,400
+Muốn A và B không cạnh nhau, ta phải cho hai bạn vào hai khoảng khác nhau.
+
+108
+00:10:12,400 --> 00:10:17,525
+Từ bốn khoảng trống, ta chọn hai khoảng khác nhau. Có sáu cặp khoảng.
+
+109
+00:10:17,525 --> 00:10:27,408
+Khi đã chọn được hai khoảng, ta còn hai cách gán A và B vào đó: A vào khoảng thứ nhất, hoặc B vào khoảng thứ nhất.
+
+110
+00:10:27,408 --> 00:10:31,800
+Như vậy ở bước này ta có sáu nhân hai khả năng.
+
+111
+00:10:31,800 --> 00:10:39,851
+Theo quy tắc nhân, số cách bằng sáu thứ tự của C, D, E nhân sáu cặp khoảng nhân hai thứ tự của A, B.
+
+112
+00:10:39,851 --> 00:10:44,359
+Tích này bằng bảy mươi hai, khớp hoàn toàn với phương pháp phần bù.
+
+113
+00:10:44,359 --> 00:10:50,800
+Hai cách giải sử dụng những cách phân chia trường hợp khác nhau nhưng đếm cùng một tập kết quả.
+
+114
+00:10:50,800 --> 00:10:56,348
+Ở phương pháp phần bù, ta liệt kê toàn bộ rồi loại đúng những trường hợp vi phạm.
+
+115
+00:10:56,348 --> 00:11:01,587
+Ở phương pháp khoảng trống, ta dựng thẳng các trường hợp hợp lệ mà không cần trừ.
+
+116
+00:11:01,587 --> 00:11:09,600
+Mỗi cách xếp cuối cùng có một trật tự C, D, E và vị trí riêng của A, B, nên được tạo ra đúng một lần.
+
+117
+00:11:09,600 --> 00:11:14,646
+Bây giờ xét điều kiện khác: A phải đứng trước B nhưng không bắt buộc đứng sát.
+
+118
+00:11:14,646 --> 00:11:20,286
+Với bất kỳ dãy nào, ta có thể đổi chỗ A và B để nhận được một dãy khác.
+
+119
+00:11:20,286 --> 00:11:24,441
+Trong đúng hai dãy ghép cặp này, có một dãy A đứng trước B.
+
+120
+00:11:24,441 --> 00:11:28,300
+Vì vậy số cách hợp lệ bằng một nửa toàn bộ hoán vị.
+
+121
+00:11:28,300 --> 00:11:31,417
+Có một trăm hai mươi cách xếp năm người.
+
+122
+00:11:31,417 --> 00:11:40,767
+Phép đổi vị trí của A và B tạo thành các cặp đôi không giao nhau: một dãy A trước B và một dãy B trước A.
+
+123
+00:11:40,767 --> 00:11:47,000
+Do đó số cách A đứng trước B là một trăm hai mươi chia hai, bằng sáu mươi.
+
+124
+00:11:47,000 --> 00:11:52,607
+Giả sử có sáu học sinh phân biệt và yêu cầu A, B đứng ở hai đầu hàng.
+
+125
+00:11:52,607 --> 00:12:01,016
+Ta có hai cách phân công hai đầu cho A và B, rồi bốn học sinh còn lại hoán vị ở giữa theo bốn giai thừa cách.
+
+126
+00:12:01,016 --> 00:12:06,000
+Từ quy tắc nhân, đáp án là hai nhân hai mươi bốn, bằng bốn mươi tám.
+
+127
+00:12:06,000 --> 00:12:09,800
+Với sáu người, tổng số cách xếp là bảy trăm hai mươi.
+
+128
+00:12:09,800 --> 00:12:21,517
+Khi A và B đứng cạnh nhau, ta gộp thành một khối cùng bốn người còn lại, có năm giai thừa cách xếp khối; nhân thêm hai cách đảo A và B, được hai trăm bốn mươi.
+
+129
+00:12:21,517 --> 00:12:25,000
+Vậy số cách không kề nhau bằng bốn trăm tám mươi.
+
+130
+00:12:25,000 --> 00:12:30,288
+Ta cần phân biệt ba câu hỏi thường gặp. Xếp cả năm người thành hàng là hoán vị.
+
+131
+00:12:30,288 --> 00:12:35,869
+Chọn ba trong năm người để điền ba vị trí khác nhau là chỉnh hợp, học ở Video 06.
+
+132
+00:12:35,869 --> 00:12:41,156
+Còn chọn ba người vào một đội không có vai trò là tổ hợp, học ở Video 07.
+
+133
+00:12:41,156 --> 00:12:43,800
+Cùng dữ kiện nhưng ba bài toán khác nhau.
+
+134
+00:12:43,800 --> 00:12:49,967
+Nếu trong một dãy có hai vật giống hệt nhau, việc đổi hai vật ấy không tạo ra cách xếp mới.
+
+135
+00:12:49,967 --> 00:12:53,490
+Công thức n giai thừa sẽ đếm lặp trong trường hợp này.
+
+136
+00:12:53,490 --> 00:13:02,300
+Ở đây chúng ta luôn giả sử các học sinh hay cuốn sách đều phân biệt; chủ đề hoán vị lặp sẽ được học kỹ ở một video chuyên biệt.
+
+137
+00:13:02,300 --> 00:13:08,010
+Câu hỏi thứ nhất: bốn người khác nhau xếp thành một hàng, không có ràng buộc gì thêm.
+
+138
+00:13:08,010 --> 00:13:10,548
+Hãy tạm dừng để học sinh tự tính.
+
+139
+00:13:10,548 --> 00:13:16,259
+Đó là một hoán vị đầy đủ nên có bốn giai thừa, tức hai mươi bốn cách xếp.
+
+140
+00:13:16,259 --> 00:13:20,700
+Hãy đối chiếu với bảng hai mươi bốn dãy đã xuất hiện đầu video.
+
+141
+00:13:20,700 --> 00:13:26,316
+Câu thứ hai yêu cầu trong năm người phân biệt, A và B phải đứng liền nhau.
+
+142
+00:13:26,316 --> 00:13:33,584
+Hãy nghĩ đến kỹ thuật khối: gộp hai bạn thành một vật cùng ba người còn lại, rồi xếp bốn đối tượng.
+
+143
+00:13:33,584 --> 00:13:39,200
+Cuối cùng nhân hai cách đảo thứ tự bên trong khối. Kết quả là bốn mươi tám.
+
+144
+00:13:39,200 --> 00:13:44,941
+Câu thứ ba đổi duy nhất một chữ trong điều kiện: A và B không được đứng cạnh.
+
+145
+00:13:44,941 --> 00:13:50,045
+Tổng có một trăm hai mươi cách, còn trường hợp kề nhau có bốn mươi tám.
+
+146
+00:13:50,045 --> 00:13:52,278
+Ta lấy hiệu được bảy mươi hai.
+
+147
+00:13:52,278 --> 00:13:57,700
+Hãy chú ý vì sao dùng nguyên công thức gộp khối sẽ trả lời ngược câu hỏi.
+
+148
+00:13:57,700 --> 00:14:02,552
+Trong câu thứ tư, có sáu học sinh và A, B phải đứng ở hai đầu.
+
+149
+00:14:02,552 --> 00:14:09,225
+Hai bạn có thể đổi đầu cho nhau theo hai cách, trong khi bốn người giữa có bốn giai thừa cách xếp.
+
+150
+00:14:09,225 --> 00:14:11,044
+Ta nhân được bốn mươi tám.
+
+151
+00:14:11,044 --> 00:14:16,200
+Đây là bài cố định vai trò của vị trí, không phải gộp hai bạn thành khối.
+
+152
+00:14:16,200 --> 00:14:20,974
+Trước mọi bài toán đếm, hãy xác định mình đang đếm kết quả như thế nào.
+
+153
+00:14:20,974 --> 00:14:28,732
+Có dùng hết đối tượng hay chỉ chọn một phần, đối tượng có thực sự phân biệt, và liệu đổi chỗ có tạo kết quả mới?
+
+154
+00:14:28,732 --> 00:14:34,700
+Trả lời rõ ba câu hỏi ấy sẽ giúp chọn đúng mô hình và tránh nhiều lỗi sai quen thuộc.
+
+155
+00:14:34,700 --> 00:14:42,751
+Hôm nay chúng ta hiểu số hoán vị của n vật phân biệt bằng n giai thừa, đồng thời biết giải bài toán đứng cạnh và không đứng cạnh.
+
+156
+00:14:42,751 --> 00:14:49,969
+Sang Video 06, ta sẽ không dùng hết mọi phần tử nữa, mà chỉ chọn một phần để sắp vào các vị trí có vai trò.
+
+157
+00:14:49,969 --> 00:14:53,300
+Từ đó, công thức chỉnh hợp sẽ xuất hiện rất tự nhiên.

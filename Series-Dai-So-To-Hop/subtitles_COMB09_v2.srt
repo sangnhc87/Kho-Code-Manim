@@ -1,0 +1,603 @@
+1
+00:00:00,000 --> 00:00:06,627
+Ta bắt đầu bằng ba thẻ mang chữ A, B, C và hai ô có thứ tự.
+
+2
+00:00:06,627 --> 00:00:10,915
+Ở mỗi lượt, ta lấy một thẻ để điền vào ô.
+
+3
+00:00:10,915 --> 00:00:18,322
+Sau đó thẻ được trả về, nên ở lượt tiếp theo chữ vừa lấy vẫn có thể xuất hiện.
+
+4
+00:00:18,322 --> 00:00:23,000
+Hãy thử dự đoán xem có bao nhiêu dãy gồm hai chữ.
+
+5
+00:00:23,000 --> 00:00:31,077
+Ta tạm giữ nguyên ô thứ hai. Ở ô đầu tiên có ba khả năng độc lập: A, B hoặc C.
+
+6
+00:00:31,077 --> 00:00:34,538
+Chọn A chỉ là một trong ba trường hợp.
+
+7
+00:00:34,538 --> 00:00:43,000
+Hãy để ý rằng việc chọn chữ đầu không làm mất chữ nào khỏi tập lựa chọn dành cho ô kế tiếp.
+
+8
+00:00:43,000 --> 00:00:48,818
+Khi ô đầu nhận A, ba cách điền ô thứ hai là AA, AB và AC.
+
+9
+00:00:48,818 --> 00:00:53,182
+Dãy AA hoàn toàn hợp lệ vì chúng ta cho phép lặp.
+
+10
+00:00:53,182 --> 00:00:58,273
+Nếu ô đầu là B hoặc C, ta cũng có ba lựa chọn sau.
+
+11
+00:00:58,273 --> 00:01:03,000
+Đó là điều làm cho cây lựa chọn có các nhánh đều nhau.
+
+12
+00:01:03,000 --> 00:01:09,071
+Ta liệt kê theo chữ thứ nhất, để chắc chắn không bỏ sót và không đếm trùng.
+
+13
+00:01:09,071 --> 00:01:18,000
+Nhóm bắt đầu bằng A có ba dãy, nhóm bắt đầu bằng B có ba dãy, và nhóm bắt đầu bằng C cũng có ba.
+
+14
+00:01:18,000 --> 00:01:23,000
+Tổng cộng có chín dãy. Mỗi dãy xuất hiện đúng một lần trong bảng.
+
+15
+00:01:23,000 --> 00:01:31,525
+Có hai câu hỏi độc lập cần phân biệt: kết quả có xét thứ tự hay không, và có được lặp lại phần tử hay không.
+
+16
+00:01:31,525 --> 00:01:36,443
+Ở đây AB khác BA bởi chúng đặt chữ ở hai vị trí khác nhau.
+
+17
+00:01:36,443 --> 00:01:43,000
+Đồng thời AA vẫn được tính vì phép lặp được cho phép. Đây là điểm nền tảng của cả bài.
+
+18
+00:01:43,000 --> 00:01:49,909
+Nếu thay ba thẻ bằng bốn thẻ nhưng vẫn điền hai ô, ta không cần liệt kê tất cả.
+
+19
+00:01:49,909 --> 00:01:55,727
+Ô thứ nhất có bốn lựa chọn, và ô thứ hai vẫn có bốn lựa chọn.
+
+20
+00:01:55,727 --> 00:02:03,000
+Ta nhân hai số đó để được mười sáu. Trong chương tiếp theo, ta tổng quát hóa phép đếm này.
+
+21
+00:02:03,000 --> 00:02:08,436
+Lần này ta cần viết dãy ba chữ từ bảng A, B, C.
+
+22
+00:02:08,436 --> 00:02:13,873
+Ba ô mang vị trí thứ nhất, thứ hai, thứ ba khác nhau.
+
+23
+00:02:13,873 --> 00:02:18,891
+Không có chữ nào bị loại khỏi bảng sau khi sử dụng.
+
+24
+00:02:18,891 --> 00:02:26,000
+Bởi vậy ta có thể chọn độc lập cho từng ô và áp dụng quy tắc nhân.
+
+25
+00:02:26,000 --> 00:02:29,158
+Ta có ba lựa chọn ở vị trí đầu.
+
+26
+00:02:29,158 --> 00:02:35,825
+Nếu chọn A, mọi dãy kết quả sẽ bắt đầu bằng A; chọn B hoặc C cũng tương tự.
+
+27
+00:02:35,825 --> 00:02:38,982
+Ở giai đoạn này chưa có dãy hoàn chỉnh.
+
+28
+00:02:38,982 --> 00:02:46,000
+Cây lựa chọn cho thấy mỗi nhánh đầu sẽ phải tiếp tục phân nhánh ở những vị trí còn lại.
+
+29
+00:02:46,000 --> 00:02:52,923
+Vì phép lặp được phép, từ mỗi chữ đầu lại có ba khả năng cho chữ thứ hai.
+
+30
+00:02:52,923 --> 00:03:00,231
+Ta được chín tiền tố gồm hai chữ. Ví dụ AA, AB, AC chỉ thuộc nhánh bắt đầu A.
+
+31
+00:03:00,231 --> 00:03:06,000
+Tính phân nhóm theo tiền tố giúp kiểm soát việc liệt kê, tránh đếm trùng.
+
+32
+00:03:06,000 --> 00:03:13,302
+Mỗi tiền tố hai chữ đều nhận được một trong ba chữ ở ô thứ ba, kể cả chữ đã có trước đó.
+
+33
+00:03:13,302 --> 00:03:17,746
+Vì thế từ chín tiền tố tạo ra hai mươi bảy dãy hoàn chỉnh.
+
+34
+00:03:17,746 --> 00:03:26,000
+Chúng ta không phải viết ra mọi dãy để chứng minh, nhưng cách tổ chức theo cây cho thấy tất cả được xét đúng một lần.
+
+35
+00:03:26,000 --> 00:03:36,175
+Tổng quát, giả sử có n ký hiệu và ta lập dãy gồm k vị trí phân biệt, cho phép một ký hiệu xuất hiện ở nhiều vị trí.
+
+36
+00:03:36,175 --> 00:03:41,088
+Mỗi vị trí có n cách chọn, không phụ thuộc lựa chọn trước đó.
+
+37
+00:03:41,088 --> 00:03:46,000
+Áp dụng quy tắc nhân k lần, ta nhận được n mũ k dãy.
+
+38
+00:03:46,000 --> 00:03:50,561
+Không phải cứ có k vị trí là được dùng n mũ k.
+
+39
+00:03:50,561 --> 00:04:00,386
+Nếu chữ đầu bị cấm một ký hiệu, nếu không được lặp, hoặc nếu có ràng buộc giữa hai vị trí, số cách chọn có thể thay đổi.
+
+40
+00:04:00,386 --> 00:04:06,000
+Khi đó phải đếm theo từng bước, chia trường hợp hoặc dùng phương pháp phần bù.
+
+41
+00:04:06,000 --> 00:04:14,679
+Hãy xét mã PIN có đúng bốn ký tự, mỗi ký tự là một chữ số từ không đến chín.
+
+42
+00:04:14,679 --> 00:04:23,792
+Mã PIN là một chuỗi ký tự, không nhất thiết phải biểu diễn một số tự nhiên có bốn chữ số.
+
+43
+00:04:23,792 --> 00:04:29,000
+Vì thế mã như không không bảy ba vẫn được chấp nhận.
+
+44
+00:04:29,000 --> 00:04:32,793
+Vị trí đầu tiên của mã PIN có mười cách chọn.
+
+45
+00:04:32,793 --> 00:04:38,655
+Nếu chọn chữ số không, mã vẫn có đủ bốn ký tự và hoàn toàn hợp lệ.
+
+46
+00:04:38,655 --> 00:04:45,207
+Đây là khác biệt rất quan trọng so với bài toán lập số tự nhiên có bốn chữ số.
+
+47
+00:04:45,207 --> 00:04:49,000
+Không được tự ý loại chữ số không khỏi ô đầu.
+
+48
+00:04:49,000 --> 00:04:55,545
+Sau khi điền chữ số thứ nhất, không có chữ số nào bị lấy khỏi tập lựa chọn.
+
+49
+00:04:55,545 --> 00:05:03,545
+Do đó vị trí thứ hai vẫn có mười cách. Điều này đúng cho cả vị trí thứ ba và thứ tư.
+
+50
+00:05:03,545 --> 00:05:09,000
+Ta nhận được bốn thừa số bằng mười, không phải dãy mười, chín, tám, bảy.
+
+51
+00:05:09,000 --> 00:05:16,451
+Áp dụng quy tắc nhân, số mã PIN bằng mười nhân mười nhân mười nhân mười, tức mười nghìn.
+
+52
+00:05:16,451 --> 00:05:23,510
+Mã không không không không được tính, vì bốn vị trí đều có một lựa chọn hợp lệ.
+
+53
+00:05:23,510 --> 00:05:29,000
+Mã chín chín chín chín cũng hợp lệ nếu đề bài cho phép lặp.
+
+54
+00:05:29,000 --> 00:05:32,051
+Mã không không bảy ba gồm bốn ký tự.
+
+55
+00:05:32,051 --> 00:05:39,847
+Nếu ta coi nó là số bảy mươi ba thì sẽ làm mất hai ký tự đầu, dẫn đến sai đối tượng đếm.
+
+56
+00:05:39,847 --> 00:05:49,000
+Bài toán lập mã đếm các chuỗi, còn bài toán lập số tự nhiên đếm các số đáp ứng điều kiện chữ số hàng nghìn khác không.
+
+57
+00:05:49,000 --> 00:05:55,032
+Giả sử thay yêu cầu bằng lập số tự nhiên có đúng bốn chữ số, vẫn cho phép lặp.
+
+58
+00:05:55,032 --> 00:06:02,333
+Khi đó hàng nghìn chỉ có chín lựa chọn từ một đến chín, còn ba hàng sau mỗi hàng có mười lựa chọn.
+
+59
+00:06:02,333 --> 00:06:09,000
+Kết quả là chín nghìn số, khác mười nghìn mã PIN. Hãy luôn xác định chính xác đối tượng đang đếm.
+
+60
+00:06:09,000 --> 00:06:18,583
+Ta vẫn dùng mười chữ số và bốn vị trí, nhưng bổ sung yêu cầu không được sử dụng một chữ số quá một lần.
+
+61
+00:06:18,583 --> 00:06:25,483
+Sau khi chọn một chữ số, ký hiệu đó không còn hợp lệ ở các vị trí sau.
+
+62
+00:06:25,483 --> 00:06:32,000
+Vì thế không thể áp dụng công thức mười mũ bốn như bài mã PIN vừa rồi.
+
+63
+00:06:32,000 --> 00:06:42,000
+Vì đây vẫn là chuỗi chứ chưa phải số tự nhiên bốn chữ số, ô đầu có mười khả năng, kể cả chữ số không.
+
+64
+00:06:42,000 --> 00:06:52,000
+Khi một chữ số được chọn, ta đánh dấu nó là đã sử dụng và không cho xuất hiện lại ở những ô còn lại.
+
+65
+00:06:52,000 --> 00:06:57,556
+Sau khi điền ô đầu, tập chữ số hợp lệ chỉ còn chín phần tử.
+
+66
+00:06:57,556 --> 00:07:04,593
+Điều quan trọng là dù đã chọn chữ số nào, số lượng lựa chọn tiếp theo đều là chín.
+
+67
+00:07:04,593 --> 00:07:12,000
+Vì thế ta vẫn có thể dùng quy tắc nhân, chỉ khác là các thừa số không còn bằng nhau.
+
+68
+00:07:12,000 --> 00:07:19,925
+Khi hai vị trí đầu đã sử dụng hai chữ số khác nhau, vị trí thứ ba có tám lựa chọn.
+
+69
+00:07:19,925 --> 00:07:23,321
+Sau đó vị trí cuối còn bảy lựa chọn.
+
+70
+00:07:23,321 --> 00:07:32,000
+Như vậy số chuỗi dài bốn không lặp bằng mười nhân chín nhân tám nhân bảy, bằng năm nghìn không trăm bốn mươi.
+
+71
+00:07:32,000 --> 00:07:40,254
+Nếu thay chuỗi bằng số tự nhiên có đúng bốn chữ số khác nhau, ô đầu chỉ được chọn từ một đến chín, có chín cách.
+
+72
+00:07:40,254 --> 00:07:46,921
+Chữ số không vẫn có thể xuất hiện ở vị trí phía sau, vì thế ô thứ hai còn chín cách.
+
+73
+00:07:46,921 --> 00:07:52,000
+Tiếp theo là tám rồi bảy. Ta được bốn nghìn năm trăm ba mươi sáu số.
+
+74
+00:07:52,000 --> 00:08:00,000
+Ba bài toán đều có bốn ô và cùng dùng các chữ số từ không đến chín, nhưng đáp án lần lượt khác nhau.
+
+75
+00:08:00,000 --> 00:08:07,667
+Điều quyết định là một ký hiệu có được lặp hay không, và chữ số đầu có bị cấm bằng không hay không.
+
+76
+00:08:07,667 --> 00:08:12,000
+Đây là thói quen kiểm tra giả thiết trước khi viết công thức.
+
+77
+00:08:12,000 --> 00:08:15,632
+Chúng ta vừa học cách lập dãy có lặp.
+
+78
+00:08:15,632 --> 00:08:26,526
+Bây giờ cùng ba loại thẻ A, B, C, ta chọn ba thẻ để tạo thành một nhóm, trong đó mỗi loại được phép lấy nhiều lần.
+
+79
+00:08:26,526 --> 00:08:35,000
+Nhưng nhóm không có vị trí thứ nhất, thứ hai, thứ ba. Khi đổi thứ tự, ta không tạo nhóm mới.
+
+80
+00:08:35,000 --> 00:08:37,800
+Xét ba dãy ABC, BAC và CAB.
+
+81
+00:08:37,800 --> 00:08:44,200
+Trong bài lập dãy, chúng khác nhau vì chữ ở mỗi vị trí không giống nhau.
+
+82
+00:08:44,200 --> 00:08:49,800
+Trong bài chọn nhóm, chúng đều mô tả cùng ba thẻ A, B, C.
+
+83
+00:08:49,800 --> 00:08:55,000
+Bởi vậy không thể dùng trực tiếp ba mũ ba để đếm nhóm.
+
+84
+00:08:55,000 --> 00:09:00,091
+Trước hết, các nhóm gồm ba thẻ cùng loại là AAA, BBB và CCC.
+
+85
+00:09:00,091 --> 00:09:05,545
+Mỗi nhóm này chỉ xuất hiện một lần dù ta đổi vị trí các thẻ.
+
+86
+00:09:05,545 --> 00:09:08,455
+Như vậy có ba nhóm kiểu thứ nhất.
+
+87
+00:09:08,455 --> 00:09:15,000
+Ta tiếp tục xét nhóm có hai thẻ cùng loại rồi xét nhóm có ba loại khác nhau.
+
+88
+00:09:15,000 --> 00:09:25,909
+Nếu trong nhóm có đúng hai thẻ cùng loại, ta chọn một trong ba loại để lặp lại, rồi chọn một trong hai loại còn lại làm thẻ thứ ba.
+
+89
+00:09:25,909 --> 00:09:28,818
+Ta có ba nhân hai bằng sáu nhóm.
+
+90
+00:09:28,818 --> 00:09:35,000
+Chẳng hạn AAB, AAC là hai nhóm khác nhau, nhưng AAB và ABA là cùng một nhóm.
+
+91
+00:09:35,000 --> 00:09:39,643
+Cuối cùng, nhóm gồm cả ba loại chỉ có ABC, đúng một nhóm.
+
+92
+00:09:39,643 --> 00:09:47,500
+Cộng ba nhóm đồng loại, sáu nhóm có hai thẻ giống nhau và một nhóm đủ ba loại, ta được mười nhóm.
+
+93
+00:09:47,500 --> 00:09:55,000
+Trong khi đó có hai mươi bảy dãy có thứ tự cho phép lặp. Hai bài toán khác nhau hoàn toàn.
+
+94
+00:09:55,000 --> 00:10:02,941
+Bài toán chọn nhóm cho phép lặp nhưng không xét thứ tự có một công thức riêng: tổ hợp chập k của n cộng k trừ một.
+
+95
+00:10:02,941 --> 00:10:08,824
+Trong ví dụ ba loại và chọn ba phần tử, đó là tổ hợp chập ba của năm, bằng mười.
+
+96
+00:10:08,824 --> 00:10:15,000
+Ta chỉ giới thiệu để phân biệt; chứng minh chi tiết bằng sao và vạch sẽ dành cho một tập riêng.
+
+97
+00:10:15,000 --> 00:10:23,672
+Ta lập dãy gồm bốn chữ từ A, B, C, cho phép lặp, nhưng bắt buộc xuất hiện ít nhất một chữ A.
+
+98
+00:10:23,672 --> 00:10:34,984
+Nếu chia thành trường hợp A ở ô đầu, A ở ô thứ hai và tương tự, một dãy có nhiều chữ A sẽ xuất hiện ở nhiều trường hợp.
+
+99
+00:10:34,984 --> 00:10:38,000
+Vì thế ta dùng phương pháp phần bù.
+
+100
+00:10:38,000 --> 00:10:46,077
+Không xét điều kiện có chữ A, mỗi trong bốn vị trí được chọn một trong ba chữ A, B, C.
+
+101
+00:10:46,077 --> 00:10:51,846
+Vì có thể lặp nên số dãy là ba mũ bốn, bằng tám mươi mốt.
+
+102
+00:10:51,846 --> 00:10:58,000
+Đây là tập lớn chứa cả những dãy thỏa điều kiện và những dãy cần loại.
+
+103
+00:10:58,000 --> 00:11:03,357
+Một dãy không có chữ A thì mọi ô chỉ được chọn B hoặc C.
+
+104
+00:11:03,357 --> 00:11:10,143
+Khi đó mỗi ô có hai lựa chọn và bốn ô cho hai mũ bốn, bằng mười sáu dãy.
+
+105
+00:11:10,143 --> 00:11:18,000
+Đây chính xác là phần bù của yêu cầu ít nhất một chữ A, nên các trường hợp này phải bị loại.
+
+106
+00:11:18,000 --> 00:11:25,719
+Ta lấy tám mươi mốt dãy không ràng buộc trừ mười sáu dãy không có chữ A, thu được sáu mươi lăm.
+
+107
+00:11:25,719 --> 00:11:34,140
+Trên hình, các dãy chỉ gồm B và C đổi sang màu đỏ và bị loại, những dãy còn chữ A giữ màu xanh.
+
+108
+00:11:34,140 --> 00:11:38,000
+Hai tập tách nhau rõ ràng nên không thể đếm trùng.
+
+109
+00:11:38,000 --> 00:11:44,552
+Lưu ý ít nhất một chữ A bao gồm các dãy có một, hai, ba hoặc bốn chữ A.
+
+110
+00:11:44,552 --> 00:11:50,414
+Nếu chỉ đếm dãy có đúng một chữ A, ta sẽ bỏ sót những dãy còn lại.
+
+111
+00:11:50,414 --> 00:11:58,000
+Điều kiện “ít nhất” rất phù hợp với phép đếm bằng phần bù, còn điều kiện “đúng” nên đếm theo vị trí.
+
+112
+00:11:58,000 --> 00:12:04,780
+Hãy áp dụng tương tự cho dãy độ dài ba. Tất cả có ba mũ ba, bằng hai mươi bảy.
+
+113
+00:12:04,780 --> 00:12:11,220
+Không có chữ A thì chỉ có B hoặc C ở mỗi ô, gồm hai mũ ba, bằng tám.
+
+114
+00:12:11,220 --> 00:12:18,000
+Lấy hai mươi bảy trừ tám, ta được mười chín dãy. Hãy kiểm tra bằng sơ đồ cây nếu cần.
+
+115
+00:12:18,000 --> 00:12:24,860
+Trong bài này dãy có đúng hai chữ A, không nhiều hơn và cũng không ít hơn.
+
+116
+00:12:24,860 --> 00:12:32,123
+Thay vì dùng phần bù nhiều bước, ta sẽ chọn hai vị trí dành cho chữ A trước.
+
+117
+00:12:32,123 --> 00:12:41,000
+Sau đó hai vị trí còn lại được điền B hoặc C. Cách chia hai công đoạn làm rõ từng điều kiện.
+
+118
+00:12:41,000 --> 00:12:45,444
+Bốn vị trí có thể được đánh số một, hai, ba, bốn.
+
+119
+00:12:45,444 --> 00:12:49,519
+Ta chọn một cặp vị trí để đặt hai chữ A.
+
+120
+00:12:49,519 --> 00:12:56,926
+Vì cả hai chữ đều là A, đổi thứ tự hai vị trí đã chọn không tạo kết quả mới.
+
+121
+00:12:56,926 --> 00:13:01,000
+Số cặp bằng tổ hợp chập hai của bốn, bằng sáu.
+
+122
+00:13:01,000 --> 00:13:13,667
+Chúng ta có thể kiểm tra trực tiếp sáu mẫu vị trí: hai ô đầu, ô thứ nhất và thứ ba, ô đầu và ô cuối, hai ô giữa, ô thứ hai và cuối, hoặc hai ô cuối.
+
+123
+00:13:13,667 --> 00:13:21,000
+Không có mẫu nào trùng nhau, và mọi dãy có đúng hai chữ A phải thuộc đúng một trong sáu mẫu đó.
+
+124
+00:13:21,000 --> 00:13:27,316
+Khi hai vị trí của A đã cố định, mỗi ô còn lại phải là B hoặc C.
+
+125
+00:13:27,316 --> 00:13:35,737
+Ta không hạn chế việc B hoặc C lặp lại, nên hai ô độc lập và có hai nhân hai bằng bốn cách điền.
+
+126
+00:13:35,737 --> 00:13:41,000
+Các dãy AABB, AABC, AACB, AACC là bốn ví dụ thuộc mẫu AA chấm chấm.
+
+127
+00:13:41,000 --> 00:13:53,881
+Vì sáu lựa chọn vị trí tạo ra các nhóm kết quả không trùng nhau, và mỗi mẫu vị trí có bốn cách điền B hoặc C, ta dùng quy tắc nhân để có hai mươi bốn dãy.
+
+128
+00:13:53,881 --> 00:14:01,000
+Đây là phương pháp rất hữu ích cho các câu hỏi về đúng k lần xuất hiện của một ký hiệu.
+
+129
+00:14:01,000 --> 00:14:10,643
+Hãy so sánh kết quả vừa có: đúng hai chữ A là hai mươi bốn dãy, còn ít nhất một chữ A là sáu mươi lăm dãy.
+
+130
+00:14:10,643 --> 00:14:15,643
+Điều kiện thứ hai còn bao gồm đúng một, ba và bốn chữ A.
+
+131
+00:14:15,643 --> 00:14:21,000
+Không thể thay trực tiếp kết quả của điều kiện này vào điều kiện kia.
+
+132
+00:14:21,000 --> 00:14:31,310
+Bài cuối khó hơn: ta lập dãy bốn chữ từ A, B, C, cho phép lặp, nhưng không được có hai chữ A đứng cạnh nhau.
+
+133
+00:14:31,310 --> 00:14:40,828
+Ta không thể chỉ nhân ba lần cho từng ô nữa vì nếu ô trước đã là A, ô sau không thể chọn A.
+
+134
+00:14:40,828 --> 00:14:44,000
+Ta cần theo dõi trạng thái của dãy.
+
+135
+00:14:44,000 --> 00:14:48,211
+Gọi F dưới n là số dãy hợp lệ độ dài n.
+
+136
+00:14:48,211 --> 00:14:53,123
+Nếu chữ cuối là B hoặc C, ta có hai cách chọn chữ cuối.
+
+137
+00:14:53,123 --> 00:14:59,088
+Các n trừ một ký tự phía trước chỉ cần tạo một dãy hợp lệ bất kỳ.
+
+138
+00:14:59,088 --> 00:15:04,000
+Do đó số trường hợp này bằng hai nhân F dưới n trừ một.
+
+139
+00:15:04,000 --> 00:15:10,441
+Nếu chữ cuối là A thì chữ ngay trước bắt buộc là B hoặc C, có hai lựa chọn.
+
+140
+00:15:10,441 --> 00:15:15,525
+Phần còn lại ở đầu có độ dài n trừ hai và phải hợp lệ.
+
+141
+00:15:15,525 --> 00:15:20,271
+Vì ký tự áp chót khác A, không tạo hai chữ A liên tiếp.
+
+142
+00:15:20,271 --> 00:15:24,000
+Ta có hai nhân F dưới n trừ hai trường hợp.
+
+143
+00:15:24,000 --> 00:15:33,153
+Hai trường hợp dãy kết thúc bằng B hoặc C và dãy kết thúc bằng A không giao nhau, đồng thời phủ hết các dãy hợp lệ.
+
+144
+00:15:33,153 --> 00:15:39,593
+Vì vậy F dưới n bằng hai F dưới n trừ một cộng hai F dưới n trừ hai.
+
+145
+00:15:39,593 --> 00:15:44,000
+Điều kiện đầu là F không bằng một và F một bằng ba.
+
+146
+00:15:44,000 --> 00:15:49,424
+Ta tính lần lượt: F hai bằng hai nhân ba cộng hai nhân một, bằng tám.
+
+147
+00:15:49,424 --> 00:15:54,169
+F ba bằng hai nhân tám cộng hai nhân ba, bằng hai mươi hai.
+
+148
+00:15:54,169 --> 00:15:59,932
+Cuối cùng F bốn bằng hai nhân hai mươi hai cộng hai nhân tám, bằng sáu mươi.
+
+149
+00:15:59,932 --> 00:16:04,000
+Kết quả được kiểm chứng bằng chương trình liệt kê độc lập.
+
+150
+00:16:04,000 --> 00:16:17,231
+Sau bài học, hãy ghi nhớ thứ tự nhận diện: trước hết xem kết quả có xét thứ tự không, tiếp đến kiểm tra được phép lặp hay không, và cuối cùng xem các vị trí có bị ràng buộc với nhau không.
+
+151
+00:16:17,231 --> 00:16:24,000
+Công thức n mũ k chỉ dành cho dãy có thứ tự, được lặp và mỗi ô vẫn có n lựa chọn.
