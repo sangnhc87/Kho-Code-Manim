@@ -994,7 +994,7 @@ class TraiPhang20Master(BaseLesson):
             ('text','P → X trên mặt trước.',18,PURPLE),
             ('text','X → Y trên mặt đáy.',18,BLUE),
             ('text','Y → Q trên mặt sau.',18,CYAN),
-            ('math','L_(min)=sqrt(137)',31,GOLD),
+            ('math','L_(m i n)=sqrt(137)',31,GOLD),
         ],GOLD)
         lines=[
             'Kiến bắt đầu từ P, đi trên mặt trước tới X, đúng cạnh chuyển xuống đáy.',
@@ -1027,7 +1027,7 @@ class TraiPhang20Master(BaseLesson):
             ('text','Chọn dải mặt, mở đúng cạnh bản lề.',17,INK),
             ('text','Nối thẳng, kiểm tra giao cạnh.',17,CYAN),
             ('text','Loại đường sai, so sánh đường đúng.',17,GOLD),
-            ('math','L_(min)=sqrt(137)',29,GREEN),
+            ('math','L_(m i n)=sqrt(137)',29,GREEN),
         ],GOLD)
         self.narrate('Hai mươi bài toán đã cho ta một phương pháp chung: muốn tìm đường ngắn nhất trên bề mặt, trước tiên phải hiểu thật rõ mình được đi ở đâu.')
         self.narrate('Với mặt phẳng hoặc mặt khai triển được, ta biến đường đi thành đoạn thẳng. Với nhiều mặt ghép, ta liệt kê dải mặt, kiểm tra tính hợp lệ, rồi chọn độ dài nhỏ nhất.')

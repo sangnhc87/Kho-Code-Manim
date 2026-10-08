@@ -623,8 +623,8 @@ def layout_samples():
         ],GOLD),
         lesson_card('ĐỔI PHƯƠNG ÁN',[
             ('math','L_I^2=(t+4)^2+36',27,BLUE),
-            ('math','L_(II)^2=t^2+100',27,CYAN),
-            ('math','L_I^2-L_(II)^2=8(t-6)',26,GOLD),
+            ('math','L_(I I)^2=t^2+100',27,CYAN),
+            ('math','L_I^2-L_(I I)^2=8(t-6)',26,GOLD),
             ('math','t=6',34,GREEN),
         ],CYAN),
     ]
@@ -739,7 +739,7 @@ class TraiPhang19Master(BaseLesson):
             ('text','Giữ mặt trước, mở mặt phải quanh BF.',17,CYAN),
             ('text','Mặt trước rộng 4, mặt phải rộng 6.',18,INK),
             ('text','Cả hai đều cao t.',18,INK),
-            ('math','L_(II)^2=10^2+t^2',29,GOLD),
+            ('math','L_(I I)^2=10^2+t^2',29,GOLD),
         ],CYAN)
         step=d['steps'][0]
         self.narrate_play('Với kiểu thứ hai, ta giữ mặt trước rồi mở mặt phải quanh cạnh B F. '
@@ -755,7 +755,7 @@ class TraiPhang19Master(BaseLesson):
         self.show_card('QUA MẶT TRƯỚC VÀ MẶT PHẢI',[
             ('math','u=4+6=10',28,CYAN),
             ('math','v=t',28,INK),
-            ('math','L_(II)^2=100+t^2',32,GOLD),
+            ('math','L_(I I)^2=100+t^2',32,GOLD),
             ('text','Phương án II lợi hơn khi hộp đủ cao.',18,GREEN),
         ],CYAN)
         self.narrate('Trong kiểu thứ hai, bình phương đường chéo bằng một trăm cộng t bình phương. '
@@ -795,8 +795,8 @@ class TraiPhang19Master(BaseLesson):
         self.add_fixed_in_frame_mobjects(chart)
         self.show_card('SO SÁNH I VÀ II',[
             ('math','L_I^2=(t+4)^2+36',27,BLUE),
-            ('math','L_(II)^2=100+t^2',27,CYAN),
-            ('math','L_I^2-L_(II)^2=8(t-6)',27,GOLD),
+            ('math','L_(I I)^2=100+t^2',27,CYAN),
+            ('math','L_I^2-L_(I I)^2=8(t-6)',27,GOLD),
             ('math','t=6',35,GREEN),
         ],GOLD)
         self.narrate('Giờ chỉ còn hai phương án một và hai. '
@@ -809,8 +809,8 @@ class TraiPhang19Master(BaseLesson):
         self.add(model_with_routes(3.,('I','II')))
         self.show_card('TỪ 2 ĐẾN TRƯỚC 6',[
             ('math','t<6',30,CYAN),
-            ('math','L_I^2-L_(II)^2<0',28,INK),
-            ('math','L_I<L_(II)',32,GREEN),
+            ('math','L_I^2-L_(I I)^2<0',28,INK),
+            ('math','L_I<L_(I I)',32,GREEN),
             ('text','Chọn dải trái → nắp trên.',18,GOLD),
         ],GREEN)
         self.narrate('Khi t nhỏ hơn sáu, hiệu hai bình phương âm. '
@@ -822,8 +822,8 @@ class TraiPhang19Master(BaseLesson):
         self.add(model_with_routes(6.,('I','II')))
         self.show_card('ĐIỂM CHUYỂN PHƯƠNG ÁN',[
             ('math','t=6',29,CYAN),
-            ('math','L_I=L_(II)',30,INK),
-            ('math','L_(min)=sqrt(136)=2 sqrt(34)',29,GOLD),
+            ('math','L_I=L_(I I)',30,INK),
+            ('math','L_(m i n)=sqrt(136)=2 sqrt(34)',29,GOLD),
             ('text','Hai dải khác nhau, độ dài bằng nhau.',18,GREEN),
         ],GOLD)
         self.narrate('Đúng tại t bằng sáu, hai bản trải cho hai đường dài bằng nhau. '
@@ -836,8 +836,8 @@ class TraiPhang19Master(BaseLesson):
         self.add(model_with_routes(9.,('II','I')))
         self.show_card('TRÊN 6 ĐẾN 10',[
             ('math','t>6',30,CYAN),
-            ('math','L_I^2-L_(II)^2>0',28,INK),
-            ('math','L_(II)<L_I',32,GREEN),
+            ('math','L_I^2-L_(I I)^2>0',28,INK),
+            ('math','L_(I I)<L_I',32,GREEN),
             ('text','Chọn dải trước → phải.',18,GOLD),
         ],GREEN)
         self.narrate('Khi t lớn hơn sáu, hiệu hai bình phương dương. '
@@ -867,9 +867,9 @@ class TraiPhang19Master(BaseLesson):
         self.add(model_with_routes(6.,('I','II')))
         self.show_card('HÀM GIÁ TRỊ NHỎ NHẤT',[
             ('text','2 ≤ t ≤ 6:',18,BLUE),
-            ('math','L_(min)=sqrt((t+4)^2+36)',26,BLUE),
+            ('math','L_(m i n)=sqrt((t+4)^2+36)',26,BLUE),
             ('text','6 ≤ t ≤ 10:',18,CYAN),
-            ('math','L_(min)=sqrt(t^2+100)',28,CYAN),
+            ('math','L_(m i n)=sqrt(t^2+100)',28,CYAN),
             ('math','t_0=6',30,GOLD),
         ],GREEN)
         self.narrate('Kết luận cuối cùng là một hàm cho theo từng khoảng. '
