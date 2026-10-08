@@ -1,6 +1,9 @@
 name: Render COMB09 V2 - Chon co lap va lap day n mu k
 
 on:
+  push:
+    paths:
+      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
@@ -53,17 +56,17 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Prepare PNG formula sheets, voice and synchronized subtitles
         env:
-          COMB09_VOICE: ${{ inputs.voice }}
+          COMB09_VOICE: ${{ inputs.voice || 'on' }}
         run: python scripts/prepare_comb09_v2.py --voice "$COMB09_VOICE"
       - name: Render preview 854x480 24 fps
-        if: ${{ inputs.quality == 'preview' }}
+        if: ${{ inputs.quality == 'preview' || github.event_name == 'push' }}
         run: manim -ql -r 854,480 --fps 24 episodes/comb09_repetition.py COMB09
       - name: Render final Full HD 1920x1080 30 fps
         if: ${{ inputs.quality == 'fullhd' }}
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb09_repetition.py COMB09
       - name: Verify MP4 time, audio stream, frame captures
         env:
-          COMB09_VOICE: ${{ inputs.voice }}
+          COMB09_VOICE: ${{ inputs.voice || 'on' }}
         run: |
           VIDEO=$(find media/videos -type f -name 'COMB09.mp4' | head -n 1)
           test -n "$VIDEO"
@@ -72,7 +75,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: COMB09-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          name: COMB09-V2-${{ inputs.quality }}-voice-${{ inputs.voice || 'on' }}
           path: |
             Series-Dai-So-To-Hop/media/videos/**/COMB09.mp4
             Series-Dai-So-To-Hop/qa_comb09_v2/

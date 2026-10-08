@@ -1,6 +1,9 @@
 name: Render COMB02 V2 - Bai giang day du Manim Typst
 
 on:
+  push:
+    paths:
+      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
@@ -53,17 +56,17 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Compile Typst and create Vietnamese speech plus SRT subtitles
         env:
-          COMB02_VOICE: ${{ inputs.voice }}
+          COMB02_VOICE: ${{ inputs.voice || 'on' }}
         run: python scripts/prepare_comb02_v2.py --voice "$COMB02_VOICE"
       - name: Render Manim preview
-        if: ${{ inputs.quality == 'preview' }}
+        if: ${{ inputs.quality == 'preview' || github.event_name == 'push' }}
         run: manim -ql -r 854,480 --fps 24 episodes/comb02_rule_of_product.py COMB02
       - name: Render Manim full HD
         if: ${{ inputs.quality == 'fullhd' }}
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb02_rule_of_product.py COMB02
       - name: Verify MP4 duration and narration; extract eight chapter frames
         env:
-          COMB02_VOICE: ${{ inputs.voice }}
+          COMB02_VOICE: ${{ inputs.voice || 'on' }}
         run: |
           VIDEO=$(find media/videos -type f -name 'COMB02.mp4' | head -n 1)
           test -n "$VIDEO"
@@ -72,7 +75,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: COMB02-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          name: COMB02-V2-${{ inputs.quality }}-voice-${{ inputs.voice || 'on' }}
           path: |
             Series-Dai-So-To-Hop/media/videos/**/COMB02.mp4
             Series-Dai-So-To-Hop/qa_comb02_v2/

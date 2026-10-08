@@ -1,6 +1,9 @@
 name: Render COMB07 V2 - Bai giang To Hop Manim Typst
 
 on:
+  push:
+    paths:
+      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
@@ -53,17 +56,17 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Compile Typst equations and prepare audio/subtitles
         env:
-          COMB07_VOICE: ${{ inputs.voice }}
+          COMB07_VOICE: ${{ inputs.voice || 'on' }}
         run: python scripts/prepare_comb07_v2.py --voice "$COMB07_VOICE"
       - name: Render 480p preview
-        if: ${{ inputs.quality == 'preview' }}
+        if: ${{ inputs.quality == 'preview' || github.event_name == 'push' }}
         run: manim -ql -r 854,480 --fps 24 episodes/comb07_combinations.py COMB07
       - name: Render Full HD 1080p
         if: ${{ inputs.quality == 'fullhd' }}
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb07_combinations.py COMB07
       - name: Audit runtime, audio stream, resolution and eight chapter frames
         env:
-          COMB07_VOICE: ${{ inputs.voice }}
+          COMB07_VOICE: ${{ inputs.voice || 'on' }}
         run: |
           VIDEO=$(find media/videos -type f -name 'COMB07.mp4' | head -n 1)
           test -n "$VIDEO"
@@ -72,7 +75,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: COMB07-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          name: COMB07-V2-${{ inputs.quality }}-voice-${{ inputs.voice || 'on' }}
           path: |
             Series-Dai-So-To-Hop/media/videos/**/COMB07.mp4
             Series-Dai-So-To-Hop/qa_comb07_v2/
