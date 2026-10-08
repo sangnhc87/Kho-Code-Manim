@@ -258,12 +258,12 @@ def layout_preflight(sample_cards, verbose=True):
                 raise AssertionError("Card item crosses right safe margin.")
             if mob.get_top()[1] > bg.get_top()[1] - 0.18:
                 raise AssertionError("Card item crosses top safe margin.")
-            if mob.get_bottom()[1] < bg.get_bottom()[1] + 0.18:
-                raise AssertionError("Card item crosses bottom safe margin.")
+            if mob.get_b()[1] < bg.get_b()[1] + 0.18:
+                raise AssertionError("Card item crosses b safe margin.")
         rows = list(body)
         for i in range(len(rows)):
             for j in range(i + 1, len(rows)):
-                overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_bottom()[1], rows[j].get_bottom()[1])
+                overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_b()[1], rows[j].get_b()[1])
                 if overlap > 1e-4:
                     raise AssertionError("Two right-card rows overlap.")
     if verbose:
@@ -284,9 +284,9 @@ def layout_preflight(sample_cards, verbose=True):
 # Ant starts at A=(0,0,0); destination G=(4,6,t), opposite vertex.
 # Route I: left -> top: L_I=sqrt((t+4)^2+36).
 # Route II: front -> right: L_II=sqrt(100+t^2).
-# Route III: bottom -> back: L_III=sqrt((t+6)^2+16).
+# Route I I I: b -> back: L_I I I=sqrt((t+6)^2+16).
 # L_I^2 - L_II^2 = 8(t-6).
-# L_III^2 - L_I^2 = 4t>0.
+# L_I I I^2 - L_I^2 = 4t>0.
 # Therefore the global shortest on all six faces switches at t=6.
 # At t=6 there are four two-face routes, two representatives of each net.
 
@@ -303,14 +303,14 @@ FACES={
     'right': ['B','C','G','F'],
     'back': ['D','H','G','C'],
     'left': ['A','E','H','D'],
-    'bottom': ['A','D','C','B'],
+    'b': ['A','D','C','B'],
     'top': ['E','F','G','H'],
 }
-FACE_COLORS={'front':PURPLE,'right':CYAN,'back':ORANGE,'left':BLUE,'bottom':GREEN,'top':GOLD}
+FACE_COLORS={'front':PURPLE,'right':CYAN,'back':ORANGE,'left':BLUE,'b':GREEN,'top':GOLD}
 ROUTES={
     'I':['left','top'],
     'II':['front','right'],
-    'III':['bottom','back'],
+    'I I I':['b','back'],
 }
 
 def vertices(t):
@@ -326,7 +326,7 @@ def lengths(t):
     return {
         'I':math.hypot(t+A_LEN,B_LEN),
         'II':math.hypot(A_LEN+B_LEN,t),
-        'III':math.hypot(t+B_LEN,A_LEN),
+        'I I I':math.hypot(t+B_LEN,A_LEN),
     }
 
 def winner(t):
@@ -415,7 +415,7 @@ def unfold_chain(chain,t):
 
 def enumerate_valid(t):
     '''Enumerate every simple adjacent-face strip from corner A to corner G.'''
-    sources={'front','left','bottom'}
+    sources={'front','left','b'}
     targets={'right','back','top'}
     adjacency={f:[g for g in FACES if g!=f and len(set(FACES[f])&set(FACES[g]))==2]
                for f in FACES}
@@ -446,7 +446,7 @@ def geometry_preflight(verbose=True):
         assert abs(np.linalg.norm(v['C']-v['G'])-t)<tol
         ls=lengths(t)
         assert abs(ls['I']**2-ls['II']**2-8*(t-6))<tol
-        assert abs(ls['III']**2-ls['I']**2-4*t)<tol
+        assert abs(ls['I I I']**2-ls['I']**2-4*t)<tol
         for name,chain in ROUTES.items():
             d=unfold_chain(chain,t)
             if d is None:raise AssertionError(('missing hinge crossing',t,chain))
@@ -484,15 +484,15 @@ def geometry_preflight(verbose=True):
         v=vertices(t)
         XI=unfold_chain(ROUTES['I'],t)['hits'][0]['raw']
         XII=unfold_chain(ROUTES['II'],t)['hits'][0]['raw']
-        XIII=unfold_chain(ROUTES['III'],t)['hits'][0]['raw']
+        XI I I=unfold_chain(ROUTES['I I I'],t)['hits'][0]['raw']
         assert np.linalg.norm(XI-np.array([0,6*t/(t+4),t]))<tol
         assert np.linalg.norm(XII-np.array([4,0,2*t/5]))<tol
-        assert np.linalg.norm(XIII-np.array([24/(6+t),6,0]))<tol
+        assert np.linalg.norm(XI I I-np.array([24/(6+t),6,0]))<tol
     if verbose:
         print(f'GEOMETRY PREFLIGHT OK: {len(grid)} t samples, {routes_checked} valid candidate strips')
         print('  I: left -> top, L_I=sqrt((t+4)^2+36)')
         print('  II: front -> right, L_II=sqrt(t^2+100)')
-        print('  III: bottom -> back, L_III=sqrt((t+6)^2+16)')
+        print('  I I I: b -> back, L_I I I=sqrt((t+6)^2+16)')
         print('  Switch at t=6: L_min=2sqrt(34), tie')
     return True
 
@@ -549,7 +549,7 @@ def route_folded(t,name,color=GOLD,width=5.8):
 
 def model_with_routes(t,primary=('I','II')):
     m=VGroup(box_shell(t,highlight=set(sum([ROUTES[n] for n in primary],[]))))
-    colors={'I':GOLD,'II':CYAN,'III':ORANGE}
+    colors={'I':GOLD,'II':CYAN,'I I I':ORANGE}
     for name in primary:
         m.add(route_folded(t,name,colors[name],5.7 if name==primary[0] else 4.0))
     v=vertices(t)
@@ -571,15 +571,15 @@ def net_diagram(name,t,show_path=True):
         first=t;second=A_LEN;height=B_LEN
     elif name=='II':
         first=A_LEN;second=B_LEN;height=t
-    elif name=='III':
+    elif name=='I I I':
         first=B_LEN;second=t;height=A_LEN
     else:raise ValueError(name)
     total=first+second
     scale=min(5.70/total,4.75/height)
     origin=LEFT_CENTER + np.array([-total*scale/2,-height*scale/2,0.])
     def T(x,y):return origin+np.array([x*scale,y*scale,0.])
-    color_first={'I':BLUE,'II':PURPLE,'III':GREEN}[name]
-    color_second={'I':GOLD,'II':CYAN,'III':ORANGE}[name]
+    color_first={'I':BLUE,'II':PURPLE,'I I I':GREEN}[name]
+    color_second={'I':GOLD,'II':CYAN,'I I I':ORANGE}[name]
     g=VGroup(
         Polygon(T(0,0),T(first,0),T(first,height),T(0,height),
                 fill_color=color_first,fill_opacity=0.14,
@@ -603,12 +603,12 @@ def length_chart(t):
     x0=LEFT_CENTER[0]-2.30
     y0=-1.95
     g=VGroup()
-    for i,name in enumerate(['I','II','III']):
-        c={'I':GOLD,'II':CYAN,'III':ORANGE}[name]
+    for i,name in enumerate(['I','II','I I I']):
+        c={'I':GOLD,'II':CYAN,'I I I':ORANGE}[name]
         y=y0+2.0-0.85*i
         start=np.array([x0,y,0.]);end=start+RIGHT*(vals[name]*0.25)
         g.add(Line(start,end,color=c,stroke_width=17,stroke_opacity=0.89))
-        lab=txt('I / trái-nắp' if name=='I' else ('II / trước-phải' if name=='II' else 'III / đáy-sau'),18,c)
+        lab=txt('I / trái-nắp' if name=='I' else ('II / trước-phải' if name=='II' else 'I I I / đáy-sau'),18,c)
         lab.move_to(start+RIGHT*1.06+UP*0.27)
         g.add(lab)
     return g
@@ -690,7 +690,7 @@ class TraiPhang19Master(BaseLesson):
         self.show_card('BA KIỂU BẢN TRẢI',[
             ('text','I. Mặt trái rồi mặt trên.',18,BLUE),
             ('text','II. Mặt trước rồi mặt phải.',18,CYAN),
-            ('text','III. Mặt đáy rồi mặt sau.',18,ORANGE),
+            ('text','I I I. Mặt đáy rồi mặt sau.',18,ORANGE),
             ('text','Mỗi kiểu cho một đường chéo khác nhau.',17,GOLD),
         ],CYAN)
         self.narrate('Giữa hai đỉnh đối diện, ta xét ba kiểu bản trải hình chữ nhật. '
@@ -763,11 +763,11 @@ class TraiPhang19Master(BaseLesson):
 
     def third_candidate(self):
         self.clear_all();self.add_hud('Đừng quên phương án thứ ba','07 / 14')
-        self.show_net('III',5.)
+        self.show_net('I I I',5.)
         self.show_card('QUA ĐÁY VÀ MẶT SAU',[
             ('math','u=t+6',28,ORANGE),
             ('math','v=4',28,CYAN),
-            ('math','L_(III)^2=(t+6)^2+16',27,GOLD),
+            ('math','L_(I I I)^2=(t+6)^2+16',27,GOLD),
             ('text','Vẫn phải xét trước khi loại.',18,INK),
         ],ORANGE)
         self.narrate('Còn một kiểu nữa: mở mặt đáy với mặt sau. '
@@ -776,12 +776,12 @@ class TraiPhang19Master(BaseLesson):
                      'cộng mười sáu. Đừng bỏ một phương án chỉ vì nhìn hình có vẻ dài hơn.')
 
     def eliminate_third(self):
-        self.clear_all();self.add_hud('Chứng minh phương án III không thắng','08 / 14')
-        self.show_net('III',5.)
+        self.clear_all();self.add_hud('Chứng minh phương án I I I không thắng','08 / 14')
+        self.show_net('I I I',5.)
         self.show_card('SO SÁNH BÌNH PHƯƠNG',[
-            ('math','L_(III)^2=(t+6)^2+16',27,ORANGE),
+            ('math','L_(I I I)^2=(t+6)^2+16',27,ORANGE),
             ('math','L_I^2=(t+4)^2+36',27,BLUE),
-            ('math','L_(III)^2-L_I^2=4t',29,GOLD),
+            ('math','L_(I I I)^2-L_I^2=4t',29,GOLD),
             ('math','4t>0',30,GREEN),
         ],GREEN)
         self.narrate('Trừ hai bình phương của kiểu ba và kiểu một, '

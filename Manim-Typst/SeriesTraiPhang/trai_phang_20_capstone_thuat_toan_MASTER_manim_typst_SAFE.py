@@ -258,12 +258,12 @@ def layout_preflight(sample_cards, verbose=True):
                 raise AssertionError("Card item crosses right safe margin.")
             if mob.get_top()[1] > bg.get_top()[1] - 0.18:
                 raise AssertionError("Card item crosses top safe margin.")
-            if mob.get_bottom()[1] < bg.get_bottom()[1] + 0.18:
-                raise AssertionError("Card item crosses bottom safe margin.")
+            if mob.get_b()[1] < bg.get_b()[1] + 0.18:
+                raise AssertionError("Card item crosses b safe margin.")
         rows = list(body)
         for i in range(len(rows)):
             for j in range(i + 1, len(rows)):
-                overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_bottom()[1], rows[j].get_bottom()[1])
+                overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_b()[1], rows[j].get_b()[1])
                 if overlap > 1e-4:
                     raise AssertionError("Two right-card rows overlap.")
     if verbose:
@@ -289,11 +289,11 @@ def layout_preflight(sample_cards, verbose=True):
 #   developed displacement (dx,dy) = (4, 1+5+1) = (4,7)
 #   L_top = sqrt(65), but this route crosses the FORBIDDEN top.
 #
-# Valid replacement: front -> bottom -> back:
+# Valid replacement: front -> b -> back:
 #   developed displacement (dx,dy) = (4, 3+5+3) = (4,11)
-#   L_bottom = sqrt(137)
-#   crosses front-bottom at x=34/11,
-#   crosses bottom-back at x=54/11.
+#   L_b = sqrt(137)
+#   crosses front-b at x=34/11,
+#   crosses b-back at x=54/11.
 #
 # Alternative three-face routes front -> left/right -> back:
 #   L_left = L_right = 13.
@@ -320,16 +320,16 @@ FACES={
     'right':['B','C','G','F'],
     'back':['D','H','G','C'],
     'left':['A','E','H','D'],
-    'bottom':['A','D','C','B'],
+    'b':['A','D','C','B'],
     'top':['E','F','G','H'],
 }
-ALLOWED={'front','back','left','right','bottom'}
+ALLOWED={'front','back','left','right','b'}
 FACE_COLORS={
-    'front':PURPLE,'back':CYAN,'bottom':BLUE,
+    'front':PURPLE,'back':CYAN,'b':BLUE,
     'left':ORANGE,'right':GREEN,'top':RED,
 }
 TOP_CHAIN=['front','top','back']
-BOTTOM_CHAIN=['front','bottom','back']
+BOTTOM_CHAIN=['front','b','back']
 LEFT_CHAIN=['front','left','back']
 RIGHT_CHAIN=['front','right','back']
 WORLD_SCALE=0.59
@@ -480,12 +480,12 @@ def geometry_preflight(verbose=True):
         if abs(folded-data['length'])>tol:
             raise AssertionError('Fold/unfold length mismatch')
 
-    bottom=unfold_chain(BOTTOM_CHAIN)
+    b=unfold_chain(BOTTOM_CHAIN)
     top=unfold_chain(TOP_CHAIN)
-    b1,b2=(h['raw'] for h in bottom['hits'])
+    b1,b2=(h['raw'] for h in b['hits'])
     if abs(b1[0]-34.0/11.0)>tol or abs(b2[0]-54.0/11.0)>tol:
-        raise AssertionError('Wrong bottom crossing positions')
-    if abs(bottom['hits'][0]['t']-3/11)>tol or abs(bottom['hits'][1]['t']-8/11)>tol:
+        raise AssertionError('Wrong b crossing positions')
+    if abs(b['hits'][0]['t']-3/11)>tol or abs(b['hits'][1]['t']-8/11)>tol:
         raise AssertionError('Wrong path crossing fractions')
     if not all(len(set(seq)&{'top'})==0 for _,seq,_ in legal):
         raise AssertionError('Forbidden face leaked')
@@ -494,9 +494,9 @@ def geometry_preflight(verbose=True):
         print('  box 8x5x4, start front P=(2,0,3), end back Q=(6,5,3)')
         print('  forbidden face: TOP (z=4)')
         print('  free optimum: front-top-back, sqrt(65)')
-        print('  allowed optimum: front-bottom-back, sqrt(137)')
+        print('  allowed optimum: front-b-back, sqrt(137)')
         print('  left and right alternatives: 13')
-        print('  bottom crossing x positions: 34/11, 54/11')
+        print('  b crossing x positions: 34/11, 54/11')
         print(f'  enumerated simple valid routes: {len(free)} before ban, {len(legal)} after ban')
         print('  rigid face distances, coplanarity and folded paths verified')
     return True
@@ -522,7 +522,7 @@ def plane_face(f,opacity=0.1):
 def box_shell(mark_forbidden=True):
     faces=VGroup(plane_face('front',0.07),plane_face('right',0.07),
                  plane_face('back',0.035),plane_face('left',0.035),
-                 plane_face('bottom',0.055),plane_face('top',0.15 if mark_forbidden else 0.035))
+                 plane_face('b',0.055),plane_face('top',0.15 if mark_forbidden else 0.035))
     edges=VGroup()
     for names in [('A','B'),('B','C'),('C','D'),('D','A'),
                   ('E','F'),('F','G'),('G','H'),('H','E'),
@@ -564,11 +564,11 @@ def route_face_objects(chain,color=GOLD):
     return objects,d
 
 
-def net_diagram(kind='bottom',show_path=True,show_numbers=False):
+def net_diagram(kind='b',show_path=True,show_numbers=False):
     # Whole faces, not clipped to the useful path.
     # Both nets span 8 by 13 in exact length units.
     # Top: front y=0..4, top 4..9, back 9..13, P=(2,3), Q=(6,10).
-    # Bottom: back y=-9..-5, bottom -5..0, front 0..4,
+    # Bottom: back y=-9..-5, b -5..0, front 0..4,
     #         P=(2,3), Q=(6,-8).
     if kind=='top':
         rects=[('front',0,4),('top',4,9),('back',9,13)]
@@ -576,7 +576,7 @@ def net_diagram(kind='bottom',show_path=True,show_numbers=False):
         P2=np.array([2.,3.]);Q2=np.array([6.,10.]);hinges=[4,9]
         path_color=RED
     else:
-        rects=[('back',-9,-5),('bottom',-5,0),('front',0,4)]
+        rects=[('back',-9,-5),('b',-5,0),('front',0,4)]
         y0,y1=-9,4
         P2=np.array([2.,3.]);Q2=np.array([6.,-8.]);hinges=[0,-5]
         path_color=GOLD
@@ -913,7 +913,7 @@ class TraiPhang20Master(BaseLesson):
         self.narrate('Bây giờ yêu cầu thay đổi: không được đi qua nắp trên. Đường căn sáu mươi lăm vừa tìm tuy ngắn nhưng phải loại.')
         self.narrate('Cách làm đúng không phải sửa số liệu, mà là bỏ tất cả dải mặt dùng nắp trên và kiểm tra lại những phương án còn lại.')
 
-    def reopen_bottom(self):
+    def reopen_b(self):
         self.clear_all();self.add_hud('Mở dải hợp lệ: trước – đáy – sau','08 / 15')
         mobs,d=route_face_objects(BOTTOM_CHAIN,GOLD)
         self.add(*mobs)
@@ -932,22 +932,22 @@ class TraiPhang20Master(BaseLesson):
             Rotate(mobs[2],angle=step['angle'],
                    axis=W(step['b'])-W(step['a']),about_point=W(step['a'])),min_time=2.5)
 
-    def bottom_candidate(self):
+    def b_candidate(self):
         self.clear_all();self.add_hud('Đo chiều dài đường qua đáy','09 / 15')
-        net,_=net_diagram('bottom',True)
+        net,_=net_diagram('b',True)
         self.show_flat(net)
         self.show_card('PYTHAGORE TRÊN BẢN TRẢI',[
             ('math','Delta x=4',29,CYAN),
             ('math','Delta y=3+5+3=11',26,CYAN),
-            ('math','L_(bottom)^2=4^2+11^2',25,INK),
-            ('math','L_(bottom)=sqrt(137)',31,GOLD),
+            ('math','L_(b)^2=4^2+11^2',25,INK),
+            ('math','L_(b)=sqrt(137)',31,GOLD),
         ],GOLD)
         self.narrate('Trên dải qua đáy, chênh lệch theo chiều dài vẫn là bốn, nhưng độ lệch qua ba mặt là ba cộng năm cộng ba, bằng mười một.')
         self.narrate('Do đó đường thẳng trên dải này có độ dài căn một trăm ba mươi bảy.')
 
     def edge_validation(self):
         self.clear_all();self.add_hud('Kiểm tra hai điểm cắt cạnh gấp','10 / 15')
-        net,_=net_diagram('bottom',True)
+        net,_=net_diagram('b',True)
         self.show_flat(net)
         self.show_card('ĐOẠN THẲNG THẬT SỰ HỢP LỆ',[
             ('math','x_X=2+frac(3,11) times 4',24,INK),
@@ -966,7 +966,7 @@ class TraiPhang20Master(BaseLesson):
         self.show_card('HAI DẢI QUA MẶT BÊN',[
             ('math','L_(left)=13',28,ORANGE),
             ('math','L_(right)=13',28,CYAN),
-            ('math','L_(bottom)=sqrt(137)',27,GOLD),
+            ('math','L_(b)=sqrt(137)',27,GOLD),
             ('math','sqrt(137)<13',30,GREEN),
         ],GREEN)
         self.narrate('Nếu vòng qua mặt trái hay mặt phải, bản trải cho độ dài mười ba trong cả hai trường hợp.')
@@ -1035,8 +1035,8 @@ class TraiPhang20Master(BaseLesson):
 
     def construct(self):
         self.intro();self.problem();self.steps();self.face_graph();self.enumerate()
-        self.open_top();self.top_candidate();self.restriction();self.reopen_bottom()
-        self.bottom_candidate();self.edge_validation();self.others();self.choose()
+        self.open_top();self.top_candidate();self.restriction();self.reopen_b()
+        self.b_candidate();self.edge_validation();self.others();self.choose()
         self.walk();self.proof();self.conclusion()
 
 
