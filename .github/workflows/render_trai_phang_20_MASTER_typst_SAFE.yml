@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py"
+      - "Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py"
       - ".github/workflows/render_trai_phang_20_MASTER_typst_SAFE.yml"
 
 jobs:
@@ -40,11 +40,11 @@ jobs:
 
       - name: Python syntax check
         run: |
-          python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py
+          python -m py_compile Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py
 
       - name: Student narration lint
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --narration-lint
+          python Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --narration-lint
 
       - name: Reject known-bad Typst math syntax
         run: |
@@ -53,7 +53,7 @@ jobs:
           import ast
           import re
 
-          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           expressions = []
 
@@ -104,25 +104,25 @@ jobs:
               'a=8, b=5, h=4',
               'Delta x=6-2=4',
               'Delta y=1+5+1=7',
-              'L_(t)^2=4^2+7^2',
-              'L_(t)=sqrt(65)',
+              'L_(top)^2=4^2+7^2',
+              'L_(top)=sqrt(65)',
               'Delta x=4',
               'Delta y=3+5+3=11',
-              'L_(b)^2=4^2+11^2',
-              'L_(b)=sqrt(137)',
+              'L_(bottom)^2=4^2+11^2',
+              'L_(bottom)=sqrt(137)',
               'x_X=2+frac(3,11) times 4',
               'x_X=frac(34,11)',
               'x_Y=2+frac(8,11) times 4',
               'x_Y=frac(54,11)',
-              'L_(l)=13',
-              'L_(r)=13',
+              'L_(left)=13',
+              'L_(right)=13',
               'sqrt(137)<13',
-              'L_(f)=sqrt(65)',
-              'L_(v)=sqrt(137)',
+              'L_(free)=sqrt(65)',
+              'L_(valid)=sqrt(137)',
               'L_(min)=sqrt(137)',
           ]
 
-          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           extracted = []
 
@@ -165,11 +165,11 @@ jobs:
 
       - name: Geometry preflight
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --geometry-preflight
+          python Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --geometry-preflight
 
       - name: Layout preflight
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --layout-preflight
+          python Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --layout-preflight
 
       - name: 480p smoke render
         env:
@@ -177,7 +177,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_20_master.log
+          python Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_20_master.log
           SMOKE=$(find media_smoke -type f -name 'trai_phang_20_master_smoke.mp4' | head -n 1)
           test -n "$SMOKE"
           ffprobe -v error \
@@ -191,7 +191,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/SeriesTraiPhang/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_20_master.log
+          python Manim-Typst/trai_phang_20_capstone_thuat_toan_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_20_master.log
 
       - name: Find and verify final video
         shell: bash

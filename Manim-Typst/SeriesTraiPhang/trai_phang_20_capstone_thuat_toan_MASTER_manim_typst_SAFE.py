@@ -253,19 +253,19 @@ def layout_preflight(sample_cards, verbose=True):
         body = card[3]
         for mob in [title, *list(body)]:
             if mob.get_left()[0] < bg.get_left()[0] + 0.35:
-                raise AssertionError("Card item crosses l safe margin.")
+                raise AssertionError("Card item crosses left safe margin.")
             if mob.get_right()[0] > bg.get_right()[0] - 0.22:
-                raise AssertionError("Card item crosses r safe margin.")
+                raise AssertionError("Card item crosses right safe margin.")
             if mob.get_top()[1] > bg.get_top()[1] - 0.18:
-                raise AssertionError("Card item crosses t safe margin.")
-            if mob.get_b()[1] < bg.get_b()[1] + 0.18:
-                raise AssertionError("Card item crosses b safe margin.")
+                raise AssertionError("Card item crosses top safe margin.")
+            if mob.get_bottom()[1] < bg.get_bottom()[1] + 0.18:
+                raise AssertionError("Card item crosses bottom safe margin.")
         rows = list(body)
         for i in range(len(rows)):
             for j in range(i + 1, len(rows)):
-                overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_b()[1], rows[j].get_b()[1])
+                overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_bottom()[1], rows[j].get_bottom()[1])
                 if overlap > 1e-4:
-                    raise AssertionError("Two r-card rows overlap.")
+                    raise AssertionError("Two right-card rows overlap.")
     if verbose:
         print("LAYOUT PREFLIGHT OK")
     return True
@@ -282,22 +282,22 @@ def layout_preflight(sample_cards, verbose=True):
 # ---------- geometry engine: one forbidden face ----------
 # Rectangular box 8 x 5 x 4.
 # P=(2,0,3) on the front face; Q=(6,5,3) on the back face.
-# The t face z=4 is forbidden (its interior and all paths through it).
+# The top face z=4 is forbidden (its interior and all paths through it).
 # Legal routes can use the other five faces, including their edges.
 #
-# Without the restriction: front -> t -> back:
+# Without the restriction: front -> top -> back:
 #   developed displacement (dx,dy) = (4, 1+5+1) = (4,7)
-#   L_top = sqrt(65), but this route crosses the FORBIDDEN t.
+#   L_top = sqrt(65), but this route crosses the FORBIDDEN top.
 #
-# Valid replacement: front -> b -> back:
+# Valid replacement: front -> bottom -> back:
 #   developed displacement (dx,dy) = (4, 3+5+3) = (4,11)
-#   L_b = sqrt(137)
-#   crosses front-b at x=34/11,
-#   crosses b-back at x=54/11.
+#   L_bottom = sqrt(137)
+#   crosses front-bottom at x=34/11,
+#   crosses bottom-back at x=54/11.
 #
-# Alternative three-face routes front -> l/r -> back:
+# Alternative three-face routes front -> left/right -> back:
 #   L_left = L_right = 13.
-# Exhaustive preflight checks all simple adjacent face strips that avoid t,
+# Exhaustive preflight checks all simple adjacent face strips that avoid top,
 # including four-face chains; the best is sqrt(137).
 
 BOX_X=8.0
@@ -317,21 +317,21 @@ V={
 }
 FACES={
     'front':['A','B','F','E'],
-    'r':['B','C','G','F'],
+    'right':['B','C','G','F'],
     'back':['D','H','G','C'],
-    'l':['A','E','H','D'],
-    'b':['A','D','C','B'],
-    't':['E','F','G','H'],
+    'left':['A','E','H','D'],
+    'bottom':['A','D','C','B'],
+    'top':['E','F','G','H'],
 }
-ALLOWED={'front','back','l','r','b'}
+ALLOWED={'front','back','left','right','bottom'}
 FACE_COLORS={
-    'front':PURPLE,'back':CYAN,'b':BLUE,
-    'l':ORANGE,'r':GREEN,'t':RED,
+    'front':PURPLE,'back':CYAN,'bottom':BLUE,
+    'left':ORANGE,'right':GREEN,'top':RED,
 }
-TOP_CHAIN=['front','t','back']
-BOTTOM_CHAIN=['front','b','back']
-LEFT_CHAIN=['front','l','back']
-RIGHT_CHAIN=['front','r','back']
+TOP_CHAIN=['front','top','back']
+BOTTOM_CHAIN=['front','bottom','back']
+LEFT_CHAIN=['front','left','back']
+RIGHT_CHAIN=['front','right','back']
 WORLD_SCALE=0.59
 WORLD_SHIFT=np.array([-3.25,-0.25,-0.30])
 CAM_PHI=67*DEGREES
@@ -456,11 +456,11 @@ def geometry_preflight(verbose=True):
     for f,vs in FACES.items():
         n=face_normal([V[v] for v in vs])
         if abs(np.linalg.norm(n)-1.0)>tol:raise AssertionError(f)
-    f=enumerate_routes(set(FACES))
+    free=enumerate_routes(set(FACES))
     legal=enumerate_routes(ALLOWED)
-    if not f or not legal:raise AssertionError('Missing v face-strip paths')
-    if abs(f[0][0]-math.sqrt(65))>tol:raise AssertionError('Free optimum mismatch')
-    if f[0][1]!=TOP_CHAIN:raise AssertionError(('Free route wrong',f[0][1]))
+    if not free or not legal:raise AssertionError('Missing valid face-strip paths')
+    if abs(free[0][0]-math.sqrt(65))>tol:raise AssertionError('Free optimum mismatch')
+    if free[0][1]!=TOP_CHAIN:raise AssertionError(('Free route wrong',free[0][1]))
     if abs(legal[0][0]-math.sqrt(137))>tol:raise AssertionError('Constrained optimum mismatch')
     if legal[0][1]!=BOTTOM_CHAIN:raise AssertionError(('Allowed route wrong',legal[0][1]))
     if abs(unfold_chain(LEFT_CHAIN)['length']-13)>tol:raise AssertionError('Left wrong')
@@ -480,24 +480,24 @@ def geometry_preflight(verbose=True):
         if abs(folded-data['length'])>tol:
             raise AssertionError('Fold/unfold length mismatch')
 
-    b=unfold_chain(BOTTOM_CHAIN)
-    t=unfold_chain(TOP_CHAIN)
-    b1,b2=(h['raw'] for h in b['hits'])
+    bottom=unfold_chain(BOTTOM_CHAIN)
+    top=unfold_chain(TOP_CHAIN)
+    b1,b2=(h['raw'] for h in bottom['hits'])
     if abs(b1[0]-34.0/11.0)>tol or abs(b2[0]-54.0/11.0)>tol:
-        raise AssertionError('Wrong b crossing positions')
-    if abs(b['hits'][0]['t']-3/11)>tol or abs(b['hits'][1]['t']-8/11)>tol:
+        raise AssertionError('Wrong bottom crossing positions')
+    if abs(bottom['hits'][0]['t']-3/11)>tol or abs(bottom['hits'][1]['t']-8/11)>tol:
         raise AssertionError('Wrong path crossing fractions')
-    if not all(len(set(seq)&{'t'})==0 for _,seq,_ in legal):
+    if not all(len(set(seq)&{'top'})==0 for _,seq,_ in legal):
         raise AssertionError('Forbidden face leaked')
     if verbose:
         print('GEOMETRY PREFLIGHT OK')
         print('  box 8x5x4, start front P=(2,0,3), end back Q=(6,5,3)')
         print('  forbidden face: TOP (z=4)')
-        print('  f optimum: front-t-back, sqrt(65)')
-        print('  allowed optimum: front-b-back, sqrt(137)')
-        print('  l and r alternatives: 13')
-        print('  b crossing x positions: 34/11, 54/11')
-        print(f'  enumerated simple v routes: {len(f)} before ban, {len(legal)} after ban')
+        print('  free optimum: front-top-back, sqrt(65)')
+        print('  allowed optimum: front-bottom-back, sqrt(137)')
+        print('  left and right alternatives: 13')
+        print('  bottom crossing x positions: 34/11, 54/11')
+        print(f'  enumerated simple valid routes: {len(free)} before ban, {len(legal)} after ban')
         print('  rigid face distances, coplanarity and folded paths verified')
     return True
 
@@ -520,9 +520,9 @@ def plane_face(f,opacity=0.1):
 
 
 def box_shell(mark_forbidden=True):
-    faces=VGroup(plane_face('front',0.07),plane_face('r',0.07),
-                 plane_face('back',0.035),plane_face('l',0.035),
-                 plane_face('b',0.055),plane_face('t',0.15 if mark_forbidden else 0.035))
+    faces=VGroup(plane_face('front',0.07),plane_face('right',0.07),
+                 plane_face('back',0.035),plane_face('left',0.035),
+                 plane_face('bottom',0.055),plane_face('top',0.15 if mark_forbidden else 0.035))
     edges=VGroup()
     for names in [('A','B'),('B','C'),('C','D'),('D','A'),
                   ('E','F'),('F','G'),('G','H'),('H','E'),
@@ -564,19 +564,19 @@ def route_face_objects(chain,color=GOLD):
     return objects,d
 
 
-def net_diagram(kind='b',show_path=True,show_numbers=False):
+def net_diagram(kind='bottom',show_path=True,show_numbers=False):
     # Whole faces, not clipped to the useful path.
     # Both nets span 8 by 13 in exact length units.
-    # Top: front y=0..4, t 4..9, back 9..13, P=(2,3), Q=(6,10).
-    # Bottom: back y=-9..-5, b -5..0, front 0..4,
+    # Top: front y=0..4, top 4..9, back 9..13, P=(2,3), Q=(6,10).
+    # Bottom: back y=-9..-5, bottom -5..0, front 0..4,
     #         P=(2,3), Q=(6,-8).
-    if kind=='t':
-        rects=[('front',0,4),('t',4,9),('back',9,13)]
+    if kind=='top':
+        rects=[('front',0,4),('top',4,9),('back',9,13)]
         y0,y1=0,13
         P2=np.array([2.,3.]);Q2=np.array([6.,10.]);hinges=[4,9]
         path_color=RED
     else:
-        rects=[('back',-9,-5),('b',-5,0),('front',0,4)]
+        rects=[('back',-9,-5),('bottom',-5,0),('front',0,4)]
         y0,y1=-9,4
         P2=np.array([2.,3.]);Q2=np.array([6.,-8.]);hinges=[0,-5]
         path_color=GOLD
@@ -589,9 +589,9 @@ def net_diagram(kind='b',show_path=True,show_numbers=False):
     for name,lo,hi in rects:
         g.add(Polygon(T(0,lo),T(8,lo),T(8,hi),T(0,hi),
                       fill_color=FACE_COLORS[name],
-                      fill_opacity=0.26 if name=='t' else 0.105,
-                      stroke_color=RED if name=='t' else FACE_COLORS[name],
-                      stroke_width=3.2 if name=='t' else 2.3))
+                      fill_opacity=0.26 if name=='top' else 0.105,
+                      stroke_color=RED if name=='top' else FACE_COLORS[name],
+                      stroke_width=3.2 if name=='top' else 2.3))
     for h in hinges:
         g.add(Line(T(0,h),T(8,h),color=GOLD,stroke_width=3.1))
     P=T(*P2);Q=T(*Q2)
@@ -610,26 +610,26 @@ def comparison_bars():
           ('Qua đáy',math.sqrt(137),GOLD),
           ('Qua mặt trái',13,ORANGE),
           ('Qua mặt phải',13,CYAN)]
-    l=LEFT_CENTER[0]-2.65
+    left=LEFT_CENTER[0]-2.65
     g=VGroup()
     for i,(lab,value,color) in enumerate(vals):
         y=1.78-1.15*i
         title=txt(lab,20,INK)
-        title.move_to(np.array([l+1.2,y+0.31,0]))
+        title.move_to(np.array([left+1.2,y+0.31,0]))
         bg=Rectangle(width=4.7,height=0.16,
                      stroke_width=0,fill_color=GRID,fill_opacity=0.6)
-        bg.move_to([l+2.35,y-0.07,0])
+        bg.move_to([left+2.35,y-0.07,0])
         fill=Rectangle(width=4.7*value/14.2,height=0.16,
                        stroke_width=0,fill_color=color,fill_opacity=0.9)
-        fill.move_to([l+2.35-4.7/2+fill.width/2,y-0.07,0])
+        fill.move_to([left+2.35-4.7/2+fill.width/2,y-0.07,0])
         g.add(title,bg,fill)
     return g
 
 
 # ---------- VIDEO 20: CAPSTONE — ALGORITHM FOR SHORTEST SURFACE ROUTES ----------
 # Capstone numerical example repeats the 8 x 5 x 4 box from Video 18,
-# but now demonstrates a general-purpose finite search over v face strips.
-# Two states: f surface and with the t forbidden.
+# but now demonstrates a general-purpose finite search over valid face strips.
+# Two states: free surface and with the top forbidden.
 # Geometry engine independently unfolds EVERY simple adjacent-face chain
 # and rejects any candidate whose straight line does not cross the common
 # hinge edges in the correct order, strictly in their interiors.
@@ -646,27 +646,27 @@ def algorithm_results(forbidden=()):
 
 def audit_algorithm(verbose=True):
     geometry_preflight(False)
-    f=algorithm_results()
-    limited=algorithm_results(('t',))
-    if not f or not limited:
+    free=algorithm_results()
+    limited=algorithm_results(('top',))
+    if not free or not limited:
         raise AssertionError('No routes')
-    if f[0][1]!=TOP_CHAIN or abs(f[0][0]-math.sqrt(65))>1e-8:
-        raise AssertionError(('Unexpected unrestricted optimum',f[0][:2]))
+    if free[0][1]!=TOP_CHAIN or abs(free[0][0]-math.sqrt(65))>1e-8:
+        raise AssertionError(('Unexpected unrestricted optimum',free[0][:2]))
     if limited[0][1]!=BOTTOM_CHAIN or abs(limited[0][0]-math.sqrt(137))>1e-8:
         raise AssertionError(('Unexpected constrained optimum',limited[0][:2]))
-    if len(limited)>=len(f):
+    if len(limited)>=len(free):
         raise AssertionError('Forbidden face not removed correctly')
-    if any('t' in chain for _,chain,_ in limited):
+    if any('top' in chain for _,chain,_ in limited):
         raise AssertionError('Forbidden face appeared in legal list')
-    if len(f)<4 or len(limited)<3:
+    if len(free)<4 or len(limited)<3:
         raise AssertionError('Expected multiple independent candidates')
     if verbose:
         print('ALGORITHM AUDIT OK')
-        print('  unrestricted routes:',len(f))
-        print('  allowed routes after banning t:',len(limited))
-        print('  f winner:', f[0][1],f'{f[0][0]:.9f}')
+        print('  unrestricted routes:',len(free))
+        print('  allowed routes after banning top:',len(limited))
+        print('  free winner:', free[0][1],f'{free[0][0]:.9f}')
         print('  restricted winner:', limited[0][1],f'{limited[0][0]:.9f}')
-        print('  all v paths cross hinges in the correct order')
+        print('  all valid paths cross hinges in the correct order')
         print('  folded lengths, rigid hinges, and face shape are preflight checked')
     return True
 
@@ -712,17 +712,17 @@ def compact_candidate_board(block_top=False):
         ('Trước → phải → sau',13.0,BLUE),
     ]
     group=VGroup()
-    l=LEFT_CENTER[0]-2.66
-    t=1.94
+    left=LEFT_CENTER[0]-2.66
+    top=1.94
     for i,(name,value,color) in enumerate(rows):
-        y=t-1.18*i
+        y=top-1.18*i
         label=fit_width(txt(name,19,INK),5.1)
         label.move_to([LEFT_CENTER[0],y+0.23,0])
         bg=Rectangle(width=4.92,height=0.18,stroke_width=0,
                      fill_color=GRID,fill_opacity=0.65).move_to([LEFT_CENTER[0],y-0.15,0])
         bar=Rectangle(width=4.92*value/14.0,height=0.18,stroke_width=0,
                       fill_color=color,fill_opacity=0.95)
-        bar.move_to([l+bar.width/2+0.20,y-0.15,0])
+        bar.move_to([left+bar.width/2+0.20,y-0.15,0])
         group.add(label,bg,bar)
     return group
 
@@ -890,7 +890,7 @@ class TraiPhang20Master(BaseLesson):
 
     def top_candidate(self):
         self.clear_all();self.add_hud('Trên bản trải, đo đường qua nắp','06 / 15')
-        net,_=net_diagram('t',True)
+        net,_=net_diagram('top',True)
         self.show_flat(net)
         self.show_card('BẢN TRẢI NẮP TRÊN',[
             ('math','Delta x=6-2=4',26,CYAN),
@@ -913,7 +913,7 @@ class TraiPhang20Master(BaseLesson):
         self.narrate('Bây giờ yêu cầu thay đổi: không được đi qua nắp trên. Đường căn sáu mươi lăm vừa tìm tuy ngắn nhưng phải loại.')
         self.narrate('Cách làm đúng không phải sửa số liệu, mà là bỏ tất cả dải mặt dùng nắp trên và kiểm tra lại những phương án còn lại.')
 
-    def reopen_b(self):
+    def reopen_bottom(self):
         self.clear_all();self.add_hud('Mở dải hợp lệ: trước – đáy – sau','08 / 15')
         mobs,d=route_face_objects(BOTTOM_CHAIN,GOLD)
         self.add(*mobs)
@@ -932,9 +932,9 @@ class TraiPhang20Master(BaseLesson):
             Rotate(mobs[2],angle=step['angle'],
                    axis=W(step['b'])-W(step['a']),about_point=W(step['a'])),min_time=2.5)
 
-    def b_candidate(self):
+    def bottom_candidate(self):
         self.clear_all();self.add_hud('Đo chiều dài đường qua đáy','09 / 15')
-        net,_=net_diagram('b',True)
+        net,_=net_diagram('bottom',True)
         self.show_flat(net)
         self.show_card('PYTHAGORE TRÊN BẢN TRẢI',[
             ('math','Delta x=4',29,CYAN),
@@ -947,7 +947,7 @@ class TraiPhang20Master(BaseLesson):
 
     def edge_validation(self):
         self.clear_all();self.add_hud('Kiểm tra hai điểm cắt cạnh gấp','10 / 15')
-        net,_=net_diagram('b',True)
+        net,_=net_diagram('bottom',True)
         self.show_flat(net)
         self.show_card('ĐOẠN THẲNG THẬT SỰ HỢP LỆ',[
             ('math','x_X=2+frac(3,11) times 4',24,INK),
@@ -1035,8 +1035,8 @@ class TraiPhang20Master(BaseLesson):
 
     def construct(self):
         self.intro();self.problem();self.steps();self.face_graph();self.enumerate()
-        self.open_top();self.top_candidate();self.restriction();self.reopen_b()
-        self.b_candidate();self.edge_validation();self.others();self.choose()
+        self.open_top();self.top_candidate();self.restriction();self.reopen_bottom()
+        self.bottom_candidate();self.edge_validation();self.others();self.choose()
         self.walk();self.proof();self.conclusion()
 
 

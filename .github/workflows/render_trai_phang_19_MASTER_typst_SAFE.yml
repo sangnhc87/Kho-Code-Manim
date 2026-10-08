@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py"
+      - "Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py"
       - ".github/workflows/render_trai_phang_19_MASTER_typst_SAFE.yml"
 
 jobs:
@@ -40,11 +40,11 @@ jobs:
 
       - name: Python syntax check
         run: |
-          python -m py_compile Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py
+          python -m py_compile Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py
 
       - name: Student narration lint
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --narration-lint
+          python Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --narration-lint
 
       - name: Reject known-bad Typst math syntax
         run: |
@@ -53,7 +53,7 @@ jobs:
           import ast
           import re
 
-          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           expressions = []
 
@@ -105,16 +105,16 @@ jobs:
               'b=6',
               '2<=t<=10',
               'L_I^2=(t+4)^2+36',
-              'L_(I I)^2=100+t^2',
-              'L_(I I I)^2=(t+6)^2+16',
-              'L_(I I I)^2-L_I^2=4t',
+              'L_(II)^2=100+t^2',
+              'L_(III)^2=(t+6)^2+16',
+              'L_(III)^2-L_I^2=4t',
               '4t>0',
-              'L_I^2-L_(I I)^2=8(t-6)',
+              'L_I^2-L_(II)^2=8(t-6)',
               't=6',
-              'L_I=L_(I I)',
+              'L_I=L_(II)',
               'L_(min)=sqrt(136)=2 sqrt(34)',
-              'L_I<L_(I I)',
-              'L_(I I)<L_I',
+              'L_I<L_(II)',
+              'L_(II)<L_I',
               'L_(min)=sqrt((t+4)^2+36)',
               'L_(min)=sqrt(t^2+100)',
               't_0=6',
@@ -122,7 +122,7 @@ jobs:
               'L^2=10^2+t^2',
           ]
 
-          path = Path("Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py")
+          path = Path("Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py")
           tree = ast.parse(path.read_text(encoding="utf-8"))
           extracted = []
 
@@ -165,11 +165,11 @@ jobs:
 
       - name: Geometry preflight
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --geometry-preflight
+          python Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --geometry-preflight
 
       - name: Layout preflight
         run: |
-          python Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --layout-preflight
+          python Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --layout-preflight
 
       - name: 480p smoke render
         env:
@@ -177,7 +177,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_19_master.log
+          python Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py --smoke-render 2>&1 | tee smoke_trai_phang_19_master.log
           SMOKE=$(find media_smoke -type f -name 'trai_phang_19_master_smoke.mp4' | head -n 1)
           test -n "$SMOKE"
           ffprobe -v error \
@@ -191,7 +191,7 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          python Manim-Typst/SeriesTraiPhang/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_19_master.log
+          python Manim-Typst/trai_phang_19_hop_chu_nhat_tham_so_MASTER_manim_typst_SAFE.py 2>&1 | tee render_trai_phang_19_master.log
 
       - name: Find and verify final video
         shell: bash
