@@ -18,15 +18,18 @@
     {
       "id": "COMB02",
       "title": "Quy tac nhan",
-      "status": "source_and_storyboard_ready",
+      "status": "v2_source_44_beats_math_tested_render_pending",
       "scene": "COMB02",
       "source": "episodes/comb02_rule_of_product.py",
-      "workflow": ".github/workflows/render-comb02.yml"
+      "workflow": ".github/workflows/render-comb02-v2.yml"
     },
     {
       "id": "COMB03",
       "title": "So do cay va khong gian mau",
-      "status": "storyboard_planned"
+      "status": "v2_source_48_beats_math_tested_render_pending",
+      "source": "episodes/comb03_tree_sample_space.py",
+      "scene": "COMB03",
+      "workflow": ".github/workflows/render-comb03-v2.yml"
     },
     {
       "id": "COMB04",

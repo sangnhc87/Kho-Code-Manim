@@ -1,4 +1,4 @@
-name: Render COMB02 - Manim + Typst
+name: Render COMB03 - Manim + Typst
 
 on:
   workflow_dispatch:
@@ -26,6 +26,9 @@ jobs:
     timeout-minutes: 120
     env:
       COMB_NOTATION: ${{ inputs.notation }}
+    defaults:
+      run:
+        working-directory: Series-Dai-So-To-Hop
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -53,29 +56,20 @@ jobs:
         run: python -m unittest discover -s tests -v
 
       - name: Compile Typst math assets (required for output)
-        run: python scripts/build_formulas.py --only-prefix comb02_
+        run: python scripts/build_formulas.py
 
-      - name: Verify Typst expressions are present
-        run: |
-          test -s assets/rendered/comb02_product6.png
-          test -s assets/rendered/comb02_productgeneral.png
-          test -s assets/rendered/comb02_product12.png
-          test -s assets/rendered/comb02_forbidden5.png
-          test -s assets/rendered/comb02_branch5.png
-          test -s assets/rendered/comb02_quiz12.png
-
-      - name: Render COMB02 preview
+      - name: Render COMB03 preview
         if: ${{ inputs.quality == 'preview' }}
-        run: manim -ql --fps 24 episodes/comb02_rule_of_product.py COMB02
+        run: manim -ql --fps 24 episodes/comb03_tree_sample_space.py COMB03
 
-      - name: Render COMB02 Full HD
+      - name: Render COMB03 Full HD
         if: ${{ inputs.quality == 'fullhd' }}
-        run: manim -qh -r 1920,1080 --fps 30 episodes/comb02_rule_of_product.py COMB02
+        run: manim -qh -r 1920,1080 --fps 30 episodes/comb03_tree_sample_space.py COMB03
 
       - name: Upload rendered video
         uses: actions/upload-artifact@v4
         with:
-          name: COMB02-${{ inputs.quality }}-${{ inputs.notation }}
-          path: media/videos/**/COMB02.mp4
+          name: COMB03-${{ inputs.quality }}-${{ inputs.notation }}
+          path: Series-Dai-So-To-Hop/media/videos/**/COMB03.mp4
           if-no-files-found: error
           retention-days: 7

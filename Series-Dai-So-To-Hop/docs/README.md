@@ -1,24 +1,8 @@
-# SANG MATH — MANIM–TYPST · ĐẠI SỐ TỔ HỢP (MÙA 1)
-
-## MỚI: COMB02 V2 — QUY TẮC NHÂN (BÀI GIẢNG ĐẦY ĐỦ)
-
-Bản này thay thế video 02 ngắn cũ bằng **44 nhịp / 8 chương**, có các mô hình đếm, bài tập nhiều mức độ, lời giảng đầy đủ và phụ đề SRT. Thời lượng nền **12:57,7** (bao gồm đoạn kết). Khi TTS chạy, nhịp tự động theo độ dài âm thanh nên có thể dài hơn. Code V1 dự phòng tại `episodes/comb02_rule_of_product_v1_backup.py`.
-
-**Nút Actions:** `Render COMB02 V2 - Bai giang day du Manim Typst` → `preview` → `voice=on` → Run workflow. Sau khi duyệt MP4 và 8 ảnh QA mới render `fullhd`.
-
-**Tệp:** `episodes/comb02_rule_of_product.py`, `comb02_lesson_data.py`, `scripts/prepare_comb02_v2.py`, `scripts/qa_comb02_v2.py`, `narration_COMB02_v2.md`, `subtitles_COMB02_v2.srt`, `storyboard_COMB02_v2.md`, `HUONG_DAN_RENDER_COMB02_V2.md`.
-
-**Bộ test:** `python -m unittest discover -s tests -v`. **Trạng thái:** đã kiểm tra toán, Python và chuẩn bị storyboard tĩnh; chưa render MP4 Manim thật tại môi trường đóng gói.
-
-**Đặc biệt về phương pháp:** số cách sau mỗi lựa chọn bước một phải bằng nhau mới nhân trực tiếp; nếu khác nhau thì cộng theo nhánh. Bài áo–quần có cặp cấm được giải theo cả hai cách để HS hiểu bản chất.
-
----
-
 # SANG MATH · Manim–Typst · Đại số tổ hợp (mùa 1)
 
 ## COMB01 v2.0 — QUY TẮC CỘNG (nâng cấp bài giảng dài)
 
-**Thay thế hẳn code COMB01 ngắn trước đây.** Scene giữ tên `COMB01`, tệp giữ đường dẫn `episodes/comb01_rule_of_sum.py`, workflow giữ đường dẫn `.github/workflows/render-comb01.yml`, nên chỉ cần chép đè code vào repository cũ. GEO01 **giữ nguyên**; COMB02 đã được nâng cấp V2, không bị xóa.
+**Thay thế hẳn code COMB01 ngắn trước đây.** Scene giữ tên `COMB01`, tệp giữ đường dẫn `episodes/comb01_rule_of_sum.py`, workflow giữ đường dẫn `.github/workflows/render-comb01.yml`, nên chỉ cần chép đè code vào repository cũ. COMB02 và GEO01 **giữ nguyên**, không bị xóa.
 
 - 8 chương, 42 nhịp nội dung; **~12 phút 52 giây khi không bật tiếng**. Khi bật TTS, thời lượng phụ thuộc tốc độ đọc thực tế, đồng bộ theo từng clip, không cắt câu đọc.
 - Bài toán 2 xe buýt / 3 tàu; phân nhóm X, Y; quy tắc cộng; bài chọn 4 sách Toán hoặc 3 sách Vật lí; phần giao trong tập các số 1–12; ví dụ 10 số lẻ + 5 bội của 4 trong 1–20; so sánh hoặc / và; hai bài củng cố.
@@ -60,7 +44,7 @@ Nếu không dùng TTS: `python scripts/prepare_comb01_v2.py --voice off`.
 | `narration_COMB01_v2.md` | Bản lời đọc rút gọn thực tế, căn mốc theo thời lượng dự kiến |
 | `storyboard_COMB01_v2.md` | Đề cương và quy tắc nghiệm thu từng chương |
 | `.github/workflows/render-comb01.yml` | Workflow mới thay thế workflow COMB01 cũ |
-| `episodes/comb02_rule_of_product.py` | Code COMB02 nay đã nâng cấp V2 |
+| `episodes/comb02_rule_of_product.py` | Code COMB02 cũ giữ nguyên |
 | `episodes/geo01_point_inside_triangle.py` | Code GEO01 cũ giữ nguyên |
 
 ### Quy ước ký hiệu tổ hợp/chỉnh hợp cho các tập sau
@@ -70,14 +54,3 @@ Thực hiện đúng ký hiệu thầy đã chốt: `C^(n)_(k)` và `A^(n)_(k)` 
 ### Tinh thần thiết kế
 
 Chú trọng **bản chất phép đếm**, không kéo dài bằng animation trang trí. Công thức chỉ xuất hiện sau lập luận, màu đỏ dùng để cảnh báo kết quả bị tính hai lần (không phải kết quả không hợp lệ); phân biệt rõ trường hợp không giao nhau và có giao nhau.
-
-
-## COMB03 V2 – Sơ đồ cây và không gian mẫu
-
-- 48 nhịp nội dung, 8 chương, khoảng 13 phút 41 giây theo kịch bản nền; giọng đọc TTS có thể thay đổi thời lượng.
-- `episodes/comb03_tree_sample_space.py` – Scene `COMB03`.
-- `.github/workflows/render-comb03-v2.yml` – tự cài Manim, Typst, Noto Fonts, làm TTS nếu bật, render và kiểm tra MP4.
-- `comb03_beats.json` và `comb03_lesson_data.py` – nguồn duy nhất cho hoạt hình, lời giảng và kiểm thử.
-- `HUONG_DAN_RENDER_COMB03_V2.md` – hướng dẫn thao tác chi tiết.
-
-Các video COMB01 V2, COMB02 V2 và GEO01 vẫn được giữ nguyên trong gói. COMB03 chưa được render và nghiệm thu thực tế trong môi trường tạo mã nguồn.

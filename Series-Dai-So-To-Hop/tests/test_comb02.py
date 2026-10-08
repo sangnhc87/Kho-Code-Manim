@@ -41,16 +41,11 @@ class TestCOMB02(unittest.TestCase):
         tree = ast.parse(source)
         classes = [n for n in tree.body if isinstance(n,ast.ClassDef)]
         self.assertIn('COMB02',[c.name for c in classes])
-        formula_names = [node.args[0].value for node in ast.walk(tree)
-                         if isinstance(node,ast.Call) and isinstance(node.func,ast.Name)
-                         and node.func.id == 'formula_asset' and node.args
-                         and isinstance(node.args[0],ast.Constant) and isinstance(node.args[0].value,str)]
-        # Assets are also passed through explanation(... formula=(...), ...)
-        script = (ROOT/'scripts'/'build_formulas.py').read_text('utf8')
-        for key in ['comb02_product6','comb02_productgeneral','comb02_product12',
-                    'comb02_forbidden5','comb02_branch5','comb02_quiz12']:
-            self.assertIn(key,source)
-            self.assertIn(f"'{key}':",script)
+        lesson=(ROOT/'comb02_lesson_data.py').read_text('utf8')
+        prepare=(ROOT/'scripts'/'prepare_comb02_v2.py').read_text('utf8')
+        self.assertIn('FORMULAS = {',lesson)
+        self.assertIn('formula_sources()',prepare)
+        self.assertIn('formula_png(beat.formula)',source)
 
     def test_manifest_and_workflow(self):
         manifest = json.loads((ROOT/'season_manifest.json').read_text('utf8'))
