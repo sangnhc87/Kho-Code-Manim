@@ -1200,7 +1200,7 @@ def render_full():
     config.pixel_height=FINAL_HEIGHT
     config.frame_rate=FINAL_FPS
     config.media_dir=str(MEDIA_DIR)
-    config.output_file="trai_phang_15_silo_tr_non_MASTER_1080p"
+    config.output_file="trai_phang_15_silo_tru_non_MASTER_1080p"
     config.disable_caching=False
 
     scene=TraiPhang15Master()
