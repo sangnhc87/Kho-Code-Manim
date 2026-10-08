@@ -1,0 +1,671 @@
+1
+00:00:00,000 --> 00:00:06,667
+Ta có sáu thẻ chữ số từ không đến năm, và ba ô hàng trăm, hàng chục, hàng đơn vị.
+
+2
+00:00:06,667 --> 00:00:11,333
+Bài yêu cầu lập các số tự nhiên có ba chữ số khác nhau.
+
+3
+00:00:11,333 --> 00:00:19,333
+Trước khi nhân số lựa chọn, hãy kiểm tra ô bên trái: một số có ba chữ số không thể bắt đầu bằng không.
+
+4
+00:00:19,333 --> 00:00:24,000
+Chữ số không vẫn được phép xuất hiện ở hai vị trí phía sau.
+
+5
+00:00:24,000 --> 00:00:29,538
+Ta điền ô hàng trăm trước bởi đây là ô có điều kiện đặc biệt.
+
+6
+00:00:29,538 --> 00:00:37,292
+Sáu chữ số ban đầu có năm chữ số khác không, do đó ô đầu chỉ có năm cách lựa chọn.
+
+7
+00:00:37,292 --> 00:00:48,000
+Khi chọn một chữ số, tấm thẻ tương ứng được chuyển vào ô và không quay lại kho, vì đề yêu cầu ba chữ số đôi một khác nhau.
+
+8
+00:00:48,000 --> 00:00:51,882
+Sau khi điền hàng trăm, còn năm chữ số chưa dùng.
+
+9
+00:00:51,882 --> 00:00:56,824
+Cả năm đều có thể đứng ở hàng chục, kể cả chữ số không.
+
+10
+00:00:56,824 --> 00:01:05,647
+Sự khác biệt này rất quan trọng: điều kiện cấm số không ở đầu không có nghĩa là cấm số không ở mọi vị trí.
+
+11
+00:01:05,647 --> 00:01:12,000
+Hình động giữ thẻ hàng trăm cố định và cho năm thẻ còn lại thử vào ô giữa.
+
+12
+00:01:12,000 --> 00:01:19,059
+Đến ô hàng đơn vị, ta đã sử dụng hai thẻ khác nhau, nên chỉ còn bốn thẻ chưa dùng.
+
+13
+00:01:19,059 --> 00:01:28,588
+Không còn điều kiện về chữ số đầu ở đây và cũng chưa có ràng buộc chẵn lẻ, bởi thế mọi thẻ còn lại đều hợp lệ.
+
+14
+00:01:28,588 --> 00:01:36,000
+Cây lựa chọn trên hình có năm nhánh ở bước một, năm nhánh ở bước hai, rồi bốn ở bước ba.
+
+15
+00:01:36,000 --> 00:01:41,908
+Theo quy tắc nhân, số kết quả bằng năm nhân năm nhân bốn, tức một trăm.
+
+16
+00:01:41,908 --> 00:01:52,246
+Mỗi đường đi qua ba ô cho một số duy nhất, và mọi số hợp lệ tương ứng một đường đi nên không bỏ sót hay đếm trùng.
+
+17
+00:01:52,246 --> 00:02:00,000
+Chương trình Python cũng có thể liệt kê tất cả một trăm số để xác nhận lập luận của chúng ta.
+
+18
+00:02:00,000 --> 00:02:04,274
+Ta thay đổi đúng một giả thiết: các chữ số được phép lặp.
+
+19
+00:02:04,274 --> 00:02:13,808
+Ô hàng trăm vẫn có năm lựa chọn, nhưng thẻ đã dùng không bị loại khỏi kho nên hàng chục và hàng đơn vị đều có sáu lựa chọn.
+
+20
+00:02:13,808 --> 00:02:16,767
+Kết quả lúc này là một trăm tám mươi.
+
+21
+00:02:16,767 --> 00:02:24,000
+So sánh hai mô hình giúp ta thấy vì sao phải đọc kỹ cụm từ khác nhau hoặc có thể trùng nhau.
+
+22
+00:02:24,000 --> 00:02:27,568
+Lần này ta có năm chữ số từ không đến bốn.
+
+23
+00:02:27,568 --> 00:02:32,432
+Muốn lập số chẵn, chữ số hàng đơn vị phải là không, hai hoặc bốn.
+
+24
+00:02:32,432 --> 00:02:38,595
+Vì hàng trăm không thể là không nên các lựa chọn tại hai đầu có ảnh hưởng lẫn nhau.
+
+25
+00:02:38,595 --> 00:02:48,000
+Nếu cứ lấy bốn cách điền đầu, ba cách điền cuối, ta có nguy cơ bỏ qua sự khác nhau giữa tận cùng không và tận cùng khác không.
+
+26
+00:02:48,000 --> 00:02:51,323
+Ta bắt đầu từ chữ số cuối bằng không.
+
+27
+00:02:51,323 --> 00:02:57,600
+Khi đó ô hàng trăm được chọn thoải mái trong bốn chữ số một, hai, ba, bốn.
+
+28
+00:02:57,600 --> 00:03:00,554
+Ô hàng chục còn ba thẻ chưa dùng.
+
+29
+00:03:00,554 --> 00:03:07,200
+Số không đã cố định ở cuối, vì thế không còn trường hợp đầu bằng không phải loại.
+
+30
+00:03:07,200 --> 00:03:12,000
+Bằng quy tắc nhân, ta được mười hai số trong trường hợp này.
+
+31
+00:03:12,000 --> 00:03:17,408
+Nếu chữ số cuối là hai hoặc bốn, ta có hai cách chọn chữ số này.
+
+32
+00:03:17,408 --> 00:03:24,507
+Trong các chữ số còn lại, chữ số không vẫn không được đứng đầu, nên hàng trăm chỉ có ba cách.
+
+33
+00:03:24,507 --> 00:03:28,563
+Sau khi chọn hàng trăm, ô hàng chục còn ba lựa chọn.
+
+34
+00:03:28,563 --> 00:03:36,000
+Như vậy hai nhân ba nhân ba bằng mười tám số, khác với mười hai ở trường hợp tận cùng bằng không.
+
+35
+00:03:36,000 --> 00:03:44,000
+Một số không thể vừa tận cùng bằng không lại vừa tận cùng bằng hai hoặc bốn, nên hai trường hợp rời nhau.
+
+36
+00:03:44,000 --> 00:03:48,174
+Ta cộng mười hai và mười tám, được ba mươi số chẵn.
+
+37
+00:03:48,174 --> 00:04:00,000
+Trên hình, các cột kết quả chẵn đều được tô xanh, còn hai kiểu tận cùng được giữ màu khác nhau để học sinh nhận ra phép cộng trường hợp trước khi rút gọn.
+
+38
+00:04:00,000 --> 00:04:08,492
+Tổng số có ba chữ số khác nhau từ tập không đến bốn bằng bốn nhân bốn nhân ba, tức bốn mươi tám.
+
+39
+00:04:08,492 --> 00:04:13,662
+Mỗi số nguyên hoặc chẵn hoặc lẻ, không thể đồng thời là cả hai.
+
+40
+00:04:13,662 --> 00:04:18,831
+Bởi vậy số lẻ bằng bốn mươi tám trừ ba mươi, được mười tám.
+
+41
+00:04:18,831 --> 00:04:24,000
+Chúng ta vừa kiểm tra đáp số bằng một cách phân chia độc lập.
+
+42
+00:04:24,000 --> 00:04:39,584
+Một phép nhân như ba lựa chọn cuối nhân bốn lựa chọn đầu nhân ba lựa chọn giữa có vẻ hợp lý, nhưng sai vì khi số cuối bằng không thì hàng trăm có bốn cách, còn khi cuối là hai hoặc bốn thì hàng trăm chỉ có ba cách.
+
+43
+00:04:39,584 --> 00:04:43,325
+Ta cần tách nhánh hoặc chọn thứ tự điền ô phù hợp.
+
+44
+00:04:43,325 --> 00:04:48,000
+Đây là kỹ năng quan trọng cho mọi bài lập số có chữ số không.
+
+45
+00:04:48,000 --> 00:04:56,877
+Trong các số tự nhiên, điều kiện chia hết cho năm chỉ phụ thuộc chữ số hàng đơn vị: số phải kết thúc bằng không hoặc năm.
+
+46
+00:04:56,877 --> 00:05:02,795
+Ta lập số có bốn chữ số đôi một khác nhau từ bảy chữ số không đến sáu.
+
+47
+00:05:02,795 --> 00:05:12,000
+Hình động làm sáng hai thẻ tận cùng không và năm rồi khóa vị trí cuối; ba ô bên trái sẽ được đếm riêng theo từng trường hợp.
+
+48
+00:05:12,000 --> 00:05:19,412
+Nếu chữ số cuối bằng không thì sáu chữ số từ một đến sáu đều có thể đứng ở hàng nghìn.
+
+49
+00:05:19,412 --> 00:05:25,412
+Sau khi chọn hàng nghìn, còn năm thẻ cho hàng trăm, rồi bốn thẻ cho hàng chục.
+
+50
+00:05:25,412 --> 00:05:31,765
+Chữ số không không còn trong kho, vì thế không phải loại thêm trường hợp đầu bằng không.
+
+51
+00:05:31,765 --> 00:05:36,000
+Kết quả sáu nhân năm nhân bốn bằng một trăm hai mươi.
+
+52
+00:05:36,000 --> 00:05:41,189
+Nếu ô cuối là năm, các thẻ còn lại gồm không, một, hai, ba, bốn, sáu.
+
+53
+00:05:41,189 --> 00:05:44,757
+Hàng nghìn không được là không, nên có năm lựa chọn.
+
+54
+00:05:44,757 --> 00:05:51,243
+Sau khi điền hàng nghìn, còn năm thẻ khác cho ô tiếp theo, rồi bốn thẻ cho ô thứ ba.
+
+55
+00:05:51,243 --> 00:05:54,811
+Ta được năm nhân năm nhân bốn bằng một trăm số.
+
+56
+00:05:54,811 --> 00:06:00,000
+Hai trường hợp có số cách khác nhau vì sự hiện diện của chữ số không.
+
+57
+00:06:00,000 --> 00:06:07,899
+Hai trường hợp kết thúc bằng không và kết thúc bằng năm là rời nhau, vì mỗi số chỉ có một chữ số hàng đơn vị.
+
+58
+00:06:07,899 --> 00:06:14,582
+Do đó số kết quả chia hết cho năm bằng một trăm hai mươi cộng một trăm, được hai trăm hai mươi.
+
+59
+00:06:14,582 --> 00:06:24,000
+Trên hình, hai nhánh hội tụ vào cùng bộ đếm mà vẫn giữ hai nhãn riêng để học sinh không nghĩ rằng số lựa chọn ở mọi nhánh phải bằng nhau.
+
+60
+00:06:24,000 --> 00:06:36,507
+Nếu chỉ yêu cầu số có bốn chữ số khác nhau từ không đến sáu, hàng nghìn có sáu cách và ba ô sau có lần lượt sáu, năm, bốn cách, tổng cộng bảy trăm hai mươi.
+
+61
+00:06:36,507 --> 00:06:42,930
+Trong đó có hai trăm hai mươi số chia hết cho năm; phần còn lại là năm trăm số.
+
+62
+00:06:42,930 --> 00:06:48,000
+Đây là phép kiểm tra quan hệ tổng bằng phần thỏa cộng phần không thỏa.
+
+63
+00:06:48,000 --> 00:06:55,899
+Với những bài yêu cầu chia hết cho hai hoặc cho năm, chọn chữ số cuối trước giúp điều kiện được kiểm soát ngay từ đầu.
+
+64
+00:06:55,899 --> 00:07:04,405
+Nhưng vì đã sử dụng một chữ số ở cuối, số lựa chọn của hàng đầu vẫn phải xét lại, đặc biệt khi bộ chữ số chứa không.
+
+65
+00:07:04,405 --> 00:07:12,000
+Quy tắc đúng là lựa chọn thứ tự đếm linh hoạt, đồng thời luôn tính chính xác số chữ số còn lại ở mỗi nhánh.
+
+66
+00:07:12,000 --> 00:07:16,861
+Điều kiện chia hết cho ba khác hẳn yêu cầu chẵn hoặc chia hết cho năm.
+
+67
+00:07:16,861 --> 00:07:24,152
+Một số chia hết cho ba khi tổng tất cả chữ số chia hết cho ba; ta không thể chỉ nhìn ô tận cùng.
+
+68
+00:07:24,152 --> 00:07:36,000
+Với sáu chữ số không đến năm, bài toán trở thành chọn ba chữ số phân biệt sao cho tổng của chúng chia hết cho ba, sau đó xếp vào ba vị trí mà hàng trăm không bằng không.
+
+69
+00:07:36,000 --> 00:07:40,941
+Hãy tách sáu thẻ thành ba nhóm theo phần dư khi chia cho ba.
+
+70
+00:07:40,941 --> 00:07:49,059
+Chữ số không và ba thuộc nhóm dư không; một và bốn thuộc nhóm dư một; hai và năm thuộc nhóm dư hai.
+
+71
+00:07:49,059 --> 00:07:55,059
+Vì mỗi nhóm có hai thẻ, không thể chọn ba chữ số khác nhau cùng một nhóm.
+
+72
+00:07:55,059 --> 00:08:00,000
+Muốn tổng chia hết cho ba, ta phải lấy mỗi nhóm một chữ số.
+
+73
+00:08:00,000 --> 00:08:07,792
+Để tạo tổng có dư bằng không, ta chọn một chữ số dư không, một chữ số dư một và một chữ số dư hai.
+
+74
+00:08:07,792 --> 00:08:13,714
+Mỗi nhóm có đúng hai khả năng, nên có hai nhân hai nhân hai bằng tám bộ chữ số.
+
+75
+00:08:13,714 --> 00:08:18,078
+Đây mới là số bộ không xét thứ tự, chưa phải số tự nhiên.
+
+76
+00:08:18,078 --> 00:08:24,000
+Ta sẽ tách các bộ có chứa không khỏi các bộ không chứa không trước khi xếp thứ tự.
+
+77
+00:08:24,000 --> 00:08:27,380
+Trong tám bộ, có bốn bộ chứa chữ số không.
+
+78
+00:08:27,380 --> 00:08:33,127
+Khi xếp mỗi bộ gồm ba chữ số, ta có sáu hoán vị nếu không ràng buộc.
+
+79
+00:08:33,127 --> 00:08:42,592
+Nhưng những cách bắt đầu bằng không không phải số có ba chữ số; cố định không đầu và đổi hai chữ số kia có hai cách sai.
+
+80
+00:08:42,592 --> 00:08:48,000
+Mỗi bộ chứa không vì vậy tạo bốn số hợp lệ, tất cả mười sáu số.
+
+81
+00:08:48,000 --> 00:08:53,918
+Bốn bộ còn lại lấy chữ số ba ở nhóm dư không và không chứa chữ số không.
+
+82
+00:08:53,918 --> 00:09:03,123
+Vì mọi chữ số đều khác không, cả ba vị trí có thể nhận mỗi chữ số của bộ nên có ba giai thừa, tức sáu cách xếp.
+
+83
+00:09:03,123 --> 00:09:06,082
+Nhân với bốn bộ được hai mươi bốn số.
+
+84
+00:09:06,082 --> 00:09:12,000
+Hai loại bộ có không và không có không là rời nhau nên ta sẽ cộng kết quả.
+
+85
+00:09:12,000 --> 00:09:21,920
+Như vậy có mười sáu số được lập từ bộ chứa không và hai mươi bốn số từ bộ không chứa không, tổng cộng bốn mươi số chia hết cho ba.
+
+86
+00:09:21,920 --> 00:09:29,280
+Điểm then chốt không phải thử hàng trăm hay hàng đơn vị trước, mà là kiểm soát tổng chữ số theo phần dư.
+
+87
+00:09:29,280 --> 00:09:36,000
+Nếu bài thay đổi tập chữ số, phải chia lại các nhóm dư, không thể dùng nguyên kết quả bốn mươi.
+
+88
+00:09:36,000 --> 00:09:45,039
+Ta chuyển sang bài có hai điều kiện cùng lúc: từ tập không đến năm, lập số có ba chữ số khác nhau, chẵn và lớn hơn ba trăm.
+
+89
+00:09:45,039 --> 00:09:51,273
+Điều kiện về độ lớn tác động vào hàng trăm, còn điều kiện chẵn tác động vào hàng đơn vị.
+
+90
+00:09:51,273 --> 00:09:56,883
+Ta không thể đếm riêng số chẵn và số lớn hơn ba trăm rồi nhân hai kết quả.
+
+91
+00:09:56,883 --> 00:10:00,000
+Cần đếm chung những số thỏa đồng thời cả hai.
+
+92
+00:10:00,000 --> 00:10:06,857
+Khi hàng trăm là ba, mọi số có ba chữ số khác nhau đều lớn hơn ba trăm.
+
+93
+00:10:06,857 --> 00:10:15,238
+Vì số phải chẵn, hàng đơn vị được chọn trong không, hai, bốn, có ba cách; cả ba thẻ đều khác ba.
+
+94
+00:10:15,238 --> 00:10:19,429
+Sau khi chốt đầu và cuối, hàng chục còn bốn cách.
+
+95
+00:10:19,429 --> 00:10:24,000
+Ta thu được mười hai số ở nhánh hàng trăm bằng ba.
+
+96
+00:10:24,000 --> 00:10:29,829
+Nếu hàng trăm là bốn, chữ số bốn không được xuất hiện lại ở hàng đơn vị.
+
+97
+00:10:29,829 --> 00:10:35,657
+Trong ba chữ số chẵn không, hai, bốn, ta chỉ còn không và hai, tức hai cách.
+
+98
+00:10:35,657 --> 00:10:40,114
+Hàng chục tiếp tục có bốn cách chọn các chữ số chưa dùng.
+
+99
+00:10:40,114 --> 00:10:48,000
+Kết quả nhánh này là tám số, ít hơn hai nhánh còn lại do chữ số đầu đã là một chữ số chẵn.
+
+100
+00:10:48,000 --> 00:10:55,886
+Với hàng trăm bằng năm, chữ số đầu không trùng với các thẻ chẵn không, hai, bốn, nên ô cuối có ba cách.
+
+101
+00:10:55,886 --> 00:11:03,429
+Sau hai ô đầu cuối, còn bốn thẻ khác để điền hàng chục. Có mười hai số hợp lệ trong nhánh này.
+
+102
+00:11:03,429 --> 00:11:12,000
+Dù điều kiện lớn hơn ba trăm đã được bảo đảm, ta vẫn phải giữ điều kiện khác nhau khi điền vị trí còn lại.
+
+103
+00:11:12,000 --> 00:11:20,320
+Ba trường hợp hàng trăm ba, bốn, năm không trùng nhau và bao phủ mọi số lớn hơn ba trăm trong tập chữ số đang xét.
+
+104
+00:11:20,320 --> 00:11:27,360
+Vì thế ta cộng mười hai, tám và mười hai, được ba mươi hai số vừa chẵn vừa lớn hơn ba trăm.
+
+105
+00:11:27,360 --> 00:11:36,000
+Cột hình bên trái hiển thị ba nhánh có chiều cao tương ứng, để học sinh thấy không thể nhân số cách của một nhánh cho ba.
+
+106
+00:11:36,000 --> 00:11:47,684
+Từ bài này, ta rút ra một quy trình: xác định vị trí bị ràng buộc bởi độ lớn; xác định chữ số cuối để kiểm soát chẵn lẻ; sau đó đếm những chữ số chưa dùng.
+
+107
+00:11:47,684 --> 00:11:51,474
+Nếu số lựa chọn thay đổi theo nhánh, phải cộng từng nhánh.
+
+108
+00:11:51,474 --> 00:12:00,000
+Đó là cách xử lý chuẩn cho các bài lập số nhiều điều kiện và cũng là sự vận dụng linh hoạt của quy tắc cộng, nhân.
+
+109
+00:12:00,000 --> 00:12:08,320
+Ta lại dùng sáu chữ số không đến năm, nhưng lần này lập số có bốn chữ số và cho phép sử dụng lại chữ số.
+
+110
+00:12:08,320 --> 00:12:14,400
+Đề yêu cầu trong bốn vị trí phải có ít nhất hai vị trí mang cùng một chữ số.
+
+111
+00:12:14,400 --> 00:12:24,000
+Thay vì phân loại một đôi trùng, hai đôi trùng, ba lần trùng hoặc bốn lần trùng, ta xét phần bù: tất cả bốn chữ số đôi một khác nhau.
+
+112
+00:12:24,000 --> 00:12:34,182
+Nếu được phép lặp chữ số, sau khi chọn hàng nghìn khác không theo năm cách, ba vị trí còn lại đều có sáu lựa chọn độc lập.
+
+113
+00:12:34,182 --> 00:12:41,455
+Đã dùng số hai ở hàng nghìn cũng không cấm dùng số hai thêm ở hàng trăm hay hàng chục.
+
+114
+00:12:41,455 --> 00:12:48,000
+Vì vậy toàn bộ có năm nhân sáu mũ ba, bằng một nghìn không trăm tám mươi số.
+
+115
+00:12:48,000 --> 00:12:56,640
+Nếu bốn chữ số đôi một khác nhau, hàng nghìn có năm lựa chọn, hàng trăm còn năm, hàng chục còn bốn, hàng đơn vị còn ba.
+
+116
+00:12:56,640 --> 00:12:58,240
+Ta được ba trăm số.
+
+117
+00:12:58,240 --> 00:13:04,640
+Những số này chính là toàn bộ kết quả sai với yêu cầu có ít nhất một chữ số lặp.
+
+118
+00:13:04,640 --> 00:13:12,000
+Không cần đếm chính xác mỗi chữ số lặp bao nhiêu lần, bởi phần bù đã gom hết các trường hợp không lặp.
+
+119
+00:13:12,000 --> 00:13:20,667
+Ta lấy một nghìn không trăm tám mươi trừ ba trăm, được bảy trăm tám mươi số có ít nhất hai vị trí trùng chữ số.
+
+120
+00:13:20,667 --> 00:13:30,000
+Cần hiểu rằng một số như một một một hai vẫn được đếm đúng một lần, mặc dù bên trong nó có nhiều cặp vị trí trùng nhau.
+
+121
+00:13:30,000 --> 00:13:36,000
+Đó là ưu thế của phương pháp phần bù so với việc đếm từng cặp trùng trực tiếp.
+
+122
+00:13:36,000 --> 00:13:46,378
+Một mã PIN bốn vị trí có thể bắt đầu bằng không, vì thế nếu mã lấy từ sáu chữ số thì có sáu mũ bốn mã khác nhau khi cho lặp.
+
+123
+00:13:46,378 --> 00:13:53,838
+Nhưng ở bài này đối tượng là số có bốn chữ số, nên hàng nghìn phải khác không, chỉ có năm lựa chọn.
+
+124
+00:13:53,838 --> 00:14:00,000
+Hai bài dùng cùng bốn ô và cùng bộ chữ số nhưng số lượng kết quả không giống nhau.
+
+125
+00:14:00,000 --> 00:14:13,590
+Tổng quát, nếu bộ chữ số có n ký hiệu phân biệt và chứa không, một số tự nhiên k chữ số cho phép lặp có n trừ một cách ở vị trí đầu và n mũ k trừ một lựa chọn cho các vị trí sau.
+
+126
+00:14:13,590 --> 00:14:20,241
+Phần không lặp có n trừ một cách ở đầu rồi giảm lần lượt n trừ một, n trừ hai và cứ thế.
+
+127
+00:14:20,241 --> 00:14:24,000
+Lấy hiệu hai số này để đếm ít nhất một chữ số lặp.
+
+128
+00:14:24,000 --> 00:14:30,857
+Với chia hết cho bốn, điều kiện đúng là số tạo bởi hai chữ số cuối chia hết cho bốn.
+
+129
+00:14:30,857 --> 00:14:38,743
+Vì vậy ta phải chọn một cặp hàng chục và hàng đơn vị hợp lệ, thay vì chỉ chọn chữ số cuối chẵn.
+
+130
+00:14:38,743 --> 00:14:48,000
+Trên màn hình, hai ô cuối được đóng trong một khung sáng, còn hai ô hàng nghìn và hàng trăm tạm để trống cho bước tiếp theo.
+
+131
+00:14:48,000 --> 00:14:53,165
+Ta kiểm tra tất cả cặp có hai chữ số khác nhau lấy từ không đến năm.
+
+132
+00:14:53,165 --> 00:15:00,456
+Những cặp tạo số chia hết cho bốn là không bốn, một hai, hai không, hai bốn, ba hai, bốn không và năm hai.
+
+133
+00:15:00,456 --> 00:15:12,000
+Viết cặp không bốn có nghĩa hàng chục bằng không và đơn vị bằng bốn; điều này hoàn toàn hợp lệ vì đó là hai chữ số cuối, không phải hai chữ số đầu của toàn bộ số.
+
+134
+00:15:12,000 --> 00:15:18,375
+Ba cặp tận cùng không bốn, hai không và bốn không đều sử dụng chữ số không.
+
+135
+00:15:18,375 --> 00:15:29,625
+Do đó khi chọn hai chữ số đầu trong bốn thẻ còn lại, không có thẻ không nên hàng nghìn có cả bốn cách, rồi hàng trăm có ba cách.
+
+136
+00:15:29,625 --> 00:15:36,000
+Mỗi cặp tạo mười hai số, tổng cộng ba nhân mười hai bằng ba mươi sáu số.
+
+137
+00:15:36,000 --> 00:15:43,610
+Bốn cặp cuối còn lại không sử dụng chữ số không, nên trong bốn thẻ chưa dùng có một thẻ không và ba thẻ khác không.
+
+138
+00:15:43,610 --> 00:15:49,171
+Hàng nghìn chỉ được chọn một trong ba thẻ khác không; hàng trăm sau đó có ba lựa chọn.
+
+139
+00:15:49,171 --> 00:15:52,976
+Mỗi cặp tạo chín số, cả bốn cặp tạo ba mươi sáu số.
+
+140
+00:15:52,976 --> 00:16:00,000
+Một lần nữa việc có hay không có chữ số không ở phần đã điền làm thay đổi số cách điền phần còn lại.
+
+141
+00:16:00,000 --> 00:16:08,348
+Hai nhóm cặp cuối không giao nhau, và mọi số chia hết cho bốn bắt buộc dùng một cặp nằm trong đúng một nhóm.
+
+142
+00:16:08,348 --> 00:16:19,130
+Do đó có ba mươi sáu cộng ba mươi sáu bằng bảy mươi hai số có bốn chữ số khác nhau từ tập không đến năm và chia hết cho bốn.
+
+143
+00:16:19,130 --> 00:16:24,000
+Phép liệt kê bằng chương trình xác nhận đúng bảy mươi hai kết quả.
+
+144
+00:16:24,000 --> 00:16:34,849
+Số chia hết cho bốn luôn chẵn, nhưng một số chẵn như một nghìn hai trăm ba mươi hai chia hết cho bốn, còn một nghìn hai trăm ba mươi bốn thì không.
+
+145
+00:16:34,849 --> 00:16:42,411
+Nếu ta chỉ chọn hàng đơn vị là không, hai hay bốn thì đã đếm thừa các số không chia hết cho bốn.
+
+146
+00:16:42,411 --> 00:16:48,000
+Mẹo hai chữ số cuối là điều kiện cần và đủ, phải được sử dụng nguyên vẹn.
+
+147
+00:16:48,000 --> 00:16:56,488
+Bài cuối yêu cầu lập số có bốn chữ số đôi một khác nhau từ tập không đến năm, lớn hơn ba nghìn và chia hết cho mười lăm.
+
+148
+00:16:56,488 --> 00:17:04,976
+Vì mười lăm bằng ba nhân năm và ba, năm nguyên tố cùng nhau, ta phải đồng thời bảo đảm chia hết cho ba và chia hết cho năm.
+
+149
+00:17:04,976 --> 00:17:12,000
+Ta không thể đếm số chia hết cho ba rồi nhân số chia hết cho năm, mà phải tìm giao của hai điều kiện.
+
+150
+00:17:12,000 --> 00:17:18,947
+Số lớn hơn ba nghìn nên trong tập chữ số đã cho, hàng nghìn chỉ có thể là ba, bốn hoặc năm.
+
+151
+00:17:18,947 --> 00:17:26,211
+Điều kiện chia hết cho năm ép chữ số cuối bằng không hoặc năm, và tất nhiên hai đầu không được trùng nhau.
+
+152
+00:17:26,211 --> 00:17:33,474
+Sau khi cố định hai đầu, ta phải chọn hai chữ số giữa sao cho tổng bốn chữ số chia hết cho ba.
+
+153
+00:17:33,474 --> 00:17:36,000
+Đây chính là bước quyết định của bài.
+
+154
+00:17:36,000 --> 00:17:42,811
+Khi hàng nghìn là ba và đơn vị là không, tổng hai chữ số cố định đã chia hết cho ba.
+
+155
+00:17:42,811 --> 00:17:47,351
+Vì vậy tổng hai chữ số ở giữa cũng phải chia hết cho ba.
+
+156
+00:17:47,351 --> 00:17:56,108
+Trong tập một, hai, bốn, năm, các cặp không thứ tự phù hợp là một với hai, một với năm, hai với bốn và bốn với năm.
+
+157
+00:17:56,108 --> 00:18:00,000
+Mỗi cặp đổi thứ tự được hai cách, nên có tám số.
+
+158
+00:18:00,000 --> 00:18:08,320
+Nếu số bắt đầu bằng ba và kết thúc bằng năm, tổng của hai chữ số cố định bằng tám, dư hai khi chia cho ba.
+
+159
+00:18:08,320 --> 00:18:11,520
+Vậy hai chữ số giữa cần có tổng dư một.
+
+160
+00:18:11,520 --> 00:18:18,240
+Từ không, một, hai, bốn, chỉ có các cặp không thứ tự không với một và không với bốn phù hợp.
+
+161
+00:18:18,240 --> 00:18:24,000
+Mỗi cặp có hai thứ tự, nên có bốn số trong nhánh hàng nghìn ba, đơn vị năm.
+
+162
+00:18:24,000 --> 00:18:28,364
+Ta tiếp tục làm tương tự khi chữ số đầu là bốn hoặc năm.
+
+163
+00:18:28,364 --> 00:18:40,519
+Với đầu bốn cuối không, hai ô giữa tạo bốn số hợp lệ; với đầu bốn cuối năm, cũng có bốn; với đầu năm thì chữ số cuối không thể là năm nên buộc là không, tạo bốn số.
+
+164
+00:18:40,519 --> 00:18:43,636
+Ba nhóm này rời nhau, tổng cộng mười hai số.
+
+165
+00:18:43,636 --> 00:18:48,000
+Tất cả đều đã thỏa điều kiện không lặp và lớn hơn ba nghìn.
+
+166
+00:18:48,000 --> 00:18:56,000
+Cộng các trường hợp theo chữ số đầu, ta được mười hai cộng tám cộng bốn, bằng hai mươi bốn số thỏa mãn tất cả điều kiện.
+
+167
+00:18:56,000 --> 00:19:09,037
+Để kiểm chứng độc lập, chương trình có thể tạo mọi hoán vị bốn chữ số khác nhau từ tập không đến năm, bỏ những kết quả bắt đầu bằng không, rồi kiểm tra lớn hơn ba nghìn và chia hết cho mười lăm.
+
+168
+00:19:09,037 --> 00:19:12,000
+Kết quả đúng hai mươi bốn số, khớp lời giải.

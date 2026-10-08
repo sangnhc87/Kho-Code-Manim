@@ -1,0 +1,674 @@
+[
+  {
+    "section": "universe",
+    "state": 0,
+    "heading": "BÀI TOÁN KHỞI ĐỘNG",
+    "lines": [
+      "Lập dãy bốn chữ từ A, B, C.",
+      "Cho phép lặp chữ; có xét thứ tự.",
+      "Hỏi có ít nhất một chữ A?"
+    ],
+    "takeaway": "ĐỌC KỸ ĐỐI TƯỢNG ĐANG ĐẾM.",
+    "narration": "Mỗi dãy gồm bốn vị trí và ở mỗi vị trí ta được chọn một trong ba chữ A, B, C. Các chữ được phép lặp và vị trí có ý nghĩa. Thay vì liệt kê từng dãy có ít nhất một chữ A, ta thử hỏi câu dễ hơn: một dãy hoàn toàn không có chữ A thì trông như thế nào? Câu hỏi ngược lại này sẽ dẫn ta đến phương pháp đếm phần bù.",
+    "formula": "universe_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "universe",
+    "state": 1,
+    "heading": "CHIA TOÀN BỘ THÀNH HAI",
+    "lines": [
+      "Nhóm xanh: có ít nhất một A.",
+      "Nhóm đỏ: hoàn toàn không có A.",
+      "Mỗi dãy thuộc đúng một nhóm."
+    ],
+    "takeaway": "HAI NHÓM RỜI NHAU VÀ PHỦ HẾT.",
+    "narration": "Hãy nhìn toàn bộ không gian gồm tám mươi mốt dãy. Mỗi dãy hoặc có ít nhất một chữ A, hoặc không hề có chữ A. Hai mệnh đề này là phủ định của nhau, nên chúng không thể đồng thời đúng và cũng không có trường hợp thứ ba. Đó là điều kiện toán học quan trọng nhất để phép trừ số cách trở thành một chứng minh chứ không phải mẹo tính.",
+    "formula": "universe_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "universe",
+    "state": 2,
+    "heading": "ĐẾM PHẦN KHÔNG CÓ A",
+    "lines": [
+      "Bỏ chữ A khỏi các lựa chọn.",
+      "Mỗi vị trí chỉ còn B hoặc C.",
+      "Có 2⁴ = 16 dãy không chứa A."
+    ],
+    "takeaway": "PHẦN KHÔNG THỎA DỄ ĐẾM HƠN.",
+    "narration": "Nếu một dãy không có chữ A, mỗi vị trí bắt buộc chọn giữa B và C. Bốn vị trí độc lập, nên theo quy tắc nhân số dãy bị loại là hai mũ bốn, bằng mười sáu. Điều quan trọng là ta không đếm dãy bị loại bằng cách chọn vị trí đặt A; khi không có A thì không cần chọn vị trí nào cả. Đây chính là sự đơn giản hóa mà phương pháp phần bù mang lại.",
+    "formula": "universe_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "universe",
+    "state": 3,
+    "heading": "LẤY TỔNG TRỪ PHẦN BÙ",
+    "lines": [
+      "Tất cả: 3⁴ = 81 dãy.",
+      "Không có A: 2⁴ = 16 dãy.",
+      "Có ít nhất một A: 65 dãy."
+    ],
+    "takeaway": "KẾT QUẢ LÀ 65, KHÔNG PHẢI 64.",
+    "narration": "Bây giờ lấy tổng tám mươi mốt trừ đi mười sáu dãy hoàn toàn không có chữ A, được sáu mươi lăm. Ta không cần phân chia thành các trường hợp có một A, hai A, ba A và bốn A; chính những trường hợp ấy đã được gom vào một miền duy nhất. Trên hình, các thẻ đỏ biến mất và bộ đếm xanh biểu diễn số dãy còn lại.",
+    "formula": "universe_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "universe",
+    "state": 4,
+    "heading": "HIỂU CỤM TỪ ÍT NHẤT",
+    "lines": [
+      "Ít nhất một: 1, 2, 3 hoặc 4.",
+      "Đúng một: chỉ có một chữ A.",
+      "Hai điều kiện cho kết quả khác nhau."
+    ],
+    "takeaway": "KHÔNG NHẦM ÍT NHẤT VỚI ĐÚNG MỘT.",
+    "narration": "Khi đề bài nói ít nhất một chữ A, những dãy có hai chữ A hoặc cả bốn chữ A đều hợp lệ. Nếu chỉ tính dãy có đúng một chữ A, ta phải chọn một trong bốn vị trí cho A rồi điền B hoặc C vào ba vị trí còn lại, được bốn nhân hai mũ ba, tức ba mươi hai. Số ba mươi hai nhỏ hơn sáu mươi lăm vì ta vừa bỏ sót các dãy có từ hai chữ A trở lên.",
+    "formula": "universe_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "universe",
+    "state": 5,
+    "heading": "CÔNG THỨC TỔNG QUÁT",
+    "lines": [
+      "Có n lựa chọn tại mỗi vị trí.",
+      "k vị trí, có xét thứ tự và cho lặp.",
+      "Cấm một ký hiệu: (n−1)ᵏ dãy."
+    ],
+    "takeaway": "PHẢI XÁC ĐỊNH ĐÚNG PHẦN ĐỐI LẬP.",
+    "narration": "Tổng quát, một dãy độ dài k tạo từ n ký hiệu, cho phép lặp và xét thứ tự, có n mũ k khả năng. Nếu yêu cầu xuất hiện ít nhất một ký hiệu cụ thể, phần bù là các dãy chỉ dùng n trừ một ký hiệu khác, có n trừ một mũ k khả năng. Do đó lấy hiệu hai số. Công thức không dùng nguyên xi khi mỗi vị trí có số lựa chọn khác nhau hoặc khi cấm lặp.",
+    "formula": "universe_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "groups",
+    "state": 0,
+    "heading": "CHỌN NHÓM HỌC SINH",
+    "lines": [
+      "Lớp có 5 nam và 4 nữ.",
+      "Chọn một nhóm 3 học sinh.",
+      "Nhóm phải có ít nhất một nữ."
+    ],
+    "takeaway": "KHÔNG CẦN CHIA BA TRƯỜNG HỢP NGAY.",
+    "narration": "Một lớp có năm học sinh nam và bốn học sinh nữ, tất cả đều phân biệt. Ta chọn một nhóm ba bạn đi thi mà yêu cầu nhóm có ít nhất một nữ. Vì chỉ chọn nhóm, đổi thứ tự tên các bạn không tạo ra nhóm mới. Có thể phân chia theo một, hai hoặc ba nữ, nhưng cách nhanh hơn là đếm tất cả nhóm ba người, rồi loại nhóm gồm toàn nam.",
+    "formula": "groups_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "groups",
+    "state": 1,
+    "heading": "VẼ MIỀN KHÔNG CÓ NỮ",
+    "lines": [
+      "Không có nữ nghĩa là cả ba đều nam.",
+      "Chọn 3 trong 5 nam.",
+      "Đó là phần bù của có ít nhất một nữ."
+    ],
+    "takeaway": "PHẦN BÙ PHẢI PHỦ ĐÚNG TẤT CẢ TRƯỜNG HỢP SAI.",
+    "narration": "Hãy tô màu những nhóm không có bất kỳ nữ nào. Ba thành viên đều phải đến từ năm học sinh nam, nên số nhóm này là tổ hợp chập ba của năm, bằng mười. Không có lý do gì để sắp thứ tự các bạn vì đề chỉ nói chọn đội. Trên hình, vùng đỏ chính là tập hợp bị loại, không có giao với vùng nhóm thỏa điều kiện.",
+    "formula": "groups_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "groups",
+    "state": 2,
+    "heading": "ĐÁP SỐ BẰNG PHẦN BÙ",
+    "lines": [
+      "Toàn bộ: 84 nhóm.",
+      "Nhóm toàn nam: 10 nhóm.",
+      "Hợp lệ: 84 − 10 = 74 nhóm."
+    ],
+    "takeaway": "CHỌN NHÓM: SỬ DỤNG TỔ HỢP.",
+    "narration": "Từ chín học sinh, có tám mươi tư nhóm ba người không xét thứ tự. Loại đi mười nhóm chỉ gồm nam, ta còn bảy mươi tư nhóm có ít nhất một nữ. Cách này không yêu cầu xét riêng một nữ, hai nữ, ba nữ. Mỗi nhóm hợp lệ chỉ xuất hiện đúng một lần trong phần tổng, và không nhóm hợp lệ nào nằm trong phần bị trừ.",
+    "formula": "groups_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "groups",
+    "state": 3,
+    "heading": "KIỂM BẰNG CÁC TRƯỜNG HỢP",
+    "lines": [
+      "Một nữ: 4·C₂⁵ = 40.",
+      "Hai nữ: C₂⁴·5 = 30.",
+      "Ba nữ: C₃⁴ = 4."
+    ],
+    "takeaway": "TỔNG 40 + 30 + 4 = 74.",
+    "narration": "Ta kiểm chứng bằng cách chia theo số nữ được chọn. Có đúng một nữ thì chọn một trong bốn nữ và hai trong năm nam, được bốn mươi nhóm. Có đúng hai nữ thì chọn hai trong bốn nữ và một trong năm nam, được ba mươi nhóm. Có ba nữ thì chọn ba trong bốn, được bốn nhóm. Ba trường hợp rời nhau, cộng lại bằng bảy mươi tư, khớp phép đếm phần bù.",
+    "formula": "groups_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "groups",
+    "state": 4,
+    "heading": "ĐỔI CÂU HỎI THÀNH ĐÚNG MỘT",
+    "lines": [
+      "Đúng một nữ không phải ít nhất một.",
+      "Chỉ chọn 1 nữ và 2 nam.",
+      "Số nhóm chỉ còn 40."
+    ],
+    "takeaway": "ĐỌC MỘT TỪ SAI CÓ THỂ ĐỔI CẢ ĐÁP SỐ.",
+    "narration": "Hãy thay đúng một chữ trong đề: từ ít nhất một nữ thành đúng một nữ. Khi đó nhóm có hai nữ hoặc ba nữ không còn hợp lệ. Ta chỉ giữ trường hợp một nữ và hai nam, được bốn mươi nhóm. Sự khác biệt giữa bốn mươi và bảy mươi tư chứng minh rằng không thể tùy tiện đồng nhất từ ít nhất với từ đúng.",
+    "formula": "groups_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "groups",
+    "state": 5,
+    "heading": "RÚT RA CÔNG THỨC CHUNG",
+    "lines": [
+      "n người có r người đặc biệt.",
+      "Chọn k người, cần ít nhất một đặc biệt.",
+      "Lấy toàn bộ trừ nhóm không đặc biệt."
+    ],
+    "takeaway": "CÔNG THỨC CẦN k ≤ n VÀ r ≤ n.",
+    "narration": "Với n người phân biệt và r người thuộc nhóm đặc biệt, số cách chọn k người có ít nhất một người đặc biệt bằng tổ hợp chập k của n trừ tổ hợp chập k của n trừ r. Nếu n trừ r nhỏ hơn k thì không có nhóm nào hoàn toàn không đặc biệt, ta quy ước tổ hợp khi k lớn hơn số đối tượng bằng không. Mô hình này lặp lại trong rất nhiều bài toán chọn đội và chọn đồ vật.",
+    "formula": "groups_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "seating",
+    "state": 0,
+    "heading": "HAI NGƯỜI KHÔNG ĐỨNG KỀ",
+    "lines": [
+      "Xếp A, B, C, D, E vào một hàng.",
+      "Yêu cầu A và B không cạnh nhau.",
+      "Ta sẽ đếm trường hợp đứng cạnh."
+    ],
+    "takeaway": "CẤM ĐỨNG CẠNH → PHẦN BÙ DỄ ĐẾM.",
+    "narration": "Với năm học sinh phân biệt, ta xét những hàng mà A và B không đứng cạnh nhau. Nếu xếp trực tiếp có thể phải chọn vị trí rất phức tạp, nhưng phần bù là A và B đứng cạnh. Điều kiện đối lập hoàn toàn rõ ràng: hai người hoặc cách nhau ít nhất một vị trí, hoặc họ đứng sát nhau. Không có trường hợp thứ ba, nên phép trừ sẽ không bỏ sót.",
+    "formula": "seating_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "seating",
+    "state": 1,
+    "heading": "GỘP CẶP VI PHẠM",
+    "lines": [
+      "A và B đứng cạnh nhau.",
+      "Gộp thành một khối [AB].",
+      "Còn 4 đối tượng; trong khối đổi được 2 cách."
+    ],
+    "takeaway": "ĐỪNG QUÊN ĐỔI THỨ TỰ TRONG KHỐI.",
+    "narration": "Khi A và B đứng cạnh nhau, ta xem hai người thành một khối. Khối đó cùng C, D, E là bốn đối tượng phân biệt để xếp, có bốn giai thừa cách. Bên trong khối, A đứng trước B hoặc B đứng trước A, tạo thêm thừa số hai. Vì vậy có bốn mươi tám hàng vi phạm điều kiện. Các hàng ấy chính là những hàng màu đỏ cần loại.",
+    "formula": "seating_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "seating",
+    "state": 2,
+    "heading": "TRỪ PHẦN VI PHẠM",
+    "lines": [
+      "Tổng: 120 hàng.",
+      "Vi phạm: 48 hàng.",
+      "Hợp lệ: 72 hàng."
+    ],
+    "takeaway": "PHẦN BÙ CHO KẾT QUẢ 72.",
+    "narration": "Như vậy số cách xếp hợp lệ là năm giai thừa trừ hai nhân bốn giai thừa, bằng bảy mươi hai. Điều đáng nhớ là ta không hề giả định mọi vị trí A và B có xác suất như nhau. Ta dùng lập luận đếm chính xác bằng gộp khối. Sau phép trừ, hình động sẽ làm mờ toàn bộ các hàng chứa A B liên tiếp và chỉ để lại số lượng hợp lệ.",
+    "formula": "seating_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "seating",
+    "state": 3,
+    "heading": "RÀNG BUỘC CẤM VỊ TRÍ ĐẦU",
+    "lines": [
+      "Sáu học sinh đứng thành hàng.",
+      "A không được đứng ở vị trí đầu.",
+      "Bù là A đứng đầu: 5! hàng."
+    ],
+    "takeaway": "VỊ TRÍ CỐ ĐỊNH GIÚP ĐẾM PHẦN BÙ NHANH.",
+    "narration": "Đổi sang một điều kiện khác: có sáu học sinh xếp hàng, nhưng A không được đứng đầu. Tổng số hàng là sáu giai thừa bằng bảy trăm hai mươi. Nếu A bị cố định ở vị trí thứ nhất, năm người còn lại được xếp theo năm giai thừa, tức một trăm hai mươi. Trừ những hàng ấy ta còn sáu trăm cách phù hợp. Đây là ví dụ đơn giản nhất của điều kiện cấm một vị trí.",
+    "formula": "seating_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "seating",
+    "state": 4,
+    "heading": "PHẢI ĐỌC TỪ KHÔNG",
+    "lines": [
+      "Không đứng kề: bù là đứng kề.",
+      "Không đứng đầu: bù là đứng đầu.",
+      "Không kề và không đầu: không chỉ trừ một lần."
+    ],
+    "takeaway": "HAI ĐIỀU KIỆN CẤM CẦN XỬ LÝ GIAO.",
+    "narration": "Bài toán có hai điều kiện như A không đứng đầu đồng thời A không đứng cạnh B thì không được cộng các số bị cấm rồi trừ một cách máy móc. Một hàng có thể vừa có A ở đầu vừa có A cạnh B, và khi đó đã bị trừ hai lần. Ta cần cộng lại phần giao hoặc chia các trường hợp rời nhau. Đây là tín hiệu dẫn tới nguyên lý bao hàm loại trừ ở những tập sau.",
+    "formula": "seating_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "seating",
+    "state": 5,
+    "heading": "THỬ THÁCH HAI CẤM",
+    "lines": [
+      "Sáu người: A không đứng đầu, AB không kề.",
+      "Tổng 720; A đầu 120; AB kề 240.",
+      "Giao: A đầu và B thứ hai có 24."
+    ],
+    "takeaway": "ĐÁP SỐ 384 CÁCH HỢP LỆ.",
+    "narration": "Với sáu người, điều kiện A không đứng đầu và A không đứng cạnh B có hai nhóm vi phạm. A đứng đầu có năm giai thừa, tức một trăm hai mươi hàng. A và B đứng cạnh có hai nhân năm giai thừa, tức hai trăm bốn mươi hàng. Phần giao buộc A ở đầu và B ở vị trí thứ hai, bốn người khác xếp tự do, có bốn giai thừa hàng. Lấy bảy trăm hai mươi trừ một trăm hai mươi, trừ hai trăm bốn mươi rồi cộng hai mươi bốn, được ba trăm tám mươi tư.",
+    "formula": "seating_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "pin",
+    "state": 0,
+    "heading": "PIN KHÔNG PHẢI SỐ TỰ NHIÊN",
+    "lines": [
+      "Mã PIN có đúng bốn chữ số.",
+      "Chữ số đầu có thể bằng 0.",
+      "Các chữ số được phép lặp."
+    ],
+    "takeaway": "MÃ 0007 VẪN LÀ MỘT MÃ HỢP LỆ.",
+    "narration": "Một mã PIN gồm đúng bốn vị trí từ không đến chín. Mã 0007 vẫn khác mã 0070, và cả hai đều hợp lệ nếu đề không cấm. Đây là dãy có thứ tự, được lặp và chữ số đầu bằng không vẫn được chấp nhận. Vì mỗi vị trí có mười lựa chọn, toàn bộ không gian mẫu gồm mười nghìn mã. Ta muốn tìm những mã có ít nhất một chữ số được sử dụng nhiều lần.",
+    "formula": "pin_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "pin",
+    "state": 1,
+    "heading": "THẾ NÀO LÀ CÓ LẶP",
+    "lines": [
+      "Có lặp: tồn tại hai vị trí cùng chữ số.",
+      "Không lặp: cả bốn chữ số phân biệt.",
+      "Đếm không lặp dễ hơn đếm có lặp."
+    ],
+    "takeaway": "PHẦN BÙ KHÔNG LẶP LÀ MỘT CHỈNH HỢP.",
+    "narration": "Điều kiện có ít nhất một chữ số lặp khá rộng. Có mã lặp đúng hai lần, có mã lặp ba lần, có mã gồm hai cặp và có cả bốn chữ số giống nhau. Thay vì phân chia hết những dạng này, ta đếm phần bù: cả bốn chữ số đôi một khác nhau. Khi xếp lần lượt, mỗi chữ số đã chọn sẽ không được dùng thêm một lần nữa.",
+    "formula": "pin_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "pin",
+    "state": 2,
+    "heading": "ĐẾM MÃ KHÔNG LẶP",
+    "lines": [
+      "Vị trí một: 10 khả năng.",
+      "Tiếp theo: 9, rồi 8, rồi 7.",
+      "Có 5.040 mã không lặp."
+    ],
+    "takeaway": "KHÔNG LOẠI CHỮ SỐ 0 Ở VỊ TRÍ ĐẦU.",
+    "narration": "Một mã không lặp có mười lựa chọn ở vị trí đầu, còn chín ở vị trí thứ hai, tám ở vị trí thứ ba và bảy ở vị trí cuối. Số mã không lặp là mười nhân chín nhân tám nhân bảy, bằng năm nghìn không trăm bốn mươi. Chúng ta vẫn cho phép chọn chữ số không ở vị trí đầu. Nếu chỉ cho chín lựa chọn ở vị trí đầu, ta đã lẫn sang một bài toán khác.",
+    "formula": "pin_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "pin",
+    "state": 3,
+    "heading": "TÌM MÃ CÓ LẶP",
+    "lines": [
+      "Tổng 10.000 mã.",
+      "Không lặp 5.040 mã.",
+      "Có ít nhất một lặp: 4.960 mã."
+    ],
+    "takeaway": "CHỈ TRỪ MỘT LẦN TẬP KHÔNG LẶP.",
+    "narration": "Lấy toàn bộ mười nghìn mã trừ đi năm nghìn không trăm bốn mươi mã không lặp, ta được bốn nghìn chín trăm sáu mươi mã có ít nhất một chữ số lặp. Phương pháp phần bù tự động bao gồm mọi kiểu lặp, dù một cặp hay nhiều cặp. Nó tránh tình trạng một mã như 1122 có thể bị tính trùng nếu ta chọn tùy tiện cặp chữ số giống nhau.",
+    "formula": "pin_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "pin",
+    "state": 4,
+    "heading": "NẾU LÀ SỐ CÓ BỐN CHỮ SỐ",
+    "lines": [
+      "Chữ số đầu khác 0.",
+      "Tất cả 9·10³ = 9.000 số.",
+      "Không lặp 9·9·8·7 = 4.536."
+    ],
+    "takeaway": "CÓ LẶP: 9.000 − 4.536 = 4.464.",
+    "narration": "Nếu đề chuyển thành số tự nhiên có bốn chữ số, chữ số đầu không thể bằng không. Khi đó toàn bộ chỉ có chín nghìn số. Để các chữ số phân biệt, chọn chữ số đầu trong chín chữ số từ một đến chín, chữ số tiếp theo trong chín chữ số còn lại gồm cả không, rồi tám và bảy. Có bốn nghìn năm trăm ba mươi sáu số không lặp. Vậy có bốn nghìn bốn trăm sáu mươi tư số lặp.",
+    "formula": "pin_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "pin",
+    "state": 5,
+    "heading": "SO SÁNH VÀ GHI NHỚ",
+    "lines": [
+      "PIN: cho phép 0 ở đầu → 4.960.",
+      "Số bốn chữ số: cấm 0 ở đầu → 4.464.",
+      "Hai bài cùng phương pháp, khác tổng thể."
+    ],
+    "takeaway": "XÁC ĐỊNH TẬP TẤT CẢ TRƯỚC KHI TRỪ.",
+    "narration": "Kết luận, hai bài toán chỉ khác một điều kiện về chữ số đầu nhưng đáp số khác nhau. Với mã PIN, đáp án là bốn nghìn chín trăm sáu mươi; với số tự nhiên có bốn chữ số, đáp án là bốn nghìn bốn trăm sáu mươi tư. Cả hai đều dùng phần bù của không lặp, song số phần tử của toàn bộ không gian mẫu thay đổi. Bởi vậy phải xác định tập tất cả thật chính xác trước mọi phép tính.",
+    "formula": "pin_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "fixed",
+    "state": 0,
+    "heading": "THƯ ĐÚNG PHONG BÌ",
+    "lines": [
+      "Có bốn lá thư A, B, C, D.",
+      "Có bốn phong bì tương ứng.",
+      "Không lá thư nào vào đúng phong bì."
+    ],
+    "takeaway": "ĐÂY LÀ HOÁN VỊ KHÔNG ĐIỂM CỐ ĐỊNH.",
+    "narration": "Một tình huống cổ điển: có bốn lá thư phân biệt và bốn phong bì có tên tương ứng. Ta bỏ ngẫu nhiên mỗi lá vào đúng một phong bì khác nhau, nhưng yêu cầu không lá nào vào đúng phong bì của chính nó. Nếu gọi một kết quả là một hoán vị, vị trí đứng đúng của một lá thư được gọi là điểm cố định. Đề đang yêu cầu số hoán vị không có bất kỳ điểm cố định nào.",
+    "formula": "fixed_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "fixed",
+    "state": 1,
+    "heading": "CÁC TẬP VI PHẠM",
+    "lines": [
+      "E_A: thư A vào đúng phong bì A.",
+      "Tương tự E_B, E_C, E_D.",
+      "Yêu cầu nằm ngoài hợp bốn tập."
+    ],
+    "takeaway": "KHÔNG THỂ CHỈ LẤY 24 TRỪ 4·3!.",
+    "narration": "Hãy định nghĩa tập E A là những hoán vị mà thư A nằm đúng phong bì A. Ta có bốn tập tương tự. Hoán vị hợp lệ là những hoán vị nằm ngoài hợp của cả bốn tập này. Nếu chỉ trừ mỗi tập riêng thì một cách bỏ thư có hai lá đúng sẽ bị trừ hai lần. Vì vậy từ phương pháp phần bù, ta cần thêm nguyên lý bao hàm–loại trừ để xử lý các phần giao.",
+    "formula": "fixed_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "fixed",
+    "state": 2,
+    "heading": "ĐẾM TẬP ĐƠN VÀ GIAO ĐÔI",
+    "lines": [
+      "Một lá cố định: 3! cách.",
+      "Chọn 2 lá đúng: 6 cách chọn.",
+      "Hai lá đúng chỉ còn 2! cách xếp."
+    ],
+    "takeaway": "CỘNG LẠI CÁC PHẦN GIAO ĐÔI.",
+    "narration": "Mỗi tập buộc một lá thư vào đúng phong bì, còn ba lá khác có ba giai thừa cách xếp, nên mỗi tập có sáu phần tử. Có bốn tập đơn, tổng là hai mươi bốn. Nếu hai lá thư được cố định đồng thời, có hai giai thừa cách xếp hai lá còn lại. Có tổ hợp chập hai của bốn cách chọn cặp, tức sáu phần giao đôi; tổng số phải cộng lại là mười hai.",
+    "formula": "fixed_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "fixed",
+    "state": 3,
+    "heading": "HOÀN THÀNH BAO HÀM–LOẠI TRỪ",
+    "lines": [
+      "Giao ba tập: C₃⁴·1!.",
+      "Giao bốn tập: 1 cách.",
+      "D₄ = 24−24+12−4+1 = 9."
+    ],
+    "takeaway": "CHỈ CÒN 9 HOÁN VỊ KHÔNG ĐIỂM CỐ ĐỊNH.",
+    "narration": "Khi ba lá vào đúng vị trí, lá thứ tư buộc phải đúng, nhưng vẫn cần ghi số phần giao của ba tập theo công thức: bốn cách chọn bộ ba và một giai thừa cách. Sau đó phần giao cả bốn tập có đúng một cách. Ta lấy hai mươi bốn trừ hai mươi bốn, cộng mười hai, trừ bốn, cộng một, cuối cùng được chín. Dấu cộng trừ luân phiên có ý nghĩa khôi phục đúng số lần bị trừ trùng.",
+    "formula": "fixed_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "fixed",
+    "state": 4,
+    "heading": "TỔNG QUÁT SỐ HOÁN VỊ LỆCH",
+    "lines": [
+      "n lá thư, n phong bì khác nhau.",
+      "Không lá nào đặt đúng.",
+      "Dₙ = n!·(1−1/1!+1/2!−…)."
+    ],
+    "takeaway": "HIỂU CÔNG THỨC QUA CÁC TẬP PHẦN BÙ.",
+    "narration": "Tổng quát cho n lá thư, chọn k lá buộc vào đúng phong bì rồi xếp n trừ k lá còn lại có n trừ k giai thừa cách. Cộng luân phiên theo nguyên lý bao hàm–loại trừ ta nhận được số hoán vị lệch D n bằng n giai thừa nhân tổng các số âm dương một chia k giai thừa, từ k bằng không tới n. Đây là một kết quả sâu bắt nguồn trực tiếp từ tư duy phần bù.",
+    "formula": "fixed_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "fixed",
+    "state": 5,
+    "heading": "LƯU Ý CÁC LOẠI ĐÚNG VỊ TRÍ",
+    "lines": [
+      "Bốn thư: không đúng vị trí có 9.",
+      "Đúng đúng một vị trí có 8.",
+      "Đúng cả bốn có đúng 1 cách."
+    ],
+    "takeaway": "ĐÚNG BA VỊ TRÍ NHƯNG SAI MỘT LÀ BẤT KHẢ.",
+    "narration": "Trong trường hợp bốn lá thư, không lá nào đúng có chín cách. Nếu yêu cầu đúng đúng một lá, chọn lá cố định rồi ba lá còn lại hoán vị lệch, được bốn nhân hai, bằng tám. Đúng cả bốn lá có một cách. Đặc biệt không thể đúng đúng ba lá mà lá còn lại lại sai, bởi vị trí cuối đã bị ép phải khớp. Những kiểm tra như vậy giúp phát hiện lỗi logic khi chia trường hợp.",
+    "formula": "fixed_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "binary",
+    "state": 0,
+    "heading": "DÃY NHỊ PHÂN DÀI SÁU",
+    "lines": [
+      "Mỗi vị trí là 0 hoặc 1.",
+      "Dãy dài sáu, có xét thứ tự.",
+      "Yêu cầu xuất hiện 11 liền nhau."
+    ],
+    "takeaway": "TÌM PHẦN BÙ: KHÔNG CHỨA 11.",
+    "narration": "Xét tất cả các dãy nhị phân dài sáu. Một dãy có thể chứa một hoặc nhiều cặp số một đứng liền nhau, chẳng hạn 110110. Nếu đếm trực tiếp theo vị trí cặp đầu tiên, những dãy có nhiều cặp sẽ dễ bị tính lại. Thay vào đó hãy đếm phần bù: những dãy hoàn toàn không chứa hai số một liên tiếp. Từ đó ta dùng phép trừ trên tổng hai mũ sáu dãy.",
+    "formula": "binary_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "binary",
+    "state": 1,
+    "heading": "PHÂN LOẠI DÃY TRÁNH 11",
+    "lines": [
+      "Gọi fₙ là số dãy dài n tránh 11.",
+      "Nếu bắt đầu bằng 0: còn n−1 vị trí.",
+      "Nếu bắt đầu bằng 10: còn n−2 vị trí."
+    ],
+    "takeaway": "HAI NHÓM MỞ ĐẦU RỜI NHAU.",
+    "narration": "Gọi f n là số dãy nhị phân dài n không có hai số một liền nhau. Một dãy hợp lệ hoặc bắt đầu bằng số không, sau đó còn một dãy hợp lệ dài n trừ một, hoặc bắt đầu bằng một rồi bắt buộc đến không, sau đó còn một dãy hợp lệ dài n trừ hai. Hai dạng đầu này khác nhau nên chúng rời nhau và bao phủ mọi dãy hợp lệ. Đây là nguồn gốc của truy hồi Fibonacci.",
+    "formula": "binary_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "binary",
+    "state": 2,
+    "heading": "ĐIỀU KIỆN ĐẦU CHO TRUY HỒI",
+    "lines": [
+      "Dãy rỗng: một khả năng.",
+      "Dãy dài một: 0 hoặc 1.",
+      "Vậy f₀=1, f₁=2."
+    ],
+    "takeaway": "DÙNG ĐÚNG GIÁ TRỊ KHỞI ĐẦU.",
+    "narration": "Để áp dụng hệ thức truy hồi, ta cần hai giá trị đầu. Với độ dài bằng không, chỉ có một dãy rỗng, nên f không bằng một. Với độ dài bằng một, có hai dãy 0 và 1, đều không chứa 11, nên f một bằng hai. Từ đó f hai bằng ba, rồi f ba bằng năm. Việc đếm một dãy rỗng là một cách là quy ước tự nhiên và nhất quán với phép nối thêm ký hiệu.",
+    "formula": "binary_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "binary",
+    "state": 3,
+    "heading": "TÍNH ĐẾN ĐỘ DÀI SÁU",
+    "lines": [
+      "f₂=3, f₃=5, f₄=8.",
+      "f₅=13, f₆=21.",
+      "Có 21 dãy không chứa 11."
+    ],
+    "takeaway": "PHẦN BÙ ĐƯỢC ĐẾM BẰNG TRUY HỒI.",
+    "narration": "Lần lượt cộng hai giá trị liền trước, ta được f hai bằng ba, f ba bằng năm, f bốn bằng tám, f năm bằng mười ba và f sáu bằng hai mươi mốt. Nghĩa là trong sáu mươi tư dãy nhị phân dài sáu có đúng hai mươi mốt dãy tránh hoàn toàn mẫu 11. Mỗi dãy được phân vào một trong hai nhóm bắt đầu bằng 0 hoặc 10, nên truy hồi không bỏ sót và không tính trùng.",
+    "formula": "binary_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "binary",
+    "state": 4,
+    "heading": "LẤY PHẦN BÙ ĐỂ KẾT LUẬN",
+    "lines": [
+      "Toàn bộ: 64 dãy.",
+      "Không có 11: 21 dãy.",
+      "Có ít nhất một 11: 43 dãy."
+    ],
+    "takeaway": "NHIỀU CẶP 11 VẪN CHỈ ĐẾM MỘT DÃY.",
+    "narration": "Kết quả bài toán bằng sáu mươi tư trừ hai mươi mốt, tức bốn mươi ba dãy có ít nhất một cặp 11 liên tiếp. Một dãy như 111111 có đến năm cặp 11 chồng lấn nhưng vẫn chỉ là một dãy. Đây là lợi ích của phần bù: ta không cần kiểm soát số lần xuất hiện của mẫu bị yêu cầu, chỉ cần biết dãy có tránh mẫu hoàn toàn hay không.",
+    "formula": "binary_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "binary",
+    "state": 5,
+    "heading": "KẾT NỐI BÀI TOÁN TRÁNH MẪU",
+    "lines": [
+      "Đếm mẫu bị cấm thường dễ hơn.",
+      "Phần bù có thể đếm bằng truy hồi.",
+      "Đếm thỏa = tổng − số tránh."
+    ],
+    "takeaway": "ĐỪNG DÙNG TRUY HỒI KHI CHƯA GIẢI THÍCH.",
+    "narration": "Kỹ thuật này còn áp dụng cho các bài tìm chuỗi xuất hiện một mẫu con, xếp vật không có hai đối tượng giống nhau đứng liền và nhiều bài tổ hợp về trạng thái. Nhưng không nên thuộc lòng dãy Fibonacci rồi gắn vào mọi bài. Phải giải thích tại sao các dãy tránh mẫu tách đúng thành hai dạng, và xác định rõ giá trị khởi đầu. Khi đó phép trừ tổng trừ phần bù mới có cơ sở toán học.",
+    "formula": "binary_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "twopicks",
+    "state": 0,
+    "heading": "ÍT NHẤT A HOẶC B",
+    "lines": [
+      "Có tám học sinh A đến H.",
+      "Chọn đội ba người, không phân vai.",
+      "Đội phải có A hoặc B hoặc cả hai."
+    ],
+    "takeaway": "PHẦN BÙ: KHÔNG CÓ CẢ A LẪN B.",
+    "narration": "Có tám học sinh phân biệt và ta cần chọn một đội gồm ba bạn. Đội phải chứa ít nhất một trong hai bạn A, B; nghĩa là có A, hoặc có B, hoặc cả hai. Nếu dùng từ hoặc theo nghĩa bao gồm, hai bạn cùng xuất hiện vẫn hợp lệ. Phần bù của điều kiện là đội không có A lẫn B, tức cả ba thành viên đều thuộc sáu bạn còn lại.",
+    "formula": "twopicks_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "twopicks",
+    "state": 1,
+    "heading": "CHỌN ĐỘI KHÔNG CÓ A B",
+    "lines": [
+      "Bỏ A và B khỏi danh sách.",
+      "Chỉ chọn trong sáu người khác.",
+      "Có C₃⁶ = 20 nhóm bị loại."
+    ],
+    "takeaway": "ĐẾM PHẦN BÙ KHÔNG GIAO NHAU.",
+    "narration": "Những đội sai điều kiện phải không chứa bất kỳ ai trong hai bạn A và B. Vì vậy ta chỉ chọn ba trong sáu bạn C, D, E, F, G, H, được hai mươi nhóm. Đội có A nhưng không B không nằm trong nhóm bị loại; đội có B mà không A cũng không. Đội chứa cả hai cũng hoàn toàn hợp lệ. Vùng đỏ trên hình minh họa đúng các nhóm hoàn toàn vắng A và B.",
+    "formula": "twopicks_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "twopicks",
+    "state": 2,
+    "heading": "ĐÁP SỐ ÍT NHẤT MỘT",
+    "lines": [
+      "Toàn bộ C₃⁸ = 56 đội.",
+      "Loại C₃⁶ = 20 đội.",
+      "Hợp lệ 36 đội."
+    ],
+    "takeaway": "CÓ THỂ GỒM A, B HOẶC CẢ HAI.",
+    "narration": "Kết quả là năm mươi sáu trừ hai mươi bằng ba mươi sáu. Ta không phải chia ba trường hợp trước khi tính mà vẫn bao phủ đầy đủ những đội có A, có B và có cả hai. Sau đó có thể kiểm tra bằng cách chia lại thành đúng một trong hai bạn hoặc có cả hai. Hai tập hợp ấy rời nhau và cộng lại phải bằng ba mươi sáu.",
+    "formula": "twopicks_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "twopicks",
+    "state": 3,
+    "heading": "ĐÚNG MỘT TRONG HAI",
+    "lines": [
+      "Chọn một trong A, B: 2 cách.",
+      "Chọn hai trong sáu bạn còn lại.",
+      "Có 2·C₂⁶ = 30 đội."
+    ],
+    "takeaway": "ĐÚNG MỘT KHÁC ÍT NHẤT MỘT.",
+    "narration": "Điều kiện đúng một trong hai bạn A và B yêu cầu chỉ xuất hiện A hoặc chỉ xuất hiện B, không bao giờ có cả hai. Ta chọn người đặc biệt theo hai cách, rồi chọn hai người còn lại từ sáu học sinh khác, được hai nhân tổ hợp chập hai của sáu, bằng ba mươi nhóm. So sánh với ba mươi sáu ở câu trước, số nhóm bị loại thêm chính là những nhóm chứa đồng thời A và B.",
+    "formula": "twopicks_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "twopicks",
+    "state": 4,
+    "heading": "CÓ ĐỒNG THỜI CẢ A VÀ B",
+    "lines": [
+      "Hai vị trí đã là A và B.",
+      "Chọn người thứ ba trong sáu.",
+      "Có đúng 6 đội."
+    ],
+    "takeaway": "36 = 30 + 6 XÁC NHẬN KHÔNG ĐẾM TRÙNG.",
+    "narration": "Khi đội bắt buộc có cả A và B, hai thành viên đã được xác định. Thành viên thứ ba có sáu cách chọn trong những bạn còn lại. Vì vậy có sáu nhóm chứa cả hai. Ghép với ba mươi nhóm chỉ có đúng một trong hai, ta trở lại ba mươi sáu nhóm có ít nhất một. Đây là một phép kiểm chứng rất tốt vì ba trường hợp của từ hoặc đã được phân chia chính xác.",
+    "formula": "twopicks_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "twopicks",
+    "state": 5,
+    "heading": "TỔNG QUÁT VỚI NHIỀU NGƯỜI",
+    "lines": [
+      "n người, r người được đánh dấu.",
+      "Chọn k người, ít nhất một được đánh dấu.",
+      "Tổng trừ nhóm chỉ chọn ngoài r người."
+    ],
+    "takeaway": "CÔNG THỨC KHÔNG PHỤ THUỘC PHÂN CHIA SỐ ĐẶC BIỆT.",
+    "narration": "Với n học sinh và r bạn được đánh dấu đặc biệt, chọn k người có ít nhất một trong r bạn. Ta luôn có thể đếm phần bù bằng cách bỏ toàn bộ r người đặc biệt rồi chọn k người trong n trừ r người còn lại. Công thức vì thế là tổ hợp chập k của n trừ tổ hợp chập k của n trừ r. Đây là cùng cấu trúc với bài có ít nhất một nữ ở chương trước.",
+    "formula": "twopicks_5",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "capstone",
+    "state": 0,
+    "heading": "THỬ THÁCH CUỐI VIDEO",
+    "lines": [
+      "Tám học sinh A, B, C, D, E, F, G, H.",
+      "Chọn bốn người; chỉ định một đội trưởng.",
+      "Có A hoặc B; đội trưởng không là A."
+    ],
+    "takeaway": "PHẢI ĐẾM CẢ NHÓM VÀ CHỨC VỤ.",
+    "narration": "Bài tổng hợp cuối tập kết hợp hai điều kiện. Từ tám học sinh, ta chọn đội bốn người và chỉ định một đội trưởng thuộc đội. Đội phải chứa ít nhất một trong A, B, nhưng đội trưởng không được là A. Vì có chức vụ, một đội cố định có thể tạo ra nhiều kết quả khác nhau theo người làm đội trưởng. Ta sẽ giải bằng hai phương pháp độc lập để kiểm chứng.",
+    "formula": "capstone_0",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "capstone",
+    "state": 1,
+    "heading": "BẮT ĐẦU TỪ TẤT CẢ",
+    "lines": [
+      "Có C₄⁸ = 70 đội.",
+      "Mỗi đội có 4 cách chọn trưởng.",
+      "Toàn bộ 280 kết quả."
+    ],
+    "takeaway": "ĐỐI TƯỢNG ĐẾM LÀ ĐỘI KÈM ĐỘI TRƯỞNG.",
+    "narration": "Khi chưa có điều kiện, chọn bốn trong tám học sinh có bảy mươi đội khác nhau. Với mỗi đội, ta có bốn cách chọn đội trưởng, nên số kết quả là hai trăm tám mươi. Chú ý nếu chỉ lấy bảy mươi thì ta đang quên vai trò đội trưởng. Ngược lại, nếu dùng chỉnh hợp chập bốn của tám thì ta đã sắp thứ tự cả bốn người, thừa những thứ tự không được đề phân biệt.",
+    "formula": "capstone_1",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "capstone",
+    "state": 2,
+    "heading": "LOẠI ĐỘI KHÔNG A KHÔNG B",
+    "lines": [
+      "Đội chỉ gồm sáu người C đến H.",
+      "Chọn 4 trong 6: 15 đội.",
+      "Mỗi đội có 4 đội trưởng → 60."
+    ],
+    "takeaway": "ĐÂY LÀ NHÓM VI PHẠM THỨ NHẤT.",
+    "narration": "Nhóm kết quả bị loại thứ nhất là những đội không có A và cũng không có B. Khi đó phải chọn bốn trong sáu người còn lại, có mười lăm đội; mỗi đội vẫn có bốn lựa chọn đội trưởng, nên có sáu mươi kết quả vi phạm. Ta đã xác định phần bù của điều kiện ít nhất một trong A, B. Nhưng vẫn còn điều kiện cấm A làm đội trưởng, cần loại thêm một nhóm kết quả nữa.",
+    "formula": "capstone_2",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "capstone",
+    "state": 3,
+    "heading": "LOẠI A LÀM ĐỘI TRƯỞNG",
+    "lines": [
+      "A đã được chọn và giữ chức trưởng.",
+      "Chọn thêm 3 trong 7 người còn lại.",
+      "Có C₃⁷ = 35 kết quả bị cấm."
+    ],
+    "takeaway": "HAI NHÓM VI PHẠM KHÔNG GIAO NHAU.",
+    "narration": "Nhóm bị loại thứ hai có A làm đội trưởng. Khi đó A đương nhiên nằm trong đội, và chỉ cần chọn ba thành viên khác từ bảy bạn còn lại, được ba mươi lăm kết quả. Điều thú vị là hai nhóm bị loại hoàn toàn không giao nhau: nhóm không có A, B thì chắc chắn A không thể làm đội trưởng. Nhờ sự rời nhau này, ta được phép trừ sáu mươi và ba mươi lăm trực tiếp mà không cần cộng lại giao.",
+    "formula": "capstone_3",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "capstone",
+    "state": 4,
+    "heading": "TÍNH ĐÁP SỐ BẰNG PHẦN BÙ",
+    "lines": [
+      "Tất cả: 280 kết quả.",
+      "Vi phạm nhóm thiếu A,B: 60.",
+      "Vi phạm A làm trưởng: 35."
+    ],
+    "takeaway": "KẾT QUẢ HỢP LỆ LÀ 185.",
+    "narration": "Ta lấy toàn bộ hai trăm tám mươi kết quả, trừ sáu mươi kết quả đội không có A cũng không có B, tiếp tục trừ ba mươi lăm kết quả A làm đội trưởng, được một trăm tám mươi lăm. Phép trừ hợp lệ vì hai loại vi phạm không chồng lấn nhau. Nếu có giao, ta phải cộng lại phần giao. Hình minh họa thể hiện rõ hai miền đỏ riêng biệt được loại bỏ khỏi tập tất cả.",
+    "formula": "capstone_4",
+    "min_seconds": 23.2
+  },
+  {
+    "section": "capstone",
+    "state": 5,
+    "heading": "KIỂM CHỨNG CÁCH HAI",
+    "lines": [
+      "Trưởng là B: chọn 3 trong 7 → 35.",
+      "Trưởng thuộc C–H: 6 cách chọn.",
+      "Ba người thêm phải có A hoặc B: 25."
+    ],
+    "takeaway": "35 + 6·25 = 185, TRÙNG KHỚP.",
+    "narration": "Giải cách hai bằng cách phân loại đội trưởng. Nếu B làm trưởng, chọn thêm ba trong bảy người khác, có ba mươi lăm kết quả. Nếu đội trưởng thuộc sáu bạn C đến H, ta có sáu cách chọn người trưởng. Sau đó chọn ba người khác trong bảy người còn lại, nhưng phải có ít nhất một trong A và B: lấy tổ hợp chập ba của bảy trừ tổ hợp chập ba của năm, được hai mươi lăm. Vậy tổng là ba mươi lăm cộng sáu nhân hai mươi lăm, bằng một trăm tám mươi lăm.",
+    "formula": "capstone_5",
+    "min_seconds": 23.2
+  }
+]

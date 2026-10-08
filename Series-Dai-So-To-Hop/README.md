@@ -1,52 +1,44 @@
-# SANG MATH · COMB11 V2 — HOÁN VỊ VÒNG TRÒN
+# SANG MATH · ĐẠI SỐ TỔ HỢP MANIM–TYPST
 
-Tập 11 của Series **Đại số tổ hợp Manim–Typst**. Dự án chứa toàn bộ COMB01–COMB10 V2 và GEO01 cùng các workflow cũ; tập 11 được bổ sung độc lập.
+Dự án Series COMB01–COMB14 (V2) + GEO01. **Tập mới nhất: COMB14 – Phương pháp đếm phần bù.** Các tập cũ kế thừa từ gói COMB13, không thay đổi.
 
-## Mục tiêu học tập
+## Video COMB14
 
-- Phân biệt hoán vị vòng tròn với hoán vị theo hàng; mỗi cấu hình vòng chỉ tính một lần dưới phép quay.
-- Chứng minh công thức `(n-1)!` khi có n người phân biệt ngồi quanh bàn **không có ghế đánh số**.
-- Không tự chia 2 cho ảnh gương trừ khi đề cho phép lật; phân biệt mô hình ghế được đánh số.
-- Áp dụng gộp khối, phần bù, đếm vị trí, nam nữ xen kẽ và bao hàm–loại trừ.
+- 8 chương, 48 nhịp, 3.831 từ lời giảng; thời lượng nền thiết kế 18:34 (thời lượng có giọng đọc có thể dài hơn).
+- Manim scene: `episodes/comb14_complement.py` → `COMB14`.
+- Kịch bản nội dung: `comb14_beats.json`; chương: `comb14_chapters.json`; công thức Typst: `comb14_formulas.json`.
+- Chương trình chuẩn bị: `scripts/prepare_comb14_v2.py`.
+- Kiểm thử và hậu kiểm: `tests/test_comb14_v2.py`, `scripts/qa_comb14_v2.py`.
+- Workflow GitHub: `.github/workflows/render-comb14-v2.yml`.
+- Bản tham khảo thiết kế: `preview/comb14_v2/storyboard_8_chapters.png` (không phải ảnh Manim đã render).
+- Đọc `HUONG_DAN_RENDER_COMB14_V2.md` trước khi chạy.
 
-## Nội dung
+## Triết lý và quy ước
 
-- 48 nhịp bài giảng thuộc 8 chương, mục tiêu thời lượng nền khoảng 17 phút 53 giây.
-- Lời giảng tiếng Việt theo nhịp, phụ đề SRT và TTS tùy chọn.
-- Ví dụ trọng tâm: 6 người có 120 vòng, A-B ngồi cạnh 48, không cạnh 72, 3 nam/3 nữ xen kẽ 12, ba cặp vợ chồng không đôi nào cạnh nhau 32.
-- Hình bên trái, lý giải và công thức Typst bên phải; cảnh quay vòng và biến đổi nhóm được minh họa bằng Manim.
+Công thức tổng quát **đếm thỏa = đếm tất cả − đếm không thỏa** chỉ đúng sau khi làm rõ tập kết quả và hai miền đối lập. Các trường hợp có nhiều điều kiện cấm phải xem xét phần giao; không mặc nhiên trừ các nhóm vi phạm độc lập.
 
-## Tệp chính
+Manim dựng hình và chuyển động; Typst dựng các công thức. Nền tối, màn hình hai cột, không để chữ đè hình; đề bài hiện trước lời giải. Chỉnh hợp/tổ hợp trình bày theo yêu cầu của Series: chỉ số trên `n`, chỉ số dưới `k`, như `A^(n)_(k)` và `C^(n)_(k)`.
 
-- `episodes/comb11_circular_permutations.py` — Scene `COMB11`.
-- `comb11_lesson_data.py`, `comb11_beats.json` — toán và kịch bản 48 nhịp.
-- `scripts/prepare_comb11_v2.py` — biên dịch công thức Typst, chuẩn bị TTS và SRT.
-- `scripts/qa_comb11_v2.py` — xác minh MP4 và tạo 8 ảnh QA.
-- `.github/workflows/render-comb11-v2.yml` — workflow render có preview/FullHD và voice on/off.
-- `narration_COMB11_v2.md`, `storyboard_COMB11_v2.md`, `HUONG_DAN_RENDER_COMB11_V2.md`.
-
-## Lệnh kiểm thử và render
+## Lệnh để kiểm tra/chuẩn bị
 
 ```bash
 python -m unittest discover -s tests -v
-python scripts/prepare_comb11_v2.py --voice off
-manim -ql -r 854,480 --fps 24 episodes/comb11_circular_permutations.py COMB11
+python scripts/prepare_comb14_v2.py --voice off
+manim -ql -r 854,480 --fps 24 episodes/comb14_complement.py COMB14
 ```
 
-**Lưu ý:** đã kiểm tra logic toán và Python; chưa xác nhận render Manim/Typst tại môi trường soạn. Bản MP4 đầu tiên từ GitHub Actions phải được duyệt hình, tiếng và công thức trước khi công bố.
+## Trạng thái chất lượng
+
+Kiểm thử toán, toàn bộ unit tests và cú pháp Python được thực hiện trong môi trường xây dựng mã. **Chưa thể xác nhận video Manim xuất thực tế** nếu chưa chạy workflow GitHub; điều này không được xem là nghiệm thu hình ảnh hoặc tiếng đọc.
 
 
----
+## COMB15 V2 — Lập số tự nhiên thỏa điều kiện về chữ số
 
-## COMB12 V2 — Phương pháp gộp khối (Video 12)
-
-- Manim scene: `episodes/comb12_block_method.py` → `COMB12`
-- Data & math model: `comb12_lesson_data.py`, `comb12_beats.json`, `comb12_formulas.json`
-- Typst + TTS + SRT: `scripts/prepare_comb12_v2.py`
-- Quality-control report & 8 captures: `scripts/qa_comb12_v2.py`
-- GitHub workflow: `.github/workflows/render-comb12-v2.yml`
-- Full storyboard: `storyboard_COMB12_v2.md`
-- Vietnamese voice: `narration_COMB12_v2.md`
-- GitHub guide: `HUONG_DAN_RENDER_COMB12_V2.md`
-
-**Vui lòng render preview và duyệt thực tế trước khi dùng giảng dạy; Python tests chưa xác nhận Manim/TTS chạy thành công.**
+- Tệp Scene: `episodes/comb15_number_formation.py` — class `COMB15`.
+- Bộ dữ liệu: `comb15_lesson_data.py`, `comb15_beats.json`, `comb15_formulas.json`.
+- Build/TTS: `scripts/prepare_comb15_v2.py`.
+- QA: `scripts/qa_comb15_v2.py`, `tests/test_comb15_v2.py`.
+- Workflow: `.github/workflows/render-comb15-v2.yml`.
+- 48 nhịp giảng; 8 chương; trên 19 phút nền, 1080p/30 fps khi chọn fullhd.
+- Bài cuối: chữ số 0..5, 4 chữ số khác nhau, lớn hơn 3000, chia hết 15: 24 số.
+- Thời lượng thực tế/độ hoàn thiện thị giác vẫn phải kiểm chứng sau khi render trên GitHub Actions.

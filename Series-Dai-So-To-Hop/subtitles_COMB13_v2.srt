@@ -1,0 +1,799 @@
+1
+00:00:00,000 --> 00:00:03,141
+Có năm học sinh A, B, C, D, E phân biệt.
+
+2
+00:00:03,141 --> 00:00:08,566
+Ta muốn xếp thành một hàng, nhưng A và B không được ngồi ở hai vị trí liên tiếp.
+
+3
+00:00:08,566 --> 00:00:13,992
+Nếu chỉ nói năm giai thừa, ta đã tính tất cả các hàng, kể cả những hàng vi phạm.
+
+4
+00:00:13,992 --> 00:00:19,702
+Hãy quan sát các thẻ và đánh dấu chính xác hàng nào có hai bạn A, B đứng cạnh nhau.
+
+5
+00:00:19,702 --> 00:00:23,700
+Khi biết phần bị cấm, ta mới xây dựng cách đếm đáng tin cậy.
+
+6
+00:00:23,700 --> 00:00:32,424
+Ta thấy trong một số hàng như A B C D E, cặp A B nằm sát nhau, còn ở hàng A C B D E, cặp ấy đã bị tách ra.
+
+7
+00:00:32,424 --> 00:00:36,786
+Vậy quy tắc nhân khi xếp đủ năm người chưa phản ánh điều kiện của đề.
+
+8
+00:00:36,786 --> 00:00:43,329
+Chúng ta phân chia các hàng thành hai nhóm không giao nhau: nhóm A B đứng cạnh và nhóm A B không đứng cạnh.
+
+9
+00:00:43,329 --> 00:00:46,600
+Tổng của hai nhóm luôn là toàn bộ năm giai thừa hàng.
+
+10
+00:00:46,600 --> 00:00:51,421
+Khi A và B đứng cạnh, ta tạm xem chúng như một khối không bị tách.
+
+11
+00:00:51,421 --> 00:00:59,255
+Khối ấy cùng ba người C, D, E tạo ra bốn đối tượng phân biệt để xếp thành hàng, nên có bốn giai thừa khả năng.
+
+12
+00:00:59,255 --> 00:01:04,679
+Nhưng ở bên trong khối, A có thể đứng trước B hoặc B có thể đứng trước A.
+
+13
+00:01:04,679 --> 00:01:09,500
+Vì thế số hàng bị cấm là hai nhân bốn giai thừa, tức bốn mươi tám.
+
+14
+00:01:09,500 --> 00:01:14,900
+Bây giờ ta chỉ cần lấy tổng số hàng trừ những hàng A và B đứng sát nhau.
+
+15
+00:01:14,900 --> 00:01:20,300
+Số cách thỏa yêu cầu bằng một trăm hai mươi trừ bốn mươi tám, bằng bảy mươi hai.
+
+16
+00:01:20,300 --> 00:01:26,300
+Không có hàng nào bị bỏ sót vì mỗi hàng hoặc thuộc nhóm hợp lệ, hoặc thuộc nhóm bị cấm.
+
+17
+00:01:26,300 --> 00:01:33,200
+Cũng không có hàng nào bị trừ hai lần vì hai nhóm được xác định bằng một điều kiện đối lập duy nhất.
+
+18
+00:01:33,200 --> 00:01:41,964
+Để kiểm tra, chương trình có thể liệt kê tất cả một trăm hai mươi hoán vị và xem hai vị trí A, B có chênh nhau đúng một hay không.
+
+19
+00:01:41,964 --> 00:01:46,205
+Sau khi loại bốn mươi tám hàng vi phạm, ta còn đúng bảy mươi hai.
+
+20
+00:01:46,205 --> 00:01:49,598
+Cách thử nhỏ này rất hữu ích để bắt lỗi công thức.
+
+21
+00:01:49,598 --> 00:01:56,100
+Nhưng khi số người lớn, không thể liệt kê tất cả; ta vẫn phải nắm được chứng minh bằng phép đếm phần bù.
+
+22
+00:01:56,100 --> 00:01:59,683
+Với n người phân biệt, tổng số cách xếp là n giai thừa.
+
+23
+00:01:59,683 --> 00:02:06,021
+Nếu hai người cụ thể bắt buộc đứng cạnh, ta gộp thành một khối, có hai nhân n trừ một giai thừa cách.
+
+24
+00:02:06,021 --> 00:02:12,359
+Vậy khi hai người ấy không được đứng cạnh, số cách là n giai thừa trừ hai nhân n trừ một giai thừa.
+
+25
+00:02:12,359 --> 00:02:19,800
+Công thức này dùng cho một hàng thẳng và đúng một cặp chỉ định; nếu có nhiều cặp cấm, phải xét giao nhau giữa các điều kiện.
+
+26
+00:02:19,800 --> 00:02:24,261
+Thay vì đếm phần bù, ta sẽ trực tiếp tạo ra những cách xếp hợp lệ.
+
+27
+00:02:24,261 --> 00:02:28,444
+Hãy bỏ A và B ra ngoài một lúc, rồi xếp C, D, E trước.
+
+28
+00:02:28,444 --> 00:02:31,232
+Có ba giai thừa, tức sáu hàng nền khác nhau.
+
+29
+00:02:31,232 --> 00:02:37,645
+Từ một hàng nền cụ thể như C D E, hãy nhìn kỹ những vị trí có thể cài thêm A hoặc B.
+
+30
+00:02:37,645 --> 00:02:43,500
+Cách tạo hàng nền này bảo đảm rằng những khoảng trống đều độc lập với vị trí của A và B.
+
+31
+00:02:43,500 --> 00:02:51,225
+Sau khi xếp ba bạn C, D, E thành một hàng, xuất hiện bốn khoảng: trước C, giữa C và D, giữa D và E, và sau E.
+
+32
+00:02:51,225 --> 00:02:57,295
+Nếu đặt A và B vào hai khoảng khác nhau, giữa họ chắc chắn có ít nhất một người thuộc hàng nền.
+
+33
+00:02:57,295 --> 00:03:02,813
+Vì thế hai bạn không thể đứng cạnh. Nếu đặt cả hai vào cùng một khoảng, họ sẽ liền nhau.
+
+34
+00:03:02,813 --> 00:03:06,400
+Điều kiện cấm được chuyển thành điều kiện chọn các khoảng khác nhau.
+
+35
+00:03:06,400 --> 00:03:10,217
+Trước tiên, ta chọn ra hai khoảng khác nhau trong bốn khoảng an toàn.
+
+36
+00:03:10,217 --> 00:03:15,396
+Lúc này hai khoảng chỉ là một nhóm gồm hai vị trí, chưa nói A sẽ vào khoảng nào.
+
+37
+00:03:15,396 --> 00:03:19,486
+Vì vậy số cách chọn khoảng là tổ hợp chập hai của bốn, bằng sáu.
+
+38
+00:03:19,486 --> 00:03:26,301
+Ký hiệu trên màn hình dùng n ở chỉ số trên và k ở dưới theo chuẩn trình bày đã thống nhất cho cả Series.
+
+39
+00:03:26,301 --> 00:03:29,300
+Bước tiếp theo mới quyết định thứ tự đặt A, B.
+
+40
+00:03:29,300 --> 00:03:36,549
+Với hai khoảng đã được lựa chọn, ta có thể đặt A vào khoảng thứ nhất và B vào khoảng thứ hai, hoặc đổi ngược lại.
+
+41
+00:03:36,549 --> 00:03:38,780
+Đó là hai giai thừa cách phân công.
+
+42
+00:03:38,780 --> 00:03:44,078
+Nhân với sáu cách xếp hàng nền và sáu cách chọn cặp khoảng, ta thu được bảy mươi hai.
+
+43
+00:03:44,078 --> 00:03:51,327
+Mỗi hàng hợp lệ cho biết duy nhất hàng nền sau khi xóa A, B, hai khoảng được chọn và người được đặt vào từng khoảng.
+
+44
+00:03:51,327 --> 00:03:53,000
+Vậy phép đếm không bị trùng.
+
+45
+00:03:53,000 --> 00:03:56,587
+Cùng một bài toán, hai phương pháp cho cùng bảy mươi hai cách.
+
+46
+00:03:56,587 --> 00:04:01,829
+Phương pháp phần bù thuận lợi khi chỉ cấm một cặp, vì đếm nhóm bị cấm rất đơn giản.
+
+47
+00:04:01,829 --> 00:04:10,658
+Phương pháp khoảng trống lại cho chúng ta một cách dựng trực tiếp từng hàng hợp lệ, đặc biệt mạnh khi có nhiều người thuộc một nhóm không được đứng cạnh nhau.
+
+48
+00:04:10,658 --> 00:04:15,900
+Sự trùng khớp của hai kết quả không phải ngẫu nhiên: cả hai đều đếm chính một tập hợp.
+
+49
+00:04:15,900 --> 00:04:23,518
+Khi đề bài nói các bạn nữ không được đứng cạnh nhau, hoặc các chữ A không được liên tiếp, hãy nghĩ đến phương pháp khoảng trống.
+
+50
+00:04:23,518 --> 00:04:26,904
+Ta thường xếp nhóm còn lại trước để tạo các khe trống.
+
+51
+00:04:26,904 --> 00:04:30,854
+Sau đó chọn các khe khác nhau cho những phần tử cần tách nhau.
+
+52
+00:04:30,854 --> 00:04:39,600
+Cần chú ý hai điều: các phần tử trong mỗi nhóm có phân biệt hay không, và số khoảng có đủ để đặt tất cả phần tử đặc biệt hay không.
+
+53
+00:04:39,600 --> 00:04:47,693
+Chúng ta xét chín vị trí, chứa bốn chữ A giống nhau và năm chữ B giống nhau, với điều kiện không xuất hiện hai A liên tiếp.
+
+54
+00:04:47,693 --> 00:04:52,895
+Khác với bài xếp học sinh, việc đổi hai chữ A cho nhau không tạo một dãy mới.
+
+55
+00:04:52,895 --> 00:04:56,652
+Nếu dùng thừa bốn giai thừa để nhân, kết quả sẽ bị sai.
+
+56
+00:04:56,652 --> 00:05:03,300
+Đây là cơ hội để gắn kỹ thuật khoảng trống với những điều đã học về hoán vị có phần tử giống nhau.
+
+57
+00:05:03,300 --> 00:05:07,117
+Vì năm chữ B giống nhau, hàng nền của chúng chỉ có một cách.
+
+58
+00:05:07,117 --> 00:05:10,388
+Trước, giữa và sau năm B xuất hiện đúng sáu khoảng trống.
+
+59
+00:05:10,388 --> 00:05:15,023
+Đặt bốn chữ A vào bốn khoảng khác nhau thì không có hai A nằm sát nhau.
+
+60
+00:05:15,023 --> 00:05:20,475
+Ngược lại, mọi dãy hợp lệ đều cho thấy bốn chữ A chiếm bốn khoảng riêng biệt của hàng B.
+
+61
+00:05:20,475 --> 00:05:26,200
+Do đó ta đã lập được một tương ứng một-một giữa các dãy hợp lệ và các tập con bốn khoảng.
+
+62
+00:05:26,200 --> 00:05:29,471
+Ta chỉ cần chọn bốn khoảng trong sáu khoảng có sẵn.
+
+63
+00:05:29,471 --> 00:05:34,825
+Vì mọi chữ A đều như nhau, khi đã biết bốn khoảng, dãy được xác định duy nhất.
+
+64
+00:05:34,825 --> 00:05:41,070
+Không có bước hoán vị bốn chữ A. Vậy số dãy bằng tổ hợp chập bốn của sáu, tức mười lăm.
+
+65
+00:05:41,070 --> 00:05:49,100
+Đây là điểm khác biệt quan trọng với bài xếp bốn học sinh nữ phân biệt vào bốn khoảng, khi đó còn phải nhân bốn giai thừa.
+
+66
+00:05:49,100 --> 00:05:55,564
+Ta tổng quát hóa bằng cách chọn k vị trí trong n vị trí sao cho không có hai vị trí nào liền nhau.
+
+67
+00:05:55,564 --> 00:06:01,758
+Viết các vị trí theo thứ tự tăng dần, mỗi vị trí sau phải cách vị trí trước ít nhất hai đơn vị.
+
+68
+00:06:01,758 --> 00:06:06,336
+Hãy tạo một dãy vị trí mới: lấy vị trí thứ r trừ đi r trừ một.
+
+69
+00:06:06,336 --> 00:06:12,800
+Như vậy mỗi khoảng trống bắt buộc giữa hai vị trí được nén lại, và dãy mới chỉ còn yêu cầu tăng nghiêm ngặt.
+
+70
+00:06:12,800 --> 00:06:21,524
+Phép dịch làm vị trí cuối cùng không vượt quá n trừ k cộng một, trong khi các vị trí mới tăng nghiêm ngặt như cách chọn một tập con bình thường.
+
+71
+00:06:21,524 --> 00:06:27,521
+Vì vậy số cách chọn k vị trí không kề nhau bằng tổ hợp chập k của n trừ k cộng một.
+
+72
+00:06:27,521 --> 00:06:35,700
+Điều kiện tồn tại là n ít nhất bằng hai k trừ một, vì phải dành ra k vị trí được chọn cùng k trừ một vị trí ngăn cách.
+
+73
+00:06:35,700 --> 00:06:43,073
+Nếu thay năm chữ B bằng năm học sinh nam phân biệt và bốn chữ A bằng bốn học sinh nữ phân biệt, cách đếm phải thay đổi.
+
+74
+00:06:43,073 --> 00:06:50,447
+Ta có năm giai thừa cách xếp nam, mười lăm cách chọn bốn trong sáu khoảng và bốn giai thừa cách phân công bốn nữ vào các khoảng.
+
+75
+00:06:50,447 --> 00:06:52,817
+Kết quả là bốn mươi ba nghìn hai trăm.
+
+76
+00:06:52,817 --> 00:06:59,400
+Như vậy cùng một sơ đồ khoảng trống, yếu tố các phần tử có phân biệt hay không quyết định những thừa số cuối cùng.
+
+77
+00:06:59,400 --> 00:07:05,682
+Ta xét sáu học sinh phân biệt, yêu cầu A không đứng cạnh B và đồng thời C không đứng cạnh D.
+
+78
+00:07:05,682 --> 00:07:15,676
+Nếu chỉ trừ số hàng vi phạm cặp AB và trừ tiếp số hàng vi phạm cặp CD, ta có nguy cơ trừ hai lần những hàng mà cả hai cặp đều đứng cạnh nhau.
+
+79
+00:07:15,676 --> 00:07:23,100
+Vì vậy ta sẽ gọi hai tập hợp điều kiện vi phạm là E một và E hai, rồi xử lý đúng phần giao giữa chúng.
+
+80
+00:07:23,100 --> 00:07:30,535
+Trong sáu người, nếu bắt buộc AB đứng cạnh thì ta gộp AB thành một khối, cùng bốn người còn lại tạo năm đối tượng.
+
+81
+00:07:30,535 --> 00:07:35,591
+Hai cách sắp nội bộ của khối nhân năm giai thừa cho hai trăm bốn mươi hàng.
+
+82
+00:07:35,591 --> 00:07:38,862
+Tương tự với CD, ta cũng được hai trăm bốn mươi.
+
+83
+00:07:38,862 --> 00:07:46,000
+Nhưng các hàng có cả AB và CD đứng kề đang thuộc đồng thời hai tập hợp bị cấm, nên cần tìm phần giao.
+
+84
+00:07:46,000 --> 00:07:52,870
+Khi AB cùng đứng cạnh và CD cũng đứng cạnh, hai cặp không chung người nên có thể gộp thành hai khối độc lập.
+
+85
+00:07:52,870 --> 00:07:57,164
+Cùng E và F, ta có bốn đối tượng, sắp được bốn giai thừa cách.
+
+86
+00:07:57,164 --> 00:08:00,026
+Bên trong hai khối có hai nhân hai thứ tự.
+
+87
+00:08:00,026 --> 00:08:08,900
+Do đó phần giao của E một và E hai gồm chín mươi sáu hàng, chính là phần đã bị trừ hai lần khi xử lý hai biến cố riêng rẽ.
+
+88
+00:08:08,900 --> 00:08:18,775
+Nguyên lý bao hàm loại trừ cho số hàng vi phạm ít nhất một cặp bằng hai trăm bốn mươi cộng hai trăm bốn mươi trừ chín mươi sáu, tức ba trăm tám mươi bốn.
+
+89
+00:08:18,775 --> 00:08:26,393
+Vậy số hàng không vi phạm bất kỳ cặp nào là bảy trăm hai mươi trừ ba trăm tám mươi bốn, bằng ba trăm ba mươi sáu.
+
+90
+00:08:26,393 --> 00:08:32,600
+Ta có thể tô vùng hợp của hai vòng trên sơ đồ để thấy rõ việc trừ phần giao đúng một lần.
+
+91
+00:08:32,600 --> 00:08:39,023
+Ta thử câu hỏi khác để tránh nhầm lẫn: có bao nhiêu hàng mà đúng một trong hai cặp AB, CD đứng cạnh?
+
+92
+00:08:39,023 --> 00:08:45,446
+Trường hợp AB kề nhưng CD không kề có hai trăm bốn mươi trừ chín mươi sáu, tức một trăm bốn mươi bốn.
+
+93
+00:08:45,446 --> 00:08:51,032
+Trường hợp đối xứng cũng như vậy. Hai trường hợp rời nhau nên cộng được hai trăm tám mươi tám.
+
+94
+00:08:51,032 --> 00:08:55,500
+Kết quả này khác ba trăm tám mươi bốn của điều kiện ít nhất một cặp.
+
+95
+00:08:55,500 --> 00:09:04,246
+Mọi hàng xếp sáu người đều rơi vào đúng một trong ba nhóm: không có cặp nào đứng cạnh, đúng một cặp đứng cạnh, hoặc cả hai cặp đều đứng cạnh.
+
+96
+00:09:04,246 --> 00:09:09,325
+Ta đã tính được ba trăm ba mươi sáu, hai trăm tám mươi tám và chín mươi sáu.
+
+97
+00:09:09,325 --> 00:09:11,300
+Tổng đúng bằng bảy trăm hai mươi.
+
+98
+00:09:11,300 --> 00:09:19,200
+Kiểm tra phân hoạch như vậy là một công cụ phát hiện lỗi rất hiệu quả, đặc biệt với bài có nhiều biến cố và công thức dài.
+
+99
+00:09:19,200 --> 00:09:25,971
+Bây giờ hai điều kiện cấm không còn rời nhau về đối tượng: cấm A đứng cạnh B và cấm B đứng cạnh C.
+
+100
+00:09:25,971 --> 00:09:28,511
+Chữ B xuất hiện trong cả hai điều kiện.
+
+101
+00:09:28,511 --> 00:09:39,514
+Ta vẫn có thể dùng nguyên lý bao hàm loại trừ, nhưng tuyệt đối không được giả định rằng hai khối AB và BC là hai khối độc lập, vì làm như vậy sẽ đếm người B hai lần.
+
+102
+00:09:39,514 --> 00:09:42,900
+Ta cần quan sát cấu trúc hình học thật của phần giao.
+
+103
+00:09:42,900 --> 00:09:47,866
+Số hàng A và B đứng cạnh bằng hai nhân năm giai thừa, tức hai trăm bốn mươi.
+
+104
+00:09:47,866 --> 00:09:51,453
+Số hàng B và C đứng cạnh cũng là hai trăm bốn mươi.
+
+105
+00:09:51,453 --> 00:10:00,282
+Tuy nhiên, muốn cùng thỏa cả hai sự đứng kề, B phải có hai hàng xóm trực tiếp A và C, nghĩa là B nằm ở giữa trong bộ ba liên tiếp.
+
+106
+00:10:00,282 --> 00:10:05,800
+Không thể lấy hai khối riêng [AB] và [BC] rồi hoán đổi độc lập, vì chúng chồng nhau tại B.
+
+107
+00:10:05,800 --> 00:10:13,061
+Nếu A và B đứng cạnh, đồng thời B và C đứng cạnh, thì trong một hàng thẳng B buộc phải nằm giữa A và C.
+
+108
+00:10:13,061 --> 00:10:18,088
+Chỉ có hai thứ tự của bộ ba liên tiếp là A B C hoặc C B A.
+
+109
+00:10:18,088 --> 00:10:23,952
+Không được dùng sáu hoán vị của A B C, bởi bốn hoán vị còn lại không có B ở giữa.
+
+110
+00:10:23,952 --> 00:10:28,700
+Gộp bộ ba thành một khối và xếp với D, E, F sẽ tạo bốn đối tượng.
+
+111
+00:10:28,700 --> 00:10:42,547
+Khi đếm các hàng không có AB đứng kề và cũng không có BC đứng kề, ta lấy tổng bảy trăm hai mươi, trừ hai trăm bốn mươi hàng có AB kề, trừ thêm hai trăm bốn mươi hàng có BC kề, rồi cộng lại bốn mươi tám hàng thuộc phần giao.
+
+112
+00:10:42,547 --> 00:10:44,678
+Kết quả là hai trăm tám mươi tám.
+
+113
+00:10:44,678 --> 00:10:52,400
+Đây là ví dụ cho thấy công thức bao hàm loại trừ luôn giữ nguyên, nhưng cách đếm phần giao phụ thuộc rất mạnh vào cấu trúc ràng buộc.
+
+114
+00:10:52,400 --> 00:10:56,980
+Hãy tăng độ khó: yêu cầu A, B, C không có bất kỳ cặp nào đứng cạnh nhau.
+
+115
+00:10:56,980 --> 00:10:59,524
+Có ba tập vi phạm tương ứng AB, BC, AC.
+
+116
+00:10:59,524 --> 00:11:07,921
+Mỗi tập có hai trăm bốn mươi hàng, mỗi giao của hai tập có bốn mươi tám hàng, nhưng không thể ba người đều đứng cạnh nhau từng đôi một trong hàng thẳng.
+
+117
+00:11:07,921 --> 00:11:15,300
+Vậy số hàng hợp lệ là bảy trăm hai mươi trừ ba lần hai trăm bốn mươi cộng ba lần bốn mươi tám, bằng một trăm bốn mươi bốn.
+
+118
+00:11:15,300 --> 00:11:21,691
+Với yêu cầu A, B và C đều không đứng cạnh nhau từng đôi một, ta còn có cách làm trực tiếp ngắn hơn.
+
+119
+00:11:21,691 --> 00:11:24,887
+Xếp ba người D, E, F trước, có ba giai thừa cách.
+
+120
+00:11:24,887 --> 00:11:32,343
+Họ tạo bốn khoảng trống; ta chọn ba khoảng khác nhau trong bốn, rồi đặt A, B, C vào ba khoảng đã chọn theo ba giai thừa cách.
+
+121
+00:11:32,343 --> 00:11:34,739
+Kết quả cũng bằng một trăm bốn mươi bốn.
+
+122
+00:11:34,739 --> 00:11:39,000
+Hai phương pháp khớp nhau, giúp xác nhận phép đếm phần giao ở bài nâng cao.
+
+123
+00:11:39,000 --> 00:11:42,950
+Một lớp có năm nam và ba nữ, tất cả đều là người phân biệt.
+
+124
+00:11:42,950 --> 00:11:47,690
+Ta cần xếp tám người thành một hàng sao cho không có hai nữ nào đứng liền nhau.
+
+125
+00:11:47,690 --> 00:11:56,643
+Hãy chú ý đề không nói nam và nữ phải xen kẽ hoàn toàn; vì số nam nhiều hơn, có thể xuất hiện hai hoặc ba nam đứng cạnh mà bài vẫn hợp lệ.
+
+126
+00:11:56,643 --> 00:12:02,700
+Vì vậy mô hình chính xác là chọn khoảng trống trong một hàng nam, không phải ép một mẫu nữ nam cố định.
+
+127
+00:12:02,700 --> 00:12:07,822
+Trước tiên, ta sắp xếp năm học sinh nam vào một hàng. Có năm giai thừa cách.
+
+128
+00:12:07,822 --> 00:12:15,958
+Với bất cứ thứ tự nam nào, ta luôn có sáu khoảng: một trước hàng, bốn khoảng giữa hai nam liên tiếp và một ở cuối hàng.
+
+129
+00:12:15,958 --> 00:12:21,080
+Để các bạn nữ không đứng cạnh nhau, mỗi khoảng chỉ được nhận tối đa một nữ.
+
+130
+00:12:21,080 --> 00:12:25,600
+Khi đó mọi cách đặt các nữ vào những khoảng khác nhau đều hợp lệ.
+
+131
+00:12:25,600 --> 00:12:28,599
+Ta chọn ba trong sáu khoảng an toàn của hàng nam.
+
+132
+00:12:28,599 --> 00:12:32,688
+Khi chọn, ba khoảng mới là một tập hợp, không phân biệt thứ tự chọn.
+
+133
+00:12:32,688 --> 00:12:36,232
+Do đó có tổ hợp chập ba của sáu, tức hai mươi cách.
+
+134
+00:12:36,232 --> 00:12:43,320
+Sau bước này, ta cần quyết định nữ thứ nhất vào khoảng nào, nữ thứ hai vào khoảng nào và nữ thứ ba vào khoảng nào.
+
+135
+00:12:43,320 --> 00:12:48,500
+Đây là công việc khác với chọn tập hợp khoảng và sẽ đóng góp thừa số ba giai thừa.
+
+136
+00:12:48,500 --> 00:12:53,709
+Mỗi cách xếp nam tạo sáu khoảng. Ta chọn ba khoảng, rồi hoán vị ba học sinh nữ vào đó.
+
+137
+00:12:53,709 --> 00:13:02,043
+Áp dụng quy tắc nhân, số hàng hợp lệ là năm giai thừa nhân tổ hợp chập ba của sáu nhân ba giai thừa, cho kết quả mười bốn nghìn bốn trăm.
+
+138
+00:13:02,043 --> 00:13:10,637
+Mỗi hàng có thể được khôi phục duy nhất bằng cách xóa các nữ để lấy hàng nam, xác định ba khoảng đã dùng, rồi đọc lại tên các nữ trong từng khoảng.
+
+139
+00:13:10,637 --> 00:13:12,200
+Vì vậy không có đếm trùng.
+
+140
+00:13:12,200 --> 00:13:16,241
+Công thức phương pháp khoảng trống có một điều kiện tồn tại rất tự nhiên.
+
+141
+00:13:16,241 --> 00:13:22,438
+Nếu có m bạn nam thì chỉ có m cộng một khoảng để chèn các nữ mà không có hai nữ đứng cạnh.
+
+142
+00:13:22,438 --> 00:13:30,251
+Nếu số nữ k lớn hơn m cộng một, nguyên lý Dirichlet cho thấy chắc chắn có ít nhất hai nữ phải chung một khoảng, tức đứng cạnh nhau.
+
+143
+00:13:30,251 --> 00:13:35,100
+Khi số nữ không vượt số khoảng, ta mới có thể chọn các khoảng khác nhau để xếp.
+
+144
+00:13:35,100 --> 00:13:39,942
+Hãy so sánh với bài có bốn nam, bốn nữ, yêu cầu nam nữ ngồi xen kẽ hoàn toàn.
+
+145
+00:13:39,942 --> 00:13:42,745
+Chỉ có hai mẫu vị trí: nam trước hoặc nữ trước.
+
+146
+00:13:42,745 --> 00:13:49,881
+Với mỗi mẫu, sắp bốn nam vào bốn vị trí nam và bốn nữ vào bốn vị trí nữ, được bốn giai thừa nhân bốn giai thừa cách.
+
+147
+00:13:49,881 --> 00:13:52,939
+Nhân hai mẫu ta được một nghìn một trăm năm mươi hai.
+
+148
+00:13:52,939 --> 00:13:58,800
+Điều kiện xen kẽ hoàn toàn mạnh hơn yêu cầu không có hai nữ đứng cạnh, nên không được dùng thay cho nhau.
+
+149
+00:13:58,800 --> 00:14:03,431
+Chuyển sang bàn tròn, chúng ta phải quyết định thế nào là một cách xếp khác nhau.
+
+150
+00:14:03,431 --> 00:14:10,241
+Nếu các ghế không đánh số và chỉ quay cả bàn không tạo ra cách mới, số cách xếp sáu người là năm giai thừa.
+
+151
+00:14:10,241 --> 00:14:17,324
+Trong bài này hai người A và B không được ngồi sát nhau theo hai phía vòng tròn, tức mỗi người có đúng hai hàng xóm.
+
+152
+00:14:17,324 --> 00:14:22,500
+Chú ý hai ghế đầu và cuối của hàng thẳng khi uốn thành vòng cũng trở thành kề nhau.
+
+153
+00:14:22,500 --> 00:14:26,617
+Khi A và B ngồi cạnh trên vòng tròn, ta gộp hai người thành một khối.
+
+154
+00:14:26,617 --> 00:14:29,447
+Cùng bốn người còn lại, có năm đối tượng quanh bàn.
+
+155
+00:14:29,447 --> 00:14:35,365
+Vì các phép quay được đồng nhất, số thứ tự của năm đối tượng là bốn giai thừa, không phải năm giai thừa.
+
+156
+00:14:35,365 --> 00:14:39,997
+Nhân thêm hai thứ tự AB, BA bên trong khối, ta được bốn mươi tám cách vi phạm.
+
+157
+00:14:39,997 --> 00:14:45,400
+Ta đang xem các chiều kim đồng hồ và ngược chiều là khác nhau, không tự động đồng nhất ảnh gương.
+
+158
+00:14:45,400 --> 00:14:53,132
+Vậy số cách để hai người A và B không ngồi cạnh nhau là một trăm hai mươi trừ bốn mươi tám, bằng bảy mươi hai.
+
+159
+00:14:53,132 --> 00:15:01,757
+Nếu thử biến vòng tròn thành hàng thẳng bằng cách cắt tại một điểm tùy ý, ta sẽ dễ quên rằng hai đầu hàng đang kề nhau trên vòng.
+
+160
+00:15:01,757 --> 00:15:08,300
+Đó là lý do nên cố định một người hoặc giữ trực tiếp mô hình vòng tròn trong mọi bước lập luận.
+
+161
+00:15:08,300 --> 00:15:13,040
+Ta xét bốn nam và ba nữ phân biệt quanh một bàn tròn không đánh số.
+
+162
+00:15:13,040 --> 00:15:17,188
+Muốn các nữ không ngồi cạnh nhau, ta xếp bốn nam quanh bàn trước.
+
+163
+00:15:17,188 --> 00:15:24,890
+Khác với hàng thẳng, vòng tròn tạo ra đúng bốn khoảng giữa bốn người nam, vì không có khoảng trước đầu hàng hay sau cuối hàng.
+
+164
+00:15:24,890 --> 00:15:27,260
+Mỗi nữ phải chiếm một khoảng khác nhau.
+
+165
+00:15:27,260 --> 00:15:32,000
+Đây là nét khác biệt cốt lõi khi vận dụng phương pháp khoảng trống trên vòng.
+
+166
+00:15:32,000 --> 00:15:35,587
+Số cách xếp bốn nam quanh bàn là ba giai thừa, bằng sáu.
+
+167
+00:15:35,587 --> 00:15:41,105
+Có bốn khoảng trên vòng nên số cách chọn ba khoảng là tổ hợp chập ba của bốn, bằng bốn.
+
+168
+00:15:41,105 --> 00:15:45,795
+Ba nữ phân biệt được hoán vị vào ba khoảng đã chọn theo ba giai thừa cách.
+
+169
+00:15:45,795 --> 00:15:49,382
+Nhân ba thừa số cho kết quả một trăm bốn mươi bốn cách.
+
+170
+00:15:49,382 --> 00:15:54,900
+Mỗi cách xếp hợp lệ xác định duy nhất thứ tự vòng của bốn nam và ba khoảng chứa nữ.
+
+171
+00:15:54,900 --> 00:15:59,997
+Chốt lại, khi xếp một nhóm nền gồm m người thành hàng thẳng, ta có m cộng một khoảng chèn.
+
+172
+00:15:59,997 --> 00:16:06,623
+Khi xếp quanh bàn tròn không đánh số, ta chỉ có m khoảng và còn phải đồng nhất các hoán vị khác nhau bởi phép quay.
+
+173
+00:16:06,623 --> 00:16:12,229
+Nếu đề bài quy định ghế đánh số thì mỗi vị trí ghế là cố định, phép quay không được đồng nhất.
+
+174
+00:16:12,229 --> 00:16:16,561
+Nếu đề bài cho phép đồng nhất cả ảnh gương, lại là một mô hình đếm khác.
+
+175
+00:16:16,561 --> 00:16:18,600
+Phải đọc rõ quy ước trước khi tính.
+
+176
+00:16:18,600 --> 00:16:23,679
+Ở bài cuối, chúng ta xét tám người phân biệt và ba cặp chỉ định AB, CD, EF.
+
+177
+00:16:23,679 --> 00:16:27,911
+Mỗi cặp đều không được đứng cạnh nhau khi xếp tám người thành một hàng.
+
+178
+00:16:27,911 --> 00:16:34,118
+Người G, H không thuộc cặp cấm nào. Với ba điều kiện, việc lấy tổng trừ đơn giản dễ bị trừ trùng.
+
+179
+00:16:34,118 --> 00:16:42,300
+Hãy đặt ba tập hợp vi phạm tương ứng E một, E hai, E ba rồi áp dụng bao hàm loại trừ đầy đủ đến phần giao ba tập.
+
+180
+00:16:42,300 --> 00:16:48,424
+Nếu chỉ bắt buộc A và B đứng cạnh, ta gộp thành một khối cùng sáu người còn lại, tức bảy đối tượng.
+
+181
+00:16:48,424 --> 00:16:54,016
+Có bảy giai thừa cách xếp ngoài và hai thứ tự trong khối, cho mười nghìn không trăm tám mươi hàng.
+
+182
+00:16:54,016 --> 00:16:56,413
+Các cặp CD và EF có cùng số lượng.
+
+183
+00:16:56,413 --> 00:17:05,200
+Tổng ba số riêng là ba nhân hai nhân bảy giai thừa, nhưng đang tính nhiều lần những hàng vi phạm hơn một cặp, nên chưa phải số hàng bị cấm cuối cùng.
+
+184
+00:17:05,200 --> 00:17:11,857
+Nếu AB và CD cùng đứng kề, chúng là hai khối rời nhau cùng bốn người E, F, G, H, vậy có sáu đối tượng.
+
+185
+00:17:11,857 --> 00:17:14,520
+Hai khối có tổng cộng bốn thứ tự nội bộ.
+
+186
+00:17:14,520 --> 00:17:19,579
+Do đó mỗi giao đôi có bốn nhân sáu giai thừa, bằng hai nghìn tám trăm tám mươi hàng.
+
+187
+00:17:19,579 --> 00:17:24,372
+Có tổ hợp chập hai của ba cách chọn hai cặp trong ba cặp, tức ba giao đôi.
+
+188
+00:17:24,372 --> 00:17:28,100
+Tổng phần được cộng trở lại bằng ba nhân bốn nhân sáu giai thừa.
+
+189
+00:17:28,100 --> 00:17:32,840
+Nếu cả ba cặp AB, CD và EF đều đứng cạnh nhau, gộp mỗi cặp thành một khối.
+
+190
+00:17:32,840 --> 00:17:37,053
+Ta có ba khối và hai người còn lại G, H, tổng cộng năm đối tượng.
+
+191
+00:17:37,053 --> 00:17:41,530
+Có năm giai thừa cách xếp năm đối tượng và tám thứ tự bên trong ba khối.
+
+192
+00:17:41,530 --> 00:17:44,953
+Như vậy phần giao ba tập cấm có chín trăm sáu mươi hàng.
+
+193
+00:17:44,953 --> 00:17:51,800
+Trong bao hàm loại trừ, sau khi đã trừ các tập đơn và cộng các giao đôi, ta phải trừ đi giao ba này một lần.
+
+194
+00:17:51,800 --> 00:18:01,614
+Ghép các kết quả lại, số hàng hợp lệ là tám giai thừa, trừ ba lần hai nhân bảy giai thừa, cộng ba lần bốn nhân sáu giai thừa, rồi trừ tám nhân năm giai thừa.
+
+195
+00:18:01,614 --> 00:18:04,340
+Ta được mười bảy nghìn bảy trăm sáu mươi hàng.
+
+196
+00:18:04,340 --> 00:18:10,611
+Điều quan trọng không chỉ là đáp số mà là ý nghĩa của dấu trừ, cộng, trừ theo từng tầng giao biến cố.
+
+197
+00:18:10,611 --> 00:18:14,700
+Hình động sẽ lần lượt tô những vùng vừa được loại, rồi được hoàn lại.
+
+198
+00:18:14,700 --> 00:18:25,289
+Ta có thể liệt kê toàn bộ bốn mươi nghìn ba trăm hai mươi hoán vị của tám người để kiểm tra rằng đúng mười bảy nghìn bảy trăm sáu mươi hàng không chứa bất kỳ cặp đứng kề bị cấm nào.
+
+199
+00:18:25,289 --> 00:18:36,131
+Kết thúc bài, hãy tự hỏi: khi cấm một cặp, dùng phần bù; khi cần tách một nhóm, dùng khoảng trống; khi có nhiều cặp cấm, dùng bao hàm loại trừ; khi các cặp chung phần tử, cần xử lý riêng phần giao.
+
+200
+00:18:36,131 --> 00:18:38,400
+Đó mới là tư duy giải toán tổ hợp.

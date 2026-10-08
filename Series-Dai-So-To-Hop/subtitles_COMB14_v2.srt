@@ -1,0 +1,771 @@
+1
+00:00:00,000 --> 00:00:06,327
+Mỗi dãy gồm bốn vị trí và ở mỗi vị trí ta được chọn một trong ba chữ A, B, C.
+
+2
+00:00:06,327 --> 00:00:09,642
+Các chữ được phép lặp và vị trí có ý nghĩa.
+
+3
+00:00:09,642 --> 00:00:18,982
+Thay vì liệt kê từng dãy có ít nhất một chữ A, ta thử hỏi câu dễ hơn: một dãy hoàn toàn không có chữ A thì trông như thế nào?
+
+4
+00:00:18,982 --> 00:00:23,200
+Câu hỏi ngược lại này sẽ dẫn ta đến phương pháp đếm phần bù.
+
+5
+00:00:23,200 --> 00:00:26,649
+Hãy nhìn toàn bộ không gian gồm tám mươi mốt dãy.
+
+6
+00:00:26,649 --> 00:00:31,351
+Mỗi dãy hoặc có ít nhất một chữ A, hoặc không hề có chữ A.
+
+7
+00:00:31,351 --> 00:00:38,876
+Hai mệnh đề này là phủ định của nhau, nên chúng không thể đồng thời đúng và cũng không có trường hợp thứ ba.
+
+8
+00:00:38,876 --> 00:00:46,400
+Đó là điều kiện toán học quan trọng nhất để phép trừ số cách trở thành một chứng minh chứ không phải mẹo tính.
+
+9
+00:00:46,400 --> 00:00:51,269
+Nếu một dãy không có chữ A, mỗi vị trí bắt buộc chọn giữa B và C.
+
+10
+00:00:51,269 --> 00:00:57,284
+Bốn vị trí độc lập, nên theo quy tắc nhân số dãy bị loại là hai mũ bốn, bằng mười sáu.
+
+11
+00:00:57,284 --> 00:01:05,590
+Điều quan trọng là ta không đếm dãy bị loại bằng cách chọn vị trí đặt A; khi không có A thì không cần chọn vị trí nào cả.
+
+12
+00:01:05,590 --> 00:01:09,600
+Đây chính là sự đơn giản hóa mà phương pháp phần bù mang lại.
+
+13
+00:01:09,600 --> 00:01:16,789
+Bây giờ lấy tổng tám mươi mốt trừ đi mười sáu dãy hoàn toàn không có chữ A, được sáu mươi lăm.
+
+14
+00:01:16,789 --> 00:01:27,245
+Ta không cần phân chia thành các trường hợp có một A, hai A, ba A và bốn A; chính những trường hợp ấy đã được gom vào một miền duy nhất.
+
+15
+00:01:27,245 --> 00:01:32,800
+Trên hình, các thẻ đỏ biến mất và bộ đếm xanh biểu diễn số dãy còn lại.
+
+16
+00:01:32,800 --> 00:01:39,005
+Khi đề bài nói ít nhất một chữ A, những dãy có hai chữ A hoặc cả bốn chữ A đều hợp lệ.
+
+17
+00:01:39,005 --> 00:01:49,795
+Nếu chỉ tính dãy có đúng một chữ A, ta phải chọn một trong bốn vị trí cho A rồi điền B hoặc C vào ba vị trí còn lại, được bốn nhân hai mũ ba, tức ba mươi hai.
+
+18
+00:01:49,795 --> 00:01:56,000
+Số ba mươi hai nhỏ hơn sáu mươi lăm vì ta vừa bỏ sót các dãy có từ hai chữ A trở lên.
+
+19
+00:01:56,000 --> 00:02:02,905
+Tổng quát, một dãy độ dài k tạo từ n ký hiệu, cho phép lặp và xét thứ tự, có n mũ k khả năng.
+
+20
+00:02:02,905 --> 00:02:12,019
+Nếu yêu cầu xuất hiện ít nhất một ký hiệu cụ thể, phần bù là các dãy chỉ dùng n trừ một ký hiệu khác, có n trừ một mũ k khả năng.
+
+21
+00:02:12,019 --> 00:02:13,676
+Do đó lấy hiệu hai số.
+
+22
+00:02:13,676 --> 00:02:19,200
+Công thức không dùng nguyên xi khi mỗi vị trí có số lựa chọn khác nhau hoặc khi cấm lặp.
+
+23
+00:02:19,200 --> 00:02:24,389
+Một lớp có năm học sinh nam và bốn học sinh nữ, tất cả đều phân biệt.
+
+24
+00:02:24,389 --> 00:02:29,579
+Ta chọn một nhóm ba bạn đi thi mà yêu cầu nhóm có ít nhất một nữ.
+
+25
+00:02:29,579 --> 00:02:34,158
+Vì chỉ chọn nhóm, đổi thứ tự tên các bạn không tạo ra nhóm mới.
+
+26
+00:02:34,158 --> 00:02:42,400
+Có thể phân chia theo một, hai hoặc ba nữ, nhưng cách nhanh hơn là đếm tất cả nhóm ba người, rồi loại nhóm gồm toàn nam.
+
+27
+00:02:42,400 --> 00:02:45,994
+Hãy tô màu những nhóm không có bất kỳ nữ nào.
+
+28
+00:02:45,994 --> 00:02:53,837
+Ba thành viên đều phải đến từ năm học sinh nam, nên số nhóm này là tổ hợp chập ba của năm, bằng mười.
+
+29
+00:02:53,837 --> 00:02:59,392
+Không có lý do gì để sắp thứ tự các bạn vì đề chỉ nói chọn đội.
+
+30
+00:02:59,392 --> 00:03:05,600
+Trên hình, vùng đỏ chính là tập hợp bị loại, không có giao với vùng nhóm thỏa điều kiện.
+
+31
+00:03:05,600 --> 00:03:10,571
+Từ chín học sinh, có tám mươi tư nhóm ba người không xét thứ tự.
+
+32
+00:03:10,571 --> 00:03:16,537
+Loại đi mười nhóm chỉ gồm nam, ta còn bảy mươi tư nhóm có ít nhất một nữ.
+
+33
+00:03:16,537 --> 00:03:20,846
+Cách này không yêu cầu xét riêng một nữ, hai nữ, ba nữ.
+
+34
+00:03:20,846 --> 00:03:28,800
+Mỗi nhóm hợp lệ chỉ xuất hiện đúng một lần trong phần tổng, và không nhóm hợp lệ nào nằm trong phần bị trừ.
+
+35
+00:03:28,800 --> 00:03:32,158
+Ta kiểm chứng bằng cách chia theo số nữ được chọn.
+
+36
+00:03:32,158 --> 00:03:37,958
+Có đúng một nữ thì chọn một trong bốn nữ và hai trong năm nam, được bốn mươi nhóm.
+
+37
+00:03:37,958 --> 00:03:43,758
+Có đúng hai nữ thì chọn hai trong bốn nữ và một trong năm nam, được ba mươi nhóm.
+
+38
+00:03:43,758 --> 00:03:47,116
+Có ba nữ thì chọn ba trong bốn, được bốn nhóm.
+
+39
+00:03:47,116 --> 00:03:52,000
+Ba trường hợp rời nhau, cộng lại bằng bảy mươi tư, khớp phép đếm phần bù.
+
+40
+00:03:52,000 --> 00:03:57,459
+Hãy thay đúng một chữ trong đề: từ ít nhất một nữ thành đúng một nữ.
+
+41
+00:03:57,459 --> 00:04:01,894
+Khi đó nhóm có hai nữ hoặc ba nữ không còn hợp lệ.
+
+42
+00:04:01,894 --> 00:04:06,671
+Ta chỉ giữ trường hợp một nữ và hai nam, được bốn mươi nhóm.
+
+43
+00:04:06,671 --> 00:04:15,200
+Sự khác biệt giữa bốn mươi và bảy mươi tư chứng minh rằng không thể tùy tiện đồng nhất từ ít nhất với từ đúng.
+
+44
+00:04:15,200 --> 00:04:25,867
+Với n người phân biệt và r người thuộc nhóm đặc biệt, số cách chọn k người có ít nhất một người đặc biệt bằng tổ hợp chập k của n trừ tổ hợp chập k của n trừ r.
+
+45
+00:04:25,867 --> 00:04:34,133
+Nếu n trừ r nhỏ hơn k thì không có nhóm nào hoàn toàn không đặc biệt, ta quy ước tổ hợp khi k lớn hơn số đối tượng bằng không.
+
+46
+00:04:34,133 --> 00:04:38,400
+Mô hình này lặp lại trong rất nhiều bài toán chọn đội và chọn đồ vật.
+
+47
+00:04:38,400 --> 00:04:43,895
+Với năm học sinh phân biệt, ta xét những hàng mà A và B không đứng cạnh nhau.
+
+48
+00:04:43,895 --> 00:04:50,611
+Nếu xếp trực tiếp có thể phải chọn vị trí rất phức tạp, nhưng phần bù là A và B đứng cạnh.
+
+49
+00:04:50,611 --> 00:04:57,632
+Điều kiện đối lập hoàn toàn rõ ràng: hai người hoặc cách nhau ít nhất một vị trí, hoặc họ đứng sát nhau.
+
+50
+00:04:57,632 --> 00:05:01,600
+Không có trường hợp thứ ba, nên phép trừ sẽ không bỏ sót.
+
+51
+00:05:01,600 --> 00:05:06,111
+Khi A và B đứng cạnh nhau, ta xem hai người thành một khối.
+
+52
+00:05:06,111 --> 00:05:12,233
+Khối đó cùng C, D, E là bốn đối tượng phân biệt để xếp, có bốn giai thừa cách.
+
+53
+00:05:12,233 --> 00:05:17,711
+Bên trong khối, A đứng trước B hoặc B đứng trước A, tạo thêm thừa số hai.
+
+54
+00:05:17,711 --> 00:05:24,800
+Vì vậy có bốn mươi tám hàng vi phạm điều kiện. Các hàng ấy chính là những hàng màu đỏ cần loại.
+
+55
+00:05:24,800 --> 00:05:31,211
+Như vậy số cách xếp hợp lệ là năm giai thừa trừ hai nhân bốn giai thừa, bằng bảy mươi hai.
+
+56
+00:05:31,211 --> 00:05:37,316
+Điều đáng nhớ là ta không hề giả định mọi vị trí A và B có xác suất như nhau.
+
+57
+00:05:37,316 --> 00:05:40,368
+Ta dùng lập luận đếm chính xác bằng gộp khối.
+
+58
+00:05:40,368 --> 00:05:48,000
+Sau phép trừ, hình động sẽ làm mờ toàn bộ các hàng chứa A B liên tiếp và chỉ để lại số lượng hợp lệ.
+
+59
+00:05:48,000 --> 00:05:53,220
+Đổi sang một điều kiện khác: có sáu học sinh xếp hàng, nhưng A không được đứng đầu.
+
+60
+00:05:53,220 --> 00:05:56,700
+Tổng số hàng là sáu giai thừa bằng bảy trăm hai mươi.
+
+61
+00:05:56,700 --> 00:06:03,950
+Nếu A bị cố định ở vị trí thứ nhất, năm người còn lại được xếp theo năm giai thừa, tức một trăm hai mươi.
+
+62
+00:06:03,950 --> 00:06:07,140
+Trừ những hàng ấy ta còn sáu trăm cách phù hợp.
+
+63
+00:06:07,140 --> 00:06:11,200
+Đây là ví dụ đơn giản nhất của điều kiện cấm một vị trí.
+
+64
+00:06:11,200 --> 00:06:20,145
+Bài toán có hai điều kiện như A không đứng đầu đồng thời A không đứng cạnh B thì không được cộng các số bị cấm rồi trừ một cách máy móc.
+
+65
+00:06:20,145 --> 00:06:26,294
+Một hàng có thể vừa có A ở đầu vừa có A cạnh B, và khi đó đã bị trừ hai lần.
+
+66
+00:06:26,294 --> 00:06:29,928
+Ta cần cộng lại phần giao hoặc chia các trường hợp rời nhau.
+
+67
+00:06:29,928 --> 00:06:34,400
+Đây là tín hiệu dẫn tới nguyên lý bao hàm loại trừ ở những tập sau.
+
+68
+00:06:34,400 --> 00:06:39,040
+Với sáu người, điều kiện A không đứng đầu và A không đứng cạnh B có hai nhóm vi phạm.
+
+69
+00:06:39,040 --> 00:06:42,056
+A đứng đầu có năm giai thừa, tức một trăm hai mươi hàng.
+
+70
+00:06:42,056 --> 00:06:46,000
+A và B đứng cạnh có hai nhân năm giai thừa, tức hai trăm bốn mươi hàng.
+
+71
+00:06:46,000 --> 00:06:51,568
+Phần giao buộc A ở đầu và B ở vị trí thứ hai, bốn người khác xếp tự do, có bốn giai thừa hàng.
+
+72
+00:06:51,568 --> 00:06:57,600
+Lấy bảy trăm hai mươi trừ một trăm hai mươi, trừ hai trăm bốn mươi rồi cộng hai mươi bốn, được ba trăm tám mươi tư.
+
+73
+00:06:57,600 --> 00:07:01,124
+Một mã PIN gồm đúng bốn vị trí từ không đến chín.
+
+74
+00:07:01,124 --> 00:07:05,823
+Mã 0007 vẫn khác mã 0070, và cả hai đều hợp lệ nếu đề không cấm.
+
+75
+00:07:05,823 --> 00:07:11,109
+Đây là dãy có thứ tự, được lặp và chữ số đầu bằng không vẫn được chấp nhận.
+
+76
+00:07:11,109 --> 00:07:16,101
+Vì mỗi vị trí có mười lựa chọn, toàn bộ không gian mẫu gồm mười nghìn mã.
+
+77
+00:07:16,101 --> 00:07:20,800
+Ta muốn tìm những mã có ít nhất một chữ số được sử dụng nhiều lần.
+
+78
+00:07:20,800 --> 00:07:24,344
+Điều kiện có ít nhất một chữ số lặp khá rộng.
+
+79
+00:07:24,344 --> 00:07:32,078
+Có mã lặp đúng hai lần, có mã lặp ba lần, có mã gồm hai cặp và có cả bốn chữ số giống nhau.
+
+80
+00:07:32,078 --> 00:07:38,522
+Thay vì phân chia hết những dạng này, ta đếm phần bù: cả bốn chữ số đôi một khác nhau.
+
+81
+00:07:38,522 --> 00:07:44,000
+Khi xếp lần lượt, mỗi chữ số đã chọn sẽ không được dùng thêm một lần nữa.
+
+82
+00:07:44,000 --> 00:07:52,879
+Một mã không lặp có mười lựa chọn ở vị trí đầu, còn chín ở vị trí thứ hai, tám ở vị trí thứ ba và bảy ở vị trí cuối.
+
+83
+00:07:52,879 --> 00:07:58,321
+Số mã không lặp là mười nhân chín nhân tám nhân bảy, bằng năm nghìn không trăm bốn mươi.
+
+84
+00:07:58,321 --> 00:08:02,044
+Chúng ta vẫn cho phép chọn chữ số không ở vị trí đầu.
+
+85
+00:08:02,044 --> 00:08:07,200
+Nếu chỉ cho chín lựa chọn ở vị trí đầu, ta đã lẫn sang một bài toán khác.
+
+86
+00:08:07,200 --> 00:08:17,688
+Lấy toàn bộ mười nghìn mã trừ đi năm nghìn không trăm bốn mươi mã không lặp, ta được bốn nghìn chín trăm sáu mươi mã có ít nhất một chữ số lặp.
+
+87
+00:08:17,688 --> 00:08:23,090
+Phương pháp phần bù tự động bao gồm mọi kiểu lặp, dù một cặp hay nhiều cặp.
+
+88
+00:08:23,090 --> 00:08:30,400
+Nó tránh tình trạng một mã như 1122 có thể bị tính trùng nếu ta chọn tùy tiện cặp chữ số giống nhau.
+
+89
+00:08:30,400 --> 00:08:35,371
+Nếu đề chuyển thành số tự nhiên có bốn chữ số, chữ số đầu không thể bằng không.
+
+90
+00:08:35,371 --> 00:08:37,857
+Khi đó toàn bộ chỉ có chín nghìn số.
+
+91
+00:08:37,857 --> 00:08:47,524
+Để các chữ số phân biệt, chọn chữ số đầu trong chín chữ số từ một đến chín, chữ số tiếp theo trong chín chữ số còn lại gồm cả không, rồi tám và bảy.
+
+92
+00:08:47,524 --> 00:08:53,600
+Có bốn nghìn năm trăm ba mươi sáu số không lặp. Vậy có bốn nghìn bốn trăm sáu mươi tư số lặp.
+
+93
+00:08:53,600 --> 00:08:58,786
+Kết luận, hai bài toán chỉ khác một điều kiện về chữ số đầu nhưng đáp số khác nhau.
+
+94
+00:08:58,786 --> 00:09:06,974
+Với mã PIN, đáp án là bốn nghìn chín trăm sáu mươi; với số tự nhiên có bốn chữ số, đáp án là bốn nghìn bốn trăm sáu mươi tư.
+
+95
+00:09:06,974 --> 00:09:12,706
+Cả hai đều dùng phần bù của không lặp, song số phần tử của toàn bộ không gian mẫu thay đổi.
+
+96
+00:09:12,706 --> 00:09:16,800
+Bởi vậy phải xác định tập tất cả thật chính xác trước mọi phép tính.
+
+97
+00:09:16,800 --> 00:09:22,111
+Một tình huống cổ điển: có bốn lá thư phân biệt và bốn phong bì có tên tương ứng.
+
+98
+00:09:22,111 --> 00:09:29,378
+Ta bỏ ngẫu nhiên mỗi lá vào đúng một phong bì khác nhau, nhưng yêu cầu không lá nào vào đúng phong bì của chính nó.
+
+99
+00:09:29,378 --> 00:09:35,807
+Nếu gọi một kết quả là một hoán vị, vị trí đứng đúng của một lá thư được gọi là điểm cố định.
+
+100
+00:09:35,807 --> 00:09:40,000
+Đề đang yêu cầu số hoán vị không có bất kỳ điểm cố định nào.
+
+101
+00:09:40,000 --> 00:09:45,156
+Hãy định nghĩa tập E A là những hoán vị mà thư A nằm đúng phong bì A.
+
+102
+00:09:45,156 --> 00:09:51,457
+Ta có bốn tập tương tự. Hoán vị hợp lệ là những hoán vị nằm ngoài hợp của cả bốn tập này.
+
+103
+00:09:51,457 --> 00:09:57,185
+Nếu chỉ trừ mỗi tập riêng thì một cách bỏ thư có hai lá đúng sẽ bị trừ hai lần.
+
+104
+00:09:57,185 --> 00:10:03,200
+Vì vậy từ phương pháp phần bù, ta cần thêm nguyên lý bao hàm–loại trừ để xử lý các phần giao.
+
+105
+00:10:03,200 --> 00:10:11,231
+Mỗi tập buộc một lá thư vào đúng phong bì, còn ba lá khác có ba giai thừa cách xếp, nên mỗi tập có sáu phần tử.
+
+106
+00:10:11,231 --> 00:10:13,908
+Có bốn tập đơn, tổng là hai mươi bốn.
+
+107
+00:10:13,908 --> 00:10:19,559
+Nếu hai lá thư được cố định đồng thời, có hai giai thừa cách xếp hai lá còn lại.
+
+108
+00:10:19,559 --> 00:10:26,400
+Có tổ hợp chập hai của bốn cách chọn cặp, tức sáu phần giao đôi; tổng số phải cộng lại là mười hai.
+
+109
+00:10:26,400 --> 00:10:36,463
+Khi ba lá vào đúng vị trí, lá thứ tư buộc phải đúng, nhưng vẫn cần ghi số phần giao của ba tập theo công thức: bốn cách chọn bộ ba và một giai thừa cách.
+
+110
+00:10:36,463 --> 00:10:39,537
+Sau đó phần giao cả bốn tập có đúng một cách.
+
+111
+00:10:39,537 --> 00:10:45,128
+Ta lấy hai mươi bốn trừ hai mươi bốn, cộng mười hai, trừ bốn, cộng một, cuối cùng được chín.
+
+112
+00:10:45,128 --> 00:10:49,600
+Dấu cộng trừ luân phiên có ý nghĩa khôi phục đúng số lần bị trừ trùng.
+
+113
+00:10:49,600 --> 00:10:57,706
+Tổng quát cho n lá thư, chọn k lá buộc vào đúng phong bì rồi xếp n trừ k lá còn lại có n trừ k giai thừa cách.
+
+114
+00:10:57,706 --> 00:11:08,607
+Cộng luân phiên theo nguyên lý bao hàm–loại trừ ta nhận được số hoán vị lệch D n bằng n giai thừa nhân tổng các số âm dương một chia k giai thừa, từ k bằng không tới n.
+
+115
+00:11:08,607 --> 00:11:12,800
+Đây là một kết quả sâu bắt nguồn trực tiếp từ tư duy phần bù.
+
+116
+00:11:12,800 --> 00:11:16,478
+Trong trường hợp bốn lá thư, không lá nào đúng có chín cách.
+
+117
+00:11:16,478 --> 00:11:23,551
+Nếu yêu cầu đúng đúng một lá, chọn lá cố định rồi ba lá còn lại hoán vị lệch, được bốn nhân hai, bằng tám.
+
+118
+00:11:23,551 --> 00:11:25,532
+Đúng cả bốn lá có một cách.
+
+119
+00:11:25,532 --> 00:11:32,039
+Đặc biệt không thể đúng đúng ba lá mà lá còn lại lại sai, bởi vị trí cuối đã bị ép phải khớp.
+
+120
+00:11:32,039 --> 00:11:36,000
+Những kiểm tra như vậy giúp phát hiện lỗi logic khi chia trường hợp.
+
+121
+00:11:36,000 --> 00:11:38,747
+Xét tất cả các dãy nhị phân dài sáu.
+
+122
+00:11:38,747 --> 00:11:43,937
+Một dãy có thể chứa một hoặc nhiều cặp số một đứng liền nhau, chẳng hạn 110110.
+
+123
+00:11:43,937 --> 00:11:50,042
+Nếu đếm trực tiếp theo vị trí cặp đầu tiên, những dãy có nhiều cặp sẽ dễ bị tính lại.
+
+124
+00:11:50,042 --> 00:11:55,537
+Thay vào đó hãy đếm phần bù: những dãy hoàn toàn không chứa hai số một liên tiếp.
+
+125
+00:11:55,537 --> 00:11:59,200
+Từ đó ta dùng phép trừ trên tổng hai mũ sáu dãy.
+
+126
+00:11:59,200 --> 00:12:03,895
+Gọi f n là số dãy nhị phân dài n không có hai số một liền nhau.
+
+127
+00:12:03,895 --> 00:12:15,495
+Một dãy hợp lệ hoặc bắt đầu bằng số không, sau đó còn một dãy hợp lệ dài n trừ một, hoặc bắt đầu bằng một rồi bắt buộc đến không, sau đó còn một dãy hợp lệ dài n trừ hai.
+
+128
+00:12:15,495 --> 00:12:20,190
+Hai dạng đầu này khác nhau nên chúng rời nhau và bao phủ mọi dãy hợp lệ.
+
+129
+00:12:20,190 --> 00:12:22,400
+Đây là nguồn gốc của truy hồi Fibonacci.
+
+130
+00:12:22,400 --> 00:12:26,123
+Để áp dụng hệ thức truy hồi, ta cần hai giá trị đầu.
+
+131
+00:12:26,123 --> 00:12:30,420
+Với độ dài bằng không, chỉ có một dãy rỗng, nên f không bằng một.
+
+132
+00:12:30,420 --> 00:12:36,148
+Với độ dài bằng một, có hai dãy 0 và 1, đều không chứa 11, nên f một bằng hai.
+
+133
+00:12:36,148 --> 00:12:39,299
+Từ đó f hai bằng ba, rồi f ba bằng năm.
+
+134
+00:12:39,299 --> 00:12:45,600
+Việc đếm một dãy rỗng là một cách là quy ước tự nhiên và nhất quán với phép nối thêm ký hiệu.
+
+135
+00:12:45,600 --> 00:12:55,338
+Lần lượt cộng hai giá trị liền trước, ta được f hai bằng ba, f ba bằng năm, f bốn bằng tám, f năm bằng mười ba và f sáu bằng hai mươi mốt.
+
+136
+00:12:55,338 --> 00:13:01,640
+Nghĩa là trong sáu mươi tư dãy nhị phân dài sáu có đúng hai mươi mốt dãy tránh hoàn toàn mẫu 11.
+
+137
+00:13:01,640 --> 00:13:08,800
+Mỗi dãy được phân vào một trong hai nhóm bắt đầu bằng 0 hoặc 10, nên truy hồi không bỏ sót và không tính trùng.
+
+138
+00:13:08,800 --> 00:13:16,638
+Kết quả bài toán bằng sáu mươi tư trừ hai mươi mốt, tức bốn mươi ba dãy có ít nhất một cặp 11 liên tiếp.
+
+139
+00:13:16,638 --> 00:13:21,968
+Một dãy như 111111 có đến năm cặp 11 chồng lấn nhưng vẫn chỉ là một dãy.
+
+140
+00:13:21,968 --> 00:13:32,000
+Đây là lợi ích của phần bù: ta không cần kiểm soát số lần xuất hiện của mẫu bị yêu cầu, chỉ cần biết dãy có tránh mẫu hoàn toàn hay không.
+
+141
+00:13:32,000 --> 00:13:41,783
+Kỹ thuật này còn áp dụng cho các bài tìm chuỗi xuất hiện một mẫu con, xếp vật không có hai đối tượng giống nhau đứng liền và nhiều bài tổ hợp về trạng thái.
+
+142
+00:13:41,783 --> 00:13:45,137
+Nhưng không nên thuộc lòng dãy Fibonacci rồi gắn vào mọi bài.
+
+143
+00:13:45,137 --> 00:13:51,287
+Phải giải thích tại sao các dãy tránh mẫu tách đúng thành hai dạng, và xác định rõ giá trị khởi đầu.
+
+144
+00:13:51,287 --> 00:13:55,200
+Khi đó phép trừ tổng trừ phần bù mới có cơ sở toán học.
+
+145
+00:13:55,200 --> 00:13:59,840
+Có tám học sinh phân biệt và ta cần chọn một đội gồm ba bạn.
+
+146
+00:13:59,840 --> 00:14:06,336
+Đội phải chứa ít nhất một trong hai bạn A, B; nghĩa là có A, hoặc có B, hoặc cả hai.
+
+147
+00:14:06,336 --> 00:14:11,285
+Nếu dùng từ hoặc theo nghĩa bao gồm, hai bạn cùng xuất hiện vẫn hợp lệ.
+
+148
+00:14:11,285 --> 00:14:18,400
+Phần bù của điều kiện là đội không có A lẫn B, tức cả ba thành viên đều thuộc sáu bạn còn lại.
+
+149
+00:14:18,400 --> 00:14:23,330
+Những đội sai điều kiện phải không chứa bất kỳ ai trong hai bạn A và B.
+
+150
+00:14:23,330 --> 00:14:28,840
+Vì vậy ta chỉ chọn ba trong sáu bạn C, D, E, F, G, H, được hai mươi nhóm.
+
+151
+00:14:28,840 --> 00:14:34,640
+Đội có A nhưng không B không nằm trong nhóm bị loại; đội có B mà không A cũng không.
+
+152
+00:14:34,640 --> 00:14:37,250
+Đội chứa cả hai cũng hoàn toàn hợp lệ.
+
+153
+00:14:37,250 --> 00:14:41,600
+Vùng đỏ trên hình minh họa đúng các nhóm hoàn toàn vắng A và B.
+
+154
+00:14:41,600 --> 00:14:45,732
+Kết quả là năm mươi sáu trừ hai mươi bằng ba mươi sáu.
+
+155
+00:14:45,732 --> 00:14:53,995
+Ta không phải chia ba trường hợp trước khi tính mà vẫn bao phủ đầy đủ những đội có A, có B và có cả hai.
+
+156
+00:14:53,995 --> 00:15:00,351
+Sau đó có thể kiểm tra bằng cách chia lại thành đúng một trong hai bạn hoặc có cả hai.
+
+157
+00:15:00,351 --> 00:15:04,800
+Hai tập hợp ấy rời nhau và cộng lại phải bằng ba mươi sáu.
+
+158
+00:15:04,800 --> 00:15:12,347
+Điều kiện đúng một trong hai bạn A và B yêu cầu chỉ xuất hiện A hoặc chỉ xuất hiện B, không bao giờ có cả hai.
+
+159
+00:15:12,347 --> 00:15:21,292
+Ta chọn người đặc biệt theo hai cách, rồi chọn hai người còn lại từ sáu học sinh khác, được hai nhân tổ hợp chập hai của sáu, bằng ba mươi nhóm.
+
+160
+00:15:21,292 --> 00:15:28,000
+So sánh với ba mươi sáu ở câu trước, số nhóm bị loại thêm chính là những nhóm chứa đồng thời A và B.
+
+161
+00:15:28,000 --> 00:15:32,640
+Khi đội bắt buộc có cả A và B, hai thành viên đã được xác định.
+
+162
+00:15:32,640 --> 00:15:38,730
+Thành viên thứ ba có sáu cách chọn trong những bạn còn lại. Vì vậy có sáu nhóm chứa cả hai.
+
+163
+00:15:38,730 --> 00:15:45,110
+Ghép với ba mươi nhóm chỉ có đúng một trong hai, ta trở lại ba mươi sáu nhóm có ít nhất một.
+
+164
+00:15:45,110 --> 00:15:51,200
+Đây là một phép kiểm chứng rất tốt vì ba trường hợp của từ hoặc đã được phân chia chính xác.
+
+165
+00:15:51,200 --> 00:15:57,276
+Với n học sinh và r bạn được đánh dấu đặc biệt, chọn k người có ít nhất một trong r bạn.
+
+166
+00:15:57,276 --> 00:16:04,733
+Ta luôn có thể đếm phần bù bằng cách bỏ toàn bộ r người đặc biệt rồi chọn k người trong n trừ r người còn lại.
+
+167
+00:16:04,733 --> 00:16:10,257
+Công thức vì thế là tổ hợp chập k của n trừ tổ hợp chập k của n trừ r.
+
+168
+00:16:10,257 --> 00:16:14,400
+Đây là cùng cấu trúc với bài có ít nhất một nữ ở chương trước.
+
+169
+00:16:14,400 --> 00:16:17,413
+Bài tổng hợp cuối tập kết hợp hai điều kiện.
+
+170
+00:16:17,413 --> 00:16:22,535
+Từ tám học sinh, ta chọn đội bốn người và chỉ định một đội trưởng thuộc đội.
+
+171
+00:16:22,535 --> 00:16:27,356
+Đội phải chứa ít nhất một trong A, B, nhưng đội trưởng không được là A.
+
+172
+00:16:27,356 --> 00:16:33,984
+Vì có chức vụ, một đội cố định có thể tạo ra nhiều kết quả khác nhau theo người làm đội trưởng.
+
+173
+00:16:33,984 --> 00:16:37,600
+Ta sẽ giải bằng hai phương pháp độc lập để kiểm chứng.
+
+174
+00:16:37,600 --> 00:16:42,592
+Khi chưa có điều kiện, chọn bốn trong tám học sinh có bảy mươi đội khác nhau.
+
+175
+00:16:42,592 --> 00:16:48,172
+Với mỗi đội, ta có bốn cách chọn đội trưởng, nên số kết quả là hai trăm tám mươi.
+
+176
+00:16:48,172 --> 00:16:52,577
+Chú ý nếu chỉ lấy bảy mươi thì ta đang quên vai trò đội trưởng.
+
+177
+00:16:52,577 --> 00:17:00,800
+Ngược lại, nếu dùng chỉnh hợp chập bốn của tám thì ta đã sắp thứ tự cả bốn người, thừa những thứ tự không được đề phân biệt.
+
+178
+00:17:00,800 --> 00:17:05,893
+Nhóm kết quả bị loại thứ nhất là những đội không có A và cũng không có B.
+
+179
+00:17:05,893 --> 00:17:14,663
+Khi đó phải chọn bốn trong sáu người còn lại, có mười lăm đội; mỗi đội vẫn có bốn lựa chọn đội trưởng, nên có sáu mươi kết quả vi phạm.
+
+180
+00:17:14,663 --> 00:17:18,907
+Ta đã xác định phần bù của điều kiện ít nhất một trong A, B.
+
+181
+00:17:18,907 --> 00:17:24,000
+Nhưng vẫn còn điều kiện cấm A làm đội trưởng, cần loại thêm một nhóm kết quả nữa.
+
+182
+00:17:24,000 --> 00:17:26,667
+Nhóm bị loại thứ hai có A làm đội trưởng.
+
+183
+00:17:26,667 --> 00:17:33,867
+Khi đó A đương nhiên nằm trong đội, và chỉ cần chọn ba thành viên khác từ bảy bạn còn lại, được ba mươi lăm kết quả.
+
+184
+00:17:33,867 --> 00:17:41,067
+Điều thú vị là hai nhóm bị loại hoàn toàn không giao nhau: nhóm không có A, B thì chắc chắn A không thể làm đội trưởng.
+
+185
+00:17:41,067 --> 00:17:47,200
+Nhờ sự rời nhau này, ta được phép trừ sáu mươi và ba mươi lăm trực tiếp mà không cần cộng lại giao.
+
+186
+00:17:47,200 --> 00:17:58,943
+Ta lấy toàn bộ hai trăm tám mươi kết quả, trừ sáu mươi kết quả đội không có A cũng không có B, tiếp tục trừ ba mươi lăm kết quả A làm đội trưởng, được một trăm tám mươi lăm.
+
+187
+00:17:58,943 --> 00:18:05,244
+Phép trừ hợp lệ vì hai loại vi phạm không chồng lấn nhau. Nếu có giao, ta phải cộng lại phần giao.
+
+188
+00:18:05,244 --> 00:18:10,400
+Hình minh họa thể hiện rõ hai miền đỏ riêng biệt được loại bỏ khỏi tập tất cả.
+
+189
+00:18:10,400 --> 00:18:12,509
+Giải cách hai bằng cách phân loại đội trưởng.
+
+190
+00:18:12,509 --> 00:18:16,493
+Nếu B làm trưởng, chọn thêm ba trong bảy người khác, có ba mươi lăm kết quả.
+
+191
+00:18:16,493 --> 00:18:20,242
+Nếu đội trưởng thuộc sáu bạn C đến H, ta có sáu cách chọn người trưởng.
+
+192
+00:18:20,242 --> 00:18:29,382
+Sau đó chọn ba người khác trong bảy người còn lại, nhưng phải có ít nhất một trong A và B: lấy tổ hợp chập ba của bảy trừ tổ hợp chập ba của năm, được hai mươi lăm.
+
+193
+00:18:29,382 --> 00:18:33,600
+Vậy tổng là ba mươi lăm cộng sáu nhân hai mươi lăm, bằng một trăm tám mươi lăm.
