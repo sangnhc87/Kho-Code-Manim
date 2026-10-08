@@ -57,7 +57,7 @@ class TestCOMB09(unittest.TestCase):
         text=(ROOT/'episodes/comb09_repetition.py').read_text(encoding='utf-8')
         self.assertIn('class COMB09(Scene):',text)
     def test_workflow_inputs(self):
-        text=(ROOT/'.github/workflows/render-comb09-v2.yml').read_text(encoding='utf-8')
+        text=(ROOT.parent/'.github/workflows/render-comb09-v2.yml').read_text(encoding='utf-8')
         self.assertIn('quality:',text);self.assertIn('voice:',text)
     def test_typst_notation(self):self.assertIn('C^(4)_(2)',FORMULAS['positions'])
     def test_script_compiles(self):

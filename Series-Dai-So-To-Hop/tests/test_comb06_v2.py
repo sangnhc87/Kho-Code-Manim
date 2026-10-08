@@ -63,7 +63,7 @@ class Production(unittest.TestCase):
         for name in ('episodes/comb06_arrangements.py','scripts/prepare_comb06_v2.py','scripts/qa_comb06_v2.py'):
             with self.subTest(script=name):ast.parse((ROOT/name).read_text())
     def test_workflow_wired(self):
-        s=(ROOT/'.github/workflows/render-comb06-v2.yml').read_text()
+        s=(ROOT.parent/'.github/workflows/render-comb06-v2.yml').read_text()
         for expected in ('COMB06','comb06_arrangements.py','prepare_comb06_v2.py','qa_comb06_v2.py','workflow_dispatch'):
             self.assertIn(expected,s)
     def test_old_files_preserved(self):
