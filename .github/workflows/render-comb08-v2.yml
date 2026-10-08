@@ -1,6 +1,9 @@
 name: Render COMB08 V2 - Bai giang Tong hop Hoan vi Chinh hop To hop
 
 on:
+  push:
+    paths:
+      - '.trigger_runs'
   workflow_dispatch:
     inputs:
       quality:
