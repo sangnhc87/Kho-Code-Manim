@@ -75,8 +75,8 @@ jobs:
           name: COMB01-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
           path: |
             media/videos/**/COMB01.mp4
-            qa_comb01_v2/
-            narration_COMB01_v2.md
-            voice/comb01_voice_manifest.json
+            Series-Dai-So-To-Hop/qa_comb01_v2/
+            Series-Dai-So-To-Hop/narration_COMB01_v2.md
+            Series-Dai-So-To-Hop/voice/comb01_voice_manifest.json
           if-no-files-found: warn
           retention-days: 7
