@@ -65,7 +65,7 @@ class TestCOMB11(unittest.TestCase):
         tree=ast.parse((ROOT/'episodes/comb11_circular_permutations.py').read_text(encoding='utf8'))
         self.assertIn('COMB11',[node.name for node in tree.body if isinstance(node,ast.ClassDef)])
     def test_workflow(self):
-        wf=(ROOT.parent/'.github/workflows/render-comb11-v2.yml').read_text()
+        wf=(ROOT/'.github/workflows/render-comb11-v2.yml').read_text()
         for s in ('workflow_dispatch:', 'quality:', 'voice:', 'comb11_circular_permutations.py','qa_comb11_v2.py','COMB11.mp4'):
             self.assertIn(s,wf)
     def test_typst_sources(self):

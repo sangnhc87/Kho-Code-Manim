@@ -51,7 +51,7 @@ class TestCOMB15Production(unittest.TestCase):
     def test_duration_floor(self):self.assertGreaterEqual(sum(b.min_seconds for b in BEATS),1100)
     def test_scene_exists(self):self.assertIn('class COMB15(Scene)',(ROOT/'episodes/comb15_number_formation.py').read_text())
     def test_workflow(self):
-        s=(ROOT.parent/'.github/workflows/render-comb15-v2.yml').read_text()
+        s=(ROOT/'.github/workflows/render-comb15-v2.yml').read_text()
         for k in ('comb15_number_formation.py','COMB15','prepare_comb15_v2.py','qa_comb15_v2.py','upload-artifact'):
             self.assertIn(k,s)
     def test_expected_files(self):

@@ -52,7 +52,7 @@ class TestCOMB02(unittest.TestCase):
         ep = next(e for e in manifest['episodes'] if e['id'] == 'COMB02')
         self.assertEqual(ep['scene'],'COMB02')
         self.assertTrue((ROOT/ep['source']).is_file())
-        self.assertTrue((ROOT.parent/ep['workflow']).is_file())
+        self.assertTrue((ROOT/ep['workflow']).is_file())
 
 
 if __name__ == '__main__':

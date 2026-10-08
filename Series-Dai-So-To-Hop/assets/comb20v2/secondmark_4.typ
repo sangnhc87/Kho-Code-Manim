@@ -1,0 +1,3 @@
+#set page(width: 23cm, height: 2.4cm, margin: 0pt, fill: none)
+#set text(font: "Noto Serif", size: 28pt, fill: rgb("#22D3EE"))
+#align(center + horizon)[$ sum_(k=0)^n k^2 C^(n)_(k)=n(n+1)2^(n-2) $]

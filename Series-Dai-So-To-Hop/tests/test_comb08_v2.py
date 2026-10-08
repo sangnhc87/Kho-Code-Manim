@@ -94,7 +94,7 @@ class Production(unittest.TestCase):
                  'scripts/prepare_comb08_v2.py','scripts/qa_comb08_v2.py'):
             with self.subTest(f=f):ast.parse((ROOT/f).read_text(encoding='utf-8'))
     def test_workflow(self):
-        text=(ROOT.parent/'.github/workflows/render-comb08-v2.yml').read_text()
+        text=(ROOT/'.github/workflows/render-comb08-v2.yml').read_text()
         for v in ('workflow_dispatch','COMB08','prepare_comb08_v2.py','qa_comb08_v2.py','comb08_synthesis.py'):
             self.assertIn(v,text)
     def test_retained_prior_episodes(self):

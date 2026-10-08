@@ -77,7 +77,7 @@ class TestCOMB19(unittest.TestCase):
     def test_line_not_circle(self):
         self.assertTrue(any(0 in s and 7 in s for s in nonadjacent_subsets(8)))
     def test_workflow(self):
-        s=(Path(__file__).resolve().parent.parent.parent / '.github/workflows/render-comb19-v2.yml').read_text(encoding='utf8')
+        s=Path('.github/workflows/render-comb19-v2.yml').read_text(encoding='utf8')
         self.assertIn('episodes/comb19_subsets.py COMB19',s)
         self.assertIn('prepare_comb19_v2.py',s)
         self.assertIn('qa_comb19_v2.py',s)

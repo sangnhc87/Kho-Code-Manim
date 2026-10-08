@@ -1,0 +1,80 @@
+name: Render COMB08 V2 - Bai giang Tong hop Hoan vi Chinh hop To hop
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: 'Render preview 480p or Full HD 1080p'
+        type: choice
+        required: true
+        default: preview
+        options: [preview, fullhd]
+      voice:
+        description: 'Vietnamese narration (on requires connection to TTS provider)'
+        type: choice
+        required: true
+        default: 'on'
+        options: ['on','off']
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+      - name: Install Manim system dependencies and Vietnamese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra libavcodec-dev libavformat-dev libavutil-dev \
+            libswscale-dev libswresample-dev
+          fc-match 'Noto Sans'
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install Typst
+        uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Run all mathematical and structural tests
+        run: python -m unittest discover -s tests -v
+      - name: Compile Typst equations and prepare audio/subtitles
+        env:
+          COMB08_VOICE: ${{ inputs.voice }}
+        run: python scripts/prepare_comb08_v2.py --voice "$COMB08_VOICE"
+      - name: Render 480p preview
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim -ql -r 854,480 --fps 24 episodes/comb08_synthesis.py COMB08
+      - name: Render Full HD 1080p
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim -qh -r 1920,1080 --fps 30 episodes/comb08_synthesis.py COMB08
+      - name: Audit runtime, audio stream, resolution and eight chapter frames
+        env:
+          COMB08_VOICE: ${{ inputs.voice }}
+        run: |
+          VIDEO=$(find media/videos -type f -name 'COMB08.mp4' | head -n 1)
+          test -n "$VIDEO"
+          python scripts/qa_comb08_v2.py --video "$VIDEO" --voice "$COMB08_VOICE"
+      - name: Publish video and QA artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: COMB08-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          path: |
+            media/videos/**/COMB08.mp4
+            qa_comb08_v2/
+            narration_COMB08_v2.md
+            subtitles_COMB08_v2.srt
+            voice/comb08_voice_manifest.json
+          if-no-files-found: warn
+          retention-days: 7

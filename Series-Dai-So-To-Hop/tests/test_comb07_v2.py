@@ -69,7 +69,7 @@ class Production(unittest.TestCase):
         for name in ('episodes/comb07_combinations.py','comb07_lesson_data.py','scripts/prepare_comb07_v2.py','scripts/qa_comb07_v2.py'):
             with self.subTest(path=name):ast.parse((ROOT/name).read_text())
     def test_workflow(self):
-        x=(ROOT.parent/'.github/workflows/render-comb07-v2.yml').read_text()
+        x=(ROOT/'.github/workflows/render-comb07-v2.yml').read_text()
         for s in ('workflow_dispatch','comb07_combinations.py','prepare_comb07_v2.py','qa_comb07_v2.py','COMB07'):
             self.assertIn(s,x)
     def test_prior_episodes_preserved(self):

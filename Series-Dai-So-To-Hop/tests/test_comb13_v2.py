@@ -100,7 +100,7 @@ class TestCOMB13(unittest.TestCase):
   tree=ast.parse((ROOT/'episodes/comb13_not_adjacent.py').read_text(encoding='utf8'))
   self.assertIn('COMB13',[x.name for x in tree.body if isinstance(x,ast.ClassDef)])
  def test_workflow(self):
-  w=(ROOT.parent/'.github/workflows/render-comb13-v2.yml').read_text(encoding='utf8')
+  w=(ROOT/'.github/workflows/render-comb13-v2.yml').read_text(encoding='utf8')
   for x in ('workflow_dispatch:','COMB13','comb13_not_adjacent.py','qa_comb13_v2.py','quality:','voice:','upload-artifact'):
    self.assertIn(x,w)
  def test_legacy_episodes(self):

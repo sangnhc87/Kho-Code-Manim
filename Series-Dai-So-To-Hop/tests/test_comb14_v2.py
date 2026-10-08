@@ -54,7 +54,7 @@ class TestCOMB14Production(unittest.TestCase):
     def test_typst_sources(self):self.assertTrue((ROOT/'scripts/prepare_comb14_v2.py').exists())
     def test_scene_code(self):self.assertIn('class COMB14(Scene)',(ROOT/'episodes/comb14_complement.py').read_text())
     def test_workflow(self):
-        y=(ROOT.parent/'.github/workflows/render-comb14-v2.yml').read_text()
+        y=(ROOT/'.github/workflows/render-comb14-v2.yml').read_text()
         for x in ('comb14_complement.py','COMB14','prepare_comb14_v2.py','qa_comb14_v2.py'):self.assertIn(x,y)
     def test_filenames(self):
         self.assertTrue((ROOT/'comb14_beats.json').exists())

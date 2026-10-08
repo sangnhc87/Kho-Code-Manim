@@ -1,0 +1,674 @@
+[
+  {
+    "section": "intro",
+    "state": 0,
+    "heading": "Một dãy số có thể biến thành gì?",
+    "lines": [
+      "Dãy 1, 3, 6, 10, 15, 21",
+      "Mỗi số ứng với một bậc của x",
+      "Không tính giá trị x ngay"
+    ],
+    "takeaway": "Đọc hệ số để đếm.",
+    "narration": "Ta đã học cách đếm để tìm ra từng số. Hôm nay, ta thử một góc nhìn ngược lại: gom toàn bộ dãy số vào một biểu thức duy nhất. Mỗi vị trí của dãy được gắn với một lũy thừa của x. Mục tiêu chưa phải tính giá trị của x, mà là giữ nguyên thông tin đếm ở các hệ số.",
+    "formula": "intro_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "intro",
+    "state": 1,
+    "heading": "Gắn số đếm vào hệ số",
+    "lines": [
+      "Hệ số của x⁰ là 1",
+      "Hệ số của x¹ là 3",
+      "Hệ số của x² là 6"
+    ],
+    "takeaway": "Đọc hệ số để đếm.",
+    "narration": "Hãy quan sát từng tấm thẻ số dịch vào vị trí có cùng bậc x. Số một nằm cạnh x mũ không, số ba nằm cạnh x, số sáu đứng trước x bình phương. Ta không làm mất bất kỳ số nào. Nhờ cách mã hóa này, những quy tắc cộng và nhân đại số có thể trở thành công cụ để giải bài toán đếm.",
+    "formula": "intro_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "intro",
+    "state": 2,
+    "heading": "Đọc lại một hệ số",
+    "lines": [
+      "Chọn bậc n cần tìm",
+      "Bỏ qua mọi bậc còn lại",
+      "Ở bậc 3, ta đọc được 10"
+    ],
+    "takeaway": "Đọc hệ số để đếm.",
+    "narration": "Bây giờ, thay vì hỏi giá trị toàn đa thức, ta chỉ hỏi hệ số ở một bậc xác định. Trong dãy đang xét, hệ số x mũ ba bằng mười. Đây chính là thao tác nền tảng của phương pháp hàm sinh: mô hình hóa các lựa chọn thành một hàm, rồi trích ra hệ số tương ứng với điều kiện của đề bài.",
+    "formula": "intro_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "intro",
+    "state": 3,
+    "heading": "Cấp số nhân vô hạn",
+    "lines": [
+      "Một đối tượng có thể lấy 0 lần",
+      "Có thể lấy 1, 2, 3, ... lần",
+      "Các trạng thái tương ứng 1, x, x²,..."
+    ],
+    "takeaway": "Đọc hệ số để đếm.",
+    "narration": "Bước đầu tiên cần nhớ là tổng hình thức một cộng x cộng x bình phương và cứ tiếp tục như vậy. Nó được biểu diễn gọn bằng một chia một trừ x. Với bài toán đếm, mỗi số mũ ghi lại số lượng phần tử được sử dụng. Ta xem đây là một đẳng thức chuỗi lũy thừa hình thức; không cần thay x bằng một số cụ thể.",
+    "formula": "intro_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "intro",
+    "state": 4,
+    "heading": "Ba nguồn lựa chọn giống nhau",
+    "lines": [
+      "Nhân ba chuỗi 1/(1−x)",
+      "Hệ số đếm cách chia tổng n",
+      "Dãy bắt đầu 1, 3, 6, 10,..."
+    ],
+    "takeaway": "Đọc hệ số để đếm.",
+    "narration": "Nếu có ba loại vật, mỗi loại được lấy bao nhiêu tùy ý, ta có ba nhân tử giống nhau. Khi nhân chúng, hệ số của x mũ n đếm số cách chọn tổng cộng n vật. Đây là chiếc cầu nối đầu tiên từ biểu thức đại số đến một bài toán chia số nguyên. Lát nữa ta sẽ chứng minh cách đếm ấy bằng sao và vạch.",
+    "formula": "intro_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "intro",
+    "state": 5,
+    "heading": "Công thức hệ số quen mà lạ",
+    "lines": [
+      "Hệ số 1, 3, 6, 10,...",
+      "Đó là các số tổ hợp",
+      "Một công thức chứa cả dãy"
+    ],
+    "takeaway": "Đọc hệ số để đếm.",
+    "narration": "Dãy số quen thuộc hóa ra được mô tả bằng công thức tổ hợp. Hệ số của x mũ n trong một chia một trừ x tất cả mũ ba chính là số tổ hợp chập hai của n cộng hai. Ta vừa thấy hai ngôn ngữ khác nhau đang kể cùng một câu chuyện: một bên là chuỗi lũy thừa, bên còn lại là quy tắc chọn vị trí.",
+    "formula": "intro_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "product",
+    "state": 0,
+    "heading": "Hai phép chọn độc lập",
+    "lines": [
+      "A: 0, 1, 2 đơn vị",
+      "B: 0 hoặc 2 đơn vị",
+      "Tổng tạo thành bậc của tích"
+    ],
+    "takeaway": "Nhân nguồn lựa chọn.",
+    "narration": "Giả sử nguồn A có thể đóng góp không, một hoặc hai đơn vị. Nguồn B chỉ có hai khả năng là không hoặc hai đơn vị. Ta gắn mỗi khả năng với một đơn thức tương ứng. Sự lựa chọn độc lập ở hai nguồn có nghĩa là phải nhân hai hàm sinh, chứ không cộng chúng. Điều này chính là quy tắc nhân ở dạng mới.",
+    "formula": "product_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "product",
+    "state": 1,
+    "heading": "Hàm sinh của nguồn B",
+    "lines": [
+      "B không dùng: hệ số 1",
+      "B dùng: thêm đúng 2 đơn vị",
+      "Không có phương án thêm 1 đơn vị"
+    ],
+    "takeaway": "Nhân nguồn lựa chọn.",
+    "narration": "Hãy chú ý lỗ hổng ở bậc một trong hàm B. Đây không phải thiếu sót, mà thể hiện một điều kiện thật của bài toán: B không bao giờ đóng góp một đơn vị. Những hệ số bằng không có ý nghĩa rất lớn. Nhờ chúng, hàm sinh tự động loại những tổ hợp không hợp lệ mà ta không cần gạch từng trường hợp.",
+    "formula": "product_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "product",
+    "state": 2,
+    "heading": "Nhân và gom cùng bậc",
+    "lines": [
+      "Các cặp lựa chọn được nối",
+      "Bậc là tổng hai số mũ",
+      "Hệ số x² xuất hiện hai lần"
+    ],
+    "takeaway": "Nhân nguồn lựa chọn.",
+    "narration": "Khi nhân hai đa thức, mỗi hạng tử của A ghép với mỗi hạng tử của B. Số mũ mới bằng tổng số mũ của hai hạng tử đã chọn. Các tích có cùng số mũ được gom lại, và hệ số của chúng cộng lên. Trên màn hình, hai con đường khác nhau đều đưa đến tổng bằng hai, vì thế hệ số ở bậc hai là hai.",
+    "formula": "product_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "product",
+    "state": 3,
+    "heading": "Đếm trực tiếp hệ số x²",
+    "lines": [
+      "A=0 và B=2: một cách",
+      "A=2 và B=0: một cách",
+      "Không có A=1, B=1"
+    ],
+    "takeaway": "Nhân nguồn lựa chọn.",
+    "narration": "Ta hãy kiểm tra kết quả bằng liệt kê. Muốn tổng bằng hai, ta có thể lấy không đơn vị từ A và hai từ B, hoặc hai từ A và không từ B. Phương án một cộng một bị loại vì B không được lấy một đơn vị. Như vậy có đúng hai khả năng, trùng khớp hoàn toàn với hệ số mà phép nhân vừa tạo.",
+    "formula": "product_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "product",
+    "state": 4,
+    "heading": "Công thức tích chập Cauchy",
+    "lines": [
+      "Chọn k đơn vị từ A",
+      "Chọn n−k đơn vị từ B",
+      "Cộng theo mọi k hợp lệ"
+    ],
+    "takeaway": "Nhân nguồn lựa chọn.",
+    "narration": "Ví dụ nhỏ vừa rồi tổng quát thành công thức tích chập Cauchy. Hệ số bậc n của tích hai hàm sinh bằng tổng các tích hệ số bậc k của hàm thứ nhất và bậc n trừ k của hàm thứ hai. Đây là công thức then chốt để đếm khi một tổng phải được chia thành nhiều phần khác nhau.",
+    "formula": "product_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "product",
+    "state": 5,
+    "heading": "Tự kiểm tra quy tắc",
+    "lines": [
+      "Chọn bậc đích trước",
+      "Tìm các cặp chỉ số có tổng đúng",
+      "Đếm theo hệ số, không chỉ theo số mũ"
+    ],
+    "takeaway": "Nhân nguồn lựa chọn.",
+    "narration": "Điều quan trọng là không nhầm số hạng với số cách. Nếu một hạng tử có hệ số ba thì riêng nó đã biểu diễn ba cách khác nhau, không phải một cách. Từ tập này trở đi, mỗi lần nhân hàm sinh, hãy tự hỏi hai nguồn lựa chọn là gì và tại sao mọi cách hợp lệ được ghép đúng một lần. Đó là cách tránh học công thức một cách máy móc.",
+    "formula": "product_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "stars",
+    "state": 0,
+    "heading": "Bài toán chia 6 vật giống nhau",
+    "lines": [
+      "Ba hộp phân biệt",
+      "Mỗi hộp nhận số vật không âm",
+      "Tổng số vật bằng 6"
+    ],
+    "takeaway": "Sao–vạch và hệ số.",
+    "narration": "Ta có sáu viên bi giống nhau và ba hộp khác nhau. Mỗi hộp được phép rỗng. Gọi số bi trong ba hộp lần lượt là x một, x hai, x ba; tổng của chúng bằng sáu. Việc các viên bi giống nhau có nghĩa là ta chỉ quan tâm số lượng trong từng hộp, không quan tâm từng viên bi được đặt theo thứ tự nào.",
+    "formula": "stars_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "stars",
+    "state": 1,
+    "heading": "Sao và hai vạch ngăn",
+    "lines": [
+      "Sáu ngôi sao biểu diễn bi",
+      "Hai vạch tách thành ba nhóm",
+      "Chọn vị trí vạch trong 8 ô"
+    ],
+    "takeaway": "Sao–vạch và hệ số.",
+    "narration": "Hãy đặt sáu dấu sao và hai dấu vạch thành một hàng. Những dấu sao trước vạch thứ nhất vào hộp một, ở giữa vào hộp hai, và sau vạch thứ hai vào hộp ba. Mỗi cách đặt hai vạch biểu diễn đúng một nghiệm nguyên không âm, kể cả khi hai vạch nằm sát nhau. Vì có tám vị trí tất cả, số nghiệm là tổ hợp chập hai của tám.",
+    "formula": "stars_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "stars",
+    "state": 2,
+    "heading": "Đặt hàm sinh mỗi hộp",
+    "lines": [
+      "Hộp được nhận 0,1,2,... viên",
+      "Hệ số mỗi trạng thái bằng 1",
+      "Ba hộp cho ba nhân tử"
+    ],
+    "takeaway": "Sao–vạch và hệ số.",
+    "narration": "Ta xem mỗi hộp là một nguồn tạo số viên bi. Với một hộp, các lựa chọn không, một, hai và cứ thế tạo ra chuỗi một cộng x cộng x bình phương. Có ba hộp độc lập nên hàm sinh chung là lũy thừa bậc ba của một chia một trừ x. Hệ số x mũ sáu trong biểu thức này sẽ đếm đúng các phân phối mà ta vừa xem bằng dấu sao và vạch.",
+    "formula": "stars_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "stars",
+    "state": 3,
+    "heading": "Đọc hệ số bậc sáu",
+    "lines": [
+      "Từ hàm sinh đã lập",
+      "Lấy hệ số của x⁶",
+      "So sánh với sao–vạch"
+    ],
+    "takeaway": "Sao–vạch và hệ số.",
+    "narration": "Khai triển một chia một trừ x tất cả mũ ba cho thấy hệ số bậc n là tổ hợp chập hai của n cộng hai. Khi n bằng sáu, ta được hai mươi tám. Hai cách giải có cơ sở hoàn toàn khác nhau nhưng chung một đáp số, giúp ta tin rằng mô hình hàm sinh đã phản ánh đúng từng cách phân phối.",
+    "formula": "stars_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "stars",
+    "state": 4,
+    "heading": "Khái quát k hộp và n vật",
+    "lines": [
+      "k hộp có nhãn phân biệt",
+      "n vật giống nhau, được phép rỗng",
+      "Cần k−1 vạch trong n+k−1 vị trí"
+    ],
+    "takeaway": "Sao–vạch và hệ số.",
+    "narration": "Nếu có k hộp và n vật giống nhau, ta cần k trừ một vạch để chia n dấu sao. Tổng số dấu là n cộng k trừ một. Chọn vị trí các vạch cho ra công thức tổng quát. Ở ngôn ngữ hàm sinh, công thức này cũng là hệ số bậc n của một chia một trừ x mũ k.",
+    "formula": "stars_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "stars",
+    "state": 5,
+    "heading": "Khi mỗi hộp ít nhất một vật",
+    "lines": [
+      "Dành trước 1 vật mỗi hộp",
+      "Phân phối số còn lại",
+      "Hàm sinh bắt đầu từ x thay vì 1"
+    ],
+    "takeaway": "Sao–vạch và hệ số.",
+    "narration": "Khi bắt buộc mỗi hộp có ít nhất một viên bi, ta không thể dùng trực tiếp hàm sinh của hộp cho phép rỗng. Mỗi hộp giờ có chuỗi x cộng x bình phương và cứ tiếp tục, tức x chia một trừ x. Nhân ba hộp tạo x mũ ba ở tử. Sự dịch bậc này biểu diễn chính xác ba viên đã dành trước.",
+    "formula": "stars_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "bounds",
+    "state": 0,
+    "heading": "Điều kiện chặn tạo khác biệt",
+    "lines": [
+      "Năm biến nguyên không âm",
+      "Hai biến đầu không quá 2",
+      "Tổng bằng 12"
+    ],
+    "takeaway": "Ràng buộc bằng tử số.",
+    "narration": "Bài toán mới khó hơn vì hai hộp đầu chỉ chứa tối đa hai vật. Nếu vẫn dùng một chia một trừ x cho cả năm hộp, ta sẽ đếm cả trường hợp vượt quá giới hạn. Vì thế ta cần xây dựng một hàm sinh riêng cho mỗi hộp bị chặn. Đề bài trở thành một mô hình đại số rất tự nhiên.",
+    "formula": "bounds_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "bounds",
+    "state": 1,
+    "heading": "Hàm sinh của hộp bị chặn",
+    "lines": [
+      "Lấy 0, 1 hoặc 2 vật",
+      "Không có hạng tử x³ trở lên",
+      "Một đa thức hữu hạn"
+    ],
+    "takeaway": "Ràng buộc bằng tử số.",
+    "narration": "Các lựa chọn của một hộp bị chặn là không, một hoặc hai viên. Vì chỉ có ba khả năng, hàm sinh của nó là đa thức một cộng x cộng x bình phương. Ta có thể viết đa thức ấy thành một trừ x mũ ba chia một trừ x. Cách viết phân thức sẽ rất tiện khi nhân với các hộp không bị chặn.",
+    "formula": "bounds_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "bounds",
+    "state": 2,
+    "heading": "Ghép năm hộp đúng điều kiện",
+    "lines": [
+      "Hai hộp bị chặn: (1+x+x²)²",
+      "Ba hộp còn lại: 1/(1−x)³",
+      "Nhân để lấy tổng số vật"
+    ],
+    "takeaway": "Ràng buộc bằng tử số.",
+    "narration": "Hai hộp đầu đóng góp hai nhân tử có giới hạn, còn ba hộp sau mỗi hộp có thể nhận bất kỳ số vật không âm nào. Nhân năm hàm sinh, ta được một phân thức có tử là một trừ x mũ ba bình phương và mẫu là một trừ x mũ năm. Như vậy mọi nghiệm hợp lệ đã được mã hóa bằng một biểu thức.",
+    "formula": "bounds_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "bounds",
+    "state": 3,
+    "heading": "Tử số chính là phần bù",
+    "lines": [
+      "Khai triển (1−x³)²",
+      "Xuất hiện 1, −2x³, +x⁶",
+      "Bao hàm–loại trừ ẩn trong phép nhân"
+    ],
+    "takeaway": "Ràng buộc bằng tử số.",
+    "narration": "Hãy nhìn kỹ ba hạng tử của tử số. Hạng một đếm mọi trường hợp không chặn. Hạng trừ hai x mũ ba loại những cách có ít nhất một trong hai hộp vượt giới hạn. Hạng cộng x mũ sáu hoàn lại phần giao đã bị trừ hai lần. Nguyên lý bao hàm loại trừ đang xuất hiện ngay bên trong một phép khai triển đại số.",
+    "formula": "bounds_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "bounds",
+    "state": 4,
+    "heading": "Trích hệ số bậc 12",
+    "lines": [
+      "Không chặn: tổ hợp chập 4 của 16",
+      "Trừ hai lần tổ hợp chập 4 của 13",
+      "Cộng tổ hợp chập 4 của 10"
+    ],
+    "takeaway": "Ràng buộc bằng tử số.",
+    "narration": "Để tính hệ số của x mũ mười hai, ta lấy hệ số từ mẫu tương ứng với ba bậc mười hai, chín và sáu. Kết quả là tổ hợp chập bốn của mười sáu, trừ hai lần tổ hợp chập bốn của mười ba, rồi cộng tổ hợp chập bốn của mười. Mỗi số hạng có ý nghĩa rõ ràng chứ không phải phép biến đổi tùy ý.",
+    "formula": "bounds_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "bounds",
+    "state": 5,
+    "heading": "Kết quả và kiểm chứng",
+    "lines": [
+      "1820 cách trước khi loại",
+      "1430 cách bị trừ kể bội",
+      "210 cách hoàn lại phần giao"
+    ],
+    "takeaway": "Ràng buộc bằng tử số.",
+    "narration": "Sau khi thực hiện phép tính, ta được sáu trăm cách phân phối. Có thể kiểm tra bằng thuật toán duyệt riêng từng giá trị của hai biến bị chặn và đếm phần còn lại theo sao và vạch. Kết quả trùng khớp chứng tỏ phép đổi từ bất phương trình về tử số một trừ x mũ ba đã xử lý chính xác điều kiện.",
+    "formula": "bounds_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "recurrence",
+    "state": 0,
+    "heading": "Lát gạch một đoạn dài n",
+    "lines": [
+      "Gạch 1 ô hoặc 2 ô",
+      "Các viên đặt theo hàng",
+      "f(n) đếm cách lát kín"
+    ],
+    "takeaway": "Truy hồi ↔ hàm hữu tỉ.",
+    "narration": "Ta chuyển sang một bài đếm có thứ tự. Một hành lang được chia thành các ô đơn vị. Ta có thể dùng viên gạch dài một ô hoặc viên gạch dài hai ô để lát kín. Ký hiệu f n là số cách lát một đoạn n ô. Đoạn rỗng có một cách lát: không đặt gì. Đoạn một ô cũng chỉ có một cách.",
+    "formula": "recurrence_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "recurrence",
+    "state": 1,
+    "heading": "Tách theo viên gạch cuối",
+    "lines": [
+      "Cuối là viên 1 ô: còn n−1",
+      "Cuối là viên 2 ô: còn n−2",
+      "Hai loại tách biệt, không trùng"
+    ],
+    "takeaway": "Truy hồi ↔ hàm hữu tỉ.",
+    "narration": "Quan sát hai tình huống ở cuối hành lang. Nếu viên cuối dài một ô, phần trước dài n trừ một. Nếu viên cuối dài hai ô, phần trước dài n trừ hai. Hai trường hợp loại trừ nhau và bao quát mọi cách lát. Vì thế số cách là tổng của hai số trước đó. Đây là hệ thức truy hồi Fibonacci được chứng minh bằng phân loại trường hợp.",
+    "formula": "recurrence_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "recurrence",
+    "state": 2,
+    "heading": "Đặt dãy vào hàm sinh",
+    "lines": [
+      "F(x) chứa f₀, f₁, f₂,...",
+      "Nhân x làm dịch chỉ số 1",
+      "Nhân x² làm dịch chỉ số 2"
+    ],
+    "takeaway": "Truy hồi ↔ hàm hữu tỉ.",
+    "narration": "Khi các hệ số thỏa truy hồi, ta có thể đưa toàn bộ dãy vào hàm sinh F. Nhân F với x sẽ dời tất cả số hạng sang phải một bậc; nhân với x bình phương sẽ dời sang phải hai bậc. Hai phép dịch chỉ số này chính là chìa khóa chuyển công thức truy hồi thành phương trình đại số.",
+    "formula": "recurrence_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "recurrence",
+    "state": 3,
+    "heading": "Xóa các hệ số trừ hằng số",
+    "lines": [
+      "F − xF − x²F",
+      "Hệ số từ bậc 2 triệt tiêu",
+      "Còn lại hằng số 1"
+    ],
+    "takeaway": "Truy hồi ↔ hàm hữu tỉ.",
+    "narration": "Ta lấy F trừ x nhân F rồi trừ x bình phương nhân F. Từ bậc hai trở đi, mọi hệ số bằng không vì f n bằng tổng hai hệ số trước. Bậc không còn một, còn bậc một cũng triệt tiêu đúng nhờ điều kiện đầu. Ta nhận được một phương trình rất ngắn, thay thế cho cả một dãy vô hạn.",
+    "formula": "recurrence_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "recurrence",
+    "state": 4,
+    "heading": "Giải phương trình hàm sinh",
+    "lines": [
+      "Chuyển vế như đại số",
+      "Một phân thức hữu tỉ",
+      "Hệ số cho đúng Fibonacci"
+    ],
+    "takeaway": "Truy hồi ↔ hàm hữu tỉ.",
+    "narration": "Từ phương trình vừa lập, hàm sinh của các cách lát bằng một chia một trừ x trừ x bình phương. Đây là một ví dụ tiêu biểu: dãy truy hồi có thể được biểu diễn bằng hàm hữu tỉ. Khi khai triển phân thức thành chuỗi, ta lần lượt thu lại một, một, hai, ba, năm, tám và các số tiếp theo.",
+    "formula": "recurrence_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "recurrence",
+    "state": 5,
+    "heading": "Đếm độ dài 5 và 6",
+    "lines": [
+      "Dài 5 có 8 cách",
+      "Dài 6 có 13 cách",
+      "Truy hồi và liệt kê khớp nhau"
+    ],
+    "takeaway": "Truy hồi ↔ hàm hữu tỉ.",
+    "narration": "Với đoạn năm ô, hình động sẽ liệt kê tám cách lát. Ta không cần vẽ tất cả cách lát của đoạn rất dài; chỉ cần chứng minh quy luật tách theo viên cuối. Truy hồi cho đoạn sáu ô bằng tám cộng năm, tức mười ba. Tập này chuẩn bị nền tảng rất tốt cho quy hoạch động ở Video 22, nơi ta lưu các kết quả trung gian.",
+    "formula": "recurrence_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "exponential",
+    "state": 0,
+    "heading": "Khi đối tượng có nhãn",
+    "lines": [
+      "4 học sinh phân vào các nhóm",
+      "Học sinh phân biệt nhau",
+      "Cần hàm sinh mũ để quản lý nhãn"
+    ],
+    "takeaway": "Nhãn ↔ hàm sinh mũ.",
+    "narration": "Đến đây, những vật ta phân phối thường giống nhau. Nhưng khi đối tượng có nhãn, chẳng hạn bốn học sinh khác nhau, phép nhân các hàm sinh thường không đủ thuận tiện để quản lý việc chọn chính xác ai vào nhóm nào. Ta giới thiệu hàm sinh mũ: hệ số bậc n được chia cho n giai thừa. Yếu tố này sẽ tạo ra đúng hệ số tổ hợp khi ta nhân hai hàm.",
+    "formula": "exponential_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "exponential",
+    "state": 1,
+    "heading": "Hàm mũ chứa các giai thừa",
+    "lines": [
+      "e^x có hệ số 1/n!",
+      "Nhóm rỗng được phép",
+      "Đối tượng có nhãn phân biệt"
+    ],
+    "takeaway": "Nhãn ↔ hàm sinh mũ.",
+    "narration": "Hàm mũ e mũ x có khai triển với mẫu n giai thừa. Vì một tập có n phần tử phân biệt chỉ có một cách xem là một nhóm duy nhất, e mũ x là hàm sinh mũ tự nhiên của loại nhóm tùy ý. Mẫu số giai thừa không mất thông tin; khi lấy hệ số x mũ n, ta nhân lại n giai thừa.",
+    "formula": "exponential_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "exponential",
+    "state": 2,
+    "heading": "Loại trường hợp nhóm rỗng",
+    "lines": [
+      "Muốn nhóm không rỗng",
+      "Bỏ hệ số ở bậc không",
+      "Hàm sinh trở thành e^x−1"
+    ],
+    "takeaway": "Nhãn ↔ hàm sinh mũ.",
+    "narration": "Nếu một nhóm bắt buộc phải có ít nhất một học sinh, ta bỏ trạng thái không chọn học sinh nào. Trong hàm sinh mũ, trạng thái đó chính là hạng một ở bậc không. Vì vậy hàm sinh của một nhóm không rỗng là e mũ x trừ một. Ta vừa đổi một điều kiện ngôn ngữ thành thao tác trừ cực kỳ đơn giản.",
+    "formula": "exponential_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "exponential",
+    "state": 3,
+    "heading": "Ba nhóm có nhãn không rỗng",
+    "lines": [
+      "Ba hộp ghi A, B, C",
+      "Mỗi hộp phải có người",
+      "Nhân ba hàm sinh nhóm"
+    ],
+    "takeaway": "Nhãn ↔ hàm sinh mũ.",
+    "narration": "Bây giờ ta có ba nhóm đặt tên rõ ràng. Mỗi nhóm nhận ít nhất một học sinh, nên mỗi nhóm đóng góp e mũ x trừ một. Vì các nhóm độc lập theo nhãn, hàm sinh chung là lũy thừa bậc ba của biểu thức này. Hệ số bậc bốn sẽ cho ta số cách chia bốn học sinh khác nhau vào ba nhóm có nhãn mà không nhóm nào rỗng.",
+    "formula": "exponential_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "exponential",
+    "state": 4,
+    "heading": "Đếm toàn ánh 4 vào 3",
+    "lines": [
+      "Có 3⁴ phép gán tùy ý",
+      "Trừ trường hợp có nhóm rỗng",
+      "Bao hàm–loại trừ cho 36"
+    ],
+    "takeaway": "Nhãn ↔ hàm sinh mũ.",
+    "narration": "Ta kiểm tra bằng cách đếm thông thường. Mỗi học sinh có ba lựa chọn nên có ba mũ bốn phép phân công. Nếu một nhóm rỗng, ta chỉ còn hai lựa chọn cho từng người; có ba nhóm có thể rỗng. Cộng lại các trường hợp chỉ dùng đúng một nhóm, ta được ba mươi sáu. Đây cũng là kết quả lấy từ hệ số bậc bốn của hàm sinh mũ.",
+    "formula": "exponential_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "exponential",
+    "state": 5,
+    "heading": "Nhóm không nhãn và số Stirling",
+    "lines": [
+      "Đổi tên nhóm không tạo cách mới",
+      "Hai nhóm không rỗng từ 4 phần tử",
+      "Chia thêm cho 2 giai thừa"
+    ],
+    "takeaway": "Nhãn ↔ hàm sinh mũ.",
+    "narration": "Nếu hai nhóm không được đặt tên, việc hoán đổi tên nhóm không tạo phương án mới. Có hai mũ bốn phép phân hai màu, bỏ hai cách dồn hết vào một nhóm, rồi chia hai vì đổi màu cho hai nhóm cho cùng một phân hoạch. Ta được bảy, chính là số Stirling loại hai S của bốn và hai. Đây là cửa ngõ của tổ hợp rất sâu.",
+    "formula": "exponential_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "coins",
+    "state": 0,
+    "heading": "Đổi xu 1, 2, 3 đơn vị",
+    "lines": [
+      "Mỗi loại xu được dùng tùy ý",
+      "Tổng giá trị cần đúng 12",
+      "Không xét thứ tự đưa xu"
+    ],
+    "takeaway": "Trọng số đi vào số mũ.",
+    "narration": "Một bài toán cổ điển là đổi đúng mười hai đơn vị tiền bằng các đồng xu mệnh giá một, hai, ba. Mỗi loại có thể dùng nhiều lần, và thứ tự đưa xu không làm thành một cách mới. Gọi số đồng từng loại là x, y, z, ta được phương trình x cộng hai y cộng ba z bằng mười hai. Hàm sinh sẽ ghi nhận giá trị thay vì số đồng.",
+    "formula": "coins_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "coins",
+    "state": 1,
+    "heading": "Hàm sinh của mệnh giá d",
+    "lines": [
+      "Lấy 0 đồng: hệ số 1",
+      "Lấy r đồng: số mũ rd",
+      "Bước nhảy theo bội của d"
+    ],
+    "takeaway": "Trọng số đi vào số mũ.",
+    "narration": "Với đồng mệnh giá d, nếu lấy r đồng thì tổng giá trị tăng r nhân d. Do đó các lựa chọn được mã hóa bởi một cộng x mũ d cộng x mũ hai d và cứ tiếp tục. Tổng cấp số nhân cho một chia một trừ x mũ d. Chỉ cần đổi d, ta đã thay đổi loại đồng xu mà không cần lập lại cả thuật toán đếm.",
+    "formula": "coins_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "coins",
+    "state": 2,
+    "heading": "Nhân ba nguồn mệnh giá",
+    "lines": [
+      "Đồng 1: 1/(1−x)",
+      "Đồng 2: 1/(1−x²)",
+      "Đồng 3: 1/(1−x³)"
+    ],
+    "takeaway": "Trọng số đi vào số mũ.",
+    "narration": "Ba loại xu là ba nguồn lựa chọn độc lập nên phải nhân ba hàm sinh. Hệ số x mũ mười hai của tích này là số cách đổi tiền đúng yêu cầu. Điều hay là điều kiện tổng giá trị đã được đưa thẳng vào số mũ: mọi bộ số đồng thỏa phương trình đều tạo đúng một tích ở bậc mười hai.",
+    "formula": "coins_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "coins",
+    "state": 3,
+    "heading": "Chia trường hợp theo đồng 3",
+    "lines": [
+      "z chạy từ 0 đến 4",
+      "Mỗi z còn phương trình x+2y=12−3z",
+      "Các số cách: 7,5,4,2,1"
+    ],
+    "takeaway": "Trọng số đi vào số mũ.",
+    "narration": "Để kiểm tra, ta chọn trước số đồng mệnh giá ba, từ không tới bốn. Với mỗi lựa chọn, số đồng mệnh giá hai có thể chạy từ không đến phần nguyên của số tiền còn lại chia hai; đồng mệnh giá một được xác định tự động. Số cách lần lượt là bảy, năm, bốn, hai và một, tổng bằng mười chín.",
+    "formula": "coins_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "coins",
+    "state": 4,
+    "heading": "Hàm sinh thay cho liệt kê dài",
+    "lines": [
+      "Tích ba chuỗi gom đúng bậc",
+      "Các bậc không bằng 12 bị bỏ qua",
+      "Hệ số cần tìm là 19"
+    ],
+    "takeaway": "Trọng số đi vào số mũ.",
+    "narration": "Bây giờ hãy hình dung khi tổng tiền tăng lên một trăm hoặc một nghìn. Liệt kê bằng tay trở nên bất tiện, nhưng quy tắc hàm sinh hoàn toàn không thay đổi. Ta vẫn lấy đúng một hệ số của tích ba chuỗi. Trong tính toán thực tế, ta có thể nhân và cắt chuỗi tới bậc cần thiết, đây cũng chính là tư tưởng của quy hoạch động đếm số cách đổi tiền.",
+    "formula": "coins_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "coins",
+    "state": 5,
+    "heading": "Phân biệt số cách và thứ tự",
+    "lines": [
+      "1+2+3 và 3+2+1 là một",
+      "Nếu đếm dãy xu cần mô hình khác",
+      "Kiểm tra ý nghĩa từng nhân tử"
+    ],
+    "takeaway": "Trọng số đi vào số mũ.",
+    "narration": "Đừng quên giả thiết quan trọng: các đồng xu cùng mệnh giá được xem là giống nhau, và thứ tự chọn các mệnh giá không được tính. Nếu bài toán hỏi các dãy đưa xu có thứ tự, đáp số sẽ khác. Trước khi dựng hàm sinh, luôn phải xác nhận đâu là một kết quả riêng biệt. Khi mô hình đúng, đại số mới đưa ra câu trả lời đúng.",
+    "formula": "coins_5",
+    "min_seconds": 27
+  },
+  {
+    "section": "capstone",
+    "state": 0,
+    "heading": "Bài Olympic: 5 biến, 2 biến bị chặn",
+    "lines": [
+      "Tổng năm biến là 12",
+      "Hai biến đầu từ 0 tới 2",
+      "Ba biến còn lại tùy ý"
+    ],
+    "takeaway": "Mô hình → hệ số → kết quả.",
+    "narration": "Ta kết thúc tập bằng một bài toán phối hợp nhiều kỹ thuật. Tìm số nghiệm nguyên không âm của tổng năm biến bằng mười hai, trong đó hai biến đầu không vượt quá hai. Không nên bắt đầu bằng công thức ngay. Trước tiên hãy nhận diện mỗi biến là một nguồn lựa chọn, giới hạn nào cần đưa vào hàm sinh, và bậc nào ta phải trích hệ số.",
+    "formula": "capstone_0",
+    "min_seconds": 27
+  },
+  {
+    "section": "capstone",
+    "state": 1,
+    "heading": "Ghép các nhân tử",
+    "lines": [
+      "Hai chuỗi hữu hạn 1+x+x²",
+      "Ba chuỗi 1/(1−x)",
+      "Lấy hệ số x¹² của tích"
+    ],
+    "takeaway": "Mô hình → hệ số → kết quả.",
+    "narration": "Hai biến bị chặn tạo ra hai nhân tử hữu hạn, ba biến không bị chặn tạo ra ba cấp số nhân. Nhân các phần lại, ta nhận được một phân thức đã từng xuất hiện ở chương bốn. Lần này, ta sẽ trình bày lời giải như một bài Olympiad ngắn gọn: biến điều kiện thành hàm sinh, biến hàm sinh thành tổ hợp và kết luận.",
+    "formula": "capstone_1",
+    "min_seconds": 27
+  },
+  {
+    "section": "capstone",
+    "state": 2,
+    "heading": "Tách ba hạng tử của tử",
+    "lines": [
+      "Một hạng dương",
+      "Một hạng âm có hệ số 2",
+      "Một hạng dương bậc 6"
+    ],
+    "takeaway": "Mô hình → hệ số → kết quả.",
+    "narration": "Tử số được khai triển thành ba hạng. Hạng đầu đóng góp hệ số bậc mười hai của mẫu; hạng giữa đóng góp trừ hai lần hệ số bậc chín; hạng cuối cộng hệ số bậc sáu. Trong hình động, ba mũi tên màu khác nhau sẽ đưa các bậc này về cùng bậc mười hai, cho thấy phép nhân chuỗi tự động thực hiện bao hàm loại trừ.",
+    "formula": "capstone_2",
+    "min_seconds": 27
+  },
+  {
+    "section": "capstone",
+    "state": 3,
+    "heading": "Hệ số đầu tiên",
+    "lines": [
+      "Không xét giới hạn hai biến đầu",
+      "Đếm nghiệm không âm năm biến",
+      "Có tổ hợp chập bốn của 16"
+    ],
+    "takeaway": "Mô hình → hệ số → kết quả.",
+    "narration": "Nếu tạm bỏ cả hai điều kiện chặn, ta đang phân phối mười hai vật giống nhau vào năm hộp. Công thức sao và vạch cho tổ hợp chập bốn của mười sáu, bằng một nghìn tám trăm hai mươi. Đây là số cách xuất phát. Những trường hợp không hợp lệ phải được trừ và phần giao phải được cộng lại.",
+    "formula": "capstone_3",
+    "min_seconds": 27
+  },
+  {
+    "section": "capstone",
+    "state": 4,
+    "heading": "Loại vượt giới hạn và hoàn lại",
+    "lines": [
+      "Trừ 2×715 cách",
+      "Cộng lại 210 cách bị trừ đôi",
+      "Cả hai biến bị chặn được xử lý"
+    ],
+    "takeaway": "Mô hình → hệ số → kết quả.",
+    "narration": "Nếu biến thứ nhất lớn hơn hoặc bằng ba, ta trừ trước ba và còn tổng chín. Số nghiệm khi đó là tổ hợp chập bốn của mười ba. Biến thứ hai cho đúng một số lượng như vậy, nên phải trừ hai lần. Nhưng khi cả hai biến đều vượt giới hạn, ta đã trừ trùng, cần cộng lại tổ hợp chập bốn của mười.",
+    "formula": "capstone_4",
+    "min_seconds": 27
+  },
+  {
+    "section": "capstone",
+    "state": 5,
+    "heading": "Kết luận và liên hệ kỹ thuật",
+    "lines": [
+      "1820 − 1430 + 210",
+      "Có đúng 600 nghiệm",
+      "Kiểm chứng bằng duyệt hai biến đầu"
+    ],
+    "takeaway": "Mô hình → hệ số → kết quả.",
+    "narration": "Kết quả cuối cùng là sáu trăm nghiệm. Bài này kết hợp sao và vạch, hàm sinh hữu tỉ và bao hàm loại trừ trong cùng một lời giải. Chúng ta có thể kiểm chứng bằng cách cho hai biến đầu chạy từ không tới hai rồi đếm ba biến còn lại. Đây chính là sức mạnh của hàm sinh: một ngôn ngữ thống nhất cho nhiều kỹ thuật đếm tưởng chừng khác nhau.",
+    "formula": "capstone_5",
+    "min_seconds": 27
+  }
+]

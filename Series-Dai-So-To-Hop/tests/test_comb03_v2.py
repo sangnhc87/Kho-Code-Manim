@@ -109,7 +109,7 @@ class Production(unittest.TestCase):
         record=next(e for e in manifest['episodes'] if e['id']=='COMB03')
         self.assertEqual(record['scene'],'COMB03')
         self.assertTrue((ROOT/record['source']).is_file())
-        self.assertTrue((ROOT.parent/record['workflow']).is_file())
+        self.assertTrue((ROOT/record['workflow']).is_file())
 
     def test_manifest_clip_coverage_if_prepared(self):
         p=ROOT/'voice/comb03_voice_manifest.json'

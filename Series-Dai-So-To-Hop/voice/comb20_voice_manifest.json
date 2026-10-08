@@ -1,0 +1,213 @@
+{
+  "version": "COMB20-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "foundation"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "foundation"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "foundation"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "foundation"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "foundation"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "foundation"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "evenodd"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "evenodd"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "evenodd"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "evenodd"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "evenodd"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "evenodd"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "firstmark"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "firstmark"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "firstmark"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "firstmark"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "firstmark"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "firstmark"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "secondmark"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "secondmark"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "secondmark"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "secondmark"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "secondmark"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "secondmark"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "higher"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "higher"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "higher"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "higher"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "higher"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "higher"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "integral"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "integral"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "integral"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "integral"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "integral"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "integral"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "partial"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "partial"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "partial"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "partial"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "partial"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "partial"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "challenge"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "challenge"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "challenge"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "challenge"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "challenge"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "challenge"
+    }
+  },
+  "target_seconds": 1253.2,
+  "tts_words": 3500,
+  "chapter_seconds": {
+    "foundation": 0.0,
+    "evenodd": 156.0,
+    "firstmark": 312.0,
+    "secondmark": 468.0,
+    "higher": 624.0,
+    "integral": 780.0,
+    "partial": 936.0,
+    "challenge": 1092.0
+  }
+}

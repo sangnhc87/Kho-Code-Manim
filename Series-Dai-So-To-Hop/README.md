@@ -1,3 +1,13 @@
+# SERIES SANG MATH · ĐẠI SỐ TỔ HỢP — TẬP MỚI NHẤT COMB21
+
+**COMB21 V2: Hàm sinh (Generating Functions)** đã có mã nguồn để thử render: 48 nhịp, 8 chương, 3.271 từ lời giảng; thời lượng thiết kế 21 phút 41 giây trước TTS. `episodes/comb21_generating_functions.py` — Scene `COMB21`. Workflow: `.github/workflows/render-comb21-v2.yml`. Xem `HUONG_DAN_RENDER_COMB21_V2.md`.
+
+Cấu trúc giữ các tập COMB01–20 + GEO01. Các tệp mới dùng tiền tố COMB21/comb21. Ký hiệu tổ hợp luôn là `C^(n)_(k)` với n trên, k dưới.
+
+**Trạng thái QA:** Chưa render MP4 thực tế tại môi trường soạn. Đã kiểm tra mã Python, số học, thời lượng theo kịch bản và cấu trúc workflow. GitHub Actions phải chạy để biên dịch Typst, render Manim và kiểm tra ảnh/âm thanh.
+
+---
+
 # COMB18 V2 - TAM GIAC PASCAL VA CAC TINH CHAT
 
 Video 18 duoc bo sung vao du an COMB01-COMB17 ma khong thay the ma Scene cu.
@@ -111,3 +121,15 @@ Video 16: 9 học sinh, 3 nhóm 3 vô danh, A và B phải khác nhóm, mỗi nh
 - Hướng dẫn riêng: `HUONG_DAN_RENDER_COMB19_V2.md`.
 - Bản xem trước: `preview/comb19_v2/storyboard_8_chapters.png`.
 - Video thực tế chưa được nghiệm thu: chạy workflow với preview, voice off trước khi phát hành.
+
+## COMB20 V2 – Các tổng hệ số nhị thức
+
+- 48 nhịp, 8 chương; bài giảng từ phép thế → đạo hàm → tích phân → tổng xen dấu → bài nâng cao.
+- Mã scene: `episodes/comb20_binomial_sums.py` với lớp `COMB20`.
+- Pipeline: `scripts/prepare_comb20_v2.py`, `scripts/qa_comb20_v2.py`.
+- GitHub Actions: `.github/workflows/render-comb20-v2.yml`.
+- Hướng dẫn render: `HUONG_DAN_RENDER_COMB20_V2.md`.
+- Storyboard: `preview/comb20_v2/storyboard_8_chapters.png`.
+- Lộ trình 5 tập Olympic: `LO_TRINH_COMB21_25_OLYMPIAD.md`.
+- Tổng ở bài cuối: `Σ k² C^(6)_(k) 2^k 3^(6-k) = 112500`.
+- Trạng thái: mã và toán đã kiểm thử; Manim/Typst thực tế cần chạy trên GitHub Actions.

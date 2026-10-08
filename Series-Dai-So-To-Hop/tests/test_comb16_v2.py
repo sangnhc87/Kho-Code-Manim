@@ -78,7 +78,7 @@ class VideoDataTests(unittest.TestCase):
         self.assertIn('class COMB16(Scene)',src)
         self.assertIn('def model(section,state)',src)
     def test_action_workflow(self):
-        wf=(ROOT.parent/'.github/workflows/render-comb16-v2.yml').read_text(encoding='utf-8')
+        wf=(ROOT/'.github/workflows/render-comb16-v2.yml').read_text(encoding='utf-8')
         for q in ('COMB16','comb16_group_division.py','prepare_comb16_v2.py','qa_comb16_v2.py','upload-artifact'):
             self.assertIn(q,wf)
     def test_preparer_exists(self):self.assertTrue((ROOT/'scripts/prepare_comb16_v2.py').is_file())

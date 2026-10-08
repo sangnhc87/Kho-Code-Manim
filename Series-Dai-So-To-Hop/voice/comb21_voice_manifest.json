@@ -1,0 +1,213 @@
+{
+  "version": "COMB21-v2.0",
+  "mode": "off",
+  "voice_name": null,
+  "rate": null,
+  "beats": 48,
+  "clips": {
+    "000": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "001": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "002": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "003": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "004": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "005": {
+      "duration": 0.0,
+      "section": "intro"
+    },
+    "006": {
+      "duration": 0.0,
+      "section": "product"
+    },
+    "007": {
+      "duration": 0.0,
+      "section": "product"
+    },
+    "008": {
+      "duration": 0.0,
+      "section": "product"
+    },
+    "009": {
+      "duration": 0.0,
+      "section": "product"
+    },
+    "010": {
+      "duration": 0.0,
+      "section": "product"
+    },
+    "011": {
+      "duration": 0.0,
+      "section": "product"
+    },
+    "012": {
+      "duration": 0.0,
+      "section": "stars"
+    },
+    "013": {
+      "duration": 0.0,
+      "section": "stars"
+    },
+    "014": {
+      "duration": 0.0,
+      "section": "stars"
+    },
+    "015": {
+      "duration": 0.0,
+      "section": "stars"
+    },
+    "016": {
+      "duration": 0.0,
+      "section": "stars"
+    },
+    "017": {
+      "duration": 0.0,
+      "section": "stars"
+    },
+    "018": {
+      "duration": 0.0,
+      "section": "bounds"
+    },
+    "019": {
+      "duration": 0.0,
+      "section": "bounds"
+    },
+    "020": {
+      "duration": 0.0,
+      "section": "bounds"
+    },
+    "021": {
+      "duration": 0.0,
+      "section": "bounds"
+    },
+    "022": {
+      "duration": 0.0,
+      "section": "bounds"
+    },
+    "023": {
+      "duration": 0.0,
+      "section": "bounds"
+    },
+    "024": {
+      "duration": 0.0,
+      "section": "recurrence"
+    },
+    "025": {
+      "duration": 0.0,
+      "section": "recurrence"
+    },
+    "026": {
+      "duration": 0.0,
+      "section": "recurrence"
+    },
+    "027": {
+      "duration": 0.0,
+      "section": "recurrence"
+    },
+    "028": {
+      "duration": 0.0,
+      "section": "recurrence"
+    },
+    "029": {
+      "duration": 0.0,
+      "section": "recurrence"
+    },
+    "030": {
+      "duration": 0.0,
+      "section": "exponential"
+    },
+    "031": {
+      "duration": 0.0,
+      "section": "exponential"
+    },
+    "032": {
+      "duration": 0.0,
+      "section": "exponential"
+    },
+    "033": {
+      "duration": 0.0,
+      "section": "exponential"
+    },
+    "034": {
+      "duration": 0.0,
+      "section": "exponential"
+    },
+    "035": {
+      "duration": 0.0,
+      "section": "exponential"
+    },
+    "036": {
+      "duration": 0.0,
+      "section": "coins"
+    },
+    "037": {
+      "duration": 0.0,
+      "section": "coins"
+    },
+    "038": {
+      "duration": 0.0,
+      "section": "coins"
+    },
+    "039": {
+      "duration": 0.0,
+      "section": "coins"
+    },
+    "040": {
+      "duration": 0.0,
+      "section": "coins"
+    },
+    "041": {
+      "duration": 0.0,
+      "section": "coins"
+    },
+    "042": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "043": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "044": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "045": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "046": {
+      "duration": 0.0,
+      "section": "capstone"
+    },
+    "047": {
+      "duration": 0.0,
+      "section": "capstone"
+    }
+  },
+  "target_seconds": 1301.2,
+  "tts_words": 3271,
+  "chapter_seconds": {
+    "intro": 0.0,
+    "product": 162.0,
+    "stars": 324.0,
+    "bounds": 486.0,
+    "recurrence": 648.0,
+    "exponential": 810.0,
+    "coins": 972.0,
+    "capstone": 1134.0
+  }
+}
