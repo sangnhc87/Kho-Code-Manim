@@ -253,11 +253,11 @@ def layout_preflight(sample_cards, verbose=True):
         body = card[3]
         for mob in [title, *list(body)]:
             if mob.get_left()[0] < bg.get_left()[0] + 0.35:
-                raise AssertionError("Card item crosses left safe margin.")
+                raise AssertionError("Card item crosses l safe margin.")
             if mob.get_right()[0] > bg.get_right()[0] - 0.22:
-                raise AssertionError("Card item crosses right safe margin.")
+                raise AssertionError("Card item crosses r safe margin.")
             if mob.get_top()[1] > bg.get_top()[1] - 0.18:
-                raise AssertionError("Card item crosses top safe margin.")
+                raise AssertionError("Card item crosses t safe margin.")
             if mob.get_b()[1] < bg.get_b()[1] + 0.18:
                 raise AssertionError("Card item crosses b safe margin.")
         rows = list(body)
@@ -265,7 +265,7 @@ def layout_preflight(sample_cards, verbose=True):
             for j in range(i + 1, len(rows)):
                 overlap = min(rows[i].get_top()[1], rows[j].get_top()[1]) - max(rows[i].get_b()[1], rows[j].get_b()[1])
                 if overlap > 1e-4:
-                    raise AssertionError("Two right-card rows overlap.")
+                    raise AssertionError("Two r-card rows overlap.")
     if verbose:
         print("LAYOUT PREFLIGHT OK")
     return True
@@ -282,8 +282,8 @@ def layout_preflight(sample_cards, verbose=True):
 # ---------- Video 19: switching shortest net for an adjustable box ----------
 # Box: a=4 (x), b=6 (y), h=t (z), 2<=t<=10.
 # Ant starts at A=(0,0,0); destination G=(4,6,t), opposite vertex.
-# Route I: left -> top: L_I=sqrt((t+4)^2+36).
-# Route II: front -> right: L_II=sqrt(100+t^2).
+# Route I: l -> t: L_I=sqrt((t+4)^2+36).
+# Route I I: front -> r: L_II=sqrt(100+t^2).
 # Route I I I: b -> back: L_I I I=sqrt((t+6)^2+16).
 # L_I^2 - L_II^2 = 8(t-6).
 # L_I I I^2 - L_I^2 = 4t>0.
@@ -300,16 +300,16 @@ WORLD_SCALE=0.54
 WORLD_SHIFT=np.array([-3.30,-0.18,-0.38])
 FACES={
     'front': ['A','B','F','E'],
-    'right': ['B','C','G','F'],
+    'r': ['B','C','G','F'],
     'back': ['D','H','G','C'],
-    'left': ['A','E','H','D'],
+    'l': ['A','E','H','D'],
     'b': ['A','D','C','B'],
-    'top': ['E','F','G','H'],
+    't': ['E','F','G','H'],
 }
-FACE_COLORS={'front':PURPLE,'right':CYAN,'back':ORANGE,'left':BLUE,'b':GREEN,'top':GOLD}
+FACE_COLORS={'front':PURPLE,'r':CYAN,'back':ORANGE,'l':BLUE,'b':GREEN,'t':GOLD}
 ROUTES={
-    'I':['left','top'],
-    'II':['front','right'],
+    'I':['l','t'],
+    'I I':['front','r'],
     'I I I':['b','back'],
 }
 
@@ -325,13 +325,13 @@ def vertices(t):
 def lengths(t):
     return {
         'I':math.hypot(t+A_LEN,B_LEN),
-        'II':math.hypot(A_LEN+B_LEN,t),
+        'I I':math.hypot(A_LEN+B_LEN,t),
         'I I I':math.hypot(t+B_LEN,A_LEN),
     }
 
 def winner(t):
-    if abs(t-B_LEN)<1e-9: return ('I','II')
-    return ('I',) if t<B_LEN else ('II',)
+    if abs(t-B_LEN)<1e-9: return ('I','I I')
+    return ('I',) if t<B_LEN else ('I I',)
 
 def W(p):
     return np.array(p,dtype=float)*WORLD_SCALE+WORLD_SHIFT
@@ -415,8 +415,8 @@ def unfold_chain(chain,t):
 
 def enumerate_valid(t):
     '''Enumerate every simple adjacent-face strip from corner A to corner G.'''
-    sources={'front','left','b'}
-    targets={'right','back','top'}
+    sources={'front','l','b'}
+    targets={'r','back','t'}
     adjacency={f:[g for g in FACES if g!=f and len(set(FACES[f])&set(FACES[g]))==2]
                for f in FACES}
     found=[]
@@ -445,7 +445,7 @@ def geometry_preflight(verbose=True):
         assert abs(np.linalg.norm(v['B']-v['C'])-6)<tol
         assert abs(np.linalg.norm(v['C']-v['G'])-t)<tol
         ls=lengths(t)
-        assert abs(ls['I']**2-ls['II']**2-8*(t-6))<tol
+        assert abs(ls['I']**2-ls['I I']**2-8*(t-6))<tol
         assert abs(ls['I I I']**2-ls['I']**2-4*t)<tol
         for name,chain in ROUTES.items():
             d=unfold_chain(chain,t)
@@ -483,15 +483,15 @@ def geometry_preflight(verbose=True):
     for t in [2.,6.,9.]:
         v=vertices(t)
         XI=unfold_chain(ROUTES['I'],t)['hits'][0]['raw']
-        XII=unfold_chain(ROUTES['II'],t)['hits'][0]['raw']
+        XII=unfold_chain(ROUTES['I I'],t)['hits'][0]['raw']
         XI I I=unfold_chain(ROUTES['I I I'],t)['hits'][0]['raw']
         assert np.linalg.norm(XI-np.array([0,6*t/(t+4),t]))<tol
         assert np.linalg.norm(XII-np.array([4,0,2*t/5]))<tol
         assert np.linalg.norm(XI I I-np.array([24/(6+t),6,0]))<tol
     if verbose:
-        print(f'GEOMETRY PREFLIGHT OK: {len(grid)} t samples, {routes_checked} valid candidate strips')
-        print('  I: left -> top, L_I=sqrt((t+4)^2+36)')
-        print('  II: front -> right, L_II=sqrt(t^2+100)')
+        print(f'GEOMETRY PREFLIGHT OK: {len(grid)} t samples, {routes_checked} v candidate strips')
+        print('  I: l -> t, L_I=sqrt((t+4)^2+36)')
+        print('  I I: front -> r, L_II=sqrt(t^2+100)')
         print('  I I I: b -> back, L_I I I=sqrt((t+6)^2+16)')
         print('  Switch at t=6: L_min=2sqrt(34), tie')
     return True
@@ -547,9 +547,9 @@ def route_folded(t,name,color=GOLD,width=5.8):
                   solid(W(X),W(v['G']),color,width),
                   Dot3D(W(X),radius=0.061,color=color))
 
-def model_with_routes(t,primary=('I','II')):
+def model_with_routes(t,primary=('I','I I')):
     m=VGroup(box_shell(t,highlight=set(sum([ROUTES[n] for n in primary],[]))))
-    colors={'I':GOLD,'II':CYAN,'I I I':ORANGE}
+    colors={'I':GOLD,'I I':CYAN,'I I I':ORANGE}
     for name in primary:
         m.add(route_folded(t,name,colors[name],5.7 if name==primary[0] else 4.0))
     v=vertices(t)
@@ -569,7 +569,7 @@ def net_diagram(name,t,show_path=True):
     '''Exact rectangle of two adjacent unfolded faces, with real hinge position.'''
     if name=='I':
         first=t;second=A_LEN;height=B_LEN
-    elif name=='II':
+    elif name=='I I':
         first=A_LEN;second=B_LEN;height=t
     elif name=='I I I':
         first=B_LEN;second=t;height=A_LEN
@@ -578,8 +578,8 @@ def net_diagram(name,t,show_path=True):
     scale=min(5.70/total,4.75/height)
     origin=LEFT_CENTER + np.array([-total*scale/2,-height*scale/2,0.])
     def T(x,y):return origin+np.array([x*scale,y*scale,0.])
-    color_first={'I':BLUE,'II':PURPLE,'I I I':GREEN}[name]
-    color_second={'I':GOLD,'II':CYAN,'I I I':ORANGE}[name]
+    color_first={'I':BLUE,'I I':PURPLE,'I I I':GREEN}[name]
+    color_second={'I':GOLD,'I I':CYAN,'I I I':ORANGE}[name]
     g=VGroup(
         Polygon(T(0,0),T(first,0),T(first,height),T(0,height),
                 fill_color=color_first,fill_opacity=0.14,
@@ -603,12 +603,12 @@ def length_chart(t):
     x0=LEFT_CENTER[0]-2.30
     y0=-1.95
     g=VGroup()
-    for i,name in enumerate(['I','II','I I I']):
-        c={'I':GOLD,'II':CYAN,'I I I':ORANGE}[name]
+    for i,name in enumerate(['I','I I','I I I']):
+        c={'I':GOLD,'I I':CYAN,'I I I':ORANGE}[name]
         y=y0+2.0-0.85*i
         start=np.array([x0,y,0.]);end=start+RIGHT*(vals[name]*0.25)
         g.add(Line(start,end,color=c,stroke_width=17,stroke_opacity=0.89))
-        lab=txt('I / trái-nắp' if name=='I' else ('II / trước-phải' if name=='II' else 'I I I / đáy-sau'),18,c)
+        lab=txt('I / trái-nắp' if name=='I' else ('I I / trước-phải' if name=='I I' else 'I I I / đáy-sau'),18,c)
         lab.move_to(start+RIGHT*1.06+UP*0.27)
         g.add(lab)
     return g
@@ -623,8 +623,8 @@ def layout_samples():
         ],GOLD),
         lesson_card('ĐỔI PHƯƠNG ÁN',[
             ('math','L_I^2=(t+4)^2+36',27,BLUE),
-            ('math','L_(II)^2=t^2+100',27,CYAN),
-            ('math','L_I^2-L_(II)^2=8(t-6)',26,GOLD),
+            ('math','L_(I I)^2=t^2+100',27,CYAN),
+            ('math','L_I^2-L_(I I)^2=8(t-6)',26,GOLD),
             ('math','t=6',34,GREEN),
         ],CYAN),
     ]
@@ -661,7 +661,7 @@ class BaseLesson(ThreeDScene):
 class TraiPhang19Master(BaseLesson):
     def intro(self):
         self.clear_all()
-        self.add(model_with_routes(5.,('I','II')))
+        self.add(model_with_routes(5.,('I','I I')))
         card=intro_card(19,['HỘP CHỮ NHẬT CÓ THAM SỐ','ĐỔI KIỂU ĐƯỜNG NGẮN NHẤT'],
                         'Chiều cao thay đổi: phương án tối ưu có đổi không?')
         self.add_fixed_in_frame_mobjects(card,divider(),footer())
@@ -686,10 +686,10 @@ class TraiPhang19Master(BaseLesson):
 
     def candidate_paths(self):
         self.clear_all();self.add_hud('Ba cách ghép hai mặt kề','02 / 14')
-        self.add(model_with_routes(5.,('I','II')))
+        self.add(model_with_routes(5.,('I','I I')))
         self.show_card('BA KIỂU BẢN TRẢI',[
             ('text','I. Mặt trái rồi mặt trên.',18,BLUE),
-            ('text','II. Mặt trước rồi mặt phải.',18,CYAN),
+            ('text','I I. Mặt trước rồi mặt phải.',18,CYAN),
             ('text','I I I. Mặt đáy rồi mặt sau.',18,ORANGE),
             ('text','Mỗi kiểu cho một đường chéo khác nhau.',17,GOLD),
         ],CYAN)
@@ -701,9 +701,9 @@ class TraiPhang19Master(BaseLesson):
     def unfold_one(self):
         self.clear_all();self.add_hud('Mở mặt trên quanh cạnh EH','03 / 14')
         t=4.; chain=ROUTES['I']; d=unfold_chain(chain,t)
-        left=unfolding_face_mob('left',t,start=True)
-        top=unfolding_face_mob('top',t,end=True)
-        self.add(left,top)
+        l=unfolding_face_mob('l',t,start=True)
+        t=unfolding_face_mob('t',t,end=True)
+        self.add(l,t)
         self.show_card('PHƯƠNG ÁN I',[
             ('text','Giữ mặt trái, mở nắp quanh EH.',18,BLUE),
             ('text','Mặt trái: kích thước t × 6.',18,INK),
@@ -713,7 +713,7 @@ class TraiPhang19Master(BaseLesson):
         step=d['steps'][0]
         self.narrate_play('Ta giữ mặt trái, rồi mở nắp trên quanh cạnh E H. '
                           'Cạnh chung đứng yên và cả nắp quay cứng như một cánh cửa.',
-                          Rotate(top,angle=step['angle'],axis=W(step['b'])-W(step['a']),
+                          Rotate(t,angle=step['angle'],axis=W(step['b'])-W(step['a']),
                                  about_point=W(step['a'])),min_time=3.8)
         self.narrate('Sau khi trải, hai mặt trở thành hình chữ nhật có một chiều t cộng bốn, '
                      'chiều kia bằng sáu.')
@@ -731,32 +731,32 @@ class TraiPhang19Master(BaseLesson):
 
     def unfold_two(self):
         self.clear_all();self.add_hud('Mở mặt phải quanh cạnh BF','05 / 14')
-        t=8.;d=unfold_chain(ROUTES['II'],t)
+        t=8.;d=unfold_chain(ROUTES['I I'],t)
         front=unfolding_face_mob('front',t,start=True)
-        right=unfolding_face_mob('right',t,end=True)
-        self.add(front,right)
-        self.show_card('PHƯƠNG ÁN II',[
+        r=unfolding_face_mob('r',t,end=True)
+        self.add(front,r)
+        self.show_card('PHƯƠNG ÁN I I',[
             ('text','Giữ mặt trước, mở mặt phải quanh BF.',17,CYAN),
             ('text','Mặt trước rộng 4, mặt phải rộng 6.',18,INK),
             ('text','Cả hai đều cao t.',18,INK),
-            ('math','L_(II)^2=10^2+t^2',29,GOLD),
+            ('math','L_(I I)^2=10^2+t^2',29,GOLD),
         ],CYAN)
         step=d['steps'][0]
         self.narrate_play('Với kiểu thứ hai, ta giữ mặt trước rồi mở mặt phải quanh cạnh B F. '
                           'Cạnh B F là bản lề và không di chuyển.',
-                          Rotate(right,angle=step['angle'],axis=W(step['b'])-W(step['a']),
+                          Rotate(r,angle=step['angle'],axis=W(step['b'])-W(step['a']),
                                  about_point=W(step['a'])),min_time=3.8)
         self.narrate('Hai mặt ghép thành hình chữ nhật rộng mười, cao t. '
                      'Đường ngắn nhất trong dải này lại là đường chéo.')
 
     def net_two(self):
-        self.clear_all();self.add_hud('Độ dài phương án II','06 / 14')
-        self.show_net('II',8.)
+        self.clear_all();self.add_hud('Độ dài phương án I I','06 / 14')
+        self.show_net('I I',8.)
         self.show_card('QUA MẶT TRƯỚC VÀ MẶT PHẢI',[
             ('math','u=4+6=10',28,CYAN),
             ('math','v=t',28,INK),
-            ('math','L_(II)^2=100+t^2',32,GOLD),
-            ('text','Phương án II lợi hơn khi hộp đủ cao.',18,GREEN),
+            ('math','L_(I I)^2=100+t^2',32,GOLD),
+            ('text','Phương án I I lợi hơn khi hộp đủ cao.',18,GREEN),
         ],CYAN)
         self.narrate('Trong kiểu thứ hai, bình phương đường chéo bằng một trăm cộng t bình phương. '
                      'Ta sẽ so kết quả này với kiểu thứ nhất mà chưa cần lấy căn.')
@@ -793,10 +793,10 @@ class TraiPhang19Master(BaseLesson):
         self.clear_all();self.add_hud('Tìm mốc chuyển phương án','09 / 14')
         chart=length_chart(5.)
         self.add_fixed_in_frame_mobjects(chart)
-        self.show_card('SO SÁNH I VÀ II',[
+        self.show_card('SO SÁNH I VÀ I I',[
             ('math','L_I^2=(t+4)^2+36',27,BLUE),
-            ('math','L_(II)^2=100+t^2',27,CYAN),
-            ('math','L_I^2-L_(II)^2=8(t-6)',27,GOLD),
+            ('math','L_(I I)^2=100+t^2',27,CYAN),
+            ('math','L_I^2-L_(I I)^2=8(t-6)',27,GOLD),
             ('math','t=6',35,GREEN),
         ],GOLD)
         self.narrate('Giờ chỉ còn hai phương án một và hai. '
@@ -806,11 +806,11 @@ class TraiPhang19Master(BaseLesson):
 
     def low_height(self):
         self.clear_all();self.add_hud('Khi t nhỏ hơn 6: đi qua mặt trái và nắp','10 / 14')
-        self.add(model_with_routes(3.,('I','II')))
+        self.add(model_with_routes(3.,('I','I I')))
         self.show_card('TỪ 2 ĐẾN TRƯỚC 6',[
             ('math','t<6',30,CYAN),
-            ('math','L_I^2-L_(II)^2<0',28,INK),
-            ('math','L_I<L_(II)',32,GREEN),
+            ('math','L_I^2-L_(I I)^2<0',28,INK),
+            ('math','L_I<L_(I I)',32,GREEN),
             ('text','Chọn dải trái → nắp trên.',18,GOLD),
         ],GREEN)
         self.narrate('Khi t nhỏ hơn sáu, hiệu hai bình phương âm. '
@@ -819,10 +819,10 @@ class TraiPhang19Master(BaseLesson):
 
     def tie(self):
         self.clear_all();self.add_hud('Tại t=6: hai kiểu cùng ngắn nhất','11 / 14')
-        self.add(model_with_routes(6.,('I','II')))
+        self.add(model_with_routes(6.,('I','I I')))
         self.show_card('ĐIỂM CHUYỂN PHƯƠNG ÁN',[
             ('math','t=6',29,CYAN),
-            ('math','L_I=L_(II)',30,INK),
+            ('math','L_I=L_(I I)',30,INK),
             ('math','L_(min)=sqrt(136)=2 sqrt(34)',29,GOLD),
             ('text','Hai dải khác nhau, độ dài bằng nhau.',18,GREEN),
         ],GOLD)
@@ -833,11 +833,11 @@ class TraiPhang19Master(BaseLesson):
 
     def high_height(self):
         self.clear_all();self.add_hud('Khi t lớn hơn 6: đi qua mặt trước và mặt phải','12 / 14')
-        self.add(model_with_routes(9.,('II','I')))
+        self.add(model_with_routes(9.,('I I','I')))
         self.show_card('TRÊN 6 ĐẾN 10',[
             ('math','t>6',30,CYAN),
-            ('math','L_I^2-L_(II)^2>0',28,INK),
-            ('math','L_(II)<L_I',32,GREEN),
+            ('math','L_I^2-L_(I I)^2>0',28,INK),
+            ('math','L_(I I)<L_I',32,GREEN),
             ('text','Chọn dải trước → phải.',18,GOLD),
         ],GREEN)
         self.narrate('Khi t lớn hơn sáu, hiệu hai bình phương dương. '
@@ -848,7 +848,7 @@ class TraiPhang19Master(BaseLesson):
         self.clear_all();self.add_hud('Quan sát hai đường cùng thay đổi theo t','13 / 14')
         t=ValueTracker(2.0)
         model=always_redraw(lambda:model_with_routes(
-            t.get_value(), ('I','II') if t.get_value()<=6 else ('II','I')))
+            t.get_value(), ('I','I I') if t.get_value()<=6 else ('I I','I')))
         self.add(model)
         self.show_card('QUY TẮC CHỌN THEO t',[
             ('text','2 ≤ t < 6: chọn mặt trái và nắp.',18,BLUE),
@@ -864,7 +864,7 @@ class TraiPhang19Master(BaseLesson):
 
     def conclusion(self):
         self.clear_all();self.add_hud('Chốt bài toán tham số','14 / 14')
-        self.add(model_with_routes(6.,('I','II')))
+        self.add(model_with_routes(6.,('I','I I')))
         self.show_card('HÀM GIÁ TRỊ NHỎ NHẤT',[
             ('text','2 ≤ t ≤ 6:',18,BLUE),
             ('math','L_(min)=sqrt((t+4)^2+36)',26,BLUE),
@@ -889,7 +889,7 @@ class Smoke19(ThreeDScene):
     def construct(self):
         geometry_preflight(False)
         self.set_camera_orientation(phi=CAM_PHI,theta=CAM_THETA,zoom=0.94)
-        for name,t in [('I',4.),('II',8.)]:
+        for name,t in [('I',4.),('I I',8.)]:
             chain=ROUTES[name];data=unfold_chain(chain,t)
             a=unfolding_face_mob(chain[0],t,start=True)
             b=unfolding_face_mob(chain[1],t,end=True)
