@@ -74,7 +74,7 @@ jobs:
         with:
           name: COMB01-V2-${{ inputs.quality }}-voice-${{ inputs.voice }}
           path: |
-            media/videos/**/COMB01.mp4
+            Series-Dai-So-To-Hop/media/videos/**/COMB01.mp4
             Series-Dai-So-To-Hop/qa_comb01_v2/
             Series-Dai-So-To-Hop/narration_COMB01_v2.md
             Series-Dai-So-To-Hop/voice/comb01_voice_manifest.json
