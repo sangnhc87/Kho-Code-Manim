@@ -1,0 +1,691 @@
+1
+00:00:00,000 --> 00:00:05,452
+Ta bắt đầu với biểu thức (a cộng b) nhân (a cộng b).
+
+2
+00:00:05,452 --> 00:00:13,419
+Khi thực hiện phép nhân, ở mỗi ngoặc ta phải lấy một trong hai số hạng: a hoặc b.
+
+3
+00:00:13,419 --> 00:00:18,871
+Vì vậy, một tích được xác định bởi hai lựa chọn liên tiếp.
+
+4
+00:00:18,871 --> 00:00:26,000
+Ta hãy quan sát toàn bộ các lựa chọn trước khi vội viết công thức khai triển.
+
+5
+00:00:26,000 --> 00:00:32,882
+Có bốn con đường: chọn a rồi a, a rồi b, b rồi a, và b rồi b.
+
+6
+00:00:32,882 --> 00:00:39,000
+Chúng tạo ra lần lượt các tích a bình phương, ab, ba và b bình phương.
+
+7
+00:00:39,000 --> 00:00:48,559
+Hai con đường ở giữa khác nhau về vị trí đã chọn, nhưng do phép nhân có tính giao hoán nên cùng cho tích ab.
+
+8
+00:00:48,559 --> 00:00:52,000
+Đây là nguyên nhân xuất hiện hệ số hai.
+
+9
+00:00:52,000 --> 00:00:57,688
+Hãy theo dõi hai thẻ AB và BA cùng di chuyển vào một nhóm.
+
+10
+00:00:57,688 --> 00:01:05,406
+Dù chúng biểu diễn hai cách chọn khác nhau, cả hai đều đóng góp vào cùng đơn thức ab.
+
+11
+00:01:05,406 --> 00:01:09,469
+Do đó, khi thu gọn, ta thu được hai ab.
+
+12
+00:01:09,469 --> 00:01:18,000
+Hệ số trong khai triển không phải con số bí ẩn: nó đếm số cách tạo ra đơn thức tương ứng.
+
+13
+00:01:18,000 --> 00:01:25,129
+Ta đã có một tích a bình phương, hai tích ab và một tích b bình phương.
+
+14
+00:01:25,129 --> 00:01:33,097
+Gom những đơn thức đồng dạng, kết quả là a bình phương cộng hai ab cộng b bình phương.
+
+15
+00:01:33,097 --> 00:01:44,000
+Các hệ số một, hai, một tương ứng với số cách chọn b không lần nào, đúng một lần, và đúng hai lần từ hai ngoặc.
+
+16
+00:01:44,000 --> 00:01:52,400
+Muốn tạo tích ab, ta chỉ cần chọn ngoặc nào đóng góp b; ngoặc còn lại bắt buộc đóng góp a.
+
+17
+00:01:52,400 --> 00:02:00,400
+Có hai vị trí để chọn, nên hệ số bằng hai, tức là số tổ hợp chập một của hai.
+
+18
+00:02:00,400 --> 00:02:10,000
+Cách nhìn này nối trực tiếp phép nhân đa thức với phép đếm tổ hợp mà chúng ta vừa học ở những video trước.
+
+19
+00:02:10,000 --> 00:02:13,649
+Tổng cộng có bốn con đường lựa chọn.
+
+20
+00:02:13,649 --> 00:02:22,316
+Chia chúng theo số lần chọn b, ta thu được ba nhóm có kích thước một, hai và một.
+
+21
+00:02:22,316 --> 00:02:27,333
+Tổng các kích thước là bốn, đúng bằng hai mũ hai.
+
+22
+00:02:27,333 --> 00:02:36,000
+Đó là một phép kiểm tra: không có con đường nào bị bỏ sót hoặc được tính hai lần.
+
+23
+00:02:36,000 --> 00:02:40,262
+Bây giờ hãy nhân thêm một ngoặc a cộng b.
+
+24
+00:02:40,262 --> 00:02:49,639
+Mỗi con đường của bài hai ngoặc sẽ tách thành hai nhánh: nhánh chọn a và nhánh chọn b ở ngoặc mới.
+
+25
+00:02:49,639 --> 00:02:55,180
+Vì vậy từ bốn con đường, chúng ta thu được tám con đường.
+
+26
+00:02:55,180 --> 00:03:02,000
+Ta sẽ tìm cách gom chúng mà không cần nhân đa thức một cách máy móc.
+
+27
+00:03:02,000 --> 00:03:08,276
+Tám dãy lựa chọn là AAA, AAB, ABA, ABB, BAA, BAB, BBA và BBB.
+
+28
+00:03:08,276 --> 00:03:14,103
+Mỗi chữ cho biết số hạng được lấy từ một ngoặc nhất định.
+
+29
+00:03:14,103 --> 00:03:20,379
+Chẳng hạn AAB nghĩa là hai ngoặc đầu chọn a, ngoặc cuối chọn b.
+
+30
+00:03:20,379 --> 00:03:28,000
+Cần phân biệt dãy lựa chọn với tích thu được sau khi sử dụng tính giao hoán.
+
+31
+00:03:28,000 --> 00:03:36,387
+Ta chia tám dãy thành bốn nhóm theo số lần xuất hiện chữ B. Nhóm không có B gồm AAA.
+
+32
+00:03:36,387 --> 00:03:44,774
+Nhóm có đúng một B gồm AAB, ABA và BAA. Nhóm có đúng hai B gồm ABB, BAB và BBA.
+
+33
+00:03:44,774 --> 00:03:54,000
+Nhóm có ba B chỉ gồm BBB. Bốn nhóm này đôi một không giao nhau và bao phủ toàn bộ tám dãy.
+
+34
+00:03:54,000 --> 00:03:59,633
+Mỗi dãy trong cùng một nhóm tạo ra một đơn thức giống nhau.
+
+35
+00:03:59,633 --> 00:04:14,367
+Nhóm không có B tạo a lập phương; nhóm có một B tạo a bình phương nhân b; nhóm có hai B tạo a nhân b bình phương; nhóm cuối tạo b lập phương.
+
+36
+00:04:14,367 --> 00:04:20,000
+Vì thế các hệ số lần lượt là một, ba, ba và một.
+
+37
+00:04:20,000 --> 00:04:24,145
+Vì sao hệ số của a bình phương b bằng ba?
+
+38
+00:04:24,145 --> 00:04:31,304
+Ta cần chọn đúng một ngoặc để lấy b trong ba ngoặc. Có ba cách chọn vị trí đó.
+
+39
+00:04:31,304 --> 00:04:39,217
+Tương tự, để tạo a nhân b bình phương, ta chọn hai trong ba ngoặc lấy b, cũng có ba cách.
+
+40
+00:04:39,217 --> 00:04:46,000
+Đây là lời giải thích bằng tổ hợp cho tính đối xứng của hai hệ số ở giữa.
+
+41
+00:04:46,000 --> 00:04:53,719
+Ta hãy thử thay cả a và b bằng một. Vế trái trở thành hai mũ ba, tức tám.
+
+42
+00:04:53,719 --> 00:04:59,406
+Vế phải trở thành một cộng ba cộng ba cộng một, cũng bằng tám.
+
+43
+00:04:59,406 --> 00:05:06,719
+Phép thay này không thay thế chứng minh nhưng kiểm tra được tổng số con đường lựa chọn.
+
+44
+00:05:06,719 --> 00:05:12,000
+Nếu tổng khác tám, chắc chắn ta đã bỏ sót hoặc đếm trùng.
+
+45
+00:05:12,000 --> 00:05:18,710
+Khi có bốn ngoặc a cộng b, mỗi ngoặc lại cho hai lựa chọn độc lập.
+
+46
+00:05:18,710 --> 00:05:26,258
+Tổng số dãy lựa chọn là hai mũ bốn, tức mười sáu, chứ không phải bốn giai thừa.
+
+47
+00:05:26,258 --> 00:05:32,129
+Ta hãy quan sát mười sáu dãy và không cố ghi hết các tích.
+
+48
+00:05:32,129 --> 00:05:38,000
+Điều cần biết là có bao nhiêu dãy dẫn đến cùng một đơn thức.
+
+49
+00:05:38,000 --> 00:05:48,111
+Muốn tạo a mũ bốn, cả bốn ngoặc đều phải chọn a. Chỉ có một dãy AAAA đáp ứng yêu cầu.
+
+50
+00:05:48,111 --> 00:05:58,704
+Đây cũng là số cách chọn không vị trí nào trong bốn vị trí để lấy b: chỉ có một tập rỗng.
+
+51
+00:05:58,704 --> 00:06:04,000
+Vì vậy hệ số đầu tiên của khai triển bằng một.
+
+52
+00:06:04,000 --> 00:06:12,667
+Muốn tạo a mũ ba nhân b, ta phải chọn đúng một trong bốn ngoặc để lấy b.
+
+53
+00:06:12,667 --> 00:06:20,370
+Vị trí được chọn có thể là thứ nhất, thứ hai, thứ ba hoặc thứ tư.
+
+54
+00:06:20,370 --> 00:06:30,000
+Như vậy có bốn dãy cho cùng đơn thức a mũ ba b, nên hệ số của nó bằng bốn.
+
+55
+00:06:30,000 --> 00:06:39,414
+Tiếp theo, muốn có a bình phương b bình phương, ta phải chọn đúng hai trong bốn ngoặc đóng góp b.
+
+56
+00:06:39,414 --> 00:06:47,931
+Có sáu cặp vị trí khác nhau. Mỗi cặp cho cùng đơn thức a bình phương b bình phương.
+
+57
+00:06:47,931 --> 00:06:56,000
+Vì vậy hệ số của đơn thức này là sáu, tức số tổ hợp chập hai của bốn.
+
+58
+00:06:56,000 --> 00:07:05,533
+Chọn ba ngoặc lấy b tương đương với việc xác định ngoặc duy nhất còn lại lấy a, nên có bốn cách.
+
+59
+00:07:05,533 --> 00:07:14,633
+Chọn cả bốn ngoặc lấy b chỉ có một cách. Ta thu được dãy hệ số một, bốn, sáu, bốn, một.
+
+60
+00:07:14,633 --> 00:07:22,000
+Hai phía đối xứng bởi phép chọn tập vị trí và chọn phần bù của tập đó.
+
+61
+00:07:22,000 --> 00:07:32,400
+Ghép các nhóm theo thứ tự từ không lần chọn b đến bốn lần chọn b, ta có khai triển của a cộng b tất cả mũ bốn.
+
+62
+00:07:32,400 --> 00:07:39,829
+Số mũ của a giảm dần từ bốn xuống không; số mũ của b tăng dần từ không lên bốn.
+
+63
+00:07:39,829 --> 00:07:48,000
+Tổng hai số mũ trong mỗi đơn thức luôn bằng bốn vì mỗi tích lấy đúng một số hạng ở mỗi ngoặc.
+
+64
+00:07:48,000 --> 00:07:52,540
+Ta đã hiểu các trường hợp mũ hai, ba và bốn.
+
+65
+00:07:52,540 --> 00:07:58,730
+Bây giờ xét n ngoặc a cộng b, với n là số nguyên không âm.
+
+66
+00:07:58,730 --> 00:08:05,333
+Có hai lựa chọn ở mỗi ngoặc, nên tổng số con đường là hai mũ n.
+
+67
+00:08:05,333 --> 00:08:14,000
+Tuy nhiên, các con đường chỉ tạo ra n cộng một kiểu đơn thức, phân loại theo số lần chọn b.
+
+68
+00:08:14,000 --> 00:08:19,365
+Giả sử cần tạo a mũ n trừ k nhân b mũ k.
+
+69
+00:08:19,365 --> 00:08:27,619
+Khi đó chính xác k ngoặc phải đóng góp b, và n trừ k ngoặc còn lại đóng góp a.
+
+70
+00:08:27,619 --> 00:08:35,873
+Một khi đã chọn xong k vị trí lấy b, toàn bộ những lựa chọn khác đều được xác định.
+
+71
+00:08:35,873 --> 00:08:40,000
+Mỗi tập vị trí tạo ra đúng một con đường.
+
+72
+00:08:40,000 --> 00:08:44,761
+Vậy có bao nhiêu cách chọn k vị trí từ n vị trí?
+
+73
+00:08:44,761 --> 00:08:53,915
+Vì các vị trí được chọn không mang thứ tự riêng, đáp án là số tổ hợp với n ở trên và k ở dưới.
+
+74
+00:08:53,915 --> 00:09:01,972
+Số tổ hợp ấy cũng là số con đường tạo ra đơn thức a mũ n trừ k nhân b mũ k.
+
+75
+00:09:01,972 --> 00:09:06,000
+Đây chính là ý nghĩa của hệ số trong công thức.
+
+76
+00:09:06,000 --> 00:09:10,522
+Cho k lần lượt nhận các giá trị từ không đến n.
+
+77
+00:09:10,522 --> 00:09:18,812
+Mỗi giá trị k tạo một kiểu đơn thức khác nhau, với hệ số là số tổ hợp chập k của n.
+
+78
+00:09:18,812 --> 00:09:24,841
+Cộng các đóng góp của tất cả các kiểu, ta có công thức Nhị thức Newton.
+
+79
+00:09:24,841 --> 00:09:32,000
+Như vậy công thức được suy ra từ phép chọn, không phải từ một bảng số học thuộc lòng.
+
+80
+00:09:32,000 --> 00:09:35,421
+Hai trường hợp ở đầu và cuối rất dễ hiểu.
+
+81
+00:09:35,421 --> 00:09:42,605
+Khi k bằng không, không ngoặc nào được chọn để lấy b, nên hệ số của a mũ n là một.
+
+82
+00:09:42,605 --> 00:09:49,447
+Khi k bằng n, cả n ngoặc đều lấy b, nên hệ số của b mũ n cũng là một.
+
+83
+00:09:49,447 --> 00:09:58,000
+Hơn nữa, chọn k vị trí cho b tương đương chọn n trừ k vị trí cho a; các hệ số vì thế đối xứng.
+
+84
+00:09:58,000 --> 00:10:02,829
+Tập tất cả các con đường có thể được đếm theo hai cách.
+
+85
+00:10:02,829 --> 00:10:07,657
+Đếm trực tiếp, mỗi ngoặc cho hai lựa chọn, được hai mũ n.
+
+86
+00:10:07,657 --> 00:10:15,457
+Đếm theo số lần chọn b, ta lấy tổng các số tổ hợp từ k bằng không đến k bằng n.
+
+87
+00:10:15,457 --> 00:10:20,286
+Hai kết quả phải bằng nhau vì đang đếm cùng một tập hợp.
+
+88
+00:10:20,286 --> 00:10:24,000
+Đây là một đồng nhất thức tổ hợp quan trọng.
+
+89
+00:10:24,000 --> 00:10:34,136
+Áp dụng công thức với a bằng một và b bằng x, ta xét biểu thức một cộng x tất cả mũ năm.
+
+90
+00:10:34,136 --> 00:10:42,068
+Không cần nhân từng ngoặc, ta vẫn có thể xác định hệ số của từng lũy thừa x.
+
+91
+00:10:42,068 --> 00:10:50,000
+Hệ số của x mũ k chính là số cách chọn k trong năm ngoặc đóng góp x.
+
+92
+00:10:50,000 --> 00:10:57,172
+Muốn tạo hạng tử chứa x mũ một, ta chọn đúng một ngoặc để lấy x.
+
+93
+00:10:57,172 --> 00:11:06,138
+Bốn ngoặc còn lại đều lấy một. Có năm vị trí để chọn, nên hệ số của x bằng năm.
+
+94
+00:11:06,138 --> 00:11:16,000
+Đây là phép đếm vị trí rất trực quan: ta chỉ cần cho thẻ x lần lượt sáng lên ở năm ngoặc.
+
+95
+00:11:16,000 --> 00:11:23,016
+Muốn tạo x bình phương, ta cần đúng hai ngoặc lấy x và ba ngoặc lấy một.
+
+96
+00:11:23,016 --> 00:11:27,556
+Có mười cách chọn hai vị trí trong năm vị trí.
+
+97
+00:11:27,556 --> 00:11:33,333
+Vì mỗi cách đều cho cùng một x bình phương, hệ số bằng mười.
+
+98
+00:11:33,333 --> 00:11:42,000
+Không dùng chỉnh hợp ở đây, bởi đổi thứ tự hai vị trí đã chọn không tạo thêm một cách mới.
+
+99
+00:11:42,000 --> 00:11:50,211
+Các hệ số từ bậc không đến bậc năm lần lượt là một, năm, mười, mười, năm, một.
+
+100
+00:11:50,211 --> 00:11:56,596
+Viết các lũy thừa x tương ứng, ta thu được khai triển hoàn chỉnh.
+
+101
+00:11:56,596 --> 00:12:08,000
+Dãy hệ số đối xứng quanh giữa vì chọn k vị trí cho x tương đương chọn năm trừ k vị trí cho số một.
+
+102
+00:12:08,000 --> 00:12:12,800
+Nếu cần tính tổng các hệ số, ta thay x bằng một.
+
+103
+00:12:12,800 --> 00:12:20,800
+Khi đó mỗi lũy thừa x đều bằng một, nên giá trị đa thức đúng bằng tổng các hệ số.
+
+104
+00:12:20,800 --> 00:12:25,200
+Vế trái trở thành hai mũ năm, tức ba mươi hai.
+
+105
+00:12:25,200 --> 00:12:34,000
+Cách làm này nhanh hơn cộng từng số và có ý nghĩa là đếm toàn bộ các lựa chọn của năm ngoặc.
+
+106
+00:12:34,000 --> 00:12:41,761
+Thay x bằng âm một thì các hạng tử bậc chẵn giữ dấu dương, còn bậc lẻ mang dấu âm.
+
+107
+00:12:41,761 --> 00:12:48,746
+Vế trái trở thành không, do đó tổng hệ số bậc chẵn bằng tổng hệ số bậc lẻ.
+
+108
+00:12:48,746 --> 00:13:00,000
+Ta sẽ gặp lại những hệ thức như vậy ở phần tổng hệ số nhị thức; ở đây hãy ghi nhớ cách chọn giá trị thay vào biểu thức.
+
+109
+00:13:00,000 --> 00:13:04,262
+Xét biểu thức x trừ hai tất cả mũ năm.
+
+110
+00:13:04,262 --> 00:13:10,230
+Ta viết nó thành x cộng âm hai rồi áp dụng Nhị thức Newton.
+
+111
+00:13:10,230 --> 00:13:17,902
+Quy tắc chọn vị trí không thay đổi: trong năm ngoặc, mỗi ngoặc chọn x hoặc âm hai.
+
+112
+00:13:17,902 --> 00:13:26,000
+Điều mới xuất hiện là dấu của tích sẽ phụ thuộc vào số lần chúng ta chọn âm hai.
+
+113
+00:13:26,000 --> 00:13:31,365
+Nếu có k ngoặc chọn âm hai, những ngoặc còn lại chọn x.
+
+114
+00:13:31,365 --> 00:13:37,143
+Tích tương ứng chứa x mũ năm trừ k nhân âm hai mũ k.
+
+115
+00:13:37,143 --> 00:13:44,159
+Số cách chọn các ngoặc đóng góp âm hai là số tổ hợp chập k của năm.
+
+116
+00:13:44,159 --> 00:13:52,000
+Bởi vậy hạng tử tổng quát bằng số tổ hợp ấy nhân với giá trị tích vừa xác định.
+
+117
+00:13:52,000 --> 00:13:58,290
+Mỗi lần chọn thêm một thừa số âm hai, dấu của tích đổi một lần.
+
+118
+00:13:58,290 --> 00:14:05,000
+Khi k chẵn, âm hai mũ k dương; khi k lẻ, âm hai mũ k âm.
+
+119
+00:14:05,000 --> 00:14:14,226
+Các hệ số mang dấu xen kẽ, nhưng độ lớn vẫn được tính từ số tổ hợp và lũy thừa của hai.
+
+120
+00:14:14,226 --> 00:14:18,000
+Chúng ta phải xét dấu trước khi kết luận.
+
+121
+00:14:18,000 --> 00:14:24,190
+Tìm hệ số của x mũ ba trong x trừ hai tất cả mũ năm.
+
+122
+00:14:24,190 --> 00:14:29,556
+Trong hạng tử tổng quát, số mũ của x là năm trừ k.
+
+123
+00:14:29,556 --> 00:14:34,095
+Đặt năm trừ k bằng ba, ta được k bằng hai.
+
+124
+00:14:34,095 --> 00:14:44,000
+Hệ số cần tìm bằng số tổ hợp chập hai của năm nhân âm hai bình phương, tức mười nhân bốn bằng bốn mươi.
+
+125
+00:14:44,000 --> 00:14:48,469
+Đừng nhầm với bài một trừ x tất cả mũ năm.
+
+126
+00:14:48,469 --> 00:14:58,625
+Lúc này mỗi lần chọn x làm số mũ tăng thêm một; do đó muốn có x mũ ba thì phải chọn x ba lần.
+
+127
+00:14:58,625 --> 00:15:05,938
+Hệ số bằng số tổ hợp chập ba của năm, kèm dấu âm vì ba là số lẻ.
+
+128
+00:15:05,938 --> 00:15:10,000
+Đáp án là âm mười, hoàn toàn khác bài trước.
+
+129
+00:15:10,000 --> 00:15:18,938
+Đối với a trừ b tất cả mũ n, ta có thể giữ nguyên công thức rồi thay b bằng âm b.
+
+130
+00:15:18,938 --> 00:15:25,438
+Mỗi hạng tử với k lần chọn b xuất hiện nhân tử âm một mũ k.
+
+131
+00:15:25,438 --> 00:15:36,000
+Như vậy dấu của từng hạng tử được suy ra từ số lần chọn số hạng âm; không cần học thuộc một bảng dấu riêng biệt.
+
+132
+00:15:36,000 --> 00:15:46,035
+Bây giờ xét biểu thức hai x trừ một tất cả mũ sáu. Ta cần tìm hệ số của x mũ ba.
+
+133
+00:15:46,035 --> 00:15:55,614
+Cách nhanh nhất là hỏi: trong sáu ngoặc, phải chọn hai x bao nhiêu lần để tạo đúng x mũ ba?
+
+134
+00:15:55,614 --> 00:16:02,000
+Câu trả lời là ba lần; ba ngoặc còn lại phải lấy âm một.
+
+135
+00:16:02,000 --> 00:16:07,200
+Có hai mươi cách chọn ba vị trí từ sáu vị trí.
+
+136
+00:16:07,200 --> 00:16:16,300
+Mỗi bộ ba được chọn xác định chính xác những ngoặc lấy hai x; các ngoặc còn lại lấy âm một.
+
+137
+00:16:16,300 --> 00:16:23,233
+Không cần sắp thứ tự ba vị trí vì chúng cùng đóng vai trò như nhau.
+
+138
+00:16:23,233 --> 00:16:28,000
+Như vậy hệ số tổ hợp ở đây bằng hai mươi.
+
+139
+00:16:28,000 --> 00:16:37,123
+Ba thừa số hai x tạo ra tám x mũ ba. Ba thừa số âm một tạo tích âm một.
+
+140
+00:16:37,123 --> 00:16:44,877
+Vậy với mỗi cách chọn vị trí, đơn thức sinh ra là âm tám x mũ ba.
+
+141
+00:16:44,877 --> 00:16:54,000
+Chúng ta phải phân biệt số cách chọn là hai mươi với hệ số của mỗi tích là âm tám.
+
+142
+00:16:54,000 --> 00:17:02,531
+Nhân hai mươi cách chọn với âm tám từ mỗi tích, ta thu được hệ số âm một trăm sáu mươi.
+
+143
+00:17:02,531 --> 00:17:10,656
+Nhờ Nhị thức Newton, ta giải bài toán mà không phải viết toàn bộ bảy hạng tử của khai triển.
+
+144
+00:17:10,656 --> 00:17:20,000
+Khi làm bài tương tự, hãy xác định rõ phần nào cho biến x và phần nào tạo ra hệ số số học.
+
+145
+00:17:20,000 --> 00:17:26,958
+Nếu thay yêu cầu bằng hệ số của x bình phương, ta chỉ chọn hai ngoặc lấy hai x.
+
+146
+00:17:26,958 --> 00:17:32,817
+Bốn ngoặc còn lại lấy âm một; bốn dấu âm nhân với nhau cho dấu dương.
+
+147
+00:17:32,817 --> 00:17:39,775
+Có mười lăm cách chọn vị trí, mỗi tích có hệ số bốn, nên kết quả là sáu mươi.
+
+148
+00:17:39,775 --> 00:17:46,000
+Một thay đổi nhỏ ở số mũ đã làm thay đổi cả số cách chọn lẫn dấu.
+
+149
+00:17:46,000 --> 00:17:51,595
+Ta có một quy trình ba bước. Thứ nhất, xác định lũy thừa của biến cần tìm.
+
+150
+00:17:51,595 --> 00:17:58,506
+Thứ hai, viết số mũ của biến trong hạng tử tổng quát theo k và giải để tìm k thích hợp.
+
+151
+00:17:58,506 --> 00:18:04,430
+Thứ ba, lấy số tổ hợp nhân với hệ số từ từng thừa số, chú ý dấu âm.
+
+152
+00:18:04,430 --> 00:18:12,000
+Ở bài có tích hai nhị thức, có thể có nhiều cặp lựa chọn k cùng đóng góp và ta phải cộng chúng.
+
+153
+00:18:12,000 --> 00:18:22,400
+Bài toán cuối: tìm hệ số của x mũ ba trong tích một cộng x tất cả mũ bốn với một cộng hai x tất cả mũ ba.
+
+154
+00:18:22,400 --> 00:18:27,229
+Lần này, x mũ ba có thể đến từ cả hai nhân tử.
+
+155
+00:18:27,229 --> 00:18:35,029
+Nếu chỉ chọn một hạng tử ở một nhân tử rồi bỏ qua nhân tử còn lại, ta sẽ đếm thiếu.
+
+156
+00:18:35,029 --> 00:18:38,000
+Ta cần chia đầy đủ các trường hợp.
+
+157
+00:18:38,000 --> 00:18:43,115
+Gọi i là số mũ x lấy từ nhân tử thứ nhất.
+
+158
+00:18:43,115 --> 00:18:49,082
+Khi đó nhân tử thứ hai phải cung cấp x mũ ba trừ i.
+
+159
+00:18:49,082 --> 00:18:56,328
+Vì cả hai số mũ đều không âm, i có thể bằng không, một, hai hoặc ba.
+
+160
+00:18:56,328 --> 00:19:04,000
+Bốn trường hợp này không giao nhau và bao phủ tất cả những cách tạo x mũ ba.
+
+161
+00:19:04,000 --> 00:19:11,429
+Trường hợp i bằng không: nhân tử thứ nhất chọn toàn số một, có một cách.
+
+162
+00:19:11,429 --> 00:19:23,964
+Nhân tử thứ hai chọn hai x ở cả ba ngoặc, cũng chỉ có một cách; giá trị tích hệ số bằng hai mũ ba, tức tám.
+
+163
+00:19:23,964 --> 00:19:30,000
+Đây là đóng góp đầu tiên vào hệ số của x mũ ba.
+
+164
+00:19:30,000 --> 00:19:34,899
+Nếu i bằng một, nhân tử thứ nhất có bốn cách chọn x.
+
+165
+00:19:34,899 --> 00:19:44,696
+Nhân tử thứ hai cần hai lần chọn hai x, có ba cách và mỗi tích đóng góp hệ số bốn, nên được bốn mươi tám.
+
+166
+00:19:44,696 --> 00:19:56,000
+Nếu i bằng hai, ta có sáu cách ở nhân tử đầu và ba cách chọn một lần hai x ở nhân tử sau; đóng góp là ba mươi sáu.
+
+167
+00:19:56,000 --> 00:20:04,233
+Trường hợp i bằng ba: nhân tử thứ nhất chọn ba trong bốn ngoặc lấy x, có bốn cách.
+
+168
+00:20:04,233 --> 00:20:11,600
+Nhân tử thứ hai không chọn hai x lần nào, nên hệ số bổ sung bằng một.
+
+169
+00:20:11,600 --> 00:20:14,200
+Đóng góp cuối cùng là bốn.
+
+170
+00:20:14,200 --> 00:20:22,000
+Như vậy chúng ta đã xét hết bốn cách phân chia số mũ ba giữa hai nhân tử.
+
+171
+00:20:22,000 --> 00:20:28,240
+Cộng các đóng góp tám, bốn mươi tám, ba mươi sáu và bốn, ta được chín mươi sáu.
+
+172
+00:20:28,240 --> 00:20:38,987
+Điều quan trọng là mỗi trường hợp tương ứng với một số mũ x cụ thể từ nhân tử thứ nhất, vì vậy không có kết quả nào bị đếm trùng.
+
+173
+00:20:38,987 --> 00:20:48,000
+Bài toán cho thấy Nhị thức Newton không chỉ giúp khai triển nhanh mà còn tổ chức lời giải của những tích đa thức phức tạp.

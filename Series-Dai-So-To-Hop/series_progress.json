@@ -1,5 +1,5 @@
 {
-  "project": "SangMath - Đại số tổ hợp",
+  "project": "SangMath - Dai so to hop",
   "episodes_ready_as_source": [
     1,
     2,
@@ -11,19 +11,26 @@
     8,
     9,
     10,
-    11
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
   ],
   "rendered_and_visual_QA_done": [],
   "latest": {
-    "episode": "COMB11",
-    "topic": "Hoán vị vòng tròn",
+    "episode": "COMB18",
+    "topic": "Tam giac Pascal va cac tinh chat",
     "chapters": 8,
     "beats": 48,
-    "narration_words": 2922,
-    "silent_target_seconds": 1073.2,
-    "scene": "episodes/comb11_circular_permutations.py",
-    "class": "COMB11",
-    "workflow": ".github/workflows/render-comb11-v2.yml"
+    "narration_words": 3289,
+    "silent_target_seconds": 1157.2,
+    "scene": "episodes/comb18_pascal_triangle.py",
+    "class": "COMB18",
+    "workflow": ".github/workflows/render-comb18-v2.yml"
   },
-  "caveat": "All sources require first real Manim/Typst render on GitHub Actions for QA."
+  "caveat": "Math/Python tests passed; real Manim/Typst rendering and audiovisual QA must be checked on GitHub Actions."
 }

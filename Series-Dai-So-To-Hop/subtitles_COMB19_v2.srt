@@ -1,0 +1,811 @@
+1
+00:00:00,000 --> 00:00:03,568
+Hãy quan sát ba thẻ A, B, C ở bên trái.
+
+2
+00:00:03,568 --> 00:00:09,405
+Một tập con được tạo bằng cách quyết định đối với từng thẻ: giữ lại hay không giữ.
+
+3
+00:00:09,405 --> 00:00:15,892
+Không hề có yêu cầu phải lấy ít nhất một thẻ. Vì vậy, tập rỗng cũng là một tập con.
+
+4
+00:00:15,892 --> 00:00:24,000
+Ta sẽ liệt kê các khả năng một cách có hệ thống, thay vì đoán số lượng từ một công thức chưa được giải thích.
+
+5
+00:00:24,000 --> 00:00:29,514
+Nếu cả ba công tắc đều ở trạng thái không chọn, chúng ta nhận được tập rỗng.
+
+6
+00:00:29,514 --> 00:00:32,757
+Đó chính là một tập con hợp lệ của S.
+
+7
+00:00:32,757 --> 00:00:37,297
+Học sinh thường bỏ sót trường hợp này và kết quả sẽ thiếu một.
+
+8
+00:00:37,297 --> 00:00:41,514
+Ta cần phân biệt khái niệm tập con với tập con khác rỗng.
+
+9
+00:00:41,514 --> 00:00:48,000
+Bây giờ hãy bật một công tắc và xem một phần tử được đưa vào tập con như thế nào.
+
+10
+00:00:48,000 --> 00:00:53,829
+Khi chỉ chọn một thẻ, ta có ba tập con: chỉ A, chỉ B hoặc chỉ C.
+
+11
+00:00:53,829 --> 00:01:00,343
+Chẳng hạn viết A trước hay sau một dấu ngoặc không làm thay đổi bản chất của tập hợp.
+
+12
+00:01:00,343 --> 00:01:07,886
+Với hai phần tử, thứ tự A rồi B và B rồi A cũng không tạo ra hai tập con khác nhau.
+
+13
+00:01:07,886 --> 00:01:12,000
+Quy ước ấy rất quan trọng để về sau không đếm trùng.
+
+14
+00:01:12,000 --> 00:01:14,880
+Ta tiếp tục chọn đúng hai trong ba thẻ.
+
+15
+00:01:14,880 --> 00:01:19,360
+Ba kết quả là A với B, A với C và B với C.
+
+16
+00:01:19,360 --> 00:01:22,560
+Những trường hợp đảo thứ tự không được tính thêm.
+
+17
+00:01:22,560 --> 00:01:30,240
+Đây chính là đối tượng mà công thức tổ hợp đếm: chọn một nhóm có số phần tử xác định, không xét thứ tự.
+
+18
+00:01:30,240 --> 00:01:36,000
+Từ ví dụ nhỏ, ta đã tạo được liên hệ trực tiếp với kiến thức ở Video 07.
+
+19
+00:01:36,000 --> 00:01:40,056
+Còn một trường hợp: cả A, B và C đều được chọn.
+
+20
+00:01:40,056 --> 00:01:45,127
+Khi đó tập con trùng với tập ban đầu S, và hoàn toàn hợp lệ.
+
+21
+00:01:45,127 --> 00:01:53,915
+Đến đây ta có một tập rỗng, ba tập con một phần tử, ba tập con hai phần tử và một tập con ba phần tử.
+
+22
+00:01:53,915 --> 00:02:00,000
+Hãy dừng hình để học sinh tự cộng lại trước khi số tám xuất hiện ở phía phải.
+
+23
+00:02:00,000 --> 00:02:04,216
+Chúng ta cộng một, ba, ba và một, nhận được tám tập con.
+
+24
+00:02:04,216 --> 00:02:12,000
+Cách chia theo số phần tử bảo đảm không bỏ sót: mỗi tập con có một kích thước xác định từ không đến ba.
+
+25
+00:02:12,000 --> 00:02:16,865
+Đồng thời, không thể thuộc hai nhóm kích thước khác nhau, nên không đếm trùng.
+
+26
+00:02:16,865 --> 00:02:24,000
+Ở phần tiếp theo, ta sẽ tìm một cách khác giải thích số tám mà không cần viết ra từng tập con.
+
+27
+00:02:24,000 --> 00:02:28,667
+Thay vì liệt kê tập con, ta gắn cho mỗi thẻ một công tắc.
+
+28
+00:02:28,667 --> 00:02:35,333
+Chọn được ký hiệu bằng một, không chọn bằng không. Cả ba công tắc có thể bật tắt độc lập.
+
+29
+00:02:35,333 --> 00:02:42,333
+Mỗi công tắc có hai trạng thái nên theo quy tắc nhân, có hai nhân hai nhân hai cách thiết lập.
+
+30
+00:02:42,333 --> 00:02:48,000
+Điều cần lưu ý là mỗi thiết lập tương ứng đúng một tập con, và ngược lại.
+
+31
+00:02:48,000 --> 00:02:53,514
+Một dãy gồm ba chữ số không và một chỉ là mã để ghi trạng thái chọn.
+
+32
+00:02:53,514 --> 00:02:56,757
+Chẳng hạn mã không, không, không tương ứng tập rỗng.
+
+33
+00:02:56,757 --> 00:03:02,919
+Ta không đang đếm các số có ba chữ số, vì chữ số đầu bằng không vẫn được phép.
+
+34
+00:03:02,919 --> 00:03:08,432
+Đây là dãy trạng thái của ba phần tử, và ba vị trí có vai trò riêng.
+
+35
+00:03:08,432 --> 00:03:12,000
+Sự phân biệt nhỏ này tránh một lỗi đếm thường gặp.
+
+36
+00:03:12,000 --> 00:03:13,823
+Hãy nhìn mã một, không, một.
+
+37
+00:03:13,823 --> 00:03:22,025
+Trạng thái thứ nhất bật nên A được chọn; trạng thái thứ hai tắt nên B bị bỏ; trạng thái thứ ba bật nên C được chọn.
+
+38
+00:03:22,025 --> 00:03:24,759
+Do đó mã tương ứng tập A và C.
+
+39
+00:03:24,759 --> 00:03:31,139
+Nếu ta bắt đầu từ một tập con bất kỳ, ta cũng xác định ngược lại được chính xác một mã.
+
+40
+00:03:31,139 --> 00:03:36,000
+Đây là một song ánh, tức quan hệ một đối một giữa hai bộ đối tượng.
+
+41
+00:03:36,000 --> 00:03:37,714
+Bây giờ thêm thẻ D.
+
+42
+00:03:37,714 --> 00:03:45,943
+Với mỗi tập con đã có từ ba thẻ đầu tiên, ta được đúng hai tập con mới: không có D hoặc có D.
+
+43
+00:03:45,943 --> 00:03:50,057
+Do đó tám tập con cũ tạo thành mười sáu tập con.
+
+44
+00:03:50,057 --> 00:03:55,200
+Hình động sẽ cho thấy các thẻ bên trái được nhân đôi thành hai tầng.
+
+45
+00:03:55,200 --> 00:04:00,000
+Ta không cần liệt kê mười sáu bộ bằng tay để biết kết quả.
+
+46
+00:04:00,000 --> 00:04:03,288
+Ta có thể chứng minh tổng quát bằng quy nạp.
+
+47
+00:04:03,288 --> 00:04:07,562
+Tập có không phần tử có đúng một tập con, là tập rỗng.
+
+48
+00:04:07,562 --> 00:04:13,151
+Giả sử một tập có n trừ một phần tử có một số cách chọn đã biết.
+
+49
+00:04:13,151 --> 00:04:20,384
+Khi thêm phần tử mới, mỗi tập con cũ sinh hai tập con, vì phần tử này hoặc được chọn hoặc không.
+
+50
+00:04:20,384 --> 00:04:24,000
+Như vậy số tập con tăng gấp đôi ở mỗi bước.
+
+51
+00:04:24,000 --> 00:04:31,407
+Kết luận: với n phần tử phân biệt, số tập con là hai mũ n, kể cả tập rỗng và toàn bộ tập ban đầu.
+
+52
+00:04:31,407 --> 00:04:35,852
+Khi n bằng không, hai mũ không bằng một, phù hợp trường hợp tập rỗng.
+
+53
+00:04:35,852 --> 00:04:42,074
+Công thức chỉ phụ thuộc số phần tử chứ không phụ thuộc tên gọi hay cách sắp thứ tự của chúng.
+
+54
+00:04:42,074 --> 00:04:48,000
+Tiếp theo, ta sẽ nối kết quả này với số tổ hợp C có n ở trên, k ở dưới.
+
+55
+00:04:48,000 --> 00:04:52,976
+Có một cách đếm thứ hai: phân loại tập con theo số lượng phần tử được chọn.
+
+56
+00:04:52,976 --> 00:05:00,000
+Nhóm đầu tiên có không phần tử, nhóm kế tiếp có một phần tử, cứ như vậy đến nhóm có đủ n phần tử.
+
+57
+00:05:00,000 --> 00:05:06,732
+Mỗi tập con xuất hiện trong đúng một nhóm theo kích thước, nên ta có thể cộng số tập con trong các nhóm.
+
+58
+00:05:06,732 --> 00:05:12,000
+Nhìn ở góc độ này, bài toán tạo cầu nối trực tiếp đến hệ số nhị thức Newton.
+
+59
+00:05:12,000 --> 00:05:20,364
+Bất kể tập ban đầu chứa bao nhiêu phần tử, luôn có đúng một cách chọn không phần tử: không chọn gì cả.
+
+60
+00:05:20,364 --> 00:05:26,909
+Ta ghi số cách bằng C có n ở trên, không ở dưới, và giá trị bằng một.
+
+61
+00:05:26,909 --> 00:05:36,000
+Đây không phải một công thức phải học thuộc máy móc; nó chính là cách diễn đạt của tập rỗng trong phép đếm tổ hợp.
+
+62
+00:05:36,000 --> 00:05:42,486
+Muốn tạo một tập con đúng k phần tử, ta chọn k phần tử trong n phần tử phân biệt.
+
+63
+00:05:42,486 --> 00:05:48,000
+Đó chính là bài toán tổ hợp đã học: thứ tự không tạo ra kết quả mới.
+
+64
+00:05:48,000 --> 00:05:53,514
+Vì vậy lớp kích thước k có C có n ở trên, k ở dưới phần tử.
+
+65
+00:05:53,514 --> 00:06:00,000
+Trực quan, các thẻ cùng số lượng được xếp trên một hàng để học sinh thấy rõ cách phân tầng.
+
+66
+00:06:00,000 --> 00:06:06,514
+Với năm phần tử, các số lượng theo kích thước lần lượt là một, năm, mười, mười, năm, một.
+
+67
+00:06:06,514 --> 00:06:12,000
+Ta nhận đúng hàng thứ năm của tam giác Pascal, rồi cộng được ba mươi hai.
+
+68
+00:06:12,000 --> 00:06:18,857
+Cảnh này sẽ giữ nguyên các lớp trong lúc tô sáng tổng hàng để nối trực tiếp với Video 18.
+
+69
+00:06:18,857 --> 00:06:24,000
+Học sinh không phải ghi nhớ một đẳng thức mới tách rời kiến thức cũ.
+
+70
+00:06:24,000 --> 00:06:26,667
+Đếm theo công tắc cho hai mũ n.
+
+71
+00:06:26,667 --> 00:06:33,000
+Đếm theo từng lớp kích thước cho tổng các hệ số tổ hợp từ k bằng không tới n.
+
+72
+00:06:33,000 --> 00:06:38,333
+Cả hai đều đếm đúng toàn bộ tập con của cùng một tập n phần tử.
+
+73
+00:06:38,333 --> 00:06:41,000
+Do vậy hai biểu thức phải bằng nhau.
+
+74
+00:06:41,000 --> 00:06:48,000
+Đây là chứng minh tổ hợp: chứng minh một đẳng thức bằng hai cách đếm, không cần khai triển đại số.
+
+75
+00:06:48,000 --> 00:06:52,800
+Nếu đề bài hỏi đúng k phần tử thì ta chỉ lấy một lớp.
+
+76
+00:06:52,800 --> 00:06:58,286
+Nếu hỏi nhiều nhất r phần tử thì lấy tổng các lớp từ không đến r.
+
+77
+00:06:58,286 --> 00:07:02,400
+Nếu hỏi số phần tử chẵn, ta cộng riêng các lớp chẵn.
+
+78
+00:07:02,400 --> 00:07:12,000
+Phân tầng không phải thao tác trang trí: nó chính là chiến lược toán học để đưa điều kiện phức tạp vào bài toán một cách chính xác.
+
+79
+00:07:12,000 --> 00:07:16,941
+Giả sử tập có năm phần tử và ta quan tâm riêng đến A.
+
+80
+00:07:16,941 --> 00:07:22,588
+Mỗi tập con hoặc chứa A, hoặc không chứa A, không có trường hợp thứ ba.
+
+81
+00:07:22,588 --> 00:07:27,882
+Hai lớp này không giao nhau và hợp của chúng là toàn bộ tập con.
+
+82
+00:07:27,882 --> 00:07:36,000
+Sơ đồ phía trái sẽ tách thành hai nhóm lớn để học sinh nhìn thấy phép phân hoạch trước khi tính số lượng.
+
+83
+00:07:36,000 --> 00:07:43,233
+Nếu đề yêu cầu tập con phải chứa A, ta không còn phải lựa chọn A nữa: A chắc chắn xuất hiện.
+
+84
+00:07:43,233 --> 00:07:49,808
+Bốn phần tử còn lại độc lập chọn hoặc không chọn, nên có hai mũ bốn bằng mười sáu cách.
+
+85
+00:07:49,808 --> 00:08:00,000
+Phải chú ý rằng đây là mọi kích thước, từ một phần tử A đến cả năm phần tử; nếu đề yêu cầu đúng một kích thước, phương pháp sẽ khác.
+
+86
+00:08:00,000 --> 00:08:05,294
+Nếu cấm A xuất hiện, ta cố định công tắc A ở trạng thái tắt.
+
+87
+00:08:05,294 --> 00:08:09,529
+Bốn công tắc khác vẫn độc lập, cho mười sáu trường hợp.
+
+88
+00:08:09,529 --> 00:08:14,471
+Như vậy hai nhóm có A và không A bằng nhau về số lượng.
+
+89
+00:08:14,471 --> 00:08:24,000
+Chúng ta còn có thể ghép từng tập không chứa A với tập được tạo bằng cách thêm A, tạo nên một song ánh rất trực quan.
+
+90
+00:08:24,000 --> 00:08:30,000
+Bây giờ đặt đồng thời hai điều kiện: A phải thuộc tập con, còn B không được thuộc.
+
+91
+00:08:30,000 --> 00:08:37,333
+Hai công tắc tương ứng đã bị cố định. Với năm phần tử ban đầu, chỉ còn ba công tắc tự do.
+
+92
+00:08:37,333 --> 00:08:40,000
+Do đó có tám tập con phù hợp.
+
+93
+00:08:40,000 --> 00:08:48,000
+Điều quan trọng là không lấy mười sáu nhân mười sáu: các lựa chọn không diễn ra thành hai bước độc lập như vậy.
+
+94
+00:08:48,000 --> 00:08:57,529
+Cụm từ chính xác một trong A và B nghĩa là ta chọn một trong hai, nhưng không chọn cả hai và cũng không bỏ cả hai.
+
+95
+00:08:57,529 --> 00:09:04,235
+Có hai trường hợp rời nhau: A xuất hiện và B không, hoặc B xuất hiện và A không.
+
+96
+00:09:04,235 --> 00:09:12,000
+Mỗi trường hợp có tám lựa chọn cho ba phần tử khác. Cộng lại được mười sáu, không phải hai mươi bốn.
+
+97
+00:09:12,000 --> 00:09:17,217
+Cụm từ ít nhất một cho phép chọn A, chọn B, hoặc chọn cả hai.
+
+98
+00:09:17,217 --> 00:09:25,565
+Cách nhanh nhất là đếm phần bù: có ba mươi hai tập con tất cả, nhưng tám tập không chứa cả A lẫn B.
+
+99
+00:09:25,565 --> 00:09:27,652
+Lấy hiệu được hai mươi bốn.
+
+100
+00:09:27,652 --> 00:09:36,000
+Trên hình, vùng có cả A và B sẽ vẫn được giữ lại, nhắc học sinh không nhầm ít nhất một với đúng một.
+
+101
+00:09:36,000 --> 00:09:42,085
+Đối với mỗi tập con, ta có thể xem số phần tử của nó là chẵn hay lẻ.
+
+102
+00:09:42,085 --> 00:09:45,465
+Tập rỗng có không phần tử, nên thuộc nhóm chẵn.
+
+103
+00:09:45,465 --> 00:09:50,873
+Hai nhóm chẵn và lẻ không giao nhau, đồng thời bao phủ toàn bộ tập con.
+
+104
+00:09:50,873 --> 00:09:55,606
+Vì vậy tổng số tập con chẵn và lẻ luôn bằng hai mũ n.
+
+105
+00:09:55,606 --> 00:10:00,000
+Câu hỏi thú vị là chúng có số lượng bằng nhau hay không.
+
+106
+00:10:00,000 --> 00:10:02,560
+Giữ một phần tử A làm dấu mốc.
+
+107
+00:10:02,560 --> 00:10:10,560
+Với mỗi tập con, ta đổi trạng thái chọn của A: nếu đang có A thì bỏ đi; nếu chưa có A thì thêm vào.
+
+108
+00:10:10,560 --> 00:10:14,720
+Số phần tử vì vậy đổi từ chẵn thành lẻ hoặc ngược lại.
+
+109
+00:10:14,720 --> 00:10:24,000
+Thao tác làm lần hai đưa ta trở lại tập con cũ, nên các tập con được ghép thành từng cặp một chẵn, một lẻ, không thừa, không thiếu.
+
+110
+00:10:24,000 --> 00:10:32,914
+Vì tổng có hai mũ n tập con và hai nhóm có số lượng bằng nhau, mỗi nhóm có hai mũ n trừ một tập con.
+
+111
+00:10:32,914 --> 00:10:42,514
+Kết quả này đúng khi tập ban đầu có ít nhất một phần tử, bởi ta cần một phần tử để thực hiện thao tác đổi trạng thái.
+
+112
+00:10:42,514 --> 00:10:48,000
+Đừng vội áp dụng cho n bằng không: đó là ngoại lệ cần giải thích riêng.
+
+113
+00:10:48,000 --> 00:10:51,333
+Với năm phần tử, có ba mươi hai tập con.
+
+114
+00:10:51,333 --> 00:10:58,000
+Các lớp kích thước chẵn là không, hai và bốn, cộng được một cộng mười cộng năm bằng mười sáu.
+
+115
+00:10:58,000 --> 00:11:05,000
+Các lớp kích thước lẻ là một, ba và năm, cộng được năm cộng mười cộng một, cũng bằng mười sáu.
+
+116
+00:11:05,000 --> 00:11:12,000
+Hai phép đếm kiểm chứng cùng kết quả, và nối với tổng hệ số tổ hợp theo chỉ số chẵn, lẻ.
+
+117
+00:11:12,000 --> 00:11:16,865
+Từ phép ghép đôi, số tập con chẵn trừ số tập con lẻ bằng không.
+
+118
+00:11:16,865 --> 00:11:25,297
+Khi thay số lượng mỗi lớp bằng hệ số tổ hợp, ta thu được tổng xen dấu của các hệ số C có n ở trên.
+
+119
+00:11:25,297 --> 00:11:36,000
+Đây cũng là kết quả thay x bằng âm một trong khai triển nhị thức Newton, nhưng cách ghép đôi giúp giải thích vì sao các phần dương và âm triệt tiêu nhau.
+
+120
+00:11:36,000 --> 00:11:39,333
+Cuối chương, ta xét tập rỗng làm tập ban đầu.
+
+121
+00:11:39,333 --> 00:11:45,667
+Tập này có đúng một tập con là chính nó, với kích thước bằng không nên thuộc loại chẵn.
+
+122
+00:11:45,667 --> 00:11:47,667
+Không tồn tại tập con lẻ.
+
+123
+00:11:47,667 --> 00:11:54,000
+Bởi vậy công thức mỗi loại bằng hai mũ n trừ một không thể dùng ở n bằng không.
+
+124
+00:11:54,000 --> 00:12:00,000
+Đây là ví dụ đẹp cho việc kiểm tra điều kiện trước khi áp dụng một định lý.
+
+125
+00:12:00,000 --> 00:12:06,575
+Với tập bốn phần tử, chúng ta có thể đặt mười sáu tập con thành những tầng theo kích thước.
+
+126
+00:12:06,575 --> 00:12:11,178
+Tầng dưới cùng là tập rỗng, trên cùng là toàn bộ tập ban đầu.
+
+127
+00:12:11,178 --> 00:12:18,411
+Hai nút ở hai tầng liên tiếp nối với nhau khi nút lớn được tạo bằng cách thêm đúng một phần tử.
+
+128
+00:12:18,411 --> 00:12:24,000
+Hình này cho học sinh thấy quan hệ bao hàm, chứ không chỉ số lượng đơn thuần.
+
+129
+00:12:24,000 --> 00:12:30,857
+Khi đã chọn một tập con T của S, ta cũng xác định duy nhất tập bù gồm những phần tử không được chọn.
+
+130
+00:12:30,857 --> 00:12:33,714
+Nếu lấy phần bù lần nữa, ta trở lại T.
+
+131
+00:12:33,714 --> 00:12:38,857
+Vì vậy phép lấy phần bù tạo thành sự ghép đôi một đối một giữa các tập con.
+
+132
+00:12:38,857 --> 00:12:48,000
+Đặc biệt, tập con có k phần tử ghép với tập có n trừ k phần tử, là lời giải thích trực quan cho tính đối xứng của hệ số tổ hợp.
+
+133
+00:12:48,000 --> 00:12:55,304
+Nếu đề yêu cầu tập con khác rỗng, ta đếm toàn bộ hai mũ n rồi loại đúng một tập rỗng.
+
+134
+00:12:55,304 --> 00:12:59,478
+Với n bằng năm, từ ba mươi hai còn ba mươi mốt.
+
+135
+00:12:59,478 --> 00:13:04,000
+Chú ý tập ban đầu S vẫn được tính, vì nó khác rỗng.
+
+136
+00:13:04,000 --> 00:13:12,000
+Tên gọi tập con khác rỗng không đồng nghĩa với tập con thực sự; học sinh phải đọc kỹ điều kiện của đề.
+
+137
+00:13:12,000 --> 00:13:15,385
+Một tập con thực sự là tập con không bằng S.
+
+138
+00:13:15,385 --> 00:13:20,308
+Nếu đồng thời yêu cầu khác rỗng, ta phải loại cả tập rỗng và tập S.
+
+139
+00:13:20,308 --> 00:13:25,846
+Với n lớn hơn không, đó là hai tập khác nhau, nên còn hai mũ n trừ hai.
+
+140
+00:13:25,846 --> 00:13:29,846
+Trong ví dụ năm phần tử, số tập thỏa mãn là ba mươi.
+
+141
+00:13:29,846 --> 00:13:36,000
+Khi tập ban đầu rỗng, hai trường hợp bị loại lại trùng nhau, vì vậy cần xét điều kiện riêng.
+
+142
+00:13:36,000 --> 00:13:39,380
+Xét tập năm phần tử A, B, C, D, E.
+
+143
+00:13:39,380 --> 00:13:45,465
+Đề yêu cầu tập con phải chứa đúng hai phần tử trong nhóm đặc biệt A, B, C.
+
+144
+00:13:45,465 --> 00:13:50,873
+Ta chọn hai trong ba phần tử ấy bằng số tổ hợp có giá trị ba.
+
+145
+00:13:50,873 --> 00:13:56,958
+Còn D và E hoàn toàn tự do, mỗi phần tử có hai lựa chọn, tạo bốn cách.
+
+146
+00:13:56,958 --> 00:14:00,000
+Kết quả là ba nhân bốn bằng mười hai.
+
+147
+00:14:00,000 --> 00:14:05,299
+Ta tổng quát bài toán. Trong n phần tử phân biệt có m phần tử đặc biệt.
+
+148
+00:14:05,299 --> 00:14:12,468
+Muốn chọn một tập con chứa đúng k phần tử đặc biệt, ta có C k của m cách chọn nhóm đặc biệt.
+
+149
+00:14:12,468 --> 00:14:18,390
+Những n trừ m phần tử thông thường được chọn tùy ý, tạo hai mũ n trừ m cách.
+
+150
+00:14:18,390 --> 00:14:24,000
+Nhân hai kết quả được công thức tổng quát, với điều kiện k nằm giữa không và m.
+
+151
+00:14:24,000 --> 00:14:29,053
+Ta thay tên chữ cái bằng năm vị trí một đến năm trên một hàng ngang.
+
+152
+00:14:29,053 --> 00:14:33,474
+Điều kiện mới là không có hai vị trí được chọn nào kề nhau.
+
+153
+00:14:33,474 --> 00:14:41,368
+Hai phần tử không còn tự do lựa chọn độc lập như trước, vì chọn một vị trí sẽ ngăn chọn vị trí sát bên.
+
+154
+00:14:41,368 --> 00:14:48,000
+Do vậy không thể dùng trực tiếp công thức hai mũ năm; phải tìm một cách đếm tôn trọng ràng buộc.
+
+155
+00:14:48,000 --> 00:14:51,616
+Khi chỉ chọn một vị trí thì chắc chắn hợp lệ.
+
+156
+00:14:51,616 --> 00:15:01,151
+Một số cặp như một và ba, hai và năm không đứng kề nhau nên hợp lệ; trái lại, một và hai hoặc ba và bốn phải bị loại.
+
+157
+00:15:01,151 --> 00:15:08,055
+Tập một, ba, năm cũng hợp lệ vì giữa các vị trí được chọn luôn có ít nhất một ô trống.
+
+158
+00:15:08,055 --> 00:15:12,000
+Hình động tô đỏ ngay khi hai ô cạnh nhau cùng sáng.
+
+159
+00:15:12,000 --> 00:15:16,588
+Phân chia các tập con hợp lệ theo số vị trí đã chọn.
+
+160
+00:15:16,588 --> 00:15:24,000
+Không chọn gì có một cách; chọn một có năm cách. Chọn hai vị trí không kề nhau có sáu cách.
+
+161
+00:15:24,000 --> 00:15:27,529
+Chọn ba vị trí chỉ có bộ một, ba, năm.
+
+162
+00:15:27,529 --> 00:15:32,824
+Không thể chọn bốn vị trí trong năm ô mà vẫn để chúng cách nhau.
+
+163
+00:15:32,824 --> 00:15:36,000
+Cộng lại được mười ba tập con hợp lệ.
+
+164
+00:15:36,000 --> 00:15:40,800
+Giả sử ta chọn k vị trí tăng dần i một, i hai cho tới i k.
+
+165
+00:15:40,800 --> 00:15:45,600
+Để không kề nhau, vị trí sau phải cách vị trí trước ít nhất hai đơn vị.
+
+166
+00:15:45,600 --> 00:15:51,247
+Ta chuyển sang các chỉ số mới bằng cách trừ lần lượt không, một, hai cho tới k trừ một.
+
+167
+00:15:51,247 --> 00:15:56,047
+Chúng trở thành k số phân biệt bất kỳ trong một đến n trừ k cộng một.
+
+168
+00:15:56,047 --> 00:16:00,000
+Do đó số cách là tổ hợp k của n trừ k cộng một.
+
+169
+00:16:00,000 --> 00:16:03,117
+Một cách khác là phân biệt vị trí cuối cùng.
+
+170
+00:16:03,117 --> 00:16:09,039
+Nếu không chọn ô thứ n, ta chọn một tập con hợp lệ của n trừ một ô đầu.
+
+171
+00:16:09,039 --> 00:16:16,519
+Nếu chọn ô cuối, ô ngay trước bắt buộc bị bỏ, và ta tùy ý chọn từ n trừ hai ô đầu còn lại.
+
+172
+00:16:16,519 --> 00:16:20,571
+Hai trường hợp không giao nhau và bao phủ hết các khả năng.
+
+173
+00:16:20,571 --> 00:16:24,000
+Vì vậy ta nhận được hệ thức truy hồi kiểu Fibonacci.
+
+174
+00:16:24,000 --> 00:16:30,154
+Ta bắt đầu từ tập không có ô nào: có một cách không chọn. Với một ô có hai cách.
+
+175
+00:16:30,154 --> 00:16:35,385
+Hệ thức truy hồi lần lượt cho ba, năm, tám, mười ba và hai mươi mốt cách.
+
+176
+00:16:35,385 --> 00:16:40,615
+Vì thế sáu ô có hai mươi mốt tập con không chứa hai vị trí kề nhau.
+
+177
+00:16:40,615 --> 00:16:48,000
+Cần chú ý đây là dãy Fibonacci bị dịch chỉ số, không phải tự động lấy số Fibonacci thứ n theo mọi quy ước.
+
+178
+00:16:48,000 --> 00:16:53,015
+Ta xét tám vị trí được xếp thành một hàng từ một đến tám.
+
+179
+00:16:53,015 --> 00:16:57,672
+Chỉ được chọn các tập con không có hai vị trí liên tiếp.
+
+180
+00:16:57,672 --> 00:17:06,985
+Đồng thời, tập được chọn phải chứa ít nhất một trong hai đầu mút, nghĩa là vị trí một hoặc vị trí tám, hoặc cả hai.
+
+181
+00:17:06,985 --> 00:17:12,000
+Ta cần đếm chính xác theo hai phương pháp để kiểm tra đáp án.
+
+182
+00:17:12,000 --> 00:17:18,514
+Ta bắt đầu từ năm mươi lăm tập con không chứa hai vị trí kề nhau của tám ô.
+
+183
+00:17:18,514 --> 00:17:24,343
+Trường hợp không đạt điều kiện đầu mút là không chọn cả vị trí một và tám.
+
+184
+00:17:24,343 --> 00:17:31,543
+Khi ấy chỉ còn sáu ô từ hai đến bảy, và điều kiện không kề nhau cho hai mươi mốt cách.
+
+185
+00:17:31,543 --> 00:17:36,000
+Lấy hiệu năm mươi lăm trừ hai mươi mốt, được ba mươi bốn.
+
+186
+00:17:36,000 --> 00:17:41,700
+Để đếm trực tiếp, trước hết xét trường hợp có vị trí một nhưng không có vị trí tám.
+
+187
+00:17:41,700 --> 00:17:44,700
+Vì một được chọn, vị trí hai bắt buộc bỏ.
+
+188
+00:17:44,700 --> 00:17:51,600
+Phần còn lại là năm vị trí từ ba đến bảy, độc lập với hai vị trí đầu và cuối đã cố định.
+
+189
+00:17:51,600 --> 00:17:55,200
+Có mười ba cách chọn không kề nhau trong năm ô ấy.
+
+190
+00:17:55,200 --> 00:18:00,000
+Hãy quan sát ô thứ hai đổi sang màu đỏ ngay khi ô thứ nhất sáng.
+
+191
+00:18:00,000 --> 00:18:07,304
+Trường hợp chỉ có đầu phải hoàn toàn đối xứng. Ta bắt buộc chọn tám, cấm bảy và không chọn một.
+
+192
+00:18:07,304 --> 00:18:12,870
+Năm vị trí tự do là từ hai đến sáu, và cũng cho mười ba cách.
+
+193
+00:18:12,870 --> 00:18:24,000
+Ta không được nhân hai nếu hai nhóm có giao nhau, nhưng ở đây chúng ta đã quy định đúng một đầu được chọn, nên hai trường hợp hoàn toàn rời nhau.
+
+194
+00:18:24,000 --> 00:18:28,056
+Cuối cùng ta chọn đồng thời cả vị trí một và tám.
+
+195
+00:18:28,056 --> 00:18:32,451
+Chúng không kề nhau vì đây là hàng thẳng, không phải vòng tròn.
+
+196
+00:18:32,451 --> 00:18:37,859
+Hai vị trí hai và bảy bị cấm, chỉ còn bốn ô từ ba đến sáu.
+
+197
+00:18:37,859 --> 00:18:42,930
+Có tám cách chọn trong bốn ô sao cho không có hai ô kề nhau.
+
+198
+00:18:42,930 --> 00:18:48,000
+Phân biệt hàng thẳng và bàn tròn là điểm then chốt của trường hợp này.
+
+199
+00:18:48,000 --> 00:18:53,302
+Ba trường hợp trực tiếp là chỉ có đầu trái, chỉ có đầu phải và có cả hai đầu.
+
+200
+00:18:53,302 --> 00:18:57,767
+Chúng rời nhau, nên cộng mười ba, mười ba và tám để được ba mươi bốn.
+
+201
+00:18:57,767 --> 00:19:00,837
+Phép đếm phần bù ở trước cũng cho ba mươi bốn.
+
+202
+00:19:00,837 --> 00:19:08,930
+Hai kết quả khớp nhau không thay thế được một chứng minh, nhưng sau khi đã chứng minh từng phép đếm, chúng là cách kiểm chứng đáng tin cậy.
+
+203
+00:19:08,930 --> 00:19:12,000
+Đây là tinh thần chung của Series: hiểu trước, tính sau.

@@ -1,0 +1,711 @@
+1
+00:00:00,000 --> 00:00:07,522
+Trước khi học thuộc bất cứ công thức nào, ta hãy tạo ra tam giác Pascal từ một ô duy nhất.
+
+2
+00:00:07,522 --> 00:00:14,328
+Ô này mang số một vì với tập hợp rỗng, có đúng một cách chọn không phần tử nào.
+
+3
+00:00:14,328 --> 00:00:19,343
+Sự khởi đầu đơn giản ấy là nền móng cho các hàng tiếp theo.
+
+4
+00:00:19,343 --> 00:00:24,000
+Hãy quan sát vị trí của từng ô, không chỉ nhìn con số.
+
+5
+00:00:24,000 --> 00:00:30,194
+Khi có một phần tử A, ta có thể không chọn A hoặc chọn đúng A.
+
+6
+00:00:30,194 --> 00:00:36,387
+Mỗi trường hợp chỉ có một cách. Vì vậy hàng tiếp theo gồm hai số một.
+
+7
+00:00:36,387 --> 00:00:42,194
+Hãy chú ý hai ô ở rìa được đặt lệch so với ô phía trên.
+
+8
+00:00:42,194 --> 00:00:48,000
+Chính cách đặt này sẽ làm xuất hiện quy tắc cộng hai ô kề nhau.
+
+9
+00:00:48,000 --> 00:00:50,441
+Ta bổ sung phần tử B.
+
+10
+00:00:50,441 --> 00:00:58,169
+Chọn không phần tử nào vẫn có một cách, chọn cả hai phần tử cũng chỉ có một cách.
+
+11
+00:00:58,169 --> 00:01:03,864
+Nhưng chọn đúng một phần tử có hai cách: chọn A hoặc chọn B.
+
+12
+00:01:03,864 --> 00:01:12,000
+Hai cách ấy được biểu diễn bằng số hai ở chính giữa. Hàng mới hiện ra là một, hai, một.
+
+13
+00:01:12,000 --> 00:01:18,514
+Sang ba phần tử, các nhóm chọn một phần tử là A, B hoặc C nên có ba cách.
+
+14
+00:01:18,514 --> 00:01:25,371
+Các nhóm chọn hai phần tử cũng có ba cách. Bởi thế ta nhận được hàng một, ba, ba, một.
+
+15
+00:01:25,371 --> 00:01:30,171
+Ở đây hình ảnh trực quan và kết quả đếm tổ hợp trùng khớp.
+
+16
+00:01:30,171 --> 00:01:36,000
+Ta sẽ sớm giải thích tại sao hai số ở phía trên lại được cộng với nhau.
+
+17
+00:01:36,000 --> 00:01:43,600
+Khi xây dựng hàng của bốn phần tử, các ô giữa lần lượt mang số bốn, sáu và bốn.
+
+18
+00:01:43,600 --> 00:01:47,200
+Toàn bộ hàng là một, bốn, sáu, bốn, một.
+
+19
+00:01:47,200 --> 00:01:53,600
+Nếu quan sát kỹ, ta thấy các số bên trái và bên phải đối xứng nhau.
+
+20
+00:01:53,600 --> 00:02:00,000
+Hãy thử đoán hàng tiếp theo trước khi các con số hiện ra trên màn hình.
+
+21
+00:02:00,000 --> 00:02:09,391
+Ta có thể dự đoán hàng thứ năm bằng cách giữ hai số một ở biên, rồi cộng từng cặp ô kề nhau của hàng thứ tư.
+
+22
+00:02:09,391 --> 00:02:15,304
+Kết quả là một, năm, mười, mười, năm, một. Tổng các hệ số là ba mươi hai.
+
+23
+00:02:15,304 --> 00:02:24,000
+Số ba mươi hai còn liên quan đến số tập con của một tập có năm phần tử, một kết nối rất đáng chú ý.
+
+24
+00:02:24,000 --> 00:02:29,731
+Bây giờ hãy tập trung vào ô có giá trị sáu ở giữa hàng thứ tư.
+
+25
+00:02:29,731 --> 00:02:36,896
+Hai mũi tên xuất phát từ hai ô mang số ba ở hàng thứ ba cùng đi tới ô này.
+
+26
+00:02:36,896 --> 00:02:38,687
+Ba cộng ba bằng sáu.
+
+27
+00:02:38,687 --> 00:02:48,000
+Đây không phải một mẹo tính tự nhiên xuất hiện; phía sau nó là cách phân chia các lựa chọn thành hai nhóm không giao nhau.
+
+28
+00:02:48,000 --> 00:02:56,333
+Với một ô bất kỳ không nằm trên biên, hãy nhìn hai ô ngay phía trên: một ở góc trái và một ở góc phải.
+
+29
+00:02:56,333 --> 00:03:03,333
+Giá trị ô mới bằng tổng hai giá trị đó. Viết bằng kí hiệu tổ hợp, ta được hệ thức Pascal.
+
+30
+00:03:03,333 --> 00:03:12,000
+Chỉ số trên biểu diễn số phần tử của tập, chỉ số dưới biểu diễn số phần tử cần chọn, đúng theo quy ước của Series.
+
+31
+00:03:12,000 --> 00:03:17,143
+Hãy dùng hệ thức vừa học để tính số mười thứ nhất ở hàng năm.
+
+32
+00:03:17,143 --> 00:03:22,286
+Hai ô cha của nó có giá trị bốn và sáu. Cộng lại được mười.
+
+33
+00:03:22,286 --> 00:03:25,714
+Với số mười còn lại, ta lấy sáu cộng bốn.
+
+34
+00:03:25,714 --> 00:03:36,000
+Khi hoạt hình làm sáng hai mũi tên, chúng ta có thể nhìn thấy trực tiếp nguồn gốc của mỗi ô mới, không cần ghi nhớ một dãy số dài.
+
+35
+00:03:36,000 --> 00:03:44,381
+Nếu tiếp tục một hàng nữa, số ở giữa hàng sáu nhận hai số mười phía trên, cho kết quả hai mươi.
+
+36
+00:03:44,381 --> 00:03:48,571
+Hai ô kế bên nhận năm cộng mười, được mười lăm.
+
+37
+00:03:48,571 --> 00:03:53,524
+Cả hàng là một, sáu, mười lăm, hai mươi, mười lăm, sáu, một.
+
+38
+00:03:53,524 --> 00:04:00,000
+Chúng ta đã có một thuật toán rất đơn giản để tạo toàn bộ tam giác Pascal.
+
+39
+00:04:00,000 --> 00:04:04,394
+Tại hai mép của tam giác, ta không có đủ hai ô cha.
+
+40
+00:04:04,394 --> 00:04:12,169
+Nhưng mỗi ô biên vẫn mang số một vì chỉ có một cách chọn không phần tử hoặc chọn hết các phần tử.
+
+41
+00:04:12,169 --> 00:04:19,944
+Khi muốn viết quy tắc cộng thống nhất, ta có thể xem các ô nằm bên ngoài tam giác có giá trị không.
+
+42
+00:04:19,944 --> 00:04:24,000
+Cách quy ước này giúp thuật toán gọn gàng và chính xác.
+
+43
+00:04:24,000 --> 00:04:32,104
+Ta có thể nhờ máy tính sinh hàng thứ mười, thứ hai mươi, thậm chí hàng thứ một trăm mà không cần khai triển nhị thức.
+
+44
+00:04:32,104 --> 00:04:34,909
+Bắt đầu với hàng chỉ gồm một số một.
+
+45
+00:04:34,909 --> 00:04:42,078
+Trong mỗi bước, đặt một ở hai đầu và điền các số ở giữa bằng cách cộng hai số kề của hàng trước.
+
+46
+00:04:42,078 --> 00:04:48,000
+Bài toán tổ hợp vì vậy trở thành một quy trình tính toán có thể kiểm chứng từng bước.
+
+47
+00:04:48,000 --> 00:04:53,250
+Chúng ta sẽ chứng minh vì sao hai ô cha phải cộng với nhau.
+
+48
+00:04:53,250 --> 00:05:00,000
+Cho sáu học sinh phân biệt, hỏi có bao nhiêu cách chọn ba học sinh thành một nhóm.
+
+49
+00:05:00,000 --> 00:05:02,625
+Ta biết kết quả là hai mươi.
+
+50
+00:05:02,625 --> 00:05:12,000
+Nhưng thay vì tính bằng giai thừa ngay, hãy chọn riêng bạn A làm đối tượng đặc biệt và chia các nhóm thành hai loại.
+
+51
+00:05:12,000 --> 00:05:16,286
+Trường hợp thứ nhất, nhóm được chọn có bạn A.
+
+52
+00:05:16,286 --> 00:05:28,714
+Khi đó A đã chiếm một trong ba vị trí của nhóm, chúng ta chỉ cần chọn thêm hai người từ năm bạn B, C, D, E và F.
+
+53
+00:05:28,714 --> 00:05:36,000
+Có mười cách. Mọi nhóm chứa A đều xuất hiện đúng một lần trong phép đếm này.
+
+54
+00:05:36,000 --> 00:05:39,310
+Trường hợp thứ hai, nhóm không có A.
+
+55
+00:05:39,310 --> 00:05:46,759
+Toàn bộ ba thành viên phải được chọn từ năm bạn còn lại, nên có đúng mười cách.
+
+56
+00:05:46,759 --> 00:05:51,310
+Một nhóm không thể vừa có A vừa không có A.
+
+57
+00:05:51,310 --> 00:06:00,000
+Hai nhóm trường hợp này tách biệt hoàn toàn, đó là điều kiện cho phép ta sử dụng quy tắc cộng.
+
+58
+00:06:00,000 --> 00:06:04,800
+Khi ghép hai loại nhóm, ta thu được mười cộng mười bằng hai mươi.
+
+59
+00:06:04,800 --> 00:06:13,371
+Đây chính là ba ô nằm theo hình chữ vê trong tam giác Pascal: hai số mười ở trên và số hai mươi phía dưới.
+
+60
+00:06:13,371 --> 00:06:24,000
+Như vậy quy tắc cộng hai ô cha không còn là một quan sát ngẫu nhiên mà xuất phát từ phép đếm cùng một tập kết quả theo hai trường hợp.
+
+61
+00:06:24,000 --> 00:06:30,575
+Với một tập gồm n phần tử, ta muốn chọn k phần tử. Chọn một phần tử A làm mốc.
+
+62
+00:06:30,575 --> 00:06:36,822
+Nếu có A, ta chọn thêm k trừ một phần tử từ n trừ một phần tử còn lại.
+
+63
+00:06:36,822 --> 00:06:41,425
+Nếu không có A, ta chọn đủ k phần tử từ phần còn lại.
+
+64
+00:06:41,425 --> 00:06:48,000
+Hai trường hợp phủ kín và không giao nhau, nên cộng số cách lại được hệ thức Pascal tổng quát.
+
+65
+00:06:48,000 --> 00:06:55,437
+Điểm quan trọng nhất của một chứng minh tổ hợp là kiểm tra hai việc: không đếm trùng và không bỏ sót.
+
+66
+00:06:55,437 --> 00:07:01,183
+Ở đây, mọi nhóm hoặc chứa A hoặc không chứa A, không có khả năng thứ ba.
+
+67
+00:07:01,183 --> 00:07:05,239
+Đồng thời hai tính chất ấy không thể xảy ra cùng lúc.
+
+68
+00:07:05,239 --> 00:07:12,000
+Vì vậy phép cộng là hợp lệ, và chúng ta đã chứng minh được bản chất của tam giác Pascal.
+
+69
+00:07:12,000 --> 00:07:14,361
+Hãy quan sát hàng thứ sáu.
+
+70
+00:07:14,361 --> 00:07:26,164
+Nếu gập hàng này qua chính giữa, những con số ở hai phía sẽ trùng khít: một đi với một, sáu đi với sáu, mười lăm đi với mười lăm.
+
+71
+00:07:26,164 --> 00:07:36,000
+Tại sao một tính chất hình ảnh đẹp như vậy lại đúng với mọi hàng, chứ không phải chỉ đúng ở vài ví dụ đầu?
+
+72
+00:07:36,000 --> 00:07:38,286
+Tưởng tượng sáu thẻ học sinh.
+
+73
+00:07:38,286 --> 00:07:45,524
+Mỗi khi chọn hai thẻ vào nhóm, ta đồng thời xác định chính xác bốn thẻ không được chọn.
+
+74
+00:07:45,524 --> 00:07:51,619
+Ngược lại, biết bốn thẻ bị bỏ lại thì suy ra ngay hai thẻ được chọn.
+
+75
+00:07:51,619 --> 00:08:00,000
+Đây là một phép tương ứng một đối một giữa hai tập kết quả, nên hai tập có cùng số phần tử.
+
+76
+00:08:00,000 --> 00:08:07,562
+Một tập gồm n phần tử được tách thành nhóm chọn k phần tử và nhóm không chọn n trừ k phần tử.
+
+77
+00:08:07,562 --> 00:08:12,493
+Hai nhóm bổ sung nhau, nên một nhóm xác định hoàn toàn nhóm còn lại.
+
+78
+00:08:12,493 --> 00:08:18,082
+Do đó, số cách chọn k phần tử bằng số cách chọn n trừ k phần tử.
+
+79
+00:08:18,082 --> 00:08:24,000
+Tính đối xứng của các hàng Pascal thực ra là tính đối xứng của phép lấy phần bù.
+
+80
+00:08:24,000 --> 00:08:27,176
+Ta thử áp dụng vào một bài tính nhanh.
+
+81
+00:08:27,176 --> 00:08:32,118
+Số cách chọn hai học sinh từ tám học sinh bằng hai mươi tám.
+
+82
+00:08:32,118 --> 00:08:40,235
+Vì chọn hai người tương đương với chỉ định sáu người bị loại, số cách chọn sáu người cũng bằng hai mươi tám.
+
+83
+00:08:40,235 --> 00:08:48,000
+Khi gặp k lớn gần n, đổi sang n trừ k thường làm phép tính ngắn hơn và dễ kiểm tra hơn.
+
+84
+00:08:48,000 --> 00:08:55,437
+Với hàng có chỉ số chẵn, ta tìm thấy một ô đúng ở giữa, chẳng hạn số hai mươi của hàng sáu.
+
+85
+00:08:55,437 --> 00:08:59,831
+Những hệ số thường tăng dần về giữa rồi giảm dần sau giữa.
+
+86
+00:08:59,831 --> 00:09:12,000
+Chúng ta có thể giải thích bằng tỉ số giữa hai hệ số kề nhau, nhưng ở đây trước hết hãy nhìn cách giá trị lan truyền và tích lũy từ hai phía qua từng hàng.
+
+87
+00:09:12,000 --> 00:09:16,941
+Đối với hàng mang chỉ số lẻ, chính giữa có hai ô bằng nhau.
+
+88
+00:09:16,941 --> 00:09:21,176
+Hàng thứ năm chẳng hạn có hai số mười nằm cạnh nhau.
+
+89
+00:09:21,176 --> 00:09:28,588
+Tính đối xứng cho biết ngay chúng phải bằng nhau, bởi hai chỉ số hai và ba cộng lại bằng năm.
+
+90
+00:09:28,588 --> 00:09:36,000
+Quan sát này giúp học sinh nhận dạng cấu trúc hàng Pascal mà không cần ghi nhớ toàn bộ bảng số.
+
+91
+00:09:36,000 --> 00:09:40,941
+Ta chuyển sang một tính chất rất đẹp: tổng các số trên từng hàng.
+
+92
+00:09:40,941 --> 00:09:46,235
+Các hàng đầu có tổng một, hai, bốn, tám, mười sáu và ba mươi hai.
+
+93
+00:09:46,235 --> 00:09:55,765
+Mỗi khi số phần tử tăng một đơn vị, số tập con tăng gấp đôi vì phần tử mới có thể được chọn hoặc không được chọn.
+
+94
+00:09:55,765 --> 00:10:00,000
+Điều đó cho ta công thức tổng hàng bằng hai mũ n.
+
+95
+00:10:00,000 --> 00:10:03,097
+Hãy kiểm tra cụ thể trên hàng sáu.
+
+96
+00:10:03,097 --> 00:10:09,677
+Cộng một, sáu, mười lăm, hai mươi, mười lăm, sáu và một, ta được sáu mươi bốn.
+
+97
+00:10:09,677 --> 00:10:20,516
+Một tập có sáu phần tử cũng có sáu mươi bốn tập con vì mỗi phần tử có đúng hai trạng thái được chọn hoặc không được chọn.
+
+98
+00:10:20,516 --> 00:10:24,000
+Hai lập luận dẫn tới cùng một kết quả.
+
+99
+00:10:24,000 --> 00:10:32,123
+Còn một cách chứng minh đại số cực ngắn. Trong khai triển Nhị thức Newton, thay cả a và b bằng một.
+
+100
+00:10:32,123 --> 00:10:34,338
+Vế trái là hai mũ n.
+
+101
+00:10:34,338 --> 00:10:41,723
+Ở vế phải, mọi đơn thức còn lại đúng bằng một, nên chỉ còn tổng các hệ số tổ hợp.
+
+102
+00:10:41,723 --> 00:10:48,000
+Đây là cách kết nối trực tiếp Video 17 với tam giác Pascal đang được xây dựng.
+
+103
+00:10:48,000 --> 00:10:54,182
+Bây giờ, thay vì cộng tất cả các ô, ta gắn dấu cộng và trừ xen kẽ.
+
+104
+00:10:54,182 --> 00:11:02,545
+Với hàng sáu, biểu thức một trừ sáu cộng mười lăm trừ hai mươi cộng mười lăm trừ sáu cộng một bằng không.
+
+105
+00:11:02,545 --> 00:11:12,000
+Đó là vì theo Nhị thức Newton, tổng xen dấu chính là một trừ một, tất cả lũy thừa n, nên bằng không khi n dương.
+
+106
+00:11:12,000 --> 00:11:26,743
+Từ hai công thức tổng hàng và tổng xen dấu, ta rút ra rằng tổng hệ số tại các vị trí k chẵn bằng tổng hệ số ở vị trí k lẻ, mỗi bên bằng hai mũ n trừ một với n dương.
+
+107
+00:11:26,743 --> 00:11:29,829
+Ở hàng sáu, mỗi phía bằng ba mươi hai.
+
+108
+00:11:29,829 --> 00:11:36,000
+Đây là một ví dụ về cách dùng hai phương trình để xác định hai tổng chưa biết.
+
+109
+00:11:36,000 --> 00:11:42,380
+Một lưu ý nhỏ nhưng quan trọng: công thức tổng xen dấu bằng không cần điều kiện n lớn hơn không.
+
+110
+00:11:42,380 --> 00:11:48,152
+Với n bằng không, hàng Pascal chỉ có một ô bằng một và tổng xen dấu cũng bằng một.
+
+111
+00:11:48,152 --> 00:11:56,051
+Nếu bỏ quên điều kiện biên, ta có thể dùng một đẳng thức đúng trong phần lớn trường hợp nhưng sai ngay ở điểm khởi đầu.
+
+112
+00:11:56,051 --> 00:12:00,000
+Tính chính xác toán học bắt đầu từ những chi tiết như vậy.
+
+113
+00:12:00,000 --> 00:12:06,261
+Bên cạnh từng hàng ngang, tam giác Pascal còn chứa nhiều cấu trúc thú vị theo đường chéo.
+
+114
+00:12:06,261 --> 00:12:11,826
+Hãy tô sáng bốn số một, ba, sáu và mười theo một đường chéo đi xuống.
+
+115
+00:12:11,826 --> 00:12:14,261
+Khi cộng chúng ta được hai mươi.
+
+116
+00:12:14,261 --> 00:12:24,000
+Số hai mươi xuất hiện ở một vị trí khác của tam giác, giống như hình một chiếc gậy khúc côn cầu với phần cán và đầu cong.
+
+117
+00:12:24,000 --> 00:12:30,646
+Bốn giá trị trên có thể viết thành tổ hợp chập hai của hai, ba, bốn và năm.
+
+118
+00:12:30,646 --> 00:12:35,446
+Cộng chúng ta được tổ hợp chập ba của sáu, tức hai mươi.
+
+119
+00:12:35,446 --> 00:12:48,000
+Tên gọi hình gậy khúc côn cầu giúp chúng ta nhớ vị trí của các ô, nhưng điều quan trọng hơn là hiểu phép đếm nào đứng phía sau phép cộng theo đường chéo.
+
+120
+00:12:48,000 --> 00:12:52,667
+Hãy đếm các tập ba phần tử chọn từ các số một đến sáu.
+
+121
+00:12:52,667 --> 00:12:58,333
+Mỗi tập có một phần tử lớn nhất, chỉ có thể là ba, bốn, năm hoặc sáu.
+
+122
+00:12:58,333 --> 00:13:05,333
+Nếu phần tử lớn nhất bằng t, ta cần chọn hai phần tử trong t trừ một số nhỏ hơn nó.
+
+123
+00:13:05,333 --> 00:13:12,000
+Số cách tương ứng lần lượt là một, ba, sáu và mười. Cộng bốn trường hợp sẽ được hai mươi.
+
+124
+00:13:12,000 --> 00:13:29,143
+Nếu kéo dài lập luận vừa rồi, ta nhận được đẳng thức tổng quát: tổng các số tổ hợp có cùng chỉ số dưới k, chạy từ hàng k đến hàng n, bằng số tổ hợp với chỉ số trên n cộng một và chỉ số dưới k cộng một.
+
+125
+00:13:29,143 --> 00:13:36,000
+Trong hình, các ô nằm trên cán gậy được tô xanh; ô kết quả ở đầu gậy được tô vàng.
+
+126
+00:13:36,000 --> 00:13:42,909
+Ta kiểm tra thêm một ví dụ dễ tính nhẩm: một cộng hai cộng ba cộng bốn bằng mười.
+
+127
+00:13:42,909 --> 00:13:53,455
+Các số một, hai, ba, bốn chính là số tổ hợp chập một của một, hai, ba, bốn; kết quả mười bằng số tổ hợp chập hai của năm.
+
+128
+00:13:53,455 --> 00:14:00,000
+Ví dụ này cho thấy đẳng thức đường chéo không chỉ đúng tại một vị trí đặc biệt.
+
+129
+00:14:00,000 --> 00:14:10,849
+Khi gặp một tổng dài gồm các số tổ hợp cùng chỉ số dưới, còn chỉ số trên tăng đều qua từng số nguyên liên tiếp, hãy nghĩ đến công thức đường chéo.
+
+130
+00:14:10,849 --> 00:14:17,096
+Thay vì tính từng số hạng rồi cộng, ta có thể viết gọn thành một tổ hợp duy nhất.
+
+131
+00:14:17,096 --> 00:14:24,000
+Nhưng cần kiểm tra cẩn thận điểm đầu, điểm cuối và chỉ số tăng thêm để không lệch một đơn vị.
+
+132
+00:14:24,000 --> 00:14:28,941
+Đến đây, ta khám phá một lớp hình ảnh khác của tam giác Pascal.
+
+133
+00:14:28,941 --> 00:14:34,941
+Thay vì đọc toàn bộ số lớn, hãy chỉ quan tâm một ô là chẵn hay lẻ.
+
+134
+00:14:34,941 --> 00:14:42,706
+Tô sáng các ô lẻ và làm mờ những ô chẵn. Dần dần xuất hiện một họa tiết lặp lại rất đẹp.
+
+135
+00:14:42,706 --> 00:14:48,000
+Manim sẽ cho hiện nhiều hàng liên tiếp để học sinh quan sát quy luật.
+
+136
+00:14:48,000 --> 00:14:53,070
+Ta vẫn dùng đúng quy tắc Pascal: ô mới bằng tổng hai ô phía trên.
+
+137
+00:14:53,070 --> 00:15:00,169
+Nhưng khi chỉ quan sát tính chẵn lẻ, lẻ cộng lẻ tạo thành chẵn, còn chẵn cộng lẻ tạo thành lẻ.
+
+138
+00:15:00,169 --> 00:15:07,606
+Vì thế các ô sáng và tối tiếp tục sinh ra hình mới theo một quy luật cục bộ rất đơn giản.
+
+139
+00:15:07,606 --> 00:15:12,000
+Đây là cách một cấu trúc lớn nảy sinh từ phép tính nhỏ.
+
+140
+00:15:12,000 --> 00:15:23,048
+Ở hàng mang chỉ số bảy, các hệ số lần lượt là một, bảy, hai mươi mốt, ba mươi lăm, ba mươi lăm, hai mươi mốt, bảy và một.
+
+141
+00:15:23,048 --> 00:15:28,381
+Tất cả đều lẻ. Trong mô hình chẵn lẻ, cả hàng sẽ sáng lên.
+
+142
+00:15:28,381 --> 00:15:36,000
+Đây là dấu hiệu đặc biệt giúp chia hoa văn thành những khối nhỏ giống nhau ở nhiều mức độ.
+
+143
+00:15:36,000 --> 00:15:41,714
+Khi chuyển sang hàng tám, chỉ hai ô ở hai mép có giá trị lẻ.
+
+144
+00:15:41,714 --> 00:15:45,905
+Các ô còn lại đều chẵn nên chuyển sang màu tối.
+
+145
+00:15:45,905 --> 00:15:52,381
+Sự thay đổi đột ngột này tạo thành khoảng trống đặc trưng trong họa tiết tam giác.
+
+146
+00:15:52,381 --> 00:16:00,000
+Nếu tiếp tục đến hàng mười lăm và mười sáu, ta sẽ quan sát những bước lặp lại tương tự.
+
+147
+00:16:00,000 --> 00:16:09,974
+Khi tô sáng các số lẻ trong ba mươi hai hàng Pascal, ta nhìn thấy các tam giác nhỏ nằm trong tam giác lớn, một hoa văn gần với tam giác Sierpinski.
+
+148
+00:16:09,974 --> 00:16:14,338
+Điều bất ngờ là hình ảnh này không cần thêm quy tắc vẽ riêng.
+
+149
+00:16:14,338 --> 00:16:19,013
+Chúng ta chỉ lặp phép cộng hai ô cha rồi lấy số dư chia hai.
+
+150
+00:16:19,013 --> 00:16:24,000
+Toán tổ hợp, số học và hình học kết nối với nhau qua một hình động.
+
+151
+00:16:24,000 --> 00:16:30,632
+Hình ảnh khiến ta muốn dự đoán rằng tam giác Pascal có tính tự đồng dạng khi xét theo modulo hai.
+
+152
+00:16:30,632 --> 00:16:35,053
+Tuy nhiên, xem một số hàng chưa đủ để kết luận cho mọi hàng.
+
+153
+00:16:35,053 --> 00:16:43,263
+Muốn chứng minh tổng quát cần thêm công cụ về hệ số nhị thức và số học, chẳng hạn cách viết số theo hệ nhị phân.
+
+154
+00:16:43,263 --> 00:16:48,000
+Ở đây, ta dùng hình động để khám phá và khơi gợi câu hỏi mới.
+
+155
+00:16:48,000 --> 00:16:56,877
+Bài toán cuối tập yêu cầu tìm hệ số của x mũ ba trong tích một cộng x mũ năm nhân với một cộng x mũ ba.
+
+156
+00:16:56,877 --> 00:17:01,151
+Ta có thể gộp hai lũy thừa thành một cộng x mũ tám.
+
+157
+00:17:01,151 --> 00:17:07,397
+Khi đó hệ số cần tìm chính là số cách chọn ba trong tám nhân tử để lấy x.
+
+158
+00:17:07,397 --> 00:17:12,000
+Hãy thử dự đoán kết quả từ hàng thứ tám của tam giác Pascal.
+
+159
+00:17:12,000 --> 00:17:17,589
+Theo cách thứ nhất, ta đơn giản hóa tích ban đầu thành một cộng x mũ tám.
+
+160
+00:17:17,589 --> 00:17:24,822
+Hàng thứ tám của Pascal có hệ số thứ ba bằng năm mươi sáu nếu đánh chỉ số bắt đầu từ không.
+
+161
+00:17:24,822 --> 00:17:28,438
+Vậy hệ số của x mũ ba là năm mươi sáu.
+
+162
+00:17:28,438 --> 00:17:36,000
+Phương pháp này nhanh, nhưng chúng ta còn có thể tự kiểm chứng bằng cách phân chia các nhân tử thành hai nhóm.
+
+163
+00:17:36,000 --> 00:17:39,667
+Ở cách thứ hai, giữ hai nhóm nhân tử riêng biệt.
+
+164
+00:17:39,667 --> 00:17:48,667
+Giả sử ta chọn i ngoặc lấy x trong nhóm năm ngoặc, thì phải chọn ba trừ i ngoặc lấy x trong nhóm ba ngoặc còn lại.
+
+165
+00:17:48,667 --> 00:17:56,000
+Vì tổng số chữ x cần đúng bằng ba, i chỉ có thể nhận bốn giá trị không, một, hai và ba.
+
+166
+00:17:56,000 --> 00:18:00,000
+Mỗi trường hợp có số cách tính bằng tích hai tổ hợp.
+
+167
+00:18:00,000 --> 00:18:02,545
+Ta tính lần lượt bốn trường hợp.
+
+168
+00:18:02,545 --> 00:18:09,455
+Nếu không chọn x từ nhóm năm ngoặc thì nhóm ba ngoặc phải chọn cả ba, có một cách.
+
+169
+00:18:09,455 --> 00:18:17,455
+Nếu chọn một x ở nhóm thứ nhất thì có mười lăm cách. Nếu chọn hai x thì có ba mươi cách.
+
+170
+00:18:17,455 --> 00:18:24,000
+Nếu chọn ba x thì có mười cách. Cộng lại bằng năm mươi sáu, đúng với cách một.
+
+171
+00:18:24,000 --> 00:18:29,684
+Hai phép đếm vừa rồi tính cùng một đối tượng: chọn ba vị trí từ tám vị trí.
+
+172
+00:18:29,684 --> 00:18:36,000
+Một cách coi tất cả là một tập lớn, cách còn lại chia trước thành nhóm năm và nhóm ba.
+
+173
+00:18:36,000 --> 00:18:40,105
+Vì cùng đếm một tập kết quả, hai biểu thức phải bằng nhau.
+
+174
+00:18:40,105 --> 00:18:48,000
+Đây là trường hợp cụ thể của đồng nhất thức Vandermonde, một chủ đề chúng ta sẽ tiếp tục nghiên cứu ở các video sau.
+
+175
+00:18:48,000 --> 00:18:52,627
+Chúng ta đã đi từ một ô mang số một đến nhiều tính chất sâu sắc.
+
+176
+00:18:52,627 --> 00:19:02,458
+Tam giác Pascal cho phép tính các tổ hợp nhờ cộng hai ô cha, chứng minh tính đối xứng, tổng hệ số, hệ thức đường chéo, và khám phá các hoa văn chẵn lẻ.
+
+177
+00:19:02,458 --> 00:19:07,373
+Cuối cùng, nó trở thành công cụ mạnh để tìm hệ số trong khai triển nhị thức.
+
+178
+00:19:07,373 --> 00:19:12,000
+Quan trọng nhất, mỗi công thức đều được gắn với một cách đếm có ý nghĩa.

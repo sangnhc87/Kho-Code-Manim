@@ -1,3 +1,29 @@
+# COMB18 V2 - TAM GIAC PASCAL VA CAC TINH CHAT
+
+Video 18 duoc bo sung vao du an COMB01-COMB17 ma khong thay the ma Scene cu.
+
+- **48 nhip giang / 8 chuong**; thoi luong nen thiet ke 19 phut 17 giay (co TTS co the dai hon).
+- **Manim:** `episodes/comb18_pascal_triangle.py` -> class `COMB18`.
+- **Typst:** 48 cong thuc voi ky hieu `C^(n)_(k)` (n o tren).
+- **Loi giang:** `narration_COMB18_v2.md`, phu de `subtitles_COMB18_v2.srt`.
+- **Actions:** `.github/workflows/render-comb18-v2.yml`; xem `HUONG_DAN_RENDER_COMB18_V2.md`.
+- **QA:** `tests/test_comb18_pascal.py`, `scripts/qa_comb18_v2.py`, 8 anh storyboard.
+- Khong tu nhan MP4 da render/duyet: ma da duoc kiem tra, render thuc te can GitHub Actions.
+
+---
+
+# COMB17 V2 - Newton qua phep chon
+
+Tiep noi COMB01-COMB16; video COMB17 hoan chinh nguon de render tren GitHub Actions.
+- 48 nhip, 8 chuong, ~20 phut 53 giay khong TTS.
+- Manim: `episodes/comb17_binomial_theorem.py`, scene `COMB17`.
+- GitHub Actions: `.github/workflows/render-comb17-v2.yml`.
+- Tai lieu: `HUONG_DAN_RENDER_COMB17_V2.md`.
+- Giong doc tieng Viet: `--voice on`; tuy chon `off` de thu hinh.
+- Trang thai: da kiem thu Python, chua render Manim that.
+
+---
+
 # SANG MATH · ĐẠI SỐ TỔ HỢP MANIM–TYPST
 
 Dự án Series COMB01–COMB14 (V2) + GEO01. **Tập mới nhất: COMB14 – Phương pháp đếm phần bù.** Các tập cũ kế thừa từ gói COMB13, không thay đổi.
@@ -49,3 +75,39 @@ Kiểm thử toán, toàn bộ unit tests và cú pháp Python được thực h
 Đã bổ sung mã Manim–Typst cho 8 chương/48 nhịp với đầy đủ lời giảng, công thức, phụ đề, kiểm thử và workflow `render-comb16-v2.yml`. Xem `HUONG_DAN_RENDER_COMB16_V2.md` để chạy.
 
 Video 16: 9 học sinh, 3 nhóm 3 vô danh, A và B phải khác nhóm, mỗi nhóm chọn 1 trưởng: **5670 cách**. Bản code cần được render và nghiệm thu MP4 trên GitHub Actions.
+
+
+## COMB19 V2 – Tập con và công thức 2^n
+
+- 8 chương; 48 nhịp giảng; công thức Typst đúng ký hiệu `C^(n)_(k)` (n ở trên).
+- Các mô hình: liệt kê tập con, 0/1, phân lớp theo kích thước, điều kiện A/B, chẵn–lẻ, mạng tập con, không kề nhau, bài nâng cao tám vị trí.
+- **Hai cách đếm bài cuối**: 55−21=34 và 13+13+8=34.
+- Mã Scene: `episodes/comb19_subsets.py` · Dữ liệu: `comb19_lesson_data.py`, `comb19_beats.json`.
+- GitHub workflow: `.github/workflows/render-comb19-v2.yml`.
+- Hướng dẫn riêng: `HUONG_DAN_RENDER_COMB19_V2.md`.
+- Bản xem trước: `preview/comb19_v2/storyboard_8_chapters.png`.
+- Video thực tế chưa được nghiệm thu: chạy workflow với preview, voice off trước khi phát hành.
+
+
+## COMB19 V2 – Tập con và công thức 2^n
+
+- 8 chương; 48 nhịp giảng; công thức Typst đúng ký hiệu `C^(n)_(k)` (n ở trên).
+- Các mô hình: liệt kê tập con, 0/1, phân lớp theo kích thước, điều kiện A/B, chẵn–lẻ, mạng tập con, không kề nhau, bài nâng cao tám vị trí.
+- **Hai cách đếm bài cuối**: 55−21=34 và 13+13+8=34.
+- Mã Scene: `episodes/comb19_subsets.py` · Dữ liệu: `comb19_lesson_data.py`, `comb19_beats.json`.
+- GitHub workflow: `.github/workflows/render-comb19-v2.yml`.
+- Hướng dẫn riêng: `HUONG_DAN_RENDER_COMB19_V2.md`.
+- Bản xem trước: `preview/comb19_v2/storyboard_8_chapters.png`.
+- Video thực tế chưa được nghiệm thu: chạy workflow với preview, voice off trước khi phát hành.
+
+
+## COMB19 V2 – Tập con và công thức 2^n
+
+- 8 chương; 48 nhịp giảng; công thức Typst đúng ký hiệu `C^(n)_(k)` (n ở trên).
+- Các mô hình: liệt kê tập con, 0/1, phân lớp theo kích thước, điều kiện A/B, chẵn–lẻ, mạng tập con, không kề nhau, bài nâng cao tám vị trí.
+- **Hai cách đếm bài cuối**: 55−21=34 và 13+13+8=34.
+- Mã Scene: `episodes/comb19_subsets.py` · Dữ liệu: `comb19_lesson_data.py`, `comb19_beats.json`.
+- GitHub workflow: `.github/workflows/render-comb19-v2.yml`.
+- Hướng dẫn riêng: `HUONG_DAN_RENDER_COMB19_V2.md`.
+- Bản xem trước: `preview/comb19_v2/storyboard_8_chapters.png`.
+- Video thực tế chưa được nghiệm thu: chạy workflow với preview, voice off trước khi phát hành.
