@@ -700,13 +700,13 @@ def layout_samples():
         lesson_card("MÔ HÌNH SILO",[
             ("math","r=3",28,CYAN),
             ("math","h_tr=4",27,CYAN),
-            ("math","h_(non)=4, l=5",26,CYAN),
+            ("math","h_n=4, l=5",26,CYAN),
             ("text","A ở đáy trụ, B trên mái nón.",18,INK),
             ("text","Đường đi bắt buộc qua điểm nối M.",18,GOLD),
         ],GOLD),
         lesson_card("KẾT QUẢ",[
-            ("math","L_tr=2 sqrt(pi^2+4)",27,GOLD),
-            ("math","L_(non)=frac(5 sqrt(5),2)",27,CYAN),
+            ("math","L_t=2 sqrt(pi^2+4)",27,GOLD),
+            ("math","L_n=frac(5 sqrt(5),2)",27,CYAN),
             ("math","L_(min)=2 sqrt(pi^2+4)+frac(5 sqrt(5),2)",24,GREEN),
         ],CYAN),
     ]
@@ -815,7 +815,7 @@ class TraiPhang15Master(BaseLesson):
         card=lesson_card("KÍCH THƯỚC",[
             ("math","r=3",29,CYAN),
             ("math","h_tr=4",27,CYAN),
-            ("math","h_(non)=4",27,CYAN),
+            ("math","h_n=4",27,CYAN),
             ("math","l=5",29,GOLD),
             ("text","M là một điểm bảo trì cố định trên vòng nối.",17,INK),
         ],GOLD)
@@ -923,9 +923,9 @@ class TraiPhang15Master(BaseLesson):
         self.add_fixed_in_frame_mobjects(rect)
 
         card=lesson_card("PYTHAGORE",[
-            ("math","L_tr^2=(2 pi)^2+4^2",28,INK),
-            ("math","L_tr=sqrt(4 pi^2+16)",28,CYAN),
-            ("math","L_tr=2 sqrt(pi^2+4)",32,GOLD),
+            ("math","L_t^2=(2 pi)^2+4^2",28,INK),
+            ("math","L_t=sqrt(4 pi^2+16)",28,CYAN),
+            ("math","L_t=2 sqrt(pi^2+4)",32,GOLD),
         ],GOLD)
         self.add_fixed_in_frame_mobjects(card)
 
@@ -979,7 +979,7 @@ class TraiPhang15Master(BaseLesson):
             ("math","S M=5",28,INK),
             ("math","S B=frac(5,2)",28,INK),
             ("math","hat(M S B)=frac(pi,2)",27,CYAN),
-            ("math","L_(non)=frac(5 sqrt(5),2)",31,GOLD),
+            ("math","L_n=frac(5 sqrt(5),2)",31,GOLD),
         ],GOLD)
         self.add_fixed_in_frame_mobjects(card)
 
@@ -1005,9 +1005,9 @@ class TraiPhang15Master(BaseLesson):
         self.add_fixed_in_frame_mobjects(pair)
 
         card=lesson_card("TỔNG ĐỘ DÀI",[
-            ("math","L_(min)=L_tr+L_(non)",27,INK),
-            ("math","L_tr=2 sqrt(pi^2+4)",26,GOLD),
-            ("math","L_(non)=frac(5 sqrt(5),2)",26,CYAN),
+            ("math","L_(min)=L_t+L_n",27,INK),
+            ("math","L_t=2 sqrt(pi^2+4)",26,GOLD),
+            ("math","L_n=frac(5 sqrt(5),2)",26,CYAN),
             ("math","L_(min)=2 sqrt(pi^2+4)+frac(5 sqrt(5),2)",22,GREEN),
         ],GREEN)
         self.add_fixed_in_frame_mobjects(card)
@@ -1028,9 +1028,9 @@ class TraiPhang15Master(BaseLesson):
         self.add(silo_wireframe(), total_route_group())
 
         card=lesson_card("VỚI MỌI ĐƯỜNG ĐI QUA M",[
-            ("math","L_(A M)>=L_tr",27,GOLD),
-            ("math","L_(M B)>=L_(non)",27,CYAN),
-            ("math","L>=L_tr+L_(non)",28,INK),
+            ("math","L_(A M)>=L_t",27,GOLD),
+            ("math","L_(M B)>=L_n",27,CYAN),
+            ("math","L>=L_t+L_n",28,INK),
             ("text","Dấu bằng khi cả hai đoạn đều tối ưu.",17,GREEN),
         ],GREEN)
         self.add_fixed_in_frame_mobjects(card)
@@ -1126,9 +1126,9 @@ class TraiPhang15Master(BaseLesson):
             ("text","1. Mặt trụ → hình chữ nhật.",18,INK),
             ("text","2. Mặt nón → hình quạt.",18,INK),
             ("text","3. M cố định nên tối ưu riêng từng phần.",17,CYAN),
-            ("math","L_tr=2 sqrt(pi^2+4)",25,GOLD),
-            ("math","L_(non)=frac(5 sqrt(5),2)",25,CYAN),
-            ("math","L_(min)=L_tr+L_(non)",26,GREEN),
+            ("math","L_t=2 sqrt(pi^2+4)",25,GOLD),
+            ("math","L_n=frac(5 sqrt(5),2)",25,CYAN),
+            ("math","L_(min)=L_t+L_n",26,GREEN),
         ],GOLD)
         self.add_fixed_in_frame_mobjects(card)
 
