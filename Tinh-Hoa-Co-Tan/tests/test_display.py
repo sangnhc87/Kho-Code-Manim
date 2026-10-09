@@ -3,11 +3,16 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 import numpy as np
-from manim import Circle, Scene, tempconfig
-from manimpango import list_fonts
+try:
+    from manim import Circle, Scene, tempconfig
+    from manimpango import list_fonts
+    import src.scene as display
+    HAS_MANIM = True
+except ImportError:
+    HAS_MANIM = False
+
 from src.core import Board, read_episode
 from src.engine_coords import board_fen, flip_move
-import src.scene as display
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -23,6 +28,7 @@ class DisplayTests(unittest.TestCase):
         fen = '3k1a3/9/3N5/9/9/9/9/4K4/9/9 w'
         self.assertEqual(board_fen(Board.fen(fen)), fen+' - - 0 1')
 
+    @unittest.skipUnless(HAS_MANIM, "manim is required for visual scene tests")
     def test_no_ghost_or_missing_pieces_after_moves_captures_and_resets(self):
         episode = read_episode(ROOT/'episodes'/'tap-0001.json')
         fonts = list_fonts()

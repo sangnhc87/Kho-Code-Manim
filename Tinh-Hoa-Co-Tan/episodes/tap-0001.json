@@ -2,6 +2,7 @@
   "id": "tap-0001",
   "title": "MÃ PHÁ ĐƠN SĨ — PHÂN TÍCH CÁC BIẾN",
   "subtitle": "Đỏ đi trước • Ép bắt Sĩ trong mô hình 4 quân; chưa xét luật lặp nước.",
+  "category": "Tàn Mã",
   "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
   "analysis_status": "four_piece_retrograde_ordinary_moves",
   "verification_note": "Exhaustive 4-piece win/draw/loss retrograde to capturing black advisor under ordinary legal moves, checks and stalemate. Long-check and long-chase repetition adjudication NOT covered; 13/21 are plies to capture advisor against a delaying defender, not mate distances.",

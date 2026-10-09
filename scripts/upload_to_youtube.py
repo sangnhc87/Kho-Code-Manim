@@ -307,14 +307,32 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
         lessons = {}
         episodes_dir = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "episodes"
         if episodes_dir.exists():
-            for ep_file in episodes_dir.glob("tap-*.json"):
+            for ep_file in sorted(episodes_dir.glob("tap-*.json")):
                 try:
                     num = int(ep_file.stem.split("-")[1])
                     ep_data = json.loads(ep_file.read_text(encoding="utf-8"))
+                    
+                    title_lower = ep_data.get("title", "").lower()
+                    category = ep_data.get("category", "")
+                    if not category:
+                        if "xe" in title_lower and "mã" in title_lower: category = "Tàn Xe Mã"
+                        elif "xe" in title_lower and "pháo" in title_lower: category = "Tàn Xe Pháo"
+                        elif "pháo" in title_lower and "mã" in title_lower: category = "Tàn Pháo Mã"
+                        elif "mã" in title_lower and ("tốt" in title_lower or "binh" in title_lower): category = "Tàn Mã Tốt"
+                        elif "pháo" in title_lower and ("tốt" in title_lower or "binh" in title_lower): category = "Tàn Pháo Tốt"
+                        elif "xe" in title_lower and ("tốt" in title_lower or "binh" in title_lower): category = "Tàn Xe Tốt"
+                        elif "xe" in title_lower: category = "Tàn Xe"
+                        elif "pháo" in title_lower: category = "Tàn Pháo"
+                        elif "mã" in title_lower: category = "Tàn Mã"
+                        elif "binh" in title_lower or "tốt" in title_lower: category = "Tàn Binh"
+                        else: category = "Căn Bản"
+
                     lessons[num] = {
                         "title": f"Tập {num}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
-                        "description": f"{ep_data.get('subtitle', '')}\n\n{playlist_info['description']}",
-                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", "thầy sang"]
+                        "description": f"{ep_data.get('subtitle', '')}\n\nChuyên đề {category} - Tuyệt kỹ cờ tàn.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan #TinhHoaCoTan",
+                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "thầy sang"],
+                        "playlist_title": f"Tinh Hoa Cờ Tàn - {category} | Thầy Nguyễn Văn Sang",
+                        "playlist_desc": f"Chuyên đề {category}: Tuyệt kỹ và bí quyết cờ tàn từ cơ bản đến nâng cao.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan"
                     }
                 except (ValueError, json.JSONDecodeError):
                     continue
@@ -323,7 +341,9 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
         print(f"❌ Khóa học không hợp lệ: {series_name}")
         return
 
-    playlist_id = get_or_create_playlist(youtube, playlist_info["title"], playlist_info["description"])
+    playlist_cache = {}
+    default_playlist_id = get_or_create_playlist(youtube, playlist_info["title"], playlist_info["description"])
+    playlist_cache[playlist_info["title"]] = default_playlist_id
 
     for lesson_num in sorted(lessons.keys()):
         key = f"{series_name}_{lesson_num:02d}"
@@ -346,6 +366,12 @@ Bài học: {meta['title']}
 {AUTHOR_INFO}
 #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim"""
 
+        p_title = meta.get("playlist_title", playlist_info["title"])
+        p_desc = meta.get("playlist_desc", playlist_info["description"])
+        if p_title not in playlist_cache:
+            playlist_cache[p_title] = get_or_create_playlist(youtube, p_title, p_desc)
+        cur_playlist_id = playlist_cache[p_title]
+
         vid_id, vid_url = upload_single_file(
             youtube=youtube,
             video_path=video_path,
@@ -356,7 +382,8 @@ Bài học: {meta['title']}
         )
 
         if vid_id:
-            add_video_to_playlist(youtube, playlist_id, vid_id)
+            if cur_playlist_id:
+                add_video_to_playlist(youtube, cur_playlist_id, vid_id)
             history[key] = {
                 "id": vid_id,
                 "url": vid_url,
@@ -409,17 +436,49 @@ def main():
                 playlist_info = PLAYLIST_INT
             elif args.series == "cotan":
                 finder = locate_cotan_video
-                playlist_info = {
-                    "title": "Tinh Hoa Cờ Tàn | Thầy Nguyễn Văn Sang",
-                    "description": "Tuyệt kỹ và bí quyết cờ tàn cơ bản đến nâng cao.\n#CoTuong #CoTan #TinhHoaCoTan"
-                }
                 ep_file = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "episodes" / f"tap-{args.lesson:04d}.json"
+                category = "Căn Bản"
+                ep_data = {}
                 if ep_file.exists():
-                    ep_data = json.loads(ep_file.read_text(encoding="utf-8"))
+                    try:
+                        ep_data = json.loads(ep_file.read_text(encoding="utf-8"))
+                    except Exception:
+                        pass
+                
+                title_lower = ep_data.get("title", "").lower()
+                cat_custom = ep_data.get("category")
+                if cat_custom:
+                    category = cat_custom
+                elif "xe" in title_lower and "mã" in title_lower:
+                    category = "Tàn Xe Mã"
+                elif "xe" in title_lower and "pháo" in title_lower:
+                    category = "Tàn Xe Pháo"
+                elif "pháo" in title_lower and "mã" in title_lower:
+                    category = "Tàn Pháo Mã"
+                elif "mã" in title_lower and ("tốt" in title_lower or "binh" in title_lower):
+                    category = "Tàn Mã Tốt"
+                elif "pháo" in title_lower and ("tốt" in title_lower or "binh" in title_lower):
+                    category = "Tàn Pháo Tốt"
+                elif "xe" in title_lower and ("tốt" in title_lower or "binh" in title_lower):
+                    category = "Tàn Xe Tốt"
+                elif "xe" in title_lower:
+                    category = "Tàn Xe"
+                elif "pháo" in title_lower:
+                    category = "Tàn Pháo"
+                elif "mã" in title_lower:
+                    category = "Tàn Mã"
+                elif "binh" in title_lower or "tốt" in title_lower:
+                    category = "Tàn Binh"
+
+                playlist_info = {
+                    "title": f"Tinh Hoa Cờ Tàn - {category} | Thầy Nguyễn Văn Sang",
+                    "description": f"Chuyên đề {category}: Tuyệt kỹ và bí quyết cờ tàn thực chiến từ cơ bản đến nâng cao.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan #TinhHoaCoTan #{category.replace(' ', '')}"
+                }
+                if ep_data:
                     lessons = {args.lesson: {
                         "title": f"Tập {args.lesson}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
                         "description": f"{ep_data.get('subtitle', '')}\n\n{playlist_info['description']}",
-                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", "thầy sang"]
+                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "thầy sang"]
                     }}
                 else:
                     lessons = {}
