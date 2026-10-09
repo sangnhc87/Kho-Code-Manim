@@ -524,5 +524,20 @@ Nội dung trọng tâm bài 11:
 #ThongKe #KhoangBienThien #IQR #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
         "tags": ["khoảng biến thiên", "iqr", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
         "file_pattern": "STAT11"
+    },
+    12: {
+        "title": "STAT12: Phương Sai & Độ Lệch Chuẩn Của Mẫu Ghép Nhóm - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 12: Phương sai và độ lệch chuẩn của mẫu số liệu ghép nhóm
+
+Nội dung trọng tâm bài 12:
+- Phương pháp tính phương sai và độ lệch chuẩn bằng giá trị đại diện.
+- So sánh sự khác biệt giữa tính trên dữ liệu gốc và dữ liệu ghép nhóm.
+- Ứng dụng đo mức độ phân tán của dữ liệu ghép nhóm trong thực tế.
+
+{AUTHOR_INFO}
+#ThongKe #PhuongSai #DoLechChuan #MauGhepNhom #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["phương sai", "độ lệch chuẩn", "mẫu ghép nhóm", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT12"
     }
 }

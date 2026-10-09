@@ -1,3 +1,3 @@
 #set page(width: auto, height: auto, margin: 5pt)
 #set text(size: 20pt, fill: rgb("#edf6ff"))
-$ R_A=R_B=8 quad "IQR"_A approx 2.41 < "IQR"_B=4 $
+$ n=40 quad m=(5,7,9,11) $

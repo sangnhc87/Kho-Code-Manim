@@ -1,3 +1,3 @@
 #set page(width: auto, height: auto, margin: 5pt)
 #set text(size: 20pt, fill: rgb("#edf6ff"))
-$ R_A=R_B=8 quad "IQR"_A approx 2.41 < "IQR"_B=4 $
+$ overline(x)_A=overline(x)_B=7.6 quad s_A^2=2.44 < s_B^2=4.44 $
