@@ -7,7 +7,7 @@ FORMULAS={
  'shapes': '$ -1 <= r <= 1 $',
  'pearson': '$ r = frac(36, sqrt(42 times 36)) approx 0.926 $',
  'model': '$ hat(y) = frac(8,7) + frac(6,7) x $',
- 'least_squares': '$ SSE = sum (y_i - hat(y)_i)^2 $',
+ 'least_squares': '$ "SSE" = sum (y_i - hat(y)_i)^2 $',
  'prediction': '$ hat(y)(5) = frac(38,7) approx 5.43 $',
  'caution': '$ r = 0 quad "phi tuyến vẫn có thể tồn tại" $',
  'practice': '$ hat(y) = 1 + 2x quad r = 1 $',
