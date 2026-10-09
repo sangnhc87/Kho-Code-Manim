@@ -616,5 +616,15 @@ Nội dung trọng tâm bài 17:
 #ThongKe #TuongQuan #HoiQuyTuyenTinh #Toan12 #ThayNguyenVanSang #Manim""",
         "tags": ["tương quan", "hồi quy tuyến tính", "phân tích dữ liệu", "toán 10", "toán 12", "manim", "thầy nguyễn văn sang"],
         "file_pattern": "STAT17"
+    },
+    18: {
+        "title": "STAT18: Bài Toán Ước Lượng Tham Số Mẫu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 18: Ước lượng tham số mẫu
+
+{AUTHOR_INFO}
+#ThongKe #UocLuong #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["ước lượng", "thống kê", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT18"
     }
 }
