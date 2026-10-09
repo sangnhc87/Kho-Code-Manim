@@ -325,6 +325,7 @@ def main():
     parser.add_argument("--series", choices=["trai_phang", "to_hop"], help="Chạy theo chuỗi khóa học (trai_phang hoặc to_hop)")
     parser.add_argument("--lesson", type=int, help="Chỉ định số bài cần tải (ví dụ: --lesson 1)")
     parser.add_argument("--limit", type=int, default=6, help="Số lượng video tối đa tải trong 1 lần chạy (mặc định: 6 video)")
+    parser.add_argument("--category-id", default="27", help="ID thể loại video (mặc định: 27 - Giáo dục)")
 
     args = parser.parse_args()
     youtube = get_youtube_client()
@@ -347,6 +348,7 @@ def main():
                 description=desc,
                 tags=meta["tags"],
                 privacy=args.privacy,
+                category_id=args.category_id,
             )
             if video_id:
                 playlist_info = PLAYLIST_TRAI_PHANG if args.series == "trai_phang" else PLAYLIST_TO_HOP
@@ -373,6 +375,7 @@ def main():
             description=args.description,
             tags=args.tags,
             privacy=args.privacy,
+            category_id=args.category_id,
         )
     else:
         print("Vui lòng cung cấp --series [trai_phang|to_hop] hoặc --file [duong_dan_mp4]")
