@@ -42,6 +42,16 @@ class CoreTests(unittest.TestCase):
             for uci in beat.get('moves',[]):
                 b.play(uci[:2],uci[2:])
 
+    def test_003_all_variations_legally_play(self):
+        ep=read_episode(ROOT/'episodes'/'tap-0003.json')
+        self.assertEqual(ep['category'],'Tàn Binh')
+        self.assertEqual(ep['analysis_status'],'four_piece_pawn_elephant_retrograde')
+        self.assertTrue(all('fen' in beat for beat in ep['beats']))
+        for beat in ep['beats']:
+            b=Board.fen(beat['fen'])
+            for uci in beat.get('moves',[]):
+                b.play(uci[:2],uci[2:])
+
     def test_036_all_variations_legally_play(self):
         ep=read_episode(ROOT/'episodes'/'tap-0036.json')
         self.assertEqual(len(ep['beats']),18)
