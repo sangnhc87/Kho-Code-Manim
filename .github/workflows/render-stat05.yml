@@ -48,16 +48,17 @@ jobs:
           python -m pip install -r requirements.txt
           manim --version
           typst --version
-      - name: Unit tests for STAT01-05 and source checks
-        run: |
-          python -m unittest discover -s tests -v
-          python -m compileall -q stat05 scripts
+
       - name: Compile all STAT05 Typst formula SVGs (fail early)
         run: python scripts/build_stat05_typst.py
       - name: Prepare 32 beats, captions and optional Vietnamese narration
         env:
           VOICE_MODE: ${{ inputs.voice }}
         run: python scripts/prepare_stat05.py --voice "$VOICE_MODE"
+      - name: Unit tests for STAT01-05 and source checks
+        run: |
+          python -m unittest discover -s tests -v
+          python -m compileall -q stat05 scripts
       - name: Smoke-render the beginning in very low resolution
         run: |
           manim -ql -r 426,240 --fps 8 stat05/scene.py STAT05_SMOKE
