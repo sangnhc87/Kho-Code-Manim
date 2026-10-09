@@ -98,7 +98,7 @@ jobs:
           python ../../scripts/upload_to_youtube.py \
             --file "$VIDEO" \
             --series thong_ke \
-            --lesson 8 \
+            --lesson 10 \
             --category-id 27 \
             --privacy public
       - name: Commit and Push YouTube History
