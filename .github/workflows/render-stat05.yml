@@ -23,6 +23,9 @@ jobs:
   render:
     runs-on: ubuntu-latest
     timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-thong-ke
     steps:
       - uses: actions/checkout@v4
       - name: Install native dependencies and Vietnamese fonts
@@ -79,11 +82,11 @@ jobs:
         with:
           name: STAT05-${{ inputs.quality }}-voice-${{ inputs.voice }}
           path: |
-            media/videos/**/STAT05.mp4
-            artifacts/stat05_qa/
-            STAT05_vi.srt
-            stat05/runtime_plan.json
-            preview/stat05/
+            Manim-Typst/series-thong-ke/media/videos/**/STAT05.mp4
+            Manim-Typst/series-thong-ke/artifacts/stat05_qa/
+            Manim-Typst/series-thong-ke/STAT05_vi.srt
+            Manim-Typst/series-thong-ke/stat05/runtime_plan.json
+            Manim-Typst/series-thong-ke/preview/stat05/
           if-no-files-found: warn
           retention-days: 7
       - name: Auto Upload Full HD to YouTube (Public)
