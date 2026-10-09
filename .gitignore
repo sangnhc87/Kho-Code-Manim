@@ -16,3 +16,10 @@ venv/
 *.srt
 *.vtt
 *_ma_nguon.zip
+
+# Secrets & Tokens (do not commit)
+*client_secret*.json
+*youtube_client*.json
+*token*.json
+*.token
+credentials.json
