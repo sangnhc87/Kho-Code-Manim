@@ -108,7 +108,7 @@ def pie_visual(step):
     pie_center=(LEFT-1.18,.25,0)
     for v in SCORE_VALUES:
         angle=TAU*FREQUENCY[v]/N
-        sector=Sector(outer_radius=1.69,start_angle=theta,angle=angle,
+        sector=Sector(radius=1.69,start_angle=theta,angle=angle,
                       fill_color=COLORS[v],fill_opacity=1,
                       stroke_color=BG,stroke_width=2).shift(pie_center)
         pieces.add(sector)

@@ -5,10 +5,10 @@ ROOT=Path(__file__).resolve().parents[1]
 FORMULAS={
  'overview':r'$ (284) / 40 = 7.1 $',
  'mean':r'$ bar(x) = (sum_i f_i x_i) / (sum_i f_i) = 7.1 $',
- 'median':r'$ Me = (x_20 + x_21) / 2 = 7 $',
- 'mode':r'$ Mo = 7 quad (f_7 = 10) $',
+ 'median':r'$ M_e = (x_20 + x_21) / 2 = 7 $',
+ 'mode':r'$ M_o = 7 quad (f_7 = 10) $',
  'outlier':r'$ (63 - 9 + 27) / 9 = 9 $',
- 'compare':r'$ bar(x) = 7.1 quad Me = 7 quad Mo = 7 $',
+ 'compare':r'$ bar(x) = 7.1 quad M_e = 7 quad M_o = 7 $',
  'shift':r'$ bar(y) = bar(x) + 2 = 9.1 $',
  'exercise':r'$ 5 times 7 - (5 + 6 + 7 + 8) = 9 $',
 }
