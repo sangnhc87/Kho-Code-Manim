@@ -180,7 +180,8 @@ class XiangqiLesson(Scene):
         brand=Text('TINH HOA CỜ TÀN',font=FONT,font_size=26,
                    color=GOLD,weight='BOLD')
         brand.to_edge(LEFT,buff=.64).move_to([-6.34,3.57,0],aligned_edge=LEFT)
-        series=Text(f"{data['id'].upper()}  •  NGUYỄN VĂN SANG",font=FONT,
+        sub_title = data.get('category', 'CHUYÊN ĐỀ CỜ TÀN').upper()
+        series=Text(f"{data['id'].upper()}  •  {sub_title}",font=FONT,
                     font_size=15,color=MUTED)
         series.move_to([6.27,3.57,0],aligned_edge=RIGHT)
         header_line=Line([-6.35,HEADER_LINE_Y,0],[6.34,HEADER_LINE_Y,0],
@@ -189,8 +190,8 @@ class XiangqiLesson(Scene):
         footer_bg=Rectangle(width=14.22,height=.40,
               fill_color='#09101C',fill_opacity=.96,stroke_width=0)
         footer_bg.to_edge(DOWN,buff=0)
-        footer=Text('Nguyễn Văn Sang   •   Mời tôi ly cà phê — MoMo: 0389.821.115',
-                    font=FONT,font_size=14,color=MUTED)
+        footer=Text('☕ Ủng hộ kênh ly cà phê — VPBank: 10389821115 (Quét VietQR cuối video)',
+                    font=FONT,font_size=13,color=MUTED)
         footer.move_to(footer_bg)
 
         right_bg=RoundedRectangle(width=6.02,height=6.07,
@@ -291,5 +292,5 @@ class XiangqiLesson(Scene):
         art.move_to(ORIGIN)
         scrim=Rectangle(width=14.5,height=8.3,fill_color=BG,fill_opacity=.95,stroke_width=0)
         self.play(FadeIn(scrim),FadeIn(art,scale=.95),run_time=.8)
-        self.wait(3)
+        self.wait(6.5)
         self.play(FadeOut(art),FadeOut(scrim),run_time=.6)

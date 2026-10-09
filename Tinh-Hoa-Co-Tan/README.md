@@ -1,6 +1,6 @@
-# TINH HOA CỜ TÀN — Nguyễn Văn Sang
+# TINH HOA CỜ TÀN — TUYỂN TẬP 1.000 THẾ CỜ TÀN KINH ĐIỂN
 
-**Bản 2.0: viết lại video 001.** Manim + Typst + Edge/Zalo TTS + GitHub Actions, series có thể thêm vô hạn tập bằng file JSON.
+**Bản 2.0: Hệ thống sản xuất tự động.** Manim + Typst + Edge/Zalo TTS + GitHub Actions, series có thể thêm vô hạn tập bằng file JSON.
 
 ### Bản sửa 0001 ngày 09/10/2026
 
@@ -26,7 +26,7 @@ Nguồn engine: [Pikafish release](https://github.com/official-pikafish/Pikafish
 - `src/layout.py` khóa tọa độ bàn cờ, ranh giới tiêu đề, footer, panel bên phải. Test sẽ báo lỗi nếu phần trên/dưới hoặc cạnh phải bị tràn.
 - Các biến cờ có FEN bắt đầu riêng; khi chuyển biến, **bàn cờ không biến mất**, chỉ thay quân cờ, không nhảy nối biến khác.
 - Panel chỉ ghi nước đang phân tích và kết quả, không trình chiếu đoạn văn dài.
-- Footer trong suốt series: `Nguyễn Văn Sang • Mời tôi ly cà phê — MoMo: 0389.821.115`.
+- Footer trong suốt series: `☕ Ủng hộ kênh ly cà phê — VPBank: 10389821115 (Quét VietQR cuối video)`.
 
 ## Tập 001 — Mã đấu đơn Sĩ
 

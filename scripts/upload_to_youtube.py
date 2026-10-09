@@ -299,8 +299,8 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
     elif series_name == "cotan":
         print(f"\n🎯 BẮT ĐẦU XỬ LÝ KHÓA HỌC: TINH HOA CỜ TÀN")
         playlist_info = {
-            "title": "Tinh Hoa Cờ Tàn | Thầy Nguyễn Văn Sang",
-            "description": "Tuyệt kỹ và bí quyết cờ tàn cơ bản đến nâng cao. Nhìn thế trận để thắng, học bằng sự thấu hiểu chứ không học thuộc lòng.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan #TinhHoaCoTan #ThayNguyenVanSang"
+            "title": "Tinh Hoa Cờ Tàn",
+            "description": "Tuyệt kỹ và bí quyết cờ tàn cơ bản đến nâng cao. Nhìn thế trận để thắng, học bằng sự thấu hiểu chứ không học thuộc lòng.\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n#CoTuong #CoTan #TinhHoaCoTan"
         }
         
         # Build lessons dictionary on the fly for cotan
@@ -327,12 +327,25 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
                         elif "binh" in title_lower or "tốt" in title_lower: category = "Tàn Binh"
                         else: category = "Căn Bản"
 
+                    cotan_desc = f"""{ep_data.get('subtitle', '')}
+
+Chuyên đề: {category} — Tuyệt kỹ & bí quyết cờ tàn thực chiến.
+
+☕ MỜI KÊNH MỘT LY CÀ PHÊ:
+Nếu bạn thấy video hữu ích và yêu thích nghệ thuật cờ tàn, hãy tiếp thêm động lực cho kênh nhé!
+👉 Ngân hàng: VPBank (Việt Nam Thịnh Vượng)
+👉 Số tài khoản: 10389821115
+👉 Quét mã VietQR ở cuối video!
+Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
+
+#CoTuong #CoTan #TinhHoaCoTan #{category.replace(' ', '')}"""
+
                     lessons[num] = {
                         "title": f"Tập {num}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
-                        "description": f"{ep_data.get('subtitle', '')}\n\nChuyên đề {category} - Tuyệt kỹ cờ tàn.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan #TinhHoaCoTan",
-                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "thầy sang"],
-                        "playlist_title": f"Tinh Hoa Cờ Tàn - {category} | Thầy Nguyễn Văn Sang",
-                        "playlist_desc": f"Chuyên đề {category}: Tuyệt kỹ và bí quyết cờ tàn từ cơ bản đến nâng cao.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan"
+                        "description": cotan_desc,
+                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "học cờ tướng", "cờ tướng thực chiến"],
+                        "playlist_title": f"Tinh Hoa Cờ Tàn - {category}",
+                        "playlist_desc": f"Chuyên đề {category}: Tuyệt kỹ và bí quyết cờ tàn từ cơ bản đến nâng cao.\n☕ Ủng hộ ly cà phê: VPBank 10389821115.\n#CoTuong #CoTan #{category.replace(' ', '')}"
                     }
                 except (ValueError, json.JSONDecodeError):
                     continue
@@ -471,14 +484,26 @@ def main():
                     category = "Tàn Binh"
 
                 playlist_info = {
-                    "title": f"Tinh Hoa Cờ Tàn - {category} | Thầy Nguyễn Văn Sang",
-                    "description": f"Chuyên đề {category}: Tuyệt kỹ và bí quyết cờ tàn thực chiến từ cơ bản đến nâng cao.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan #TinhHoaCoTan #{category.replace(' ', '')}"
+                    "title": f"Tinh Hoa Cờ Tàn - {category}",
+                    "description": f"Chuyên đề {category}: Tuyệt kỹ và bí quyết cờ tàn thực chiến từ cơ bản đến nâng cao.\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n#CoTuong #CoTan #TinhHoaCoTan #{category.replace(' ', '')}"
                 }
                 if ep_data:
+                    cotan_desc = f"""{ep_data.get('subtitle', '')}
+
+Chuyên đề: {category} — Tuyệt kỹ & bí quyết cờ tàn thực chiến.
+
+☕ MỜI KÊNH MỘT LY CÀ PHÊ:
+Nếu bạn thấy video hữu ích và yêu thích nghệ thuật cờ tàn, hãy tiếp thêm động lực cho kênh nhé!
+👉 Ngân hàng: VPBank (Việt Nam Thịnh Vượng)
+👉 Số tài khoản: 10389821115
+👉 Quét mã VietQR ở cuối video!
+Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
+
+#CoTuong #CoTan #TinhHoaCoTan #{category.replace(' ', '')}"""
                     lessons = {args.lesson: {
                         "title": f"Tập {args.lesson}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
-                        "description": f"{ep_data.get('subtitle', '')}\n\n{playlist_info['description']}",
-                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "thầy sang"]
+                        "description": cotan_desc,
+                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "học cờ tướng", "cờ tướng thực chiến"]
                     }}
                 else:
                     lessons = {}
