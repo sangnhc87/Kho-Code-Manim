@@ -13,8 +13,8 @@ on:
         description: Vietnamese AI voice (requires network access)
         type: choice
         required: true
-        default: 'off'
-        options: ['off', 'on']
+        default: 'on'
+        options: ['on', 'off']
 
 permissions:
   contents: read

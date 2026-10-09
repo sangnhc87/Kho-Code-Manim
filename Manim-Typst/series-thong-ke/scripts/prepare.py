@@ -19,9 +19,16 @@ def duration(path):
                   '-of','default=noprint_wrappers=1:nokey=1',str(path)],text=True)
     return float(r.strip())
 
-async def generate_voice(path, text, voice):
+async def generate_voice(path, text, voice, rate='+0%'):
     import edge_tts
-    await edge_tts.Communicate(text, voice=voice,rate='-5%').save(str(path))
+    for attempt in range(3):
+        try:
+            await edge_tts.Communicate(text, voice=voice, rate=rate).save(str(path))
+            return
+        except Exception as e:
+            if attempt == 2:
+                raise
+            await asyncio.sleep(2 * (attempt + 1))
 
 
 def stamp(s):
@@ -43,8 +50,9 @@ def sentence_chunks(text, target=65):
 
 async def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--voice',choices=['off','on'],default='off')
-    ap.add_argument('--voice-id',default='vi-VN-HoaiMyNeural')
+    ap.add_argument('--voice',choices=['off','on'],default='on')
+    ap.add_argument('--voice-id',default='vi-VN-NamMinhNeural')
+    ap.add_argument('--rate',default='+0%')
     args=ap.parse_args()
     validate()
     voices=ROOT/'assets'/'voice'
@@ -55,7 +63,8 @@ async def main():
         speech_duration=0.0
         if args.voice=='on':
             dst=voices/f'stat01_{i+1:02d}.mp3'
-            await generate_voice(dst,b.narration,args.voice_id)
+            if not dst.exists() or dst.stat().st_size < 1000:
+                await generate_voice(dst,b.narration,args.voice_id,args.rate)
             speech_duration=duration(dst)
             rel=dst.relative_to(ROOT).as_posix()
         slot=max(b.duration,speech_duration+1.3)
