@@ -1,0 +1,86 @@
+name: Tinh Hoa Co Tan - Manim Typst
+on:
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: 'latest, all, tap-0001,tap-0002 or range:0001-0016'
+        type: string
+        default: latest
+        required: true
+      quality:
+        description: 'Nhanh 480p hoac xuat 1080p'
+        type: choice
+        options: [preview, full]
+        default: preview
+      voice:
+        description: 'zalo=nam mien Nam (ZALO_API_KEY), edge=nam tieng Viet'
+        type: choice
+        options: [zalo, edge]
+        default: edge
+  push:
+    paths:
+      - 'Tinh-Hoa-Co-Tan/episodes/**'
+      - 'Tinh-Hoa-Co-Tan/src/**'
+      - 'Tinh-Hoa-Co-Tan/scripts/**'
+      - 'Tinh-Hoa-Co-Tan/requirements.txt'
+      - '.github/workflows/render-xiangqi.yml'
+permissions:
+  contents: read
+concurrency:
+  group: cotan-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: Tinh-Hoa-Co-Tan
+    outputs:
+      matrix: ${{ steps.discover.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: discover
+        env:
+          REQUESTED: ${{ github.event.inputs.episodes || 'latest' }}
+        run: echo "matrix=$(python scripts/plan.py "$REQUESTED")" >> "$GITHUB_OUTPUT"
+  render:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: Tinh-Hoa-Co-Tan
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Tinh-Hoa-Co-Tan/requirements.txt
+      - name: Install graphics / audio / fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config fonts-noto-core fonts-noto-cjk
+          python -m pip install -r requirements.txt
+      - uses: typst-community/setup-typst@v5
+      - name: Validate moves BEFORE creating audio/video
+        run: python scripts/produce.py --episode "${{ matrix.episode }}" --skip-render
+      - name: Produce mp4
+        env:
+          ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
+          QUALITY: ${{ github.event.inputs.quality || 'preview' }}
+          VOICE: ${{ github.event.inputs.voice || 'edge' }}
+        run: |
+          python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: cotan-${{ matrix.episode }}
+          path: |
+            Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}.mp4
+            Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/episode.json
+          if-no-files-found: error
+          retention-days: 14
