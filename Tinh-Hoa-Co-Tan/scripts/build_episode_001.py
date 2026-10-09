@@ -81,8 +81,8 @@ def main():
     assert res[idx[openings['e7d7']]]==0
     beats=[
       beaten(([],[]),'THẾ CỜ','Đỏ đi trước — Mã bắt Sĩ?',
-       'Đỏ còn Tướng và Mã. Đen còn Tướng và một Sĩ. Đỏ đi trước. Hãy tìm cách buộc Đen mất Sĩ. Có hai nước bắt Sĩ nhanh nhất, một nước thắng chậm, và một nước làm mất thế thắng. Ta xét lần lượt từng biến.',
-       'ĐỎ ĐI TRƯỚC  •  4 QUÂN',2.0,spotlight='d2'),
+       'Đỏ còn Tướng và Mã. Đen còn Tướng và một Sĩ. Đỏ đi trước. Chữ cái a đến i là các cột từ trái sang phải; hàng không đến chín tính từ trên xuống. Mục tiêu của bài là buộc bắt Sĩ trong mô hình bốn quân theo luật đi thông thường. Mười ba và hai mươi mốt là tổng số lượt đi của cả hai bên đến khi bắt Sĩ, không phải khoảng cách chiếu bí. Bài này chưa xét luật lặp nước. Ta xét lần lượt từng biến.',
+       'ĐỎ ĐI TRƯỚC  •  MỤC TIÊU: BẮT SĨ',2.0,spotlight='d2'),
       beaten(([],mainline[:1]),'NƯỚC ĐẦU','1. Mã d2–f1',
        'Đỏ đi Mã từ d2 đến f1. Đây là một trong hai nước ngắn nhất để buộc bắt Sĩ ở thế này. Đen còn hai cách đi hợp lệ: đẩy Sĩ về trung tâm, hoặc đưa Tướng tiến một bước. Ta thử cách chống đỡ lâu hơn trước.',
        'ĐEN CÓ 2 CÁCH ĐÁP',1.3,horse_leg=['d2','f1']),
@@ -113,7 +113,7 @@ def main():
       beaten((quick[:5],quick[5:]),'ĐEN ĐI YẾU','Mã bắt Sĩ ở lượt thứ 9',
        'Đen lui Tướng về e0. Đỏ đưa Mã từ e3 tới c2. Sĩ buộc về e1. Mã c2 bắt Sĩ e1. Chỉ chín lượt đi, thay vì mười ba. Đó là khác biệt giữa chống đỡ tốt và chống đỡ yếu trong cùng một thế cờ.',
        '9 LƯỢT ĐI  •  BẮT ĐƯỢC SĨ',1.8),
-      beaten(([],slow[:1]),'ĐỎ ĐI CHẬM','Mã d2–e0 vẫn thắng',
+      beaten(([],slow[:1]),'ĐỎ ĐI CHẬM','Mã d2–e0: bắt Sĩ chậm',
        'Nếu nước đầu Đỏ đi Mã d2 đến e0, Đỏ vẫn có thể buộc bắt Sĩ. Nhưng chống đỡ tốt nhất sẽ kéo dài hơn. Ta không nói nước này thua, mà nói nó thắng chậm hơn. Cùng xem Đen kéo dài cuộc chống đỡ như thế nào.',
        'THẮNG CHẬM: 21 LƯỢT',1.2),
       beaten((slow[:1],slow[1:7]),'THẮNG CHẬM','Sĩ cơ động, Mã phải vòng',
@@ -128,17 +128,17 @@ def main():
       beaten(([],alt[:5]),'CÁCH THẮNG KHÁC','Mã d2–c4 cũng hiệu quả',
        'Còn một nước thắng nhanh tương đương: Mã d2 đến c4. Đen đưa Sĩ về e1; Đỏ Mã c4 đến e3. Sĩ về f2 và Đỏ chuyển Tướng e7 sang f7. Sau đó thế cờ nhập lại nhánh chính. Vậy Đỏ không chỉ có một nước thắng.',
        'CÁCH KHÁC: CŨNG 13 LƯỢT',1.2),
-      beaten(([],['e7d7','d0d1']),'NƯỚC SAI','Tướng e7–d7: mất thắng',
+      beaten(([],['e7d7','d0d1']),'NƯỚC SAI','Tướng e7–d7: không ép bắt Sĩ',
        'Nước sai ở thế đầu là đưa Tướng từ e7 sang d7. Đen chỉ cần đưa Tướng d0 xuống d1. Trong bảng tính bốn quân theo luật đi thông thường, Đỏ không còn đường buộc bắt Sĩ. Đây là khác biệt giữa nước không phạm luật và nước giữ được thế tất thắng.',
        'ĐỎ MẤT THẾ BUỘC BẮT SĨ',1.8),
-      beaten(([],[]),'CHỐT BIẾN','13 — 21 — mất thắng',
+      beaten(([],[]),'CHỐT BIẾN','13 — 21 — không ép bắt Sĩ',
        'Tóm lại, ở thế xuất phát này: Mã d2 đến f1 hoặc c4 bắt được Sĩ sau tối đa mười ba lượt đi trong mô hình. Mã d2 đến e0 cần đến hai mươi mốt lượt. Còn Tướng e7 đến d7 làm mất khả năng buộc bắt Sĩ. Hết tập một.',
-       'f1 hoặc c4: 13  •  e0: 21  •  Kd7: không ép thắng',2.1)
+       'f1 hoặc c4: 13  •  e0: 21  •  Kd7: không ép bắt Sĩ',2.1)
     ]
     obj={
       'id':'tap-0001',
       'title':'MÃ PHÁ ĐƠN SĨ — PHÂN TÍCH CÁC BIẾN',
-      'subtitle':'Đỏ đi trước  •  Bắt Sĩ: 13 lượt, 21 lượt hay mất thắng?',
+      'subtitle':'Đỏ đi trước • Ép bắt Sĩ trong mô hình 4 quân; chưa xét luật lặp nước.',
       'fen':INITIAL,
       'analysis_status':'four_piece_retrograde_ordinary_moves',
       'verification_note':'Exhaustive 4-piece win/draw/loss retrograde to capturing black advisor under ordinary legal moves, checks and stalemate. Long-check and long-chase repetition adjudication NOT covered; 13/21 are plies to capture advisor against a delaying defender, not mate distances.',

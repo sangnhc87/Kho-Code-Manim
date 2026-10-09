@@ -1,4 +1,6 @@
 import unittest
+import hashlib
+import json
 from pathlib import Path
 from src.core import Board, read_episode
 from src.layout import assert_safe_layout, board_bbox
@@ -7,6 +9,19 @@ from scripts.solve_masi import solve, fen_of, legal_moves
 ROOT=Path(__file__).resolve().parents[1]
 
 class CoreTests(unittest.TestCase):
+    def test_pikafish_evidence_matches_episode(self):
+        path=ROOT/'episodes'/'tap-0001.json'
+        report=json.loads((ROOT/'verification'/'tap-0001-pikafish.json').read_text())
+        self.assertEqual(report['episode_sha256'],hashlib.sha256(path.read_bytes()).hexdigest())
+        ep=read_episode(path)
+        expected=[(i,j,m) for i,beat in enumerate(ep['beats'],1)
+                  for j,m in enumerate(beat.get('moves',[]),1)]
+        actual=[(c['beat'],c['move_index'],c['display_move']) for c in report['checks']]
+        self.assertEqual(actual,expected)
+        self.assertEqual(report['verified_moves'],len(expected))
+        for check in report['checks']:
+            self.assertIn(check['uci_move'],check['legal_uci_moves'])
+
     def test_001_all_variations_legally_play(self):
         ep=read_episode(ROOT/'episodes'/'tap-0001.json')
         self.assertEqual(len(ep['beats']),18)

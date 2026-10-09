@@ -2,6 +2,24 @@
 
 **Bản 2.0: viết lại video 001.** Manim + Typst + Edge/Zalo TTS + GitHub Actions, series có thể thêm vô hạn tập bằng file JSON.
 
+### Bản sửa 0001 ngày 09/10/2026
+
+- Hiển thị đủ cột `a..i` và hàng `0..9`: `a0` ở góc trên trái, phía Đen. Các nhãn nằm ngoài lưới, quân ở mép không che nhãn.
+- Lời mở đầu giải thích tọa độ, mục tiêu **ép bắt Sĩ**, cách đếm lượt và giới hạn luật lặp nước.
+- Pikafish bản nguồn tag `Pikafish-2026-09-06`, commit `4c17cee11f888ae1d48a9494f2e2239f019f0a1f`, đã xác nhận **63/63 nước hợp lệ**. Engine chọn `d7f8` UCI, tương ứng `d2f1` trên màn hình, ở độ sâu 22.
+- `verification/tap-0001-pikafish.json` lưu FEN từng nước, nước hợp lệ engine trả về, log UCI và SHA-256 của tập, engine, NNUE. Test chặn báo cáo lỗi thời nếu JSON tập bị sửa.
+- Test Manim đi qua mọi biến, bắt quân, đặt lại thế: kiểm tra quân không thừa/thiếu, đúng tọa độ và bàn cờ luôn còn trong scene. File `output/tap-0001/timeline.json` ghi mốc thời gian để đối chiếu video render.
+
+Pikafish là **engine**, không phải kho tablebase cờ tàn chính xác. Kết quả 13/21 trong tập vẫn đến từ solver giải ngược mục tiêu bắt Sĩ; báo cáo Pikafish không biến các số này thành số lượt chiếu bí.
+
+```bash
+python scripts/check_pikafish.py --episode tap-0001 \
+  --engine /path/to/pikafish --eval-file /path/to/matching/pikafish.nnue \
+  --depth 22 --report verification/tap-0001-pikafish.json
+```
+
+Nguồn engine: [Pikafish release](https://github.com/official-pikafish/Pikafish/releases/tag/Pikafish-2026-09-06). Dùng NNUE đi cùng release, tránh tải `master-net` mới rồi ghép với engine cũ.
+
 ## Sửa đúng lỗi bàn cờ bị mất
 
 - **Bàn cờ tiêu chuẩn 9 cột × 10 hàng, hiển thị trọn vẹn**, không phóng lớn và không bị cắt ở phần trên.
@@ -31,13 +49,11 @@ Công cụ tính lại biến: `PYTHONPATH=. python scripts/build_episode_001.py
 
 ## Cập nhật repository GitHub
 
-**Phải thay toàn bộ các file của bản ZIP**, không chỉ `src/scene.py`: bản mới thay cả scene, dữ liệu tập, bộ kiểm tra, solver và layout.
-
-1. Giải nén ZIP và upload toàn bộ nội dung **thư mục `xiangqi-sang-series`** vào gốc repository, bao gồm `.github/`. Commit/push.
+1. Commit/push mã nguồn trong `Tinh-Hoa-Co-Tan` vào repository này.
 2. Vào **Actions → Tinh Hoa Co Tan - Manim Typst → Run workflow**.
 3. Chọn `episodes=tap-0001`, `quality=preview`, `voice=edge`.
 4. Tải MP4 ở **Artifacts**; nhìn cả quân Đen ở hàng trên và quân Đỏ ở hàng dưới, rồi mới chạy `quality=full`.
-5. Video cũ trên YouTube không tự đổi: cần tải bản mới lên và thay link/đặt video cũ ở chế độ phù hợp.
+5. Chạy thủ công `quality=full` sẽ **tự đăng công khai** bằng YouTube Secrets đã cấu hình. Mỗi lần chạy full thành công tạo một video mới; video cũ không tự đổi hoặc bị xóa. Tránh bấm full nhiều lần cho cùng bản sửa.
 
 Giọng `edge`: nam tiếng Việt `vi-VN-NamMinhNeural`, **không cam kết đúng giọng miền Nam**. Giọng `zalo`: speaker 3 (nam miền Nam); phải đặt `ZALO_API_KEY` trong **Settings → Secrets and variables → Actions**. Dịch vụ Zalo có thể có phí/hạn mức riêng.
 
@@ -53,7 +69,7 @@ GitHub Actions tự thực hiện kiểm tra hợp lệ rồi mới render. Gi�
 ## Cấu trúc chính
 
 ```text
-.github/workflows/render-series.yml  # GitHub Actions
+../.github/workflows/render-xiangqi.yml # GitHub Actions
 src/core.py                          # FEN, luật di chuyển cơ bản, branch validation
 src/layout.py                        # tọa độ và kiểm tra vùng an toàn 16:9
 src/scene.py                         # Manim: bàn cờ, 4 quân, hiệu ứng, chuyển biến
@@ -65,7 +81,8 @@ scripts/build_episode_001.py         # Tính biến và tạo data 001
 scripts/check_pikafish.py            # Kiểm tra engine độc lập (tùy chọn)
 scripts/produce.py                   # Xuất MP4
 scripts/plan.py                      # Chọn lô tập để dựng
-tests/test_core.py                   # 6 bài test logic, luật, bố cục
+tests/test_core.py                   # logic, luật, bố cục, độ mới của bằng chứng engine
+tests/test_display.py                # tọa độ engine, quân hiển thị sau mọi biến
 ```
 
 ## Render và lưu ý
@@ -73,5 +90,5 @@ tests/test_core.py                   # 6 bài test logic, luật, bố cục
 - `preview` = 854×480, 15 fps; `full` = 1920×1080, 30 fps.
 - Dùng `voice=edge` để test không cần Zalo API key; giọng miền Nam thực sự là `voice=zalo`.
 - Không lưu API key trong repository hoặc JSON.
-- Mã nguồn được kiểm tra tĩnh và kiểm tra luật, **chưa render MP4 trong môi trường tạo ZIP**; cần chạy preview thật trên GitHub trước khi công bố.
+- Cần xem MP4 preview thật trên GitHub trước khi chạy full để công bố.
 - GitHub Actions, Zalo AI và lưu trữ artifact đều chịu hạn mức/quy định của dịch vụ tương ứng.

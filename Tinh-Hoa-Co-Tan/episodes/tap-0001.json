@@ -1,7 +1,7 @@
 {
   "id": "tap-0001",
   "title": "MÃ PHÁ ĐƠN SĨ — PHÂN TÍCH CÁC BIẾN",
-  "subtitle": "Đỏ đi trước  •  Bắt Sĩ: 13 lượt, 21 lượt hay mất thắng?",
+  "subtitle": "Đỏ đi trước • Ép bắt Sĩ trong mô hình 4 quân; chưa xét luật lặp nước.",
   "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
   "analysis_status": "four_piece_retrograde_ordinary_moves",
   "verification_note": "Exhaustive 4-piece win/draw/loss retrograde to capturing black advisor under ordinary legal moves, checks and stalemate. Long-check and long-chase repetition adjudication NOT covered; 13/21 are plies to capture advisor against a delaying defender, not mate distances.",
@@ -9,8 +9,8 @@
     {
       "label": "THẾ CỜ",
       "headline": "Đỏ đi trước — Mã bắt Sĩ?",
-      "narration": "Đỏ còn Tướng và Mã. Đen còn Tướng và một Sĩ. Đỏ đi trước. Hãy tìm cách buộc Đen mất Sĩ. Có hai nước bắt Sĩ nhanh nhất, một nước thắng chậm, và một nước làm mất thế thắng. Ta xét lần lượt từng biến.",
-      "insight": "ĐỎ ĐI TRƯỚC  •  4 QUÂN",
+      "narration": "Đỏ còn Tướng và Mã. Đen còn Tướng và một Sĩ. Đỏ đi trước. Chữ cái a đến i là các cột từ trái sang phải; hàng không đến chín tính từ trên xuống. Mục tiêu của bài là buộc bắt Sĩ trong mô hình bốn quân theo luật đi thông thường. Mười ba và hai mươi mốt là tổng số lượt đi của cả hai bên đến khi bắt Sĩ, không phải khoảng cách chiếu bí. Bài này chưa xét luật lặp nước. Ta xét lần lượt từng biến.",
+      "insight": "ĐỎ ĐI TRƯỚC  •  MỤC TIÊU: BẮT SĨ",
       "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
       "moves": [],
       "pause": 2.0,
@@ -158,7 +158,7 @@
     },
     {
       "label": "ĐỎ ĐI CHẬM",
-      "headline": "Mã d2–e0 vẫn thắng",
+      "headline": "Mã d2–e0: bắt Sĩ chậm",
       "narration": "Nếu nước đầu Đỏ đi Mã d2 đến e0, Đỏ vẫn có thể buộc bắt Sĩ. Nhưng chống đỡ tốt nhất sẽ kéo dài hơn. Ta không nói nước này thua, mà nói nó thắng chậm hơn. Cùng xem Đen kéo dài cuộc chống đỡ như thế nào.",
       "insight": "THẮNG CHẬM: 21 LƯỢT",
       "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
@@ -234,7 +234,7 @@
     },
     {
       "label": "NƯỚC SAI",
-      "headline": "Tướng e7–d7: mất thắng",
+      "headline": "Tướng e7–d7: không ép bắt Sĩ",
       "narration": "Nước sai ở thế đầu là đưa Tướng từ e7 sang d7. Đen chỉ cần đưa Tướng d0 xuống d1. Trong bảng tính bốn quân theo luật đi thông thường, Đỏ không còn đường buộc bắt Sĩ. Đây là khác biệt giữa nước không phạm luật và nước giữ được thế tất thắng.",
       "insight": "ĐỎ MẤT THẾ BUỘC BẮT SĨ",
       "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
@@ -246,9 +246,9 @@
     },
     {
       "label": "CHỐT BIẾN",
-      "headline": "13 — 21 — mất thắng",
+      "headline": "13 — 21 — không ép bắt Sĩ",
       "narration": "Tóm lại, ở thế xuất phát này: Mã d2 đến f1 hoặc c4 bắt được Sĩ sau tối đa mười ba lượt đi trong mô hình. Mã d2 đến e0 cần đến hai mươi mốt lượt. Còn Tướng e7 đến d7 làm mất khả năng buộc bắt Sĩ. Hết tập một.",
-      "insight": "f1 hoặc c4: 13  •  e0: 21  •  Kd7: không ép thắng",
+      "insight": "f1 hoặc c4: 13  •  e0: 21  •  Kd7: không ép bắt Sĩ",
       "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
       "moves": [],
       "pause": 2.1

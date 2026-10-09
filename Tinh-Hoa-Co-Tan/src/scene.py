@@ -9,6 +9,7 @@ import textwrap
 from pathlib import Path
 from manim import *
 from src.core import Board, parse_square
+from src.engine_coords import board_fen
 from src.layout import (BOARD_GRID_STEP, BOARD_CENTER_X, BOARD_CENTER_Y,
                         HEADER_LINE_Y, assert_safe_layout)
 
@@ -95,6 +96,14 @@ class XiangqiDisplay(VGroup):
         art.add(lines)
         river = Text('楚 河      漢 界',font=CJK,font_size=19,color='#89623E').move_to(self.xy((4,4.5)))
         art.add(river)
+        # Captions use display coordinates, with rank 0 on Black's side.
+        # Keep labels outside the grid so edge pieces cannot hide them.
+        for x, file in enumerate('abcdefghi'):
+            art.add(Text(file,font=FONT,font_size=12,color=LIGHT).move_to(
+                [self.xy((x,9))[0],-3.30,0]))
+        for y in range(10):
+            art.add(Text(str(y),font=FONT,font_size=12,color=LIGHT).move_to(
+                [self.xy((0,y))[0]-.44,self.xy((0,y))[1],0]))
         return art
 
     def make_piece(self,piece):
@@ -198,12 +207,12 @@ class XiangqiLesson(Scene):
                  color=GOLD,bold=True,wrap=26,max_lines=2)
         divider=Line([.62,.36,0],[5.80,.36,0],
                      color='#46607A',stroke_width=1.5)
-        tip_label=Text('KẾT QUẢ / PHƯƠNG ÁN',font=FONT,font_size=14,
+        tip_label=Text('TỌA ĐỘ: a0 Ở GÓC TRÊN TRÁI',font=FONT,font_size=14,
                        color=CYAN,weight='BOLD').move_to([3.20,-.08,0])
         insight=fit_label('Chờ phân tích nước đầu.',
                  x=3.20,y=-1.20,max_width=5.10,max_height=1.70,font_size=25,
                  color=LIGHT,wrap=32,max_lines=4)
-        stamp_label=('BẢNG TÍNH 4 QUÂN • CHƯA XÉT LUẬT LẶP NƯỚC'
+        stamp_label=('MỤC TIÊU: BẮT SĨ • CHƯA XÉT LUẬT LẶP NƯỚC'
                if data.get('analysis_status')=='four_piece_retrograde_ordinary_moves'
                else 'BIẾN MINH HỌA • CHƯA CHỨNG MINH THẮNG')
         stamp=fit_label(stamp_label,x=3.20,y=-2.70,
@@ -220,9 +229,12 @@ class XiangqiLesson(Scene):
         self.opening_card(out)
         if len(timing) != len(data['beats']):
             raise ValueError('Number of audio clips differs from episode segments')
+        timeline=[]
         for i,(beat,audio) in enumerate(zip(data['beats'],timing)):
             # audio duration is source of truth; video segment extends to include animations.
             start=self.time
+            entry={'beat':i+1,'label':beat['label'],'start':float(start),
+                   'initial_fen':board_fen(board.state),'moves':[]}
             if beat.get('fen'):
                 board.reset_position(beat['fen'],self)
             # Start voice after changing to the position under discussion.
@@ -246,12 +258,18 @@ class XiangqiLesson(Scene):
                 board.highlight(self,beat['spotlight'])
             for uci in moves:
                 board.move_piece(uci,self)
+                entry['moves'].append({'display_move':uci,'time':float(self.time),
+                                      'fen':board_fen(board.state)})
                 self.wait(.28)
             if beat.get('spotlight') and not beat.get('spotlight_before'):
                 board.highlight(self,beat['spotlight'])
             # Optional dramatic delay following the spoken segment.
             self.wait(max(.1, audio['seconds']+float(beat.get('pause',.65))-(self.time-start)))
+            entry['end']=float(self.time)
+            timeline.append(entry)
         self.closing_card(out)
+        (out/'timeline.json').write_text(json.dumps(timeline,ensure_ascii=False,indent=2)+'\n',
+                                        encoding='utf-8')
 
     def opening_card(self,out):
         png=out/'cards'/'intro.png'
