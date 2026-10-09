@@ -480,5 +480,49 @@ Nội dung trọng tâm bài 08:
 #ThongKe #MauGhepNhom #Mot #SoTrungBinh #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
         "tags": ["mẫu ghép nhóm", "số trung bình", "mốt", "toán 10", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
         "file_pattern": "STAT08"
+    },
+    9: {
+        "title": "STAT09: Trung Vị Của Mẫu Số Liệu Ghép Nhóm - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 09: Trung vị của mẫu số liệu ghép nhóm
+
+Nội dung trọng tâm bài 09:
+- Xác định nhóm chứa trung vị bằng tần số tích lũy.
+- Phép nội suy tuyến tính tìm trung vị.
+- Giải thích bản chất hình học qua đường ogive và biểu đồ tần số tích lũy.
+
+{AUTHOR_INFO}
+#ThongKe #TrungVi #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["trung vị", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT09"
+    },
+    10: {
+        "title": "STAT10: Tứ Phân Vị Của Mẫu Số Liệu Ghép Nhóm - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 10: Tứ phân vị mẫu số liệu ghép nhóm
+
+Nội dung trọng tâm bài 10:
+- Tìm Q1, Q2 (trung vị) và Q3 cho số liệu ghép nhóm.
+- Ứng dụng tứ phân vị trong phân tích dữ liệu thực tế.
+
+{AUTHOR_INFO}
+#ThongKe #TuPhanVi #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["tứ phân vị", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT10"
+    },
+    11: {
+        "title": "STAT11: Khoảng Biến Thiên & Khoảng Tứ Phân Vị Của Mẫu Ghép Nhóm - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 11: Khoảng biến thiên và khoảng tứ phân vị (IQR) của mẫu ghép nhóm
+
+Nội dung trọng tâm bài 11:
+- Cách tính khoảng biến thiên khi chỉ biết các khoảng ghép nhóm.
+- Tính IQR và ý nghĩa đo độ phân tán.
+- Đánh giá sự mất mát thông tin khi ghép nhóm.
+
+{AUTHOR_INFO}
+#ThongKe #KhoangBienThien #IQR #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["khoảng biến thiên", "iqr", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT11"
     }
 }
