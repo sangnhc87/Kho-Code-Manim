@@ -97,13 +97,12 @@ class XiangqiDisplay(VGroup):
         river = Text('楚 河      漢 界',font=CJK,font_size=19,color='#89623E').move_to(self.xy((4,4.5)))
         art.add(river)
         # Captions use display coordinates, with rank 0 on Black's side.
-        # Keep labels outside the grid so edge pieces cannot hide them.
-        for x, file in enumerate('abcdefghi'):
-            art.add(Text(file,font=FONT,font_size=12,color=LIGHT).move_to(
+        # Cột cờ tướng: Đỏ (9 đến 1 từ trái sang phải), Đen (1 đến 9 từ trái sang phải)
+        for x in range(9):
+            art.add(Text(str(9-x),font=FONT,font_size=12,color=LIGHT).move_to(
                 [self.xy((x,9))[0],-3.30,0]))
-        for y in range(10):
-            art.add(Text(str(y),font=FONT,font_size=12,color=LIGHT).move_to(
-                [self.xy((0,y))[0]-.44,self.xy((0,y))[1],0]))
+            art.add(Text(str(x+1),font=FONT,font_size=12,color=LIGHT).move_to(
+                [self.xy((x,0))[0],2.95,0]))
         return art
 
     def make_piece(self,piece):
@@ -207,7 +206,7 @@ class XiangqiLesson(Scene):
                  color=GOLD,bold=True,wrap=26,max_lines=2)
         divider=Line([.62,.36,0],[5.80,.36,0],
                      color='#46607A',stroke_width=1.5)
-        tip_label=Text('TỌA ĐỘ: a0 Ở GÓC TRÊN TRÁI',font=FONT,font_size=14,
+        tip_label=Text('QUY ƯỚC: TIẾN — THOÁI — BÌNH',font=FONT,font_size=14,
                        color=CYAN,weight='BOLD').move_to([3.20,-.08,0])
         insight=fit_label('Chờ phân tích nước đầu.',
                  x=3.20,y=-1.20,max_width=5.10,max_height=1.70,font_size=25,
