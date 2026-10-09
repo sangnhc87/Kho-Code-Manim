@@ -1,3 +1,3 @@
 #set page(width: 17cm, height: 2.4cm, margin: 0pt, fill: none)
 #set text(font: "Noto Serif", size: 28pt, fill: rgb("#22D3EE"))
-#align(center + horizon)[$ ab + ba = 2 a b $]
+#align(center + horizon)[$ a b + b a = 2 a b $]
