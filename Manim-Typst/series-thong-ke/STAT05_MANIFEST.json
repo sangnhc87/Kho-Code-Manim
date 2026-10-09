@@ -1,0 +1,44 @@
+{
+  "episode": "STAT05",
+  "name": "Khoang bien thien, IQR va bieu do hop",
+  "old_episodes": [
+    "STAT01",
+    "STAT02",
+    "STAT03",
+    "STAT04"
+  ],
+  "beats": 32,
+  "base_duration_seconds": 864.0,
+  "figures": 8,
+  "source_data": "stat01/lesson.py (synthetic scores)",
+  "quartile_convention": "stat04/lesson.py (median-of-halves)",
+  "baseline_five_numbers": [
+    4,
+    6.0,
+    7.0,
+    8.0,
+    10
+  ],
+  "baseline_outliers": [],
+  "extreme_outliers": [
+    30
+  ],
+  "exercise_outliers": [
+    20
+  ],
+  "old_files_missing": 0,
+  "old_files_unchanged": 118,
+  "old_files_changed": [
+    "README.md",
+    "README_THONG_KE_SERIES.md"
+  ],
+  "new_files": 32,
+  "tests_status": "run unittest on runner; not an attestation of Manim render",
+  "manim_rendered_here": false,
+  "typst_compiled_here": false,
+  "artifacts_expected": [
+    "STAT05.mp4",
+    "STAT05_vi.srt",
+    "eight review frames"
+  ]
+}

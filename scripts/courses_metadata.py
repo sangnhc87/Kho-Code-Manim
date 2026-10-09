@@ -300,6 +300,37 @@ Nội dung bài 20 (Tổng kết Capstone):
 #Capstone #ThuatToanHinhHoc #TraiPhang #ComputationalGeometry #ThayNguyenVanSang""",
         "tags": ["capstone", "thuật toán hình học", "trải phẳng", "toán trực quan", "thầy nguyễn văn sang"],
         "file_pattern": "trai_phang_20"
+    4: {
+        "title": "STAT04: Tứ Phân Vị Q1, Q2, Q3 | Chia Nhỏ Dữ Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 04: Tứ phân vị Q1, Q2, Q3 – Điểm mốc quan trọng của dữ liệu
+
+Nội dung trọng tâm bài 04:
+- Sắp xếp và chia dữ liệu thành 4 phần bằng nhau.
+- Cách tính tứ phân vị với số lượng mẫu chẵn và lẻ.
+- Ý nghĩa của tứ phân vị thứ nhất (Q1), thứ hai (Q2 / Trung vị) và thứ ba (Q3).
+- Trực quan hóa vị trí các tứ phân vị trên trục số.
+
+{AUTHOR_INFO}
+#ThongKe #TuPhanVi #Quartiles #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["thống kê", "tứ phân vị", "toán 10", "toán 11", "toán 12", "quartiles", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT04"
+    },
+    5: {
+        "title": "STAT05: Khoảng Biến Thiên, IQR & Biểu Đồ Hộp | Đo Độ Phân Tán Dữ Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 05: Khoảng biến thiên, Khoảng tứ phân vị (IQR) & Biểu đồ hộp (Box plot)
+
+Nội dung trọng tâm bài 05:
+- Đo lường độ phân tán dữ liệu bằng Khoảng biến thiên (Range) và Khoảng tứ phân vị (IQR = Q3 - Q1).
+- Vẽ biểu đồ hộp (Box-and-whisker plot) từ 5 con số đặc trưng: Min, Q1, Q2, Q3, Max.
+- Phát hiện các điểm bất thường (Outliers) dựa trên rào dưới và rào trên.
+- So sánh phân bố dữ liệu giữa nhiều nhóm thông qua biểu đồ hộp.
+
+{AUTHOR_INFO}
+#ThongKe #KhoangBienThien #IQR #BieuDoHop #BoxPlot #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["khoảng biến thiên", "iqr", "biểu đồ hộp", "box plot", "toán 10", "toán 11", "toán 12", "độ phân tán", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT05"
     }
 }
 
@@ -400,5 +431,36 @@ Nội dung trọng tâm bài 03:
 #ThongKe #SoTrungBinh #TrungVi #Mot #Outlier #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
         "tags": ["số trung bình", "trung vị", "mốt", "toán 10", "toán 11", "toán 12", "số đặc trưng", "outlier", "manim", "thầy nguyễn văn sang"],
         "file_pattern": "STAT03"
+    4: {
+        "title": "STAT04: Tứ Phân Vị Q1, Q2, Q3 | Chia Nhỏ Dữ Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 04: Tứ phân vị Q1, Q2, Q3 – Điểm mốc quan trọng của dữ liệu
+
+Nội dung trọng tâm bài 04:
+- Sắp xếp và chia dữ liệu thành 4 phần bằng nhau.
+- Cách tính tứ phân vị với số lượng mẫu chẵn và lẻ.
+- Ý nghĩa của tứ phân vị thứ nhất (Q1), thứ hai (Q2 / Trung vị) và thứ ba (Q3).
+- Trực quan hóa vị trí các tứ phân vị trên trục số.
+
+{AUTHOR_INFO}
+#ThongKe #TuPhanVi #Quartiles #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["thống kê", "tứ phân vị", "toán 10", "toán 11", "toán 12", "quartiles", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT04"
+    },
+    5: {
+        "title": "STAT05: Khoảng Biến Thiên, IQR & Biểu Đồ Hộp | Đo Độ Phân Tán Dữ Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 05: Khoảng biến thiên, Khoảng tứ phân vị (IQR) & Biểu đồ hộp (Box plot)
+
+Nội dung trọng tâm bài 05:
+- Đo lường độ phân tán dữ liệu bằng Khoảng biến thiên (Range) và Khoảng tứ phân vị (IQR = Q3 - Q1).
+- Vẽ biểu đồ hộp (Box-and-whisker plot) từ 5 con số đặc trưng: Min, Q1, Q2, Q3, Max.
+- Phát hiện các điểm bất thường (Outliers) dựa trên rào dưới và rào trên.
+- So sánh phân bố dữ liệu giữa nhiều nhóm thông qua biểu đồ hộp.
+
+{AUTHOR_INFO}
+#ThongKe #KhoangBienThien #IQR #BieuDoHop #BoxPlot #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["khoảng biến thiên", "iqr", "biểu đồ hộp", "box plot", "toán 10", "toán 11", "toán 12", "độ phân tán", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT05"
     }
 }

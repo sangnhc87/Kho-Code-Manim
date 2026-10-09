@@ -1,35 +1,32 @@
-# SANGMATH – Series Thống kê trực quan – STAT01/02/03
+# SangMath – Series Thống kê trực quan 10–11–12
 
-Bộ mã nguồn tạo video cho giáo viên THPT với **Manim + Typst**, tách dữ liệu–sư phạm, cảnh hình động, kiểm thử và GitHub Actions.
+Bộ nguồn có **STAT01–STAT05**. Các tập sử dụng chung dữ liệu tổng hợp 40 điểm kiểm tra giả lập, với mỗi tập đi sâu một chủ đề. Code toán học (pure Python) được tách khỏi Manim để test độc lập.
 
-## Video mới – STAT03: Số trung bình, trung vị và mốt
+- STAT01 – Dữ liệu biết nói: bảng tần số và biểu đồ.
+- STAT02 – Các loại biểu đồ và cách tránh hình gây hiểu lầm.
+- STAT03 – Số trung bình, trung vị, mốt và ngoại lệ.
+- STAT04 – Tứ phân vị Q1, Q2, Q3 của dữ liệu không ghép nhóm.
+- **STAT05 – Khoảng biến thiên, khoảng tứ phân vị, biểu đồ hộp và ngoại lệ theo Tukey.**
 
-- 8 chương × 4 nhịp = **32 nhịp**; 800 giây nền (13 phút 20 giây).
-- 40 điểm giả lập kế thừa STAT01: tổng 284; số trung bình 7,1; trung vị 7; mốt 7.
-- Cảnh trực quan: sắp xếp 40 thẻ, hai vị trí 20–21, các cột tần số, điểm cân bằng, kéo một quan sát ngoại lệ và biến đổi thống kê trực tiếp, phép tịnh tiến phân bố, bài toán tìm số còn thiếu.
-- Bộ dữ liệu ngoại lệ **riêng về phút luyện tập**, ban đầu [5,6,6,7,7,7,8,8,9], sau thay 9 thành 27. Không được hiểu 27 là điểm kiểm tra.
+## Video 05
 
-### Cấu trúc
+- 32 nhịp / tám chương / 864 giây thời lượng nền, cộng thời gian TTS nếu cần.
+- Dữ liệu gốc: `stat01/lesson.py`; thuật toán tứ phân vị lấy từ `stat04/lesson.py`.
+- Các phân phối mới là dữ liệu **giả lập độc lập**, có chú giải trong lời giảng.
+- Quy ước tứ phân vị: trung vị của hai nửa; cỡ mẫu lẻ không dùng quan sát chính giữa trong cả hai nửa.
+- Quy ước râu Tukey: quan sát hợp lệ xa nhất, không phải tọa độ ngưỡng 1,5×IQR.
+- Giữ nguyên mã và workflow của STAT01–STAT04.
 
-- `stat01/`, `stat02/`, `stat03/`: từng tập độc lập.
-- `stat03/lesson.py`: dữ liệu và lời giảng thuần Python (không phụ thuộc Manim).
-- `stat03/scene.py`: lớp Manim `STAT03`.
-- `scripts/build_stat03_typst.py`: biên dịch 8 công thức Typst thành SVG.
-- `scripts/prepare_stat03.py`: tạo runtime, SRT, tùy chọn giọng Edge TTS.
-- `scripts/qa_stat03.py`: kiểm tra MP4 thật, tiếng khi bật, độ phân giải, thời lượng và 8 ảnh chụp từng chương.
-- `.github/workflows/render-stat03.yml`: workflow GitHub Actions có lựa chọn preview/Full HD và voice off/on.
-- `LOI_GIANG_STAT03.md`, `STORYBOARD_STAT03.md`: tài liệu sư phạm.
-- `preview/stat03/`: bản thiết kế để xem trước, **không phải khung hình từ video render**.
+**Mã Manim:** `stat05/scene.py` (Scene `STAT05`, `STAT05_SMOKE`).
 
-### Chạy thử
+**Nguồn dữ liệu:** `stat05/lesson.py`.
 
-```bash
-python -m unittest discover -s tests -v
-python scripts/build_stat03_typst.py
-python scripts/prepare_stat03.py --voice off
-manim -ql -r 854,480 --fps 24 stat03/scene.py STAT03
-```
+**Kiểm thử:** `python -m unittest discover -s tests -v`.
 
-Xem `HUONG_DAN_RENDER_STAT03.md` để chạy GitHub Actions và nghiệm thu.
+**Hướng dẫn render:** [`HUONG_DAN_RENDER_STAT05.md`](HUONG_DAN_RENDER_STAT05.md).
 
-**Trạng thái:** kiểm thử Python đã thực hiện; chưa biên dịch Typst hoặc render video Manim thực tế trong môi trường soạn mã. Cần kiểm tra MP4 từ GitHub Actions.
+**Lời thuyết minh:** [`LOI_GIANG_STAT05.md`](LOI_GIANG_STAT05.md).
+
+**Storyboard:** [`STORYBOARD_STAT05.md`](STORYBOARD_STAT05.md).
+
+MP4 phải được render/nghiệm thu trên GitHub Actions. Chưa thể đảm bảo không có lỗi trên runner chỉ từ kiểm thử Python.

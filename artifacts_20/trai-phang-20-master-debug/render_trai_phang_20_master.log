@@ -1,0 +1,436 @@
+ALGORITHM AUDIT OK
+  unrestricted routes: 10
+  allowed routes after banning top: 7
+  free winner: ['front', 'top', 'back'] 8.062257748
+  restricted winner: ['front', 'bottom', 'back'] 11.704699911
+  all valid paths cross hinges in the correct order
+  folded lengths, rigid hinges, and face shape are preflight checked
+LAYOUT PREFLIGHT OK
+Animation 0: FadeIn(VGroup of 2 submobjects):   0%|          | 0/21 [00:00<?, ?it/s]Animation 0: FadeIn(VGroup of 2 submobjects):  24%|██▍       | 5/21 [00:00<00:00, 41.25it/s]Animation 0: FadeIn(VGroup of 2 submobjects):  48%|████▊     | 10/21 [00:00<00:00, 42.50it/s]Animation 0: FadeIn(VGroup of 2 submobjects):  71%|███████▏  | 15/21 [00:00<00:00, 42.57it/s]Animation 0: FadeIn(VGroup of 2 submobjects):  95%|█████████▌| 20/21 [00:00<00:00, 42.68it/s]                                                                                             [10/08/26 01:21:18] INFO     Animation 0 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/1765854111_1353830293_                         
+                             183648643.mp4'                                     
+[10/08/26 01:21:24] INFO     Animation 1 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_4154847101_35                         
+                             98005299.mp4'                                      
+[10/08/26 01:21:29] INFO     Animation 2 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_4059463807_37                         
+                             40034262.mp4'                                      
+Animation 3: FadeOut(VGroup of 2 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.:  14%|█▍        | 1/7 [00:00<00:00,  6.51it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00,  6.31it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00,  6.30it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00,  6.16it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.:  71%|███████▏  | 5/7 [00:00<00:00,  6.07it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00,  6.13it/s]Animation 3: FadeOut(VGroup of 2 submobjects), etc.: 100%|██████████| 7/7 [00:01<00:00,  6.17it/s]                                                                                                  [10/08/26 01:21:31] INFO     Animation 3 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_373471668_139                         
+                             3499154.mp4'                                       
+[10/08/26 01:21:37] INFO     Animation 4 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2066874041_19                         
+                             7798902.mp4'                                       
+[10/08/26 01:21:43] INFO     Animation 5 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1521173685_50                         
+                             0038320.mp4'                                       
+Animation 6: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 6: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00,  9.87it/s]Animation 6: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00,  9.85it/s]Animation 6: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00,  9.67it/s]Animation 6: FadeOut(VGroup of 4 submobjects), etc.:  71%|███████▏  | 5/7 [00:00<00:00,  9.57it/s]Animation 6: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00,  9.13it/s]Animation 6: FadeOut(VGroup of 4 submobjects), etc.: 100%|██████████| 7/7 [00:00<00:00,  9.20it/s]                                                                                                  [10/08/26 01:21:44] INFO     Animation 6 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_797665843_373                         
+                             0098744.mp4'                                       
+[10/08/26 01:21:51] INFO     Animation 7 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1962717659_26                         
+                             13520564.mp4'                                      
+[10/08/26 01:21:57] INFO     Animation 8 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2137765285_65                         
+                             177633.mp4'                                        
+Animation 9: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 9: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00, 16.13it/s]Animation 9: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00, 16.01it/s]Animation 9: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 15.75it/s]                                                                                                  [10/08/26 01:21:59] INFO     Animation 9 : Partial      scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1958451489_27                         
+                             69764228.mp4'                                      
+[10/08/26 01:22:07] INFO     Animation 10 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1298939302_37                         
+                             67217070.mp4'                                      
+[10/08/26 01:22:13] INFO     Animation 11 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2004270426_40                         
+                             03621081.mp4'                                      
+Animation 12: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 12: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00, 10.20it/s]Animation 12: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00, 10.02it/s]Animation 12: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00,  9.86it/s]Animation 12: FadeOut(VGroup of 4 submobjects), etc.: 100%|██████████| 7/7 [00:00<00:00,  9.77it/s]                                                                                                   [10/08/26 01:22:15] INFO     Animation 12 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3122353505_37                         
+                             30098744.mp4'                                      
+[10/08/26 01:22:21] INFO     Animation 13 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2041806951_20                         
+                             74050303.mp4'                                      
+[10/08/26 01:22:26] INFO     Animation 14 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3405787134_16                         
+                             70265674.mp4'                                      
+Animation 15: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 15: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00, 21.99it/s]Animation 15: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 21.36it/s]                                                                                                   [10/08/26 01:22:28] INFO     Animation 15 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_815203726_276                         
+                             9764228.mp4'                                       
+Animation 16: Rotate(VGroup of 2 submobjects):   0%|          | 0/147 [00:00<?, ?it/s]Animation 16: Rotate(VGroup of 2 submobjects):   9%|▉         | 13/147 [00:00<00:01, 127.86it/s]Animation 16: Rotate(VGroup of 2 submobjects):  18%|█▊        | 26/147 [00:00<00:00, 122.21it/s]Animation 16: Rotate(VGroup of 2 submobjects):  27%|██▋       | 39/147 [00:00<00:00, 119.80it/s]Animation 16: Rotate(VGroup of 2 submobjects):  35%|███▌      | 52/147 [00:00<00:00, 123.44it/s]Animation 16: Rotate(VGroup of 2 submobjects):  44%|████▍     | 65/147 [00:00<00:00, 122.76it/s]Animation 16: Rotate(VGroup of 2 submobjects):  53%|█████▎    | 78/147 [00:00<00:00, 124.71it/s]Animation 16: Rotate(VGroup of 2 submobjects):  63%|██████▎   | 92/147 [00:00<00:00, 129.17it/s]Animation 16: Rotate(VGroup of 2 submobjects):  72%|███████▏  | 106/147 [00:00<00:00, 129.81it/s]Animation 16: Rotate(VGroup of 2 submobjects):  82%|████████▏ | 120/147 [00:00<00:00, 131.23it/s]Animation 16: Rotate(VGroup of 2 submobjects):  91%|█████████ | 134/147 [00:01<00:00, 131.69it/s]                                                                                                 [10/08/26 01:22:34] INFO     Animation 16 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2642817019_32                         
+                             62722952.mp4'                                      
+Animation 17: Rotate(VGroup of 3 submobjects):   0%|          | 0/198 [00:00<?, ?it/s]Animation 17: Rotate(VGroup of 3 submobjects):  10%|█         | 20/198 [00:00<00:00, 194.96it/s]Animation 17: Rotate(VGroup of 3 submobjects):  21%|██        | 42/198 [00:00<00:00, 209.28it/s]Animation 17: Rotate(VGroup of 3 submobjects):  32%|███▏      | 64/198 [00:00<00:00, 212.37it/s]Animation 17: Rotate(VGroup of 3 submobjects):  45%|████▍     | 89/198 [00:00<00:00, 226.17it/s]Animation 17: Rotate(VGroup of 3 submobjects):  57%|█████▋    | 112/198 [00:00<00:00, 218.72it/s]Animation 17: Rotate(VGroup of 3 submobjects):  68%|██████▊   | 134/198 [00:00<00:00, 217.68it/s]Animation 17: Rotate(VGroup of 3 submobjects):  79%|███████▉  | 156/198 [00:00<00:00, 207.07it/s]Animation 17: Rotate(VGroup of 3 submobjects):  89%|████████▉ | 177/198 [00:00<00:00, 204.96it/s]Animation 17: Rotate(VGroup of 3 submobjects): 100%|██████████| 198/198 [00:00<00:00, 205.65it/s]                                                                                                 [10/08/26 01:22:39] INFO     Animation 17 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1932695753_23                         
+                             20084886.mp4'                                      
+Animation 18: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 18: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00, 28.24it/s]Animation 18: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 27.80it/s]                                                                                                   [10/08/26 01:22:40] INFO     Animation 18 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_134121236_375                         
+                             6836846.mp4'                                       
+[10/08/26 01:22:45] INFO     Animation 19 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_4245020599_25                         
+                             84179507.mp4'                                      
+[10/08/26 01:22:50] INFO     Animation 20 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1534964511_40                         
+                             92284757.mp4'                                      
+Animation 21: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 21: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00, 35.95it/s]                                                                                                   [10/08/26 01:22:51] INFO     Animation 21 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_182617740_276                         
+                             9764228.mp4'                                       
+[10/08/26 01:22:57] INFO     Animation 22 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3373633923_37                         
+                             90992278.mp4'                                      
+[10/08/26 01:23:02] INFO     Animation 23 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_672253299_362                         
+                             8353524.mp4'                                       
+Animation 24: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.:  14%|█▍        | 1/7 [00:00<00:00,  6.31it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00,  6.18it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00,  6.17it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00,  6.16it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.:  71%|███████▏  | 5/7 [00:00<00:00,  6.19it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00,  6.19it/s]Animation 24: FadeOut(VGroup of 4 submobjects), etc.: 100%|██████████| 7/7 [00:01<00:00,  6.18it/s]                                                                                                   [10/08/26 01:23:04] INFO     Animation 24 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1740208940_13                         
+                             85067897.mp4'                                      
+Animation 25: Rotate(VGroup of 2 submobjects):   0%|          | 0/143 [00:00<?, ?it/s]Animation 25: Rotate(VGroup of 2 submobjects):   8%|▊         | 12/143 [00:00<00:01, 119.41it/s]Animation 25: Rotate(VGroup of 2 submobjects):  17%|█▋        | 24/143 [00:00<00:01, 114.57it/s]Animation 25: Rotate(VGroup of 2 submobjects):  26%|██▌       | 37/143 [00:00<00:00, 120.31it/s]Animation 25: Rotate(VGroup of 2 submobjects):  36%|███▋      | 52/143 [00:00<00:00, 129.28it/s]Animation 25: Rotate(VGroup of 2 submobjects):  46%|████▌     | 66/143 [00:00<00:00, 130.79it/s]Animation 25: Rotate(VGroup of 2 submobjects):  56%|█████▌    | 80/143 [00:00<00:00, 128.15it/s]Animation 25: Rotate(VGroup of 2 submobjects):  65%|██████▌   | 93/143 [00:00<00:00, 127.41it/s]Animation 25: Rotate(VGroup of 2 submobjects):  74%|███████▍  | 106/143 [00:00<00:00, 125.28it/s]Animation 25: Rotate(VGroup of 2 submobjects):  84%|████████▍ | 120/143 [00:00<00:00, 127.36it/s]Animation 25: Rotate(VGroup of 2 submobjects):  94%|█████████▎| 134/143 [00:01<00:00, 128.97it/s]                                                                                                 [10/08/26 01:23:09] INFO     Animation 25 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_301021263_369                         
+                             8235830.mp4'                                       
+Animation 26: Rotate(VGroup of 3 submobjects):   0%|          | 0/205 [00:00<?, ?it/s]Animation 26: Rotate(VGroup of 3 submobjects):   9%|▉         | 18/205 [00:00<00:01, 179.01it/s]Animation 26: Rotate(VGroup of 3 submobjects):  18%|█▊        | 36/205 [00:00<00:00, 175.83it/s]Animation 26: Rotate(VGroup of 3 submobjects):  27%|██▋       | 55/205 [00:00<00:00, 182.16it/s]Animation 26: Rotate(VGroup of 3 submobjects):  36%|███▌      | 74/205 [00:00<00:00, 184.40it/s]Animation 26: Rotate(VGroup of 3 submobjects):  46%|████▌     | 94/205 [00:00<00:00, 188.36it/s]Animation 26: Rotate(VGroup of 3 submobjects):  56%|█████▌    | 115/205 [00:00<00:00, 194.04it/s]Animation 26: Rotate(VGroup of 3 submobjects):  66%|██████▌   | 135/205 [00:00<00:00, 189.74it/s]Animation 26: Rotate(VGroup of 3 submobjects):  76%|███████▌  | 155/205 [00:00<00:00, 189.60it/s]Animation 26: Rotate(VGroup of 3 submobjects):  85%|████████▍ | 174/205 [00:00<00:00, 188.65it/s]Animation 26: Rotate(VGroup of 3 submobjects):  94%|█████████▍| 193/205 [00:01<00:00, 187.70it/s]                                                                                                 [10/08/26 01:23:14] INFO     Animation 26 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1363038463_13                         
+                             06283792.mp4'                                      
+Animation 27: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 27: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00, 26.53it/s]Animation 27: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 26.06it/s]                                                                                                   [10/08/26 01:23:15] INFO     Animation 27 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1721382956_37                         
+                             56836846.mp4'                                      
+[10/08/26 01:23:21] INFO     Animation 28 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_627771329_332                         
+                             4604634.mp4'                                       
+[10/08/26 01:23:24] INFO     Animation 29 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2443425464_41                         
+                             16742876.mp4'                                      
+Animation 30: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 30: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00, 36.14it/s]                                                                                                                       INFO     Animation 30 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2065266517_27                         
+                             69764228.mp4'                                      
+[10/08/26 01:23:30] INFO     Animation 31 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_745918475_308                         
+                             3295538.mp4'                                       
+[10/08/26 01:23:36] INFO     Animation 32 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2769406753_40                         
+                             88774127.mp4'                                      
+[10/08/26 01:23:39] INFO     Animation 33 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_276338368_351                         
+                             5579543.mp4'                                       
+Animation 34: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 34: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00, 35.94it/s]                                                                                                   [10/08/26 01:23:40] INFO     Animation 34 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3212804131_23                         
+                             48911503.mp4'                                      
+[10/08/26 01:23:45] INFO     Animation 35 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2565859265_43                         
+                             5878800.mp4'                                       
+[10/08/26 01:23:49] INFO     Animation 36 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1308288394_38                         
+                             1328307.mp4'                                       
+Animation 37: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.:  14%|█▍        | 1/7 [00:00<00:01,  4.76it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:01,  4.66it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00,  4.63it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00,  4.63it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.:  71%|███████▏  | 5/7 [00:01<00:00,  4.63it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:01<00:00,  4.63it/s]Animation 37: FadeOut(VGroup of 4 submobjects), etc.: 100%|██████████| 7/7 [00:01<00:00,  4.64it/s]                                                                                                   [10/08/26 01:23:51] INFO     Animation 37 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_994015959_306                         
+                             1366797.mp4'                                       
+[10/08/26 01:23:56] INFO     Animation 38 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3253960968_22                         
+                             04622963.mp4'                                      
+[10/08/26 01:24:02] INFO     Animation 39 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2829443817_34                         
+                             7816065.mp4'                                       
+Animation 40: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 40: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00, 25.65it/s]Animation 40: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 25.30it/s]                                                                                                   [10/08/26 01:24:03] INFO     Animation 40 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_451984716_276                         
+                             9764228.mp4'                                       
+Animation 41: MoveAlongPath(Dot3D of 64 submobjects):   0%|          | 0/163 [00:00<?, ?it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):   2%|▏         | 3/163 [00:00<00:07, 22.57it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):   4%|▎         | 6/163 [00:00<00:07, 22.22it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):   6%|▌         | 9/163 [00:00<00:06, 22.07it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):   7%|▋         | 12/163 [00:00<00:06, 22.03it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):   9%|▉         | 15/163 [00:00<00:06, 21.65it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  11%|█         | 18/163 [00:00<00:06, 21.42it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  13%|█▎        | 21/163 [00:00<00:06, 21.38it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  15%|█▍        | 24/163 [00:01<00:06, 21.53it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  17%|█▋        | 27/163 [00:01<00:06, 21.67it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  18%|█▊        | 30/163 [00:01<00:06, 21.70it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  20%|██        | 33/163 [00:01<00:05, 21.82it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  22%|██▏       | 36/163 [00:01<00:05, 21.84it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  24%|██▍       | 39/163 [00:01<00:05, 21.91it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  26%|██▌       | 42/163 [00:01<00:05, 21.97it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  28%|██▊       | 45/163 [00:02<00:05, 20.19it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  29%|██▉       | 48/163 [00:02<00:05, 20.29it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  31%|███▏      | 51/163 [00:02<00:05, 20.61it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  33%|███▎      | 54/163 [00:02<00:05, 20.62it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  35%|███▍      | 57/163 [00:02<00:05, 20.57it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  37%|███▋      | 60/163 [00:02<00:05, 20.53it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  39%|███▊      | 63/163 [00:02<00:04, 20.70it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  40%|████      | 66/163 [00:03<00:04, 20.59it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  42%|████▏     | 69/163 [00:03<00:04, 20.59it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  44%|████▍     | 72/163 [00:03<00:04, 20.62it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  46%|████▌     | 75/163 [00:03<00:04, 20.69it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  48%|████▊     | 78/163 [00:03<00:04, 20.68it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  50%|████▉     | 81/163 [00:03<00:03, 20.67it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  52%|█████▏    | 84/163 [00:03<00:03, 20.70it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  53%|█████▎    | 87/163 [00:04<00:03, 20.79it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  55%|█████▌    | 90/163 [00:04<00:03, 20.79it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  57%|█████▋    | 93/163 [00:04<00:03, 20.83it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  59%|█████▉    | 96/163 [00:04<00:03, 20.87it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  61%|██████    | 99/163 [00:04<00:03, 20.95it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  63%|██████▎   | 102/163 [00:04<00:02, 20.81it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  64%|██████▍   | 105/163 [00:04<00:02, 20.61it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  66%|██████▋   | 108/163 [00:05<00:02, 20.70it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  68%|██████▊   | 111/163 [00:05<00:02, 20.89it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  70%|██████▉   | 114/163 [00:05<00:02, 20.93it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  72%|███████▏  | 117/163 [00:05<00:02, 20.77it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  74%|███████▎  | 120/163 [00:05<00:02, 20.67it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  75%|███████▌  | 123/163 [00:05<00:01, 20.81it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  77%|███████▋  | 126/163 [00:06<00:01, 20.85it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  79%|███████▉  | 129/163 [00:06<00:01, 20.84it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  81%|████████  | 132/163 [00:06<00:01, 20.80it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  83%|████████▎ | 135/163 [00:06<00:01, 20.98it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  85%|████████▍ | 138/163 [00:06<00:01, 20.88it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  87%|████████▋ | 141/163 [00:06<00:01, 20.84it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  88%|████████▊ | 144/163 [00:06<00:00, 20.70it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  90%|█████████ | 147/163 [00:07<00:00, 20.80it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  92%|█████████▏| 150/163 [00:07<00:00, 20.71it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  94%|█████████▍| 153/163 [00:07<00:00, 20.61it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  96%|█████████▌| 156/163 [00:07<00:00, 20.61it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  98%|█████████▊| 159/163 [00:07<00:00, 20.71it/s]Animation 41: MoveAlongPath(Dot3D of 64 submobjects):  99%|█████████▉| 162/163 [00:07<00:00, 20.73it/s]                                                                                                       [10/08/26 01:24:14] INFO     Animation 41 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3568545047_13                         
+                             28037793.mp4'                                      
+Animation 42: MoveAlongPath(Dot3D of 64 submobjects):   0%|          | 0/160 [00:00<?, ?it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):   2%|▏         | 3/160 [00:00<00:07, 21.53it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):   4%|▍         | 6/160 [00:00<00:07, 21.33it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):   6%|▌         | 9/160 [00:00<00:06, 21.66it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):   8%|▊         | 12/160 [00:00<00:06, 21.82it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):   9%|▉         | 15/160 [00:00<00:06, 21.59it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  11%|█▏        | 18/160 [00:00<00:06, 21.79it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  13%|█▎        | 21/160 [00:00<00:06, 21.87it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  15%|█▌        | 24/160 [00:01<00:06, 21.96it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  17%|█▋        | 27/160 [00:01<00:06, 21.81it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  19%|█▉        | 30/160 [00:01<00:05, 21.98it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  21%|██        | 33/160 [00:01<00:05, 22.10it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  22%|██▎       | 36/160 [00:01<00:05, 21.99it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  24%|██▍       | 39/160 [00:01<00:05, 21.85it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  26%|██▋       | 42/160 [00:01<00:05, 21.96it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  28%|██▊       | 45/160 [00:02<00:05, 20.26it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  30%|███       | 48/160 [00:02<00:05, 20.32it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  32%|███▏      | 51/160 [00:02<00:05, 20.53it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  34%|███▍      | 54/160 [00:02<00:05, 20.55it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  36%|███▌      | 57/160 [00:02<00:04, 20.63it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  38%|███▊      | 60/160 [00:02<00:04, 20.78it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  39%|███▉      | 63/160 [00:02<00:04, 20.92it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  41%|████▏     | 66/160 [00:03<00:04, 20.84it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  43%|████▎     | 69/160 [00:03<00:04, 20.87it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  45%|████▌     | 72/160 [00:03<00:04, 20.95it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  47%|████▋     | 75/160 [00:03<00:04, 21.13it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  49%|████▉     | 78/160 [00:03<00:03, 21.03it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  51%|█████     | 81/160 [00:03<00:03, 20.89it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  52%|█████▎    | 84/160 [00:03<00:03, 20.91it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  54%|█████▍    | 87/160 [00:04<00:03, 21.00it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  56%|█████▋    | 90/160 [00:04<00:03, 20.97it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  58%|█████▊    | 93/160 [00:04<00:03, 20.87it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  60%|██████    | 96/160 [00:04<00:03, 20.85it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  62%|██████▏   | 99/160 [00:04<00:02, 20.90it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  64%|██████▍   | 102/160 [00:04<00:02, 20.80it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  66%|██████▌   | 105/160 [00:04<00:02, 20.75it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  68%|██████▊   | 108/160 [00:05<00:02, 20.76it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  69%|██████▉   | 111/160 [00:05<00:02, 20.91it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  71%|███████▏  | 114/160 [00:05<00:02, 20.85it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  73%|███████▎  | 117/160 [00:05<00:02, 20.84it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  75%|███████▌  | 120/160 [00:05<00:01, 20.83it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  77%|███████▋  | 123/160 [00:05<00:01, 20.94it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  79%|███████▉  | 126/160 [00:05<00:01, 20.92it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  81%|████████  | 129/160 [00:06<00:01, 20.95it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  82%|████████▎ | 132/160 [00:06<00:01, 20.96it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  84%|████████▍ | 135/160 [00:06<00:01, 20.92it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  86%|████████▋ | 138/160 [00:06<00:01, 20.83it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  88%|████████▊ | 141/160 [00:06<00:00, 20.75it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  90%|█████████ | 144/160 [00:06<00:00, 20.83it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  92%|█████████▏| 147/160 [00:06<00:00, 20.88it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  94%|█████████▍| 150/160 [00:07<00:00, 20.88it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  96%|█████████▌| 153/160 [00:07<00:00, 20.59it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  98%|█████████▊| 156/160 [00:07<00:00, 20.63it/s]Animation 42: MoveAlongPath(Dot3D of 64 submobjects):  99%|█████████▉| 159/160 [00:07<00:00, 20.70it/s]                                                                                                       [10/08/26 01:24:24] INFO     Animation 42 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_1765445371_13                         
+                             28037793.mp4'                                      
+Animation 43: MoveAlongPath(Dot3D of 64 submobjects):   0%|          | 0/187 [00:00<?, ?it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):   2%|▏         | 3/187 [00:00<00:08, 22.65it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):   3%|▎         | 6/187 [00:00<00:08, 21.98it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):   5%|▍         | 9/187 [00:00<00:08, 21.58it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):   6%|▋         | 12/187 [00:00<00:08, 21.39it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):   8%|▊         | 15/187 [00:00<00:08, 21.35it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  10%|▉         | 18/187 [00:00<00:07, 21.31it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  11%|█         | 21/187 [00:00<00:07, 21.22it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  13%|█▎        | 24/187 [00:01<00:07, 21.19it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  14%|█▍        | 27/187 [00:01<00:07, 21.17it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  16%|█▌        | 30/187 [00:01<00:07, 21.43it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  18%|█▊        | 33/187 [00:01<00:07, 21.61it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  19%|█▉        | 36/187 [00:01<00:06, 21.75it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  21%|██        | 39/187 [00:01<00:06, 21.81it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  22%|██▏       | 42/187 [00:01<00:06, 21.72it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  24%|██▍       | 45/187 [00:02<00:06, 20.41it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  26%|██▌       | 48/187 [00:02<00:06, 20.55it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  27%|██▋       | 51/187 [00:02<00:06, 20.74it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  29%|██▉       | 54/187 [00:02<00:06, 20.66it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  30%|███       | 57/187 [00:02<00:06, 20.69it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  32%|███▏      | 60/187 [00:02<00:06, 20.64it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  34%|███▎      | 63/187 [00:02<00:05, 20.81it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  35%|███▌      | 66/187 [00:03<00:05, 20.70it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  37%|███▋      | 69/187 [00:03<00:05, 20.71it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  39%|███▊      | 72/187 [00:03<00:05, 20.65it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  40%|████      | 75/187 [00:03<00:05, 20.73it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  42%|████▏     | 78/187 [00:03<00:05, 20.78it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  43%|████▎     | 81/187 [00:03<00:05, 20.34it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  45%|████▍     | 84/187 [00:04<00:05, 20.47it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  47%|████▋     | 87/187 [00:04<00:04, 20.65it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  48%|████▊     | 90/187 [00:04<00:04, 20.61it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  50%|████▉     | 93/187 [00:04<00:04, 20.76it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  51%|█████▏    | 96/187 [00:04<00:04, 20.78it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  53%|█████▎    | 99/187 [00:04<00:04, 20.98it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  55%|█████▍    | 102/187 [00:04<00:04, 20.93it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  56%|█████▌    | 105/187 [00:05<00:03, 20.84it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  58%|█████▊    | 108/187 [00:05<00:03, 20.94it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  59%|█████▉    | 111/187 [00:05<00:03, 21.11it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  61%|██████    | 114/187 [00:05<00:03, 21.00it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  63%|██████▎   | 117/187 [00:05<00:03, 20.94it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  64%|██████▍   | 120/187 [00:05<00:03, 20.87it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  66%|██████▌   | 123/187 [00:05<00:03, 20.96it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  67%|██████▋   | 126/187 [00:06<00:02, 20.89it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  69%|██████▉   | 129/187 [00:06<00:02, 20.89it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  71%|███████   | 132/187 [00:06<00:02, 20.80it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  72%|███████▏  | 135/187 [00:06<00:02, 20.96it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  74%|███████▍  | 138/187 [00:06<00:02, 20.96it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  75%|███████▌  | 141/187 [00:06<00:02, 20.90it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  77%|███████▋  | 144/187 [00:06<00:02, 20.87it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  79%|███████▊  | 147/187 [00:07<00:01, 21.07it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  80%|████████  | 150/187 [00:07<00:01, 21.05it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  82%|████████▏ | 153/187 [00:07<00:01, 20.92it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  83%|████████▎ | 156/187 [00:07<00:01, 20.90it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  85%|████████▌ | 159/187 [00:07<00:01, 21.07it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  87%|████████▋ | 162/187 [00:07<00:01, 20.96it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  88%|████████▊ | 165/187 [00:07<00:01, 20.95it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  90%|████████▉ | 168/187 [00:08<00:00, 20.84it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  91%|█████████▏| 171/187 [00:08<00:00, 21.00it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  93%|█████████▎| 174/187 [00:08<00:00, 20.90it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  95%|█████████▍| 177/187 [00:08<00:00, 20.91it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  96%|█████████▋| 180/187 [00:08<00:00, 20.91it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  98%|█████████▊| 183/187 [00:08<00:00, 21.06it/s]Animation 43: MoveAlongPath(Dot3D of 64 submobjects):  99%|█████████▉| 186/187 [00:08<00:00, 21.05it/s]                                                                                                       [10/08/26 01:24:36] INFO     Animation 43 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2924112389_13                         
+                             28037793.mp4'                                      
+Animation 44: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.:  14%|█▍        | 1/7 [00:00<00:01,  5.41it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00,  5.24it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.:  43%|████▎     | 3/7 [00:00<00:00,  5.23it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00,  5.19it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.:  71%|███████▏  | 5/7 [00:00<00:00,  5.21it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:01<00:00,  5.21it/s]Animation 44: FadeOut(VGroup of 4 submobjects), etc.: 100%|██████████| 7/7 [00:01<00:00,  5.22it/s]                                                                                                   [10/08/26 01:24:38] INFO     Animation 44 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_4229855987_20                         
+                             19459688.mp4'                                      
+[10/08/26 01:24:44] INFO     Animation 45 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_462028684_578                         
+                             405226.mp4'                                        
+[10/08/26 01:24:50] INFO     Animation 46 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2490903341_22                         
+                             68048385.mp4'                                      
+[10/08/26 01:24:55] INFO     Animation 47 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_2856380810_20                         
+                             23926202.mp4'                                      
+Animation 48: FadeOut(VGroup of 4 submobjects), etc.:   0%|          | 0/7 [00:00<?, ?it/s]Animation 48: FadeOut(VGroup of 4 submobjects), etc.:  29%|██▊       | 2/7 [00:00<00:00, 16.94it/s]Animation 48: FadeOut(VGroup of 4 submobjects), etc.:  57%|█████▋    | 4/7 [00:00<00:00, 16.80it/s]Animation 48: FadeOut(VGroup of 4 submobjects), etc.:  86%|████████▌ | 6/7 [00:00<00:00, 16.65it/s]                                                                                                   [10/08/26 01:24:57] INFO     Animation 48 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_91803650_2348                         
+                             911503.mp4'                                        
+[10/08/26 01:25:02] INFO     Animation 49 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_3324233365_11                         
+                             28886285.mp4'                                      
+[10/08/26 01:25:08] INFO     Animation 50 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_53363972_4261                         
+                             871226.mp4'                                        
+[10/08/26 01:25:13] INFO     Animation 51 : Partial     scene_file_writer.py:192
+                             movie file written in                              
+                             '/home/runner/work/Kho-Cod                         
+                             e-Manim/Kho-Code-Manim/med                         
+                             ia/videos/1080p30/partial_                         
+                             movie_files/TraiPhang20Mas                         
+                             ter/55120057_475641873_321                         
+                             0847975.mp4'                                       
+                    INFO     Combining to Movie file.   scene_file_writer.py:952
+                    INFO                               scene_file_writer.py:1103
+                             File ready at                                      
+                             '/home/runner/work/Kho-Co                          
+                             de-Manim/Kho-Code-Manim/m                          
+                             edia/videos/1080p30/trai_                          
+                             phang_20_capstone_thuat_t                          
+                             oan_MASTER_1080p.mp4'                              
+                                                                                
+                    INFO     Rendered TraiPhang20Master             scene.py:290
+                             Played 52 animations                               
+VIDEO HOAN CHINH: /home/runner/work/Kho-Code-Manim/Kho-Code-Manim/media/videos/1080p30/trai_phang_20_capstone_thuat_toan_MASTER_1080p_WITH_AUDIO.mp4
