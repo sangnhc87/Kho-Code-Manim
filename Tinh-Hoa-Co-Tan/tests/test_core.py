@@ -10,8 +10,8 @@ ROOT=Path(__file__).resolve().parents[1]
 
 class CoreTests(unittest.TestCase):
     def test_pikafish_evidence_matches_episode(self):
-        path=ROOT/'episodes'/'tap-0001.json'
-        report=json.loads((ROOT/'verification'/'tap-0001-pikafish.json').read_text())
+        path=ROOT/'episodes'/'tap-0036.json'
+        report=json.loads((ROOT/'verification'/'tap-0036-pikafish.json').read_text())
         self.assertEqual(report['episode_sha256'],hashlib.sha256(path.read_bytes()).hexdigest())
         ep=read_episode(path)
         expected=[(i,j,m) for i,beat in enumerate(ep['beats'],1)
@@ -24,6 +24,16 @@ class CoreTests(unittest.TestCase):
 
     def test_001_all_variations_legally_play(self):
         ep=read_episode(ROOT/'episodes'/'tap-0001.json')
+        self.assertEqual(ep['category'],'Tàn Binh')
+        self.assertEqual(ep['analysis_status'],'three_piece_pawn_retrograde')
+        self.assertTrue(all('fen' in beat for beat in ep['beats']))
+        for beat in ep['beats']:
+            b=Board.fen(beat['fen'])
+            for uci in beat.get('moves',[]):
+                b.play(uci[:2],uci[2:])
+
+    def test_036_all_variations_legally_play(self):
+        ep=read_episode(ROOT/'episodes'/'tap-0036.json')
         self.assertEqual(len(ep['beats']),18)
         self.assertEqual(ep['analysis_status'],'four_piece_retrograde_ordinary_moves')
         self.assertTrue(all('fen' in beat for beat in ep['beats']))
@@ -51,8 +61,8 @@ class CoreTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'facing generals'):
             Board.fen('4k4/9/9/9/9/9/9/9/9/4K4 w')
 
-    def test_retrograde_001_choices(self):
-        ep=read_episode(ROOT/'episodes'/'tap-0001.json')
+    def test_retrograde_036_choices(self):
+        ep=read_episode(ROOT/'episodes'/'tap-0036.json')
         ss,index,res,depth=solve()
         root=next(s for s in ss if fen_of(*s)==ep['fen'])
         self.assertEqual((res[index[root]],depth[index[root]]),(1,13))
@@ -63,7 +73,7 @@ class CoreTests(unittest.TestCase):
         self.assertEqual(res[index[options['e7d7']]],0)
 
     def test_final_capture_in_each_pv(self):
-        ep=read_episode(ROOT/'episodes'/'tap-0001.json')
+        ep=read_episode(ROOT/'episodes'/'tap-0036.json')
         for idx in (4,5,6,7,8,10,14):
             beat=ep['beats'][idx]
             b=Board.fen(beat['fen'])
@@ -72,8 +82,8 @@ class CoreTests(unittest.TestCase):
                 last_capture=b.play(move[:2],move[2:])
             self.assertEqual(last_capture,'a',f'Beat {idx+1} did not capture black advisor')
 
-    def test_002_all_variations_legally_play(self):
-        ep=read_episode(ROOT/'episodes'/'tap-0002.json')
+    def test_037_all_variations_legally_play(self):
+        ep=read_episode(ROOT/'episodes'/'tap-0037.json')
         self.assertEqual(len(ep['beats']),12)
         self.assertEqual(ep['analysis_status'],'four_piece_elephant_retrograde')
         self.assertTrue(all('fen' in beat for beat in ep['beats']))
