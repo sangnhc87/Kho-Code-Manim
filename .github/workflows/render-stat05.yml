@@ -17,7 +17,7 @@ on:
         options: ['off', 'on']
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   render:
