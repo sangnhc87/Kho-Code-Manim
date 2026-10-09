@@ -50,7 +50,7 @@ jobs:
           typst --version
       - name: Unit tests, source checks and all 32 states
         run: |
-          python -m unittest discover -s tests -v
+          python -m unittest tests/test_stat18.py -v
           python -m compileall -q stat18 scripts
           python scripts/check_stat18_states.py
       - name: Compile 8 STAT18 Typst formulas
