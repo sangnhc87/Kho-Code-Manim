@@ -228,6 +228,13 @@ def upload_single_file(youtube, video_path, title, description, tags, privacy="p
     return video_id, video_url
 
 
+def locate_cotan_video(lesson_num):
+    base_dir = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "output"
+    num_str = f"{lesson_num:04d}"
+    matches = list(base_dir.glob(f"tap-{num_str}/*.mp4"))
+    return matches[0] if matches else None
+
+
 def locate_trai_phang_video(lesson_num):
     base_dir = REPO_ROOT / "Manim-Typst" / "SeriesTraiPhang"
     num_str = f"{lesson_num:02d}"
@@ -274,6 +281,29 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
         playlist_info = PLAYLIST_THONG_KE
         lessons = THONG_KE_LESSONS
         finder = locate_thong_ke_video
+    elif series_name == "cotan":
+        print(f"\n🎯 BẮT ĐẦU XỬ LÝ KHÓA HỌC: TINH HOA CỜ TÀN")
+        playlist_info = {
+            "title": "Tinh Hoa Cờ Tàn | Thầy Nguyễn Văn Sang",
+            "description": "Tuyệt kỹ và bí quyết cờ tàn cơ bản đến nâng cao. Nhìn thế trận để thắng, học bằng sự thấu hiểu chứ không học thuộc lòng.\nGiảng viên: Thầy Nguyễn Văn Sang.\n#CoTuong #CoTan #TinhHoaCoTan #ThayNguyenVanSang"
+        }
+        
+        # Build lessons dictionary on the fly for cotan
+        lessons = {}
+        episodes_dir = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "episodes"
+        if episodes_dir.exists():
+            for ep_file in episodes_dir.glob("tap-*.json"):
+                try:
+                    num = int(ep_file.stem.split("-")[1])
+                    ep_data = json.loads(ep_file.read_text(encoding="utf-8"))
+                    lessons[num] = {
+                        "title": f"Tập {num}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
+                        "description": f"{ep_data.get('subtitle', '')}\n\n{playlist_info['description']}",
+                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", "thầy sang"]
+                    }
+                except (ValueError, json.JSONDecodeError):
+                    continue
+        finder = locate_cotan_video
     else:
         print(f"❌ Khóa học không hợp lệ: {series_name}")
         return
@@ -339,10 +369,10 @@ def main():
     parser.add_argument("--description", default="", help="Mô tả video")
     parser.add_argument("--tags", default="", help="Tags video (ngăn cách bằng dấu phẩy)")
     parser.add_argument("--privacy", choices=["public", "unlisted", "private"], default="public", help="Chế độ hiển thị (mặc định: public)")
-    parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke"], help="Chạy theo chuỗi khóa học (trai_phang, to_hop, thong_ke)")
+    parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke", "cotan"], help="Chạy theo chuỗi khóa học")
     parser.add_argument("--lesson", type=int, help="Chỉ định số bài cần tải (ví dụ: --lesson 1)")
     parser.add_argument("--limit", type=int, default=6, help="Số lượng video tối đa tải trong 1 lần chạy (mặc định: 6 video)")
-    parser.add_argument("--category-id", default="27", help="ID thể loại video (mặc định: 27 - Giáo dục)")
+    parser.add_argument("--category-id", default="27", help="ID thể loại video (mặc định: 27 - Giáo dục, 20 - Gaming)")
 
     args = parser.parse_args()
     youtube = get_youtube_client()
@@ -358,6 +388,22 @@ def main():
                 lessons = THONG_KE_LESSONS
                 finder = locate_thong_ke_video
                 playlist_info = PLAYLIST_THONG_KE
+            elif args.series == "cotan":
+                finder = locate_cotan_video
+                playlist_info = {
+                    "title": "Tinh Hoa Cờ Tàn | Thầy Nguyễn Văn Sang",
+                    "description": "Tuyệt kỹ và bí quyết cờ tàn cơ bản đến nâng cao.\n#CoTuong #CoTan #TinhHoaCoTan"
+                }
+                ep_file = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "episodes" / f"tap-{args.lesson:04d}.json"
+                if ep_file.exists():
+                    ep_data = json.loads(ep_file.read_text(encoding="utf-8"))
+                    lessons = {args.lesson: {
+                        "title": f"Tập {args.lesson}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
+                        "description": f"{ep_data.get('subtitle', '')}\n\n{playlist_info['description']}",
+                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", "thầy sang"]
+                    }}
+                else:
+                    lessons = {}
             else:
                 lessons = TO_HOP_LESSONS
                 finder = locate_to_hop_video
