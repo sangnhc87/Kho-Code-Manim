@@ -1,0 +1,16 @@
+{
+  "title": "SangMath STAT03 - Mean Median Mode",
+  "new_episode": "STAT03",
+  "baseline_zip": "SangMath_ThongKe_STAT01_STAT02_GitHubReady.zip",
+  "base_entries": 61,
+  "new_entries": 25,
+  "baseline_changed": [
+    "README.md",
+    "README_THONG_KE_SERIES.md"
+  ],
+  "duration_silent_seconds": 800,
+  "python_unittests_passed": 125,
+  "manim_render_verified": false,
+  "typst_compilation_verified": false,
+  "readme": "Code ready for GitHub Actions preview; real render still needs pedagogical QA."
+}

@@ -365,5 +365,40 @@ Nội dung trọng tâm bài 01:
 #ThongKe #Toan10 #Toan11 #Toan12 #Manim #Typst #ThayNguyenVanSang #XacSuatThongKe""",
         "tags": ["thống kê", "toán 10", "toán 11", "toán 12", "xác suất thống kê", "bảng tần số", "biểu đồ cột", "manim", "typst", "thầy nguyễn văn sang"],
         "file_pattern": "STAT01"
+    },
+    2: {
+        "title": "STAT02: Biểu Đồ Thống Kê | Cột, Đoạn Thẳng, Hình Quạt & Histogram - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 02: Biểu đồ thống kê – Một bộ dữ liệu, nhiều góc nhìn trực quan
+
+Nội dung trọng tâm bài 02:
+- Chuyển đổi linh hoạt từ bảng số liệu sang các dạng trực quan tương ứng.
+- Biểu đồ cột (Bar chart) & Biểu đồ điểm (Dot plot): So sánh tần số rời rạc.
+- Biểu đồ hình quạt tròn (Pie chart): Tỷ lệ cơ cấu và góc ở tâm theo phần trăm.
+- Biểu đồ đoạn thẳng (Line graph): Quan sát xu hướng biến thiên theo thời gian.
+- Histogram (Biểu đồ tần số ghép nhóm): Phân phối mật độ và diện tích hình chữ nhật.
+- Nguyên tắc trung thực trong thống kê: Tránh ngụy biện trực quan khi chọn biểu đồ.
+
+{AUTHOR_INFO}
+#ThongKe #BieuDoThongKe #Histogram #Manim #Typst #ThayNguyenVanSang #Toan10 #Toan11 #Toan12""",
+        "tags": ["biểu đồ thống kê", "toán 10", "toán 11", "toán 12", "biểu đồ cột", "hình quạt tròn", "histogram", "manim", "typst", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT02"
+    },
+    3: {
+        "title": "STAT03: Số Trung Bình, Trung Vị & Mốt | Xu Thế Trung Tâm Dữ Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 03: Số đặc trưng đo xu thế trung tâm – Ba con số kể ba câu chuyện
+
+Nội dung trọng tâm bài 03:
+- Số trung bình cộng (Mean): Trọng tâm cân bằng đại số của toàn bộ mẫu số liệu.
+- Trung vị (Median): Điểm chia đôi mẫu số liệu đã sắp thứ tự, tính bất biến trước ngoại lai.
+- Mốt (Mode): Giá trị có tần số xuất hiện cao nhất, đa mốt và đơn mốt.
+- Phân tích ảnh hưởng của giá trị bất thường (outlier / giá trị dị biệt).
+- So sánh khi nào nên dùng số trung bình, khi nào trung vị là thước đo tin cậy hơn.
+
+{AUTHOR_INFO}
+#ThongKe #SoTrungBinh #TrungVi #Mot #Outlier #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["số trung bình", "trung vị", "mốt", "toán 10", "toán 11", "toán 12", "số đặc trưng", "outlier", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT03"
     }
 }
