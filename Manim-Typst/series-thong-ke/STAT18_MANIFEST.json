@@ -1,0 +1,31 @@
+{
+  "episode": "STAT18",
+  "title": "Lấy mẫu, thiên lệch và mô phỏng",
+  "series_complete": true,
+  "chapters": 8,
+  "scenes": 32,
+  "seconds_base": 1216.0,
+  "narration_words": 2411,
+  "footer": "Thầy Nguyễn Văn Sang",
+  "male_voice": "vi-VN-NamMinhNeural",
+  "visible_internal_counters": false,
+  "formula_count": 8,
+  "population_size": 1000,
+  "population_yes": 400,
+  "true_p": 0.4,
+  "random_20_yes": 7,
+  "random_80_yes": 37,
+  "simulation_repeats_each": 300,
+  "se_20": 0.108497796160898,
+  "se_80": 0.052561989714648004,
+  "voluntary_yes": 70,
+  "practice_random_yes": 88,
+  "practice_random_n": 200,
+  "practice_convenience_yes": 150,
+  "practice_wald_interval_uncorrected": {
+    "estimate": 0.44,
+    "lower": 0.37120427920284577,
+    "upper": 0.5087957207971543
+  },
+  "render_status": "PENDING: Manim and Typst rendering and human visual/audio review in GitHub Actions"
+}
