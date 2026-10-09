@@ -31,9 +31,7 @@ jobs:
       - name: Install system dependencies and Vietnamese fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
-            fonts-noto-core fonts-noto-extra libavcodec-dev libavformat-dev libavutil-dev \
-            libswscale-dev libswresample-dev
+          sudo apt-get install -y --no-install-recommends ffmpeg libcairo2-dev libpango1.0-dev fonts-noto-core
           fc-match 'Noto Sans'
       - uses: actions/setup-python@v5
         with:

@@ -24,10 +24,10 @@ class TestSTAT01Data(unittest.TestCase):
     def test_relative(self):
         for x,c in FREQUENCY.items():self.assertAlmostEqual(RELATIVE[x],c/40)
     def test_relative_sum(self):self.assertAlmostEqual(sum(RELATIVE.values()),1.)
-    def test_seven_percent(self):self.assertEqual(100*RELATIVE[7],25)
-    def test_eight_percent(self):self.assertEqual(100*RELATIVE[8],20)
+    def test_seven_percent(self):self.assertAlmostEqual(100*RELATIVE[7],25)
+    def test_eight_percent(self):self.assertAlmostEqual(100*RELATIVE[8],20)
     def test_ge_8_count(self):self.assertEqual(sum(1 for x in SCORES if x>=8),16)
-    def test_ge_8_ratio(self):self.assertEqual(sum(RELATIVE[x] for x in (8,9,10)),.4)
+    def test_ge_8_ratio(self):self.assertAlmostEqual(sum(RELATIVE[x] for x in (8,9,10)),.4)
     def test_nine_exact(self):self.assertEqual(FREQUENCY[9],6)
     def test_cumulative_at_seven(self):self.assertEqual(CUMULATIVE[7],24)
     def test_cumulative_final(self):self.assertEqual(CUMULATIVE[10],N)
