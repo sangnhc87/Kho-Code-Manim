@@ -384,7 +384,7 @@ def main():
     parser.add_argument("--description", default="", help="Mô tả video")
     parser.add_argument("--tags", default="", help="Tags video (ngăn cách bằng dấu phẩy)")
     parser.add_argument("--privacy", choices=["public", "unlisted", "private"], default="public", help="Chế độ hiển thị (mặc định: public)")
-    parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke", "cotan"], help="Chạy theo chuỗi khóa học")
+    parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke", "cotan", "nguyen_ham_tich_phan"], help="Chạy theo chuỗi khóa học")
     parser.add_argument("--lesson", type=int, help="Chỉ định số bài cần tải (ví dụ: --lesson 1)")
     parser.add_argument("--limit", type=int, default=6, help="Số lượng video tối đa tải trong 1 lần chạy (mặc định: 6 video)")
     parser.add_argument("--category-id", default="27", help="ID thể loại video (mặc định: 27 - Giáo dục, 20 - Gaming)")
