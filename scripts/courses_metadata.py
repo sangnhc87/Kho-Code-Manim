@@ -628,3 +628,21 @@ Bài 18: Ước lượng tham số mẫu
         "file_pattern": "STAT18"
     }
 }
+
+INT_LESSONS = {
+    1: {
+        "title": "INT01: Bản Chất Của Nguyên Hàm & Tích Phân - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Nguyên Hàm - Tích Phân - Ứng Dụng Chuyên Sâu (36 Tập)
+Tập 1: Bản chất cốt lõi của Nguyên Hàm
+
+Nội dung trọng tâm tập 1:
+- Hiểu định nghĩa nguyên hàm từ việc tìm ngược hàm số.
+- Phân tích họ nguyên hàm và hằng số C.
+- Ý nghĩa hình học cơ bản của họ đường cong nguyên hàm.
+
+{AUTHOR_INFO}
+#NguyenHam #TichPhan #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["nguyên hàm", "tích phân", "toán 12", "manim", "thầy nguyễn văn sang", "giải tích"],
+        "file_pattern": "INT01"
+    }
+}

@@ -30,6 +30,7 @@ try:
         TO_HOP_LESSONS,
         PLAYLIST_THONG_KE,
         THONG_KE_LESSONS,
+        INT_LESSONS,
         AUTHOR_INFO,
     )
 except ImportError:
@@ -40,6 +41,7 @@ except ImportError:
         TO_HOP_LESSONS,
         PLAYLIST_THONG_KE,
         THONG_KE_LESSONS,
+        INT_LESSONS,
         AUTHOR_INFO,
     )
 
@@ -235,6 +237,14 @@ def locate_cotan_video(lesson_num):
     return matches[0] if matches else None
 
 
+PLAYLIST_INT = {
+    "title": "Nguyên Hàm - Tích Phân - Ứng Dụng Chuyên Sâu | Thầy Nguyễn Văn Sang",
+    "description": "Toàn bộ kiến thức từ cơ bản đến chuyên sâu về Nguyên Hàm và Tích Phân.\n#NguyenHam #TichPhan #Toan12 #ThayNguyenVanSang"
+}
+
+def locate_int_video(lesson_num):
+    return REPO_ROOT / "Manim-Typst" / "series-nguyen-ham-tich-phan" / "media" / "videos" / f"INT{lesson_num:02d}.mp4"
+
 def locate_trai_phang_video(lesson_num):
     base_dir = REPO_ROOT / "Manim-Typst" / "SeriesTraiPhang"
     num_str = f"{lesson_num:02d}"
@@ -281,6 +291,11 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
         playlist_info = PLAYLIST_THONG_KE
         lessons = THONG_KE_LESSONS
         finder = locate_thong_ke_video
+    elif series_name == "nguyen_ham_tich_phan":
+        print(f"\n🎯 BẮT ĐẦU XỬ LÝ KHÓA HỌC: NGUYÊN HÀM TÍCH PHÂN")
+        playlist_info = PLAYLIST_INT
+        lessons = INT_LESSONS
+        finder = locate_int_video
     elif series_name == "cotan":
         print(f"\n🎯 BẮT ĐẦU XỬ LÝ KHÓA HỌC: TINH HOA CỜ TÀN")
         playlist_info = {
@@ -388,6 +403,10 @@ def main():
                 lessons = THONG_KE_LESSONS
                 finder = locate_thong_ke_video
                 playlist_info = PLAYLIST_THONG_KE
+            elif args.series == "nguyen_ham_tich_phan":
+                lessons = INT_LESSONS
+                finder = locate_int_video
+                playlist_info = PLAYLIST_INT
             elif args.series == "cotan":
                 finder = locate_cotan_video
                 playlist_info = {

@@ -1,0 +1,338 @@
+{
+  "episode": "INT01",
+  "voice": "off",
+  "voice_id": "",
+  "total_duration": 864.0,
+  "chapters": [
+    "Câu hỏi đi ngược đạo hàm",
+    "Tìm lại hàm số đã biết đạo hàm",
+    "Vì sao có hằng số C?",
+    "Các tiếp tuyến có cùng hệ số góc",
+    "Hai nguyên hàm sai khác một hằng số",
+    "Xác định nguyên hàm bằng một điều kiện",
+    "Ứng dụng: tìm vị trí từ vận tốc",
+    "Tự luyện và tổng kết"
+  ],
+  "segments": [
+    {
+      "chapter": 1,
+      "step": 1,
+      "title": "Nhìn từ điều đã biết",
+      "formula": "definition",
+      "visual": "question",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 1,
+      "step": 2,
+      "title": "Một câu hỏi rất cụ thể",
+      "formula": "f",
+      "visual": "question",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 1,
+      "step": 3,
+      "title": "Quan sát đường thẳng",
+      "formula": "f",
+      "visual": "question",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 1,
+      "step": 4,
+      "title": "Mục tiêu của bài",
+      "formula": "definition",
+      "visual": "question",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 2,
+      "step": 1,
+      "title": "Thử một ứng viên",
+      "formula": "square",
+      "visual": "reverse",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 2,
+      "step": 2,
+      "title": "Thấy rõ bằng tiếp tuyến",
+      "formula": "derivative",
+      "visual": "tangent_move",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 2,
+      "step": 3,
+      "title": "Nhớ đúng chiều suy luận",
+      "formula": "square",
+      "visual": "reverse",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 2,
+      "step": 4,
+      "title": "Khái niệm nguyên hàm",
+      "formula": "definition",
+      "visual": "reverse",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 3,
+      "step": 1,
+      "title": "Có phải chỉ có x²?",
+      "formula": "shiftplus",
+      "visual": "family",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 3,
+      "step": 2,
+      "title": "Thử thêm những giá trị khác",
+      "formula": "family",
+      "visual": "family",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 3,
+      "step": 3,
+      "title": "Hằng số tự do",
+      "formula": "general",
+      "visual": "family",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 3,
+      "step": 4,
+      "title": "Một họ, không phải một đường",
+      "formula": "general",
+      "visual": "family_shift",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 4,
+      "step": 1,
+      "title": "Phóng to một điểm",
+      "formula": "sameslope",
+      "visual": "tangent",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 4,
+      "step": 2,
+      "title": "Ba đường tiếp tuyến song song",
+      "formula": "sameslope",
+      "visual": "tangent",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 4,
+      "step": 3,
+      "title": "Đạo hàm phụ thuộc x",
+      "formula": "derivative",
+      "visual": "tangent_move",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 4,
+      "step": 4,
+      "title": "Kết luận từ hình học",
+      "formula": "general",
+      "visual": "tangent",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 5,
+      "step": 1,
+      "title": "So sánh hai nguyên hàm",
+      "formula": "difference",
+      "visual": "difference",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 5,
+      "step": 2,
+      "title": "Hiệu có thay đổi không?",
+      "formula": "constantdifference",
+      "visual": "difference",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 5,
+      "step": 3,
+      "title": "Tại sao luôn như vậy?",
+      "formula": "zeroderivative",
+      "visual": "difference",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 5,
+      "step": 4,
+      "title": "Chú ý miền xác định",
+      "formula": "interval",
+      "visual": "difference",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 6,
+      "step": 1,
+      "title": "Chọn một thành viên của họ",
+      "formula": "condition",
+      "visual": "condition",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 6,
+      "step": 2,
+      "title": "Thay tọa độ điểm",
+      "formula": "solveC",
+      "visual": "condition",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 6,
+      "step": 3,
+      "title": "Xác định C",
+      "formula": "answerC",
+      "visual": "condition_shift",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 6,
+      "step": 4,
+      "title": "Kiểm tra hai điều kiện",
+      "formula": "answerC",
+      "visual": "condition",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 7,
+      "step": 1,
+      "title": "Vận tốc chưa cho vị trí",
+      "formula": "velocity",
+      "visual": "motion_v",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 7,
+      "step": 2,
+      "title": "Khôi phục hàm tọa độ",
+      "formula": "position",
+      "visual": "motion_s",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 7,
+      "step": 3,
+      "title": "Tọa độ ban đầu",
+      "formula": "position_final",
+      "visual": "motion_s",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 7,
+      "step": 4,
+      "title": "Đọc đúng các đại lượng",
+      "formula": "position_final",
+      "visual": "motion_s",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 8,
+      "step": 1,
+      "title": "Bài tập tự luyện",
+      "formula": "practice",
+      "visual": "practice",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 8,
+      "step": 2,
+      "title": "Bước một: tìm họ nguyên hàm",
+      "formula": "practice_primitive",
+      "visual": "practice",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 8,
+      "step": 3,
+      "title": "Bước hai: dùng điều kiện",
+      "formula": "practice_condition",
+      "visual": "practice_shift",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    },
+    {
+      "chapter": 8,
+      "step": 4,
+      "title": "Bước ba: kiểm tra và ghi nhớ",
+      "formula": "practice_final",
+      "visual": "practice",
+      "voice_path": "",
+      "audio_duration": 0.0,
+      "duration": 27.0
+    }
+  ]
+}
