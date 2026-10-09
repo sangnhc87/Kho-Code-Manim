@@ -10,7 +10,7 @@ FORMULAS={
  'q3_iqr':'$ Q_3 approx 8+frac(30-24,14) times 2 approx 8.86 $',
  'ogive':'$ Q_1 approx 6.44 quad Q_2 approx 7.56 quad Q_3 approx 8.86 $',
  'boundaries':'$ Q_1=6 quad Q_2=8 quad Q_3=10 $',
- 'reverse':'$ 6+frac(8,x)=6.5 quad x=16 quad IQR=2.5 $',
+ 'reverse':'$ 6+frac(8,x)=6.5 quad x=16 quad "IQR"=2.5 $',
 }
 def create_sources():
     dest=ROOT/'typst/stat10';dest.mkdir(parents=True,exist_ok=True)
