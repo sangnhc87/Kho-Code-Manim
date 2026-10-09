@@ -176,132 +176,52 @@ Nội dung bài 11:
         "file_pattern": "trai_phang_11"
     },
     12: {
-        "title": "Bài 12: Trải Phẳng Mặt Trụ Quấn K Vòng | Đường Xoắn Ốc Helix - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
+        "title": "STAT12: Phương Sai & Độ Lệch Chuẩn Của Mẫu Ghép Nhóm - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 12: Phương sai và độ lệch chuẩn của mẫu số liệu ghép nhóm
 
-Nội dung bài 12:
-- Đường xoắn ốc (Helix) trên mặt trụ khi dây quấn đúng k vòng đều đặn.
-- Phương pháp ghép k hình chữ nhật trải phẳng nối tiếp nhau.
-- Công thức Pythagoras tổng quát: L = sqrt(h^2 + (2*pi*R*k)^2).
+Nội dung trọng tâm bài 12:
+- Phương pháp tính phương sai và độ lệch chuẩn bằng giá trị đại diện.
+- So sánh sự khác biệt giữa tính trên dữ liệu gốc và dữ liệu ghép nhóm.
+- Ứng dụng đo mức độ phân tán của dữ liệu ghép nhóm trong thực tế.
 
 {AUTHOR_INFO}
-#DuongXoanOc #Helix #HinhTru #TraiPhang #ThayNguyenVanSang""",
-        "tags": ["đường xoắn ốc", "helix", "quấn k vòng", "hình trụ", "trải phẳng"],
-        "file_pattern": "trai_phang_12"
+#ThongKe #PhuongSai #DoLechChuan #MauGhepNhom #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["phương sai", "độ lệch chuẩn", "mẫu ghép nhóm", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT12"
     },
     13: {
-        "title": "Bài 13: Trải Phẳng Hình Nón Tròn Xoay | Góc Ở Đỉnh Hình Quạt Tròn - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
+        "title": "STAT13: So Sánh Hai Mẫu Số Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 13: So sánh hai mẫu số liệu
 
-Nội dung bài 13:
-- Mở phẳng mặt xung quanh hình nón thành hình quạt tròn bán kính bằng đường sinh l.
-- Công thức tính góc ở tâm của hình quạt: alpha = 360 * (R / l).
-- Bài toán vòng dây xuất phát từ điểm A trên đáy, quấn 1 vòng quanh nón rồi quay lại A.
+Nội dung trọng tâm bài 13:
+- Phân tích sự khác biệt giữa hai mẫu số liệu.
+- So sánh điểm trung bình và mức độ phân tán (phương sai, độ lệch chuẩn).
+- Đánh giá hình dạng phân bố và ý nghĩa thực tế.
 
 {AUTHOR_INFO}
-#HinhNon #MatNon #TraiPhang #HinhQuatTron #ThayNguyenVanSang""",
-        "tags": ["hình nón", "mặt nón", "hình quạt tròn", "toán 12", "trải phẳng"],
-        "file_pattern": "trai_phang_13"
+#ThongKe #SoSanhMauSoLieu #Toan10 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["so sánh hai mẫu số liệu", "phương sai", "độ lệch chuẩn", "toán 10", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT13"
     },
     14: {
-        "title": "Bài 14: Trải Phẳng Hình Nón Cụt | Dải Vành Cung Tròn Xoay - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
+        "title": "STAT14: Bài Toán Thống Kê Tổng Hợp Và Vận Dụng Thực Tế - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 14: Bài toán thống kê tổng hợp và vận dụng thực tế
 
-Nội dung bài 14:
-- Trải phẳng mặt bên hình nón cụt thành dải hình vành khuyên giới hạn bởi 2 cung tròn đồng tâm.
-- Kỹ thuật tính góc mở và bán kính của 2 đường cong biên.
-- Ứng dụng thực tế: Thiết kế phễu, chao đèn và bồn chứa hình nón cụt.
-
-{AUTHOR_INFO}
-#HinhNonCut #NonCut #TraiPhang #Manim #ThayNguyenVanSang""",
-        "tags": ["hình nón cụt", "nón cụt", "trải phẳng", "toán 12", "thầy nguyễn văn sang"],
-        "file_pattern": "trai_phang_14"
-    },
-    15: {
-        "title": "Bài 15: Silo Công Nghiệp Trụ Nối Nón | Trải Phẳng Mặt Phức Hợp - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
-
-Nội dung bài 15:
-- Kết hợp mặt trụ (thân silo) và mặt nón cụt (phễu xả liệu) trong các nhà máy xi măng, lương thực.
-- Kỹ thuật trải phẳng liên hoàn qua mặt phân cách đường tròn giao tuyến.
-- Tối ưu hóa chiều dài cầu thang xoắn ốc hoặc đường ống chạy dọc vỏ silo.
+Nội dung trọng tâm bài 14:
+- Tổng hợp các kiến thức thống kê đã học.
+- Ứng dụng để giải quyết bài toán thực tế (ví dụ: chọn quầy phục vụ dựa trên thời gian chờ).
+- Đánh giá toàn diện dựa trên số trung bình, trung vị và các độ đo phân tán.
 
 {AUTHOR_INFO}
-#Silo #ToanThucTe #HinhHocKhongGian #TraiPhang #ThayNguyenVanSang""",
-        "tags": ["silo", "toán thực tế", "trụ nối nón", "trải phẳng", "thầy nguyễn văn sang"],
-        "file_pattern": "trai_phang_15"
-    },
-    16: {
-        "title": "Bài 16: Mô Hình Mái Nhà Lăng Trụ Tam Giác | Toán Kiến Trúc - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
-
-Nội dung bài 16:
-- Bài toán thiết kế dây cáp neo giữ và dây chống sét trên mái nhà lăng trụ.
-- Mở phẳng 2 mặt mái dốc và mặt tường đầu hồi.
-- So sánh các phương án né tránh gờ nóc nhà để tiết kiệm vật tư.
-
-{AUTHOR_INFO}
-#MaiNha #ToanKienTruc #TraiPhang #HinhHocKhongGian #ThayNguyenVanSang""",
-        "tags": ["mái nhà", "toán kiến trúc", "trải phẳng", "lăng trụ", "thầy nguyễn văn sang"],
-        "file_pattern": "trai_phang_16"
-    },
-    17: {
-        "title": "Bài 17: Điểm Đích Di Động Trên Cạnh | Kết Hợp Bất Đẳng Thức - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
-
-Nội dung bài 17:
-- Điểm đầu A cố định, điểm cuối M di chuyển tự do trên một cạnh của đa diện.
-- Trải phẳng kết hợp kỹ thuật hạ đường vuông góc tìm khoảng cách cực tiểu.
-- Bài toán biến thiên khoảng cách trong đề thi HSG và VDC THPTQG.
-
-{AUTHOR_INFO}
-#DiemDiDong #CucTriKhoangCach #TraiPhang #ToanVDC #ThayNguyenVanSang""",
-        "tags": ["điểm di động", "cực trị", "vận dụng cao", "toán 12", "trải phẳng"],
-        "file_pattern": "trai_phang_17"
-    },
-    18: {
-        "title": "Bài 18: Bài Toán Mặt Bị Cấm (Vật Cản) | Lộ Trình Vòng Tránh - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
-
-Nội dung bài 18:
-- Bài toán thực chiến: Có một hoặc nhiều mặt bị cấm đi qua (ví dụ: đáy ẩm ướt, nắp nóng, kính vỡ).
-- Loại bỏ các nhánh trải phẳng không hợp lệ và tìm đường đi tối ưu trên các nhánh còn lại.
-- So sánh giữa đường thẳng trên lưới mở và đường men theo cạnh rìa.
-
-{AUTHOR_INFO}
-#VatCan #MatBiCam #TraiPhang #ThuatToanHinhHoc #ThayNguyenVanSang""",
-        "tags": ["vật cản", "mặt bị cấm", "trải phẳng", "toán 12", "thầy nguyễn văn sang"],
-        "file_pattern": "trai_phang_18"
-    },
-    19: {
-        "title": "Bài 19: Hộp Chữ Nhật Tham Số Kích Thước | Biện Luận a, b, c - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
-
-Nội dung bài 19:
-- Hình hộp chữ nhật kích thước tổng quát a x b x c với điều kiện a ≤ b ≤ c.
-- Biện luận tường minh lộ trình nào trong 3 cách trải phẳng sẽ cho độ dài ngắn nhất.
-- Bất đẳng thức đại số rút ra từ nguyên lý hình học trải phẳng.
-
-{AUTHOR_INFO}
-#BienLuanHinhHoc #HopChuNhat #ThamSo #TraiPhang #ThayNguyenVanSang""",
-        "tags": ["biện luận", "hộp chữ nhật", "tham số", "trải phẳng", "thầy nguyễn văn sang"],
-        "file_pattern": "trai_phang_19"
-    },
-    20: {
-        "title": "Bài 20: Capstone Thuật Toán Trải Phẳng Mọi Đa Diện Lồi - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
-
-Nội dung bài 20 (Tổng kết Capstone):
-- Hệ thống hóa toàn bộ thuật toán trải phẳng tìm đường đi ngắn nhất trên đa diện lồi bất kỳ.
-- Ma trận chuyển tiếp giữa các mặt kề, kiểm tra giao cạnh nội phần và chọn cực tiểu toàn cục.
-- Cầu nối giữa Hình học không gian cổ điển và Hình học tính toán (Computational Geometry) trong khoa học máy tính.
-
-{AUTHOR_INFO}
-#Capstone #ThuatToanHinhHoc #TraiPhang #ComputationalGeometry #ThayNguyenVanSang""",
-        "tags": ["capstone", "thuật toán hình học", "trải phẳng", "toán trực quan", "thầy nguyễn văn sang"],
-        "file_pattern": "trai_phang_20"
+#ThongKe #TongHopThongKe #VanDungThucTe #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["thống kê tổng hợp", "vận dụng thực tế", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT14"
     }
 }
+
 
 # ==============================================================================
 # KHÓA HỌC 2: ĐẠI SỐ TỔ HỢP TỪ NỀN TẢNG ĐẾN OLYMPIAD (25 BÀI)
@@ -323,208 +243,6 @@ TO_HOP_LESSONS = {
     9: {"title": "COMB09: Chọn Có Lặp & Lập Dãy Số | Phương Pháp Vách Ngăn Kinh Điển - Thầy Nguyễn Văn Sang", "file": "COMB09.mp4", "tags": ["chọn có lặp", "vách ngăn", "tổ hợp lặp", "toán 11"]},
     10: {"title": "COMB10: Hoán Vị Lặp | Đổi Chỗ Phần Tử Giống Nhau & Anagram - Thầy Nguyễn Văn Sang", "file": "COMB10.mp4", "tags": ["hoán vị lặp", "anagram", "đại số tổ hợp", "toán thpt"]},
     11: {"title": "COMB11: Hoán Vị Vòng Tròn | Xếp Bàn Tròn & Vòng Hoa Đối Xứng - Thầy Nguyễn Văn Sang", "file": "COMB11.mp4", "tags": ["hoán vị vòng tròn", "bàn tròn", "đối xứng", "toán 11"]},
-    12: {"title": "COMB12: Phương Pháp Buộc Khối (Gộp Khối) | Phần Tử Đứng Cạnh Nhau - Thầy Nguyễn Văn Sang", "file": "COMB12.mp4", "tags": ["buộc khối", "gộp khối", "đứng cạnh nhau", "phương pháp đếm"]},
-    13: {"title": "COMB13: Phương Pháp Vách Ngăn Khe | Phần Tử Không Đứng Cạnh Nhau - Thầy Nguyễn Văn Sang", "file": "COMB13.mp4", "tags": ["vách ngăn khe", "không đứng cạnh nhau", "kỹ thuật đếm", "toán 10"]},
-    14: {"title": "COMB14: Phương Pháp Đếm Phần Bù | Toàn Thể Trừ Vi Phạm (Quy Tắc Ngược) - Thầy Nguyễn Văn Sang", "file": "COMB14.mp4", "tags": ["đếm phần bù", "quy tắc bù", "toán 10", "thầy nguyễn văn sang"]},
-    15: {"title": "COMB15: Lập Số Tự Nhiên Theo Điều Kiện | Chẵn Lẻ, Chia Hết, Khác Nhau - Thầy Nguyễn Văn Sang", "file": "COMB15.mp4", "tags": ["lập số", "chữ số khác nhau", "chia hết", "toán 10"]},
-    16: {"title": "COMB16: Chia Nhóm & Phân Công Vai Trò | Tránh Lỗi Đếm Trùng - Thầy Nguyễn Văn Sang", "file": "COMB16.mp4", "tags": ["chia nhóm", "phân công", "lỗi đếm trùng", "toán thpt"]},
-    17: {"title": "COMB17: Nhị Thức Newton (a + b)^n | Bản Chất Khai Triển & Hệ Số - Thầy Nguyễn Văn Sang", "file": "COMB17.mp4", "tags": ["nhị thức newton", "khai triển", "hệ số", "toán 10", "toán 11"]},
-    18: {"title": "COMB18: Tam Giác Pascal | Tính Chất Đối Xứng & Hàng Lũy Thừa - Thầy Nguyễn Văn Sang", "file": "COMB18.mp4", "tags": ["tam giác pascal", "pascal triangle", "tính chất tổ hợp"]},
-    19: {"title": "COMB19: Số Tập Con Của Tập Hợp n Phần Tử | Đẳng Thức Tổng C_n^k = 2^n - Thầy Nguyễn Văn Sang", "file": "COMB19.mp4", "tags": ["tập con", "2^n", "đẳng thức tổ hợp", "thầy nguyễn văn sang"]},
-    20: {"title": "COMB20: Tính Tổng Hệ Số Nhị Thức | Giá Trị Đặc Biệt & Đạo Hàm - Thầy Nguyễn Văn Sang", "file": "COMB20.mp4", "tags": ["tính tổng hệ số", "đạo hàm nhị thức", "toán vận dụng cao"]},
-    21: {"title": "COMB21: Phương Pháp Hàm Sinh (Generating Functions) | Toán Đếm Nâng Cao - Thầy Nguyễn Văn Sang", "file": "COMB21.mp4", "tags": ["hàm sinh", "generating functions", "olympiad", "toán nâng cao"]},
-    22: {"title": "COMB22: Quy Hoạch Động Trong Tổ Hợp | Thiết Lập Hệ Thức Truy Hồi - Thầy Nguyễn Văn Sang", "file": "COMB22.mp4", "tags": ["quy hoạch động", "hệ thức truy hồi", "dynamic programming", "toán tin"]},
-    23: {"title": "COMB23: Bao Hàm Loại Trừ (PIE) & Đa Thức Quân Xe | Xáo Trộn Hoàn Toàn - Thầy Nguyễn Văn Sang", "file": "COMB23.mp4", "tags": ["bao hàm loại trừ", "PIE", "quân xe", "derangement", "olympiad"]},
-    24: {"title": "COMB24: Số Catalan, Dãy Dyck & Nguyên Lý Phản Xạ | Tổ Hợp Olympiad - Thầy Nguyễn Văn Sang", "file": "COMB24.mp4", "tags": ["số catalan", "dãy dyck", "nguyên lý phản xạ", "olympiad math"]},
-    25: {"title": "COMB25: Bổ Đề Burnside & Định Lý Pólya | Đếm Số Quỹ Đạo Dưới Nhóm - Thầy Nguyễn Văn Sang", "file": "COMB25.mp4", "tags": ["burnside", "polya", "lý thuyết nhóm", "đếm quỹ đạo", "olympiad toán"]}
-}
-
-# ==============================================================================
-# KHÓA HỌC 3: XÁC SUẤT & THỐNG KÊ TOÁN HỌC TRỰC QUAN (TOÁN 10 - 11 - 12)
-# ==============================================================================
-PLAYLIST_THONG_KE = {
-    "title": "Xác Suất & Thống Kê: Trực Quan Hóa Dữ Liệu Toán THPT - Thầy Nguyễn Văn Sang",
-    "description": "Trọn bộ bài giảng trực quan hóa Thống kê và Xác suất THPT theo chương trình GDPT mới bằng hoạt họa Manim và Typst. Khảo sát dữ liệu thực tế, bảng tần số, biểu đồ, các số đặc trưng đo xu thế trung tâm và độ phân tán."
-}
-
-THONG_KE_LESSONS = {
-    1: {
-        "title": "STAT01: Dữ Liệu Biết Nói | Bảng Tần Số & Biểu Đồ Thống Kê - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 01: Dữ liệu biết nói – Từ 40 số liệu đến bức tranh toàn cảnh lớp học
-
-Nội dung trọng tâm bài 01:
-- Dữ liệu định lượng và dữ liệu phân loại trong thực tế.
-- Kỹ thuật chuyển từ dữ liệu thô sang dãy có thứ tự (sắp xếp tăng dần).
-- Xây dựng bảng tần số và bảng tần số tương đối (tỷ lệ phần trăm).
-- Trực quan hóa bằng biểu đồ cột chuẩn (gốc tọa độ 0) và biểu đồ điểm (dot plot).
-- Cảnh báo các lỗi sai kinh điển: Biểu đồ cắt xén trục tung gây ngộ nhận thống kê.
-- Đặt nền móng cho các số đặc trưng: Trung bình (Mean), Trung vị (Median), Mốt (Mode).
-
-{AUTHOR_INFO}
-#ThongKe #Toan10 #Toan11 #Toan12 #Manim #Typst #ThayNguyenVanSang #XacSuatThongKe""",
-        "tags": ["thống kê", "toán 10", "toán 11", "toán 12", "xác suất thống kê", "bảng tần số", "biểu đồ cột", "manim", "typst", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT01"
-    },
-    2: {
-        "title": "STAT02: Biểu Đồ Thống Kê | Cột, Đoạn Thẳng, Hình Quạt & Histogram - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 02: Biểu đồ thống kê – Một bộ dữ liệu, nhiều góc nhìn trực quan
-
-Nội dung trọng tâm bài 02:
-- Chuyển đổi linh hoạt từ bảng số liệu sang các dạng trực quan tương ứng.
-- Biểu đồ cột (Bar chart) & Biểu đồ điểm (Dot plot): So sánh tần số rời rạc.
-- Biểu đồ hình quạt tròn (Pie chart): Tỷ lệ cơ cấu và góc ở tâm theo phần trăm.
-- Biểu đồ đoạn thẳng (Line graph): Quan sát xu hướng biến thiên theo thời gian.
-- Histogram (Biểu đồ tần số ghép nhóm): Phân phối mật độ và diện tích hình chữ nhật.
-- Nguyên tắc trung thực trong thống kê: Tránh ngụy biện trực quan khi chọn biểu đồ.
-
-{AUTHOR_INFO}
-#ThongKe #BieuDoThongKe #Histogram #Manim #Typst #ThayNguyenVanSang #Toan10 #Toan11 #Toan12""",
-        "tags": ["biểu đồ thống kê", "toán 10", "toán 11", "toán 12", "biểu đồ cột", "hình quạt tròn", "histogram", "manim", "typst", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT02"
-    },
-    3: {
-        "title": "STAT03: Số Trung Bình, Trung Vị & Mốt | Xu Thế Trung Tâm Dữ Liệu - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 03: Số đặc trưng đo xu thế trung tâm – Ba con số kể ba câu chuyện
-
-Nội dung trọng tâm bài 03:
-- Số trung bình cộng (Mean): Trọng tâm cân bằng đại số của toàn bộ mẫu số liệu.
-- Trung vị (Median): Điểm chia đôi mẫu số liệu đã sắp thứ tự, tính bất biến trước ngoại lai.
-- Mốt (Mode): Giá trị có tần số xuất hiện cao nhất, đa mốt và đơn mốt.
-- Phân tích ảnh hưởng của giá trị bất thường (outlier / giá trị dị biệt).
-- So sánh khi nào nên dùng số trung bình, khi nào trung vị là thước đo tin cậy hơn.
-
-{AUTHOR_INFO}
-#ThongKe #SoTrungBinh #TrungVi #Mot #Outlier #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["số trung bình", "trung vị", "mốt", "toán 10", "toán 11", "toán 12", "số đặc trưng", "outlier", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT03"
-    },
-    4: {
-        "title": "STAT04: Tứ Phân Vị Q1, Q2, Q3 | Chia Nhỏ Dữ Liệu - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 04: Tứ phân vị Q1, Q2, Q3 – Điểm mốc quan trọng của dữ liệu
-
-Nội dung trọng tâm bài 04:
-- Sắp xếp và chia dữ liệu thành 4 phần bằng nhau.
-- Cách tính tứ phân vị với số lượng mẫu chẵn và lẻ.
-- Ý nghĩa của tứ phân vị thứ nhất (Q1), thứ hai (Q2 / Trung vị) và thứ ba (Q3).
-- Trực quan hóa vị trí các tứ phân vị trên trục số.
-
-{AUTHOR_INFO}
-#ThongKe #TuPhanVi #Quartiles #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["thống kê", "tứ phân vị", "toán 10", "toán 11", "toán 12", "quartiles", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT04"
-    },
-    5: {
-        "title": "STAT05: Khoảng Biến Thiên, IQR & Biểu Đồ Hộp | Đo Độ Phân Tán Dữ Liệu - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 05: Khoảng biến thiên, Khoảng tứ phân vị (IQR) & Biểu đồ hộp (Box plot)
-
-Nội dung trọng tâm bài 05:
-- Đo lường độ phân tán dữ liệu bằng Khoảng biến thiên (Range) và Khoảng tứ phân vị (IQR = Q3 - Q1).
-- Vẽ biểu đồ hộp (Box-and-whisker plot) từ 5 con số đặc trưng: Min, Q1, Q2, Q3, Max.
-- Phát hiện các điểm bất thường (Outliers) dựa trên rào dưới và rào trên.
-- So sánh phân bố dữ liệu giữa nhiều nhóm thông qua biểu đồ hộp.
-
-{AUTHOR_INFO}
-#ThongKe #KhoangBienThien #IQR #BieuDoHop #BoxPlot #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["khoảng biến thiên", "iqr", "biểu đồ hộp", "box plot", "toán 10", "toán 11", "toán 12", "độ phân tán", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT05"
-    },
-    6: {
-        "title": "STAT06: Phương Sai & Độ Lệch Chuẩn | Đo Độ Phân Tán Quanh Trung Bình - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 06: Phương sai và độ lệch chuẩn
-
-Nội dung trọng tâm bài 06:
-- Vì sao cùng số trung bình vẫn chưa đủ để so sánh hai mẫu số liệu.
-- Độ lệch so với trung bình, tổng độ lệch bằng 0 và lý do phải bình phương.
-- Công thức phương sai, độ lệch chuẩn và ý nghĩa của chúng.
-- Ảnh hưởng của giá trị bất thường lên phương sai.
-
-{AUTHOR_INFO}
-#ThongKe #PhuongSai #DoLechChuan #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["phương sai", "độ lệch chuẩn", "độ phân tán", "toán 10", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT06"
-    },
-    7: {
-        "title": "STAT07: Mẫu Số Liệu Ghép Nhóm & Histogram - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 07: Mẫu số liệu ghép nhóm và Histogram
-
-Nội dung trọng tâm bài 07:
-- Chuyển 40 điểm rời rạc sang bảng ghép nhóm.
-- Ranh giới lớp, tần số, tần số tích lũy và tần số tương đối.
-- Vẽ histogram và hiểu vai trò của diện tích.
-- Thông tin bị mất khi ghép nhóm và ảnh hưởng của cách chia lớp.
-
-{AUTHOR_INFO}
-#ThongKe #MauGhepNhom #Histogram #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["mẫu số liệu ghép nhóm", "histogram", "tần số tích lũy", "toán 10", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT07"
-    },
-    8: {
-        "title": "STAT08: Số Trung Bình & Mốt Của Mẫu Ghép Nhóm - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 08: Số trung bình và mốt của mẫu số liệu ghép nhóm
-
-Nội dung trọng tâm bài 08:
-- Giá trị đại diện của lớp và số trung bình ghép nhóm.
-- Sai số khi ghép nhóm và so sánh các cách chia lớp.
-- Lớp mốt và công thức nội suy mốt.
-- Histogram với độ rộng lớp khác nhau và bài toán ngược với tần số chưa biết.
-
-{AUTHOR_INFO}
-#ThongKe #MauGhepNhom #Mot #SoTrungBinh #Toan10 #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["mẫu ghép nhóm", "số trung bình", "mốt", "toán 10", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT08"
-    },
-    9: {
-        "title": "STAT09: Trung Vị Của Mẫu Số Liệu Ghép Nhóm - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 09: Trung vị của mẫu số liệu ghép nhóm
-
-Nội dung trọng tâm bài 09:
-- Xác định nhóm chứa trung vị bằng tần số tích lũy.
-- Phép nội suy tuyến tính tìm trung vị.
-- Giải thích bản chất hình học qua đường ogive và biểu đồ tần số tích lũy.
-
-{AUTHOR_INFO}
-#ThongKe #TrungVi #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["trung vị", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT09"
-    },
-    10: {
-        "title": "STAT10: Tứ Phân Vị Của Mẫu Số Liệu Ghép Nhóm - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 10: Tứ phân vị mẫu số liệu ghép nhóm
-
-Nội dung trọng tâm bài 10:
-- Tìm Q1, Q2 (trung vị) và Q3 cho số liệu ghép nhóm.
-- Ứng dụng tứ phân vị trong phân tích dữ liệu thực tế.
-
-{AUTHOR_INFO}
-#ThongKe #TuPhanVi #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["tứ phân vị", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT10"
-    },
-    11: {
-        "title": "STAT11: Khoảng Biến Thiên & Khoảng Tứ Phân Vị Của Mẫu Ghép Nhóm - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
-Bài 11: Khoảng biến thiên và khoảng tứ phân vị (IQR) của mẫu ghép nhóm
-
-Nội dung trọng tâm bài 11:
-- Cách tính khoảng biến thiên khi chỉ biết các khoảng ghép nhóm.
-- Tính IQR và ý nghĩa đo độ phân tán.
-- Đánh giá sự mất mát thông tin khi ghép nhóm.
-
-{AUTHOR_INFO}
-#ThongKe #KhoangBienThien #IQR #MauGhepNhom #Toan11 #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["khoảng biến thiên", "iqr", "mẫu ghép nhóm", "toán 11", "toán 12", "manim", "thầy nguyễn văn sang"],
-        "file_pattern": "STAT11"
-    },
     12: {
         "title": "STAT12: Phương Sai & Độ Lệch Chuẩn Của Mẫu Ghép Nhóm - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
@@ -539,5 +257,36 @@ Nội dung trọng tâm bài 12:
 #ThongKe #PhuongSai #DoLechChuan #MauGhepNhom #Toan12 #ThayNguyenVanSang #Manim""",
         "tags": ["phương sai", "độ lệch chuẩn", "mẫu ghép nhóm", "toán 12", "manim", "thầy nguyễn văn sang"],
         "file_pattern": "STAT12"
+    },
+    13: {
+        "title": "STAT13: So Sánh Hai Mẫu Số Liệu - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 13: So sánh hai mẫu số liệu
+
+Nội dung trọng tâm bài 13:
+- Phân tích sự khác biệt giữa hai mẫu số liệu.
+- So sánh điểm trung bình và mức độ phân tán (phương sai, độ lệch chuẩn).
+- Đánh giá hình dạng phân bố và ý nghĩa thực tế.
+
+{AUTHOR_INFO}
+#ThongKe #SoSanhMauSoLieu #Toan10 #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["so sánh hai mẫu số liệu", "phương sai", "độ lệch chuẩn", "toán 10", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT13"
+    },
+    14: {
+        "title": "STAT14: Bài Toán Thống Kê Tổng Hợp Và Vận Dụng Thực Tế - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 14: Bài toán thống kê tổng hợp và vận dụng thực tế
+
+Nội dung trọng tâm bài 14:
+- Tổng hợp các kiến thức thống kê đã học.
+- Ứng dụng để giải quyết bài toán thực tế (ví dụ: chọn quầy phục vụ dựa trên thời gian chờ).
+- Đánh giá toàn diện dựa trên số trung bình, trung vị và các độ đo phân tán.
+
+{AUTHOR_INFO}
+#ThongKe #TongHopThongKe #VanDungThucTe #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["thống kê tổng hợp", "vận dụng thực tế", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT14"
     }
 }
+

@@ -1,0 +1,112 @@
+name: Render STAT13 - Trung binh va Mot mau ghep nhom
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: 'Preview or Full HD'
+        required: true
+        type: choice
+        default: preview
+        options: [preview, fullhd]
+      voice:
+        description: 'Vietnamese TTS (requires Internet)'
+        required: true
+        type: choice
+        default: 'off'
+        options: ['off', 'on']
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-thong-ke
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install native dependencies and Vietnamese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra libavcodec-dev libavformat-dev \
+            libavutil-dev libswscale-dev libswresample-dev
+          fc-match 'Noto Sans'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          manim --version
+          typst --version
+      - name: Compile all STAT13 Typst formula SVGs (fail early)
+        run: python scripts/build_stat13_typst.py
+      - name: Prepare 32 beats, captions and optional Vietnamese narration
+        env:
+          VOICE_MODE: ${{ inputs.voice }}
+        run: python scripts/prepare_stat13.py --voice "$VOICE_MODE"
+      - name: Smoke-render all 32 complete states (actual Manim+Typst)
+        run: |
+          manim -ql -r 426,240 --fps 8 stat13/scene.py STAT13_SMOKE
+          find media/videos -type f -name 'STAT13_SMOKE.mp4' -size +1k -print -quit | grep -q .
+      - name: Render preview 854x480 24 fps
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim -ql -r 854,480 --fps 24 stat13/scene.py STAT13
+      - name: Render Full HD 1920x1080 30 fps
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim -qh -r 1920,1080 --fps 30 stat13/scene.py STAT13
+      - name: Technical QA, audio check and 8 review frames
+        env:
+          QUALITY_MODE: ${{ inputs.quality }}
+          VOICE_MODE: ${{ inputs.voice }}
+        run: |
+          VIDEO=$(find media/videos -type f -name 'STAT13.mp4' | head -n 1)
+          test -n "$VIDEO"
+          python scripts/qa_stat13.py --video "$VIDEO" --quality "$QUALITY_MODE" --voice "$VOICE_MODE"
+      - name: Upload rendered video and QA even if a step failed
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: STAT13-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          path: |
+            Manim-Typst/series-thong-ke/media/videos/**/STAT13.mp4
+            Manim-Typst/series-thong-ke/artifacts/stat13_qa/
+            Manim-Typst/series-thong-ke/STAT13_vi.srt
+            Manim-Typst/series-thong-ke/stat13/runtime_plan.json
+            Manim-Typst/series-thong-ke/preview/stat13/
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Auto Upload Full HD to YouTube (Public)
+        if: ${{ inputs.quality == 'fullhd' }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python -m pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
+          VIDEO=$(find media/videos -type f -name 'STAT13.mp4' | head -n 1)
+          python ../../scripts/upload_to_youtube.py \
+            --file "$VIDEO" \
+            --series thong_ke \
+            --lesson 13 \
+            --category-id 27 \
+            --privacy public
+      - name: Commit and Push YouTube History
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add ../../youtube_uploaded_history.json
+          git commit -m "docs(stat13): auto-update youtube_uploaded_history.json" || echo "No changes to commit"
+          git pull --rebase --autostash origin main
+          git push
