@@ -7,7 +7,7 @@ FORMULAS={
 'quartiles':'$ "IQR"=Q_3-Q_1 approx 2.41 $',
 'r_vs_iqr':'$ R_\"ghép\"=8 quad "IQR" approx 2.41 $',
 'two_samples':'$ R_A=R_B=8 quad "IQR"_A approx 2.41 < "IQR"_B=4 $',
-'transform':'$ R(aX+b)=abs(a)R(X) quad "IQR"(aX+b)=abs(a)"IQR"(X) $',
+'transform':'$ R(a X+b)=abs(a)R(X) quad "IQR"(a X+b)=abs(a)"IQR"(X) $',
 'lost_info':'$ f_1=0 arrow R_\"ghép\"=12-6=6 $',
 'mistakes':'$ R_\"ghép\"=U_\"cuối\"-L_\"đầu\" $',
 'practice':'$ R_A=R_B=8 quad "IQR"_A approx 2.41 quad "IQR"_B=4 $',
