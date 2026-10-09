@@ -571,4 +571,50 @@ Nội dung trọng tâm bài 14:
         "tags": ["thống kê tổng hợp", "vận dụng thực tế", "toán 12", "manim", "thầy nguyễn văn sang"],
         "file_pattern": "STAT14"
     }
+,
+    15: {
+        "title": "STAT15: Những Biểu Đồ Thống Kê Gây Hiểu Nhầm - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 15: Những biểu đồ thống kê gây hiểu nhầm
+
+Nội dung trọng tâm bài 15:
+- Nhận diện các lỗi trình bày biểu đồ thường gặp.
+- Cách đánh lừa thị giác người xem bằng tỉ lệ trục và diện tích.
+- Phân tích và đọc hiểu biểu đồ một cách khách quan.
+
+{AUTHOR_INFO}
+#ThongKe #BieuDoThongKe #PhanTichDuLieu #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["biểu đồ thống kê", "hiểu nhầm", "phân tích dữ liệu", "toán 10", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT15"
+    },
+    16: {
+        "title": "STAT16: Nghịch Lý Simpson Trong Thống Kê - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 16: Nghịch lý Simpson trong thống kê
+
+Nội dung trọng tâm bài 16:
+- Hiểu về nghịch lý Simpson khi gộp dữ liệu.
+- Tầm quan trọng của việc chia nhỏ dữ liệu theo biến kiểm soát.
+- Ứng dụng để tránh sai lầm trong việc ra quyết định.
+
+{AUTHOR_INFO}
+#ThongKe #NghichLySimpson #PhanTichDuLieu #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["nghịch lý simpson", "phân tích dữ liệu", "toán 10", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT16"
+    },
+    17: {
+        "title": "STAT17: Tương Quan Và Hồi Quy Tuyến Tính - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 17: Tương quan và hồi quy tuyến tính
+
+Nội dung trọng tâm bài 17:
+- Khái niệm tương quan giữa hai đại lượng.
+- Đường thẳng hồi quy tuyến tính tốt nhất (Bình phương tối thiểu).
+- Ý nghĩa hệ số tương quan r và dự đoán dữ liệu tương lai.
+
+{AUTHOR_INFO}
+#ThongKe #TuongQuan #HoiQuyTuyenTinh #Toan12 #ThayNguyenVanSang #Manim""",
+        "tags": ["tương quan", "hồi quy tuyến tính", "phân tích dữ liệu", "toán 10", "toán 12", "manim", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT17"
+    }
 }
