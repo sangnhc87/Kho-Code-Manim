@@ -72,4 +72,17 @@ class CoreTests(unittest.TestCase):
                 last_capture=b.play(move[:2],move[2:])
             self.assertEqual(last_capture,'a',f'Beat {idx+1} did not capture black advisor')
 
+    def test_002_all_variations_legally_play(self):
+        ep=read_episode(ROOT/'episodes'/'tap-0002.json')
+        self.assertEqual(len(ep['beats']),12)
+        self.assertEqual(ep['analysis_status'],'four_piece_elephant_retrograde')
+        self.assertTrue(all('fen' in beat for beat in ep['beats']))
+        moves=0
+        for beat in ep['beats']:
+            b=Board.fen(beat['fen'])
+            for uci in beat.get('moves',[]):
+                b.play(uci[:2],uci[2:])
+                moves+=1
+        self.assertGreaterEqual(moves,25)
+
 if __name__=='__main__':unittest.main()

@@ -199,8 +199,9 @@ class XiangqiLesson(Scene):
         right_bg.move_to([3.21,-.10,0])
         segment=Text('MỞ ĐẦU',font=FONT,font_size=17,
                      color=GREEN,weight='BOLD').move_to([3.20,2.60,0])
-        chapter=Text('MÃ CHỐNG ĐƠN SĨ',font=FONT,font_size=27,
-                     color=LIGHT,weight='BOLD').move_to([3.20,2.03,0])
+        chapter=fit_label(data.get('title','TINH HOA CỜ TÀN'),
+                 x=3.20,y=2.03,max_width=5.20,max_height=.55,font_size=24,
+                 color=LIGHT,bold=True)
         headline=fit_label('ĐỎ ĐI TRƯỚC',
                  x=3.20,y=1.20,max_width=5.27,max_height=.94,font_size=29,
                  color=GOLD,bold=True,wrap=26,max_lines=2)
@@ -211,8 +212,9 @@ class XiangqiLesson(Scene):
         insight=fit_label('Chờ phân tích nước đầu.',
                  x=3.20,y=-1.20,max_width=5.10,max_height=1.70,font_size=25,
                  color=LIGHT,wrap=32,max_lines=4)
-        stamp_label=('MỤC TIÊU: BẮT SĨ • CHƯA XÉT LUẬT LẶP NƯỚC'
-               if data.get('analysis_status')=='four_piece_retrograde_ordinary_moves'
+        goal_text = data.get('goal_text', 'MỤC TIÊU: BẮT SĨ' if 'sĩ' in data.get('title','').lower() else 'MỤC TIÊU: BẮT TƯỢNG')
+        stamp_label=(f'{goal_text} • CHƯA XÉT LUẬT LẶP NƯỚC'
+               if data.get('analysis_status') in ('four_piece_retrograde_ordinary_moves', 'four_piece_elephant_retrograde')
                else 'BIẾN MINH HỌA • CHƯA CHỨNG MINH THẮNG')
         stamp=fit_label(stamp_label,x=3.20,y=-2.70,
                  max_width=5.22,max_height=.23,font_size=12,color=MUTED)
