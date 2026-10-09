@@ -45,7 +45,9 @@ SCOPES = [
     "https://www.googleapis.com/auth/youtubepartner",
 ]
 
-HISTORY_FILE = Path("youtube_uploaded_history.json")
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+HISTORY_FILE = REPO_ROOT / "youtube_uploaded_history.json"
 
 
 def load_history():
@@ -223,7 +225,7 @@ def upload_single_file(youtube, video_path, title, description, tags, privacy="p
 
 
 def locate_trai_phang_video(lesson_num):
-    base_dir = Path("Manim-Typst/SeriesTraiPhang")
+    base_dir = REPO_ROOT / "Manim-Typst" / "SeriesTraiPhang"
     num_str = f"{lesson_num:02d}"
     matches = list(base_dir.glob(f"trai_phang_{num_str}_*1080p*.mp4"))
     if not matches:
@@ -232,7 +234,7 @@ def locate_trai_phang_video(lesson_num):
 
 
 def locate_to_hop_video(lesson_num):
-    base_dir = Path("Series-Dai-So-To-Hop")
+    base_dir = REPO_ROOT / "Series-Dai-So-To-Hop"
     num_str = f"{lesson_num:02d}"
     # Ưu tiên COMBxx_V2...
     matches = list(base_dir.glob(f"COMB{num_str}_*.mp4"))
@@ -333,12 +335,12 @@ def main():
             lessons = TRAI_PHANG_LESSONS if args.series == "trai_phang" else TO_HOP_LESSONS
             meta = lessons.get(args.lesson)
             finder = locate_trai_phang_video if args.series == "trai_phang" else locate_to_hop_video
-            video_path = finder(args.lesson)
+            video_path = args.file if args.file else finder(args.lesson)
             if not meta or not video_path:
                 print(f"❌ Không tìm thấy thông tin hoặc file video cho bài {args.lesson}")
                 sys.exit(1)
             desc = meta.get("description", f"{meta['title']}\n{AUTHOR_INFO}")
-            upload_single_file(
+            video_id, video_url = upload_single_file(
                 youtube=youtube,
                 video_path=video_path,
                 title=meta["title"],
@@ -346,6 +348,20 @@ def main():
                 tags=meta["tags"],
                 privacy=args.privacy,
             )
+            if video_id:
+                playlist_info = PLAYLIST_TRAI_PHANG if args.series == "trai_phang" else PLAYLIST_TO_HOP
+                playlist_id = get_or_create_playlist(youtube, playlist_info["title"], playlist_info["description"])
+                add_video_to_playlist(youtube, playlist_id, video_id)
+                history = load_history()
+                key = f"{args.series}_{args.lesson:02d}"
+                history[key] = {
+                    "title": meta["title"],
+                    "video_id": video_id,
+                    "url": video_url,
+                    "file": str(video_path),
+                    "uploaded_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                }
+                save_history(history)
         else:
             handle_series_upload(youtube, args.series, privacy=args.privacy, limit=args.limit)
     elif args.file:

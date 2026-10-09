@@ -10,8 +10,8 @@ on:
         description: 'preview 480p or fullhd 1080p'
         type: choice
         required: true
-        default: preview
-        options: [preview, fullhd]
+        default: fullhd
+        options: [fullhd, preview]
       voice:
         description: 'Vietnamese voice. on requires TTS service network availability.'
         type: choice
@@ -59,10 +59,10 @@ jobs:
           COMB05_VOICE: ${{ inputs.voice || 'on' }}
         run: python scripts/prepare_comb05_v2.py --voice "$COMB05_VOICE"
       - name: Render Manim preview
-        if: ${{ inputs.quality == 'preview' || github.event_name == 'push' }}
+        if: ${{ inputs.quality == 'preview' }}
         run: manim -ql -r 854,480 --fps 24 episodes/comb05_permutations.py COMB05
       - name: Render Manim full HD
-        if: ${{ inputs.quality == 'fullhd' }}
+        if: ${{ inputs.quality == 'fullhd' || github.event_name == 'push' || github.event.inputs.quality == null }}
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb05_permutations.py COMB05
       - name: Verify MP4 duration and narration; extract eight chapter frames
         env:
@@ -84,3 +84,13 @@ jobs:
             Series-Dai-So-To-Hop/voice/comb05_voice_manifest.json
           if-no-files-found: warn
           retention-days: 7
+      - name: Auto Upload Full HD to YouTube (Public)
+        if: ${{ success() && (inputs.quality == 'fullhd' || github.event_name == 'push' || github.event.inputs.quality == null) }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python -m pip install google-api-python-client google-auth-oauthlib
+          VIDEO_FILE=$(find media/videos -type f -name 'COMB05.mp4' | head -n 1)
+          python ../scripts/upload_to_youtube.py --file "$VIDEO_FILE" --series to_hop --lesson 5 --privacy public

@@ -10,8 +10,8 @@ on:
         description: '480p preview or 1080p Full HD'
         type: choice
         required: true
-        default: preview
-        options: [preview, fullhd]
+        default: fullhd
+        options: [fullhd, preview]
       voice:
         description: 'Vietnamese TTS; on requires external TTS access'
         type: choice
@@ -59,10 +59,10 @@ jobs:
           COMB09_VOICE: ${{ inputs.voice || 'on' }}
         run: python scripts/prepare_comb09_v2.py --voice "$COMB09_VOICE"
       - name: Render preview 854x480 24 fps
-        if: ${{ inputs.quality == 'preview' || github.event_name == 'push' }}
+        if: ${{ inputs.quality == 'preview' }}
         run: manim -ql -r 854,480 --fps 24 episodes/comb09_repetition.py COMB09
       - name: Render final Full HD 1920x1080 30 fps
-        if: ${{ inputs.quality == 'fullhd' }}
+        if: ${{ inputs.quality == 'fullhd' || github.event_name == 'push' || github.event.inputs.quality == null }}
         run: manim -qh -r 1920,1080 --fps 30 episodes/comb09_repetition.py COMB09
       - name: Verify MP4 time, audio stream, frame captures
         env:
@@ -85,3 +85,13 @@ jobs:
             Series-Dai-So-To-Hop/voice/comb09_voice_manifest.json
           if-no-files-found: warn
           retention-days: 7
+      - name: Auto Upload Full HD to YouTube (Public)
+        if: ${{ success() && (inputs.quality == 'fullhd' || github.event_name == 'push' || github.event.inputs.quality == null) }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python -m pip install google-api-python-client google-auth-oauthlib
+          VIDEO_FILE=$(find media/videos -type f -name 'COMB09.mp4' | head -n 1)
+          python ../scripts/upload_to_youtube.py --file "$VIDEO_FILE" --series to_hop --lesson 9 --privacy public
