@@ -1,0 +1,99 @@
+name: Render STAT01 - Du lieu biet noi - Manim Typst
+
+on:
+  workflow_dispatch:
+    inputs:
+      quality:
+        description: Render preview or Full HD
+        type: choice
+        required: true
+        default: fullhd
+        options: [fullhd, preview]
+      voice:
+        description: Vietnamese AI voice (requires network access)
+        type: choice
+        required: true
+        default: 'off'
+        options: ['off', 'on']
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-thong-ke
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install system dependencies and Vietnamese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra libavcodec-dev libavformat-dev libavutil-dev \
+            libswscale-dev libswresample-dev
+          fc-match 'Noto Sans'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Manim-Typst/series-thong-ke/requirements.txt
+      - uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+      - name: Install Manim and Python packages
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Test all lesson mathematics and storyboard data
+        run: python -m unittest discover -s tests -v
+      - name: Compile mathematical formula assets in Typst
+        run: python scripts/build_typst.py
+      - name: Prepare runtime, Vietnamese narration and subtitles
+        env:
+          STAT01_VOICE: ${{ inputs.voice }}
+        run: python scripts/prepare.py --voice "$STAT01_VOICE"
+      - name: Render Manim video (854x480 preview)
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim -ql -r 854,480 --fps 24 stat01/scene.py STAT01
+      - name: Render Manim video (1920x1080 final)
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim -qh -r 1920,1080 --fps 30 stat01/scene.py STAT01
+      - name: Verify real MP4 and extract eight review frames
+        env:
+          STAT01_QUALITY: ${{ inputs.quality }}
+          STAT01_VOICE: ${{ inputs.voice }}
+        run: |
+          VIDEO=$(find media/videos -type f -name 'STAT01.mp4' | head -n 1)
+          test -n "$VIDEO"
+          python scripts/qa_video.py --video "$VIDEO" --quality "$STAT01_QUALITY" --voice "$STAT01_VOICE"
+      - name: Upload video and quality-control package
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: STAT01-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          path: |
+            Manim-Typst/series-thong-ke/media/videos/**/STAT01.mp4
+            Manim-Typst/series-thong-ke/artifacts/qa/
+            Manim-Typst/series-thong-ke/preview/
+            Manim-Typst/series-thong-ke/STAT01_vi.srt
+            Manim-Typst/series-thong-ke/assets/runtime_plan.json
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Auto Upload Full HD to YouTube (Public)
+        if: ${{ inputs.quality == 'fullhd' }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python -m pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
+          VIDEO=$(find media/videos -type f -name 'STAT01.mp4' | head -n 1)
+          python ../../scripts/upload_to_youtube.py \
+            --file "$VIDEO" \
+            --series thong_ke \
+            --lesson 1 \
+            --category-id 27 \
+            --privacy public

@@ -28,6 +28,8 @@ try:
         TRAI_PHANG_LESSONS,
         PLAYLIST_TO_HOP,
         TO_HOP_LESSONS,
+        PLAYLIST_THONG_KE,
+        THONG_KE_LESSONS,
         AUTHOR_INFO,
     )
 except ImportError:
@@ -36,6 +38,8 @@ except ImportError:
         TRAI_PHANG_LESSONS,
         PLAYLIST_TO_HOP,
         TO_HOP_LESSONS,
+        PLAYLIST_THONG_KE,
+        THONG_KE_LESSONS,
         AUTHOR_INFO,
     )
 
@@ -236,10 +240,18 @@ def locate_trai_phang_video(lesson_num):
 def locate_to_hop_video(lesson_num):
     base_dir = REPO_ROOT / "Series-Dai-So-To-Hop"
     num_str = f"{lesson_num:02d}"
-    # Ưu tiên COMBxx_V2...
     matches = list(base_dir.glob(f"COMB{num_str}_*.mp4"))
     if not matches:
         matches = list(base_dir.glob(f"COMB{num_str}.mp4"))
+    return matches[0] if matches else None
+
+
+def locate_thong_ke_video(lesson_num):
+    base_dir = REPO_ROOT / "Manim-Typst" / "series-thong-ke"
+    num_str = f"{lesson_num:02d}"
+    matches = list(base_dir.glob(f"media/videos/**/STAT{num_str}.mp4"))
+    if not matches:
+        matches = list(base_dir.glob(f"**/STAT{num_str}*.mp4"))
     return matches[0] if matches else None
 
 
@@ -257,6 +269,11 @@ def handle_series_upload(youtube, series_name, privacy="public", limit=None):
         playlist_info = PLAYLIST_TO_HOP
         lessons = TO_HOP_LESSONS
         finder = locate_to_hop_video
+    elif series_name in ("thong_ke", "series-thong-ke"):
+        print(f"\n🎯 BẮT ĐẦU XỬ LÝ KHÓA HỌC: XÁC SUẤT & THỐNG KÊ (STAT)")
+        playlist_info = PLAYLIST_THONG_KE
+        lessons = THONG_KE_LESSONS
+        finder = locate_thong_ke_video
     else:
         print(f"❌ Khóa học không hợp lệ: {series_name}")
         return
@@ -322,7 +339,7 @@ def main():
     parser.add_argument("--description", default="", help="Mô tả video")
     parser.add_argument("--tags", default="", help="Tags video (ngăn cách bằng dấu phẩy)")
     parser.add_argument("--privacy", choices=["public", "unlisted", "private"], default="public", help="Chế độ hiển thị (mặc định: public)")
-    parser.add_argument("--series", choices=["trai_phang", "to_hop"], help="Chạy theo chuỗi khóa học (trai_phang hoặc to_hop)")
+    parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke"], help="Chạy theo chuỗi khóa học (trai_phang, to_hop, thong_ke)")
     parser.add_argument("--lesson", type=int, help="Chỉ định số bài cần tải (ví dụ: --lesson 1)")
     parser.add_argument("--limit", type=int, default=6, help="Số lượng video tối đa tải trong 1 lần chạy (mặc định: 6 video)")
     parser.add_argument("--category-id", default="27", help="ID thể loại video (mặc định: 27 - Giáo dục)")
@@ -333,9 +350,20 @@ def main():
     if args.series:
         if args.lesson:
             # Tải đúng 1 bài cụ thể trong series
-            lessons = TRAI_PHANG_LESSONS if args.series == "trai_phang" else TO_HOP_LESSONS
+            if args.series == "trai_phang":
+                lessons = TRAI_PHANG_LESSONS
+                finder = locate_trai_phang_video
+                playlist_info = PLAYLIST_TRAI_PHANG
+            elif args.series == "thong_ke":
+                lessons = THONG_KE_LESSONS
+                finder = locate_thong_ke_video
+                playlist_info = PLAYLIST_THONG_KE
+            else:
+                lessons = TO_HOP_LESSONS
+                finder = locate_to_hop_video
+                playlist_info = PLAYLIST_TO_HOP
+
             meta = lessons.get(args.lesson)
-            finder = locate_trai_phang_video if args.series == "trai_phang" else locate_to_hop_video
             video_path = args.file if args.file else finder(args.lesson)
             if not meta or not video_path:
                 print(f"❌ Không tìm thấy thông tin hoặc file video cho bài {args.lesson}")
@@ -351,7 +379,6 @@ def main():
                 category_id=args.category_id,
             )
             if video_id:
-                playlist_info = PLAYLIST_TRAI_PHANG if args.series == "trai_phang" else PLAYLIST_TO_HOP
                 playlist_id = get_or_create_playlist(youtube, playlist_info["title"], playlist_info["description"])
                 add_video_to_playlist(youtube, playlist_id, video_id)
                 history = load_history()
@@ -378,7 +405,7 @@ def main():
             category_id=args.category_id,
         )
     else:
-        print("Vui lòng cung cấp --series [trai_phang|to_hop] hoặc --file [duong_dan_mp4]")
+        print("Vui lòng cung cấp --series [trai_phang|to_hop|thong_ke] hoặc --file [duong_dan_mp4]")
 
 
 if __name__ == "__main__":

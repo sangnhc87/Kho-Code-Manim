@@ -338,3 +338,32 @@ TO_HOP_LESSONS = {
     24: {"title": "COMB24: Số Catalan, Dãy Dyck & Nguyên Lý Phản Xạ | Tổ Hợp Olympiad - Thầy Nguyễn Văn Sang", "file": "COMB24.mp4", "tags": ["số catalan", "dãy dyck", "nguyên lý phản xạ", "olympiad math"]},
     25: {"title": "COMB25: Bổ Đề Burnside & Định Lý Pólya | Đếm Số Quỹ Đạo Dưới Nhóm - Thầy Nguyễn Văn Sang", "file": "COMB25.mp4", "tags": ["burnside", "polya", "lý thuyết nhóm", "đếm quỹ đạo", "olympiad toán"]}
 }
+
+# ==============================================================================
+# KHÓA HỌC 3: XÁC SUẤT & THỐNG KÊ TOÁN HỌC TRỰC QUAN (TOÁN 10 - 11 - 12)
+# ==============================================================================
+PLAYLIST_THONG_KE = {
+    "title": "Xác Suất & Thống Kê: Trực Quan Hóa Dữ Liệu Toán THPT - Thầy Nguyễn Văn Sang",
+    "description": "Trọn bộ bài giảng trực quan hóa Thống kê và Xác suất THPT theo chương trình GDPT mới bằng hoạt họa Manim và Typst. Khảo sát dữ liệu thực tế, bảng tần số, biểu đồ, các số đặc trưng đo xu thế trung tâm và độ phân tán."
+}
+
+THONG_KE_LESSONS = {
+    1: {
+        "title": "STAT01: Dữ Liệu Biết Nói | Bảng Tần Số & Biểu Đồ Thống Kê - Thầy Nguyễn Văn Sang",
+        "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
+Bài 01: Dữ liệu biết nói – Từ 40 số liệu đến bức tranh toàn cảnh lớp học
+
+Nội dung trọng tâm bài 01:
+- Dữ liệu định lượng và dữ liệu phân loại trong thực tế.
+- Kỹ thuật chuyển từ dữ liệu thô sang dãy có thứ tự (sắp xếp tăng dần).
+- Xây dựng bảng tần số và bảng tần số tương đối (tỷ lệ phần trăm).
+- Trực quan hóa bằng biểu đồ cột chuẩn (gốc tọa độ 0) và biểu đồ điểm (dot plot).
+- Cảnh báo các lỗi sai kinh điển: Biểu đồ cắt xén trục tung gây ngộ nhận thống kê.
+- Đặt nền móng cho các số đặc trưng: Trung bình (Mean), Trung vị (Median), Mốt (Mode).
+
+{AUTHOR_INFO}
+#ThongKe #Toan10 #Toan11 #Toan12 #Manim #Typst #ThayNguyenVanSang #XacSuatThongKe""",
+        "tags": ["thống kê", "toán 10", "toán 11", "toán 12", "xác suất thống kê", "bảng tần số", "biểu đồ cột", "manim", "typst", "thầy nguyễn văn sang"],
+        "file_pattern": "STAT01"
+    }
+}
