@@ -300,6 +300,7 @@ Nội dung bài 20 (Tổng kết Capstone):
 #Capstone #ThuatToanHinhHoc #TraiPhang #ComputationalGeometry #ThayNguyenVanSang""",
         "tags": ["capstone", "thuật toán hình học", "trải phẳng", "toán trực quan", "thầy nguyễn văn sang"],
         "file_pattern": "trai_phang_20"
+    },
     4: {
         "title": "STAT04: Tứ Phân Vị Q1, Q2, Q3 | Chia Nhỏ Dữ Liệu - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Xác Suất & Thống Kê Toán Học Trực Quan (Toán 10 - 11 - 12)
