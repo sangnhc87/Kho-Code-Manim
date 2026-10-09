@@ -18,7 +18,7 @@ from pathlib import Path
 
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
+from googleapiclient.errors import HttpError, ResumableUploadError
 from googleapiclient.http import MediaFileUpload
 
 # Import metadata khóa học
@@ -198,17 +198,25 @@ def upload_single_file(youtube, video_path, title, description, tags, privacy="p
             if status:
                 percent = int(status.progress() * 100)
                 print(f"   ⏳ Đang tải lên: {percent}%...", end="\r")
-        except HttpError as e:
-            if "quotaExceeded" in str(e):
-                print("\n\n⚠️ ĐÃ ĐẠT GIỚI HẠN QUOTA YOUTUBE HÔM NAY (10.000 điểm).")
-                print("Lịch sử đã được lưu lại an toàn. Ngày mai hệ thống Google reset quota, thầy chỉ cần chạy lại lệnh là sẽ tự động đăng tiếp các bài còn lại!")
+        except (HttpError, ResumableUploadError) as e:
+            err_str = str(e)
+            if "uploadLimitExceeded" in err_str:
+                print("\n\n⚠️ ĐÃ ĐẠT GIỚI HẠN SỐ LƯỢNG VIDEO TẢI LÊN TRONG NGÀY CỦA YOUTUBE (uploadLimitExceeded).")
+                print("YouTube áp dụng hạn mức tối đa số video tải lên mỗi 24 giờ cho kênh.")
+                print("Sau khoảng 24 giờ, YouTube sẽ tự động mở lại hạn mức.")
+                print("Video đã được kết xuất hoàn chỉnh và lưu trữ an toàn trong GitHub Artifacts.")
                 return None, None
-            if e.resp.status in [500, 502, 503, 504]:
+            if "quotaExceeded" in err_str:
+                print("\n\n⚠️ ĐÃ ĐẠT GIỚI HẠN QUOTA YOUTUBE HÔM NAY (10.000 điểm).")
+                print("Lịch sử đã được lưu lại an toàn. Ngày mai hệ thống Google reset quota, hệ thống sẽ tự động đăng tiếp!")
+                return None, None
+            resp_status = getattr(getattr(e, 'resp', None), 'status', None)
+            if resp_status in [500, 502, 503, 504]:
                 retry_count += 1
                 if retry_count > max_retries:
                     raise
                 wait_time = 2 ** retry_count
-                print(f"\n⚠️ Lỗi mạng máy chủ ({e.resp.status}). Đang thử lại sau {wait_time}s...")
+                print(f"\n⚠️ Lỗi mạng máy chủ ({resp_status}). Đang thử lại sau {wait_time}s...")
                 time.sleep(wait_time)
             else:
                 raise
@@ -230,9 +238,16 @@ def upload_single_file(youtube, video_path, title, description, tags, privacy="p
     return video_id, video_url
 
 
-def locate_cotan_video(lesson_num):
+def locate_cotan_video(lesson_num, is_short=False):
     base_dir = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "output"
     num_str = f"{lesson_num:04d}"
+    if is_short:
+        target = base_dir / f"tap-{num_str}" / f"tap-{num_str}_short.mp4"
+        if target.exists():
+            return target
+    target = base_dir / f"tap-{num_str}" / f"tap-{num_str}.mp4"
+    if target.exists():
+        return target
     matches = list(base_dir.glob(f"tap-{num_str}/*.mp4"))
     return matches[0] if matches else None
 
@@ -428,6 +443,7 @@ def main():
     parser.add_argument("--lesson", type=int, help="Chỉ định số bài cần tải (ví dụ: --lesson 1)")
     parser.add_argument("--limit", type=int, default=6, help="Số lượng video tối đa tải trong 1 lần chạy (mặc định: 6 video)")
     parser.add_argument("--category-id", default="27", help="ID thể loại video (mặc định: 27 - Giáo dục, 20 - Gaming)")
+    parser.add_argument("--short", action="store_true", help="Đăng video dưới dạng YouTube Shorts")
 
     args = parser.parse_args()
     youtube = get_youtube_client()
@@ -448,7 +464,7 @@ def main():
                 finder = locate_int_video
                 playlist_info = PLAYLIST_INT
             elif args.series == "cotan":
-                finder = locate_cotan_video
+                finder = lambda l: locate_cotan_video(l, is_short=args.short)
                 ep_file = REPO_ROOT / "Tinh-Hoa-Co-Tan" / "episodes" / f"tap-{args.lesson:04d}.json"
                 category = "Căn Bản"
                 ep_data = {}
@@ -500,11 +516,19 @@ Nếu bạn thấy video hữu ích và yêu thích nghệ thuật cờ tàn, h�
 Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
 
 #CoTuong #CoTan #TinhHoaCoTan #{category.replace(' ', '')}"""
-                    lessons = {args.lesson: {
-                        "title": f"Tập {args.lesson}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
-                        "description": cotan_desc,
-                        "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "học cờ tướng", "cờ tướng thực chiến"]
-                    }}
+                    if args.short:
+                        short_title = f"Tập {args.lesson}: {ep_data.get('title', '')} #Shorts"
+                        lessons = {args.lesson: {
+                            "title": short_title,
+                            "description": cotan_desc + "\n#Shorts",
+                            "tags": ["shorts", "youtubeshorts", "cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower()]
+                        }}
+                    else:
+                        lessons = {args.lesson: {
+                            "title": f"Tập {args.lesson}: {ep_data.get('title', '')} | Tinh Hoa Cờ Tàn",
+                            "description": cotan_desc,
+                            "tags": ["cờ tướng", "cờ tàn", "tinh hoa cờ tàn", category.lower(), "học cờ tướng", "cờ tướng thực chiến"]
+                        }}
                 else:
                     lessons = {}
             else:
@@ -514,6 +538,8 @@ Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
 
             meta = lessons.get(args.lesson)
             video_path = args.file if args.file else finder(args.lesson)
+            if not video_path and args.short:
+                video_path = locate_cotan_video(args.lesson, is_short=True)
             if not meta or not video_path:
                 print(f"❌ Không tìm thấy thông tin hoặc file video cho bài {args.lesson}")
                 sys.exit(1)
@@ -528,10 +554,11 @@ Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
                 category_id=args.category_id,
             )
             if video_id:
-                playlist_id = get_or_create_playlist(youtube, playlist_info["title"], playlist_info["description"])
-                add_video_to_playlist(youtube, playlist_id, video_id)
+                if not args.short:
+                    playlist_id = get_or_create_playlist(youtube, playlist_info["title"], playlist_info["description"])
+                    add_video_to_playlist(youtube, playlist_id, video_id)
                 history = load_history()
-                key = f"{args.series}_{args.lesson:02d}"
+                key = f"{args.series}_short_{args.lesson:02d}" if args.short else f"{args.series}_{args.lesson:02d}"
                 history[key] = {
                     "title": meta["title"],
                     "video_id": video_id,

@@ -78,16 +78,18 @@ jobs:
           VOICE: ${{ github.event.inputs.voice || 'edge' }}
         run: |
           python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
+          python scripts/make_short.py --episode "${{ matrix.episode }}"
       - uses: actions/upload-artifact@v4
         with:
           name: cotan-${{ matrix.episode }}
           path: |
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}.mp4
+            Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}_short.mp4
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/episode.json
           if-no-files-found: error
           retention-days: 14
 
-      - name: Auto Upload Full HD to YouTube (Public)
+      - name: Auto Upload Full HD & Shorts to YouTube (Public)
         if: ${{ inputs.quality == 'full' }}
         env:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
@@ -95,15 +97,28 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
         run: |
           python -m pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
-          VIDEO=$(find output -type f -name '*.mp4' | head -n 1)
-          # Format episode number correctly (e.g. tap-0001 -> 1)
+          VIDEO="output/${{ matrix.episode }}/${{ matrix.episode }}.mp4"
+          SHORT_VIDEO="output/${{ matrix.episode }}/${{ matrix.episode }}_short.mp4"
           EP_NUM=$(echo "${{ matrix.episode }}" | sed 's/tap-//' | sed 's/^0*//')
+
+          # 1. Tải bản Full HD (16:9) lên Playlist chính
           python ../scripts/upload_to_youtube.py \
             --file "$VIDEO" \
             --series cotan \
             --lesson "$EP_NUM" \
             --category-id 20 \
-            --privacy public
+            --privacy public || true
+
+          # 2. Tải bản YouTube Shorts (9:16) lên kênh
+          if [ -f "$SHORT_VIDEO" ]; then
+            python ../scripts/upload_to_youtube.py \
+              --file "$SHORT_VIDEO" \
+              --series cotan \
+              --lesson "$EP_NUM" \
+              --short \
+              --category-id 20 \
+              --privacy public || true
+          fi
       - name: Commit and Push YouTube History
         if: ${{ inputs.quality == 'full' }}
         run: |
