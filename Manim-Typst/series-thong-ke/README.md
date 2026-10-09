@@ -1,32 +1,28 @@
-# SangMath – Series Thống kê trực quan 10–11–12
+# SangMath Thống kê – GitHub Ready (STAT01–STAT07)
 
-Bộ nguồn có **STAT01–STAT05**. Các tập sử dụng chung dữ liệu tổng hợp 40 điểm kiểm tra giả lập, với mỗi tập đi sâu một chủ đề. Code toán học (pure Python) được tách khỏi Manim để test độc lập.
+Mã nguồn Manim + công thức Typst + lời giảng tiếng Việt + workflow GitHub Actions cho 7 tập đầu. Không xóa các tập cũ khi thêm STAT07.
 
-- STAT01 – Dữ liệu biết nói: bảng tần số và biểu đồ.
-- STAT02 – Các loại biểu đồ và cách tránh hình gây hiểu lầm.
-- STAT03 – Số trung bình, trung vị, mốt và ngoại lệ.
-- STAT04 – Tứ phân vị Q1, Q2, Q3 của dữ liệu không ghép nhóm.
-- **STAT05 – Khoảng biến thiên, khoảng tứ phân vị, biểu đồ hộp và ngoại lệ theo Tukey.**
+**Chạy nhanh:** chọn `Actions → Render STAT07 - Mau so lieu ghep nhom - Histogram → Run workflow` với `quality=preview` và `voice=off`.
 
-## Video 05
+**Thử local nếu có Manim/Typst:**
+```bash
+python -m unittest discover -s tests -q
+python scripts/check_stat07_states.py
+python scripts/build_stat07_typst.py
+python scripts/prepare_stat07.py --voice off
+manim -ql -r 426,240 --fps 8 stat07/scene.py STAT07_SMOKE
+manim -ql -r 854,480 --fps 24 stat07/scene.py STAT07
+```
 
-- 32 nhịp / tám chương / 864 giây thời lượng nền, cộng thời gian TTS nếu cần.
-- Dữ liệu gốc: `stat01/lesson.py`; thuật toán tứ phân vị lấy từ `stat04/lesson.py`.
-- Các phân phối mới là dữ liệu **giả lập độc lập**, có chú giải trong lời giảng.
-- Quy ước tứ phân vị: trung vị của hai nửa; cỡ mẫu lẻ không dùng quan sát chính giữa trong cả hai nửa.
-- Quy ước râu Tukey: quan sát hợp lệ xa nhất, không phải tọa độ ngưỡng 1,5×IQR.
-- Giữ nguyên mã và workflow của STAT01–STAT04.
+Xem `STORYBOARD_STAT07.md`, `LOI_GIANG_STAT07.md`, `HUONG_DAN_RENDER_STAT07.md`.
 
-**Mã Manim:** `stat05/scene.py` (Scene `STAT05`, `STAT05_SMOKE`).
+Quy ước: nhóm `[a;b)` gồm a và không gồm b; tần số tích lũy luôn tính theo thứ tự lớp; histogram độ rộng khác nhau dùng mật độ tần số để diện tích thể hiện tần số.
 
-**Nguồn dữ liệu:** `stat05/lesson.py`.
+**Cần duyệt MP4 thật** trước khi sử dụng giảng dạy. Smoke-render trên GitHub phát hiện nhiều lỗi, nhưng không thay thế kiểm tra sư phạm bằng mắt.
 
-**Kiểm thử:** `python -m unittest discover -s tests -v`.
 
-**Hướng dẫn render:** [`HUONG_DAN_RENDER_STAT05.md`](HUONG_DAN_RENDER_STAT05.md).
+## STAT08 – Số trung bình và mốt của mẫu số liệu ghép nhóm
 
-**Lời thuyết minh:** [`LOI_GIANG_STAT05.md`](LOI_GIANG_STAT05.md).
-
-**Storyboard:** [`STORYBOARD_STAT05.md`](STORYBOARD_STAT05.md).
-
-MP4 phải được render/nghiệm thu trên GitHub Actions. Chưa thể đảm bảo không có lỗi trên runner chỉ từ kiểm thử Python.
+- 8 chương / 32 nhịp / 16:00 thời lượng nền.
+- Code: `stat08/scene.py`; toán: `stat08/lesson.py`; workflow: `.github/workflows/render-stat08.yml`.
+- Render hướng dẫn: `HUONG_DAN_RENDER_STAT08.md`; kiểm thử đặc biệt xem `BUILD_NOTES_STAT08.md`.

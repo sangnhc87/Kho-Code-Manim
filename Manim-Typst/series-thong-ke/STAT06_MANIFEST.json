@@ -1,0 +1,13 @@
+{
+  "episode": "STAT06",
+  "title": "Phuong sai va do lech chuan",
+  "chapters": 8,
+  "beats": 32,
+  "planned_seconds": 912.0,
+  "descriptive_variance": 2.29,
+  "descriptive_stdev": 1.5132745950421556,
+  "render_status": "PENDING_GITHUB_ACTIONS_SMOKE_AND_FULL_RENDER",
+  "srt": "STAT06_vi.srt",
+  "scene": "stat06/scene.py",
+  "workflow": ".github/workflows/render-stat06.yml"
+}
