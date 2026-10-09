@@ -148,7 +148,9 @@ def upload_single_file(youtube, video_path, title, description, tags, privacy="p
     print(f"   🌐 Chế độ:  {privacy.upper()}")
     print(f"==================================================")
 
-    tag_list = [t.strip() for t in tags] if isinstance(tags, list) else [t.strip() for t in tags.split(",") if t.strip()]
+    title = title.replace("<", "≤").replace(">", "≥")[:95].strip()
+    description = description.replace("<", "≤").replace(">", "≥")
+    tag_list = [t.strip().replace("<", "").replace(">", "") for t in tags] if isinstance(tags, list) else [t.strip().replace("<", "").replace(">", "") for t in tags.split(",") if t.strip()]
 
     body = {
         "snippet": {

@@ -2,7 +2,7 @@
 Bộ siêu dữ liệu chuẩn hóa cho 2 khóa học toán học trực quan của Thầy Nguyễn Văn Sang:
 1. Series Trải Phẳng Hình Học Không Gian 3D (20 bài)
 2. Series Đại Số Tổ Hợp & Xác Suất (25 bài)
-Bao gồm: Tiêu đề chuẩn SEO, mô tả chi tiết, phân mục thời gian, hashtag và danh mục.
+Tiêu đề tối đa 95 ký tự để tương thích tuyệt đối với quy định YouTube Data API.
 """
 
 AUTHOR_INFO = """
@@ -21,7 +21,7 @@ PLAYLIST_TRAI_PHANG = {
 
 TRAI_PHANG_LESSONS = {
     1: {
-        "title": "Bài 01: Trải Phẳng 2 Mặt Khối Lập Phương | Bài Toán Kiến Bò Cơ Bản - Thầy Nguyễn Văn Sang",
+        "title": "Bài 01: Trải Phẳng 2 Mặt Khối Lập Phương | Bài Toán Kiến Bò - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 Chuyên đề: Cực trị khoảng cách & Đường đi ngắn nhất trên đa diện
 
@@ -36,7 +36,7 @@ Nội dung bài 01:
         "file_pattern": "trai_phang_01"
     },
     2: {
-        "title": "Bài 02: Trải Phẳng 4 Mặt Xung Quanh Khối Lập Phương | Khảo Sát Lộ Trình Vòng - Thầy Nguyễn Văn Sang",
+        "title": "Bài 02: Trải Phẳng 4 Mặt Xung Quanh Khối Lập Phương - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 02:
@@ -64,7 +64,7 @@ Nội dung bài 03:
         "file_pattern": "trai_phang_03"
     },
     4: {
-        "title": "Bài 04: Trải Phẳng Toàn Phần 6 Mặt Lập Phương | Bài Toán Kiến Bò Kinh Điển - Thầy Nguyễn Văn Sang",
+        "title": "Bài 04: Trải Phẳng Toàn Phần 6 Mặt Lập Phương | Kiến Bò Kinh Điển - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 04:
@@ -78,7 +78,7 @@ Nội dung bài 04:
         "file_pattern": "trai_phang_04"
     },
     5: {
-        "title": "Bài 05: Trải Phẳng Lăng Trụ Tam Giác Đều | Đường Đi Vòng Quanh Mặt Bên - Thầy Nguyễn Văn Sang",
+        "title": "Bài 05: Trải Phẳng Lăng Trụ Tam Giác Đều | Đường Đi Vòng Mặt Bên - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 05:
@@ -106,7 +106,7 @@ Nội dung bài 06:
         "file_pattern": "trai_phang_06"
     },
     7: {
-        "title": "Bài 07: Trải Phẳng Khối Tứ Diện Đều | Mạng Lưới Tam Giác Đều Đồng Dạng - Thầy Nguyễn Văn Sang",
+        "title": "Bài 07: Trải Phẳng Khối Tứ Diện Đều | Lưới Tam Giác Đều Đồng Dạng - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 07:
@@ -120,7 +120,7 @@ Nội dung bài 07:
         "file_pattern": "trai_phang_07"
     },
     8: {
-        "title": "Bài 08: Trải Phẳng Chóp Tứ Giác Đều | Vòng Dây Quanh Các Mặt Bên - Thầy Nguyễn Văn Sang",
+        "title": "Bài 08: Trải Phẳng Chóp Tứ Giác Đều | Vòng Dây Quanh Mặt Bên - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 08:
@@ -148,7 +148,7 @@ Nội dung bài 09:
         "file_pattern": "trai_phang_09"
     },
     10: {
-        "title": "Bài 10: Trải Phẳng Hình Chóp Cụt Vuông | Lộ Trình Tối Ưu Đa Diện Cắt - Thầy Nguyễn Văn Sang",
+        "title": "Bài 10: Trải Phẳng Hình Chóp Cụt Vuông | Lộ Trình Tối Ưu Đa Diện - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 10:
@@ -162,7 +162,7 @@ Nội dung bài 10:
         "file_pattern": "trai_phang_10"
     },
     11: {
-        "title": "Bài 11: Trải Phẳng Mặt Trụ Tròn Xoay | Dây Quấn 1 Vòng Quanh Hình Trụ - Thầy Nguyễn Văn Sang",
+        "title": "Bài 11: Trải Phẳng Mặt Trụ Tròn Xoay | Dây Quấn 1 Vòng Quanh Trụ - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 11:
@@ -176,7 +176,7 @@ Nội dung bài 11:
         "file_pattern": "trai_phang_11"
     },
     12: {
-        "title": "Bài 12: Trải Phẳng Mặt Trụ Quấn K Vòng | Đường Xoắn Ốc Helix Tối Ưu - Thầy Nguyễn Văn Sang",
+        "title": "Bài 12: Trải Phẳng Mặt Trụ Quấn K Vòng | Đường Xoắn Ốc Helix - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 12:
@@ -218,7 +218,7 @@ Nội dung bài 14:
         "file_pattern": "trai_phang_14"
     },
     15: {
-        "title": "Bài 15: Mô Hình Silo Công Nghiệp Trụ Nối Nón | Trải Phẳng Mặt Phức Hợp - Thầy Nguyễn Văn Sang",
+        "title": "Bài 15: Silo Công Nghiệp Trụ Nối Nón | Trải Phẳng Mặt Phức Hợp - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 15:
@@ -232,7 +232,7 @@ Nội dung bài 15:
         "file_pattern": "trai_phang_15"
     },
     16: {
-        "title": "Bài 16: Mô Hình Mái Nhà Lăng Trụ Tam Giác | Bài Toán Thực Tế Kiến Trúc - Thầy Nguyễn Văn Sang",
+        "title": "Bài 16: Mô Hình Mái Nhà Lăng Trụ Tam Giác | Toán Kiến Trúc - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 16:
@@ -246,7 +246,7 @@ Nội dung bài 16:
         "file_pattern": "trai_phang_16"
     },
     17: {
-        "title": "Bài 17: Điểm Đích Di Động Trên Cạnh | Kết Hợp Trải Phẳng & Bất Đẳng Thức - Thầy Nguyễn Văn Sang",
+        "title": "Bài 17: Điểm Đích Di Động Trên Cạnh | Kết Hợp Bất Đẳng Thức - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 17:
@@ -260,7 +260,7 @@ Nội dung bài 17:
         "file_pattern": "trai_phang_17"
     },
     18: {
-        "title": "Bài 18: Bài Toán Mặt Bị Cấm (Vật Cản) | Lộ Trình Vòng Tránh Vùng Nguy Hiểm - Thầy Nguyễn Văn Sang",
+        "title": "Bài 18: Bài Toán Mặt Bị Cấm (Vật Cản) | Lộ Trình Vòng Tránh - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 18:
@@ -274,11 +274,11 @@ Nội dung bài 18:
         "file_pattern": "trai_phang_18"
     },
     19: {
-        "title": "Bài 19: Hộp Chữ Nhật Chứa Tham Số Kích Thước | Biện Luận Cực Trị a, b, c - Thầy Nguyễn Văn Sang",
+        "title": "Bài 19: Hộp Chữ Nhật Tham Số Kích Thước | Biện Luận a, b, c - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 19:
-- Hình hộp chữ nhật kích thước tổng quát a x b x c với điều kiện a <= b <= c.
+- Hình hộp chữ nhật kích thước tổng quát a x b x c với điều kiện a ≤ b ≤ c.
 - Biện luận tường minh lộ trình nào trong 3 cách trải phẳng sẽ cho độ dài ngắn nhất.
 - Bất đẳng thức đại số rút ra từ nguyên lý hình học trải phẳng.
 
@@ -288,7 +288,7 @@ Nội dung bài 19:
         "file_pattern": "trai_phang_19"
     },
     20: {
-        "title": "Bài 20: Capstone Thuật Toán Trải Phẳng | Tổng Quát Hóa Mọi Đa Diện Lồi - Thầy Nguyễn Văn Sang",
+        "title": "Bài 20: Capstone Thuật Toán Trải Phẳng Mọi Đa Diện Lồi - Thầy Nguyễn Văn Sang",
         "description": f"""Khóa học: Kỹ Thuật Trải Phẳng Hình Học Không Gian 3D
 
 Nội dung bài 20 (Tổng kết Capstone):
@@ -313,28 +313,28 @@ PLAYLIST_TO_HOP = {
 
 TO_HOP_LESSONS = {
     1: {"title": "COMB01: Quy Tắc Cộng | Bản Chất Đếm Rời Rạc & Phân Chia Trường Hợp - Thầy Nguyễn Văn Sang", "file": "COMB01.mp4", "tags": ["quy tắc cộng", "tổ hợp", "toán 10", "đại số tổ hợp", "thầy nguyễn văn sang"]},
-    2: {"title": "COMB02: Quy Tắc Nhân | Các Công Đoạn Liên Tiếp & Quy Tắc Cây Phân Nhánh - Thầy Nguyễn Văn Sang", "file": "COMB02.mp4", "tags": ["quy tắc nhân", "tổ hợp", "toán 10", "phương pháp đếm"]},
-    3: {"title": "COMB03: Sơ Đồ Cây & Không Gian Mẫu | Trực Quan Hóa Mọi Khả Năng Rời Rạc - Thầy Nguyễn Văn Sang", "file": "COMB03.mp4", "tags": ["sơ đồ cây", "không gian mẫu", "xác suất", "tổ hợp"]},
-    4: {"title": "COMB04: Thứ Tự Có Quan Trọng Không? | Phân Biệt Cốt Lõi Hoán Vị - Chỉnh Hợp - Tổ Hợp - Thầy Nguyễn Văn Sang", "file": "COMB04.mp4", "tags": ["thứ tự", "hoán vị", "chỉnh hợp", "tổ hợp", "phân biệt"]},
-    5: {"title": "COMB05: Hoán Vị (Permutations) | Sắp Xếp N Phần Tử & Bản Chất Giai Thừa n! - Thầy Nguyễn Văn Sang", "file": "COMB05.mp4", "tags": ["hoán vị", "giai thừa", "toán 10", "thầy nguyễn văn sang"]},
-    6: {"title": "COMB06: Chỉnh Hợp A(n, k) | Chọn & Sắp Thứ Tự K Phần Tử Từ N Phần Tử - Thầy Nguyễn Văn Sang", "file": "COMB06.mp4", "tags": ["chỉnh hợp", "A_n_k", "toán 10", "đại số tổ hợp"]},
-    7: {"title": "COMB07: Tổ Hợp C(n, k) | Chọn Tập Con Không Phân Biệt Thứ Tự & Ý Nghĩa - Thầy Nguyễn Văn Sang", "file": "COMB07.mp4", "tags": ["tổ hợp", "C_n_k", "chọn tập con", "toán 10"]},
-    8: {"title": "COMB08: Tổng Hợp Phương Pháp Đếm | Kỹ Thuật Nhận Diện Dạng Toán Không Bị Nhầm Lẫn - Thầy Nguyễn Văn Sang", "file": "COMB08.mp4", "tags": ["tổng hợp phương pháp đếm", "bài tập đếm", "toán 10", "thầy nguyễn văn sang"]},
-    9: {"title": "COMB09: Chọn Có Lặp & Lập Dãy Số | Bài Toán Phân Chia Đồ Vật & Phương Pháp Vách Ngăn - Thầy Nguyễn Văn Sang", "file": "COMB09.mp4", "tags": ["chọn có lặp", "vách ngăn", "tổ hợp lặp", "toán 11"]},
-    10: {"title": "COMB10: Hoán Vị Lặp | Bài Toán Đổi Chỗ Các Phần Tử Giống Nhau & Từ Ngữ Anagram - Thầy Nguyễn Văn Sang", "file": "COMB10.mp4", "tags": ["hoán vị lặp", "anagram", "đại số tổ hợp", "toán thpt"]},
-    11: {"title": "COMB11: Hoán Vị Vòng Tròn | Đếm Xếp Bàn Tròn & Vòng Hoa Đối Xứng - Thầy Nguyễn Văn Sang", "file": "COMB11.mp4", "tags": ["hoán vị vòng tròn", "bàn tròn", "đối xứng", "toán 11"]},
-    12: {"title": "COMB12: Phương Pháp Buộc Khối (Gộp Khối) | Các Phần Tử Buộc Phải Đứng Cạnh Nhau - Thầy Nguyễn Văn Sang", "file": "COMB12.mp4", "tags": ["buộc khối", "gộp khối", "đứng cạnh nhau", "phương pháp đếm"]},
-    13: {"title": "COMB13: Phương Pháp Vách Ngăn Khe | Các Phần Tử Không Được Đứng Cạnh Nhau - Thầy Nguyễn Văn Sang", "file": "COMB13.mp4", "tags": ["vách ngăn khe", "không đứng cạnh nhau", "kỹ thuật đếm", "toán 10"]},
-    14: {"title": "COMB14: Phương Pháp Đếm Phần Bù | Lấy Toàn Thể Trừ Vi Phạm (Quy Tắc Ngược) - Thầy Nguyễn Văn Sang", "file": "COMB14.mp4", "tags": ["đếm phần bù", "quy tắc bù", "toán 10", "thầy nguyễn văn sang"]},
-    15: {"title": "COMB15: Lập Số Tự Nhiên Theo Điều Kiện | Chữ Số Chẵn Lẻ, Chia Hết, Đôi Một Khác Nhau - Thầy Nguyễn Văn Sang", "file": "COMB15.mp4", "tags": ["lập số", "chữ số khác nhau", "chia hết", "toán 10"]},
-    16: {"title": "COMB16: Chia Nhóm & Phân Công Vai Trò | Tránh Lỗi Đếm Trùng Kinh Điển - Thầy Nguyễn Văn Sang", "file": "COMB16.mp4", "tags": ["chia nhóm", "phân công", "lỗi đếm trùng", "toán thpt"]},
-    17: {"title": "COMB17: Nhị Thức Newton (a + b)^n | Bản Chất Khai Triển & Tìm Hệ Số Số Hạng - Thầy Nguyễn Văn Sang", "file": "COMB17.mp4", "tags": ["nhị thức newton", "khai triển", "hệ số", "toán 10", "toán 11"]},
-    18: {"title": "COMB18: Tam Giác Pascal | Các Tính Chất Đối Xứng Kỳ Diệu & Hàng Tổng Lũy Thừa - Thầy Nguyễn Văn Sang", "file": "COMB18.mp4", "tags": ["tam giác pascal", "pascal triangle", "tính chất tổ hợp"]},
-    19: {"title": "COMB19: Số Tập Con Của Tập Hợp n Phần Tử | Chứng Minh Đẳng Thức Tổng C_n^k = 2^n - Thầy Nguyễn Văn Sang", "file": "COMB19.mp4", "tags": ["tập con", "2^n", "đẳng thức tổ hợp", "thầy nguyễn văn sang"]},
-    20: {"title": "COMB20: Kỹ Thuật Tính Tổng Hệ Số Nhị Thức | Thay Giá Trị Đặc Biệt & Ứng Dụng Đạo Hàm - Thầy Nguyễn Văn Sang", "file": "COMB20.mp4", "tags": ["tính tổng hệ số", "đạo hàm nhị thức", "toán vận dụng cao"]},
-    21: {"title": "COMB21: Phương Pháp Hàm Sinh (Generating Functions) | Vũ Khí Giải Toán Đếm Nâng Cao - Thầy Nguyễn Văn Sang", "file": "COMB21.mp4", "tags": ["hàm sinh", "generating functions", "olympiad", "toán nâng cao"]},
-    22: {"title": "COMB22: Quy Hoạch Động Trong Tổ Hợp (Dynamic Programming) | Thiết Lập Hệ Thức Truy Hồi - Thầy Nguyễn Văn Sang", "file": "COMB22.mp4", "tags": ["quy hoạch động", "hệ thức truy hồi", "dynamic programming", "toán tin"]},
-    23: {"title": "COMB23: Nguyên Lý Bao Hàm - Loại Trừ (PIE) & Đa Thức Quân Xe | Bài Toán Xáo Trộn Hoàn Toàn - Thầy Nguyễn Văn Sang", "file": "COMB23.mp4", "tags": ["bao hàm loại trừ", "PIE", "quân xe", "derangement", "olympiad"]},
-    24: {"title": "COMB24: Số Catalan, Dãy Dyck & Nguyên Lý Phản Xạ | Tuyệt Đỉnh Tổ Hợp Olympiad - Thầy Nguyễn Văn Sang", "file": "COMB24.mp4", "tags": ["số catalan", "dãy dyck", "nguyên lý phản xạ", "olympiad math"]},
-    25: {"title": "COMB25: Bổ Đề Burnside & Định Lý Pólya | Đếm Số Quỹ Đạo Dưới Tác Động Nhóm - Thầy Nguyễn Văn Sang", "file": "COMB25.mp4", "tags": ["burnside", "polya", "lý thuyết nhóm", "đếm quỹ đạo", "olympiad toán"]}
+    2: {"title": "COMB02: Quy Tắc Nhân | Các Công Đoạn Liên Tiếp & Quy Tắc Cây - Thầy Nguyễn Văn Sang", "file": "COMB02.mp4", "tags": ["quy tắc nhân", "tổ hợp", "toán 10", "phương pháp đếm"]},
+    3: {"title": "COMB03: Sơ Đồ Cây & Không Gian Mẫu | Trực Quan Hóa Khả Năng Rời Rạc - Thầy Nguyễn Văn Sang", "file": "COMB03.mp4", "tags": ["sơ đồ cây", "không gian mẫu", "xác suất", "tổ hợp"]},
+    4: {"title": "COMB04: Thứ Tự Có Quan Trọng? | Phân Biệt Hoán Vị, Chỉnh Hợp, Tổ Hợp - Thầy Nguyễn Văn Sang", "file": "COMB04.mp4", "tags": ["thứ tự", "hoán vị", "chỉnh hợp", "tổ hợp", "phân biệt"]},
+    5: {"title": "COMB05: Hoán Vị (Permutations) | Sắp Xếp N Phần Tử & Giai Thừa n! - Thầy Nguyễn Văn Sang", "file": "COMB05.mp4", "tags": ["hoán vị", "giai thừa", "toán 10", "thầy nguyễn văn sang"]},
+    6: {"title": "COMB06: Chỉnh Hợp A(n, k) | Chọn & Sắp Thứ Tự K Phần Tử Từ N - Thầy Nguyễn Văn Sang", "file": "COMB06.mp4", "tags": ["chỉnh hợp", "A_n_k", "toán 10", "đại số tổ hợp"]},
+    7: {"title": "COMB07: Tổ Hợp C(n, k) | Chọn Tập Con Không Phân Biệt Thứ Tự - Thầy Nguyễn Văn Sang", "file": "COMB07.mp4", "tags": ["tổ hợp", "C_n_k", "chọn tập con", "toán 10"]},
+    8: {"title": "COMB08: Tổng Hợp Phương Pháp Đếm | Kỹ Thuật Nhận Diện Dạng Toán - Thầy Nguyễn Văn Sang", "file": "COMB08.mp4", "tags": ["tổng hợp phương pháp đếm", "bài tập đếm", "toán 10", "thầy nguyễn văn sang"]},
+    9: {"title": "COMB09: Chọn Có Lặp & Lập Dãy Số | Phương Pháp Vách Ngăn Kinh Điển - Thầy Nguyễn Văn Sang", "file": "COMB09.mp4", "tags": ["chọn có lặp", "vách ngăn", "tổ hợp lặp", "toán 11"]},
+    10: {"title": "COMB10: Hoán Vị Lặp | Đổi Chỗ Phần Tử Giống Nhau & Anagram - Thầy Nguyễn Văn Sang", "file": "COMB10.mp4", "tags": ["hoán vị lặp", "anagram", "đại số tổ hợp", "toán thpt"]},
+    11: {"title": "COMB11: Hoán Vị Vòng Tròn | Xếp Bàn Tròn & Vòng Hoa Đối Xứng - Thầy Nguyễn Văn Sang", "file": "COMB11.mp4", "tags": ["hoán vị vòng tròn", "bàn tròn", "đối xứng", "toán 11"]},
+    12: {"title": "COMB12: Phương Pháp Buộc Khối (Gộp Khối) | Phần Tử Đứng Cạnh Nhau - Thầy Nguyễn Văn Sang", "file": "COMB12.mp4", "tags": ["buộc khối", "gộp khối", "đứng cạnh nhau", "phương pháp đếm"]},
+    13: {"title": "COMB13: Phương Pháp Vách Ngăn Khe | Phần Tử Không Đứng Cạnh Nhau - Thầy Nguyễn Văn Sang", "file": "COMB13.mp4", "tags": ["vách ngăn khe", "không đứng cạnh nhau", "kỹ thuật đếm", "toán 10"]},
+    14: {"title": "COMB14: Phương Pháp Đếm Phần Bù | Toàn Thể Trừ Vi Phạm (Quy Tắc Ngược) - Thầy Nguyễn Văn Sang", "file": "COMB14.mp4", "tags": ["đếm phần bù", "quy tắc bù", "toán 10", "thầy nguyễn văn sang"]},
+    15: {"title": "COMB15: Lập Số Tự Nhiên Theo Điều Kiện | Chẵn Lẻ, Chia Hết, Khác Nhau - Thầy Nguyễn Văn Sang", "file": "COMB15.mp4", "tags": ["lập số", "chữ số khác nhau", "chia hết", "toán 10"]},
+    16: {"title": "COMB16: Chia Nhóm & Phân Công Vai Trò | Tránh Lỗi Đếm Trùng - Thầy Nguyễn Văn Sang", "file": "COMB16.mp4", "tags": ["chia nhóm", "phân công", "lỗi đếm trùng", "toán thpt"]},
+    17: {"title": "COMB17: Nhị Thức Newton (a + b)^n | Bản Chất Khai Triển & Hệ Số - Thầy Nguyễn Văn Sang", "file": "COMB17.mp4", "tags": ["nhị thức newton", "khai triển", "hệ số", "toán 10", "toán 11"]},
+    18: {"title": "COMB18: Tam Giác Pascal | Tính Chất Đối Xứng & Hàng Lũy Thừa - Thầy Nguyễn Văn Sang", "file": "COMB18.mp4", "tags": ["tam giác pascal", "pascal triangle", "tính chất tổ hợp"]},
+    19: {"title": "COMB19: Số Tập Con Của Tập Hợp n Phần Tử | Đẳng Thức Tổng C_n^k = 2^n - Thầy Nguyễn Văn Sang", "file": "COMB19.mp4", "tags": ["tập con", "2^n", "đẳng thức tổ hợp", "thầy nguyễn văn sang"]},
+    20: {"title": "COMB20: Tính Tổng Hệ Số Nhị Thức | Giá Trị Đặc Biệt & Đạo Hàm - Thầy Nguyễn Văn Sang", "file": "COMB20.mp4", "tags": ["tính tổng hệ số", "đạo hàm nhị thức", "toán vận dụng cao"]},
+    21: {"title": "COMB21: Phương Pháp Hàm Sinh (Generating Functions) | Toán Đếm Nâng Cao - Thầy Nguyễn Văn Sang", "file": "COMB21.mp4", "tags": ["hàm sinh", "generating functions", "olympiad", "toán nâng cao"]},
+    22: {"title": "COMB22: Quy Hoạch Động Trong Tổ Hợp | Thiết Lập Hệ Thức Truy Hồi - Thầy Nguyễn Văn Sang", "file": "COMB22.mp4", "tags": ["quy hoạch động", "hệ thức truy hồi", "dynamic programming", "toán tin"]},
+    23: {"title": "COMB23: Bao Hàm Loại Trừ (PIE) & Đa Thức Quân Xe | Xáo Trộn Hoàn Toàn - Thầy Nguyễn Văn Sang", "file": "COMB23.mp4", "tags": ["bao hàm loại trừ", "PIE", "quân xe", "derangement", "olympiad"]},
+    24: {"title": "COMB24: Số Catalan, Dãy Dyck & Nguyên Lý Phản Xạ | Tổ Hợp Olympiad - Thầy Nguyễn Văn Sang", "file": "COMB24.mp4", "tags": ["số catalan", "dãy dyck", "nguyên lý phản xạ", "olympiad math"]},
+    25: {"title": "COMB25: Bổ Đề Burnside & Định Lý Pólya | Đếm Số Quỹ Đạo Dưới Nhóm - Thầy Nguyễn Văn Sang", "file": "COMB25.mp4", "tags": ["burnside", "polya", "lý thuyết nhóm", "đếm quỹ đạo", "olympiad toán"]}
 }
