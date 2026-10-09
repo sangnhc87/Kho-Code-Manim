@@ -9,6 +9,8 @@ import textwrap
 from pathlib import Path
 from manim import *
 from src.core import Board, parse_square
+from src.layout import (BOARD_GRID_STEP, BOARD_CENTER_X, BOARD_CENTER_Y,
+                        HEADER_LINE_Y, assert_safe_layout)
 
 BG = '#0B1320'
 PANEL = '#15243A'
@@ -20,6 +22,7 @@ LIGHT = '#F4EFE1'
 MUTED = '#B5C5D6'
 GREEN = '#54CEA9'
 CYAN = '#6ED6EF'
+config.background_color = BG  # Must be set before Manim creates the camera.
 FONT = 'Noto Sans'
 CJK = 'Noto Sans CJK SC'
 PIECE_GLYPH = {'K':'帥','A':'仕','B':'相','E':'相','N':'傌','H':'傌','R':'俥','C':'炮','P':'兵',
@@ -34,13 +37,30 @@ def text_lines(value, width=31, max_lines=3):
     return '\n'.join(lines)
 
 
+def fit_label(value, x, y, max_width, max_height, font_size,
+              color, bold=False, wrap=None, max_lines=3):
+    """Auto-fit real Pango text bounds; never let captions overflow the panel."""
+    content = text_lines(value,wrap,max_lines) if wrap else str(value)
+    obj = Text(content,font=FONT,font_size=font_size,color=color,
+               weight='BOLD' if bold else 'NORMAL',line_spacing=1.18)
+    if obj.width > max_width:
+        obj.scale(max_width / obj.width)
+    if obj.height > max_height:
+        obj.scale(max_height / obj.height)
+    return obj.move_to([x,y,0])
+
+
 class XiangqiDisplay(VGroup):
     """Board coordinates a0 = black top-left, i9 = red bottom-right."""
     def __init__(self, state, **kwargs):
         super().__init__(**kwargs)
         self.state = state
-        self.step = 0.57
-        self.ox, self.oy = -3.13, 2.28  # board centered on left of frame
+        # 16:9 Manim frame: x = -7.11..7.11, y = -4..4.
+        # Reserve y>3.18 for the header and y<-3.52 for the footer.
+        # The entire board including its border must fit within this safe area.
+        assert_safe_layout()
+        self.step = BOARD_GRID_STEP
+        self.ox, self.oy = BOARD_CENTER_X, BOARD_CENTER_Y
         self.pieces = {}
         self.add(self.board_art())
         for pos, piece in state.cells.items():
@@ -87,6 +107,25 @@ class XiangqiDisplay(VGroup):
                    weight='BOLD',color=RED if red else INK)
         return VGroup(body,inner,label)
 
+    def reset_position(self, fen, scene):
+        """Show complete board throughout; only pieces change between branches."""
+        new_state=Board.fen(fen)
+        if self.state.cells == new_state.cells and self.state.turn == new_state.turn:
+            return
+        old_mobs=VGroup(*self.pieces.values())
+        if len(self.pieces):
+            scene.play(FadeOut(old_mobs),run_time=.22)
+            self.remove(*list(self.pieces.values()))
+        self.state=new_state
+        self.pieces={}
+        new_mobs=VGroup()
+        for pos,piece in new_state.cells.items():
+            mob=self.make_piece(piece).move_to(self.xy(pos))
+            self.pieces[pos]=mob
+            self.add(mob)
+            new_mobs.add(mob)
+        scene.play(FadeIn(new_mobs),run_time=.25)
+
     def move_piece(self,uci,scene,available=1.6):
         src,dst=parse_square(uci[:2]),parse_square(uci[2:])
         mob=self.pieces.pop(src)
@@ -97,6 +136,7 @@ class XiangqiDisplay(VGroup):
         scene.play(Create(cue),GrowArrow(hint),run_time=0.32)
         if captured is not None:
             scene.play(FadeOut(captured,scale=0.4),run_time=0.28)
+            self.remove(captured)
         scene.play(mob.animate.move_to(self.xy(dst)),run_time=min(0.85,available*.65),rate_func=smooth)
         self.pieces[dst]=mob
         self.state.play(uci[:2],uci[2:])
@@ -122,51 +162,93 @@ class XiangqiDisplay(VGroup):
 
 class XiangqiLesson(Scene):
     def construct(self):
-        config.background_color=BG
         episode_file=Path(os.environ['XIANGQI_EPISODE'])
         out=Path(os.environ['XIANGQI_OUTPUT'])
         data=json.loads(episode_file.read_text(encoding='utf-8'))
         timing=json.loads((out/'voice'/'timing.json').read_text(encoding='utf-8'))
         board=XiangqiDisplay(Board.fen(data['fen']))
-        brand=Text('TINH HOA CỜ TÀN',font=FONT,font_size=21,color=GOLD,weight='BOLD').to_edge(UP,buff=.20).shift(RIGHT*.15)
-        series=Text(f"{data['id'].upper()}  •  NGUYỄN VĂN SANG",font=FONT,font_size=13,color=MUTED)
-        series.next_to(brand,DOWN,buff=.06)
-        footer_bg=Rectangle(width=14.22,height=.38,fill_color='#09101C',fill_opacity=.96,stroke_width=0).to_edge(DOWN,buff=0)
-        footer=Text('Nguyễn Văn Sang    •    Mời tôi ly cà phê — MoMo: 0389.821.115',font=FONT,font_size=14,color='#F1D5A0')
+
+        # Consistent frame-safe, 16:9 design. No content overlaps the board.
+        brand=Text('TINH HOA CỜ TÀN',font=FONT,font_size=26,
+                   color=GOLD,weight='BOLD')
+        brand.to_edge(LEFT,buff=.64).move_to([-6.34,3.57,0],aligned_edge=LEFT)
+        series=Text(f"{data['id'].upper()}  •  NGUYỄN VĂN SANG",font=FONT,
+                    font_size=15,color=MUTED)
+        series.move_to([6.27,3.57,0],aligned_edge=RIGHT)
+        header_line=Line([-6.35,HEADER_LINE_Y,0],[6.34,HEADER_LINE_Y,0],
+                         color='#35465D',stroke_width=1.3)
+
+        footer_bg=Rectangle(width=14.22,height=.40,
+              fill_color='#09101C',fill_opacity=.96,stroke_width=0)
+        footer_bg.to_edge(DOWN,buff=0)
+        footer=Text('Nguyễn Văn Sang   •   Mời tôi ly cà phê — MoMo: 0389.821.115',
+                    font=FONT,font_size=14,color=MUTED)
         footer.move_to(footer_bg)
-        right_bg=RoundedRectangle(width=5.35,height=5.24,corner_radius=.22,
-                    stroke_width=1.2,stroke_color='#35465D',fill_color=PANEL,fill_opacity=1)
-        right_bg.move_to([3.53,-.10,0])
-        divider=Line([1.05,-.6,0],[5.98,-.6,0],color='#46607A',stroke_width=1)
-        title=Text('GIẢI MÃ CỜ TÀN',font=FONT,font_size=25,color=LIGHT,weight='BOLD').move_to([3.53,1.82,0])
-        headline=Text('Hãy nhìn vào bàn cờ...',font=FONT,font_size=23,color=GOLD,weight='BOLD').move_to([3.5,.93,0])
-        insight=Text('Mỗi nước cờ đều có mục đích.',font=FONT,font_size=19,color=LIGHT).move_to([3.5,-1.25,0])
-        segment=Text('MỞ ĐẦU',font=FONT,font_size=13,color=GREEN,weight='BOLD').move_to([3.48,2.13,0])
-        stamp_label=('MINH HỌA NGUYÊN LÝ • CHƯA CHỨNG MINH BIẾN THẮNG'
-                 if data.get('analysis_status')!='engine_verified' else 'BIẾN ĐƯỢC ĐỐI CHIẾU VỚI ENGINE')
-        stamp=Text(stamp_label,font=FONT,font_size=11,color=MUTED).move_to([3.52,-2.2,0])
-        self.add(board, right_bg, divider, title, headline, insight, segment, stamp, brand, series, footer_bg, footer)
+
+        right_bg=RoundedRectangle(width=6.02,height=6.07,
+             corner_radius=.20,stroke_width=1.4,stroke_color='#35465D',
+             fill_color=PANEL,fill_opacity=1)
+        right_bg.move_to([3.21,-.10,0])
+        segment=Text('MỞ ĐẦU',font=FONT,font_size=17,
+                     color=GREEN,weight='BOLD').move_to([3.20,2.60,0])
+        chapter=Text('MÃ CHỐNG ĐƠN SĨ',font=FONT,font_size=27,
+                     color=LIGHT,weight='BOLD').move_to([3.20,2.03,0])
+        headline=fit_label('ĐỎ ĐI TRƯỚC',
+                 x=3.20,y=1.20,max_width=5.27,max_height=.94,font_size=29,
+                 color=GOLD,bold=True,wrap=26,max_lines=2)
+        divider=Line([.62,.36,0],[5.80,.36,0],
+                     color='#46607A',stroke_width=1.5)
+        tip_label=Text('KẾT QUẢ / PHƯƠNG ÁN',font=FONT,font_size=14,
+                       color=CYAN,weight='BOLD').move_to([3.20,-.08,0])
+        insight=fit_label('Chờ phân tích nước đầu.',
+                 x=3.20,y=-1.20,max_width=5.10,max_height=1.70,font_size=25,
+                 color=LIGHT,wrap=32,max_lines=4)
+        stamp_label=('BẢNG TÍNH 4 QUÂN • CHƯA XÉT LUẬT LẶP NƯỚC'
+               if data.get('analysis_status')=='four_piece_retrograde_ordinary_moves'
+               else 'BIẾN MINH HỌA • CHƯA CHỨNG MINH THẮNG')
+        stamp=fit_label(stamp_label,x=3.20,y=-2.70,
+                 max_width=5.22,max_height=.23,font_size=12,color=MUTED)
+        # Fail early if later design changes accidentally crop the board again.
+        if board.get_top()[1] > header_line.get_y() - .15:
+            raise ValueError('Layout: board intersects the header safe area')
+        if board.get_bottom()[1] < footer_bg.get_top()[1] + .15:
+            raise ValueError('Layout: board intersects the footer safe area')
+        if board.get_right()[0] > right_bg.get_left()[0] - .20:
+            raise ValueError('Layout: board intersects the teaching panel')
+        self.add(board,right_bg,header_line,divider,chapter,headline,
+                 insight,segment,tip_label,stamp,brand,series,footer_bg,footer)
         self.opening_card(out)
+        if len(timing) != len(data['beats']):
+            raise ValueError('Number of audio clips differs from episode segments')
         for i,(beat,audio) in enumerate(zip(data['beats'],timing)):
             # audio duration is source of truth; video segment extends to include animations.
             start=self.time
+            if beat.get('fen'):
+                board.reset_position(beat['fen'],self)
+            # Start voice after changing to the position under discussion.
+            start=self.time
             self.add_sound(audio['audio'])
-            next_segment=Text(beat['label'].upper(),font=FONT,font_size=13,color=GREEN,weight='BOLD').move_to(segment)
-            next_title=Text(text_lines(beat['headline'],25,2),font=FONT,font_size=25,color=GOLD,
-                            weight='BOLD',line_spacing=1.15).move_to(headline)
-            next_insight=Text(text_lines(beat['insight'],34,4),font=FONT,font_size=20,color=LIGHT,
-                            line_spacing=1.25).move_to(insight)
+            next_segment=fit_label(beat['label'].upper(),x=3.20,y=2.60,
+                 max_width=5.00,max_height=.32,font_size=17,color=GREEN,bold=True)
+            next_title=fit_label(beat['headline'],x=3.20,y=1.20,
+                 max_width=5.27,max_height=.94,font_size=29,color=GOLD,
+                 bold=True,wrap=26,max_lines=2)
+            next_insight=fit_label(beat['insight'],x=3.20,y=-1.20,
+                 max_width=5.10,max_height=1.70,font_size=25,color=LIGHT,
+                 wrap=32,max_lines=4)
             self.play(Transform(segment,next_segment),Transform(headline,next_title),
                       Transform(insight,next_insight),run_time=.55)
             moves=beat.get('moves',[])
             if beat.get('horse_leg'):
                 pair=beat['horse_leg']
                 board.horse_leg(self,pair[0],pair[1])
-            if beat.get('spotlight'):
+            if beat.get('spotlight') and beat.get('spotlight_before'):
                 board.highlight(self,beat['spotlight'])
             for uci in moves:
                 board.move_piece(uci,self)
-                self.wait(.35)
+                self.wait(.28)
+            if beat.get('spotlight') and not beat.get('spotlight_before'):
+                board.highlight(self,beat['spotlight'])
             # Optional dramatic delay following the spoken segment.
             self.wait(max(.1, audio['seconds']+float(beat.get('pause',.65))-(self.time-start)))
         self.closing_card(out)

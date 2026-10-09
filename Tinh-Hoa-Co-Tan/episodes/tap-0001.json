@@ -1,113 +1,257 @@
 {
   "id": "tap-0001",
-  "title": "ĐƠN MÃ ĐẤU ĐƠN SĨ — BÍ QUYẾT CỜ TÀN",
-  "subtitle": "Bài 01  ·  Nhìn thế cờ để hiểu cách thắng",
-  "fen": "4k4/3a5/9/9/6N2/9/9/9/9/3K5 w",
-  "analysis_status": "illustrative_not_engine_verified",
-  "verification_note": "Các nước chỉ minh họa nguyên lý và luật; không được công bố là PV hay biến thắng cưỡng bức.",
+  "title": "MÃ PHÁ ĐƠN SĨ — PHÂN TÍCH CÁC BIẾN",
+  "subtitle": "Đỏ đi trước  •  Bắt Sĩ: 13 lượt, 21 lượt hay mất thắng?",
+  "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+  "analysis_status": "four_piece_retrograde_ordinary_moves",
+  "verification_note": "Exhaustive 4-piece win/draw/loss retrograde to capturing black advisor under ordinary legal moves, checks and stalemate. Long-check and long-chase repetition adjudication NOT covered; 13/21 are plies to capture advisor against a delaying defender, not mate distances.",
   "beats": [
     {
-      "label": "MỞ ĐẦU",
-      "headline": "Một con Mã có đủ sức?",
-      "narration": "Trên bàn cờ chỉ còn đúng bốn quân: hai Tướng, một Mã Đỏ và một Sĩ Đen. Nghe thì có vẻ Đỏ rất dễ thắng. Nhưng tôi muốn hỏi bạn một câu: vì sao có người đưa Mã đi tới đi lui hàng chục nước vẫn chưa bắt được Sĩ? Phải chăng Mã không đủ mạnh? Hay người chơi đang thiếu một ý tưởng quan trọng? Trong tập đầu tiên của Tinh Hoa Cờ Tàn, chúng ta không học thuộc một chuỗi nước cờ. Chúng ta học cách nhìn thế trận. Khi xem xong, bạn sẽ biết mình phải quan sát điều gì trước khi điều Mã, và vì sao quân Tướng cũng tham gia tấn công.",
-      "insight": "Đừng vội đuổi theo Sĩ. Hãy nhìn cả Tướng Đen.",
+      "label": "THẾ CỜ",
+      "headline": "Đỏ đi trước — Mã bắt Sĩ?",
+      "narration": "Đỏ còn Tướng và Mã. Đen còn Tướng và một Sĩ. Đỏ đi trước. Hãy tìm cách buộc Đen mất Sĩ. Có hai nước bắt Sĩ nhanh nhất, một nước thắng chậm, và một nước làm mất thế thắng. Ta xét lần lượt từng biến.",
+      "insight": "ĐỎ ĐI TRƯỚC  •  4 QUÂN",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
       "moves": [],
-      "pause": 1.2
+      "pause": 2.0,
+      "spotlight": "d2"
     },
     {
-      "label": "NHÌN THẾ CỜ",
-      "headline": "Đếm quân, nhưng phải nhìn vị trí",
-      "narration": "Bên Đỏ có Tướng và Mã. Bên Đen có Tướng và Sĩ. Sĩ tuy yếu khi ra ngoài cung, nhưng ở trong cung lại có nhiệm vụ rất rõ ràng: che chắn và giữ các điểm quan trọng cho Tướng. Nếu chỉ đếm quân, ta dễ nghĩ Đỏ có ưu thế là xong. Cờ tàn không đơn giản thế. Càng ít quân, mỗi ô trên bàn cờ càng có giá trị. Một ô bị khống chế có thể khiến Tướng không thể lùi; một ô trống lại có thể trở thành lối thoát. Vì thế, trước khi tìm nước hay, hãy tập thói quen nhìn toàn bộ cung Tướng.",
-      "insight": "Sức mạnh nằm ở điểm khống chế, không chỉ ở số quân.",
-      "moves": [],
-      "spotlight": "d1",
-      "pause": 0.8
-    },
-    {
-      "label": "HIỂU CON MÃ",
-      "headline": "Mã đi chữ nhật, nhưng có chân",
-      "narration": "Bây giờ hãy quan sát Mã Đỏ. Mã có thể đi hai ô theo một hướng và một ô theo hướng vuông góc, nhưng đường đi của Mã trong cờ tướng khác quân mã cờ vua ở một chỗ rất quan trọng: chân Mã có thể bị cản. Nếu ô ngay cạnh theo hướng đi dài bị quân khác chiếm, Mã không thể nhảy qua. Ta sẽ vẽ rõ ô chân Mã bằng một chấm vàng và đường đi bằng hai nét nối. Khi phân tích cờ tàn, đừng chỉ nhìn ô Mã sắp đến; hãy kiểm tra cả ô chân Mã. Sai một chi tiết nhỏ ở đây, cả lời giải có thể bị đảo lộn.",
-      "insight": "Nhớ kiểm tra chân Mã trước mỗi nước đi.",
-      "moves": [],
+      "label": "NƯỚC ĐẦU",
+      "headline": "1. Mã d2–f1",
+      "narration": "Đỏ đi Mã từ d2 đến f1. Đây là một trong hai nước ngắn nhất để buộc bắt Sĩ ở thế này. Đen còn hai cách đi hợp lệ: đẩy Sĩ về trung tâm, hoặc đưa Tướng tiến một bước. Ta thử cách chống đỡ lâu hơn trước.",
+      "insight": "ĐEN CÓ 2 CÁCH ĐÁP",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "d2f1"
+      ],
+      "pause": 1.3,
       "horse_leg": [
-        "g4",
-        "e3"
-      ],
-      "pause": 0.9
+        "d2",
+        "f1"
+      ]
     },
     {
-      "label": "ĐI MÃ",
-      "headline": "Đi Mã phải có mục tiêu",
-      "narration": "Trên bàn cờ, Mã Đỏ di chuyển để mở ra một góc tấn công mới. Sĩ Đen đáp lại bằng cách đổi vị trí trong cung. Đây chỉ là một chuỗi minh họa nước đi hợp lệ, chưa phải lời giải tối ưu của thế cờ. Hãy chú ý điều đang thay đổi: mỗi lần Mã đến một ô khác, tập hợp các ô nó khống chế cũng thay đổi theo. Nếu không đọc được sự thay đổi đó, người chơi sẽ chỉ thấy Mã đang chạy vòng quanh. Một kỳ thủ có mục đích rõ ràng sẽ hỏi: Mã từ đây đang đe dọa ô nào, và Tướng Đen còn những đường thoát nào?",
-      "insight": "Đổi vị trí Mã là đổi cả bản đồ khống chế.",
+      "label": "ĐEN CHỐNG ĐỠ",
+      "headline": "Sĩ về trung tâm",
+      "narration": "Đen đi Sĩ f0 lên e1. Đỏ đưa Mã f1 đến e3. Sĩ tiếp tục sang f2. Nếu chưa nhìn ra nước tiếp theo, hãy dừng hình: Đỏ nên điều Tướng hay đi Mã? Ở đây, điều Tướng mới giữ được sức ép.",
+      "insight": "1... Sĩ f0–e1  •  2... Sĩ e1–f2",
+      "fen": "3k1a3/5N3/9/9/9/9/9/4K4/9/9 b",
       "moves": [
-        "g4e3",
-        "d1e2"
+        "f0e1",
+        "f1e3",
+        "e1f2"
       ],
-      "pause": 0.7
+      "pause": 1.7
     },
     {
-      "label": "ĐỌC PHÒNG THỦ",
-      "headline": "Sĩ không đi lung tung",
-      "narration": "Sĩ chỉ đi chéo từng bước trong cung ba nhân ba. Vì số điểm đứng ít, trông Sĩ có vẻ dễ bị bắt; nhưng chính những đường chéo cố định ấy lại giúp nó giữ những ô rất quan trọng. Bạn hãy nhìn vị trí Sĩ lúc này, rồi quan sát Mã chuyển sang bên trái. Nếu Đen đưa Sĩ trở về một đường chéo khác, thế phòng thủ sẽ đổi ngay. Phần khó của cờ tàn không chỉ là tìm nước tấn công mạnh. Phần khó hơn là dự đoán đối phương sẽ chống đỡ ra sao, kể cả khi họ không đi theo nước chúng ta mong muốn.",
-      "insight": "Luôn hỏi: nếu Sĩ đổi đường chéo thì sao?",
+      "label": "BIẾN CHÍNH",
+      "headline": "Đỏ dùng Tướng khóa đường",
+      "narration": "Đỏ đi Tướng e7 sang f7, buộc Tướng Đen thay vị trí. Mã lần lượt đi e3 đến c2, rồi c2 đến e1. Lưu ý quân Mã không đuổi theo Sĩ một cách máy móc. Từng nước đều giữ những ô cần thiết để tiếp tục ép phòng thủ.",
+      "insight": "TƯỚNG PHỐI HỢP MÃ",
+      "fen": "3k5/9/5a3/4N4/9/9/9/4K4/9/9 w",
       "moves": [
+        "e7f7",
+        "d0e0",
         "e3c2",
-        "e2d1"
+        "e0f0",
+        "c2e1"
       ],
-      "pause": 0.8
+      "pause": 1.1
     },
     {
-      "label": "HỎI ĐÚNG",
-      "headline": "Đừng biến Mã thành quân đuổi bắt",
-      "narration": "Bây giờ là câu hỏi tôi muốn bạn nhớ nhất. Nếu chỉ dùng Mã đuổi theo Sĩ, liệu Sĩ có thể đổi góc trong cung để tránh mãi không? Để giải một thế thắng, ta thường cần thêm sự khống chế từ quân Tướng. Tướng của ta không phải nhân vật đứng ngoài cuộc. Khi được đặt vào vị trí đúng và không vi phạm luật đối mặt hai Tướng, nó có thể hạn chế những đường mà Tướng đối phương muốn dùng. Còn Mã đảm nhận việc khóa các điểm thoát hoặc ép quân phòng thủ phải đổi vị trí. Đây là tư duy phối hợp, không phải mẹo đi một quân.",
-      "insight": "Tướng và Mã phối hợp mới tạo được sức ép thực sự.",
+      "label": "BIẾN CHÍNH",
+      "headline": "Bắt Sĩ sau 13 lượt quân",
+      "narration": "Tướng Đen trở lại e0. Đỏ nhảy Mã e1 đến g0, dọa Sĩ ở f2. Nếu Đen lùi Tướng về d0, Mã g0 bắt ngay Sĩ f2. Toàn bộ biến này dài mười ba lượt đi, tính cả hai bên, khi Đen chống đỡ lâu nhất trong mô hình.",
+      "insight": "13 LƯỢT ĐI  •  BẮT ĐƯỢC SĨ",
+      "fen": "5k3/4N4/5a3/9/9/9/9/5K3/9/9 b",
       "moves": [
-        "c2e1",
-        "d1e2"
+        "f0e0",
+        "e1g0",
+        "e0d0",
+        "g0f2"
       ],
-      "pause": 0.8
+      "pause": 1.8,
+      "spotlight": "f2"
     },
     {
-      "label": "THỬ THÁCH",
-      "headline": "Tạm dừng: bạn nhìn thấy gì?",
-      "narration": "Hãy tạm dừng video vài giây và nhìn vào bàn cờ. Đừng cố đoán ngay một nước chiếu. Bạn chỉ cần trả lời hai câu. Một là: quân Mã đang khống chế những ô nào quanh cung Đen? Hai là: nếu Đen chuyển Sĩ về một đường chéo khác, Mã có thể đứng ở đâu để tiếp tục gây sức ép? Hãy nghĩ trong năm giây. Năm, bốn, ba, hai, một. Bây giờ xem Mã dịch sang một cánh khác. Không phải để khoe một nước cờ thần kỳ, mà để thấy thay đổi vị trí giúp chúng ta nhìn ra những ô khống chế mới.",
-      "insight": "Tự gọi tên ô khống chế trước khi xem đáp án.",
+      "label": "CHỐNG ĐỠ KHÁC",
+      "headline": "Tướng sang f0 — vẫn mất Sĩ",
+      "narration": "Trước nước bắt Sĩ cuối, Đen còn một đường dùng Tướng từ e0 sang f0. Nhưng quân Sĩ vẫn nằm ở f2. Đỏ đi Mã g0 bắt f2. Cũng chỉ một nước là mất Sĩ. Đen đã hết cách phòng thủ.",
+      "insight": "TƯỚNG e0–f0  •  MÃ g0×f2",
+      "fen": "4k1N2/9/5a3/9/9/9/9/5K3/9/9 b",
       "moves": [
-        "e1g2",
-        "e2d1"
+        "e0f0",
+        "g0f2"
       ],
       "pause": 1.2
     },
     {
-      "label": "PHÂN TÍCH",
-      "headline": "Đường đẹp chưa chắc là đường thắng",
-      "narration": "Chúng ta tiếp tục một nhịp Mã và Sĩ đổi vị trí. Bạn sẽ thấy quân Mã trở về vùng cũ. Chuỗi nước đi này không được đưa ra như một biến cưỡng bức bắt Sĩ; nó là phòng thí nghiệm trực quan để bạn rèn khả năng đọc thế. Nếu một video cờ tàn chỉ cho bạn những nước đi đẹp mà không kiểm chứng đáp trả của đối phương, bạn có thể học nhầm cả định thức. Khi đến các tập phân tích thực chiến, chúng ta sẽ dùng Pikafish và tài liệu cờ tàn để rà soát từng nhánh, nhất là những nước phòng thủ khó tìm.",
-      "insight": "Một nước hay phải đứng vững trước cách chống đỡ tốt nhất.",
+      "label": "CHỐNG ĐỠ KHÁC",
+      "headline": "Sĩ lui e1 — cũng bị bắt",
+      "narration": "Nếu thay vì đi Tướng, Đen đưa Sĩ từ f2 trở về e1 thì sao? Đỏ đi Mã g0 bắt ngay Sĩ e1. Đây là nhánh thứ ba. Dù Đen chọn Tướng sang trái, sang phải, hay rút Sĩ, kết quả đều như nhau: mất Sĩ ngay.",
+      "insight": "SĨ f2–e1  •  MÃ g0×e1",
+      "fen": "4k1N2/9/5a3/9/9/9/9/5K3/9/9 b",
       "moves": [
-        "g2e3",
-        "d1e2"
+        "f2e1",
+        "g0e1"
       ],
-      "pause": 0.6
+      "pause": 1.2
     },
     {
-      "label": "BA ĐIỂM NHỚ",
-      "headline": "Công thức tư duy ba bước",
-      "narration": "Tôi xin tóm lại bài hôm nay bằng ba câu ngắn. Thứ nhất, xác định các ô Tướng Đen có thể đi đến; đó là bản đồ phòng thủ cần phá. Thứ hai, xem Tướng Đỏ có thể khống chế thêm những đường nào mà vẫn đảm bảo hai Tướng không nhìn thẳng nhau. Thứ ba, điều Mã đến ô phù hợp để ép đối phương rời thế an toàn, và luôn kiểm tra chân Mã. Bạn đừng cố thuộc hình ảnh của đúng một bàn cờ. Hãy ghi nhớ ba câu hỏi này. Khi gặp một vị trí khác, chúng sẽ giúp bạn bắt đầu phân tích một cách có phương pháp.",
-      "insight": "Quan sát cung → phối hợp Tướng → chọn điểm đặt Mã.",
+      "label": "SĨ ĐI SAI",
+      "headline": "Sĩ về f0 — mất sau 7 lượt",
+      "narration": "Quay lại khi Đỏ vừa đưa Mã lên e3, Đen không sang f2 mà rút Sĩ từ e1 về f0. Đỏ nhảy Mã đến g2, Đen đưa Tướng xuống d1, Đỏ bắt Sĩ ở f0. Tính từ đầu chỉ bảy lượt. Đen chống đỡ sai nên mất Sĩ rất nhanh.",
+      "insight": "SĨ e1–f0  •  MẤT SAU 7 LƯỢT",
+      "fen": "3k5/4a4/9/4N4/9/9/9/4K4/9/9 b",
       "moves": [
-        "e3g4",
-        "e2d1"
+        "e1f0",
+        "e3g2",
+        "d0d1",
+        "g2f0"
       ],
-      "pause": 0.7
+      "pause": 1.3
     },
     {
-      "label": "KẾT THÚC",
-      "headline": "Tập tiếp theo: tìm nước bắt Sĩ",
-      "narration": "Trong tập này, chúng ta đã làm quen với cách nghĩ khi Mã đấu với đơn Sĩ. Ta biết sự khác biệt giữa một nước đi hợp lệ và một nước thắng thực sự. Ta cũng thấy vai trò của chân Mã, vùng khống chế và sự phối hợp với Tướng. Ở bài tiếp theo, chúng ta sẽ lấy một vị trí được kiểm chứng, nhìn các cách chống đỡ cụ thể của Đen và từng bước xây dựng phương án giành thắng lợi. Nếu thấy cách giảng này dễ hiểu, hãy để lại bình luận: đoạn nào bạn muốn tôi chiếu chậm hơn? Cảm ơn bạn đã xem Tinh Hoa Cờ Tàn. Tôi là Nguyễn Văn Sang, hẹn gặp lại ở tập sau.",
-      "insight": "Đúng luật chưa đủ: còn phải đúng phương án thắng.",
+      "label": "SĨ ĐI SAI",
+      "headline": "Sĩ sang d2 — mất sau 9 lượt",
+      "narration": "Cũng vị trí ấy, nếu Đen đi Sĩ e1 sang d2 thì Đỏ đưa Mã đến c2. Đen tiến Tướng d1, Đỏ điều Tướng lên e8. Sĩ phải về e1, Đỏ dùng Mã c2 bắt Sĩ. Tổng cộng chín lượt. Vẫn không kéo dài được như Sĩ sang f2.",
+      "insight": "SĨ e1–d2  •  MẤT SAU 9 LƯỢT",
+      "fen": "3k5/4a4/9/4N4/9/9/9/4K4/9/9 b",
+      "moves": [
+        "e1d2",
+        "e3c2",
+        "d0d1",
+        "e7e8",
+        "d2e1",
+        "c2e1"
+      ],
+      "pause": 1.3
+    },
+    {
+      "label": "ĐEN ĐI YẾU",
+      "headline": "Tướng lên — mất Sĩ sớm",
+      "narration": "Quay lại sau Mã d2 đến f1. Nếu Đen không chuyển Sĩ mà đi Tướng d0 đến d1, Đỏ lập tức Mã f1 đến e3. Đen tiến Tướng e1. Đỏ điều Tướng e7 sang d7. Cách chống đỡ này không giữ được Sĩ lâu bằng phương án trước.",
+      "insight": "ĐEN: d0–d1  •  THUA NHANH HƠN",
+      "fen": "3k1a3/5N3/9/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "d0d1",
+        "f1e3",
+        "d1e1",
+        "e7d7"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "ĐEN ĐI YẾU",
+      "headline": "Mã bắt Sĩ ở lượt thứ 9",
+      "narration": "Đen lui Tướng về e0. Đỏ đưa Mã từ e3 tới c2. Sĩ buộc về e1. Mã c2 bắt Sĩ e1. Chỉ chín lượt đi, thay vì mười ba. Đó là khác biệt giữa chống đỡ tốt và chống đỡ yếu trong cùng một thế cờ.",
+      "insight": "9 LƯỢT ĐI  •  BẮT ĐƯỢC SĨ",
+      "fen": "5a3/4k4/9/4N4/9/9/9/3K5/9/9 b",
+      "moves": [
+        "e1e0",
+        "e3c2",
+        "f0e1",
+        "c2e1"
+      ],
+      "pause": 1.8
+    },
+    {
+      "label": "ĐỎ ĐI CHẬM",
+      "headline": "Mã d2–e0 vẫn thắng",
+      "narration": "Nếu nước đầu Đỏ đi Mã d2 đến e0, Đỏ vẫn có thể buộc bắt Sĩ. Nhưng chống đỡ tốt nhất sẽ kéo dài hơn. Ta không nói nước này thua, mà nói nó thắng chậm hơn. Cùng xem Đen kéo dài cuộc chống đỡ như thế nào.",
+      "insight": "THẮNG CHẬM: 21 LƯỢT",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "d2e0"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Sĩ cơ động, Mã phải vòng",
+      "narration": "Đen chuyển Sĩ về e1, Đỏ phải đưa Mã từ e0 đến g1, rồi đến f3. Tướng Đen chen lên d1, Sĩ lui về f0. Đỏ lại đưa Mã tiến e5. So với nhánh trước, Mã phải vòng nhiều hơn mới tạo được thế khóa cung.",
+      "insight": "MÃ PHẢI ĐI ĐƯỜNG VÒNG",
+      "fen": "3kNa3/9/9/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "f0e1",
+        "e0g1",
+        "d0d1",
+        "g1f3",
+        "e1f0",
+        "f3e5"
+      ],
+      "pause": 1.0
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Đỏ tiếp tục siết cung",
+      "narration": "Đen đưa Tướng về d0. Mã đi e5 đến c4 rồi e3. Sĩ từ f0 đi e1 rồi f2. Cuối cùng Đỏ điều Tướng e7 sang f7. Tới đây thế cờ nhập lại dạng khống chế quen thuộc, nhưng Đỏ đã tốn thêm nhiều nước.",
+      "insight": "KHÔNG SAI, NHƯNG TỐN NƯỚC",
+      "fen": "5a3/3k5/9/9/9/4N4/9/4K4/9/9 b",
+      "moves": [
+        "d1d0",
+        "e5c4",
+        "f0e1",
+        "c4e3",
+        "e1f2",
+        "e7f7"
+      ],
+      "pause": 1.0
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Đến lượt 21 mới bắt Sĩ",
+      "narration": "Từ đây, Đỏ đi Mã đến c2, rồi e1 và g0. Đen chống đỡ bằng cách chuyển Tướng qua lại. Cuối cùng Mã g0 bắt Sĩ f2. Đủ hai mươi mốt lượt đi. So sánh: chọn Mã d2 đến f1, chỉ cần mười ba lượt trong phương án chống đỡ lâu nhất.",
+      "insight": "21 LƯỢT  SO VỚI  13 LƯỢT",
+      "fen": "3k5/9/5a3/4N4/9/9/9/5K3/9/9 b",
+      "moves": [
+        "d0e0",
+        "e3c2",
+        "e0f0",
+        "c2e1",
+        "f0e0",
+        "e1g0",
+        "e0d0",
+        "g0f2"
+      ],
+      "pause": 1.7
+    },
+    {
+      "label": "CÁCH THẮNG KHÁC",
+      "headline": "Mã d2–c4 cũng hiệu quả",
+      "narration": "Còn một nước thắng nhanh tương đương: Mã d2 đến c4. Đen đưa Sĩ về e1; Đỏ Mã c4 đến e3. Sĩ về f2 và Đỏ chuyển Tướng e7 sang f7. Sau đó thế cờ nhập lại nhánh chính. Vậy Đỏ không chỉ có một nước thắng.",
+      "insight": "CÁCH KHÁC: CŨNG 13 LƯỢT",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "d2c4",
+        "f0e1",
+        "c4e3",
+        "e1f2",
+        "e7f7"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "NƯỚC SAI",
+      "headline": "Tướng e7–d7: mất thắng",
+      "narration": "Nước sai ở thế đầu là đưa Tướng từ e7 sang d7. Đen chỉ cần đưa Tướng d0 xuống d1. Trong bảng tính bốn quân theo luật đi thông thường, Đỏ không còn đường buộc bắt Sĩ. Đây là khác biệt giữa nước không phạm luật và nước giữ được thế tất thắng.",
+      "insight": "ĐỎ MẤT THẾ BUỘC BẮT SĨ",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "e7d7",
+        "d0d1"
+      ],
+      "pause": 1.8
+    },
+    {
+      "label": "CHỐT BIẾN",
+      "headline": "13 — 21 — mất thắng",
+      "narration": "Tóm lại, ở thế xuất phát này: Mã d2 đến f1 hoặc c4 bắt được Sĩ sau tối đa mười ba lượt đi trong mô hình. Mã d2 đến e0 cần đến hai mươi mốt lượt. Còn Tướng e7 đến d7 làm mất khả năng buộc bắt Sĩ. Hết tập một.",
+      "insight": "f1 hoặc c4: 13  •  e0: 21  •  Kd7: không ép thắng",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
       "moves": [],
-      "pause": 1.4
+      "pause": 2.1
     }
   ]
 }

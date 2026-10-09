@@ -1,91 +1,77 @@
 # TINH HOA CỜ TÀN — Nguyễn Văn Sang
 
-**Series video cờ tướng không giới hạn tập**: Manim Community + Typst + giọng đọc tiếng Việt + GitHub Actions. Bộ dựng có bàn cờ 9×10, luật FEN/nước đi, chân Mã, hiệu ứng di chuyển, title card, footer MoMo, và mỗi tập có âm thanh độc lập.
+**Bản 2.0: viết lại video 001.** Manim + Typst + Edge/Zalo TTS + GitHub Actions, series có thể thêm vô hạn tập bằng file JSON.
 
-**Footer mặc định mọi tập**: `Nguyễn Văn Sang · Mời tôi ly cà phê — MoMo: 0389.821.115`.
+## Sửa đúng lỗi bàn cờ bị mất
 
-## Bắt đầu trên GitHub (không phải chạy trên Mac)
+- **Bàn cờ tiêu chuẩn 9 cột × 10 hàng, hiển thị trọn vẹn**, không phóng lớn và không bị cắt ở phần trên.
+- `src/layout.py` khóa tọa độ bàn cờ, ranh giới tiêu đề, footer, panel bên phải. Test sẽ báo lỗi nếu phần trên/dưới hoặc cạnh phải bị tràn.
+- Các biến cờ có FEN bắt đầu riêng; khi chuyển biến, **bàn cờ không biến mất**, chỉ thay quân cờ, không nhảy nối biến khác.
+- Panel chỉ ghi nước đang phân tích và kết quả, không trình chiếu đoạn văn dài.
+- Footer trong suốt series: `Nguyễn Văn Sang • Mời tôi ly cà phê — MoMo: 0389.821.115`.
 
-1. Tạo một GitHub repository. Giải nén ZIP, **chép cả thư mục `.github`** vào thư mục gốc repository, sau đó commit/push.
-2. Vào **Actions** → chọn `Tinh Hoa Co Tan - Manim Typst` → **Run workflow**.
-3. Chọn `episodes=latest`, `quality=preview`, `voice=edge` để kiểm tra render 480p.
-4. Nếu ổn, chọn `quality=full` để xuất 1920×1080/30 fps.
-5. Tải MP4 trong **Actions → lần chạy → Artifacts → cotan-tap-0001**.
+## Tập 001 — Mã đấu đơn Sĩ
 
-**Để nghe đúng giọng nam miền Nam**, lấy API key từ Zalo AI TTS và lưu vào GitHub: **Settings → Secrets and variables → Actions → New repository secret**; Name `ZALO_API_KEY`; Value = key thật. Sau đó chạy workflow với `voice=zalo` (speaker `3`: nam miền Nam). Giọng mặc định `edge` dùng `vi-VN-NamMinhNeural` để thử miễn phí, nhưng **không được đảm bảo là giọng Nam**. API Zalo AI có thể có hạn mức hoặc phí riêng; kiểm tra tài khoản Zalo AI.
+FEN: `3k1a3/9/3N5/9/9/9/9/4K4/9/9 w`. Đỏ đi trước.
 
-## Thêm tập mới mà không sửa code Manim
+Nội dung cờ cụ thể theo phương pháp giải ngược trạng thái bốn quân:
 
-Tạo `episodes/tap-0002.json` bằng lệnh mẫu (có thể chạy trên Codespaces/cloud):
+| Phương án | Kết quả mô hình | Diễn giải |
+|---|---|---|
+| Mã d2–f1 hoặc d2–c4 | 13 **lượt đi của cả hai bên** tối đa | Giữ thế cưỡng bức bắt Sĩ nhanh nhất |
+| Sau Mã d2–f1, Đen Sĩ e1–f0 | Tổng cộng 7 lượt | Sĩ lui sai: mất nhanh |
+| Sau Mã d2–f1, Đen Sĩ e1–d2 | Tổng cộng 9 lượt | Sĩ rẽ sai: mất nhanh |
+| Đen d0–d1 sau khi Đỏ d2–f1 | Tổng cộng 9 lượt | Tướng đi kém, mất Sĩ sớm |
+| Mã d2–e0 | 21 lượt | Vẫn ép bắt Sĩ nhưng chậm hơn |
+| Tướng e7–d7 | Không còn ép được bắt Sĩ | Đỏ bỏ lỡ cơ hội thắng trong mô hình |
 
-```bash
-python scripts/new_episode.py --number 2 --title 'Mã vây Tướng' --fen '4k4/3a5/9/9/6N2/9/9/9/9/3K5 w'
-```
+**Giới hạn kiểm chứng cần hiểu rõ:** Đây là phép giải WDL/độ dài cho cấu hình **hai Tướng + một Mã Đỏ + một Sĩ Đen**, mục tiêu *bắt được Sĩ*, với luật nước đi, chiếu và bí/hết nước thông thường. Chưa mã hóa đủ quy định xử lý **trường chiếu, trường tróc, cấm lặp nước** của các luật thi đấu cờ tướng. Vì vậy **13/21 không phải số nước chiếu bí hoặc bằng chứng kết thúc ván cờ theo mọi bộ luật giải đấu**. Trước khi quảng bá là “thế tất thắng” theo luật giải đấu, nên kiểm chứng tiếp bằng Pikafish và tài liệu cờ tàn. Không được thay số liệu mô hình bằng số liệu “mate in N” giả định.
 
-Sau đó sửa các `beats` trong JSON: `label`, `headline`, `narration`, `insight`, `moves` (ví dụ `g4e3`), `spotlight` (ví dụ `d1`), `horse_leg` (ví dụ `["g4","e3"]`), `pause` (giây). Những nước đi được kiểm tra tính hợp lệ trước khi dựng. Định dạng tọa độ: **a0 là góc trên bên Đen, i9 là góc dưới bên Đỏ**. Chữ quân: **K Tướng, A Sĩ, B/E Tượng, N/H Mã, R Xe, C Pháo, P Binh**; chữ hoa là Đỏ, chữ thường là Đen. FEN hướng chuẩn từ phía Đen trên cùng.
+Công cụ tính lại biến: `PYTHONPATH=. python scripts/build_episode_001.py` (tự tính retrograde rồi ghi `episodes/tap-0001.json`). Tập có **18 phân đoạn**, âm thanh theo từng đoạn, 63 lượt di chuyển trên màn hình cộng các ảnh cờ tĩnh.
 
-Một tập 5–10 phút cần khoảng 800–1.400 từ lời bình tiếng Việt (tùy tốc độ TTS). Âm thanh được đo thời lượng và video tự giữ cảnh cho đến khi lời bình kết thúc. Các tập mới không có giới hạn số lượng: `tap-0001.json`, `tap-0002.json` ...
+## Cập nhật repository GitHub
 
-### Chạy nhiều runner song song
+**Phải thay toàn bộ các file của bản ZIP**, không chỉ `src/scene.py`: bản mới thay cả scene, dữ liệu tập, bộ kiểm tra, solver và layout.
 
-Trong `Run workflow` → `episodes` có thể nhập:
+1. Giải nén ZIP và upload toàn bộ nội dung **thư mục `xiangqi-sang-series`** vào gốc repository, bao gồm `.github/`. Commit/push.
+2. Vào **Actions → Tinh Hoa Co Tan - Manim Typst → Run workflow**.
+3. Chọn `episodes=tap-0001`, `quality=preview`, `voice=edge`.
+4. Tải MP4 ở **Artifacts**; nhìn cả quân Đen ở hàng trên và quân Đỏ ở hàng dưới, rồi mới chạy `quality=full`.
+5. Video cũ trên YouTube không tự đổi: cần tải bản mới lên và thay link/đặt video cũ ở chế độ phù hợp.
 
-- `latest` (tập có số lớn nhất)
-- `tap-0001,tap-0002` (các tập cụ thể)
-- `range:0001-0016` (một lô 16 tập)
-- `all` (tất cả nếu không quá 128 tập trong *một lần chạy*)
+Giọng `edge`: nam tiếng Việt `vi-VN-NamMinhNeural`, **không cam kết đúng giọng miền Nam**. Giọng `zalo`: speaker 3 (nam miền Nam); phải đặt `ZALO_API_KEY` trong **Settings → Secrets and variables → Actions**. Dịch vụ Zalo có thể có phí/hạn mức riêng.
 
-`max-parallel: 4` cho tối đa 4 job mỗi job một video; thay thành `8` nếu gói/quyền runner của repo phù hợp. Catalog series không bị giới hạn bởi con số này, nhưng **matrix một lần chạy phải phân lô**. Khi push code workflow tự xuất `latest` ở chế độ preview để tránh bất ngờ tốn nhiều máy.
-
-## RẤT QUAN TRỌNG: đúng luật ≠ giải cờ tối ưu
-
-Tập `tap-0001` là **video nhập môn minh họa cơ chế Mã đấu Sĩ**, không có biến thắng cưỡng bức đã được xác minh. Các nước Mã/Sĩ được **kiểm tra hợp lệ bằng bộ luật nội bộ**. Không nên gọi các nước này là "lời giải bắt buộc".
-
-Trước khi phát hành video chiến thuật hoặc khẳng định "Đỏ thắng cưỡng bức", cần đối chiếu với sách cờ tàn và dùng **Pikafish** kiểm tra nhiều nhánh. Script tùy chọn:
-
-```bash
-python scripts/check_pikafish.py --episode tap-0001 --engine /duong-dan/pikafish --depth 24
-```
-
-Tạo `output/tap-0001/engine_report.json` chứa nước engine đề nghị cho **thế ban đầu**, **không phải chứng minh toàn bộ thế thắng**. Không tự đổi `analysis_status` sang `engine_verified` trừ khi đã đối chiếu tất cả nhánh cần thiết. Ngoài chuyện từng nước hợp lệ, những quy tắc cờ tàn như lặp nước và hòa phải được kiểm tra bằng công cụ mạnh và người biên tập. `src/core.py` chỉ là **bộ kiểm tra cơ bản**; không phải trọng tài đầy đủ cho mọi tình huống cờ tướng tranh chấp/luật giải đấu.
-
-## Cấu trúc
-
-```text
-.github/workflows/render-series.yml  # GitHub Actions matrix
-src/core.py                         # FEN, bàn cờ và nước đi
-src/scene.py                        # thư viện Manim dùng mọi tập
-src/voice.py                        # Zalo miền Nam / Edge / mock
-src/typst_cards.py                  # Typst -> PNG tiêu đề + outro
-scripts/plan.py                     # chọn tập/lô
-scripts/produce.py                  # kiểm tra -> giọng -> Typst -> MP4
-scripts/new_episode.py              # tạo tập mới
-scripts/check_pikafish.py           # phân tích engine tùy chọn
-scripts/make_demo.py                # sinh storyboard tập 01
-episodes/tap-0001.json              # pilot 10 phân cảnh, ~1134 từ
-```
-
-## Kiểm tra không cần Manim
+## Kiểm tra trước khi dựng
 
 ```bash
 PYTHONPATH=. python -m unittest discover -s tests -v
-python scripts/produce.py --episode tap-0001 --skip-render
-python scripts/plan.py latest
+PYTHONPATH=. python scripts/produce.py --episode tap-0001 --skip-render
 ```
 
-## Chạy thử có âm thanh giả / tại máy riêng (tùy chọn)
+GitHub Actions tự thực hiện kiểm tra hợp lệ rồi mới render. Giới hạn workflow là 128 tập/lần chạy, tối đa 4 runner song song (có thể điều chỉnh theo quyền runner); toàn bộ catalog không giới hạn số tập.
 
-Trên hệ thống có `ffmpeg`, `typst`, Python 3.11, thư viện Linux Cairo/Pango và phông Noto:
+## Cấu trúc chính
 
-```bash
-pip install -r requirements.txt
-python scripts/produce.py --episode tap-0001 --quality preview --voice mock
+```text
+.github/workflows/render-series.yml  # GitHub Actions
+src/core.py                          # FEN, luật di chuyển cơ bản, branch validation
+src/layout.py                        # tọa độ và kiểm tra vùng an toàn 16:9
+src/scene.py                         # Manim: bàn cờ, 4 quân, hiệu ứng, chuyển biến
+src/voice.py                         # Giọng Nam tiếng Việt / nam miền Nam, đồng bộ audio
+src/typst_cards.py                   # Title/outro bằng Typst
+episodes/tap-0001.json               # 18 phân đoạn tập 001
+scripts/solve_masi.py                # Giải ngược các trạng thái 4 quân
+scripts/build_episode_001.py         # Tính biến và tạo data 001
+scripts/check_pikafish.py            # Kiểm tra engine độc lập (tùy chọn)
+scripts/produce.py                   # Xuất MP4
+scripts/plan.py                      # Chọn lô tập để dựng
+tests/test_core.py                   # 6 bài test logic, luật, bố cục
 ```
 
-`voice=mock` là track im lặng chỉ dùng smoke test, **không phải bản xuất bản**. MP4 xuất trong `output/tap-0001/`.
+## Render và lưu ý
 
-## Chi phí và xuất bản
-
-Runner chuẩn GitHub có thể miễn phí theo điều kiện của repo public; repo private tính vào quota phút sử dụng và mức giá của gói. TTS Zalo và API bên thứ ba có điều khoản riêng. Giới hạn thời gian mỗi job và dung lượng artifact vẫn áp dụng; "không giới hạn tập" nghĩa là mã nguồn có thể thêm tập tiếp, không có nghĩa miễn phí vô hạn.
-
-Không đưa API key vào JSON hoặc code; chỉ dùng `ZALO_API_KEY` trong GitHub Secrets. Kiểm tra quyền sử dụng giọng đọc và âm thanh trước khi đăng YouTube. Footer có thông tin MoMo công khai theo yêu cầu của chủ series.
+- `preview` = 854×480, 15 fps; `full` = 1920×1080, 30 fps.
+- Dùng `voice=edge` để test không cần Zalo API key; giọng miền Nam thực sự là `voice=zalo`.
+- Không lưu API key trong repository hoặc JSON.
+- Mã nguồn được kiểm tra tĩnh và kiểm tra luật, **chưa render MP4 trong môi trường tạo ZIP**; cần chạy preview thật trên GitHub trước khi công bố.
+- GitHub Actions, Zalo AI và lưu trữ artifact đều chịu hạn mức/quy định của dịch vụ tương ứng.

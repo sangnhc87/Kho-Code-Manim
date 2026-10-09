@@ -140,6 +140,9 @@ def validate_episode(data):
     if not isinstance(beats,list) or len(beats)<2: raise ValueError('Need at least 2 beats')
     b=Board.fen(data['fen'])
     for idx,beat in enumerate(beats,1):
+        # Chapters can return to the original position or start any legal branch.
+        if 'fen' in beat:
+            b=Board.fen(beat['fen'])
         for key in ('label','headline','narration','insight'):
             if not beat.get(key): raise ValueError(f'Beat {idx}: missing {key}')
         for move in beat.get('moves',[]):
