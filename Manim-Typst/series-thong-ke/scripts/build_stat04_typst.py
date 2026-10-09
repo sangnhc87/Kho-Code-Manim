@@ -9,7 +9,7 @@ FORMULAS={
  'cumulative':r'$ Q_1 = 6 quad Q_2 = 7 quad Q_3 = 8 $',
  'odd':r'$ Q_1 = 2.5 quad Q_2 = 5 quad Q_3 = 7.5 $',
  'outlier':r'$ Q_1 = 6 quad Q_2 = 7 quad Q_3 = 8 $',
- 'iqr':r'$ IQR = Q_3 - Q_1 = 8 - 6 = 2 $',
+ 'iqr':r'$ "IQR" = Q_3 - Q_1 = 8 - 6 = 2 $',
  'exercise':r'$ (x + 7) / 2 = 6.5 quad x = 6 $',
 }
 def main():
