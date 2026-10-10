@@ -4,93 +4,113 @@
   "subtitle": "Đỏ đi trước • Mã Chốt cao hợp đồng phá thế khuyết 1 Tượng; cờ tàn kinh điển.",
   "category": "Tàn Mã Chốt",
   "goal_text": "MỤC TIÊU: THẮNG CỜ",
-  "fen": "3a1a3/9/b1P1k4/9/9/3N5/9/5K3/9/9 w",
+  "fen": "4P1b2/4ak3/5a3/9/7N1/9/9/5K3/9/9 w",
   "analysis_status": "andor_mate_search",
-  "verification_note": "Exhaustive AND-OR mate search (repetition and 60-move rule ignored): Red forces a Xiangqi stalemate win (bi nuoc, a loss for the side to move) in 6 moves against all Black replies. Unique winning first move d5c3.",
+  "verification_note": "Exhaustive AND-OR mate search (repetition and 60-move rule ignored): Red forces a Xiangqi stalemate win (bi nuoc, a loss for the side to move) in 13 moves against all Black replies; fastest win. Knight captures the lone elephant, then pawn and knight break both advisors.",
   "beats": [
     {
       "label": "THẾ CỜ",
-      "headline": "Đỏ đi trước — phá Tượng khuyết?",
-      "narration": "Đỏ còn Tướng, Mã và một Chốt cao. Đen còn Tướng, hai Sĩ và chỉ một Tượng — thế \"khuyết một Tượng\". Thiếu một Tượng, phòng tuyến của Đen mất đi điểm tựa che chắn, hai Sĩ cũng vì thế mà lỏng lẻo. Bài học hôm nay: Mã và Chốt cao hợp sức phá vỡ thế khuyết Tượng, bắt chết Tướng Đen. Chúng ta cùng phân tích từng biến.",
-      "insight": "ĐỎ ĐI TRƯỚC  •  THẾ KHUYẾT 1 TƯỢNG",
-      "fen": "3a1a3/9/b1P1k4/9/9/3N5/9/5K3/9/9 w",
+      "headline": "Đỏ đi trước — khuyết 1 Tượng, bí nước sau 13 nước",
+      "narration": "Đỏ còn Tướng, Mã và một Chốt cao. Đen còn Tướng, hai Sĩ và chỉ một Tượng — thế \"khuyết một Tượng\". Thiếu Tượng, phòng tuyến Đen mất điểm tựa, hai Sĩ cũng lỏng lẻo theo. Đây là bài cờ tàn rất sâu: Đỏ phải đi trọn mười ba nước, lần lượt chém Tượng rồi phá đôi Sĩ, cuối cùng dồn Tướng Đen vào thế bí nước. Chúng ta cùng phân tích từng biến.",
+      "insight": "ĐỎ ĐI TRƯỚC  •  BÍ NƯỚC TRONG 13 NƯỚC",
+      "fen": "4P1b2/4ak3/5a3/9/7N1/9/9/5K3/9/9 w",
       "moves": [],
-      "pause": 2.0,
-      "spotlight": "d5"
+      "pause": 2.1,
+      "spotlight": "h4"
     },
     {
       "label": "NƯỚC ĐẦU",
-      "headline": "1. Mã 6 tiến 7",
-      "narration": "Nước mở đầu then chốt: Đỏ đi Mã 6 tiến 7 nhảy sang cánh, dồn thẳng vào Tượng Đen. Đây là nước duy nhất giữ được chiến thắng nhanh — thắng cờ chỉ trong sáu nước Đỏ. Tướng Đen buộc phải thoái 1 tránh thế.",
-      "insight": "MÃ 6 TIẾN 7  •  NƯỚC DUY NHẤT",
-      "fen": "3a1a3/9/b1P1k4/9/9/3N5/9/5K3/9/9 w",
+      "headline": "1. Mã 2 tiến 4",
+      "narration": "Nước mở đầu chuẩn xác: Đỏ đi Mã 2 tiến 4 dồn thẳng vào Tượng Đen. Đen buộc phải đưa Sĩ 5 tiến 4 che chắn — đây là nước thủ lâu nhất, vì mọi nước khác đều thua nhanh hơn hẳn. Quân Mã bắt đầu cuộc vây ráp Tượng khuyết.",
+      "insight": "MÃ 2 TIẾN 4  •  DỒN TƯỢNG KHUYẾT",
+      "fen": "4P1b2/4ak3/5a3/9/7N1/9/9/5K3/9/9 w",
       "moves": [
-        "d5c3"
+        "h4f3"
       ],
-      "pause": 1.4,
+      "pause": 1.6,
       "horse_leg": [
-        "d5",
-        "c3"
+        "h4",
+        "f3"
       ]
     },
     {
       "label": "BIẾN CHÍNH",
-      "headline": "Mã 7 tiến 9 — ăn Tượng!",
-      "narration": "Tướng Đen thoái 1 về. Đỏ lập tức Mã 7 tiến 9 chém gọn Tượng Đen! Từ đây Đen chỉ còn trơ trọi hai Sĩ. Đen cố điều Tướng 5 bình 4 tránh né, Đỏ bình tĩnh đưa Tướng 4 bình 5 chiếm trung lộ, khóa chặt lộ Tướng Đen.",
-      "insight": "MÃ ĂN TƯỢNG  •  TƯỚNG CHIẾM TRUNG LỘ",
-      "fen": "3a1a3/9/b1P1k4/2N6/9/9/9/5K3/9/9 b",
+      "headline": "Mã vờn Tượng — Mã 2 tiến 3 chém Tượng",
+      "narration": "Đen đưa Sĩ 5 tiến 4, Sĩ 6 thoái 5 đổi vị trí. Đỏ bình tĩnh đưa Tướng 4 bình 5 chiếm trung lộ, rồi Mã 4 tiến 2 dồn ép. Tướng Đen tiến 1, thì Mã 2 tiến 3 chém gọn Tượng khuyết duy nhất! Từ đây Đen trơ trọi hai Sĩ.",
+      "insight": "MÃ VỜN TƯỢNG  •  CHÉM TƯỢNG KHUYẾT",
+      "fen": "4P1b2/4ak3/5a3/5N3/9/9/9/5K3/9/9 b",
       "moves": [
-        "e2e1",
-        "c3a2",
-        "e1d1",
-        "f7e7"
+        "e1d2",
+        "f7e7",
+        "f2e1",
+        "f3h2",
+        "f1f2",
+        "h2g0"
       ],
-      "pause": 1.7,
-      "horse_leg": [
-        "c3",
-        "a2"
-      ]
+      "pause": 2.0,
+      "spotlight": "g0"
     },
     {
       "label": "BIẾN CHÍNH",
-      "headline": "Chốt 7 tiến 1 — bí nước",
-      "narration": "Đen đi Sĩ 4 tiến 5 chống đỡ. Đỏ kiên nhẫn Mã 9 tiến 8 khóa cung, rồi đưa Chốt 7 tiến 1 từng bước xuống tận đáy. Tướng Đen bị dồn vào thế không còn nước nào để đi — bí nước, theo luật cờ tướng Đen thua cuộc. Tròn sáu nước Đỏ, Mã Chốt cao hợp vây kín mít Cửu cung.",
-      "insight": "CHỐT THỌC SÂU  •  BÍ NƯỚC",
-      "fen": "3a1a3/3k5/N1P6/9/9/9/9/4K4/9/9 b",
+      "headline": "Chốt 5 bình 4 — ăn Sĩ",
+      "narration": "Tướng Đen thoái 1 cố thủ. Đỏ kiên nhẫn Mã 3 thoái 2 rồi Tướng 5 thoái 1 chờ thời. Đen đưa Sĩ 5 thoái 6 che cung, thì Chốt 5 bình 4 chém gọn Sĩ Đen tại cột 4! Mỗi bước Đỏ đều nhịp nhàng, không cho Đen thở.",
+      "insight": "CHỐT 5 BÌNH 4  •  CHÉM SĨ",
+      "fen": "4P1N2/4a4/3a1k3/9/9/9/9/4K4/9/9 b",
       "moves": [
-        "d0e1",
-        "a2b0",
-        "d1d0",
-        "c2c1",
-        "d0e0",
-        "c1c0"
+        "f2f1",
+        "g0h2",
+        "f1f2",
+        "e7e8",
+        "e1f0",
+        "e0f0"
       ],
-      "pause": 1.8,
-      "spotlight": "c0"
+      "pause": 1.9,
+      "spotlight": "f0"
+    },
+    {
+      "label": "BIẾN CHÍNH",
+      "headline": "Mã 3 thoái 5 ăn Sĩ — bí nước",
+      "narration": "Đen còn một Sĩ cố gắng Sĩ 4 thoái 5, Sĩ 5 tiến 4 qua lại. Đỏ đưa Mã 2 tiến 3, Chốt 4 bình 5 dồn ép, Tướng 5 thoái 1 chiếm cao điểm. Đến nước hai mươi mốt, Mã 3 thoái 5 ăn nốt Sĩ cuối cùng! Tướng Đen không còn nước nào để đi — bí nước, theo luật cờ tướng Đen thua. Tròn mười ba nước Đỏ.",
+      "insight": "MÃ ĂN SĨ CUỐI  •  BÍ NƯỚC",
+      "fen": "5P3/9/3a1k1N1/9/9/9/9/9/4K4/9 b",
+      "moves": [
+        "d2e1",
+        "h2g0",
+        "f2f1",
+        "f0e0",
+        "e1d2",
+        "e8e9",
+        "d2e1",
+        "g0e1",
+        "f1f2",
+        "e1g0",
+        "f2f1",
+        "e9d9"
+      ],
+      "pause": 2.1,
+      "spotlight": "e1"
     },
     {
       "label": "ĐEN SAI LẦM",
-      "headline": "Tướng 5 tiến 1 — thua nhanh hơn",
-      "narration": "Quay lại sau khi Mã Đỏ ăn Tượng. Nếu Đen không đi Tướng 5 bình 4 mà nóng vội Tướng 5 tiến 1, Mã Đỏ liền Mã 9 tiến 7 khóa cửa, Chốt 7 bình 6 siết chặt — Tướng Đen bí nước ngay, chỉ sau bốn nước Đỏ. Sai lầm tiến Tướng khiến Đen thua nhanh hơn hẳn.",
-      "insight": "TIẾN TƯỚNG VỘI  •  BÍ NƯỚC SỚM",
-      "fen": "3a1a3/4k4/N1P6/9/9/9/9/5K3/9/9 b",
+      "headline": "Tượng tiến 9 — thua ngay lập tức",
+      "narration": "Quay lại sau nước Mã 2 tiến 4. Nếu Đen không che chắn bằng Sĩ mà lại đưa Tượng 7 tiến 9 chạy ra biên, thì Mã Đỏ chỉ việc Mã 4 tiến 2 — chiếu hết tức khắc chỉ sau hai nước Đỏ! Rút Tượng ra biên khiến Cửu cung Đen lộ hoàn toàn, thua ngay.",
+      "insight": "TƯỢNG CHẠY BIÊN  •  CHIẾU HẾT TỨC KHẮC",
+      "fen": "4P1b2/4ak3/5a3/5N3/9/9/9/5K3/9/9 b",
       "moves": [
-        "e1e2",
-        "a2c1",
-        "e2e1",
-        "c2d2"
+        "g0i2",
+        "f3h2"
       ],
-      "pause": 1.5,
-      "spotlight": "d2"
+      "pause": 1.7,
+      "spotlight": "h2"
     },
     {
       "label": "CHỐT BIẾN",
-      "headline": "6 nước — Mã ăn Tượng, Chốt bí nước",
-      "narration": "Tổng kết bài Mã Chốt cao thắng khuyết một Tượng: Mã tiến 7 ép Tướng, tiến 9 ăn Tượng, Tướng chiếm trung lộ rồi Chốt thọc sâu bí nước trong sáu nước. Tướng Đen khinh suất tiến lên sẽ thua càng nhanh. Hết tập năm.",
-      "insight": "MÃ CHỐT CAO  •  6 NƯỚC",
-      "fen": "3a1a3/9/b1P1k4/9/9/3N5/9/5K3/9/9 w",
+      "headline": "13 nước — Mã Chốt phá thế khuyết Tượng",
+      "narration": "Tổng kết bài Mã Chốt cao thắng khuyết một Tượng: Mã tiến 4 dồn ép, vờn Tượng rồi chém Tượng khuyết, Chốt bình 4 phá Sĩ, Mã thoái 5 ăn nốt Sĩ cuối, dồn Tướng Đen bí nước trong mười ba nước. Tượng Đen chạy biên là thua ngay. Hết tập năm.",
+      "insight": "MÃ CHỐT CAO  •  13 NƯỚC BÍ NƯỚC",
+      "fen": "4P1b2/4ak3/5a3/9/7N1/9/9/5K3/9/9 w",
       "moves": [],
-      "pause": 2.1
+      "pause": 2.2
     }
   ]
 }

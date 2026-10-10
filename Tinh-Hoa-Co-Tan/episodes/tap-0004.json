@@ -4,92 +4,125 @@
   "subtitle": "Đỏ đi trước • Mã Chốt cao hợp đồng phá thế khuyết 1 Sĩ; cờ tàn kinh điển.",
   "category": "Tàn Mã Chốt",
   "goal_text": "MỤC TIÊU: THẮNG CỜ",
-  "fen": "2b2k3/9/4baP2/9/9/N8/9/4K4/9/9 w",
+  "fen": "3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w",
   "analysis_status": "andor_mate_search",
-  "verification_note": "Exhaustive AND-OR mate search (repetition and 60-move rule ignored): Red forces mate in 6 moves against all Black replies; fastest win, defender delays maximally. Unique fastest first move g2f2 captures the sole defender advisor.",
+  "verification_note": "Exhaustive AND-OR mate search (repetition and 60-move rule ignored): Red forces mate in 13 moves against all Black replies; fastest win, defender delays maximally. Knight and pawn maneuver for 10 moves before capturing the sole defender advisor, then mate.",
   "beats": [
     {
       "label": "THẾ CỜ",
-      "headline": "Đỏ đi trước — phá Sĩ khuyết Tượng?",
-      "narration": "Đỏ còn Tướng, Mã và một Chốt cao đã vượt sông. Đen còn Tướng, một Sĩ và hai Tượng — đúng thế \"khuyết một Sĩ\". Mất một Sĩ, Cửu cung Đen lập tức lộ khe hở chí mạng: Sĩ không còn đủ đôi để che chắn lộ Tướng. Bài học hôm nay: Mã và Chốt cao phối hợp thế nào để khai thác khe hở ấy, bắt sống Tướng Đen. Chúng ta cùng vào phân tích từng biến.",
-      "insight": "ĐỎ ĐI TRƯỚC  •  THẾ KHUYẾT 1 SĨ",
-      "fen": "2b2k3/9/4baP2/9/9/N8/9/4K4/9/9 w",
+      "headline": "Đỏ đi trước — khuyết 1 Sĩ, thắng sau 13 nước",
+      "narration": "Đỏ còn Tướng, Mã và một Chốt cao đã vượt sông. Đen còn Tướng, một Sĩ và hai Tượng — thế \"khuyết một Sĩ\". Nghe tưởng đơn giản, nhưng đây là bài cờ tàn rất sâu: Đỏ phải đi trọn mười ba nước chính xác mới bắt chết Tướng Đen. Mã Đỏ phiêu lưu khắp bàn cờ, Chốt thọc sâu từng bước, rồi mới chém gọn quân Sĩ khuyết và kết liễu. Chúng ta cùng phân tích từng biến.",
+      "insight": "ĐỎ ĐI TRƯỚC  •  CHIẾU HẾT TRONG 13 NƯỚC",
+      "fen": "3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w",
       "moves": [],
-      "pause": 2.0,
-      "spotlight": "g2"
+      "pause": 2.1,
+      "spotlight": "e2"
     },
     {
       "label": "NƯỚC ĐẦU",
-      "headline": "1. Chốt 3 bình 4 — ăn Sĩ!",
-      "narration": "Đòn phá cửa ngay lập tức: Đỏ đi Chốt 3 bình 4 chém gọn Sĩ Đen tại cột 4! Khuyết đi Sĩ còn lại duy nhất, Cửu cung Đen trống trải. Đây chính là nước duy nhất đưa đến chiếu hết nhanh nhất, chỉ trong sáu nước Đỏ.",
-      "insight": "CHỐT 3 BÌNH 4  •  CHÉM GỌN SĨ",
-      "fen": "2b2k3/9/4baP2/9/9/N8/9/4K4/9/9 w",
+      "headline": "1. Chốt 5 bình 6",
+      "narration": "Nước mở đầu chuẩn xác: Đỏ đi Chốt 5 bình 6 ép Đen phải lựa chọn. Đen buộc phải đáp Tượng 3 thoái 5 để giữ thế thủ lâu nhất — mọi nước khác đều thua nhanh hơn hẳn. Đòn bình Chốt mở đường cho Chốt tiến sâu và Mã lên ngựa.",
+      "insight": "CHỐT 5 BÌNH 6  •  ÉP TƯỢNG PHẢI THOÁI",
+      "fen": "3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w",
       "moves": [
-        "g2f2"
+        "e2d2"
       ],
-      "pause": 1.5,
-      "spotlight": "f2"
+      "pause": 1.6,
+      "spotlight": "d2"
     },
     {
       "label": "BIẾN CHÍNH",
-      "headline": "Mã 9 tiến 8 — Mã 8 tiến 7",
-      "narration": "Đen đi Tượng 3 tiến 1 rút về phòng thủ. Đỏ lập tức điều Mã 9 tiến 8 rồi Mã 8 tiến 7, đưa quân Mã áp sát Cửu cung, sẵn sàng hợp vây. Tướng Đen bị dồn ép phải đi Tướng 6 bình 5, mỗi bước đều nằm trong toan tính của Đỏ.",
-      "insight": "MÃ ÁP SÁT  •  DỒN TƯỚNG ĐEN",
-      "fen": "2b2k3/9/4bP3/9/9/N8/9/4K4/9/9 b",
+      "headline": "Mã điều động — Chốt chém Tượng",
+      "narration": "Đen thoái Tượng 3 thoái 5. Đỏ phóng Mã 8 tiến 6, Mã 6 tiến 5 rồi Mã 5 tiến 3, điều động trường kỳ vào vị trí tấn công. Đen đưa Tượng 1 tiến 3 rồi thoái 1, Tướng 5 thoái 1 tránh né. Đến nước thứ chín, Đỏ đi Chốt 6 bình 5 chém gọn Tượng Đen ở cột 5!",
+      "insight": "MÃ ĐIỀU ĐỘNG  •  CHỐT CHÉM TƯỢNG",
+      "fen": "3a5/4k4/b2P5/9/2b6/9/1N7/9/9/5K3 b",
       "moves": [
-        "c0a2",
-        "a5b3",
-        "f0e0",
-        "b3c1"
+        "c4e2",
+        "b6d5",
+        "a2c4",
+        "d5e3",
+        "c4a2",
+        "e3g2",
+        "e1e0",
+        "d2e2"
       ],
-      "pause": 1.7,
+      "pause": 2.0,
       "horse_leg": [
-        "a5",
-        "b3"
+        "b6",
+        "d5"
       ]
     },
     {
       "label": "BIẾN CHÍNH",
-      "headline": "Chốt 4 bình 5 — Mã 7 thoái 8 chiếu hết",
-      "narration": "Đòn kết liễu phối hợp tuyệt đẹp: Tướng Đen chạy sang lộ 4, Đỏ liền Chốt 4 bình 5 chém nốt Tượng Đen ở cột 5, rồi Chốt 5 tiến 1 dồn ép Tướng Đen. Tướng Đen nhích lên từng bước, thì Mã 7 thoái 8 chiếu hết gọn gàng ở nước thứ mười một. Chốt cao đâm thẳng, Mã khóa cung — Tướng Đen không còn đường thoát.",
-      "insight": "PHỐI HỢP CHỐT MÃ  •  CHIẾU HẾT",
-      "fen": "4k4/2N6/b3bP3/9/9/9/9/4K4/9/9 b",
+      "headline": "Chốt tiến sâu — Mã chém Sĩ",
+      "narration": "Sau khi mất Tượng, Đen đưa Tượng 1 tiến 3 rồi Sĩ 4 tiến 5 bịt lối. Đỏ kiên nhẫn đưa Chốt 5 bình 6 rồi Chốt 6 tiến 1, mỗi bước dồn ép không ngừng. Mã Đỏ vòng vo Mã 3 tiến 1, Mã 1 thoái 2, ép Sĩ Đen nhảy lên nhảy xuống. Nước thứ mười chín, Mã 2 tiến 4 chém gọn Sĩ khuyết duy nhất!",
+      "insight": "CHỐT THỌC SÂU  •  MÃ CHÉM GỌN SĨ",
+      "fen": "3ak4/9/b3P1N2/9/9/9/9/9/9/5K3 b",
       "moves": [
-        "e0d0",
-        "f2e2",
-        "d0d1",
-        "e2e1",
-        "d1d2",
-        "c1b3"
+        "a2c4",
+        "e2d2",
+        "d0e1",
+        "d2d1",
+        "e1f2",
+        "g2i1",
+        "f2e1",
+        "i1h3",
+        "e1f2",
+        "h3f2"
       ],
-      "pause": 1.8,
-      "spotlight": "e2"
+      "pause": 2.1,
+      "spotlight": "f2"
+    },
+    {
+      "label": "BIẾN CHÍNH",
+      "headline": "Tướng khóa cung — Mã chiếu hết",
+      "narration": "Mất Sĩ, Cửu cung Đen trống trải. Tướng Đen bình 6 tránh né, Đỏ đưa Chốt 6 bình 5 ép Tượng thoái 5, rồi Tướng 4 bình 5 chiếm trung lộ khóa chặt Cửu cung. Tượng Đen đành tiến 7, thì Mã 4 tiến 2 chiếu hết! Tròn mười ba nước đi, Đỏ bắt sống Tướng Đen.",
+      "insight": "TƯỚNG KHÓA CUNG  •  MÃ CHIẾU HẾT",
+      "fen": "4k4/3P5/5N3/9/2b6/9/9/9/9/5K3 b",
+      "moves": [
+        "e0f0",
+        "d1e1",
+        "c4e2",
+        "f9e9",
+        "e2g4",
+        "f2h1"
+      ],
+      "pause": 1.9,
+      "spotlight": "h1"
     },
     {
       "label": "ĐEN SAI LẦM",
-      "headline": "Tượng 5 tiến 3 — thua nhanh hơn",
-      "narration": "Quay lại sau khi Đỏ ăn Sĩ. Nếu Đen không rút Tượng 3 tiến 1 mà lại đi Tượng 5 tiến 3, tưởng chừng đuổi Chốt, thì Mã Đỏ nhảy Mã 9 tiến 7 chém ngay Tượng ấy! Đen cố cứu vãn bằng Tượng 3 tiến 5 và Tượng 5 tiến 7, nhưng Chốt 4 tiến 1 chiếu hết chỉ sau bốn nước Đỏ. Để lộ Tượng khiến Đen thua nhanh gấp rưỡi.",
-      "insight": "LỘ TƯỢNG  •  THUA NHANH",
-      "fen": "2b2k3/9/4bP3/9/9/N8/9/4K4/9/9 b",
+      "headline": "Thoái nhầm Tượng — thua nhanh gấp đôi",
+      "narration": "Quay lại sau nước Chốt 5 bình 6. Nếu Đen thoái nhầm Tượng 1 thoái 3 thay vì Tượng 3 thoái 5, Tượng còn lại lập tức bị Mã 8 tiến 7 chém gọn! Đen cố chống đỡ bằng Tượng 3 tiến 5, nhưng Chốt 6 bình 5 ăn thêm Tượng, rồi Chốt 6 bình 5 ăn nốt Sĩ — Đen bí nước chỉ sau tám nước Đỏ. Thoái sai một Tượng, trả giá cả ván cờ.",
+      "insight": "THOÁI NHẦM TƯỢNG  •  BÍ NƯỚC SAU 8 NƯỚC",
+      "fen": "3a5/4k4/b2P5/9/2b6/9/1N7/9/9/5K3 b",
       "moves": [
-        "e2c4",
-        "a5c4",
+        "a2c0",
+        "b6c4",
         "c0e2",
-        "c4d2",
-        "e2g4",
-        "f2f1"
+        "f9e9",
+        "e1f1",
+        "d2e2",
+        "f1f0",
+        "e2d2",
+        "d0e1",
+        "d2d1",
+        "f0e0",
+        "d1e1",
+        "e0f0",
+        "c4d6"
       ],
-      "pause": 1.5,
+      "pause": 1.8,
       "spotlight": "c4"
     },
     {
       "label": "CHỐT BIẾN",
-      "headline": "6 nước — Chốt phá Sĩ, Mã khóa cung",
-      "narration": "Tổng kết bài Mã Chốt cao thắng khuyết một Sĩ: Chốt cao bình 4 ăn ngay Sĩ khuyết, Mã tiến lên khóa cung, Chốt thọc sâu phối hợp chiếu hết trong sáu nước. Nếu Đen khinh suất để lộ Tượng, thua càng nhanh. Hết tập bốn.",
-      "insight": "MÃ CHỐT CAO  •  6 NƯỚC CHIẾU HẾT",
-      "fen": "2b2k3/9/4baP2/9/9/N8/9/4K4/9/9 w",
+      "headline": "13 nước — Mã Chốt phá thế khuyết Sĩ",
+      "narration": "Tổng kết bài Mã Chốt cao thắng khuyết một Sĩ: Chốt bình 6 ép Tượng, Mã điều động ba nước dồn ép, Chốt thọc sâu chém Tượng rồi Mã chém Sĩ khuyết, cuối cùng Tướng khóa cung và Mã chiếu hết trong mười ba nước. Nếu Đen thoái nhầm Tượng, thua nhanh gấp đôi. Hết tập bốn.",
+      "insight": "MÃ CHỐT CAO  •  13 NƯỚC CHIẾU HẾT",
+      "fen": "3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w",
       "moves": [],
-      "pause": 2.1
+      "pause": 2.2
     }
   ]
 }

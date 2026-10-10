@@ -228,14 +228,19 @@ def from_fen(fen):
     return tuple(b)
 
 
+class MateSearchAborted(Exception):
+    """Raised internally when the node budget is exhausted."""
+
+
 class MateSolver:
     """Memoised search: win_min[b] = smallest k proven winning, lose_max[b] = largest k proven not winning."""
 
-    def __init__(self):
+    def __init__(self, node_cap=None):
         self.win_min = {}
         self.lose_max = {}
         self.dtm_memo = {}
         self.nodes = 0
+        self.node_cap = node_cap
 
     def red_moves_ordered(self, b):
         moves = legal_moves(b, True)
@@ -257,6 +262,8 @@ class MateSolver:
         if b in self.lose_max and k <= self.lose_max[b]:
             return False
         self.nodes += 1
+        if self.node_cap is not None and self.nodes > self.node_cap:
+            raise MateSearchAborted()
         for s, d, nb in self.red_moves_ordered(b):
             replies = legal_moves(nb, False)
             if not replies:
@@ -284,10 +291,13 @@ class MateSolver:
             return self.dtm_memo[key]
         if red_to_move:
             result = None
-            for k in range(1, cap + 1):
-                if self.mates_within(b, k):
-                    result = k
-                    break
+            try:
+                for k in range(1, cap + 1):
+                    if self.mates_within(b, k):
+                        result = k
+                        break
+            except MateSearchAborted:
+                result = None
         else:
             replies = legal_moves(b, False)
             result = 0

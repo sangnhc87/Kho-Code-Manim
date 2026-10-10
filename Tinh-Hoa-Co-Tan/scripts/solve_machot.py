@@ -1,39 +1,60 @@
 #!/usr/bin/env python3
 """Exact verification for episodes 004-006: Knight + high Pawn vs (K + defenders).
 
-Uses the memoised AND-OR mate search in scripts/mate_search.py to prove, for each
-study, that Red forces a win (checkmate, or Xiangqi stalemate / "bi nuoc" which is
-also a loss for the side to move) within a fixed number of Red moves, regardless of
-every Black reply. Repetition and the 60-move rule are ignored, as in tablebases.
+Each study is proven by an exhaustive AND-OR mate search (scripts/mate_search.c,
+compiled on demand). For every Black reply the search proves Red forces a win in
+exactly the stated number of Red moves (checkmate, or Xiangqi stalemate / "bi nuoc",
+which is also a loss for the side to move). Repetition and the 60-move rule are
+ignored, as in tablebases.
 
-    tap-0004: K+N+P vs K + 1 advisor  + 2 elephants  -> mate in 6 Red moves
-    tap-0005: K+N+P vs K + 2 advisors + 1 elephant   -> stalemate in 6 Red moves
-    tap-0006: K+N+P vs K + 2 advisors + 2 elephants  -> mate in 5 Red moves
+    tap-0004: K+N+P vs K + 1 advisor  + 2 elephants  -> mate in 13 Red moves
+    tap-0005: K+N+P vs K + 2 advisors + 1 elephant   -> stalemate in 13 Red moves
+    tap-0006: K+N+P vs K + 2 advisors + 2 elephants  -> mate in 13 Red moves
 """
+import shutil
+import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'scripts'))
-sys.path.insert(0, str(ROOT))
-
-from mate_search import MateSolver, from_fen  # noqa: E402
+C_SRC = ROOT / 'scripts' / 'mate_search.c'
 
 STUDIES = {
-    'tap-0004': ('2b2k3/9/4baP2/9/9/N8/9/4K4/9/9 w', 6),
-    'tap-0005': ('3a1a3/9/b1P1k4/9/9/3N5/9/5K3/9/9 w', 6),
-    'tap-0006': ('3a5/4a4/3kb4/5P3/2b6/9/9/4NK3/9/9 w', 5),
+    'tap-0004': ('3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w', 13),
+    'tap-0005': ('4P1b2/4ak3/5a3/9/7N1/9/9/5K3/9/9 w', 13),
+    'tap-0006': ('3a1ab2/3P5/3k4b/9/9/2N6/9/9/9/5K3 w', 13),
 }
+
+NODE_CAP = 20000000
+
+
+def build_binary():
+    if not C_SRC.is_file():
+        raise SystemExit(f'Missing solver source: {C_SRC}')
+    cc = shutil.which('cc') or shutil.which('clang') or shutil.which('gcc')
+    if not cc:
+        raise SystemExit('No C compiler found (cc/clang/gcc).')
+    tmp = Path(tempfile.mkdtemp(prefix='matesearch-'))
+    binary = tmp / 'matesearch'
+    subprocess.run([cc, '-O2', '-o', str(binary), str(C_SRC)], check=True)
+    return binary
 
 
 def main():
+    binary = build_binary()
     ok = True
     for ep, (fen, expected) in STUDIES.items():
-        b = from_fen(fen)
-        S = MateSolver()
-        d = S.dtm(b, True, cap=expected + 2)
+        proc = subprocess.run(
+            [str(binary), 'dtm', fen, str(expected + 2), str(NODE_CAP)],
+            capture_output=True, text=True,
+        )
+        d = None
+        for line in proc.stdout.splitlines():
+            if line.startswith('DTM '):
+                d = int(line.split()[1])
         status = 'OK' if d == expected else 'FAIL'
-        print(f'{ep}: DTM={d} expected={expected} nodes={S.nodes} -> {status}')
+        print(f'{ep}: DTM={d} expected={expected} -> {status}')
         ok = ok and d == expected
     sys.exit(0 if ok else 1)
 
