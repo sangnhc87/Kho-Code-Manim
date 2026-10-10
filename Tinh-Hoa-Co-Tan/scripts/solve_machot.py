@@ -7,7 +7,7 @@ exactly the stated number of Red moves (checkmate, or Xiangqi stalemate / "bi nu
 which is also a loss for the side to move). Repetition and the 60-move rule are
 ignored, as in tablebases.
 
-    tap-0004: K+N+P vs K + 1 advisor  + 2 elephants  -> mate in 13 Red moves
+    tap-0004: K+N+P vs K + 1 advisor  + 2 elephants  -> stalemate in 14 Red moves
     tap-0005: K+N+P vs K + 2 advisors + 1 elephant   -> stalemate in 13 Red moves
     tap-0006: K+N+P vs K + 2 advisors + 2 elephants  -> mate in 13 Red moves
 """
@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 C_SRC = ROOT / 'scripts' / 'mate_search.c'
 
 STUDIES = {
-    'tap-0004': ('3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w', 13),
+    'tap-0004': ('6b2/3ka4/5P3/9/2b6/9/1N7/9/9/4K4 w', 14),
     'tap-0005': ('4P1b2/4ak3/5a3/9/7N1/9/9/5K3/9/9 w', 13),
     'tap-0006': ('3a1ab2/3P5/3k4b/9/9/2N6/9/9/9/5K3 w', 13),
 }

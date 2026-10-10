@@ -133,16 +133,27 @@ def read_episode(path):
     return data
 
 
+def _reject_side_in_check(b, where='fen'):
+    # In a legal position the side NOT to move must not be in check: if it were,
+    # the turn would belong to that side instead. (The side to move may be in
+    # check, which is the normal "respond to check" state.)
+    opponent = 'black' if b.turn == 'red' else 'red'
+    if b.in_check(opponent):
+        raise ValueError(f'Illegal {where}: {opponent} general is in check while it is the opponent of the side to move')
+
+
 def validate_episode(data):
     for key in ('id','title','fen','beats'):
         if not data.get(key): raise ValueError(f'Missing episode field {key}')
     beats=data['beats']
     if not isinstance(beats,list) or len(beats)<2: raise ValueError('Need at least 2 beats')
     b=Board.fen(data['fen'])
+    _reject_side_in_check(b, 'initial fen')
     for idx,beat in enumerate(beats,1):
         # Chapters can return to the original position or start any legal branch.
         if 'fen' in beat:
             b=Board.fen(beat['fen'])
+            _reject_side_in_check(b, f'beat {idx} fen')
         for key in ('label','headline','narration','insight'):
             if not beat.get(key): raise ValueError(f'Beat {idx}: missing {key}')
         for move in beat.get('moves',[]):

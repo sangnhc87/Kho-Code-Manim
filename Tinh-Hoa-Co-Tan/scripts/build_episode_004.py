@@ -2,15 +2,16 @@
 """Build episodes/tap-0004.json: Mã Chốt Cao Thắng Khuyết 1 Sĩ (deep study).
 
 Position proven by exhaustive AND-OR mate search (scripts/solve_machot.py):
-Red forces mate in 13 moves. The knight and pawn maneuver for 10 moves before
-capturing the sole defender advisor, then mate. First move e2d2 is the key.
+Red forces a Xiangqi stalemate win (bi nuoc) in 14 moves. The pawn advances
+step by step; knight and pawn capture both elephants and the lone advisor
+before stalemating the General.
 """
 import json
 from pathlib import Path
 from src.core import Board
 
 ROOT = Path(__file__).resolve().parents[1]
-INITIAL = '3a5/4k4/b3P4/9/2b6/9/1N7/9/9/5K3 w'
+INITIAL = '6b2/3ka4/5P3/9/2b6/9/1N7/9/9/4K4 w'
 
 
 def fen_board(b):
@@ -50,48 +51,53 @@ def beaten(mvs, label, headline, narration, insight, pause=1.4, **extra):
 
 
 def main():
-    # Verified by scripts/solve_machot.py (mate in 13; fastest win, defender delays maximally).
-    mainline = ['e2d2', 'c4e2', 'b6d5', 'a2c4', 'd5e3', 'c4a2', 'e3g2', 'e1e0',
-                'd2e2', 'a2c4', 'e2d2', 'd0e1', 'd2d1', 'e1f2', 'g2i1', 'f2e1',
-                'i1h3', 'e1f2', 'h3f2', 'e0f0', 'd1e1', 'c4e2', 'f9e9', 'e2g4', 'f2h1']
-    blunder = ['a2c0', 'b6c4', 'c0e2', 'f9e9', 'e1f1', 'd2e2', 'f1f0', 'e2d2',
-               'd0e1', 'd2d1', 'f0e0', 'd1e1', 'e0f0', 'c4d6']
+    # Verified by scripts/solve_machot.py (stalemate win in 14; fastest win).
+    mainline = ['f2f1', 'c4e2', 'b6d5', 'e1d0', 'd5c3', 'd1d2', 'c3e2', 'd2d1',
+                'e2g3', 'd1d2', 'f1f0', 'd0e1', 'f0g0', 'e1f2', 'g3f1', 'd2d1',
+                'g0f0', 'f2e1', 'f0e0', 'd1d2', 'f1h2', 'e1f2', 'h2g0', 'd2d1',
+                'g0f2', 'd1d2', 'e0d0']
+    blunder = ['g0i2', 'f1e1', 'd1d0', 'b6c4', 'i2g4', 'c4e3', 'g4i2', 'e3c2']
 
     beats = [
         beaten(
-            ([], []), 'THẾ CỜ', 'Đỏ đi trước — khuyết 1 Sĩ, thắng sau 13 nước',
-            'Đỏ còn Tướng, Mã và một Chốt cao đã vượt sông. Đen còn Tướng, một Sĩ và hai Tượng — thế "khuyết một Sĩ". Nghe tưởng đơn giản, nhưng đây là bài cờ tàn rất sâu: Đỏ phải đi trọn mười ba nước chính xác mới bắt chết Tướng Đen. Mã Đỏ phiêu lưu khắp bàn cờ, Chốt thọc sâu từng bước, rồi mới chém gọn quân Sĩ khuyết và kết liễu. Chúng ta cùng phân tích từng biến.',
-            'ĐỎ ĐI TRƯỚC  •  CHIẾU HẾT TRONG 13 NƯỚC', 2.1, spotlight='e2'
+            ([], []), 'THẾ CỜ', 'Đỏ đi trước — khuyết 1 Sĩ, bí nước sau 14 nước',
+            'Đỏ còn Tướng, Mã và một Chốt cao đã lọt sâu vào Cửu cung. Đen còn Tướng, một Sĩ và hai Tượng — thế "khuyết một Sĩ". Thiếu một Sĩ, phòng tuyến Đen không còn kín kẽ. Đây là bài cờ tàn rất sâu: Đỏ phải đi trọn mười bốn nước chính xác, lần lượt chém đôi Tượng rồi chém nốt quân Sĩ khuyết, cuối cùng dồn Tướng Đen vào thế bí nước. Chúng ta cùng phân tích từng biến.',
+            'ĐỎ ĐI TRƯỚC  •  BÍ NƯỚC TRONG 14 NƯỚC', 2.1, spotlight='f2'
         ),
         beaten(
-            ([], mainline[:1]), 'NƯỚC ĐẦU', '1. Chốt 5 bình 6',
-            'Nước mở đầu chuẩn xác: Đỏ đi Chốt 5 bình 6 ép Đen phải lựa chọn. Đen buộc phải đáp Tượng 3 thoái 5 để giữ thế thủ lâu nhất — mọi nước khác đều thua nhanh hơn hẳn. Đòn bình Chốt mở đường cho Chốt tiến sâu và Mã lên ngựa.',
-            'CHỐT 5 BÌNH 6  •  ÉP TƯỢNG PHẢI THOÁI', 1.6, spotlight='d2'
+            ([], mainline[:1]), 'NƯỚC ĐẦU', '1. Chốt 4 tiến 1',
+            'Nước mở đầu chuẩn xác: Đỏ đi Chốt 4 tiến 1 đâm thẳng xuống đáy Cửu cung, ép Đen phải lựa chọn. Đen buộc phải đáp Tượng 3 thoái 5 để giữ thế thủ lâu nhất — mọi nước khác đều thua nhanh hơn hẳn. Chốt thọc sâu mở đường cho Mã lên ngựa hợp vây.',
+            'CHỐT 4 TIẾN 1  •  ĐÂM THẲNG CỬU CUNG', 1.6, spotlight='f1'
         ),
         beaten(
-            (mainline[:1], mainline[1:9]), 'BIẾN CHÍNH', 'Mã điều động — Chốt chém Tượng',
-            'Đen thoái Tượng 3 thoái 5. Đỏ phóng Mã 8 tiến 6, Mã 6 tiến 5 rồi Mã 5 tiến 3, điều động trường kỳ vào vị trí tấn công. Đen đưa Tượng 1 tiến 3 rồi thoái 1, Tướng 5 thoái 1 tránh né. Đến nước thứ chín, Đỏ đi Chốt 6 bình 5 chém gọn Tượng Đen ở cột 5!',
-            'MÃ ĐIỀU ĐỘNG  •  CHỐT CHÉM TƯỢNG', 2.0, horse_leg=['b6', 'd5']
+            (mainline[:1], mainline[1:7]), 'BIẾN CHÍNH', 'Mã 8 tiến 6 — Mã 7 tiến 5 ăn Tượng',
+            'Đen thoái Tượng 3 thoái 5. Đỏ phóng Mã 8 tiến 6 dồn ép, Đen đưa Sĩ 5 thoái 4 che cung. Đỏ tiếp Mã 6 tiến 7, buộc Tướng Đen tiến 1, thì Mã 7 tiến 5 chém gọn Tượng Đen ở cột 5! Quân Mã vờn quanh rồi ra đòn chớp nhoáng.',
+            'MÃ VỜN QUANH  •  CHÉM TƯỢNG', 2.0, horse_leg=['b6', 'd5']
         ),
         beaten(
-            (mainline[:9], mainline[9:19]), 'BIẾN CHÍNH', 'Chốt tiến sâu — Mã chém Sĩ',
-            'Sau khi mất Tượng, Đen đưa Tượng 1 tiến 3 rồi Sĩ 4 tiến 5 bịt lối. Đỏ kiên nhẫn đưa Chốt 5 bình 6 rồi Chốt 6 tiến 1, mỗi bước dồn ép không ngừng. Mã Đỏ vòng vo Mã 3 tiến 1, Mã 1 thoái 2, ép Sĩ Đen nhảy lên nhảy xuống. Nước thứ mười chín, Mã 2 tiến 4 chém gọn Sĩ khuyết duy nhất!',
-            'CHỐT THỌC SÂU  •  MÃ CHÉM GỌN SĨ', 2.1, spotlight='f2'
+            (mainline[:7], mainline[7:13]), 'BIẾN CHÍNH', 'Chốt tiến sâu — Chốt 4 bình 3 ăn Tượng',
+            'Tướng Đen thoái 1, Đỏ đưa Mã 5 thoái 3 chuyển cánh. Tướng Đen lại tiến 1. Đỏ kiên nhẫn Chốt 4 tiến 1 thêm một bước, ép Sĩ Đen tiến lên che chắn, thì Chốt 4 bình 3 chém gọn Tượng thứ hai tại cột 3! Đôi Tượng của Đen giờ đã bị nhổ sạch.',
+            'CHỐT THỌC SÂU  •  CHÉM NỐT TƯỢNG', 2.0, spotlight='g0'
         ),
         beaten(
-            (mainline[:19], mainline[19:]), 'BIẾN CHÍNH', 'Tướng khóa cung — Mã chiếu hết',
-            'Mất Sĩ, Cửu cung Đen trống trải. Tướng Đen bình 6 tránh né, Đỏ đưa Chốt 6 bình 5 ép Tượng thoái 5, rồi Tướng 4 bình 5 chiếm trung lộ khóa chặt Cửu cung. Tượng Đen đành tiến 7, thì Mã 4 tiến 2 chiếu hết! Tròn mười ba nước đi, Đỏ bắt sống Tướng Đen.',
-            'TƯỚNG KHÓA CUNG  •  MÃ CHIẾU HẾT', 1.9, spotlight='h1'
+            (mainline[:13], mainline[13:25]), 'BIẾN CHÍNH', 'Chốt Mã phối hợp — Mã 3 thoái 4 ăn Sĩ',
+            'Đen đưa Sĩ 5 tiến 6 cố thủ. Đỏ đưa Mã 3 tiến 4, rồi Chốt 3 bình 4, Chốt 4 bình 5 lần lượt dồn ép, buộc Sĩ Đen nhảy lên nhảy xuống theo ý Đỏ. Mã vòng vèo Mã 4 thoái 2, Mã 2 tiến 3, đến nước hai mươi lăm, Mã 3 thoái 4 chém gọn quân Sĩ khuyết cuối cùng!',
+            'CHỐT MÃ PHỐI HỢP  •  CHÉM GỌN SĨ', 2.1, spotlight='f2'
         ),
         beaten(
-            (mainline[:1], blunder), 'ĐEN SAI LẦM', 'Thoái nhầm Tượng — thua nhanh gấp đôi',
-            'Quay lại sau nước Chốt 5 bình 6. Nếu Đen thoái nhầm Tượng 1 thoái 3 thay vì Tượng 3 thoái 5, Tượng còn lại lập tức bị Mã 8 tiến 7 chém gọn! Đen cố chống đỡ bằng Tượng 3 tiến 5, nhưng Chốt 6 bình 5 ăn thêm Tượng, rồi Chốt 6 bình 5 ăn nốt Sĩ — Đen bí nước chỉ sau tám nước Đỏ. Thoái sai một Tượng, trả giá cả ván cờ.',
-            'THOÁI NHẦM TƯỢNG  •  BÍ NƯỚC SAU 8 NƯỚC', 1.8, spotlight='c4'
+            (mainline[:25], mainline[25:]), 'BIẾN CHÍNH', 'Chốt 5 bình 6 — bí nước',
+            'Mất hết Sĩ Tượng, Tướng Đen trơ trọi giữa Cửu cung. Tướng Đen tiến 1, Đỏ đi Chốt 5 bình 6 khóa nốt lối thoát — Tướng Đen không còn nước nào để đi, bí nước, theo luật cờ tướng Đen thua cuộc. Tròn mười bốn nước Đỏ, Mã Chốt cao nhổ sạch phòng tuyến và bắt chết Tướng Đen.',
+            'CHỐT 5 BÌNH 6  •  BÍ NƯỚC', 1.9, spotlight='d0'
         ),
         beaten(
-            ([], []), 'CHỐT BIẾN', '13 nước — Mã Chốt phá thế khuyết Sĩ',
-            'Tổng kết bài Mã Chốt cao thắng khuyết một Sĩ: Chốt bình 6 ép Tượng, Mã điều động ba nước dồn ép, Chốt thọc sâu chém Tượng rồi Mã chém Sĩ khuyết, cuối cùng Tướng khóa cung và Mã chiếu hết trong mười ba nước. Nếu Đen thoái nhầm Tượng, thua nhanh gấp đôi. Hết tập bốn.',
-            'MÃ CHỐT CAO  •  13 NƯỚC CHIẾU HẾT', 2.2
+            (mainline[:1], blunder), 'ĐEN SAI LẦM', 'Tượng chạy biên — lộ Sĩ, thua nhanh',
+            'Quay lại sau nước Chốt 4 tiến 1. Nếu Đen không thoái Tượng 3 thoái 5 mà lại đưa Tượng 7 tiến 9 chạy ra biên, quân Sĩ lập tức bị lộ. Chốt Đỏ bình 5 chém Sĩ ngay, Mã 8 tiến 7 chém nốt Tượng, rồi Mã 5 tiến 7 chiếu hết chỉ sau năm nước Đỏ! Tượng chạy biên để lộ Sĩ là sai lầm chí mạng.',
+            'TƯỢNG CHẠY BIÊN  •  CHIẾU HẾT SAU 5 NƯỚC', 1.8, spotlight='e1'
+        ),
+        beaten(
+            ([], []), 'CHỐT BIẾN', '14 nước — Mã Chốt phá thế khuyết Sĩ',
+            'Tổng kết bài Mã Chốt cao thắng khuyết một Sĩ: Chốt tiến sâu từng bước, Mã vờn quanh chém đôi Tượng, rồi Chốt Mã phối hợp chém nốt Sĩ khuyết, cuối cùng dồn Tướng Đen bí nước trong mười bốn nước. Tượng Đen chạy biên để lộ Sĩ là thua nhanh. Hết tập bốn.',
+            'MÃ CHỐT CAO  •  14 NƯỚC BÍ NƯỚC', 2.3
         )
     ]
 
@@ -103,7 +109,7 @@ def main():
         'goal_text': 'MỤC TIÊU: THẮNG CỜ',
         'fen': INITIAL,
         'analysis_status': 'andor_mate_search',
-        'verification_note': 'Exhaustive AND-OR mate search (repetition and 60-move rule ignored): Red forces mate in 13 moves against all Black replies; fastest win, defender delays maximally. Knight and pawn maneuver for 10 moves before capturing the sole defender advisor, then mate.',
+        'verification_note': 'Exhaustive AND-OR mate search (repetition and 60-move rule ignored): Red forces a Xiangqi stalemate win (bi nuoc, a loss for the side to move) in 14 moves against all Black replies; fastest win. Knight and pawn capture both elephants and the sole advisor before stalemating the General.',
         'beats': beats
     }
 
