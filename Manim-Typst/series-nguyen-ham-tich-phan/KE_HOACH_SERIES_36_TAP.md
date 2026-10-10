@@ -132,8 +132,7 @@ Thứ tự chạy workflow cho mỗi tập: `preview / voice=off` (duyệt hình
 
 | Trạng thái | Tập |
 | :--- | :--- |
-| ✅ Đã xuất bản | INT01 |
-| 🎬 Đã dựng đầy đủ, đang xuất bản | INT02 |
+| ✅ Đã xuất bản | INT01 (youtu.be/MLP1NJgcDmQ) · INT02 (youtu.be/Q27qaS8mqqE) |
 | ⚪ Kế hoạch | INT03 – INT36 |
 
 ### Khối dùng chung đã có (`common/blocks.py`)
