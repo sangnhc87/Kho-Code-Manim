@@ -40,6 +40,9 @@ def vn(v, nd=2):
     return s.replace('.', ',')
 
 
+BAR_WIDTH = 1.9  # Manim stroke width of a fraction bar at scale 1
+
+
 class Formula:
     """Loads Typst-compiled SVGs at a fixed physical scale (consistent sizes)."""
 
@@ -50,8 +53,15 @@ class Formula:
         path = self.dir / f'{key}.svg'
         if not path.exists():
             raise FileNotFoundError(f'Typst asset not compiled: {path} (run scripts/build_typst.py)')
-        m = SVGMobject(str(path), height=None, width=None, stroke_width=0)
+        m = SVGMobject(str(path), height=None, width=None)
         m.scale(MATH_SCALE * scale)
+        # Typst draws fraction bars / radical overlines as stroked paths: keep
+        # them (scaled to the glyph size); glyphs themselves are fill only.
+        for part in m.family_members_with_points():
+            if part.get_fill_opacity() < .01 and part.get_stroke_width() > 0:
+                part.set_stroke(width=BAR_WIDTH * scale)
+            else:
+                part.set_stroke(width=0)
         if max_w is not None and m.width > max_w:
             m.scale_to_fit_width(max_w)
         return m

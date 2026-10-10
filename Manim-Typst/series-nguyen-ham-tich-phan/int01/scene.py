@@ -68,25 +68,6 @@ class INT01(LessonScene):
                  x_ticks=(-2, -1, 1, 2), y_ticks=(-2, 2, 4, 6))
         return a
 
-    def heading(self, text, color=GOLD):
-        return tx(text, 22, color, bold=True)
-
-    def write_board(self, *mobs, frac=0.08, gap=0.32):
-        for m in mobs:
-            self.board(m, gap=gap)
-        self.play(LaggedStart(*[Write(m) if m.__class__.__name__ == 'SVGMobject' else FadeIn(m, shift=.1 * UP)
-                                for m in mobs], lag_ratio=.35), run_time=self.rt(frac))
-
-    def wait_until(self, frac, start):
-        """Hold until ``frac`` of the beat has elapsed (keeps visuals on the narration)."""
-        target = start + frac * self.T
-        now = self.renderer.time
-        if target - now > 1.5 / 30:
-            self.wait(target - now)
-
-    def now(self):
-        return self.renderer.time
-
     # ================================================================ MỞ ĐẦU
     def beat_h1(self, T):
         t0 = self.now()
@@ -143,33 +124,14 @@ class INT01(LessonScene):
         self.play(Circumscribe(name, color=CORAL), run_time=self.rt(.1))
         self.wait_until(.3, t0)
         self.clear_stage(.05)
-        frame = card(10.6, 4.4, CYAN, PANEL, radius=.3, stroke_width=2.4).move_to([0, .1, 0])
-        tag = badge('TẬP 01 / 36', CYAN, 20).move_to(frame.get_top() + DOWN * .55)
-        title = tx('ĐI NGƯỢC ĐẠO HÀM', 58, WHITE, bold=True).move_to([0, .55, 0])
-        sub = tx('Bản chất của nguyên hàm', 32, GOLD).next_to(title, DOWN, buff=.28)
-        series = tx('Series Nguyên hàm – Tích phân – Ứng dụng chuyên sâu', 20, SOFT).next_to(sub, DOWN, buff=.42)
-        self.play(FadeIn(frame), FadeIn(tag, shift=DOWN * .2), run_time=self.rt(.08))
-        self.play(Write(title), run_time=self.rt(.14))
-        self.play(FadeIn(sub, shift=UP * .15), FadeIn(series), run_time=self.rt(.1))
+        self.title_card()
 
     def beat_h4(self, T):
         t0 = self.now()
         self.clear_stage(.04)
-        head = tx('MỤC TIÊU CỦA BÀI', 26, GOLD, bold=True).move_to([0, 2.55, 0])
-        goals = [('1', 'Nguyên hàm là gì?', 'Hiểu bằng hình ảnh, không học thuộc', CYAN),
-                 ('2', 'Vì sao có hằng số C?', 'Họ đường cong và các tiếp tuyến song song', GREEN),
-                 ('3', 'Chọn đúng một nguyên hàm', 'Dùng điều kiện ban đầu · bài toán chuyển động', GOLD)]
-        cards = VGroup()
-        for i, (n, title, desc, col) in enumerate(goals):
-            c = card(4.05, 3.3, col).move_to([-4.3 + 4.3 * i, -.15, 0])
-            num = tx(n, 54, col, bold=True).move_to(c.get_top() + DOWN * .7)
-            t = para(title, 24, WHITE, width=18, bold=True, center=True).move_to(c.get_center() + DOWN * .05)
-            d = para(desc, 17, SOFT, width=24, center=True).move_to(c.get_bottom() + UP * .62)
-            cards.add(VGroup(c, num, t, d))
-        self.play(FadeIn(head), run_time=self.rt(.05))
-        for frac, cd in zip((.1, .3, .52), cards):
-            self.wait_until(frac, t0)
-            self.play(FadeIn(cd, shift=UP * .25), run_time=self.rt(.07))
+        self.goal_cards([('Nguyên hàm là gì?', 'Hiểu bằng hình ảnh, không học thuộc'),
+                         ('Vì sao có hằng số C?', 'Họ đường cong và các tiếp tuyến song song'),
+                         ('Chọn đúng một nguyên hàm', 'Dùng điều kiện ban đầu · bài toán chuyển động')], t0)
 
     # ================================================================ PHẦN 1
     def beat_c1(self, T):
@@ -234,16 +196,6 @@ class INT01(LessonScene):
         self.wait_until(.9, t0)
         self.play(*[s.animate.set_color(SOFT).set_opacity(.55) for s in field], FadeOut(lbl_l), FadeOut(lbl_r),
                   run_time=self.rt(.06))
-
-    def stage_board_tail(self):
-        """Mobjects on the right column (x > 0.3) that are not chrome."""
-        return [m for m in self.stage() if m.get_center()[0] > .3]
-
-    def clear_board(self, frac=.04):
-        tail = self.stage_board_tail()
-        if tail:
-            self.play(*[FadeOut(m) for m in tail], run_time=self.rt(frac))
-        self.board_items = []
 
     def trace_parabola(self, c, color, frac):
         a = self.ax
@@ -663,46 +615,17 @@ class INT01(LessonScene):
     def beat_x1(self, T):
         t0 = self.now()
         self.clear_stage(.05)
-        head = VGroup(badge('ĐÚNG / SAI', CORAL, 20), tx('dạng câu hỏi Phần II – đề thi tốt nghiệp THPT', 19, SOFT)) \
-            .arrange(RIGHT, buff=.3).move_to([0, 2.72, 0]).to_edge(LEFT, buff=.6)
         l1 = VGroup(tx('Cho hàm số', 24, WHITE), self.M('tf_f', 1.3)).arrange(RIGHT, buff=.25)
         l2 = tx('Gọi F là nguyên hàm của f trên ℝ thỏa mãn F(0) = 1. Xét các mệnh đề:', 24, WHITE)
-        VGroup(l1, l2).arrange(DOWN, aligned_edge=LEFT, buff=.22).next_to(head, DOWN, buff=.35).align_to(head, LEFT)
-        rows = VGroup()
-        items = (('a)', self.M('tf_a', 1.2)), ('b)', self.M('tf_b', 1.2)), ('c)', self.M('tf_c', 1.2)),
-                 ('d)', VGroup(self.M('tf_d', 1.2), tx('là một nguyên hàm của f trên ℝ', 22, WHITE))
-                  .arrange(RIGHT, buff=.2)))
-        for i, (k, body) in enumerate(items):
-            r = VGroup(tx(k, 24, GOLD, bold=True), body).arrange(RIGHT, buff=.3)
-            r.move_to([0, .55 - .7 * i, 0]).align_to(head, LEFT).shift(RIGHT * .3)
-            slot = RoundedRectangle(width=1.25, height=.5, corner_radius=.08, stroke_color=STROKE,
-                                    stroke_width=2, fill_color=PANEL_2, fill_opacity=1).move_to([5.6, r.get_y(), 0])
-            rows.add(VGroup(r, slot))
-        self.play(FadeIn(head), run_time=self.rt(.04))
-        self.play(FadeIn(l1, shift=UP * .1), run_time=self.rt(.08))
-        self.wait_until(.3, t0)
-        self.play(FadeIn(l2, shift=UP * .1), run_time=self.rt(.07))
-        self.play(LaggedStart(*[FadeIn(r, shift=RIGHT * .2) for r in rows], lag_ratio=.3), run_time=self.rt(.2))
-        self.wait_until(.78, t0)
-        pause = VGroup(VGroup(RoundedRectangle(width=.12, height=.42, corner_radius=.03, fill_color=GOLD,
-                                               fill_opacity=1, stroke_width=0),
-                              RoundedRectangle(width=.12, height=.42, corner_radius=.03, fill_color=GOLD,
-                                               fill_opacity=1, stroke_width=0)).arrange(RIGHT, buff=.1),
-                       tx('Tạm dừng video và tự làm!', 22, GOLD, bold=True)).arrange(RIGHT, buff=.2)
-        pause.move_to([0, -2.6, 0])
-        self.play(FadeIn(pause, scale=1.1), run_time=self.rt(.06))
-        self.tf_rows, self.tf_pause = rows, pause
-
-    def mark_row(self, i, ok):
-        slot = self.tf_rows[i][1]
-        b = badge('ĐÚNG' if ok else 'SAI', GREEN if ok else CORAL, 18).move_to(slot)
-        return FadeIn(b, scale=1.3)
+        items = (self.M('tf_a', 1.2), self.M('tf_b', 1.2), self.M('tf_c', 1.2),
+                 VGroup(self.M('tf_d', 1.2), tx('là một nguyên hàm của f trên ℝ', 22, WHITE)).arrange(RIGHT, buff=.2))
+        self.tf_question(t0, [l1, l2], items)
 
     def beat_x2(self, T):
         t0 = self.now()
-        self.play(FadeOut(self.tf_pause), self.mark_row(0, True), run_time=self.rt(.07))
+        self.play(FadeOut(self.tf_pause), self.tf_mark(0, True), run_time=self.rt(.07))
         self.wait_until(.22, t0)
-        self.play(self.mark_row(1, False), run_time=self.rt(.07))
+        self.play(self.tf_mark(1, False), run_time=self.rt(.07))
         why = VGroup(tx('F(0) = 0 ≠ 1', 22, CORAL, bold=True)).next_to(self.tf_rows[1][0], RIGHT, buff=.6)
         self.play(FadeIn(why), run_time=self.rt(.06))
         self.wait_until(.6, t0)
@@ -714,11 +637,11 @@ class INT01(LessonScene):
         t0 = self.now()
         c_calc = self.M('tf_c_calc', 1.05).next_to(self.tf_rows[2][0], RIGHT, buff=.8)
         self.play(Write(c_calc), run_time=self.rt(.1))
-        self.play(self.mark_row(2, True), run_time=self.rt(.06))
+        self.play(self.tf_mark(2, True), run_time=self.rt(.06))
         self.wait_until(.42, t0)
         d_calc = self.M('tf_d_calc', 1.05).move_to([3.2, -2.45, 0])
         self.play(Write(d_calc), run_time=self.rt(.1))
-        self.play(self.mark_row(3, True), run_time=self.rt(.06))
+        self.play(self.tf_mark(3, True), run_time=self.rt(.06))
         key = tx('Đáp án:  a) Đ   b) S   c) Đ   d) Đ', 22, GOLD, bold=True).move_to([0, -3.0, 0])
         self.wait_until(.85, t0)
         self.play(FadeIn(key, shift=UP * .1), run_time=self.rt(.06))
@@ -748,10 +671,7 @@ class INT01(LessonScene):
                        DashedLine(a.c2p(0, 6), a.c2p(3, 6), color=GREEN, stroke_width=2))
         self.play(Create(guide), GrowFromCenter(P), run_time=self.rt(.06))
         self.write_board(self.M('sa_s2', 1.35), frac=.06)
-        cells = VGroup(*[RoundedRectangle(width=.55, height=.68, corner_radius=.06, stroke_color=SOFT,
-                                          stroke_width=2) for _ in range(4)]).arrange(RIGHT, buff=.08)
-        digit = tx('6', 30, GREEN, bold=True).move_to(cells[0])
-        sheet = VGroup(tx('Phiếu trả lời:', 20, SOFT), VGroup(cells, digit)).arrange(RIGHT, buff=.25)
+        sheet = self.answer_sheet('6')
         self.write_board(sheet, frac=.05)
 
     def beat_x5(self, T):
@@ -784,62 +704,21 @@ class INT01(LessonScene):
     def beat_o1(self, T):
         t0 = self.now()
         self.clear_stage(.04)
-        head = tx('3 Ý CẦN NHỚ', 28, GOLD, bold=True).move_to([0, 2.65, 0])
-        self.play(FadeIn(head), run_time=self.rt(.03))
-        data = (('1', 'Đi ngược đạo hàm', 'sum1', CYAN, 'F là nguyên hàm của f khi'),
-                ('2', 'Sai khác hằng số C', 'sum2', GREEN, 'Trên một khoảng: các đồ thị tịnh tiến dọc'),
-                ('3', 'Điều kiện xác định C', 'sum3', GOLD, 'Một điểm thuộc đồ thị cho đúng một C'))
-        for i, (n, title, key, col, note) in enumerate(data):
-            c = card(4.05, 4.4, col).move_to([-4.3 + 4.3 * i, -.35, 0])
-            num = tx(n, 46, col, bold=True).move_to(c.get_top() + DOWN * .6)
-            t = tx(title, 24, WHITE, bold=True, max_w=3.7).next_to(num, DOWN, buff=.25)
-            nt = para(note, 18, SOFT, width=24, center=True).next_to(t, DOWN, buff=.3)
-            m = self.M(key, 1.05, max_w=3.6).move_to(c.get_bottom() + UP * .8)
-            self.wait_until((.04, .3, .72)[i], t0)
-            self.play(FadeIn(VGroup(c, num, t, nt), shift=UP * .2), Write(m), run_time=self.rt(.08))
+        self.summary_cards(t0, (('Đi ngược đạo hàm', 'sum1', 'F là nguyên hàm của f khi'),
+                                ('Sai khác hằng số C', 'sum2', 'Trên một khoảng: các đồ thị tịnh tiến dọc'),
+                                ('Điều kiện xác định C', 'sum3', 'Một điểm thuộc đồ thị cho đúng một C')))
 
     def beat_o2(self, T):
         t0 = self.now()
         self.clear_stage(.04)
-        head = VGroup(badge('BÀI TẬP TỰ LUYỆN', CYAN, 20)).move_to([0, 2.65, 0])
-        self.play(FadeIn(head), run_time=self.rt(.03))
-        rows = VGroup()
-        for i, (key, intro) in enumerate((('hw1', 'Tìm'), ('hw2', 'Tìm F biết'), ('hw3', 'Vật chuyển động:'))):
-            r = VGroup(tx(f'{i + 1}.', 26, CYAN, bold=True), tx(intro, 24, WHITE), self.M(key, 1.2)) \
-                .arrange(RIGHT, buff=.25)
-            if r.width > 8.6:
-                r.scale_to_fit_width(8.6)
-            r.move_to([0, 1.45 - 1.15 * i, 0]).to_edge(LEFT, buff=.8)
-            rows.add(r)
-        for frac, r in zip((.05, .2, .45), rows):
-            self.wait_until(frac, t0)
-            self.play(FadeIn(r, shift=RIGHT * .2), run_time=self.rt(.06))
-        self.wait_until(.8, t0)
-        answers = VGroup(*[self.M(k, 1.15).set_color(GREEN) for k in ('hw_ans1', 'hw_ans2', 'hw_ans3')])
-        for ans, r in zip(answers, rows):
-            ans.move_to([5.35, r.get_y(), 0])
-        lbl = tx('Đáp số', 20, GREEN, bold=True).move_to([5.35, 2.2, 0])
-        rule = Line([4.0, 2.0, 0], [4.0, -1.3, 0], color=STROKE, stroke_width=2)
-        self.play(FadeIn(lbl), FadeIn(rule), LaggedStart(*[FadeIn(a) for a in answers], lag_ratio=.3),
-                  run_time=self.rt(.1))
+        self.exercises(t0, (('Tìm', 'hw1'), ('Tìm F biết', 'hw2'), ('Vật chuyển động:', 'hw3')),
+                       ('hw_ans1', 'hw_ans2', 'hw_ans3'))
 
     def beat_o3(self, T):
         t0 = self.now()
         self.clear_stage(.04)
-        box = card(10.8, 4.7, PURPLE, PANEL, radius=.3, stroke_width=2.4).move_to([0, .6, 0])
-        tag = badge('TẬP SAU · INT02', PURPLE, 20).move_to(box.get_top() + DOWN * .55)
-        title = tx('Tính chất nguyên hàm & hàm lũy thừa', 38, WHITE, bold=True).move_to(box.get_center() + UP * .75)
-        bullets = VGroup(self.M('next1', 1.0),
-                         VGroup(badge('BẪY', CORAL, 16), self.M('next2', 1.0)).arrange(RIGHT, buff=.3)) \
-            .arrange(DOWN, buff=.3).next_to(title, DOWN, buff=.4)
-        thanks = tx('Cảm ơn các em đã theo dõi!', 28, GOLD, bold=True).move_to([0, -2.5, 0])
-        self.play(FadeIn(box), FadeIn(tag, shift=DOWN * .2), run_time=self.rt(.08))
-        self.play(Write(title), run_time=self.rt(.14))
-        self.play(FadeIn(bullets, shift=UP * .1), run_time=self.rt(.08))
-        self.wait_until(.58, t0)
-        self.play(FadeIn(thanks, shift=UP * .15), run_time=self.rt(.08))
-        self.wait_until(.88, t0)
-        self.play(*[FadeOut(m) for m in self.stage()], run_time=self.rt(.08))
+        self.next_card(t0, [self.M('next1', 1.0),
+                            VGroup(badge('BẪY', CORAL, 16), self.M('next2', 1.0)).arrange(RIGHT, buff=.3)])
 
 
 class INT01_SMOKE(INT01):

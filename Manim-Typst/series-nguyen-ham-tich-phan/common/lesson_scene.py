@@ -14,6 +14,7 @@ from manim import (DOWN, LEFT, RIGHT, UP, FadeOut, Line, Rectangle,
                    Scene, VGroup, config)
 
 from common import episode
+from common.blocks import Blocks
 from common.kit import Formula, tx
 from common.theme import (AUTHOR, BG, CYAN, DIM, FRAME_H, FRAME_W, GOLD, GREEN, SERIES, SOFT,
                           STROKE)
@@ -30,7 +31,7 @@ BOARD_X = 0.55       # left edge of the right (board) column
 BOARD_W = 6.15
 
 
-class LessonScene(Scene):
+class LessonScene(Blocks, Scene):
     EP = 'int01'
     smoke = False
 

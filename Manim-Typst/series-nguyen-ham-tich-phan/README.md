@@ -3,13 +3,14 @@
 **Thầy Nguyễn Văn Sang** · Manim Community 0.19 + Typst + Edge TTS · GitHub Actions → YouTube
 
 - 📋 Kế hoạch toàn series: [KE_HOACH_SERIES_36_TAP.md](KE_HOACH_SERIES_36_TAP.md) (dữ liệu máy đọc: [series_plan.json](series_plan.json))
-- 🎬 Đã dựng: **INT01 – Đi ngược đạo hàm: bản chất nguyên hàm** ([lời giảng](LOI_GIANG_INT01.md))
+- 🎬 Đã dựng: **INT01 – Đi ngược đạo hàm** ([lời giảng](LOI_GIANG_INT01.md)) · **INT02 – Tính chất nguyên hàm & hàm lũy thừa** ([lời giảng](LOI_GIANG_INT02.md))
 
 ## Cấu trúc
 
 ```text
 common/            engine dùng chung cho cả 36 tập
   theme.py         màu, font, kích thước
+  blocks.py        màn hình chuẩn: tiêu đề, mục tiêu, Đúng/Sai, trả lời ngắn, tổng kết, bài tập, tập sau
   kit.py           đồ thị cắt theo khung, trường hướng, tiếp tuyến, xe, đồng hồ, thẻ, badge…
   lesson_scene.py  khung cố định + thanh tiến độ 5 phần + đồng bộ từng nhịp với MP3
   voice.py         Edge TTS (thử lại khi lỗi mạng), mốc câu → phụ đề, chapter YouTube

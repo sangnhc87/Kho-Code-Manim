@@ -132,7 +132,13 @@ Thứ tự chạy workflow cho mỗi tập: `preview / voice=off` (duyệt hình
 
 | Trạng thái | Tập |
 | :--- | :--- |
-| 🎬 Đang sản xuất / đã dựng đầy đủ | INT01 |
-| ⚪ Kế hoạch | INT02 – INT36 |
+| ✅ Đã xuất bản | INT01 |
+| 🎬 Đã dựng đầy đủ, đang xuất bản | INT02 |
+| ⚪ Kế hoạch | INT03 – INT36 |
+
+### Khối dùng chung đã có (`common/blocks.py`)
+
+Thẻ tiêu đề · thẻ mục tiêu · câu Đúng/Sai 4 ý · phiếu trả lời ngắn · đồ thị kiểm tra "độ dốc F = chiều cao f" ·
+3 ý cần nhớ · bài tập tự luyện có đáp số · thẻ tập sau. Mỗi tập mới chỉ cần viết phần hoạt họa riêng.
 
 Lịch đề xuất: 2 tập/tuần → hoàn thành 36 tập trong khoảng 18 tuần; ưu tiên Phần A và B trước kỳ thi học kỳ II.
