@@ -3,7 +3,7 @@
 **Thầy Nguyễn Văn Sang** · Manim Community 0.19 + Typst + Edge TTS · GitHub Actions → YouTube
 
 - 📋 Kế hoạch toàn series: [KE_HOACH_SERIES_36_TAP.md](KE_HOACH_SERIES_36_TAP.md) (dữ liệu máy đọc: [series_plan.json](series_plan.json))
-- 🎬 Đã dựng: **INT01 – Đi ngược đạo hàm** ([lời giảng](LOI_GIANG_INT01.md)) · **INT02 – Tính chất nguyên hàm & hàm lũy thừa** ([lời giảng](LOI_GIANG_INT02.md)) · **INT03 – Nguyên hàm của 1/x và hàm mũ** ([lời giảng](LOI_GIANG_INT03.md))
+- 🎬 Đã dựng: **INT01 – Đi ngược đạo hàm** ([lời giảng](LOI_GIANG_INT01.md)) · **INT02 – Tính chất nguyên hàm & hàm lũy thừa** ([lời giảng](LOI_GIANG_INT02.md)) · **INT03 – Nguyên hàm của 1/x và hàm mũ** ([lời giảng](LOI_GIANG_INT03.md)) · **INT04 – Nguyên hàm lượng giác** ([lời giảng](LOI_GIANG_INT04.md))
 
 ## Cấu trúc
 
