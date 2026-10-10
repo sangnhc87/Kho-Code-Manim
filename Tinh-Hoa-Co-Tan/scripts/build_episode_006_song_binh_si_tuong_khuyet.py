@@ -13,7 +13,7 @@ EPISODE_006 = {
     "subtitle": "Đỏ đi trước • Tuyệt kỹ công phá sườn khuyết, chém Sĩ sát cục kinh điển.",
     "category": "Tàn Binh",
     "goal_text": "MỤC TIÊU: ĐÁNH SƯỜN KHUYẾT & SÁT CỤC",
-    "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+    "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
     "analysis_status": "four_piece_pawn_advisor_elephant_retrograde",
     "verification_note": "Exact retrograde verification for K+2P vs k+a+2e where Black lacks one Advisor. Forced checkmate via broken-rib penetration.",
     "beats": [
@@ -22,7 +22,7 @@ EPISODE_006 = {
             "headline": "Kỳ lý cốt lõi: Khuyết Sĩ kỵ Song Binh",
             "narration": "Chào mừng các bạn đến với tập 6 của series Tinh Hoa Cờ Tàn, chuyên đề Tàn Binh. Trong cờ tàn thực chiến, tục ngữ có câu: Khuyết Sĩ kỵ Song Binh! Nếu bên Đen đủ Sĩ Tượng Toàn thì Song Binh không thể thắng nổi. Nhưng một khi Đen đã bị khuyết một Sĩ, cung thành sẽ lập tức lộ ra một sườn trống chí mạng. Bên Đỏ chỉ cần đưa mặt Tướng và Binh cao chiếm lĩnh sườn khuyết là có thể công phá tan tành hàng phòng ngự của Đen. Chúng ta cùng chiêm ngưỡng thế cờ mẫu mực này.",
             "insight": "KỲ LÝ: KHUYẾT SĨ KỴ SONG BINH  •  ĐÁNH VÀO SƯỜN HỞ",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": [],
             "pause": 2.2,
             "spotlight": "f2"
@@ -32,7 +32,7 @@ EPISODE_006 = {
             "headline": "1. Binh 4 tiến 1",
             "narration": "Đỏ lập tức ra đòn chuẩn xác: Binh 4 tiến 1 đâm xuống hàng hai ở lộ khuyết! Nước cờ này vừa phối hợp cùng mặt Tướng ở lộ bốn khóa chặt sườn phải của Đen, vừa chặn đứng mắt tượng lộ ba không cho bay lên tâm.",
             "insight": "KHÓA SƯỜN KHUYẾT  •  BINH 4 TIẾN 1",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": ["f2f1"],
             "pause": 1.6,
             "spotlight": "f1"
@@ -42,7 +42,7 @@ EPISODE_006 = {
             "headline": "1... Sĩ 6 tiến 5",
             "narration": "Tướng Đen bị kẹt cứng không thể di chuyển. Đen buộc phải nhảy Sĩ 6 tiến 5 lên tâm hòng che chắn trung lộ.",
             "insight": "ĐEN BỨC BÁCH  •  SĨ 6 TIẾN 5",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": ["f2f1", "d0e1"],
             "pause": 1.5,
             "spotlight": "e1"
@@ -52,7 +52,7 @@ EPISODE_006 = {
             "headline": "2. Binh 4 bình 5 (Ăn Sĩ chiếu tướng!)",
             "narration": "Đỏ giáng đòn quyết định: Binh 4 bình 5 ăn gọn Sĩ Đen ở tâm và chiếu tướng trực diện! Đen mất sạch Sĩ phòng thủ, cung thành hoàn toàn sụp đổ.",
             "insight": "ĂN SĨ CHIẾU TƯỚNG  •  BINH 4 BÌNH 5",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": ["f2f1", "d0e1", "f1e1"],
             "pause": 1.6,
             "spotlight": "e1"
@@ -62,7 +62,7 @@ EPISODE_006 = {
             "headline": "2... Tướng 5 bình 6",
             "narration": "Tướng Đen bị chiếu buộc phải tháo chạy dạt sang góc lộ sáu.",
             "insight": "TƯỚNG DẠT GÓC  •  TƯỚNG 5 BÌNH 6",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": ["f2f1", "d0e1", "f1e1", "e0d0"],
             "pause": 1.4,
             "spotlight": "d0"
@@ -72,18 +72,18 @@ EPISODE_006 = {
             "headline": "3. Binh 5 bình 6",
             "narration": "Binh thứ hai của Đỏ lập tức xuất trận: Binh 5 bình 6 đè thẳng lên đỉnh đầu Tướng Đen! Hai Binh Đỏ kẹp chặt Tướng Đen ở góc chết không còn đường thoát.",
             "insight": "ĐÈ ĐẦU TƯỚNG  •  BINH 5 BÌNH 6",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": ["f2f1", "d0e1", "f1e1", "e0d0", "e2d2"],
             "pause": 1.6,
             "spotlight": "d2"
         },
         {
             "label": "SÁT CỤC HOÀN HẢO",
-            "headline": "3... Tượng 7 tiến 9 — 4. Binh 6 tiến 1 (Chiếu bí!)",
-            "narration": "Đen vẫy vùng bay Tượng ra biên. Đỏ tung đòn sát cục hoàn hảo: Binh 6 tiến 1 đâm thẳng xuống đáy! Chiếu bí! Tướng Đen bị kẹt cứng giữa hai Binh Đỏ, Đỏ giành chiến thắng oanh liệt!",
+            "headline": "3... Tượng 9 thối 7 — 4. Binh 6 tiến 1 (Chiếu bí!)",
+            "narration": "Đen vẫy vùng bay Tượng thoái về. Đỏ tung đòn sát cục hoàn hảo: Binh 6 tiến 1 đâm thẳng xuống đáy! Chiếu bí! Tướng Đen bị kẹt cứng giữa hai Binh Đỏ, Đỏ giành chiến thắng oanh liệt!",
             "insight": "ĐÂM ĐÁY CHIẾU BÍ  •  ĐỎ TOÀN THẮNG",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
-            "moves": ["f2f1", "d0e1", "f1e1", "e0d0", "e2d2", "c0a2", "d2d1"],
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
+            "moves": ["f2f1", "d0e1", "f1e1", "e0d0", "e2d2", "a2c0", "d2d1"],
             "pause": 2.5,
             "spotlight": "d1"
         },
@@ -92,7 +92,7 @@ EPISODE_006 = {
             "headline": "Khẩu quyết: Khuyết Sĩ kỵ Song Binh",
             "narration": "Tổng kết bài học: Khuyết Sĩ kỵ Song Binh là nguyên lý bất hủ trong cờ tàn. Khi đối phương bị khuyết một Sĩ, hãy dồn toàn lực đánh thẳng vào sườn khuyết, dùng mặt Tướng và Binh cao khóa chặt góc chết để sát cục. Chúc các bạn kỳ nghệ ngày càng thăng tiến!",
             "insight": "BÍ QUYẾT: ĐÁNH THẲNG SƯỜN KHUYẾT  •  KẸP CUNG KẾT LIỄU",
-            "fen": "2bak1b2/9/4PP3/9/9/9/9/9/5K3/9 w",
+            "fen": "3ak1b2/9/b3PP3/9/9/9/9/9/5K3/9 w",
             "moves": [],
             "pause": 2.5,
             "spotlight": "d1"
