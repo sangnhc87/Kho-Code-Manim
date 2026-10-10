@@ -1,0 +1,168 @@
+{
+  "id": "tap-0002",
+  "title": "MÃ KHÉO THẮNG ĐƠN TƯỢNG",
+  "subtitle": "Đỏ đi trước • Ép bắt Tượng trong mô hình 4 quân; thế cờ kinh điển.",
+  "goal_text": "MỤC TIÊU: BẮT TƯỢNG",
+  "fen": "2bk5/9/9/4N4/9/9/9/4K4/9/9 w",
+  "analysis_status": "four_piece_elephant_retrograde",
+  "verification_note": "Exhaustive 4-piece retrograde solver to capture black elephant under ordinary legal moves. Long-check/chase repetition not covered. 9/15 are plies to capture elephant.",
+  "beats": [
+    {
+      "label": "THẾ CỜ",
+      "headline": "Đỏ đi trước — Mã bắt Tượng?",
+      "narration": "Đỏ còn Tướng và Mã, Đen còn Tướng và một Tượng khuyết. Đỏ đi trước. Trong cờ tàn thực chiến, Đơn Mã khéo thắng Đơn Tượng là một bài học căn bản vô cùng tinh diệu. Chìa khóa quyết định là Tướng Đỏ phải khống chế trung lộ, phối hợp cùng Mã phong tỏa các điểm bay của Tượng, ép Tượng Đen vào chỗ chết. Chúng ta cùng phân tích chi tiết các biến đi.",
+      "insight": "ĐỎ ĐI TRƯỚC  •  MỤC TIÊU: BẮT TƯỢNG",
+      "fen": "2bk5/9/9/4N4/9/9/9/4K4/9/9 w",
+      "moves": [],
+      "pause": 2.0,
+      "spotlight": "e3"
+    },
+    {
+      "label": "NƯỚC ĐẦU",
+      "headline": "1. Mã 5 tiến 7",
+      "narration": "Nước đầu tiên then chốt: Đỏ đi Mã 5 tiến 7 chiếu tướng, nhanh chóng nhảy sang sườn đối phương để chuẩn bị khép góc. Đen đứng trước thế cờ này chỉ có một nước hợp lệ là tiến Tướng 4 tiến 1 tránh chiếu.",
+      "insight": "CHIẾU TƯỚNG  •  MÃ 5 TIẾN 7",
+      "fen": "2bk5/9/9/4N4/9/9/9/4K4/9/9 w",
+      "moves": [
+        "e3c2"
+      ],
+      "pause": 1.3,
+      "horse_leg": [
+        "e3",
+        "c2"
+      ]
+    },
+    {
+      "label": "BIẾN CHÍNH",
+      "headline": "Ép Tượng ra biên",
+      "narration": "Đen tiến Tướng 4 tiến 1. Đỏ tiếp tục Mã 7 tiến 5 chiếm giữ trung tâm. Đứng trước sức ép của quân Mã, Tượng Đen không dám về tâm mà buộc phải đi Tượng 3 tiến 1 dạt ra biên. Thế cờ bắt đầu bước vào giai đoạn quyết định.",
+      "insight": "TƯỚNG 4 TIẾN 1  •  TƯỢNG 3 TIẾN 1",
+      "fen": "2bk5/9/2N6/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "d0d1",
+        "c2e1",
+        "c0a2"
+      ],
+      "pause": 1.7
+    },
+    {
+      "label": "BIẾN CHÍNH",
+      "headline": "Khóa chặt đường Tượng",
+      "narration": "Đỏ bình tĩnh đi Mã 5 thoái 6 điều chỉnh vị trí. Tướng Đen buộc phải thoái Tướng 4 thoái 1. Ngay lập tức, Đỏ tung đòn quyết định: Mã 6 tiến 8. Quân Mã đã khóa chặt đường rút của Tượng biên, đẩy Tượng Đen vào tử lộ.",
+      "insight": "MÃ 5 THOÁI 6  •  MÃ 6 TIẾN 8",
+      "fen": "9/3kN4/b8/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "e1d3",
+        "d1d0",
+        "d3b2"
+      ],
+      "pause": 1.6
+    },
+    {
+      "label": "BIẾN CHÍNH",
+      "headline": "Bắt Tượng sau 9 hiệp",
+      "narration": "Tượng Đen hết đường chạy, đành bay Tượng 1 thoái 3 về đáy. Mã Đỏ chỉ việc nhảy Mã 8 tiến 7 tóm gọn Tượng Đen. Toàn bộ biến chính chỉ mất chín hiệp đấu. Bắt được Tượng, Đỏ nắm chắc phần thắng trong tay.",
+      "insight": "9 HIỆP ĐẤU  •  BẮT GỌN TƯỢNG",
+      "fen": "3k5/9/bN7/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "a2c0",
+        "b2c0"
+      ],
+      "pause": 1.8,
+      "spotlight": "c0"
+    },
+    {
+      "label": "ĐEN SAI LẦM",
+      "headline": "Tướng lùi sớm — mất Tượng",
+      "narration": "Quay lại thời điểm Đỏ vừa đưa Mã 7 tiến 5. Nếu Đen không chịu bay Tượng ra biên mà lại thoái Tướng 4 thoái 1, Đỏ lập tức nhảy Mã 5 tiến 7 chém thẳng Tượng Đen. Sai lầm này khiến Đen mất Tượng chỉ sau năm hiệp.",
+      "insight": "TƯỚNG 4 THOÁI 1  •  MÃ 5 TIẾN 7",
+      "fen": "2b6/3kN4/9/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "d1d0",
+        "e1c0"
+      ],
+      "pause": 1.4
+    },
+    {
+      "label": "NHÁNH KHÁC",
+      "headline": "Tượng bay lên hà — vẫn mất",
+      "narration": "Nếu ở hiệp thứ ba, Tượng Đen không thoái về mà bay lên hà Tượng 1 tiến 3, Đỏ vẫn nhảy Mã 6 tiến 8. Tượng Đen bị tê liệt không thể di chuyển. Tướng Đen thoái 1 thì Mã Đỏ thoái 7 tóm gọn Tượng.",
+      "insight": "TƯỢNG 1 TIẾN 3  •  MÃ 8 THOÁI 7",
+      "fen": "9/3k5/b8/3N5/9/9/9/4K4/9/9 b",
+      "moves": [
+        "a2c4",
+        "d3b2",
+        "d1d0",
+        "b2c4"
+      ],
+      "pause": 1.5,
+      "spotlight": "c4"
+    },
+    {
+      "label": "ĐỎ ĐI CHẬM",
+      "headline": "Mã 5 tiến 4: thắng chậm",
+      "narration": "Bây giờ xét lựa chọn khác của Đỏ: Nếu nước đầu Đỏ không nhảy Mã 5 tiến 7 mà lại chọn Mã 5 tiến 4 chiếu Tướng, Đỏ vẫn có thể thắng nhưng sẽ tốn nhiều hiệp hơn. Cùng theo dõi biến đi này kéo dài tới mười lăm hiệp.",
+      "insight": "THẮNG CHẬM: 15 HIỆP",
+      "fen": "2bk5/9/9/4N4/9/9/9/4K4/9/9 w",
+      "moves": [
+        "e3f1"
+      ],
+      "pause": 1.3
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Mã phải đi đường vòng",
+      "narration": "Đen tiến Tướng 4 tiến 1 tránh chiếu. Đỏ thoái Tướng 5 thoái 1 chờ thời. Tượng Đen tiến ra biên, Đỏ phải cho Mã nhảy thoái 2 rồi thoái 3 để tìm hướng tấn công mới.",
+      "insight": "MÃ PHẢI ĐI ĐƯỜNG VÒNG",
+      "fen": "2bk5/5N3/9/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "d0d1",
+        "e7e8",
+        "c0a2",
+        "f1h0",
+        "d1d0",
+        "h0g2"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Đến hiệp 15 mới bắt Tượng",
+      "narration": "Từ đây, Mã Đỏ phải tiếp tục nhảy tiến 4, tiến 6 rồi tiến 7 khống chế. Cuối cùng Mã 7 tiến 9 mới bắt được Tượng. Mất tròn mười lăm hiệp, lâu hơn sáu hiệp so với biến Mã 5 tiến 7 lúc đầu.",
+      "insight": "15 HIỆP  SO VỚI  9 HIỆP",
+      "fen": "3k5/9/b5N2/9/9/9/9/9/4K4/9 b",
+      "moves": [
+        "d0d1",
+        "g2f4",
+        "d1d0",
+        "f4d5",
+        "d0d1",
+        "d5c3",
+        "d1d0",
+        "c3a2"
+      ],
+      "pause": 1.7
+    },
+    {
+      "label": "NƯỚC SAI",
+      "headline": "Tướng đi sai: mất thế thắng",
+      "narration": "Nước sai nghiêm trọng ở thế cờ ban đầu là Đỏ vội vàng đi Tướng 5 thoái 1. Đen lập tức bay Tượng 3 tiến 5 chiếm điểm tựa trung tâm. Tượng Đen liên kết an toàn, Đỏ mất hoàn toàn khả năng ép bắt Tượng và ván cờ dẫn tới hòa cuộc.",
+      "insight": "ĐỎ ĐI SAI  •  ĐEN CẦM HÒA",
+      "fen": "2bk5/9/9/4N4/9/9/9/4K4/9/9 w",
+      "moves": [
+        "e7e8",
+        "c0e2"
+      ],
+      "pause": 1.8
+    },
+    {
+      "label": "CHỐT BIẾN",
+      "headline": "9 — 15 — Cầm hòa",
+      "narration": "Tổng kết thế tàn Mã khéo thắng Đơn Tượng: Phải dùng Tướng giữ chặt trung lộ, Mã 5 tiến 7 ép Tượng ra biên rồi khép góc bắt gọn sau chín hiệp. Đi Mã 5 tiến 4 bị chậm mất mười lăm hiệp. Còn vội điều Tướng sẽ để đối phương cầm hòa. Hết tập hai.",
+      "insight": "Mã 5.7: 9 HIỆP  •  Mã 5.4: 15 HIỆP  •  Tướng đi sai: HÒA",
+      "fen": "2bk5/9/9/4N4/9/9/9/4K4/9/9 w",
+      "moves": [],
+      "pause": 2.1
+    }
+  ]
+}
