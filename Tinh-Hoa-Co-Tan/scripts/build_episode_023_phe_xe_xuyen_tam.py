@@ -63,6 +63,7 @@ def main():
     })
     
     episode = {
+        "id": "tap-0023",
         "title": "Tập 023: Tuyệt Sát Phế Xe Xuyên Tâm",
         "fen": fen,
         "beats": beats

@@ -51,6 +51,7 @@ def main():
     })
     
     episode = {
+        "id": "tap-0024",
         "title": "Tập 024: Mã Ngọa Tào Tuyệt Sát",
         "fen": fen,
         "beats": beats
