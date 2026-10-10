@@ -18,7 +18,7 @@ def main():
     # Phân tích
     beats.append({
         "fen": fen,
-        "text": "Pháo Trùng Tuyệt Sát: Một sát cục hoàn mỹ kết hợp sức mạnh của Song Pháo và sự yểm trợ tinh tế của Song Mã.",
+        "label": "PHÂN TÍCH", "headline": "Phân tích", "insight": "Kỳ lý", "narration": "Pháo Trùng Tuyệt Sát: Một sát cục hoàn mỹ kết hợp sức mạnh của Song Pháo và sự yểm trợ tinh tế của Song Mã.",
         "duration": 7.0
     })
     
@@ -27,7 +27,7 @@ def main():
     beats.append({
         "fen": "3Rka3/1N7/e3C3e/5CN2/9/9/9/9/9/4K4 b",
         "moves": ["d2d0"],
-        "text": "Xe 4 tiến 2! Chém gãy Sĩ góc chiếu Tướng. Xe được Mã b1 bảo vệ nên Tướng Đen không thể ăn, buộc phải thượng lên lầu 2.",
+        "label": "PHÂN TÍCH", "headline": "Phân tích", "insight": "Kỳ lý", "narration": "Xe 4 tiến 2! Chém gãy Sĩ góc chiếu Tướng. Xe được Mã b1 bảo vệ nên Tướng Đen không thể ăn, buộc phải thượng lên lầu 2.",
         "duration": 7.0
     })
     
@@ -36,7 +36,7 @@ def main():
     beats.append({
         "fen": "3R1a3/1N2k4/e3C3e/5CN2/9/9/9/9/9/4K4 w",
         "moves": ["e0e1"],
-        "text": "Tướng 5 tiến 1 (e0-e1).",
+        "label": "PHÂN TÍCH", "headline": "Phân tích", "insight": "Kỳ lý", "narration": "Tướng 5 tiến 1 (e0-e1).",
         "duration": 4.0
     })
     
@@ -45,7 +45,7 @@ def main():
     beats.append({
         "fen": "3R1a3/1N2k4/e3C3e/4C1N2/9/9/9/9/9/4K4 b",
         "moves": ["f3e3"],
-        "text": "Pháo 4 bình 5! Thiết lập thế 'Pháo Trùng' sát cục. Tướng Đen không thể ăn Pháo e2 vì Mã g3 đã phục sẵn bảo vệ. Đỏ thắng tuyệt đối!",
+        "label": "PHÂN TÍCH", "headline": "Phân tích", "insight": "Kỳ lý", "narration": "Pháo 4 bình 5! Thiết lập thế 'Pháo Trùng' sát cục. Tướng Đen không thể ăn Pháo e2 vì Mã g3 đã phục sẵn bảo vệ. Đỏ thắng tuyệt đối!",
         "duration": 8.0
     })
     
