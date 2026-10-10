@@ -27,7 +27,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: cotan-${{ github.ref }}-${{ github.event_name }}
+  group: cotan-${{ github.ref }}-${{ github.event_name }}-${{ inputs.episodes || 'latest' }}
   cancel-in-progress: false
 jobs:
   plan:
