@@ -1,72 +1,257 @@
 {
   "id": "tap-0001",
-  "title": "Tập 001: Phế Xe Đoạt Mệnh",
-  "category": "Sát Pháp",
-  "analysis_status": "practical_endgame",
-  "fen": "3aka1R1/C2r5/4cn3/5R3/4P2N1/9/4C4/9/9/4K4 w",
+  "title": "MÃ PHÁ ĐƠN SĨ — PHÂN TÍCH CÁC BIẾN",
+  "subtitle": "Đỏ đi trước • Ép bắt Sĩ trong mô hình 4 quân; chưa xét luật lặp nước.",
+  "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+  "analysis_status": "four_piece_retrograde_ordinary_moves",
+  "verification_note": "Exhaustive 4-piece win/draw/loss retrograde to capturing black advisor under ordinary legal moves, checks and stalemate. Long-check and long-chase repetition adjudication NOT covered; 13/21 are plies to capture advisor against a delaying defender, not mate distances.",
   "beats": [
     {
-      "label": "PHÂN TÍCH",
-      "headline": "Phế Xe Đoạt Mệnh",
-      "narration": "Chào mừng các bạn đến với Tinh Hoa Cờ Tàn. Hôm nay chúng ta sẽ chiêm ngưỡng một tuyệt kỹ thực dụng: Phế Xe đoạt mệnh. Trong thế cờ vô cùng căng thẳng, Đỏ tung ra chuỗi 3 nước sát thủ liên hoàn, ép Tướng Đen vào tử lộ.",
-      "insight": "Tuyệt sát liên hoàn",
-      "fen": "3aka1R1/C2r5/4cn3/5R3/4P2N1/9/4C4/9/9/4K4 w",
-      "duration": 9.0
+      "label": "THẾ CỜ",
+      "headline": "Đỏ đi trước — Mã bắt Sĩ?",
+      "narration": "Đỏ còn Tướng và Mã, Đen còn Tướng và một Sĩ khuyết. Đỏ đi trước. Mục tiêu của bài là khéo léo dùng Tướng và Mã phối hợp ép bắt Sĩ Đen. Chúng ta cùng phân tích các biến đi: nước nào bắt Sĩ nhanh nhất, nước nào thắng chậm, và nước đi sai lầm làm mất thế thắng.",
+      "insight": "ĐỎ ĐI TRƯỚC  •  MỤC TIÊU: BẮT SĨ",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [],
+      "pause": 2.0,
+      "spotlight": "d2"
     },
     {
+      "label": "NƯỚC ĐẦU",
+      "headline": "1. Mã 6 tiến 4",
+      "narration": "Nước đầu tiên, Đỏ đi Mã 6 tiến 4. Đây là một trong hai nước đi tối ưu nhất để ép bắt Sĩ ở thế này. Đứng trước nước này, Đen có hai cách đối phó: hoặc đưa Sĩ vào trung tâm, hoặc đưa Tướng tiến một bước. Ta cùng xét phương án Đen chống đỡ dẻo dai nhất trước.",
+      "insight": "ĐEN CÓ 2 CÁCH ĐÁP",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
       "moves": [
-        "h0f0"
+        "d2f1"
       ],
-      "label": "BƯỚC 1",
-      "headline": "Xe 2 bình 4",
-      "narration": "Đỏ khai đòn sấm sét: Xe 2 bình 4 chém thẳng Sĩ chiếu Tướng! Phế Xe không thương tiếc. Tướng Đen không thể sang lộ 6 vì bị Pháo nhòm ngó, buộc phải ăn Xe.",
-      "insight": "Phế Xe mở đường",
-      "fen": "3aka1R1/C2r5/4cn3/5R3/4P2N1/9/4C4/9/9/4K4 w",
-      "duration": 8.0
+      "pause": 1.3,
+      "horse_leg": [
+        "d2",
+        "f1"
+      ]
     },
     {
+      "label": "ĐEN CHỐNG ĐỠ",
+      "headline": "Sĩ về trung tâm",
+      "narration": "Đen đi Sĩ 6 tiến 5 vào tâm. Đỏ lập tức Mã 4 thoái 5 kiềm chế. Đen tiếp tục đưa Sĩ 5 tiến 6 ra góc. Lúc này, Đỏ nên điều Tướng hay đi Mã? Điểm mấu chốt ở đây: phải điều Tướng mới duy trì được sức ép khống chế.",
+      "insight": "1... Sĩ 6 tiến 5  •  2... Sĩ 5 tiến 6",
+      "fen": "3k1a3/5N3/9/9/9/9/9/4K4/9/9 b",
       "moves": [
-        "e0f0"
+        "f0e1",
+        "f1e3",
+        "e1f2"
       ],
-      "label": "BƯỚC 1",
-      "headline": "Tướng 5 bình 4",
-      "narration": "Đen buộc phải dùng Tướng ăn Xe.",
-      "insight": "Sập bẫy",
-      "fen": "3akR3/C2r5/4cn3/5R3/4P2N1/9/4C4/9/9/4K4 b",
-      "duration": 3.0
+      "pause": 1.7
     },
     {
+      "label": "BIẾN CHÍNH",
+      "headline": "Đỏ dùng Tướng khóa đường",
+      "narration": "Đỏ đi Tướng 5 bình 4 khóa lộ, buộc Tướng Đen phải bình 5. Kế đó, Đỏ nhảy Mã 5 tiến 7. Đen lại phải chạy Tướng 5 bình 6. Đỏ tiếp tục Mã 7 tiến 5 chiếm trung lộ. Chú ý rằng quân Mã không đuổi theo Sĩ một cách vội vàng, mà từng bước chiếm giữ những điểm huyết mạch để ép cung.",
+      "insight": "TƯỚNG PHỐI HỢP MÃ",
+      "fen": "3k5/9/5a3/4N4/9/9/9/4K4/9/9 w",
       "moves": [
-        "h4g2"
+        "e7f7",
+        "d0e0",
+        "e3c2",
+        "e0f0",
+        "c2e1"
       ],
-      "label": "BƯỚC 2",
-      "headline": "Mã 2 tiến 3",
-      "narration": "Mã Đỏ lập tức nhảy Ngọa Tào chiếu Tướng! Đường lui sang lộ 6 vẫn bị Pháo khóa chặt, Tướng Đen hết cách đành lùi lại vị trí cũ.",
-      "insight": "Mã Ngọa Tào",
-      "fen": "3a1k3/C2r5/4cn3/5R3/4P2N1/9/4C4/9/9/4K4 w",
-      "duration": 7.0
+      "pause": 1.1
     },
     {
+      "label": "BIẾN CHÍNH",
+      "headline": "Bắt Sĩ sau 13 hiệp",
+      "narration": "Tướng Đen buộc phải bình 5. Đỏ tung đòn quyết định: Mã 5 tiến 3, đe dọa trực tiếp Sĩ Đen. Nếu Tướng Đen bình 4 tránh nước, Mã 3 lập tức thoái 4 bắt gọn Sĩ Đen. Toàn bộ biến chính này dài mười ba hiệp, khi Đen kiên cường chống đỡ lâu nhất.",
+      "insight": "13 HIỆP ĐẤU  •  BẮT ĐƯỢC SĨ",
+      "fen": "5k3/4N4/5a3/9/9/9/9/5K3/9/9 b",
       "moves": [
-        "f0e0"
+        "f0e0",
+        "e1g0",
+        "e0d0",
+        "g0f2"
       ],
-      "label": "BƯỚC 2",
-      "headline": "Tướng 4 bình 5",
-      "narration": "Tướng Đen lùi về cung, tưởng chừng đã an toàn.",
-      "insight": "Lùi bước",
-      "fen": "3a1k3/C2r5/4cnN2/5R3/4P4/9/4C4/9/9/4K4 b",
-      "duration": 3.0
+      "pause": 1.8,
+      "spotlight": "f2"
     },
     {
+      "label": "CHỐNG ĐỠ KHÁC",
+      "headline": "Tướng bình 6 — vẫn mất Sĩ",
+      "narration": "Trước nước bắt Sĩ cuối, nếu Đen không bình Tướng sang 4 mà bình sang 6, thì Sĩ vẫn nằm trơ trọi. Đỏ chỉ việc thoái Mã 3 thoái 4 bắt Sĩ. Chỉ một nước là mất Sĩ, Đen đã hết cách phòng thủ.",
+      "insight": "TƯỚNG 5 BÌNH 6  •  MÃ 3 THOÁI 4",
+      "fen": "4k1N2/9/5a3/9/9/9/9/5K3/9/9 b",
       "moves": [
-        "f3e3"
+        "e0f0",
+        "g0f2"
       ],
-      "label": "BƯỚC 3",
-      "headline": "Xe 4 bình 5",
-      "narration": "Nhưng không! Xe Đỏ bình vào trung lộ, mượn ngòi Tốt để Pháo gánh bảo vệ. Mã Ngọa Tào kiểm soát nốt cửa thoát. Tướng Đen bị kẹp chết giữa Cửu cung. Tuyệt sát vinh quang!",
-      "insight": "Song sát vô phương",
-      "fen": "3ak4/C2r5/4cnN2/5R3/4P4/9/4C4/9/9/4K4 w",
-      "duration": 9.0
+      "pause": 1.2
+    },
+    {
+      "label": "CHỐNG ĐỠ KHÁC",
+      "headline": "Sĩ thoái 5 — cũng bị bắt",
+      "narration": "Còn nếu thay vì đi Tướng, Đen đưa Sĩ 6 thoái 5 về tâm thì sao? Đỏ lập tức thoái Mã 3 thoái 5 bắt thẳng Sĩ. Dù Đen chạy Tướng hay thoái Sĩ, kết cục đều bị bắt Sĩ không lối thoát.",
+      "insight": "SĨ 6 THOÁI 5  •  MÃ 3 THOÁI 5",
+      "fen": "4k1N2/9/5a3/9/9/9/9/5K3/9/9 b",
+      "moves": [
+        "f2e1",
+        "g0e1"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "SĨ ĐI SAI",
+      "headline": "Sĩ thoái 6 — mất sau 7 hiệp",
+      "narration": "Quay lại thời điểm Đỏ vừa thoái Mã 4 thoái 5. Nếu Đen không tiến Sĩ mà lại thoái Sĩ 5 thoái 6, Đỏ lập tức nhảy Mã 5 tiến 3. Đen đưa Tướng 4 tiến 1, Đỏ liền đi Mã 3 tiến 4 bắt gọn Sĩ. Tính từ đầu chỉ bảy hiệp. Đen chống đỡ sai nên mất Sĩ rất nhanh.",
+      "insight": "SĨ 5 THOÁI 6  •  MẤT SAU 7 HIỆP",
+      "fen": "3k5/4a4/9/4N4/9/9/9/4K4/9/9 b",
+      "moves": [
+        "e1f0",
+        "e3g2",
+        "d0d1",
+        "g2f0"
+      ],
+      "pause": 1.3
+    },
+    {
+      "label": "SĨ ĐI SAI",
+      "headline": "Sĩ tiến 4 — mất sau 9 hiệp",
+      "narration": "Cũng vị trí ấy, nếu Đen đi Sĩ 5 tiến 4 thì Đỏ đưa Mã 5 tiến 7. Đen tiến Tướng 4 tiến 1, Đỏ thoái Tướng 5 thoái 1. Sĩ phải thoái 4 thoái 5 về tâm, Đỏ dùng Mã 7 tiến 5 bắt Sĩ ngay. Tổng cộng chín hiệp, thua nhanh hơn biến chính.",
+      "insight": "SĨ 5 TIẾN 4  •  MẤT SAU 9 HIỆP",
+      "fen": "3k5/4a4/9/4N4/9/9/9/4K4/9/9 b",
+      "moves": [
+        "e1d2",
+        "e3c2",
+        "d0d1",
+        "e7e8",
+        "d2e1",
+        "c2e1"
+      ],
+      "pause": 1.3
+    },
+    {
+      "label": "ĐEN ĐI YẾU",
+      "headline": "Tướng lên — mất Sĩ sớm",
+      "narration": "Quay lại sau nước đầu Mã 6 tiến 4. Nếu Đen không chuyển Sĩ mà đi Tướng 4 tiến 1, Đỏ lập tức thoái Mã 4 thoái 5. Đen bình Tướng 4 bình 5, Đỏ điều Tướng 5 bình 6 khóa cung. Cách chống đỡ này không giữ được Sĩ lâu bằng phương án trước.",
+      "insight": "ĐEN: TƯỚNG 4 TIẾN 1  •  THUA NHANH HƠN",
+      "fen": "3k1a3/5N3/9/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "d0d1",
+        "f1e3",
+        "d1e1",
+        "e7d7"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "ĐEN ĐI YẾU",
+      "headline": "Mã bắt Sĩ ở hiệp thứ 9",
+      "narration": "Đen thoái Tướng 5 thoái 1. Đỏ đưa Mã 5 tiến 7. Sĩ buộc phải tiến 6 tiến 5. Mã 7 tiến 5 bắt gọn Sĩ. Chỉ chín hiệp đấu, thay vì mười ba. Đó là khác biệt giữa chống đỡ tốt và chống đỡ yếu trong cùng một thế cờ.",
+      "insight": "9 HIỆP ĐẤU  •  BẮT ĐƯỢC SĨ",
+      "fen": "5a3/4k4/9/4N4/9/9/9/3K5/9/9 b",
+      "moves": [
+        "e1e0",
+        "e3c2",
+        "f0e1",
+        "c2e1"
+      ],
+      "pause": 1.8
+    },
+    {
+      "label": "ĐỎ ĐI CHẬM",
+      "headline": "Mã 6 tiến 5: bắt Sĩ chậm",
+      "narration": "Nếu nước đầu Đỏ đi Mã 6 tiến 5 vào tâm, Đỏ vẫn có thể buộc bắt Sĩ. Nhưng đối phương chống đỡ tốt sẽ kéo dài hơn. Ta không nói nước này sai, mà nói nó thắng chậm hơn. Cùng xem Đen kéo dài cuộc chống đỡ như thế nào.",
+      "insight": "THẮNG CHẬM: 21 HIỆP",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "d2e0"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Sĩ cơ động, Mã phải vòng",
+      "narration": "Đen chuyển Sĩ 6 tiến 5, Đỏ phải thoái Mã 5 thoái 3, rồi thoái tiếp Mã 3 thoái 4. Tướng Đen tiến 4 tiến 1, Sĩ thoái 5 thoái 6. Đỏ lại đưa Mã 4 thoái 5. So với nhánh trước, Mã phải vòng nhiều hơn mới tạo được thế khóa cung.",
+      "insight": "MÃ PHẢI ĐI ĐƯỜNG VÒNG",
+      "fen": "3kNa3/9/9/9/9/9/9/4K4/9/9 b",
+      "moves": [
+        "f0e1",
+        "e0g1",
+        "d0d1",
+        "g1f3",
+        "e1f0",
+        "f3e5"
+      ],
+      "pause": 1.0
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Đỏ tiếp tục siết cung",
+      "narration": "Đen thoái Tướng 4 thoái 1. Mã nhảy Mã 5 tiến 7 rồi Mã 7 tiến 5. Sĩ từ 6 tiến 5 rồi tiến 6. Cuối cùng Đỏ điều Tướng 5 bình 4. Tới đây thế cờ nhập lại dạng khống chế quen thuộc, nhưng Đỏ đã tốn thêm nhiều hiệp.",
+      "insight": "KHÔNG SAI, NHƯNG TỐN HIỆP",
+      "fen": "5a3/3k5/9/9/9/4N4/9/4K4/9/9 b",
+      "moves": [
+        "d1d0",
+        "e5c4",
+        "f0e1",
+        "c4e3",
+        "e1f2",
+        "e7f7"
+      ],
+      "pause": 1.0
+    },
+    {
+      "label": "THẮNG CHẬM",
+      "headline": "Đến hiệp 21 mới bắt Sĩ",
+      "narration": "Từ đây, Đỏ đi Mã tiến 7, tiến 5 rồi tiến 3. Đen chống đỡ bằng cách chuyển Tướng qua lại. Cuối cùng Mã 3 thoái 4 bắt gọn Sĩ. Đủ hai mươi mốt hiệp đấu. So sánh: chọn Mã 6 tiến 4, chỉ cần mười ba hiệp trong phương án chống đỡ lâu nhất.",
+      "insight": "21 HIỆP  SO VỚI  13 HIỆP",
+      "fen": "3k5/9/5a3/4N4/9/9/9/5K3/9/9 b",
+      "moves": [
+        "d0e0",
+        "e3c2",
+        "e0f0",
+        "c2e1",
+        "f0e0",
+        "e1g0",
+        "e0d0",
+        "g0f2"
+      ],
+      "pause": 1.7
+    },
+    {
+      "label": "CÁCH THẮNG KHÁC",
+      "headline": "Mã 6 thoái 7 cũng hiệu quả",
+      "narration": "Còn một nước thắng nhanh tương đương: Mã 6 thoái 7. Đen đưa Sĩ 6 tiến 5; Đỏ nhảy Mã 7 tiến 5. Sĩ tiến 6 và Đỏ chuyển Tướng 5 bình 4. Sau đó thế cờ nhập lại nhánh chính. Như vậy Đỏ có tới hai cách đi tối ưu.",
+      "insight": "CÁCH KHÁC: CŨNG 13 HIỆP",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "d2c4",
+        "f0e1",
+        "c4e3",
+        "e1f2",
+        "e7f7"
+      ],
+      "pause": 1.2
+    },
+    {
+      "label": "NƯỚC SAI",
+      "headline": "Tướng 5 bình 6: không ép bắt Sĩ",
+      "narration": "Nước sai ở thế đầu là vội đưa Tướng 5 bình 6. Đen chỉ cần đưa Tướng 4 tiến 1 chiếm cao điểm. Trong bảng tính bốn quân theo luật đi thông thường, Đỏ không còn đường buộc bắt Sĩ. Đây là khác biệt giữa nước không phạm luật và nước giữ được thế tất thắng.",
+      "insight": "ĐỎ MẤT THẾ BUỘC BẮT SĨ",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [
+        "e7d7",
+        "d0d1"
+      ],
+      "pause": 1.8
+    },
+    {
+      "label": "CHỐT BIẾN",
+      "headline": "13 — 21 — không ép bắt Sĩ",
+      "narration": "Tóm lại, ở thế xuất phát này: Mã 6 tiến 4 hoặc Mã 6 thoái 7 bắt được Sĩ sau tối đa mười ba hiệp. Mã 6 tiến 5 cần đến hai mươi mốt hiệp. Còn vội đi Tướng 5 bình 6 làm mất khả năng buộc bắt Sĩ. Hết tập một.",
+      "insight": "Mã 6.4 hoặc 6/7: 13  •  Mã 6.5: 21  •  Tướng bình 6: mất thế",
+      "fen": "3k1a3/9/3N5/9/9/9/9/4K4/9/9 w",
+      "moves": [],
+      "pause": 2.1
     }
   ]
 }
