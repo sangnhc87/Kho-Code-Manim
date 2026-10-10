@@ -6,13 +6,14 @@ sheet, verification plot, summary, exercises, next episode).
 """
 from __future__ import annotations
 
-from manim import (DOWN, LEFT, RIGHT, UP, Create, FadeIn, FadeOut, LaggedStart, Line,
+from manim import (DOWN, LEFT, RIGHT, UP, Create, Rectangle, FadeIn, FadeOut, LaggedStart, Line,
                    RoundedRectangle, VGroup, Write, always_redraw, Dot)
 
 from common.kit import badge, card, clipped, dashed, para, tangent, tx, vn
 from common.theme import CORAL, CYAN, GOLD, GREEN, PANEL, PANEL_2, PURPLE, SOFT, STROKE, WHITE
 
 BOARD_X = 0.55
+TF_SOLUTION_Y = -2.72   # worked line under a Đúng/Sai question
 GOAL_COLORS = (CYAN, GREEN, GOLD)
 
 
@@ -86,13 +87,25 @@ class Blocks:
             .arrange(RIGHT, buff=.3).move_to([0, 2.72, 0]).to_edge(LEFT, buff=.6)
         lines = VGroup(*intro).arrange(DOWN, aligned_edge=LEFT, buff=.22).next_to(head, DOWN, buff=.35) \
             .align_to(head, LEFT)
-        rows = VGroup()
-        for i, (k, body) in enumerate(zip('abcd', items)):
+        # Statements are stacked by their real heights (fractions make some rows taller)
+        # and shrunk together if they would run into the solution line (TF_SOLUTION_Y).
+        bodies = VGroup()
+        for k, body in zip('abcd', items):
             r = VGroup(tx(f'{k})', 24, GOLD, bold=True), body).arrange(RIGHT, buff=.3)
             if r.width > 10.4:
                 r.scale_to_fit_width(10.4)
-            r.move_to([0, .55 - .7 * i, 0]).align_to(head, LEFT).shift(RIGHT * .3)
-            slot = RoundedRectangle(width=1.25, height=.5, corner_radius=.08, stroke_color=STROKE,
+            if r.height < .6:  # keep room for the Đúng/Sai slot of short rows
+                r.add(Rectangle(width=.01, height=.6, stroke_opacity=0, fill_opacity=0).move_to(r.get_left()))
+            bodies.add(r)
+        bodies.arrange(DOWN, aligned_edge=LEFT, buff=.14)
+        top = lines.get_bottom()[1] - .22
+        room = top - (TF_SOLUTION_Y + .5)
+        if bodies.height > room:
+            bodies.scale(room / bodies.height)
+        bodies.move_to([0, top, 0], aligned_edge=UP).align_to(head, LEFT).shift(RIGHT * .3)
+        rows = VGroup()
+        for r in bodies:
+            slot = RoundedRectangle(width=1.25, height=min(.5, .9 * r.height), corner_radius=.08, stroke_color=STROKE,
                                     stroke_width=2, fill_color=PANEL_2, fill_opacity=1).move_to([5.6, r.get_y(), 0])
             rows.add(VGroup(r, slot))
         self.play(FadeIn(head), run_time=self.rt(.04))
@@ -102,13 +115,21 @@ class Blocks:
             self.play(*[FadeIn(m, shift=UP * .1) for m in lines[1:]], run_time=self.rt(.07))
         self.play(LaggedStart(*[FadeIn(r, shift=RIGHT * .2) for r in rows], lag_ratio=.3), run_time=self.rt(.2))
         self.wait_until(fracs[1], t0)
-        pause = self.pause_chip()
+        pause = self.pause_chip(TF_SOLUTION_Y)
         self.play(FadeIn(pause, scale=1.1), run_time=self.rt(.06))
         self.tf_rows, self.tf_pause = rows, pause
 
+    def tf_key(self, answers):
+        """Answer key next to the question header, e.g. answers = 'ĐSĐĐ'."""
+        text = '   '.join(f'{k}) {a}' for k, a in zip('abcd', answers))
+        return tx(f'Đáp án:  {text}', 22, GOLD, bold=True).move_to([0, 2.72, 0]).to_edge(RIGHT, buff=.6)
+
     def tf_mark(self, i, ok):
         slot = self.tf_rows[i][1]
-        b = badge('ĐÚNG' if ok else 'SAI', GREEN if ok else CORAL, 18).move_to(slot)
+        b = badge('ĐÚNG' if ok else 'SAI', GREEN if ok else CORAL, 18)
+        if b.height > slot.height:
+            b.scale_to_fit_height(slot.height)
+        b.move_to(slot)
         return FadeIn(b, scale=1.3)
 
     def answer_sheet(self, value):

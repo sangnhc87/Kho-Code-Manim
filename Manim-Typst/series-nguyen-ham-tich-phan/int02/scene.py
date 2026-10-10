@@ -460,7 +460,7 @@ class INT02(LessonScene):
         self.wait_until(.25, t0)
         self.play(self.tf_mark(1, False), run_time=self.rt(.07))
         why = VGroup(tx('Thử lại:', 22, SOFT), self.M('tf_b_chk', 1.1), tx('≠ x·f(x)', 22, CORAL, bold=True)) \
-            .arrange(RIGHT, buff=.25).move_to([0, -2.45, 0]).to_edge(LEFT, buff=.9)
+            .arrange(RIGHT, buff=.25).move_to([0, -2.72, 0]).to_edge(LEFT, buff=.9)
         self.wait_until(.5, t0)
         self.play(FadeIn(why[0]), Write(why[1]), FadeIn(why[2]), run_time=self.rt(.14))
         self.x4_why = why
@@ -469,17 +469,17 @@ class INT02(LessonScene):
         t0 = self.now()
         self.play(FadeOut(self.x4_why), run_time=self.rt(.03))
         c_calc = VGroup(tx('c)', 22, GOLD, bold=True), self.M('tf_c_calc', 1.1)).arrange(RIGHT, buff=.2) \
-            .move_to([0, -2.45, 0]).to_edge(LEFT, buff=.9)
+            .move_to([0, -2.72, 0]).to_edge(LEFT, buff=.9)
         self.play(FadeIn(c_calc), run_time=self.rt(.1))
         self.play(self.tf_mark(2, True), run_time=self.rt(.06))
         self.wait_until(.52, t0)
         d_calc = VGroup(tx('d)', 22, GOLD, bold=True), self.M('tf_d_calc', 1.1)).arrange(RIGHT, buff=.2) \
-            .move_to([3.3, -2.45, 0])
+            .move_to([3.3, -2.72, 0])
         self.play(FadeIn(d_calc), run_time=self.rt(.1))
         self.play(self.tf_mark(3, True), run_time=self.rt(.06))
         self.wait_until(.85, t0)
-        key = tx('Đáp án:  a) Đ   b) S   c) Đ   d) Đ', 22, GOLD, bold=True).move_to([0, -3.0, 0])
-        self.play(FadeIn(key, shift=UP * .1), run_time=self.rt(.06))
+        key = self.tf_key('ĐSĐĐ')
+        self.play(FadeIn(key, shift=LEFT * .1), run_time=self.rt(.06))
 
     def beat_x6(self, T):
         t0 = self.now()
