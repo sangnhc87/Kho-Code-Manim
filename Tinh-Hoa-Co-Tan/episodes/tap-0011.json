@@ -1,0 +1,50 @@
+{
+  "title": "Tập 0011: Đơn Binh Khéo Thắng Đơn Sĩ (Tốt Lấn Cung)",
+  "fen": "9/3k5/3aP4/9/9/9/9/3K5/9/9 w",
+  "beats": [
+    {
+      "fen": "9/3k5/3aP4/9/9/9/9/3K5/9/9 w",
+      "text": "Đơn Binh khéo thắng Đơn Sĩ: Một thế cờ tàn cơ bản trong loạt bài Tàn Binh. Một Tốt bình thường hòa một Sĩ, nhưng ở hình cờ này Đỏ có thủ đoạn đặc biệt.",
+      "duration": 6.0
+    },
+    {
+      "fen": "9/3k5/3aP4/9/9/9/9/3K5/9/9 w",
+      "text": "Tốt Đỏ đã lấn sâu vào Cửu cung (e2). Tướng Đỏ (d7) đang ghim chặt Sĩ Đen (d2) khiến Sĩ không thể nhúc nhích.",
+      "duration": 6.0
+    },
+    {
+      "fen": "9/3k5/3aP4/9/9/9/9/3K5/9/9 w",
+      "moves": [
+        "d7d8"
+      ],
+      "text": "Đỏ đi Tướng 6 tiến 1! Đòn chờ kinh điển.",
+      "duration": 5.0
+    },
+    {
+      "fen": "9/3k5/3aP4/9/9/9/9/9/3K5/9 b",
+      "text": "Tướng Đen không thể sang e1 do Tốt Đỏ kiểm soát, Sĩ Đen lại bị ghim. Đen buộc phải thoái Tướng.",
+      "duration": 5.0
+    },
+    {
+      "fen": "9/3k5/3aP4/9/9/9/9/9/3K5/9 b",
+      "moves": [
+        "d1d0"
+      ],
+      "text": "Tướng Đen thoái xuống d0 (Tướng 4 thoái 1).",
+      "duration": 5.0
+    },
+    {
+      "fen": "3k5/9/3aP4/9/9/9/9/9/3K5/9 w",
+      "moves": [
+        "e2e1"
+      ],
+      "text": "Binh 5 tiến 1! Tốt lấn cung áp sát.",
+      "duration": 5.0
+    },
+    {
+      "fen": "3k5/4P4/3a5/9/9/9/9/9/3K5/9 b",
+      "text": "Tốt Đỏ khống chế cả e0 và d1. Sĩ Đen d2 muốn ăn Tốt e1 nhưng không dám vì lộ mặt Tướng. Đen hết nước đi (Bí tử). Đỏ thắng!",
+      "duration": 7.0
+    }
+  ]
+}
