@@ -82,6 +82,8 @@ TỔNG HỢP: 3 KHỐI LỚP - 11 CHUYÊN ĐỀ - 70 BÀI HỌC CHUYÊN SÂU
 | **Bài 12.2.11** | Mô hình bài toán Oxyz thực tế: Vệ tinh quỹ đạo, radar quét máy bay, kết cấu giàn không gian kiến trúc. | `bai_12_2_11_oxyz_thuc_te_ve_tinh_radar.py` | ⚪ Chưa code |
 
 #### Chuyên đề 12.3: Nguyên Hàm, Tích Phân & Hình Phẳng - Thể Tích (7 bài)
+> 🔗 Đã mở rộng thành series 36 tập `INT01 → INT36`: xem [`Manim-Typst/series-nguyen-ham-tich-phan/KE_HOACH_SERIES_36_TAP.md`](Manim-Typst/series-nguyen-ham-tich-phan/KE_HOACH_SERIES_36_TAP.md). Bảng 7 bài dưới đây giữ làm mục lục rút gọn.
+
 | Mã bài | Tên bài giảng & Nội dung trọng tâm | Tệp mã nguồn tương ứng | Trạng thái |
 | :--- | :--- | :--- | :---: |
 | **Bài 12.3.01** | Định nghĩa nguyên hàm, vi phân và kỹ thuật đổi biến số loại 1 & loại 2. | `bai_12_3_01_nguyen_ham_doi_bien.py` | ⚪ Chưa code |

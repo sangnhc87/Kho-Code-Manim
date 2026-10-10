@@ -1,60 +1,82 @@
-from __future__ import annotations
-import json,sys,unittest
+"""Content/plan checks that run without Manim, Typst or network."""
+import json
+import re
+import sys
+import unittest
 from pathlib import Path
-import sympy as sp
-ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT))
-from int01.lesson import (CHAPTERS,SEGMENTS,FORMULAS,F,f,C,t,VELOCITY,POSITION,
-                           PRACTICE_PRIMITIVE,PRACTICE_DERIVATIVE,validate,x)
-from scripts.prepare_int01 import chunks,timestamp
 
-class MathematicalChecks(unittest.TestCase):
-    def test_storyboard_complete(self):
-        self.assertTrue(validate());self.assertEqual(len(CHAPTERS),8);self.assertEqual(len(SEGMENTS),32)
-        self.assertEqual(sorted({(q.chapter,q.step) for q in SEGMENTS}),[(i,j) for i in range(1,9) for j in range(1,5)])
-    def test_formulas_referenced(self):
-        self.assertTrue(all(q.formula in FORMULAS for q in SEGMENTS))
-        self.assertEqual(len({q.title for q in SEGMENTS}),32)
-    def test_derivative_and_family(self):
-        self.assertEqual(sp.diff(F+C,x),2*x)
-        for c in (-7,-1,0,2,5,25):self.assertEqual(sp.diff(F+c,x),2*x)
-    def test_tangent_slope_family(self):
-        for xc in [-2,-1,0,sp.Rational(1,2),1,2]:
-            values={sp.diff(F+c,x).subs(x,xc) for c in [-2,0,2]}
-            self.assertEqual(values,{2*xc})
-    def test_difference_three_everywhere(self):
-        self.assertEqual(sp.simplify((F+2)-(F-1)),3)
-    def test_condition_unique(self):
-        self.assertEqual(sp.solve(sp.Eq((F+C).subs(x,1),3),C),[2])
-    def test_motion_velocity(self):
-        self.assertEqual(sp.diff(POSITION,t),VELOCITY);self.assertEqual(POSITION.subs(t,0),2)
-    def test_worked_example(self):
-        self.assertEqual(sp.diff(PRACTICE_PRIMITIVE,x),PRACTICE_DERIVATIVE)
-        self.assertEqual(PRACTICE_PRIMITIVE.subs(x,1),5)
-    def test_source_clean(self):
-        scene=(ROOT/'int01/scene.py').read_text(encoding='utf-8')
-        self.assertIn('Thầy Nguyễn Văn Sang',scene)
-        self.assertNotIn("tx('nhịp",scene);self.assertNotIn('Text("Manim–Typst"',scene)
-    def test_no_answer_spoiler(self):
-        self.assertEqual(SEGMENTS[28].formula,'practice')
-        self.assertEqual(SEGMENTS[29].formula,'practice_primitive')
-        self.assertEqual(SEGMENTS[30].formula,'practice_condition')
-        self.assertEqual(SEGMENTS[31].formula,'practice_final')
-    def test_narration_present(self):
-        for s in SEGMENTS:
-            self.assertGreaterEqual(len(s.voice),85)
-            self.assertGreaterEqual(len(s.takeaway),10)
-            self.assertGreaterEqual(s.duration,20)
-    def test_subtitle_timestamps(self):
-        self.assertEqual(timestamp(0),'00:00:00,000')
-        self.assertEqual(timestamp(61.231),'00:01:01,231')
-        self.assertGreater(len(chunks(SEGMENTS[0].voice)),1)
-    def test_runtime_plan(self):
-        data=json.loads((ROOT/'int01/runtime_plan.json').read_text(encoding='utf8'))
-        self.assertEqual(len(data['segments']),32)
-        self.assertEqual(data['total_duration'],sum(a['duration'] for a in data['segments']))
-        self.assertEqual(data['voice'],'off')
-    def test_all_graph_variants_exist(self):
-        source=(ROOT/'int01/scene.py').read_text(encoding='utf8')
-        for kind in sorted({q.visual for q in SEGMENTS}):self.assertIn(repr(kind),source)
-if __name__=='__main__':unittest.main()
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from common import episode, voice  # noqa: E402
+from common.typst_build import source  # noqa: E402
+
+
+class SeriesPlan(unittest.TestCase):
+    def setUp(self):
+        self.plan = json.loads((ROOT / 'series_plan.json').read_text('utf-8'))
+
+    def test_36_episodes_in_order(self):
+        self.assertEqual([e['n'] for e in self.plan['episodes']], list(range(1, 37)))
+
+    def test_parts_cover_every_episode_once(self):
+        covered = [n for p in self.plan['parts'] for n in range(p['episodes'][0], p['episodes'][1] + 1)]
+        self.assertEqual(covered, list(range(1, 37)))
+
+    def test_plan_document_lists_every_code(self):
+        doc = (ROOT / 'KE_HOACH_SERIES_36_TAP.md').read_text('utf-8')
+        for n in range(1, 37):
+            self.assertIn(f'**INT{n:02d}**', doc)
+
+    def test_scope_and_status_values(self):
+        for e in self.plan['episodes']:
+            self.assertIn(e['scope'], {'core', 'extended'})
+            self.assertIn(e['status'], {'planned', 'production', 'published'})
+
+
+class Int01(unittest.TestCase):
+    def setUp(self):
+        self.lesson = episode.load('int01')
+
+    def test_validate(self):
+        self.assertTrue(self.lesson.validate())
+
+    def test_every_beat_has_a_scene_method(self):
+        src = (ROOT / 'int01' / 'scene.py').read_text('utf-8')
+        for b in self.lesson.BEATS:
+            self.assertRegex(src, rf'def beat_{b.id}\(self, T\)')
+
+    def test_every_formula_used_exists_and_every_formula_is_used(self):
+        src = (ROOT / 'int01' / 'scene.py').read_text('utf-8')
+        used = set(re.findall(r"self\.M\('([A-Za-z0-9_]+)'", src))
+        used |= set(re.findall(r"'((?:hw_ans|hw|sum)\d)'", src))
+        self.assertTrue(used <= set(self.lesson.FORMULAS), used - set(self.lesson.FORMULAS))
+        self.assertEqual(set(self.lesson.FORMULAS) - used, set())
+
+    def test_offline_plan_length_is_a_full_lesson(self):
+        total = sum(voice.estimate(b.text)[0] for b in self.lesson.BEATS)
+        self.assertTrue(9 * 60 < total < 18 * 60, total)
+
+    def test_typst_source_has_colour_helpers(self):
+        self.assertIn('#let gold', source('x'))
+
+    def test_srt_and_chapters_from_timeline(self):
+        beats = []
+        for b in self.lesson.BEATS:
+            d, sentences = voice.estimate(b.text)
+            beats.append({'id': b.id, 'chapter': b.chapter, 'duration': d + 1, 'sentences': sentences})
+        plan = {'beats': beats}
+        starts, t = [], 0.0
+        for b in beats:
+            starts.append(t)
+            t += b['duration']
+        srt = voice.build_srt(plan, starts)
+        self.assertTrue(srt.startswith('1\n00:00:00,'))
+        chapters = voice.chapters(plan, starts)
+        self.assertEqual(chapters[0][0], 0.0)
+        gaps = [b[0] - a[0] for a, b in zip(chapters, chapters[1:])]
+        self.assertTrue(all(g >= 10 for g in gaps), gaps)  # YouTube requires >= 10 s per chapter
+
+
+if __name__ == '__main__':
+    unittest.main()

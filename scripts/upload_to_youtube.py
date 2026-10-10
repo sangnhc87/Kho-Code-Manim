@@ -437,6 +437,7 @@ def main():
     parser.add_argument("--file", help="Đường dẫn trực tiếp file MP4")
     parser.add_argument("--title", help="Tiêu đề video")
     parser.add_argument("--description", default="", help="Mô tả video")
+    parser.add_argument("--description-file", help="File mô tả (ghi đè mô tả mặc định của bài, ví dụ mô tả có mốc chương)")
     parser.add_argument("--tags", default="", help="Tags video (ngăn cách bằng dấu phẩy)")
     parser.add_argument("--privacy", choices=["public", "unlisted", "private"], default="public", help="Chế độ hiển thị (mặc định: public)")
     parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke", "cotan", "nguyen_ham_tich_phan"], help="Chạy theo chuỗi khóa học")
@@ -544,6 +545,8 @@ Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
                 print(f"❌ Không tìm thấy thông tin hoặc file video cho bài {args.lesson}")
                 sys.exit(1)
             desc = meta.get("description", f"{meta['title']}\n{AUTHOR_INFO}")
+            if args.description_file:
+                desc = Path(args.description_file).read_text(encoding="utf-8")
             video_id, video_url = upload_single_file(
                 youtube=youtube,
                 video_path=video_path,

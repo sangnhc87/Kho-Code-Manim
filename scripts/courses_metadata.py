@@ -629,20 +629,47 @@ Bài 18: Ước lượng tham số mẫu
     }
 }
 
-INT_LESSONS = {
-    1: {
-        "title": "INT01: Bản Chất Của Nguyên Hàm & Tích Phân - Thầy Nguyễn Văn Sang",
-        "description": f"""Khóa học: Nguyên Hàm - Tích Phân - Ứng Dụng Chuyên Sâu (36 Tập)
-Tập 1: Bản chất cốt lõi của Nguyên Hàm
+# ==============================================================================
+# KHÓA HỌC: NGUYÊN HÀM - TÍCH PHÂN - ỨNG DỤNG CHUYÊN SÂU (36 TẬP)
+# Tiêu đề/mức độ lấy từ một nguồn duy nhất: series_plan.json của series.
+# ==============================================================================
+import json as _json
+from pathlib import Path as _Path
 
-Nội dung trọng tâm tập 1:
-- Hiểu định nghĩa nguyên hàm từ việc tìm ngược hàm số.
-- Phân tích họ nguyên hàm và hằng số C.
-- Ý nghĩa hình học cơ bản của họ đường cong nguyên hàm.
+_INT_PLAN = _Path(__file__).resolve().parents[1] / "Manim-Typst" / "series-nguyen-ham-tich-phan" / "series_plan.json"
+
+
+def _int_title(code, title, tag):
+    """`INTxx: <Tên tập> | <Dạng/kỹ thuật> - Thầy Nguyễn Văn Sang`, rút gọn dần nếu quá 95 ký tự."""
+    for candidate in (f"{code}: {title} | {tag} - Thầy Nguyễn Văn Sang",
+                      f"{code}: {title} | {tag}",
+                      f"{code}: {title} - Thầy Nguyễn Văn Sang"):
+        if len(candidate) <= 95:
+            return candidate
+    return f"{code}: {title}"[:95]
+
+
+def _build_int_lessons():
+    if not _INT_PLAN.exists():
+        return {}
+    plan = _json.loads(_INT_PLAN.read_text(encoding="utf-8"))
+    lessons = {}
+    for ep in plan["episodes"]:
+        code = f"INT{ep['n']:02d}"
+        scope = "Mở rộng (HSG/ĐGNL)" if ep["scope"] == "extended" else "Chương trình Toán 12 – GDPT 2018"
+        lessons[ep["n"]] = {
+            "title": _int_title(code, ep["title"], ep["tag"]),
+            "description": f"""Khóa học: Nguyên Hàm - Tích Phân - Ứng Dụng Chuyên Sâu (36 Tập)
+Tập {ep['n']}: {ep['title']} | {ep['tag']}
+Mức độ: {ep['level']} · Phạm vi: {scope}
 
 {AUTHOR_INFO}
-#NguyenHam #TichPhan #Toan12 #ThayNguyenVanSang #Manim""",
-        "tags": ["nguyên hàm", "tích phân", "toán 12", "manim", "thầy nguyễn văn sang", "giải tích"],
-        "file_pattern": "INT01"
-    }
-}
+#NguyenHam #TichPhan #Toan12 #OnThiTotNghiep #ThayNguyenVanSang #Manim""",
+            "tags": ["nguyên hàm", "tích phân", "toán 12", "ôn thi tốt nghiệp", "giải tích", "manim",
+                     "thầy nguyễn văn sang", ep["title"].lower()],
+            "file_pattern": code,
+        }
+    return lessons
+
+
+INT_LESSONS = _build_int_lessons()

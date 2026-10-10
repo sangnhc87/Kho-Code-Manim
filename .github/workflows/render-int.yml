@@ -1,0 +1,156 @@
+name: Render INT - Nguyen ham Tich phan (36 tap)
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: 'Episode code: int01 … int36'
+        required: true
+        default: 'int01'
+      quality:
+        description: 'preview (854x480, 24fps) or fullhd (1920x1080, 30fps)'
+        required: true
+        type: choice
+        options: [preview, fullhd]
+        default: preview
+      voice:
+        description: 'Male Vietnamese narration (Edge TTS, needs network)'
+        required: true
+        type: choice
+        options: ['off', 'on']
+        default: 'off'
+      upload:
+        description: 'Upload to YouTube (only when quality=fullhd and voice=on)'
+        required: true
+        type: boolean
+        default: false
+      privacy:
+        description: 'YouTube privacy'
+        required: true
+        type: choice
+        options: [public, unlisted, private]
+        default: public
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-int-${{ inputs.episode }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      EP: ${{ inputs.episode }}
+      QUALITY: ${{ inputs.quality }}
+      VOICE: ${{ inputs.voice }}
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-nguyen-ham-tich-phan
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: System dependencies and Vietnamese fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra
+          fc-match 'Noto Sans'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+
+      - name: Install Manim and lesson dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          manim --version
+          typst --version
+
+      - name: Validate episode code
+        run: |
+          echo "$EP" | grep -Eq '^int(0[1-9]|[12][0-9]|3[0-6])$' || { echo "Invalid episode: $EP"; exit 1; }
+          test -f "$EP/scene.py" || { echo "$EP is planned but not produced yet"; exit 1; }
+          echo "CODE=$(echo "$EP" | tr a-z A-Z)" >> "$GITHUB_ENV"
+
+      - name: Mathematical checks and unit tests
+        run: |
+          python -m unittest discover -s tests -v
+          python -m compileall -q common scripts "$EP"
+
+      - name: Compile Typst formulas to SVG
+        run: python scripts/build_typst.py --ep "$EP"
+
+      - name: Narration (MP3 per beat) and runtime plan
+        run: python scripts/prepare_voice.py --ep "$EP" --voice "$VOICE"
+
+      - name: Render preview 854x480 @ 24fps
+        if: ${{ inputs.quality == 'preview' }}
+        run: manim --disable_caching -ql -r 854,480 --fps 24 "$EP/scene.py" "$CODE"
+
+      - name: Render Full HD 1920x1080 @ 30fps
+        if: ${{ inputs.quality == 'fullhd' }}
+        run: manim --disable_caching -qh -r 1920,1080 --fps 30 "$EP/scene.py" "$CODE"
+
+      - name: Subtitles and YouTube description from the real timeline
+        run: python scripts/finalize.py --ep "$EP"
+
+      - name: QA - streams, timing, loudness, one still per beat
+        run: |
+          VIDEO=$(find media/videos -type f -name "$CODE.mp4" | head -n 1)
+          test -n "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+          python scripts/qa_video.py --ep "$EP" --video "$VIDEO" --quality "$QUALITY" --voice "$VOICE"
+
+      - name: Publish MP4, subtitles, description and QA stills
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}-${{ inputs.quality }}-voice-${{ inputs.voice }}
+          path: |
+            Manim-Typst/series-nguyen-ham-tich-phan/media/videos/**/${{ env.CODE }}.mp4
+            Manim-Typst/series-nguyen-ham-tich-phan/${{ env.CODE }}_vi.srt
+            Manim-Typst/series-nguyen-ham-tich-phan/artifacts/
+            Manim-Typst/series-nguyen-ham-tich-phan/${{ inputs.episode }}/runtime_plan.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Upload to YouTube
+        if: ${{ inputs.upload && inputs.quality == 'fullhd' && inputs.voice == 'on' }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          PRIVACY: ${{ inputs.privacy }}
+        run: |
+          python -m pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
+          N=$((10#${EP#int}))
+          python ../../scripts/upload_to_youtube.py \
+            --file "$VIDEO" \
+            --series nguyen_ham_tich_phan \
+            --lesson "$N" \
+            --description-file "artifacts/${EP}_youtube_description.txt" \
+            --category-id 27 \
+            --privacy "$PRIVACY"
+          test -n "$YOUTUBE_VIDEO_ID" || grep -q "YOUTUBE_VIDEO_ID" "$GITHUB_ENV"
+
+      - name: Commit YouTube history
+        if: ${{ inputs.upload && inputs.quality == 'fullhd' && inputs.voice == 'on' }}
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add ../../youtube_uploaded_history.json
+          git commit -m "docs(int): auto-update youtube_uploaded_history.json for $EP" || { echo "No changes"; exit 0; }
+          for i in 1 2 3 4; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "push failed, retry $i"; sleep $((i * 10))
+          done
+          exit 1
