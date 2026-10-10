@@ -215,7 +215,7 @@ class XiangqiLesson(Scene):
                  color=LIGHT,wrap=32,max_lines=4)
         goal_text = data.get('goal_text', 'MỤC TIÊU: BẮT SĨ' if 'sĩ' in data.get('title','').lower() else 'MỤC TIÊU: BẮT TƯỢNG')
         stamp_label=(f'{goal_text} • CHƯA XÉT LUẬT LẶP NƯỚC'
-               if data.get('analysis_status') in ('four_piece_retrograde_ordinary_moves', 'four_piece_elephant_retrograde')
+               if data.get('analysis_status') in ('four_piece_retrograde_ordinary_moves', 'four_piece_elephant_retrograde', 'andor_mate_search')
                else 'BIẾN MINH HỌA • CHƯA CHỨNG MINH THẮNG')
         stamp=fit_label(stamp_label,x=3.20,y=-2.70,
                  max_width=5.22,max_height=.23,font_size=12,color=MUTED)
