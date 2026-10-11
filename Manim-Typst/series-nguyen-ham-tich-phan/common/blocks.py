@@ -159,7 +159,7 @@ class Blocks:
         chars = VGroup(*[tx(ch, 30, GREEN, bold=True).move_to(cells[i]) for i, ch in enumerate(str(value)[:4])])
         return VGroup(tx('Phiếu trả lời:', 20, SOFT), VGroup(cells, chars)).arrange(RIGHT, buff=.25)
 
-    def sign_table(self, points, signs, label='f(x)', width=6.2, zeros=None):
+    def sign_table(self, points, signs, label='f(x)', width=6.2, zeros=None, var='x'):
         """Bảng xét dấu: ``points`` = mốc x (chuỗi), ``signs`` = '+'/'−' giữa hai mốc liên tiếp.
 
         ``zeros`` = chỉ số các mốc mà f bằng 0 (mặc định: mọi mốc trong).
@@ -170,13 +170,26 @@ class Blocks:
         zeros = range(1, n - 1) if zeros is None else zeros
         border = Rectangle(width=width, height=2 * h, stroke_color=STROKE, stroke_width=2).move_to([width / 2, 0, 0])
         grid = VGroup(Line([0, 0, 0], [width, 0, 0]), Line([lw, h, 0], [lw, -h, 0])).set_stroke(STROKE, 2)
-        head = VGroup(tx('x', 23, SOFT, slant=True).move_to([lw / 2, h / 2, 0]),
+        head = VGroup(tx(var, 23, SOFT, slant=True).move_to([lw / 2, h / 2, 0]),
                       tx(label, 23, SOFT).move_to([lw / 2, -h / 2, 0]))
         marks = VGroup(*[tx(p, 23, WHITE).move_to([xs[i], h / 2, 0]) for i, p in enumerate(points)])
         zs = VGroup(*[tx('0', 23, WHITE).move_to([xs[i], -h / 2, 0]) for i in zeros])
         sg = VGroup(*[tx(s, 30, GREEN if s == '+' else CORAL, bold=True).move_to([(xs[i] + xs[i + 1]) / 2, -h / 2, 0])
                       for i, s in enumerate(signs)])
         return VGroup(border, grid, head, marks, zs, sg)
+
+    def bound_table(self, xs, us, var='u', width=4.6):
+        """Bảng đổi cận: hàng x và hàng biến mới, mỗi cột một cận."""
+        lw, h = 1.0, .6
+        n = len(xs)
+        cx = [lw + (i + .5) * (width - lw) / n for i in range(n)]
+        border = Rectangle(width=width, height=2 * h, stroke_color=STROKE, stroke_width=2).move_to([width / 2, 0, 0])
+        grid = VGroup(Line([0, 0, 0], [width, 0, 0]), Line([lw, h, 0], [lw, -h, 0])).set_stroke(STROKE, 2)
+        head = VGroup(tx('x', 23, SOFT, slant=True).move_to([lw / 2, h / 2, 0]),
+                      tx(var, 23, GOLD, slant=True).move_to([lw / 2, -h / 2, 0]))
+        top = VGroup(*[tx(v, 23, WHITE).move_to([cx[i], h / 2, 0]) for i, v in enumerate(xs)])
+        bot = VGroup(*[tx(v, 23, GOLD, bold=True).move_to([cx[i], -h / 2, 0]) for i, v in enumerate(us)])
+        return VGroup(border, grid, head, top, bot)
 
     def verify_plot(self, a, f, F, x_from, x_to, frac, x_min=None, x_max=None, f_color=CYAN, F_color=GOLD,
                     readout_at=(BOARD_X, -1.75)):
