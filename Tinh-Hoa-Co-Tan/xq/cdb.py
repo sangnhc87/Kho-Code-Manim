@@ -20,7 +20,7 @@ from pathlib import Path
 from .board import Position
 
 API = 'https://www.chessdb.cn/chessdb.php'
-CACHE_DIR = Path(__file__).resolve().parents[1] / 'data' / 'cdb'
+CACHE_DIR = Path(os.getenv('CDB_CACHE_DIR') or Path(__file__).resolve().parents[1] / 'data' / 'cdb')
 NOTE_RE = re.compile(r'\(([WDL])-M-(\d+)\)')
 MIN_INTERVAL = float(os.getenv('CDB_INTERVAL', '0.35'))
 _last_call = [0.0]
