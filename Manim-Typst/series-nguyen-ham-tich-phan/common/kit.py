@@ -226,6 +226,28 @@ def tank(level_fn, capacity=100, center=(-1.25, -.5), w=1.5, h=3.6, unit='lít',
     return VGroup(water, shell, ticks, label)
 
 
+def area(a, f, x0, x1, color=CYAN, opacity=.4, samples=60):
+    """Filled region between the graph of f and the x-axis on [x0, x1] (works for f < 0 too)."""
+    import numpy as _np
+    from manim import Polygon
+    xs = _np.linspace(x0, x1, samples)
+    return Polygon(a.c2p(x0, 0), *[a.c2p(v, f(v)) for v in xs], a.c2p(x1, 0), stroke_width=0, fill_color=color,
+                   fill_opacity=opacity)
+
+
+def signed_area(a, f, x0, x1, pos=GREEN, neg=CORAL, opacity=.45, samples=200):
+    """Region split by sign: green above the axis, coral below."""
+    import numpy as _np
+    xs = _np.linspace(x0, x1, samples)
+    g = VGroup()
+    start = 0
+    for k in range(1, samples):
+        if (f(xs[k]) >= 0) != (f(xs[start]) >= 0) or k == samples - 1:
+            g.add(area(a, f, xs[start], xs[k], pos if f((xs[start] + xs[k]) / 2) >= 0 else neg, opacity))
+            start = k
+    return g
+
+
 def card(width, height, stroke=STROKE, fill=PANEL_2, radius=0.16, opacity=1.0, stroke_width=1.6):
     return RoundedRectangle(width=width, height=height, corner_radius=radius, fill_color=fill,
                             fill_opacity=opacity, stroke_color=stroke, stroke_width=stroke_width)
@@ -256,5 +278,5 @@ def underline(m, color=GOLD, buff=0.08, width=3):
 
 
 __all__ = ['tx', 'para', 'vn', 'Formula', 'axes', 'clipped', 'slope_field', 'tangent', 'dot', 'car',
-           'gauge', 'card', 'dashed', 'tank', 'check', 'cross', 'badge', 'underline', 'screen_dir',
+           'gauge', 'card', 'dashed', 'tank', 'area', 'signed_area', 'check', 'cross', 'badge', 'underline', 'screen_dir',
            'CYAN', 'DIM', 'GOLD', 'GREEN', 'SOFT', 'WHITE', 'CORAL']
