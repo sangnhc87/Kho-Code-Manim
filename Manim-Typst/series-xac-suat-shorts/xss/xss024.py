@@ -73,6 +73,7 @@ class XSS024(ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
+        self.clear_board(.03)
         m = self.M('prob', 2.3)
         self.write_board(m)
         self.frame(m)

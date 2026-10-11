@@ -55,15 +55,15 @@ class XSS025(ShortScene):
 
     def hook_visual(self, t0):
         self.cls = VGroup(*[token('G' if i < 12 else 'T', CORAL if i < 12 else CYAN, .26) for i in range(30)])
-        self.cls.arrange_in_grid(5, 6, buff=.22).move_to([0, 1.3, 0])
+        self.cls.arrange_in_grid(5, 6, buff=.2).move_to([0, 1.55, 0])
         legend = VGroup(tx('G: 12 nữ', 24, CORAL, bold=True), tx('T: 18 nam', 24, CYAN, bold=True)) \
-            .arrange(buff=.6).move_to([0, -.25, 0])
+            .arrange(buff=.6).move_to([0, -.45, 0])
         self.wait_until(.4, t0)
         self.play(FadeIn(self.cls, lag_ratio=.03), FadeIn(legend), run_time=self.rt(.3))
 
     def beat_s1(self, T):
         t0 = self.now()
-        self.board_top = -.85
+        self.board_top = -1.0
         self.wait_until(.3, t0)
         self.write_board(self.M('n', 2.2))
 

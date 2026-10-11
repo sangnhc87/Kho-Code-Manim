@@ -46,12 +46,12 @@ class XSS031(ShortScene):
     N = 31
 
     def hook_visual(self, t0):
-        self.board_top = -1.4
+        self.board_top = -1.5
         cells = VGroup()
         for k in range(1, 101):
-            sq = Square(side_length=.6, stroke_color=STROKE, stroke_width=1.5, fill_color=PANEL_2, fill_opacity=1)
-            cells.add(VGroup(sq, self.MNum(k, 0, SOFT, 15).move_to(sq)))
-        cells.arrange_in_grid(10, 10, buff=.04).move_to([0, 1.05, 0])
+            sq = Square(side_length=.455, stroke_color=STROKE, stroke_width=1.5, fill_color=PANEL_2, fill_opacity=1)
+            cells.add(VGroup(sq, self.MNum(k, 0, SOFT, 13).move_to(sq)))
+        cells.arrange_in_grid(10, 10, buff=.03).move_to([0, 1.1, 0])
         self.cells = cells
         self.wait_until(.45, t0)
         self.play(FadeIn(cells, lag_ratio=.004), run_time=self.rt(.4))
