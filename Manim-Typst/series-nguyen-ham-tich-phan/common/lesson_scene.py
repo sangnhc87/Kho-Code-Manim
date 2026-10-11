@@ -118,11 +118,12 @@ class LessonScene(Blocks, Scene):
         from common.kit import BAR_WIDTH, MATH_SCALE
         from common.typst_build import compile_inline
         parts = s.split('$')
-        group = VGroup()
+        group, raw = VGroup(), []
         k = size / 24 * 1.12
         for i, part in enumerate(parts):
             if not part.strip():
                 continue
+            raw.append(part)
             if i % 2 == 0:
                 group.add(tx(part.strip(), size, color, bold=bold))
             else:
@@ -135,9 +136,51 @@ class LessonScene(Blocks, Scene):
                         sub.set_stroke(width=0)
                 group.add(m)
         group.arrange(RIGHT, buff=.14)
+        for j in range(1, len(group)):  # no gap before punctuation or after an opening bracket
+            if raw[j].lstrip()[:1] in '.,:;)' or raw[j - 1].rstrip()[-1:] == '(':
+                group[j:].shift(LEFT * .1)
         if max_w is not None and group.width > max_w:
             group.scale_to_fit_width(max_w)
         return group
+
+    def _glyph(self, ch, color, k):
+        """One Typst math glyph (digit, comma, minus), cached per character/colour."""
+        cache = self.__dict__.setdefault('_glyphs', {})
+        key = (ch, color)
+        if key not in cache:
+            from manim import SVGMobject
+            from common.kit import MATH_SCALE
+            from common.typst_build import compile_inline
+            expr = {'-': '-', '−': '-', ',': '","'}.get(ch, ch)
+            svg = compile_inline(expr, color, self.paths['typst_src'], self.paths['formulas'])
+            m = SVGMobject(str(svg), height=None, width=None).scale(MATH_SCALE)
+            m.set_stroke(width=0)
+            cache[key] = m
+        return cache[key].copy().scale(k)
+
+    def MNum(self, value, nd=2, color=WHITE, size=24):
+        """Number typeset in the math font (Vietnamese decimal comma), cheap enough for always_redraw."""
+        from common.kit import vn
+        k = size / 24 * 1.12
+        text = vn(value, nd)
+        g = VGroup(*[self._glyph(ch, color, k) for ch in text])
+        g.arrange(RIGHT, buff=.02 * k, aligned_edge=DOWN)
+        digits = [m for ch, m in zip(text, g) if ch.isdigit()]
+        if digits:
+            base, mid, hgt = digits[0].get_bottom()[1], digits[0].get_center()[1], digits[0].height
+            for ch, m in zip(text, g):
+                if ch == ',':
+                    m.move_to([m.get_x(), base - .12 * hgt + m.height / 2 - .25 * m.height, 0])
+                elif ch in '-−':
+                    m.move_to([m.get_x(), mid - .05 * hgt, 0])
+        return g
+
+    def readout(self, items, size=22, color=GOLD):
+        """Live readout row: ``items`` = [(math label, value, decimals)], e.g. [('t', 1.5, 1), ('v(t)', 2.25, 2)]."""
+        row = VGroup()
+        for label, value, nd in items:
+            row.add(VGroup(self.TM(f'${label} =$', size, color), self.MNum(value, nd, color, size)).arrange(RIGHT, buff=.16))
+        return row.arrange(RIGHT, buff=.5)
 
     # -------------------------------------------------------------- stage helpers
     def stage(self):
