@@ -81,7 +81,8 @@ class XSS140(ShortScene):
     def beat_s2(self, T):
         t0 = self.now()
         self.wait_until(.4, t0)
-        self.write_board(self.M('vals', 1.9))
+        self.clear_board(.03)
+        self.write_board(self.M('vals', 2.0))
 
     def beat_s3(self, T):
         self.write_board(self.M('lim', 2.0), anim='fade')
