@@ -471,6 +471,399 @@
    ],
    "takeaway": "Khi phòng thủ bằng Song Sĩ, cung cấm trở nên chật chội. Hai Binh áp sát cùng Tướng khống chế là đủ để phá thế.",
    "takeaway_short": "Song Sĩ làm cung chật"
+  },
+  {
+   "id": "xe-song-si",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Song Sĩ",
+   "short": "Xe đơn đấu Song Sĩ",
+   "material": [
+    "R",
+    "AA"
+   ],
+   "dtm": [
+    11,
+    21
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe là quân mạnh nhất bàn cờ. Đấu với Song Sĩ, Xe thắng trong cả năm mươi thế ngẫu nhiên kênh đã tra.",
+    "Song Sĩ đứng trong cung nên cản đường chính Tướng mình. Kỹ thuật là dùng Tướng Đỏ khống chế mặt Tướng, rồi dùng Xe ép Tướng Đen vào thế không còn ô thở.",
+    "Cần chú ý: thắng chắc không có nghĩa là thắng nhanh, đi sai trình tự có thể kéo dài ván cờ thêm nhiều nước."
+   ],
+   "bullets": [
+    "Xe vs Song Sĩ: luôn thắng",
+    "Song Sĩ cản đường Tướng Đen",
+    "Tướng Đỏ khống chế mặt Tướng",
+    "Đúng trình tự thì thắng nhanh"
+   ],
+   "takeaway": "Thế thắng chắc vẫn cần trình tự đúng: Tướng khống chế trước, Xe ép sau, tận dụng việc Sĩ Đen tự chặn đường Tướng.",
+   "takeaway_short": "Tận dụng Sĩ tự chặn Tướng"
+  },
+  {
+   "id": "xe-song-tuong",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Song Tượng",
+   "short": "Xe đơn đấu Song Tượng",
+   "material": [
+    "R",
+    "BB"
+   ],
+   "dtm": [
+    13,
+    21
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe đấu Song Tượng: bảng tra cho kết quả thắng trong cả năm mươi thế ngẫu nhiên.",
+    "Khác với Sĩ, Tượng không đứng sát Tướng, nên Tướng Đen có nhiều chỗ chạy hơn, còn hai Tượng thì bảo vệ lẫn nhau.",
+    "Đỏ thường phải dùng Xe chặn đường Tướng, chờ thời cơ bắt một Tượng hoặc chiếu bí trực tiếp."
+   ],
+   "bullets": [
+    "Xe vs Song Tượng: luôn thắng",
+    "Tượng không đứng sát Tướng",
+    "Hai Tượng bảo vệ lẫn nhau",
+    "Xe chặn đường, chờ thời cơ"
+   ],
+   "takeaway": "Song Tượng che chắn kém hơn Song Sĩ quanh Tướng, nhưng bảo vệ lẫn nhau. Xe cần chặn đường Tướng trước rồi mới tính chuyện bắt quân.",
+   "takeaway_short": "Chặn đường Tướng trước"
+  },
+  {
+   "id": "xe-si-tuong",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Sĩ Tượng đơn",
+   "short": "Xe đơn đấu Sĩ Tượng",
+   "material": [
+    "R",
+    "AB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    11,
+    21
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe đấu một Sĩ một Tượng: bảng tra cho thấy Đỏ thắng trong toàn bộ bốn mươi thế mà Sĩ Tượng đứng ở vị trí phòng thủ chuẩn.",
+    "Thiếu một Sĩ và một Tượng, thế thủ của Đen có lỗ hổng. Xe dùng chiếu và đe doạ bắt quân để phá vỡ sự liên kết giữa Sĩ và Tượng."
+   ],
+   "bullets": [
+    "Xe vs Sĩ Tượng đơn: luôn thắng",
+    "Thế thủ thiếu quân có lỗ hổng",
+    "Xe đe doạ bắt quân để phá liên kết"
+   ],
+   "takeaway": "Khi đối phương thiếu quân phòng thủ, Xe vừa chiếu vừa đe doạ bắt quân để phá liên kết giữa Sĩ và Tượng.",
+   "takeaway_short": "Phá liên kết Sĩ Tượng"
+  },
+  {
+   "id": "xe-ma",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Mã",
+   "short": "Xe đơn đấu Mã đơn",
+   "material": [
+    "R",
+    "N"
+   ],
+   "dtm": [
+    9,
+    15
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe đấu Mã đơn, cả hai bên đều không có Sĩ Tượng. Trong năm mươi thế ngẫu nhiên, Xe thắng tất cả.",
+    "Mã cần đứng gần Tướng để được bảo vệ. Xe khai thác bằng cách tách Mã khỏi Tướng, hoặc dùng Tướng Đỏ khống chế mặt Tướng để chiếu bí."
+   ],
+   "bullets": [
+    "Xe vs Mã: luôn thắng",
+    "Tách Mã khỏi Tướng",
+    "Tướng Đỏ khống chế mặt Tướng"
+   ],
+   "takeaway": "Mã đơn thiếu Sĩ Tượng không thể chống lại Xe; mấu chốt là tách Mã khỏi Tướng hoặc chiếu bí trực tiếp.",
+   "takeaway_short": "Tách Mã khỏi Tướng"
+  },
+  {
+   "id": "xe-phao",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Pháo",
+   "short": "Xe đơn đấu Pháo đơn",
+   "material": [
+    "R",
+    "C"
+   ],
+   "dtm": [
+    9,
+    15
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe đấu Pháo đơn: bảng tra cho kết quả thắng trong cả năm mươi thế ngẫu nhiên.",
+    "Pháo không có ngòi thì gần như vô hại. Đỏ cần cảnh giác một điều: đừng tự tạo ngòi cho Pháo Đen chiếu Tướng mình."
+   ],
+   "bullets": [
+    "Xe vs Pháo: luôn thắng",
+    "Pháo không ngòi thì vô hại",
+    "Đừng tạo ngòi cho Pháo Đen"
+   ],
+   "takeaway": "Đấu với Pháo, hãy nhớ Pháo cần ngòi: đừng để quân mình trở thành ngòi cho Pháo đối phương.",
+   "takeaway_short": "Đừng tạo ngòi cho Pháo"
+  },
+  {
+   "id": "xe-ma-si",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Mã Sĩ",
+   "short": "Xe đơn đấu Mã Sĩ",
+   "material": [
+    "R",
+    "NA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    13,
+    25
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Thêm một Sĩ, Mã có chỗ dựa tốt hơn. Dù vậy, trong bốn mươi thế kênh tra với Sĩ đứng ở vị trí phòng thủ, Xe vẫn thắng cả bốn mươi.",
+    "Đường thắng dài hơn và cần chính xác hơn: phải tấn công vào điểm yếu nhất trong liên kết giữa Tướng, Sĩ và Mã."
+   ],
+   "bullets": [
+    "Xe vs Mã Sĩ: thắng (40/40 thế)",
+    "Đường thắng dài hơn",
+    "Đánh vào điểm yếu của liên kết"
+   ],
+   "takeaway": "Khi đối phương có thêm quân phòng thủ, hãy tìm mắt xích yếu nhất trong liên kết Tướng – Sĩ – Mã.",
+   "takeaway_short": "Tìm mắt xích yếu nhất"
+  },
+  {
+   "id": "xe-phao-si",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Pháo Sĩ",
+   "short": "Xe đơn đấu Pháo Sĩ",
+   "material": [
+    "R",
+    "CA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    13,
+    29
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Pháo Sĩ phòng thủ khéo hơn Pháo đơn, vì Sĩ có thể làm ngòi cho Pháo. Dù vậy, bốn mươi thế kênh tra đều là Xe thắng.",
+    "Cẩn thận với những đòn phản công: Pháo Đen mượn Sĩ hoặc mượn chính quân Đỏ làm ngòi để chiếu."
+   ],
+   "bullets": [
+    "Xe vs Pháo Sĩ: thắng (40/40 thế)",
+    "Sĩ có thể làm ngòi cho Pháo Đen",
+    "Cảnh giác đòn phản chiếu"
+   ],
+   "takeaway": "Thắng Pháo Sĩ cần vừa tấn công vừa phòng thủ: luôn kiểm tra xem Pháo Đen có ngòi để phản chiếu hay không.",
+   "takeaway_short": "Kiểm tra ngòi của Pháo Đen"
+  },
+  {
+   "id": "xe-si-tuong-toan",
+   "module": "Học phần 2 – Tàn Xe căn bản",
+   "category": "Tàn Xe",
+   "title": "Xe đấu Sĩ Tượng toàn: khi nào thắng?",
+   "short": "Xe đơn đấu Sĩ Tượng toàn",
+   "material": [
+    "R",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    15,
+    45
+   ],
+   "max_first_keep": 2,
+   "episodes": 3,
+   "theory": [
+    "Xe đấu Sĩ Tượng toàn là đề tài kinh điển. Kênh tra bốn mươi thế mà Sĩ Tượng Đen đứng ở vị trí phòng thủ chuẩn: hai mươi bốn thế hòa, mười sáu thế Đỏ thắng.",
+    "Nghĩa là khi Sĩ Tượng chỉnh tề, Xe đơn thường không phá nổi. Đỏ chỉ thắng khi thế thủ của Đen có khe hở, ví dụ Tướng hoặc Sĩ Tượng đứng chưa đúng chỗ.",
+    "Hôm nay ta xem một thế như vậy: phải tìm được đúng nước để khai thác khe hở trước khi Đen kịp chỉnh đội hình."
+   ],
+   "bullets": [
+    "Sĩ Tượng chỉnh tề: phần lớn hòa",
+    "Chỉ thắng khi thế thủ có khe hở",
+    "Phải ra đòn trước khi Đen chỉnh đội hình"
+   ],
+   "takeaway": "Xe đơn không phá được Sĩ Tượng toàn chỉnh tề; cơ hội thắng chỉ đến khi đối phương có khe hở, và phải tận dụng ngay.",
+   "takeaway_short": "Tận dụng khe hở ngay lập tức"
   }
  ]
 }

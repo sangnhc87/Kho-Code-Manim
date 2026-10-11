@@ -59,8 +59,11 @@ def quick_filter(pos, topic):
     if want == 'W' and not lo <= best['dtm'] <= hi:
         return None
     wins = sum(m['wdl'] == want for m in moves)
-    if wins > topic.get('max_first_keep', 3) or wins == len(moves):
+    fastest = sum(m['wdl'] == want and m['dtm'] == best['dtm'] for m in moves)
+    if wins == len(moves):
         return None  # câu đố phải có lựa chọn sai thật sự
+    if wins > topic.get('max_first_keep', 3) and fastest > 1:
+        return None  # nhiều nước thắng: chỉ nhận khi có đúng một nước thắng nhanh nhất
     first = best['move']
     if first[2:] and pos.cells.get((ord(first[2]) - 97, int(first[3]))) and not topic.get('allow_first_capture'):
         return None
@@ -228,11 +231,26 @@ def main():
         plan = [by_id[args.topic]] * args.count
     else:
         plan = next_topics(topics, catalog, args.count)
+    if not args.topic:
+        plan = next_topics(topics, catalog, 10 ** 6)
+    built, failed = 0, set()
     for topic in plan:
+        if built >= args.count:
+            break
+        if topic['id'] in failed:
+            continue
         ep = 1 + max([e['ep'] for e in catalog['episodes']] or [0])
         rng = random.Random(args.seed if args.seed is not None else ep * 7919)
-        build(topic, ep, fen=args.fen, rng=rng, samples=args.samples, finalists=args.finalists,
-              catalog=catalog)
+        try:
+            build(topic, ep, fen=args.fen, rng=rng, samples=args.samples, finalists=args.finalists,
+                  catalog=catalog)
+            built += 1
+        except (SystemExit, cdb.CdbError) as exc:
+            print(f'CẢNH BÁO: bỏ qua chủ đề {topic["id"]}: {exc}')
+            failed.add(topic['id'])
+            cdb.flush()
+    if built < args.count:
+        raise SystemExit(f'Chỉ dựng được {built}/{args.count} tập')
 
 
 if __name__ == '__main__':
