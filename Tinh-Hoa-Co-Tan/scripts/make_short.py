@@ -72,8 +72,8 @@ def mate_short(data):
     sp = sac_phrase(m['sacrifices'])
     headline = f'{side} đi – chiếu bí trong {n} nước!'
     tag = ('SÁT CỤC • ' + sp.upper()) if sp else 'SÁT CỤC LIÊN HOÀN'
-    ask = (f'{side} đi trước, chiếu bí trong {n} nước, nước nào cũng là nước chiếu.'
-           + (f' Lời giải có cả đòn {sp}.' if sp else '') + ' Bạn tìm ra không? Hãy để lại đáp án ở phần bình luận!')
+    ask = (f'{side} đi, chiếu bí trong {n} nước.' + (f' Có cả đòn {sp}.' if sp else ' Toàn nước chiếu.')
+           + ' Bạn tìm ra không?')
     g = data.get('game')
     if g:
         where = f'Ván đấu thật năm {g["year"]}' if g.get('year') else 'Một ván đấu thật'
@@ -85,7 +85,7 @@ def mate_short(data):
         else:
             ask = f'{where}. {g.get("winner") or side} kết thúc ván bằng đòn chiếu bí {n} nước. Bạn tìm ra không?'
         tag = 'THỰC CHIẾN DANH THỦ' + (' • ' + sp.upper() if sp else '')
-    steps = [{'say': ask, 'countdown': 6}]
+    steps = [{'say': ask, 'countdown': 5}]
     pos = Position.from_fen(data['fen'])
     attacker = pos.turn
     for k, x in enumerate(m['line']):
@@ -103,11 +103,10 @@ def mate_short(data):
             steps.append({'say': say, 'move': x['move'], 'mark': 'answer' if k == 0 else None, 'tag': tagx})
         else:
             cap = f', ăn {PIECE[x["capture"].upper()]}' if x.get('capture') else ''
-            forced = ', bắt buộc' if x.get('forced') else ''
+            forced = ', bắt buộc' if x.get('forced') and not cap else ''
             steps.append({'say': f'{vn}{cap}{forced}.', 'move': x['move']})
         pos = nxt
-    steps.append({'say': f'Đã kiểm chứng bằng máy tính: dù đối phương chống đỡ thế nào cũng bị bí trong {n} nước. '
-                         'Theo dõi kênh Tinh Hoa Cờ Tàn để xem sát cục mỗi ngày.'})
+    steps.append({'say': 'Đã kiểm chứng mọi cách chống đỡ. Theo dõi kênh để xem sát cục mỗi ngày!'})
     return {'number': data['number'], 'fen': data['fen'], 'headline': headline, 'tag': tag,
             'verdict': f'Bí trong {n} nước • đã kiểm chứng', 'wdl': 'W', 'steps': steps,
             'footer': 'Lời giải kiểm chứng mọi cách chống đỡ • Tinh Hoa Cờ Tàn',

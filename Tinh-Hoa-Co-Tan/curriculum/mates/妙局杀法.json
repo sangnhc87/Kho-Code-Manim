@@ -2183,6 +2183,998 @@
    ],
    "result": "红胜",
    "proof": null
+  },
+  "特级大师刘殿中选局之二": {
+   "title": "特级大师刘殿中选局之二",
+   "start_fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w",
+   "book_moves": [
+    "h2e2",
+    "h9g7",
+    "h0g2",
+    "g6g5",
+    "i0h0",
+    "i9h9",
+    "h0h6",
+    "b9c7",
+    "c3c4",
+    "g7f5",
+    "b0c2",
+    "c9e7",
+    "b2a2",
+    "a9b9",
+    "a0b0",
+    "b7b1",
+    "h6h4",
+    "g5g4",
+    "h4g4",
+    "h7g7",
+    "c2d4",
+    "f5d4",
+    "g4d4",
+    "h9h3",
+    "d4g4",
+    "g7g3",
+    "g0i2",
+    "b1b2",
+    "g4d4",
+    "h3h1",
+    "d4d2",
+    "b2e2",
+    "b0b9",
+    "e2i2",
+    "b9b2",
+    "i2i0",
+    "f0e1",
+    "h1f1"
+   ],
+   "result": "黑胜",
+   "proof": null
+  },
+  "王嘉良选局之一": {
+   "title": "王嘉良选局之一",
+   "start_fen": "2b1k4/3CaP3/4c1R1b/4cr2p/p1p6/3p5/PnP1n3P/N3B4/4A4/2BAKNC2 b",
+   "book_moves": [
+    "e8f7",
+    "g7g8",
+    "f6f1",
+    "g0h0",
+    "e6e2",
+    "c0e2",
+    "e7e2",
+    "e1d2",
+    "e2a2",
+    "d0e1",
+    "b3c1",
+    "e0d0",
+    "e3g2",
+    "d8e8",
+    "a2a0",
+    "h0h1",
+    "c1a2",
+    "d0e0",
+    "a2b0",
+    "e1d0",
+    "f1f0"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 18,
+    "fen": "2b1k4/4CPR2/5a2b/8p/p1p6/3p5/P1P5P/n2A2n2/4Ar1C1/c3KN3 b",
+    "n": 2,
+    "firsts": [
+     "a2b0",
+     "f1f0"
+    ],
+    "line": [
+     {
+      "move": "a2b0",
+      "side": "b",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e1d0",
+      "side": "w",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f1f0",
+      "side": "b",
+      "check": true,
+      "sacrifice": null,
+      "capture": "N"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 23,
+    "nodes": 19
+   }
+  },
+  "王嘉良选局之二": {
+   "title": "王嘉良选局之二",
+   "start_fen": "3ak4/1R7/4ba3/N7p/P3N1n2/3p5/c1r1P4/4B4/4A4/3AK4 w",
+   "book_moves": [
+    "a6c5",
+    "c3e3",
+    "c5d7",
+    "e9f9",
+    "b8i8",
+    "g5h7",
+    "i8h8",
+    "e3h3",
+    "e5g6",
+    "a3d3",
+    "h8h9",
+    "e7g9",
+    "g6h8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 12,
+    "fen": "3a1kbR1/9/3N1a1n1/6N1p/P8/3p5/3c3r1/4B4/4A4/3AK4 w",
+    "n": 1,
+    "firsts": [
+     "g6h8"
+    ],
+    "line": [
+     {
+      "move": "g6h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 17,
+    "nodes": 4
+   }
+  },
+  "综合杀法妙局赏析之一": {
+   "title": "综合杀法妙局赏析之一",
+   "start_fen": "2bak4/4a1R1C/2n1b2cn/p1p1pNp2/3NP3p/2P3P2/PR6P/4C3B/3rA4/2B1KA1rc w",
+   "book_moves": [
+    "g8g9",
+    "e7g9",
+    "f6g8",
+    "e9f9",
+    "b3f3",
+    "h7f7",
+    "f3f7",
+    "e8f7",
+    "e2f2",
+    "f7e8",
+    "e5f5",
+    "e8f7",
+    "f5g5",
+    "f7e8",
+    "d5f4",
+    "e8f7",
+    "f4e6",
+    "f7e8",
+    "e6f4",
+    "e8f7",
+    "f4d5",
+    "f7e8",
+    "d5f6",
+    "e8f7",
+    "f6d7",
+    "f7e8",
+    "g8f6",
+    "e8f7",
+    "f6d5",
+    "f7e8",
+    "d5f4",
+    "e8f7",
+    "f4g6",
+    "f7e8",
+    "i8f8",
+    "e8f7",
+    "f8a8",
+    "f7e8",
+    "g6f8",
+    "e8f7",
+    "f8d9",
+    "f7e8",
+    "d9f8",
+    "e8f7",
+    "a8a9",
+    "c9e7",
+    "f8d9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 46,
+    "fen": "C4kb2/5N3/2nNba2n/p1p6/6P1p/2P3P2/P7P/5C2B/3rA4/2B1KA1rc w",
+    "n": 1,
+    "firsts": [
+     "f8d9"
+    ],
+    "line": [
+     {
+      "move": "f8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 26,
+    "nodes": 6
+   }
+  },
+  "综合杀法妙局赏析之七": {
+   "title": "综合杀法妙局赏析之七",
+   "start_fen": "2b1k4/1r2a4/2na5/2pR4p/4p4/C1P4R1/c3P2nP/4B1C2/1p2A3c/2BK1A3 w",
+   "book_moves": [
+    "h4h9",
+    "e8f9",
+    "g2g9",
+    "f9e8",
+    "g9c9",
+    "e8f9",
+    "a4a9",
+    "b8b9",
+    "c9f9",
+    "b9a9",
+    "d6e6",
+    "e9d9",
+    "f9f4",
+    "d9d8",
+    "f4d4",
+    "d7e8",
+    "e6d6",
+    "e8d7",
+    "h9h8",
+    "d8d9",
+    "d6d7",
+    "d9e9",
+    "d4e4",
+    "e5e4",
+    "h8h9",
+    "e9e8",
+    "d7d8",
+    "e8e7",
+    "h9h7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 12,
+    "fen": "r2k1C1R1/9/2na5/2p1R3p/4p4/2P6/c3P2nP/4B4/1p2A3c/2BK1A3 w",
+    "n": 9,
+    "firsts": [
+     "f9f4"
+    ],
+    "line": [
+     {
+      "move": "f9f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "e5e4",
+      "side": "b",
+      "forced": false,
+      "capture": "C",
+      "n_replies": 2
+     },
+     {
+      "move": "h8h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "C"
+    ],
+    "pieces": 22,
+    "nodes": 1811
+   }
+  },
+  "综合杀法妙局赏析之三": {
+   "title": "综合杀法妙局赏析之三",
+   "start_fen": "3k1ab2/2R1a4/9/p2N2pc1/6bNp/2P2n3/P3C3P/4BA3/3p1r3/c1rAK1R2 w",
+   "book_moves": [
+    "c8c9",
+    "d9d8",
+    "d6b7",
+    "d8d7",
+    "c9c7",
+    "d7d8",
+    "c7c8",
+    "d8d7",
+    "b7c5",
+    "d7e7",
+    "c8c7",
+    "e8d7",
+    "c5e6",
+    "e7f7",
+    "c7d7",
+    "g9e7",
+    "d7e7",
+    "g5e7",
+    "e3f3",
+    "f4h5",
+    "e6f4",
+    "h5f6",
+    "f4g6",
+    "f6g4",
+    "f3f1",
+    "g4f6",
+    "g6h8",
+    "f7f8",
+    "g0g8",
+    "f8f7",
+    "g8e8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 16,
+    "fen": "5a3/9/3Rbk3/p3N1pc1/6bNp/2P2n3/P3C3P/4BA3/3p1r3/c1rAK1R2 w",
+    "n": 8,
+    "firsts": [
+     "d7e7"
+    ],
+    "line": [
+     {
+      "move": "d7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "b"
+     },
+     {
+      "move": "g5e7",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "e3f3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f4h5",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 5
+     },
+     {
+      "move": "e6f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "h5f6",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f4g6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     },
+     {
+      "move": "f6g4",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "f3f1",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     },
+     {
+      "move": "g4f6",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g6h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g0g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8a8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 25,
+    "nodes": 23041
+   }
+  },
+  "综合杀法妙局赏析之二": {
+   "title": "综合杀法妙局赏析之二",
+   "start_fen": "3a1kb2/4a2R1/2n1b3n/p2N3N1/2pr4p/1R4P2/P1r1c3P/4BC1C1/4A4/c3KAB2 w",
+   "book_moves": [
+    "h8f8",
+    "f9e9",
+    "f8f9",
+    "e9f9",
+    "b4f4",
+    "e8f7",
+    "f4f7",
+    "f9e9",
+    "h6g8",
+    "i7g8",
+    "h2h9",
+    "g9i7",
+    "f7f9",
+    "e9f9",
+    "d6f7",
+    "d5f5",
+    "f7g9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 6,
+    "fen": "3a1kb2/9/2n1ba2n/p2N3N1/2pr4p/5RP2/P1r1c3P/4BC1C1/4A4/c3KAB2 w",
+    "n": 6,
+    "firsts": [
+     "f4f7"
+    ],
+    "line": [
+     {
+      "move": "f4f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "i7g8",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "h2h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "g9i7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d5f5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "f7g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "R"
+    ],
+    "pieces": 27,
+    "nodes": 1145
+   }
+  },
+  "综合杀法妙局赏析之五": {
+   "title": "综合杀法妙局赏析之五",
+   "start_fen": "2bk1a3/5n3/3Pb4/R7p/2p6/C3p2N1/PR2c3P/1nr1B1C2/4A4/1rB1KA3 w",
+   "book_moves": [
+    "d7d8",
+    "d9e9",
+    "g2g9",
+    "f9e8",
+    "d8e8",
+    "e9e8",
+    "a6a8",
+    "e8e9",
+    "a8e8",
+    "e9e8",
+    "b3b8",
+    "e8e9",
+    "a4a9",
+    "f8d9",
+    "g9d9",
+    "e7g5",
+    "d9d8",
+    "e9e8",
+    "d8d3",
+    "e8e7",
+    "h4f5",
+    "e7d7",
+    "f5d6",
+    "e4d4",
+    "d6b7",
+    "d4d3",
+    "a9a7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 16,
+    "fen": "C1bCk4/1R7/9/8p/2p3b2/4p2N1/P3c3P/1nr1B4/4A4/1rB1KA3 w",
+    "n": 5,
+    "firsts": [
+     "d9d8"
+    ],
+    "line": [
+     {
+      "move": "d9d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d8d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h4f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b8b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 21,
+    "nodes": 1029
+   }
+  },
+  "综合杀法妙局赏析之八": {
+   "title": "综合杀法妙局赏析之八",
+   "start_fen": "2b2a3/4k4/4bP3/R7p/2p1p4/C8/P3c2rP/1R2B1C2/2r1A4/2B1K3c w",
+   "book_moves": [
+    "f7f8",
+    "e8e9",
+    "g2g9",
+    "f9e8",
+    "f8e8",
+    "e9e8",
+    "a6a8",
+    "e8e9",
+    "a8e8",
+    "e9e8",
+    "b2b8",
+    "e8e9",
+    "a4a9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 10,
+    "fen": "2b3C2/4k4/4b4/8p/2p1p4/C8/P3c2rP/1R2B4/2r1A4/2B1K3c w",
+    "n": 2,
+    "firsts": [
+     "b2b8"
+    ],
+    "line": [
+     {
+      "move": "b2b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a4a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 19,
+    "nodes": 5
+   }
+  },
+  "综合杀法妙局赏析之六": {
+   "title": "综合杀法妙局赏析之六",
+   "start_fen": "3nk1b2/4aR3/C3b4/4p3p/2p6/3R4P/P1r1P1N2/1C2B4/2r1A3c/c2K1AB2 w",
+   "book_moves": [
+    "b2b9",
+    "e7c9",
+    "f8e8",
+    "e9e8",
+    "d4d8",
+    "e8e9",
+    "d8d9",
+    "e9e8",
+    "d9d8",
+    "e8e7",
+    "g3f5",
+    "e7f7",
+    "f5h6",
+    "f7e7",
+    "h6g8",
+    "e7f7",
+    "g8e9",
+    "f7e7",
+    "e9d7",
+    "c9a7",
+    "b9b7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 4,
+    "fen": "1Cbn2b2/4k4/C8/4p3p/2p6/3R4P/P1r1P1N2/4B4/2r1A3c/c2K1AB2 w",
+    "n": 9,
+    "firsts": [
+     "d4d8"
+    ],
+    "line": [
+     {
+      "move": "d4d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "n"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "a0a7",
+      "side": "b",
+      "forced": false,
+      "capture": "C",
+      "n_replies": 2
+     },
+     {
+      "move": "g3f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f5h6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 23,
+    "nodes": 8262
+   }
   }
  }
 }

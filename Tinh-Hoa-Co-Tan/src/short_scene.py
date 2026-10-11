@@ -79,7 +79,7 @@ class XiangqiShort(Scene):
                 caption = label(part, 19, LIGHT, wrap=32, lines=3, max_w=W - .45, max_h=.82).move_to(cap_bg)
                 self.add(caption)
                 done += len(part)
-            self.wait(max(.1, clip['seconds'] + .2 - (self.time - start)))
+            self.wait(max(.1, clip['seconds'] + .1 - (self.time - start)))
             if step.get('countdown'):
                 for i in range(step['countdown'], 0, -1):
                     num = Text(str(i), font=FONT, font_size=110, color=GOLD, weight=BOLD).move_to([0, -.33, 0])
