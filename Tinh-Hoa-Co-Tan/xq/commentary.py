@@ -185,6 +185,32 @@ def _defender_say(w, ply):
     return plain
 
 
+def hook_sentence(analysis):
+    """Câu mở đầu gây tò mò, chỉ dựa trên dữ kiện bảng tra của chính thế cờ."""
+    main, val = analysis['main'], analysis['value']
+    first = main[0]
+    legal = first['n_legal']
+    if val['wdl'] == 'D':
+        if first['only']:
+            return f'Đen có {legal} nước đi, nhưng chỉ đúng một nước giữ được hòa.'
+        return 'Thế cờ hôm nay là một bài kiểm tra phòng thủ: đi sai là thua.'
+    keep = first['n_keep']
+    if keep == 1:
+        return f'Đỏ có {legal} nước đi, nhưng chỉ đúng một nước thắng.'
+    lure = next((t['lure'] for t in analysis['traps'] if t['ply'] == 0), None)
+    if lure and lure['kind'] in ('check', 'capture'):
+        what = 'nước chiếu' if lure['kind'] == 'check' else 'nước ăn quân'
+        return f'Ở thế cờ hôm nay, {what} hấp dẫn nhất lại làm mất thắng.'
+    waits = [p for p in main if p.get('zug', {}).get('key')]
+    if any(p['only'] for p in waits):
+        return 'Hôm nay, nước duy nhất giữ được thắng lợi lại là một nước chờ, không tấn công gì cả.'
+    if waits:
+        return 'Hôm nay, con đường thắng nhanh nhất lại đi qua một nước chờ, không tấn công gì cả.'
+    if keep < legal:
+        return f'Đỏ có {legal} nước đi, chỉ {keep} nước còn thắng.'
+    return f'Đỏ thắng sau {moves_count(val["dtm"])} nước, nhưng con đường không hề đơn giản.'
+
+
 def build_episode(analysis, topic, ep, writer_seed=None):
     """analysis: kết quả xq.analyze.analyze; topic: mục trong curriculum; ep: số tập."""
     w = Writer(writer_seed or f'{topic["id"]}-{ep}')
@@ -205,7 +231,7 @@ def build_episode(analysis, topic, ep, writer_seed=None):
         'panel': {'bullets': [f'Đỏ: {red_mat}', f'Đen: {black_mat}',
                               f'{SIDE[root.turn]} đi trước']},
         'fen': analysis['fen'],
-        'steps': [{'say': f'Chào mừng các bạn đến với Tinh Hoa Cờ Tàn, tập {ep}. '
+        'steps': [{'say': hook_sentence(analysis) + f' Chào mừng các bạn đến với Tinh Hoa Cờ Tàn, tập {ep}. '
                           f'Chủ đề hôm nay: {topic["title"]}. '
                           f'Bên Đỏ còn {red_mat}; bên Đen còn {black_mat}. {SIDE[root.turn]} đi trước.'}],
     })
