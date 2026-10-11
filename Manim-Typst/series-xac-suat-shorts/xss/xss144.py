@@ -55,7 +55,7 @@ class XSS144(ShortScene):
         self.both = Rectangle(width=W * .6, height=H * .7, stroke_width=0, fill_color=GOLD, fill_opacity=.75) \
             .move_to([x0 + W * .3, y0 + H * .35, 0])
         self.labels = VGroup(self.TM('Toán $"0,6"$', 26, CYAN).next_to(self.math, [0, 1, 0], buff=.1),
-                             self.TM('$"0,7"$', 26, GOLD).next_to(self.both, [1, 0, 0], buff=-.75),
+                             self.TM('$"0,7"$', 30, '#0B1220').next_to(self.both, [1, 0, 0], buff=-.85),
                              tx('không học Toán', 22, SOFT).move_to([x0 + W * .8, y0 + H / 2, 0]))
         self.wait_until(.5, t0)
         self.play(FadeIn(self.area), run_time=self.rt(.05))

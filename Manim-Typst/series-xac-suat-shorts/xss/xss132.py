@@ -64,7 +64,7 @@ class XSS132(TreeMixin, ShortScene):
         self.play(FadeIn(self.levels[2], lag_ratio=.3), run_time=self.rt(.1))
         self.play(FadeIn(self.levels[3], lag_ratio=.3), run_time=self.rt(.1))
         self.wait_until(.6, t0)
-        loop = self.TM('$1/8$: quay lại', 24, GOLD).next_to(self.leaves[-1][0], [1, 0, 0], buff=.15)
+        loop = self.TM('$1/8$: quay lại', 24, GOLD).next_to(self.leaves[-1][0], [0, -1, 0], buff=.12).shift([-.4, 0, 0])
         self.play(FadeIn(loop), self.leaves[-1][0].animate.set_stroke(GOLD, 5), run_time=self.rt(.06))
         self.play(FadeIn(tx('S: sấp', 22, SOFT).move_to([-2.6, -1.4, 0])), run_time=self.rt(.03))
 
@@ -76,6 +76,7 @@ class XSS132(TreeMixin, ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
+        self.clear_board(.03)
         m = self.M('sum', 2.0)
         self.write_board(m)
         self.frame(m)

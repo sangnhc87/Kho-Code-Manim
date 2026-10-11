@@ -60,8 +60,8 @@ class XSS157(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        self.rows = VGroup(*[VGroup(coin(a, .4), coin(b, .4)).arrange(buff=.1) for a, b in OUT]) \
-            .arrange(buff=.6).move_to([0, 2.0, 0])
+        self.rows = VGroup(*[VGroup(coin(a, .3), coin(b, .3)).arrange(buff=.08) for a, b in OUT]) \
+            .arrange(buff=.45).move_to([0, 2.0, 0])
         self.wait_until(.55, t0)
         self.play(FadeIn(self.rows, lag_ratio=.2), run_time=self.rt(.12))
 
