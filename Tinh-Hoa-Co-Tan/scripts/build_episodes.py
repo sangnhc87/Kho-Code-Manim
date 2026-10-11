@@ -237,6 +237,54 @@ def build(topic, ep, fen=None, rng=None, samples=400, finalists=6, catalog=None)
     return data
 
 
+def next_classics(collection, catalog):
+    """Các thế chưa dựng của một cuốn sách, theo đúng thứ tự trong sách, chỉ lấy thế có bảng tra."""
+    data = load_json(ROOT / 'curriculum' / 'classics' / f'{collection}.json', {'items': {}})
+    done = {e.get('source_file') for e in catalog['episodes']}
+    used = {e['key'] for e in catalog['episodes']}
+    out = []
+    for f, item in data['items'].items():
+        if f in done or item['tb'].get('status') != 'egtb' or canonical(item['fen']) in used:
+            continue
+        if item['tb']['wdl'] == 'W' and item['tb']['dtm'] < 5:
+            continue  # chiếu bí 1-2 nước: không đủ nội dung cho một tập
+        out.append((f, item))
+    return out
+
+
+def build_classic(collection, file_name, item, ep, topics, catalog):
+    from xq.classics import classic_topic
+    a = analyze(item['fen'])
+    topic = classic_topic(collection, file_name, item, a, topics)
+    hooks = episode_hooks(a)
+    title = f'{topic["title"]}: {hooks[0]}'
+    beats = build_episode(a, topic, ep)
+    meta = youtube_meta(ep, topic, a, title)
+    book = topic['book']
+    meta['description'] = meta['description'].replace(
+        'Mọi kết luận thắng/hòa',
+        f'Thế cờ số {topic["book_number"]} trong sách "{book["name"]}"'
+        + (f' ({book["author"]})' if book['author'] else '') +
+        '; dữ liệu kỳ phổ từ kho cộng đồng vietcotuong.com.\n\nMọi kết luận thắng/hòa')
+    meta['playlist'] = f'Tinh Hoa Cờ Tàn | {book["name"]}'
+    data = {
+        'id': f'ep-{ep:04d}', 'number': ep, 'topic': topic['id'], 'category': topic['category'],
+        'title': title, 'subtitle': topic['short'], 'fen': a['fen'], 'verdict': a['value'],
+        'source': 'chessdb.cn EGTB (DTM)', 'classic': {'collection': collection, 'file': file_name,
+                                                       'book_result': item.get('book_result'),
+                                                       'book_moves': item.get('book_moves', [])},
+        'topic_data': topic, 'beats': beats, 'youtube': meta, 'analysis': a,
+    }
+    (EPISODES / f'ep-{ep:04d}.json').write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n',
+                                               encoding='utf-8')
+    catalog['episodes'].append({'ep': ep, 'topic': topic['id'], 'fen': a['fen'], 'key': canonical(a['fen']),
+                                'title': title, 'source_file': file_name})
+    CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    cdb.flush()
+    print(f'ep-{ep:04d}: {title}  ({len(beats)} phân đoạn)')
+    return data
+
+
 def next_topics(topics, catalog, count, per_pass=2):
     """Thứ tự phát sóng theo vòng: mỗi vòng, mỗi chủ đề thêm tối đa per_pass tập.
 
@@ -266,10 +314,28 @@ def main():
     ap.add_argument('--samples', type=int, default=400)
     ap.add_argument('--finalists', type=int, default=6)
     ap.add_argument('--seed', type=int)
+    ap.add_argument('--classic', help='tên bộ sưu tập trong curriculum/classics (mặc định theo giáo trình)')
     args = ap.parse_args()
-    topics = load_json(CURRICULUM, {})['topics']
-    by_id = {t['id']: t for t in topics}
+    cur = load_json(CURRICULUM, {})
+    topics = cur['topics']
     catalog = load_json(CATALOG, {'episodes': []})
+    collections = [args.classic] if args.classic else ([] if args.topic or args.fen else cur.get('classics_first', []))
+    built = 0
+    for coll in collections:
+        for f, item in next_classics(coll, catalog):
+            if built >= args.count:
+                break
+            ep = 1 + max([e['ep'] for e in catalog['episodes']] or [0])
+            try:
+                build_classic(coll, f, item, ep, topics, catalog)
+                built += 1
+            except (cdb.CdbError, ValueError) as exc:
+                print(f'CẢNH BÁO: bỏ qua {f}: {exc}')
+                cdb.flush()
+    if built >= args.count or args.classic:
+        return
+    args.count -= built
+    by_id = {t['id']: t for t in topics}
     if args.topic:
         plan = [by_id[args.topic]] * args.count
     else:

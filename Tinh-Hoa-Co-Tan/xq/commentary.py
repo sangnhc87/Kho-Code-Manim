@@ -150,7 +150,8 @@ def _attacker_say(w, ply, nxt_ply, pos_after, trap_here):
         reason.append('Đây là con đường ngắn nhất đến chiếu bí.')
     room = king_room(pos_after, 'b') if not ply['mate'] else 0
     if not reason and room <= 1 and nxt_ply is not None and w.rng.random() < .6:
-        reason.append('Tướng Đen chỉ còn ' + ('đúng một ô để di chuyển.' if room == 1 else 'không còn ô nào để đi, chỉ có thể đi quân khác.'))
+        reason.append('Tướng Đen chỉ còn đúng một ô để di chuyển.' if room == 1 else
+                      'Tướng Đen không còn ô nào để đi, chỉ có thể đi quân khác.')
     return ' '.join([head] + reason)
 
 
@@ -269,6 +270,11 @@ def build_episode(analysis, topic, ep, writer_seed=None):
             say.append(f'Còn nếu đi {" hay ".join(draws[:2])} thì {"đều " if len(draws) > 1 else ""}chỉ hòa.')
         if losses:
             say.append(f'Đi {losses[0]} thì Đỏ còn thua.')
+    if val['wdl'] == 'D' and root.turn == 'w':
+        lost = [m for m in first['ranked'] if m['wdl'] == 'L']
+        say.append(f'Đỏ có {first["n_legal"]} nước đi nhưng không nước nào thắng được.' +
+                   (f' Thậm chí {len(lost)} nước còn dẫn tới thua.' if lost else ''))
+        say.append('Bài học nằm ở phía Đen: phòng thủ thế nào để giữ hòa.')
     if val['wdl'] == 'D' and root.turn == 'b':
         holds = [m for m in first['ranked'] if m['wdl'] == 'D']
         lost = [m for m in first['ranked'] if m['wdl'] == 'L']

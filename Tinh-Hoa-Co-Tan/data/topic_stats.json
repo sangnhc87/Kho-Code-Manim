@@ -25,12 +25,36 @@
   "dtm_median": 11.0,
   "n": 50
  },
+ "CC:AA:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 19,
+  "dtm_median": 9.0,
+  "n": 40
+ },
+ "CN:AA:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 13,
+  "dtm_median": 9.0,
+  "n": 40
+ },
  "CN:AABB:F": {
   "D": 0.0,
   "L": 0.0,
   "W": 1.0,
   "dtm_max_seen": 41,
   "dtm_median": 34.0,
+  "n": 40
+ },
+ "CN:BB:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 29,
+  "dtm_median": 23.0,
   "n": 40
  },
  "CP:AA": {
@@ -69,6 +93,14 @@
   "W": 0.05,
   "dtm_max_seen": 31,
   "dtm_median": 30.0,
+  "n": 40
+ },
+ "CP:P:F": {
+  "D": 0.55,
+  "L": 0.0,
+  "W": 0.45,
+  "dtm_max_seen": 27,
+  "dtm_median": 22.0,
   "n": 40
  },
  "N:-": {
@@ -125,12 +157,28 @@
   "dtm_median": 12.0,
   "n": 50
  },
+ "NN:AA:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 21,
+  "dtm_median": 11.0,
+  "n": 40
+ },
  "NN:AABB:F": {
   "D": 0.025,
   "L": 0.0,
   "W": 0.975,
   "dtm_max_seen": 53,
   "dtm_median": 43,
+  "n": 40
+ },
+ "NN:BB:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 23,
+  "dtm_median": 17.0,
   "n": 40
  },
  "NP:AA:F": {
@@ -173,6 +221,14 @@
   "dtm_median": 15.0,
   "n": 40
  },
+ "NP:P:F": {
+  "D": 0.175,
+  "L": 0.0,
+  "W": 0.825,
+  "dtm_max_seen": 25,
+  "dtm_median": 11,
+  "n": 40
+ },
  "P:-": {
   "D": 0.2,
   "L": 0.0,
@@ -196,6 +252,12 @@
   "dtm_max_seen": 5,
   "dtm_median": 5,
   "n": 50
+ },
+ "P:P:F": {
+  "D": 1.0,
+  "L": 0.0,
+  "W": 0.0,
+  "n": 40
  },
  "PP:A": {
   "D": 0.12,
@@ -243,6 +305,14 @@
   "W": 0.775,
   "dtm_max_seen": 25,
   "dtm_median": 17,
+  "n": 40
+ },
+ "PP:P:F": {
+  "D": 0.375,
+  "L": 0.0,
+  "W": 0.625,
+  "dtm_max_seen": 21,
+  "dtm_median": 13,
   "n": 40
  },
  "PPP:AABB": {
@@ -313,8 +383,8 @@
   "D": 0.975,
   "L": 0.0,
   "W": 0.025,
-  "dtm_max_seen": 33,
-  "dtm_median": 33,
+  "dtm_max_seen": 35,
+  "dtm_median": 35,
   "n": 40
  },
  "R:CAB:F": {
@@ -389,6 +459,14 @@
   "dtm_median": 33,
   "n": 40
  },
+ "RC:RAABB:F": {
+  "D": 0.95,
+  "L": 0.0,
+  "W": 0.05,
+  "dtm_max_seen": 27,
+  "dtm_median": 27.0,
+  "n": 40
+ },
  "RC:RAB:F": {
   "D": 0.875,
   "L": 0.0,
@@ -419,6 +497,14 @@
   "W": 0.975,
   "dtm_max_seen": 43,
   "dtm_median": 21,
+  "n": 40
+ },
+ "RN:RAABB:F": {
+  "D": 0.875,
+  "L": 0.0,
+  "W": 0.125,
+  "dtm_max_seen": 21,
+  "dtm_median": 5,
   "n": 40
  },
  "RN:RAB:F": {
@@ -461,6 +547,14 @@
   "dtm_median": 23.0,
   "n": 40
  },
+ "RP:RAABB:F": {
+  "D": 0.95,
+  "L": 0.0,
+  "W": 0.05,
+  "dtm_max_seen": 27,
+  "dtm_median": 15.0,
+  "n": 40
+ },
  "RP:RAB:F": {
   "D": 0.65,
   "L": 0.0,
@@ -475,6 +569,30 @@
   "W": 0.6,
   "dtm_max_seen": 37,
   "dtm_median": 18.0,
+  "n": 40
+ },
+ "RR:R:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 9,
+  "dtm_median": 3.0,
+  "n": 40
+ },
+ "RR:RA:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 13,
+  "dtm_median": 5.0,
+  "n": 40
+ },
+ "RR:RAB:F": {
+  "D": 0.0,
+  "L": 0.0,
+  "W": 1.0,
+  "dtm_max_seen": 17,
+  "dtm_median": 5.0,
   "n": 40
  }
 }

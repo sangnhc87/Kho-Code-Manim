@@ -30,9 +30,10 @@ def main():
     for ep_id in dict.fromkeys(ids):
         path = ROOT / 'episodes' / f'{ep_id}.json'
         data = json.loads(path.read_text(encoding='utf-8'))
-        topic = topics[data['topic']]
+        topic = data.get('topic_data') or topics[data['topic']]
         data['beats'] = build_episode(data['analysis'], topic, data['number'])
-        data['youtube'] = youtube_meta(data['number'], topic, data['analysis'], data['title'])
+        if 'classic' not in data:  # tập từ sách giữ nguyên mô tả có ghi nguồn
+            data['youtube'] = youtube_meta(data['number'], topic, data['analysis'], data['title'])
         validate_episode(data)
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
         print('dựng lại', ep_id)
