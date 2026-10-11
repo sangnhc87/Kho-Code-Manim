@@ -64,3 +64,24 @@ class Episodes(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class Planning(unittest.TestCase):
+    def test_levels_increase_and_rounds_interleave(self):
+        from scripts.build_episodes import level, next_topics
+        bands = [level({'id': 't', 'dtm': [15, 45]}, v)['dtm'] for v in (1, 2, 3)]
+        self.assertTrue(bands[0][0] < bands[1][0] < bands[2][0])
+        topics = [{'id': 'a', 'episodes': 4}, {'id': 'b', 'episodes': 4}]
+        order = [t['id'] for t in next_topics(topics, {'episodes': []}, 8)]
+        self.assertEqual(order, ['a', 'a', 'b', 'b', 'a', 'a', 'b', 'b'])
+
+    def test_short_script_for_every_episode(self):
+        from scripts.make_short import short_script
+        for path in sorted((ROOT / 'episodes').glob('ep-*.json')):
+            data = json.loads(path.read_text(encoding='utf-8'))
+            short = short_script(data, 6)
+            pos = Position.from_fen(short['fen'])
+            for step in short['steps']:
+                if step.get('move'):
+                    pos = pos.play(step['move'])
+            self.assertTrue(short['steps'][0].get('countdown'))
