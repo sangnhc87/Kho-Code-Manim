@@ -120,6 +120,10 @@ class LessonScene(Blocks, Scene):
         from common.kit import BAR_WIDTH, MATH_SCALE
         from common.typst_build import compile_inline
         parts = s.split('$')
+        for i in range(1, len(parts) - 1, 2):  # trailing , . ; joins the formula so it sits on the baseline
+            if parts[i + 1][:1] in (',', '.', ';') and parts[i + 1][:1]:
+                parts[i] += parts[i + 1][0]
+                parts[i + 1] = parts[i + 1][1:]
         group, raw = VGroup(), []
         k = size / 24 * 1.12
         for i, part in enumerate(parts):
