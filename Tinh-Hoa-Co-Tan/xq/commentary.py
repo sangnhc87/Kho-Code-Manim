@@ -148,6 +148,11 @@ def _attacker_say(w, ply, nxt_ply, pos_after, trap_here):
                              f'Cần chính xác: chỉ {ply["n_keep"]} trong {ply["n_legal"]} nước còn thắng.'))
     elif ply['only_fastest'] and not reason and w.rng.random() < .35:
         reason.append('Đây là con đường ngắn nhất đến chiếu bí.')
+    if ply.get('book') and ply['wdl'] == 'W':
+        best = ply['ranked'][0]
+        if best['move'] != ply['move'] and ply['dtm'] - best['dtm'] >= 4:
+            reason.append(f'Đây là nước theo sách. Bảng tra cho biết {best["vn"]} còn nhanh hơn '
+                          f'{(ply["dtm"] - best["dtm"]) // 2} nước, nhưng cách đi của sách dễ hiểu và vẫn giữ chắc thắng lợi.')
     room = king_room(pos_after, 'b') if not ply['mate'] else 0
     if not reason and room <= 1 and nxt_ply is not None and w.rng.random() < .6:
         reason.append('Tướng Đen chỉ còn đúng một ô để di chuyển.' if room == 1 else

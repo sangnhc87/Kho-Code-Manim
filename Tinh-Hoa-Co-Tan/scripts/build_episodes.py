@@ -256,7 +256,7 @@ def next_classics(collection, catalog, min_pieces=0):
 
 def build_classic(collection, file_name, item, ep, topics, catalog):
     from xq.classics import classic_topic
-    a = analyze(item['fen'])
+    a = analyze(item['fen'], prefer=item.get('book_moves'))
     topic = classic_topic(collection, file_name, item, a, topics)
     hooks = episode_hooks(a)
     title = f'{topic["title"]}: {hooks[0]}'

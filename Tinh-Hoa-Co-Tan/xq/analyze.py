@@ -81,10 +81,14 @@ def _pick(pos, res, attacker):
     return best_move
 
 
-def play_line(fen, attacker, max_plies=None, seen=None):
-    """Biến tối ưu từ fen. Bên thắng chọn nước chiếu bí nhanh nhất, bên thua chống lâu nhất."""
+def play_line(fen, attacker, max_plies=None, seen=None, prefer=None):
+    """Biến tối ưu từ fen. Bên thắng chọn nước chiếu bí nhanh nhất, bên thua chống lâu nhất.
+
+    prefer: biến của sách; được đi theo chừng nào nước của sách còn giữ nguyên kết quả.
+    """
     pos = Position.from_fen(fen)
     plies = []
+    prefer = list(prefer or [])
     seen = set(seen or ())
     while True:
         res = cdb.query(pos.fen())
@@ -98,6 +102,15 @@ def play_line(fen, attacker, max_plies=None, seen=None):
         move = _pick(pos, res, attacker)
         ranked = _ranked(res)
         best = ranked[0]
+        from_book = False
+        if prefer and len(plies) < len(prefer):
+            want = prefer[len(plies)]
+            cand = next((m for m in ranked if m['move'] == want), None)
+            if cand and cand['wdl'] == best['wdl']:
+                from_book = True
+                move = want
+            else:
+                prefer = []
         chosen = next(m for m in ranked if m['move'] == move)
         good = [m for m in ranked if m['wdl'] == best['wdl']]
         if best['wdl'] == 'W':
@@ -106,6 +119,7 @@ def play_line(fen, attacker, max_plies=None, seen=None):
             fastest = good
         info = describe_move(pos, move)
         info.update({
+            'book': from_book,
             'fen': pos.fen(),
             'side': pos.turn,
             'wdl': chosen['wdl'],
@@ -200,10 +214,10 @@ def mate_anatomy(pos):
     }
 
 
-def analyze(fen, attacker=RED, max_traps=3):
+def analyze(fen, attacker=RED, max_traps=3, prefer=None):
     root = Position.from_fen(fen)
     root_value = cdb.value(root.fen())
-    main, end = play_line(fen, attacker)
+    main, end = play_line(fen, attacker, prefer=prefer)
     traps = []
     for i, ply in enumerate(main):
         z = zugzwang_notes(ply, attacker)
