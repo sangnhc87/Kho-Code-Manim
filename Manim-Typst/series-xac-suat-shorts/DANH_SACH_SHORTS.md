@@ -1,4 +1,4 @@
-# DANH SÁCH 120 SHORTS · XÁC SUẤT 3 PHÚT
+# DANH SÁCH 200 SHORTS · XÁC SUẤT 3 PHÚT
 
 > Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.
 
@@ -151,3 +151,108 @@
 | **XSS118** | Galilei và ba xúc xắc | Gieo ba xúc xắc. Tổng 9 hay tổng 10 dễ ra hơn? | Tổng 10 (27/216 so với 25/216) | grid | XS09 |
 | **XSS119** | Bình của Pólya | Bình 1 đỏ 1 xanh; rút 1 bi, trả lại kèm 1 bi cùng màu; làm 10 lần. P(có đúng k bi đỏ thêm vào)? | 1/11 với mọi k | urn | XS30 |
 | **XSS120** | Nguyên tố cùng nhau | Chọn hai số nguyên dương ngẫu nhiên. P(chúng nguyên tố cùng nhau)? | 6/π² ≈ 0,608 | grid | XS30 |
+
+## L7 · Sơ đồ cây (XSS121 – XSS140) · 60 – 120 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS121** | Ba phát, trúng đúng hai | Xạ thủ bắn 3 phát, mỗi phát trúng 0,6, độc lập. P(trúng đúng 2 phát)? | 0,432 | tree | XS18 |
+| **XSS122** | Trung bình rút mấy lần? | Hộp 2 đỏ 3 xanh, rút lần lượt không hoàn lại đến khi được bi đỏ. Trung bình rút mấy lần? | 2 | tree | XS22 |
+| **XSS123** | Ném rổ tối đa ba lần | Ném rổ đến khi vào, tối đa 3 lần, mỗi lần vào 0,7. P(ném vào)? | 0,973 | tree | XS06 |
+| **XSS124** | Thi bằng lái ba lần | Lần 1 đậu 0,6; trượt thì lần 2 đậu 0,7; trượt nữa thì lần 3 đậu 0,8. P(đậu)? | 0,976 | tree | XS22 |
+| **XSS125** | Mưa hai ngày tới | Hôm nay mưa. Mưa thì mai mưa 0,6; tạnh thì mai mưa 0,2. P(ngày kia mưa)? | 0,44 | tree | XS24 |
+| **XSS126** | Thắng 2 trong 3 ván | A thắng mỗi ván 0,6. Ai thắng 2 ván trước là vô địch. P(A vô địch)? | 0,648 | tree | XS18 |
+| **XSS127** | Vì sao chung kết đánh 5 ván? | A thắng mỗi ván 0,6. Ai thắng 3 ván trước là vô địch. P(A vô địch)? | ≈ 0,683 | tree | XS18 |
+| **XSS128** | Không hai ngửa liền nhau | Tung đồng xu 4 lần. P(không có hai lần ngửa liên tiếp)? | 1/2 | tree | XS03 |
+| **XSS129** | Rút rồi đổi màu | Hộp 2 đỏ 1 xanh. Rút 1 bi, thay bằng 1 bi màu kia, rồi rút tiếp. P(lần hai được đỏ)? | 5/9 | tree | XS24 |
+| **XSS130** | Xúc xắc chọn hộp | Gieo xúc xắc: 1–2 chọn hộp A (1 đỏ 1 xanh), 3–5 hộp B (2 đỏ 1 xanh), 6 hộp C (3 đỏ). P(đỏ)? | 2/3 | tree | XS24 |
+| **XSS131** | Oẳn tù tì ba người | Ba người oẳn tù tì một lượt. P(hòa: cả ba giống nhau hoặc đủ ba kiểu)? | 1/3 | tree | XS09 |
+| **XSS132** | Ba người thi tung xu | A, B, C lần lượt tung đồng xu, ai ra ngửa trước thắng. P(A thắng)? | 4/7 | tree | XS18 |
+| **XSS133** | Rút đến khi đủ hai đỏ | Hộp 2 đỏ 2 xanh, rút lần lượt không hoàn lại đến khi đủ 2 bi đỏ. P(dừng ở lần thứ 3)? | 1/3 | tree | XS22 |
+| **XSS134** | Đồng xu quyết định | Tung xu: ngửa thì gieo 1 xúc xắc, sấp thì gieo 2 xúc xắc. P(tổng số chấm bằng 6)? | 11/72 | tree | XS24 |
+| **XSS135** | Ra 6 vì tung ngửa? | Như trên, biết tổng số chấm bằng 6. P(đồng xu đã ra ngửa)? | 6/11 | tree | XS25 |
+| **XSS136** | Máy dự phòng | Máy chính hỏng 0,1; khi đó máy phụ khởi động được 0,8 và chạy tốt 0,9. P(hệ thống vẫn chạy)? | 0,972 | tree | XS22 |
+| **XSS137** | Phong độ ảnh hưởng | Trận 1 thắng 0,5. Thắng trận trước thì trận sau thắng 0,7, thua thì 0,4. P(thắng đúng 2/3 trận)? | 0,305 | tree | XS22 |
+| **XSS138** | Con kiến trên hình lập phương | Kiến ở một đỉnh hình lập phương, mỗi bước bò sang đỉnh kề ngẫu nhiên. P(sau 3 bước ở đỉnh đối diện)? | 2/9 | tree | XS30 |
+| **XSS139** | Tennis: điểm deuce | Đang deuce, A thắng mỗi điểm 0,6; ai hơn 2 điểm thắng game. P(A thắng game)? | 9/13 | tree | XS30 |
+| **XSS140** | Con kiến trên tam giác | Kiến ở một đỉnh tam giác, mỗi bước sang một đỉnh khác ngẫu nhiên. P(sau 5 bước về chỗ cũ)? | 5/16 | tree | XS30 |
+
+## L8 · Có điều kiện (XSS141 – XSS160) · 60 – 120 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS141** | Biết có mặt 6 | Gieo 2 xúc xắc, biết có ít nhất một mặt 6. P(tổng ≥ 10)? | 5/11 | grid | XS20 |
+| **XSS142** | Đảo điều kiện | Gieo 2 xúc xắc, biết tổng ≥ 10. P(có ít nhất một mặt 6)? | 5/6 | grid | XS20 |
+| **XSS143** | Đọc bảng hai chiều | Lớp 40 bạn: 24 nữ, 16 nam; 12 nữ và 8 nam thích Toán. Gặp bạn thích Toán: P(là nữ)? | 3/5 | table | XS21 |
+| **XSS144** | Học thêm cả hai môn | 60 % học sinh học thêm Toán; trong số đó 70 % học thêm Lý. P(học thêm cả Toán và Lý)? | 0,42 | tree | XS22 |
+| **XSS145** | Biết có ít nhất một ngửa | Tung đồng xu 3 lần, biết có ít nhất một lần ngửa. P(cả 3 lần ngửa)? | 1/7 | tree | XS20 |
+| **XSS146** | Biết có một lá át | Rút 2 lá từ bộ 52 lá, biết có ít nhất một lá át. P(cả hai là át)? | 1/33 | cards | XS20 |
+| **XSS147** | Biết có át bích | Rút 2 lá, biết trong đó có át bích. P(cả hai là át)? | 1/17 | cards | XS28 |
+| **XSS148** | Hai mặt khác nhau | Gieo 2 xúc xắc, biết hai mặt khác nhau. P(tổng bằng 7)? | 1/5 | grid | XS20 |
+| **XSS149** | Ba lá cơ liên tiếp | Rút lần lượt 3 lá không hoàn lại. P(cả 3 lá đều là cơ)? | 11/850 | cards | XS22 |
+| **XSS150** | Biết tích chẵn | Gieo 2 xúc xắc, biết tích hai số chấm là số chẵn. P(tổng là số chẵn)? | 1/3 | grid | XS20 |
+| **XSS151** | Chỉ một mũi tên trúng | A trúng 0,8, B trúng 0,6, mỗi người bắn 1 mũi. Biết bia trúng đúng 1 mũi. P(mũi đó của A)? | 8/11 | tree | XS25 |
+| **XSS152** | Bia đã bị trúng | A trúng 0,8, B trúng 0,6, mỗi người bắn 1 mũi. Biết bia bị trúng. P(cả hai cùng trúng)? | 12/23 | tree | XS20 |
+| **XSS153** | Người sau trúng thăm | 10 lá thăm có 3 lá trúng, rút lần lượt. Biết người thứ 2 trúng: P(người thứ 1 cũng trúng)? | 2/9 | urn | XS20 |
+| **XSS154** | Biết tổng chẵn | Gieo 2 xúc xắc, biết tổng là số chẵn. P(cả hai mặt đều là 6)? | 1/18 | grid | XS20 |
+| **XSS155** | Hai lần ngửa liên tiếp | Một xu chuẩn, một xu hai mặt ngửa. Chọn 1 đồng, tung 2 lần đều ngửa. P(đã chọn xu chuẩn)? | 1/5 | tree | XS25 |
+| **XSS156** | Ít nhất hai con trai | Gia đình 3 con, biết có ít nhất 2 con trai. P(cả 3 đều là trai)? | 1/4 | tree | XS20 |
+| **XSS157** | Đôi một độc lập | Tung 2 xu. A: xu 1 ngửa; B: xu 2 ngửa; C: hai xu giống nhau. A, B, C có độc lập (cả ba) không? | Không (chỉ đôi một độc lập) | grid | XS23 |
+| **XSS158** | Biết có đúng 3 ngửa | Tung xu 5 lần, biết có đúng 3 lần ngửa. P(lần đầu ra ngửa)? | 3/5 | tree | XS20 |
+| **XSS159** | Biết có bi đỏ | Hộp 3 đỏ 2 xanh, rút 2 bi, biết có ít nhất 1 bi đỏ. P(cả hai đỏ)? | 1/3 | urn | XS20 |
+| **XSS160** | Hai nhân chứng | Sự kiện xảy ra với xác suất 1/2. A nói thật 3/4, B nói thật 4/5, cả hai nói "có". P(thật sự có)? | 12/13 | tree | XS27 |
+
+## L9 · Toàn phần – Bayes (XSS161 – XSS175) · 75 – 150 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS161** | Đi học muộn | 40 % đi xe buýt; đi muộn 10 % nếu đi buýt, 5 % nếu tự đi. P(một bạn đi muộn)? | 0,07 | tree | XS24 |
+| **XSS162** | Muộn vì xe buýt? | Như trên, biết bạn đó đi muộn. P(bạn đi xe buýt)? | 4/7 | tree | XS25 |
+| **XSS163** | Nhân chứng taxi | 85 % taxi màu xanh lá, 15 % xanh dương; nhân chứng nhận đúng màu 80 %. Nói "xanh dương": P(đúng)? | 12/29 ≈ 0,41 | square | XS27 |
+| **XSS164** | Biết hay đoán mò? | Học sinh biết đáp án 60 %, không biết thì đoán 1 trong 4. Trả lời đúng: P(thật sự biết)? | 6/7 | tree | XS25 |
+| **XSS165** | Dự báo có mưa | Ngày mưa 20 %. Mưa thì đài báo mưa 90 %, tạnh vẫn báo mưa 30 %. Đài báo mưa: P(mưa)? | 3/7 | tree | XS27 |
+| **XSS166** | Ba nhà cung cấp | Đèn từ 3 nơi: 45 %, 35 %, 20 %; đạt chuẩn 98 %, 96 %, 95 %. P(đèn đạt chuẩn)? | 0,967 | tree | XS26 |
+| **XSS167** | Tìm ngược tỉ lệ lỗi | Máy A làm 60 % sản phẩm, lỗi 2 %; tỉ lệ lỗi chung là 3 %. Tỉ lệ lỗi của máy B? | 4,5 % | tree | XS24 |
+| **XSS168** | Hai bi đỏ từ hộp nào? | Hộp I: 2 đỏ 3 xanh; hộp II: 3 đỏ 2 xanh. Chọn hộp, rút 2 bi đều đỏ. P(hộp II)? | 3/4 | tree | XS25 |
+| **XSS169** | Tín hiệu bị nhiễu | Gửi bit 1 với xác suất 0,3, bit 0 với 0,7; mỗi bit bị lật 10 %. Nhận 1: P(đã gửi 1)? | 27/34 | tree | XS27 |
+| **XSS170** | Gửi lặp hai lần | Như trên nhưng gửi mỗi bit 2 lần, nhận được "1 1". P(đã gửi 1)? | 243/250 = 0,972 | tree | XS27 |
+| **XSS171** | Câu hỏi nhạy cảm | Tung xu: ngửa thì trả lời thật "có quay cóp không?", sấp thì nói "có". 60 % nói "có". Tỉ lệ quay cóp? | 20 % | tree | XS24 |
+| **XSS172** | Súng tốt hay súng thường? | 3 súng tốt trúng 0,9; 2 súng thường trúng 0,6. Chọn 1 súng, bắn trúng. P(súng tốt)? | 9/13 | tree | XS26 |
+| **XSS173** | Bắn tiếp phát hai | Như trên, dùng lại khẩu súng đó bắn phát thứ hai. P(lại trúng)? | 21/26 | tree | XS26 |
+| **XSS174** | Chuyền bi qua ba hộp | Ba hộp đều 1 đỏ 1 xanh. Chuyển 1 bi từ I sang II, 1 bi từ II sang III, rồi rút từ III. P(đỏ)? | 1/2 | tree | XS26 |
+| **XSS175** | Ba đồng xu bí ẩn | Xu chuẩn, xu lệch P(ngửa) = 3/4, xu hai mặt ngửa. Chọn 1 đồng, tung ra ngửa. P(lần sau cũng ngửa)? | 29/36 | tree | XS26 |
+
+## L10 · Chặn điểm 8-9-10 (XSS176 – XSS190) · 90 – 170 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS176** | Phương trình có nghiệm | Gieo xúc xắc 2 lần được b rồi c. P(phương trình x² + bx + c = 0 có nghiệm)? | 19/36 | grid | XS29 |
+| **XSS177** | Hai đội mạnh cùng bảng | 8 đội chia ngẫu nhiên thành 2 bảng 4 đội. P(hai đội mạnh nhất cùng bảng)? | 3/7 | cards | XS10 |
+| **XSS178** | Nữ không đứng cạnh nhau | 5 nam, 5 nữ xếp hàng ngang. P(không có hai bạn nữ nào đứng cạnh nhau)? | 1/42 | cards | XS12 |
+| **XSS179** | Bàn tròn xen kẽ | 4 nam, 4 nữ ngồi ngẫu nhiên quanh bàn tròn. P(nam nữ ngồi xen kẽ)? | 1/35 | geo | XS12 |
+| **XSS180** | Chữ số tăng dần | Chọn ngẫu nhiên một số có 3 chữ số. P(các chữ số tăng dần từ trái sang phải)? | 7/75 | grid | XS08 |
+| **XSS181** | Ba số lập cấp số cộng | Chọn 3 số khác nhau từ 1 đến 20. P(ba số lập thành cấp số cộng)? | 3/38 | grid | XS10 |
+| **XSS182** | Ba điểm thẳng hàng | Chọn 3 trong 9 điểm của lưới 3 × 3. P(ba điểm thẳng hàng)? | 2/21 | geo | XS07 |
+| **XSS183** | Ba cạnh tam giác | Gieo 3 xúc xắc. P(ba số chấm là độ dài ba cạnh của một tam giác)? | 37/72 | grid | XS09 |
+| **XSS184** | An rút trước, Bình rút sau | Hộp 6 đỏ 4 xanh. An lấy 1 bi, Bình lấy tiếp 2 bi; biết 2 bi của Bình cùng màu. P(An lấy đỏ)? | 4/7 | tree | XS29 |
+| **XSS185** | Gặp một bạn nam | 45 % học sinh thích bóng đá; trong đó 60 % là nam, nhóm còn lại 30 % là nam. Gặp bạn nam: P(thích bóng đá)? | 18/29 ≈ 0,62 | tree | XS29 |
+| **XSS186** | Trúng đủ hai phát thì dừng | Bắn đến khi trúng 2 phát thì dừng, mỗi phát trúng 0,6. P(dừng ở phát thứ 4)? | 0,1728 | tree | XS18 |
+| **XSS187** | Tam giác tù trong 12-giác | Chọn 3 đỉnh của đa giác đều 12 cạnh. P(được tam giác tù)? | 6/11 | geo | XS07 |
+| **XSS188** | Hai số từ 1 đến 100 | Chọn 2 số khác nhau từ 1 đến 100. P(tích của chúng chia hết cho 3)? | 83/150 | grid | XS29 |
+| **XSS189** | Ngửa nhiều hơn sấp | Tung đồng xu 10 lần. P(số lần ngửa nhiều hơn số lần sấp)? | 193/512 ≈ 0,377 | tree | XS18 |
+| **XSS190** | Đoán bừa 10 câu | Đề 10 câu, mỗi câu 4 phương án, đoán bừa tất cả. P(đúng ít nhất 5 câu)? | ≈ 0,078 | curve | XS18 |
+
+## L11 · Học sinh giỏi (XSS191 – XSS200) · 120 – 180 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS191** | Gối của Lewis Carroll | Túi có 1 bi, đỏ hoặc trắng (1/2). Bỏ thêm 1 bi đỏ, rút ra được đỏ. P(bi còn lại là đỏ)? | 2/3 | tree | XS30 |
+| **XSS192** | Nghịch lý Simpson | Thuốc A khỏi 81/87 ca nhẹ, 192/263 ca nặng; B: 234/270 và 55/80. Thuốc nào khỏi chung nhiều hơn? | B (83 % so với 78 %) | table | XS28 |
+| **XSS193** | Thêm một đồng xu | An tung 4 đồng xu, Bình tung 3 đồng xu. P(An được nhiều mặt ngửa hơn Bình)? | 1/2 | tree | XS30 |
+| **XSS194** | Viên bi cuối cùng | Hộp 5 đỏ 3 xanh, rút lần lượt đến hết. P(viên bi cuối cùng màu xanh)? | 3/8 | urn | XS30 |
+| **XSS195** | Bước lên cầu thang | Mỗi bước lên 1 hoặc 2 bậc với xác suất như nhau. P(chân chạm đúng bậc thứ 4)? | 11/16 | tree | XS30 |
+| **XSS196** | Chọn người giỏi nhất | 3 ứng viên lần lượt. Bỏ qua người đầu, chọn người đầu tiên giỏi hơn mọi người trước. P(chọn được người giỏi nhất)? | 1/2 | cards | XS30 |
+| **XSS197** | Chờ hai ngửa liên tiếp | Tung đồng xu đến khi có hai lần ngửa liên tiếp. Trung bình cần bao nhiêu lần? | 6 | sim | XS30 |
+| **XSS198** | Loạt luân lưu | Mỗi đội sút 5 quả luân lưu, mỗi quả vào 0,75. P(hòa sau 5 lượt)? | ≈ 0,29 | sim | XS30 |
+| **XSS199** | Giải độc đắc 6/45 | Chọn 6 số trong 45 số. P(trùng đủ 6 số được quay)? | 1/8 145 060 | cards | XS07 |
+| **XSS200** | Monty Hall 100 cửa | 100 cửa, 1 cửa có xe. Bạn chọn 1, người dẫn mở 98 cửa có dê. Đổi cửa: P(trúng xe)? | 99/100 | cards | XS28 |

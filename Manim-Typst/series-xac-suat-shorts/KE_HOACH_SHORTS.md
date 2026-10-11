@@ -1,8 +1,8 @@
 # KẾ HOẠCH SERIES SHORTS · XÁC SUẤT 3 PHÚT
-## 120 thử thách xác suất từ Mở đầu đến Rất khó
+## 200 thử thách xác suất: từ Mở đầu đến đề Học sinh giỏi
 
-> **Tác giả:** Thầy Nguyễn Văn Sang · **Mã:** `XSS001 → XSS120` · **Định dạng:** YouTube Shorts dọc 1080×1920, tối đa 3 phút.
-> **Danh sách đầy đủ 120 Shorts:** [`DANH_SACH_120_SHORTS.md`](DANH_SACH_120_SHORTS.md) · **Dữ liệu máy đọc:** [`shorts_plan.json`](shorts_plan.json) · **Nguồn và kiểm chứng:** [`shorts_plan.py`](shorts_plan.py).
+> **Tác giả:** Thầy Nguyễn Văn Sang · **Mã:** `XSS001 → XSS200` · **Định dạng:** YouTube Shorts dọc 1080×1920, tối đa 3 phút.
+> **Danh sách đầy đủ 200 Shorts:** [`DANH_SACH_SHORTS.md`](DANH_SACH_SHORTS.md) · **Dữ liệu máy đọc:** [`shorts_plan.json`](shorts_plan.json) · **Nguồn và kiểm chứng:** [`shorts_plan.py`](shorts_plan.py).
 > **Series dài đi kèm:** Xác suất chuyên sâu `XS01 – XS30` ([kế hoạch](../series-xac-suat/KE_HOACH_SERIES_30_TAP.md)). Mỗi Short dẫn về đúng một tập dài.
 
 ---
@@ -19,6 +19,12 @@ Mỗi Short là **một câu đố xác suất trọn vẹn**: đề bài trong 
 | **L4** | Vận dụng | 061 – 085 | 25 | 75 – 120 s | Xác suất có điều kiện, bảng hai chiều, toàn phần, Bayes, xét nghiệm, lọc thư rác |
 | **L5** | Khó | 086 – 105 | 20 | 90 – 150 s | Monty Hall, ngày sinh, thư bỏ nhầm phong bì (1/e), "con trai sinh thứ Ba", chuyển bi nhiều bước |
 | **L6** | Rất khó | 106 – 120 | 15 | 120 – 180 s | Xác suất hình học (Buffon, bẻ que), con bạc phá sản, kiểm phiếu, Pólya, 6/π² |
+| | **Nhánh 2** | | | | **Xác suất có điều kiện, sơ đồ cây, câu chặn điểm, đề học sinh giỏi** |
+| **L7** | Sơ đồ cây | 121 – 140 | 20 | 60 – 120 s | Cây từ 2 tầng đến cây dừng sớm, cây vô hạn, cây thay đổi theo nhánh, đi ngẫu nhiên (kiến trên lập phương), deuce |
+| **L8** | Có điều kiện | 141 – 160 | 20 | 60 – 120 s | Thu hẹp không gian mẫu, đảo điều kiện, "ít nhất một át" và "át bích", đôi một độc lập, hai nhân chứng |
+| **L9** | Toàn phần – Bayes | 161 – 175 | 15 | 75 – 150 s | Nhân chứng taxi, đoán mò, dự báo, tín hiệu nhiễu, câu hỏi nhạy cảm, cập nhật niềm tin nhiều bước |
+| **L10** | Chặn điểm 8-9-10 | 176 – 190 | 15 | 90 – 170 s | Dạng câu khó nhất đề tốt nghiệp: tổ hợp trong xác suất, xếp chỗ, đa giác đều, Bayes kiểu trả lời ngắn |
+| **L11** | Học sinh giỏi | 191 – 200 | 10 | 120 – 180 s | Gối của Lewis Carroll, nghịch lý Simpson, bi cuối cùng, cầu thang, bài toán thư ký, Monty Hall 100 cửa |
 
 🟣 Từ L5 – L6 có nhiều bài **vượt chương trình phổ thông**. Video ghi rõ "thử thách mở rộng" để học sinh không học lệch trọng tâm.
 

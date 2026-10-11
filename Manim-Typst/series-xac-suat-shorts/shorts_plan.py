@@ -1,4 +1,4 @@
-"""Kế hoạch 120 Shorts "Xác suất 3 phút" – nguồn dữ liệu duy nhất.
+"""Kế hoạch 200 Shorts "Xác suất 3 phút" – nguồn dữ liệu duy nhất.
 
 Mỗi Short có đề, đáp án hiển thị, kiểu hình trực quan, tập XS liên quan và một
 phép kiểm chứng: đáp án được tính lại bằng liệt kê vét cạn (itertools) hoặc
@@ -86,6 +86,60 @@ def penney(rnd):  # SN (sấp rồi ngửa) xuất hiện trước NN?
         prev = cur
 
 
+def two_by_two(eqs):
+    """Giải hệ 2 ẩn a*x + b*y = c bằng phân số (dùng cho kỳ vọng thời gian chờ)."""
+    (a1, b1, c1), (a2, b2, c2) = eqs
+    det = a1 * b2 - a2 * b1
+    return (c1 * b2 - c2 * b1) / det, (a1 * c2 - a2 * c1) / det
+
+
+def ant(steps, start, moves):
+    """Phân phối vị trí sau `steps` bước, mỗi bước sang ngẫu nhiên một ô trong moves(v)."""
+    dist = {start: F(1)}
+    for _ in range(steps):
+        nxt = {}
+        for v, pr in dist.items():
+            for u in moves(v):
+                nxt[u] = nxt.get(u, 0) + pr / len(moves(v))
+        dist = nxt
+    return dist
+
+
+def cube_moves(v):
+    return [tuple(v[j] ^ (j == i) for j in range(3)) for i in range(3)]
+
+
+def chain_transfer(boxes=3):
+    """Mỗi hộp 1 đỏ 1 xanh; chuyển 1 bi từ hộp k sang hộp k + 1, cuối cùng rút từ hộp cuối."""
+    red = F(1, 2)  # P(bi chuyển đi là đỏ)
+    for _ in range(boxes - 1):
+        red = red * F(2, 3) + (1 - red) * F(1, 3)
+    return red
+
+
+def polygon_kind(t, n):
+    a, b, c = t
+    big = max(b - a, c - b, n - c + a)
+    return 'vuông' if 2 * big == n else ('tù' if 2 * big > n else 'nhọn')
+
+
+def secretary(n=3):
+    win = 0
+    for perm in permutations(range(n)):
+        best = perm[0]
+        pick = next((x for x in perm[1:] if x > best), perm[-1])
+        win += pick == n - 1
+    return F(win, factorial(n))
+
+
+def collinear(a, b, c):
+    return (b[0] - a[0]) * (c[1] - a[1]) == (b[1] - a[1]) * (c[0] - a[0])
+
+
+def ordered(s):
+    return list(s) == sorted(set(s))
+
+
 LEVELS = (
     ('L1', 'Mở đầu', (1, 15), '30 – 60 s'),
     ('L2', 'Cơ bản', (16, 35), '45 – 75 s'),
@@ -93,11 +147,22 @@ LEVELS = (
     ('L4', 'Vận dụng', (61, 85), '75 – 120 s'),
     ('L5', 'Khó', (86, 105), '90 – 150 s'),
     ('L6', 'Rất khó', (106, 120), '120 – 180 s'),
+    # nhánh 2: xác suất có điều kiện, sơ đồ cây, câu chặn điểm và đề học sinh giỏi
+    ('L7', 'Sơ đồ cây', (121, 140), '60 – 120 s'),
+    ('L8', 'Có điều kiện', (141, 160), '60 – 120 s'),
+    ('L9', 'Toàn phần – Bayes', (161, 175), '75 – 150 s'),
+    ('L10', 'Chặn điểm 8-9-10', (176, 190), '90 – 170 s'),
+    ('L11', 'Học sinh giỏi', (191, 200), '120 – 180 s'),
 )
 
 TWO_KIDS = list(product('TG', repeat=2))  # T = trai, G = gái; (con cả, con út)
 KIDS_DAY = list(product(product('TG', range(7)), repeat=2))
 URN_53 = balls(R=5, B=3)
+COINS2 = list(product('SN', repeat=2))
+_A, _B, _C = (lambda w: w[0] == 'N'), (lambda w: w[1] == 'N'), (lambda w: w[0] == w[1])
+PAIRWISE = (all(P(lambda w, x=x, y=y: x(w) and y(w), COINS2) == P(x, COINS2) * P(y, COINS2)
+                for x, y in ((_A, _B), (_A, _C), (_B, _C))),
+            P(lambda w: _A(w) and _B(w) and _C(w), COINS2) == F(1, 8))
 
 # (tiêu đề, đề bài, đáp án hiển thị, hình, tập XS, giá trị tính lại, giá trị mong đợi)
 SHORTS = [
@@ -351,6 +416,178 @@ SHORTS = [
      '1/11 với mọi k', 'urn', 'XS30', polya_uniform(), [F(1, 11)]),
     ('Nguyên tố cùng nhau', 'Chọn hai số nguyên dương ngẫu nhiên. P(chúng nguyên tố cùng nhau)?', '6/π² ≈ 0,608', 'grid',
      'XS30', round(sum(gcd(a, b) == 1 for a in range(1, 401) for b in range(1, 401)) / 400 ** 2, 2), round(6 / pi ** 2, 2)),
+    # ================= NHÁNH 2 =================
+    # ---------------- L7 · SƠ ĐỒ CÂY: từ đơn giản đến phức tạp ----------------
+    ('Ba phát, trúng đúng hai', 'Xạ thủ bắn 3 phát, mỗi phát trúng 0,6, độc lập. P(trúng đúng 2 phát)?', '0,432', 'tree', 'XS18',
+     round(3 * .6 ** 2 * .4, 3), .432),
+    ('Trung bình rút mấy lần?', 'Hộp 2 đỏ 3 xanh, rút lần lượt không hoàn lại đến khi được bi đỏ. Trung bình rút mấy lần?', '2',
+     'tree', 'XS22', F(sum(w.index('R') + 1 for w in set(permutations('RRBBB'))), 10), 2),
+    ('Ném rổ tối đa ba lần', 'Ném rổ đến khi vào, tối đa 3 lần, mỗi lần vào 0,7. P(ném vào)?', '0,973', 'tree', 'XS06',
+     round(1 - .3 ** 3, 3), .973),
+    ('Thi bằng lái ba lần', 'Lần 1 đậu 0,6; trượt thì lần 2 đậu 0,7; trượt nữa thì lần 3 đậu 0,8. P(đậu)?', '0,976', 'tree', 'XS22',
+     round(1 - .4 * .3 * .2, 3), .976),
+    ('Mưa hai ngày tới', 'Hôm nay mưa. Mưa thì mai mưa 0,6; tạnh thì mai mưa 0,2. P(ngày kia mưa)?', '0,44', 'tree', 'XS24',
+     round(.6 * .6 + .4 * .2, 2), .44),
+    ('Thắng 2 trong 3 ván', 'A thắng mỗi ván 0,6. Ai thắng 2 ván trước là vô địch. P(A vô địch)?', '0,648', 'tree', 'XS18',
+     round(float(F(3, 5) ** 2 + 2 * F(3, 5) ** 2 * F(2, 5)), 3), .648),
+    ('Vì sao chung kết đánh 5 ván?', 'A thắng mỗi ván 0,6. Ai thắng 3 ván trước là vô địch. P(A vô địch)?', '≈ 0,683', 'tree',
+     'XS18', round(float(P(lambda w: sum(w) >= 3, product((1, 1, 1, 0, 0), repeat=5))), 3), .683),
+    ('Không hai ngửa liền nhau', 'Tung đồng xu 4 lần. P(không có hai lần ngửa liên tiếp)?', '1/2', 'tree', 'XS03',
+     P(lambda w: 'NN' not in ''.join(w), product('SN', repeat=4)), F(1, 2)),
+    ('Rút rồi đổi màu', 'Hộp 2 đỏ 1 xanh. Rút 1 bi, thay bằng 1 bi màu kia, rồi rút tiếp. P(lần hai được đỏ)?', '5/9', 'tree',
+     'XS24', F(2, 3) * F(1, 3) + F(1, 3) * 1, F(5, 9)),
+    ('Xúc xắc chọn hộp', 'Gieo xúc xắc: 1–2 chọn hộp A (1 đỏ 1 xanh), 3–5 hộp B (2 đỏ 1 xanh), 6 hộp C (3 đỏ). P(đỏ)?', '2/3',
+     'tree', 'XS24', F(2, 6) * F(1, 2) + F(3, 6) * F(2, 3) + F(1, 6) * 1, F(2, 3)),
+    ('Oẳn tù tì ba người', 'Ba người oẳn tù tì một lượt. P(hòa: cả ba giống nhau hoặc đủ ba kiểu)?', '1/3', 'tree', 'XS09',
+     P(lambda w: len(set(w)) != 2, product('KBO', repeat=3)), F(1, 3)),
+    ('Ba người thi tung xu', 'A, B, C lần lượt tung đồng xu, ai ra ngửa trước thắng. P(A thắng)?', '4/7', 'tree', 'XS18',
+     F(1, 2) / (1 - F(1, 8)), F(4, 7)),
+    ('Rút đến khi đủ hai đỏ', 'Hộp 2 đỏ 2 xanh, rút lần lượt không hoàn lại đến khi đủ 2 bi đỏ. P(dừng ở lần thứ 3)?', '1/3',
+     'tree', 'XS22', P(lambda w: w[:3].count('R') == 2 and w[2] == 'R', set(permutations('RRBB'))), F(1, 3)),
+    ('Đồng xu quyết định', 'Tung xu: ngửa thì gieo 1 xúc xắc, sấp thì gieo 2 xúc xắc. P(tổng số chấm bằng 6)?', '11/72',
+     'tree', 'XS24', F(1, 2) * F(1, 6) + F(1, 2) * P(lambda w: sum(w) == 6, TWO), F(11, 72)),
+    ('Ra 6 vì tung ngửa?', 'Như trên, biết tổng số chấm bằng 6. P(đồng xu đã ra ngửa)?', '6/11', 'tree', 'XS25',
+     F(1, 12) / F(11, 72), F(6, 11)),
+    ('Máy dự phòng', 'Máy chính hỏng 0,1; khi đó máy phụ khởi động được 0,8 và chạy tốt 0,9. P(hệ thống vẫn chạy)?', '0,972',
+     'tree', 'XS22', round(.9 + .1 * .8 * .9, 3), .972),
+    ('Phong độ ảnh hưởng', 'Trận 1 thắng 0,5. Thắng trận trước thì trận sau thắng 0,7, thua thì 0,4. P(thắng đúng 2/3 trận)?',
+     '0,305', 'tree', 'XS22', round(.5 * .7 * .3 + .5 * .3 * .4 + .5 * .4 * .7, 3), .305),
+    ('Con kiến trên hình lập phương', 'Kiến ở một đỉnh hình lập phương, mỗi bước bò sang đỉnh kề ngẫu nhiên. '
+     'P(sau 3 bước ở đỉnh đối diện)?', '2/9', 'tree', 'XS30', ant(3, (0, 0, 0), cube_moves)[(1, 1, 1)], F(2, 9)),
+    ('Tennis: điểm deuce', 'Đang deuce, A thắng mỗi điểm 0,6; ai hơn 2 điểm thắng game. P(A thắng game)?', '9/13', 'tree',
+     'XS30', F(9, 25) / (F(9, 25) + F(4, 25)), F(9, 13)),
+    ('Con kiến trên tam giác', 'Kiến ở một đỉnh tam giác, mỗi bước sang một đỉnh khác ngẫu nhiên. P(sau 5 bước về chỗ cũ)?',
+     '5/16', 'tree', 'XS30', ant(5, 0, lambda v: [u for u in range(3) if u != v])[0], F(5, 16)),
+    # ---------------- L8 · CÓ ĐIỀU KIỆN chuyên sâu ----------------
+    ('Biết có mặt 6', 'Gieo 2 xúc xắc, biết có ít nhất một mặt 6. P(tổng ≥ 10)?', '5/11', 'grid', 'XS20',
+     given(lambda w: sum(w) >= 10, lambda w: 6 in w, TWO), F(5, 11)),
+    ('Đảo điều kiện', 'Gieo 2 xúc xắc, biết tổng ≥ 10. P(có ít nhất một mặt 6)?', '5/6', 'grid', 'XS20',
+     given(lambda w: 6 in w, lambda w: sum(w) >= 10, TWO), F(5, 6)),
+    ('Đọc bảng hai chiều', 'Lớp 40 bạn: 24 nữ, 16 nam; 12 nữ và 8 nam thích Toán. Gặp bạn thích Toán: P(là nữ)?', '3/5',
+     'table', 'XS21', F(12, 12 + 8), F(3, 5)),
+    ('Học thêm cả hai môn', '60 % học sinh học thêm Toán; trong số đó 70 % học thêm Lý. P(học thêm cả Toán và Lý)?', '0,42',
+     'tree', 'XS22', round(.6 * .7, 2), .42),
+    ('Biết có ít nhất một ngửa', 'Tung đồng xu 3 lần, biết có ít nhất một lần ngửa. P(cả 3 lần ngửa)?', '1/7', 'tree', 'XS20',
+     given(lambda w: w == ('N',) * 3, lambda w: 'N' in w, product('SN', repeat=3)), F(1, 7)),
+    ('Biết có một lá át', 'Rút 2 lá từ bộ 52 lá, biết có ít nhất một lá át. P(cả hai là át)?', '1/33', 'cards', 'XS20',
+     given(lambda h: h[0][0] == h[1][0] == 0, lambda h: 0 in (h[0][0], h[1][0]), combinations(DECK, 2)), F(1, 33)),
+    ('Biết có át bích', 'Rút 2 lá, biết trong đó có át bích. P(cả hai là át)?', '1/17', 'cards', 'XS28',
+     given(lambda h: h[0][0] == h[1][0] == 0, lambda h: (0, 0) in h, combinations(DECK, 2)), F(1, 17)),
+    ('Hai mặt khác nhau', 'Gieo 2 xúc xắc, biết hai mặt khác nhau. P(tổng bằng 7)?', '1/5', 'grid', 'XS20',
+     given(lambda w: sum(w) == 7, lambda w: w[0] != w[1], TWO), F(1, 5)),
+    ('Ba lá cơ liên tiếp', 'Rút lần lượt 3 lá không hoàn lại. P(cả 3 lá đều là cơ)?', '11/850', 'cards', 'XS22',
+     F(13, 52) * F(12, 51) * F(11, 50), F(11, 850)),
+    ('Biết tích chẵn', 'Gieo 2 xúc xắc, biết tích hai số chấm là số chẵn. P(tổng là số chẵn)?', '1/3', 'grid', 'XS20',
+     given(lambda w: sum(w) % 2 == 0, lambda w: w[0] * w[1] % 2 == 0, TWO), F(1, 3)),
+    ('Chỉ một mũi tên trúng', 'A trúng 0,8, B trúng 0,6, mỗi người bắn 1 mũi. Biết bia trúng đúng 1 mũi. P(mũi đó của A)?',
+     '8/11', 'tree', 'XS25', F(8, 10) * F(4, 10) / (F(8, 10) * F(4, 10) + F(2, 10) * F(6, 10)), F(8, 11)),
+    ('Bia đã bị trúng', 'A trúng 0,8, B trúng 0,6, mỗi người bắn 1 mũi. Biết bia bị trúng. P(cả hai cùng trúng)?', '12/23',
+     'tree', 'XS20', F(48, 100) / (1 - F(8, 100)), F(12, 23)),
+    ('Người sau trúng thăm', '10 lá thăm có 3 lá trúng, rút lần lượt. Biết người thứ 2 trúng: P(người thứ 1 cũng trúng)?',
+     '2/9', 'urn', 'XS20', given(lambda w: w[0][0] == 'W', lambda w: w[1][0] == 'W', permutations(balls(W=3, L=7), 2)),
+     F(2, 9)),
+    ('Biết tổng chẵn', 'Gieo 2 xúc xắc, biết tổng là số chẵn. P(cả hai mặt đều là 6)?', '1/18', 'grid', 'XS20',
+     given(lambda w: w == (6, 6), lambda w: sum(w) % 2 == 0, TWO), F(1, 18)),
+    ('Hai lần ngửa liên tiếp', 'Một xu chuẩn, một xu hai mặt ngửa. Chọn 1 đồng, tung 2 lần đều ngửa. P(đã chọn xu chuẩn)?', '1/5',
+     'tree', 'XS25', F(1, 8) / (F(1, 8) + F(1, 2)), F(1, 5)),
+    ('Ít nhất hai con trai', 'Gia đình 3 con, biết có ít nhất 2 con trai. P(cả 3 đều là trai)?', '1/4', 'tree', 'XS20',
+     given(lambda w: w.count('T') == 3, lambda w: w.count('T') >= 2, product('TG', repeat=3)), F(1, 4)),
+    ('Đôi một độc lập', 'Tung 2 xu. A: xu 1 ngửa; B: xu 2 ngửa; C: hai xu giống nhau. A, B, C có độc lập (cả ba) không?',
+     'Không (chỉ đôi một độc lập)', 'grid', 'XS23', PAIRWISE, (True, False)),
+    ('Biết có đúng 3 ngửa', 'Tung xu 5 lần, biết có đúng 3 lần ngửa. P(lần đầu ra ngửa)?', '3/5', 'tree', 'XS20',
+     given(lambda w: w[0] == 'N', lambda w: w.count('N') == 3, product('SN', repeat=5)), F(3, 5)),
+    ('Biết có bi đỏ', 'Hộp 3 đỏ 2 xanh, rút 2 bi, biết có ít nhất 1 bi đỏ. P(cả hai đỏ)?', '1/3', 'urn', 'XS20',
+     given(lambda h: all(b[0] == 'R' for b in h), lambda h: any(b[0] == 'R' for b in h), combinations(balls(R=3, B=2), 2)),
+     F(1, 3)),
+    ('Hai nhân chứng', 'Sự kiện xảy ra với xác suất 1/2. A nói thật 3/4, B nói thật 4/5, cả hai nói "có". P(thật sự có)?',
+     '12/13', 'tree', 'XS27', F(3, 4) * F(4, 5) / (F(3, 4) * F(4, 5) + F(1, 4) * F(1, 5)), F(12, 13)),
+    # ---------------- L9 · TOÀN PHẦN – BAYES nâng cao ----------------
+    ('Đi học muộn', '40 % đi xe buýt; đi muộn 10 % nếu đi buýt, 5 % nếu tự đi. P(một bạn đi muộn)?', '0,07', 'tree', 'XS24',
+     round(.4 * .1 + .6 * .05, 2), .07),
+    ('Muộn vì xe buýt?', 'Như trên, biết bạn đó đi muộn. P(bạn đi xe buýt)?', '4/7', 'tree', 'XS25',
+     F(4, 100) / F(7, 100), F(4, 7)),
+    ('Nhân chứng taxi', '85 % taxi màu xanh lá, 15 % xanh dương; nhân chứng nhận đúng màu 80 %. Nói "xanh dương": P(đúng)?',
+     '12/29 ≈ 0,41', 'square', 'XS27', F(15 * 80, 15 * 80 + 85 * 20), F(12, 29)),
+    ('Biết hay đoán mò?', 'Học sinh biết đáp án 60 %, không biết thì đoán 1 trong 4. Trả lời đúng: P(thật sự biết)?', '6/7',
+     'tree', 'XS25', F(3, 5) / (F(3, 5) + F(2, 5) * F(1, 4)), F(6, 7)),
+    ('Dự báo có mưa', 'Ngày mưa 20 %. Mưa thì đài báo mưa 90 %, tạnh vẫn báo mưa 30 %. Đài báo mưa: P(mưa)?', '3/7', 'tree',
+     'XS27', F(2, 10) * F(9, 10) / (F(2, 10) * F(9, 10) + F(8, 10) * F(3, 10)), F(3, 7)),
+    ('Ba nhà cung cấp', 'Đèn từ 3 nơi: 45 %, 35 %, 20 %; đạt chuẩn 98 %, 96 %, 95 %. P(đèn đạt chuẩn)?', '0,967', 'tree', 'XS26',
+     round(.45 * .98 + .35 * .96 + .2 * .95, 3), .967),
+    ('Tìm ngược tỉ lệ lỗi', 'Máy A làm 60 % sản phẩm, lỗi 2 %; tỉ lệ lỗi chung là 3 %. Tỉ lệ lỗi của máy B?', '4,5 %', 'tree',
+     'XS24', (F(3, 100) - F(6, 10) * F(2, 100)) / F(4, 10), F(45, 1000)),
+    ('Hai bi đỏ từ hộp nào?', 'Hộp I: 2 đỏ 3 xanh; hộp II: 3 đỏ 2 xanh. Chọn hộp, rút 2 bi đều đỏ. P(hộp II)?', '3/4', 'tree',
+     'XS25', F(comb(3, 2), 10) / (F(comb(3, 2), 10) + F(comb(2, 2), 10)), F(3, 4)),
+    ('Tín hiệu bị nhiễu', 'Gửi bit 1 với xác suất 0,3, bit 0 với 0,7; mỗi bit bị lật 10 %. Nhận 1: P(đã gửi 1)?', '27/34',
+     'tree', 'XS27', F(3, 10) * F(9, 10) / (F(3, 10) * F(9, 10) + F(7, 10) * F(1, 10)), F(27, 34)),
+    ('Gửi lặp hai lần', 'Như trên nhưng gửi mỗi bit 2 lần, nhận được "1 1". P(đã gửi 1)?', '243/250 = 0,972', 'tree', 'XS27',
+     F(3, 10) * F(81, 100) / (F(3, 10) * F(81, 100) + F(7, 10) * F(1, 100)), F(243, 250)),
+    ('Câu hỏi nhạy cảm', 'Tung xu: ngửa thì trả lời thật "có quay cóp không?", sấp thì nói "có". 60 % nói "có". Tỉ lệ quay cóp?',
+     '20 %', 'tree', 'XS24', (F(3, 5) - F(1, 2)) / F(1, 2), F(1, 5)),
+    ('Súng tốt hay súng thường?', '3 súng tốt trúng 0,9; 2 súng thường trúng 0,6. Chọn 1 súng, bắn trúng. P(súng tốt)?', '9/13',
+     'tree', 'XS26', F(3, 5) * F(9, 10) / (F(3, 5) * F(9, 10) + F(2, 5) * F(6, 10)), F(9, 13)),
+    ('Bắn tiếp phát hai', 'Như trên, dùng lại khẩu súng đó bắn phát thứ hai. P(lại trúng)?', '21/26', 'tree', 'XS26',
+     F(9, 13) * F(9, 10) + F(4, 13) * F(6, 10), F(21, 26)),
+    ('Chuyền bi qua ba hộp', 'Ba hộp đều 1 đỏ 1 xanh. Chuyển 1 bi từ I sang II, 1 bi từ II sang III, rồi rút từ III. P(đỏ)?',
+     '1/2', 'tree', 'XS26', chain_transfer(3) * F(2, 3) + (1 - chain_transfer(3)) * F(1, 3), F(1, 2)),
+    ('Ba đồng xu bí ẩn', 'Xu chuẩn, xu lệch P(ngửa) = 3/4, xu hai mặt ngửa. Chọn 1 đồng, tung ra ngửa. P(lần sau cũng ngửa)?',
+     '29/36', 'tree', 'XS26', (F(1, 4) + F(9, 16) + 1) / (F(1, 2) + F(3, 4) + 1), F(29, 36)),
+    # ---------------- L10 · CÂU CHẶN ĐIỂM 8 – 9 – 10 ----------------
+    ('Phương trình có nghiệm', 'Gieo xúc xắc 2 lần được b rồi c. P(phương trình x² + bx + c = 0 có nghiệm)?', '19/36', 'grid',
+     'XS29', P(lambda w: w[0] ** 2 >= 4 * w[1], TWO), F(19, 36)),
+    ('Hai đội mạnh cùng bảng', '8 đội chia ngẫu nhiên thành 2 bảng 4 đội. P(hai đội mạnh nhất cùng bảng)?', '3/7', 'cards',
+     'XS10', P(lambda g: (0 in g) == (1 in g), combinations(range(8), 4)), F(3, 7)),
+    ('Nữ không đứng cạnh nhau', '5 nam, 5 nữ xếp hàng ngang. P(không có hai bạn nữ nào đứng cạnh nhau)?', '1/42', 'cards',
+     'XS12', P(lambda w: 'GG' not in ''.join(w), set(permutations('TTTTTGGGGG'))), F(1, 42)),
+    ('Bàn tròn xen kẽ', '4 nam, 4 nữ ngồi ngẫu nhiên quanh bàn tròn. P(nam nữ ngồi xen kẽ)?', '1/35', 'geo', 'XS12',
+     P(lambda w: all(('M' + ''.join(w))[i] != ('M' + ''.join(w))[(i + 1) % 8] for i in range(8)), permutations('MMMFFFF')),
+     F(1, 35)),
+    ('Chữ số tăng dần', 'Chọn ngẫu nhiên một số có 3 chữ số. P(các chữ số tăng dần từ trái sang phải)?', '7/75', 'grid', 'XS08',
+     P(lambda n: ordered(str(n)), range(100, 1000)), F(7, 75)),
+    ('Ba số lập cấp số cộng', 'Chọn 3 số khác nhau từ 1 đến 20. P(ba số lập thành cấp số cộng)?', '3/38', 'grid', 'XS10',
+     P(lambda t: t[1] - t[0] == t[2] - t[1], combinations(range(1, 21), 3)), F(3, 38)),
+    ('Ba điểm thẳng hàng', 'Chọn 3 trong 9 điểm của lưới 3 × 3. P(ba điểm thẳng hàng)?', '2/21', 'geo', 'XS07',
+     P(lambda t: collinear(*t), combinations(product(range(3), repeat=2), 3)), F(2, 21)),
+    ('Ba cạnh tam giác', 'Gieo 3 xúc xắc. P(ba số chấm là độ dài ba cạnh của một tam giác)?', '37/72', 'grid', 'XS09',
+     P(lambda w: 2 * max(w) < sum(w), THREE), F(37, 72)),
+    ('An rút trước, Bình rút sau', 'Hộp 6 đỏ 4 xanh. An lấy 1 bi, Bình lấy tiếp 2 bi; biết 2 bi của Bình cùng màu. '
+     'P(An lấy đỏ)?', '4/7', 'tree', 'XS29',
+     given(lambda w: w[0][0] == 'R', lambda w: w[1][0] == w[2][0], permutations(balls(R=6, B=4), 3)), F(4, 7)),
+    ('Gặp một bạn nam', '45 % học sinh thích bóng đá; trong đó 60 % là nam, nhóm còn lại 30 % là nam. Gặp bạn nam: '
+     'P(thích bóng đá)?', '18/29 ≈ 0,62', 'tree', 'XS29', F(45 * 60, 45 * 60 + 55 * 30), F(18, 29)),
+    ('Trúng đủ hai phát thì dừng', 'Bắn đến khi trúng 2 phát thì dừng, mỗi phát trúng 0,6. P(dừng ở phát thứ 4)?', '0,1728',
+     'tree', 'XS18', round(3 * .6 * .4 ** 2 * .6, 4), .1728),
+    ('Tam giác tù trong 12-giác', 'Chọn 3 đỉnh của đa giác đều 12 cạnh. P(được tam giác tù)?', '6/11', 'geo', 'XS07',
+     P(lambda t: polygon_kind(t, 12) == 'tù', combinations(range(12), 3)), F(6, 11)),
+    ('Hai số từ 1 đến 100', 'Chọn 2 số khác nhau từ 1 đến 100. P(tích của chúng chia hết cho 3)?', '83/150', 'grid', 'XS29',
+     P(lambda t: t[0] * t[1] % 3 == 0, combinations(range(1, 101), 2)), F(83, 150)),
+    ('Ngửa nhiều hơn sấp', 'Tung đồng xu 10 lần. P(số lần ngửa nhiều hơn số lần sấp)?', '193/512 ≈ 0,377', 'tree', 'XS18',
+     P(lambda w: sum(w) > 5, product((0, 1), repeat=10)), F(193, 512)),
+    ('Đoán bừa 10 câu', 'Đề 10 câu, mỗi câu 4 phương án, đoán bừa tất cả. P(đúng ít nhất 5 câu)?', '≈ 0,078', 'curve', 'XS18',
+     round(float(sum(comb(10, k) * F(1, 4) ** k * F(3, 4) ** (10 - k) for k in range(5, 11))), 3), .078),
+    # ---------------- L11 · HỌC SINH GIỎI: hay, lạ, khó ----------------
+    ('Gối của Lewis Carroll', 'Túi có 1 bi, đỏ hoặc trắng (1/2). Bỏ thêm 1 bi đỏ, rút ra được đỏ. P(bi còn lại là đỏ)?', '2/3',
+     'tree', 'XS30', given(lambda w: w[1] == 'R', lambda w: w[0] == 'R', [('R', 'R'), ('R', 'R'), ('R', 'W'), ('W', 'R')]),
+     F(2, 3)),
+    ('Nghịch lý Simpson', 'Thuốc A khỏi 81/87 ca nhẹ, 192/263 ca nặng; B: 234/270 và 55/80. Thuốc nào khỏi chung nhiều hơn?',
+     'B (83 % so với 78 %)', 'table', 'XS28',
+     (F(81, 87) > F(234, 270), F(192, 263) > F(55, 80), F(81 + 192, 350) < F(234 + 55, 350)), (True, True, True)),
+    ('Thêm một đồng xu', 'An tung 4 đồng xu, Bình tung 3 đồng xu. P(An được nhiều mặt ngửa hơn Bình)?', '1/2', 'tree', 'XS30',
+     P(lambda w: sum(w[:4]) > sum(w[4:]), product((0, 1), repeat=7)), F(1, 2)),
+    ('Viên bi cuối cùng', 'Hộp 5 đỏ 3 xanh, rút lần lượt đến hết. P(viên bi cuối cùng màu xanh)?', '3/8', 'urn', 'XS30',
+     P(lambda w: w[-1] == 'B', set(permutations('RRRRRBBB'))), F(3, 8)),
+    ('Bước lên cầu thang', 'Mỗi bước lên 1 hoặc 2 bậc với xác suất như nhau. P(chân chạm đúng bậc thứ 4)?', '11/16', 'tree',
+     'XS30', P(lambda w: 4 in [sum(w[:k]) for k in range(5)], product((1, 2), repeat=4)), F(11, 16)),
+    ('Chọn người giỏi nhất', '3 ứng viên lần lượt. Bỏ qua người đầu, chọn người đầu tiên giỏi hơn mọi người trước. '
+     'P(chọn được người giỏi nhất)?', '1/2', 'cards', 'XS30', secretary(3), F(1, 2)),
+    ('Chờ hai ngửa liên tiếp', 'Tung đồng xu đến khi có hai lần ngửa liên tiếp. Trung bình cần bao nhiêu lần?', '6', 'sim', 'XS30',
+     two_by_two([(F(1, 2), F(-1, 2), 1), (F(-1, 2), 1, 1)])[0], 6),
+    ('Loạt luân lưu', 'Mỗi đội sút 5 quả luân lưu, mỗi quả vào 0,75. P(hòa sau 5 lượt)?', '≈ 0,29', 'sim', 'XS30',
+     round(float(sum(comb(5, k) ** 2 * F(3, 4) ** (2 * k) * F(1, 4) ** (10 - 2 * k) for k in range(6))), 2), .29),
+    ('Giải độc đắc 6/45', 'Chọn 6 số trong 45 số. P(trùng đủ 6 số được quay)?', '1/8 145 060', 'cards', 'XS07',
+     F(1, comb(45, 6)), F(1, 8145060)),
+    ('Monty Hall 100 cửa', '100 cửa, 1 cửa có xe. Bạn chọn 1, người dẫn mở 98 cửa có dê. Đổi cửa: P(trúng xe)?', '99/100',
+     'cards', 'XS28', 1 - F(1, 100), F(99, 100)),
 ]
 
 
@@ -361,7 +598,7 @@ def check(actual, expected):
 
 
 def build():
-    assert len(SHORTS) == 120, len(SHORTS)
+    assert len(SHORTS) == 200, len(SHORTS)
     rows, bad = [], []
     for i, (title, problem, answer, visual, xs, actual, expected) in enumerate(SHORTS, 1):
         if not check(actual, expected):
@@ -376,13 +613,13 @@ def build():
     for r in rows:
         yt = f"Xác suất #{r['n']:03d} · {r['title']} – bạn giải được không? #Shorts"
         assert len(yt) <= 100, yt
-    plan = {'series': 'Xác Suất 3 Phút – 120 Thử Thách Từ Dễ Đến Rất Khó', 'code_prefix': 'XSS',
+    plan = {'series': 'Xác Suất 3 Phút – 200 Thử Thách Từ Dễ Đến Học Sinh Giỏi', 'code_prefix': 'XSS',
             'author': 'Thầy Nguyễn Văn Sang', 'format': {'width': 1080, 'height': 1920, 'max_seconds': 180},
             'levels': [{'code': c, 'name': n, 'shorts': list(r), 'length': ln} for c, n, r, ln in LEVELS],
             'shorts': rows}
     Path(__file__).with_name('shorts_plan.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n',
                                                             encoding='utf-8')
-    md = ['# DANH SÁCH 120 SHORTS · XÁC SUẤT 3 PHÚT', '',
+    md = ['# DANH SÁCH 200 SHORTS · XÁC SUẤT 3 PHÚT', '',
           '> Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê '
           'vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.', '']
     for code, name, (lo, hi), length in LEVELS:
@@ -392,7 +629,7 @@ def build():
             problem = r['problem'].replace('|', '\\|')
             md.append(f"| **{r['code']}** | {r['title']} | {problem} | {r['answer']} | {r['visual']} | {r['xs_episode']} |")
         md.append('')
-    Path(__file__).with_name('DANH_SACH_120_SHORTS.md').write_text('\n'.join(md), encoding='utf-8')
+    Path(__file__).with_name('DANH_SACH_SHORTS.md').write_text('\n'.join(md), encoding='utf-8')
     return rows
 
 
