@@ -40,6 +40,8 @@ class LessonScene(Blocks, Scene):
         self.lesson = episode.load(self.EP)
         self.paths = episode.paths(self.EP)
         self.M = Formula(self.paths['formulas'])
+        from common import kit
+        kit.AXIS_LABEL = self._axis_label
         self.chrome = VGroup()
         self.board_items = []
         self.overruns = []
@@ -142,6 +144,13 @@ class LessonScene(Blocks, Scene):
         if max_w is not None and group.width > max_w:
             group.scale_to_fit_width(max_w)
         return group
+
+    def _axis_label(self, s, size, color):
+        """Axis names and tick numbers in the math font (numbers keep the Vietnamese comma)."""
+        if any(ch.isdigit() for ch in s):
+            body = s.replace('−', '-')
+            return self.TM('$' + (f'"{body}"' if ',' in body else body) + '$', size * .95, color)
+        return self.TM(f'${s}$', size, color)
 
     def _glyph(self, ch, color, k):
         """One Typst math glyph (digit, comma, minus), cached per character/colour."""

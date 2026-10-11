@@ -68,6 +68,16 @@ class Formula:
 
 
 # ------------------------------------------------------------------ graphs
+# Set by LessonScene: callable(math_text, size, color) -> mobject that typesets axis labels with Typst.
+AXIS_LABEL = None
+
+
+def _axis_text(s, size, color, slant=False):
+    if AXIS_LABEL is not None:
+        return AXIS_LABEL(s, size, color)
+    return tx(s, size, color, slant=slant)
+
+
 def axes(x_range, y_range, width, height, center=ORIGIN, x_ticks=(), y_ticks=(),
          x_label='x', y_label='y', label_size=17):
     a = Axes(x_range=list(x_range), y_range=list(y_range), x_length=width, y_length=height,
@@ -79,15 +89,15 @@ def axes(x_range, y_range, width, height, center=ORIGIN, x_ticks=(), y_ticks=(),
     for v in x_ticks:
         p = a.c2p(v, 0)
         labels.add(Line(p + UP * .06, p + DOWN * .06, color=SOFT, stroke_width=2))
-        labels.add(tx(vn(v, 0) if float(v).is_integer() else vn(v, 1), label_size, SOFT).move_to(p + DOWN * .27))
+        labels.add(_axis_text(vn(v, 0) if float(v).is_integer() else vn(v, 1), label_size, SOFT).move_to(p + DOWN * .27))
     for v in y_ticks:
         p = a.c2p(0, v)
         labels.add(Line(p + LEFT * .06, p + RIGHT * .06, color=SOFT, stroke_width=2))
-        labels.add(tx(vn(v, 0) if float(v).is_integer() else vn(v, 1), label_size, SOFT).next_to(p, LEFT, buff=.12))
+        labels.add(_axis_text(vn(v, 0) if float(v).is_integer() else vn(v, 1), label_size, SOFT).next_to(p, LEFT, buff=.12))
     if x_label:
-        labels.add(tx(x_label, label_size + 2, SOFT, slant=True).next_to(a.x_axis.get_end(), DOWN, buff=.14))
+        labels.add(_axis_text(x_label, label_size + 2, SOFT, slant=True).next_to(a.x_axis.get_end(), DOWN, buff=.14))
     if y_label:
-        labels.add(tx(y_label, label_size + 2, SOFT, slant=True).next_to(a.y_axis.get_end(), LEFT, buff=.14))
+        labels.add(_axis_text(y_label, label_size + 2, SOFT, slant=True).next_to(a.y_axis.get_end(), LEFT, buff=.14))
     a.labels = labels
     return a
 
