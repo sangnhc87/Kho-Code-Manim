@@ -2303,6 +2303,224 @@
    ],
    "takeaway": "Xe Pháo đấu Xe vẫn thường thắng, nhưng phải chủ động tạo ngòi cho Pháo; thiếu ngòi, Pháo không giúp được Xe.",
    "takeaway_short": "Chủ động tạo ngòi cho Pháo"
+  },
+  {
+   "id": "xe-phao-xe-si",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Pháo",
+   "title": "Xe Pháo đấu Xe Sĩ",
+   "short": "Xe Pháo đấu Xe Sĩ",
+   "material": [
+    "RC",
+    "RA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    19,
+    51
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Pháo đấu Xe Sĩ: bốn mươi thế kênh tra với Sĩ Đen đứng phòng thủ, khoảng sáu phần mười Đỏ thắng.",
+    "Sĩ Đen vừa che Tướng, vừa có thể trở thành ngòi cho chính Pháo Đỏ. Biết mượn Sĩ Đen làm ngòi là chìa khoá của tàn cuộc này.",
+    "Đường thắng khá dài, trung bình khoảng mười bảy nước."
+   ],
+   "bullets": [
+    "Xe Pháo vs Xe Sĩ: khoảng 6/10 thắng",
+    "Mượn Sĩ Đen làm ngòi",
+    "Đường thắng trung bình 17 nước"
+   ],
+   "takeaway": "Trong tàn Xe Pháo, quân phòng thủ của đối phương cũng là ngòi tiềm năng cho Pháo mình.",
+   "takeaway_short": "Mượn quân địch làm ngòi"
+  },
+  {
+   "id": "ma-manh-hon-phao",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Pháo",
+   "title": "Vì sao tàn cuộc Mã mạnh hơn Pháo?",
+   "short": "Xe Pháo đấu Xe Sĩ Tượng",
+   "material": [
+    "RC",
+    "RAB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    13,
+    39
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Các danh thủ hay nói: vào tàn cuộc, Mã mạnh hơn Pháo. Bảng tra cho ta con số cụ thể.",
+    "Xe Mã đấu Xe Sĩ Tượng: bốn mươi thế kênh tra, Đỏ thắng chín phần mười. Còn Xe Pháo đấu Xe Sĩ Tượng, cùng điều kiện: chỉ khoảng một phần tám Đỏ thắng.",
+    "Khi quân trên bàn ít dần, Pháo thiếu ngòi nên mất dần sức mạnh, còn Mã đi được khắp nơi không cần ngòi.",
+    "Hôm nay ta xem một trong số ít thế Xe Pháo vẫn thắng được Xe Sĩ Tượng, và vì sao nó đặc biệt."
+   ],
+   "bullets": [
+    "Xe Mã vs Xe Sĩ Tượng: 9/10 thắng",
+    "Xe Pháo vs Xe Sĩ Tượng: khoảng 1/8 thắng",
+    "Tàn cuộc ít quân, Pháo thiếu ngòi",
+    "Thế thắng của Xe Pháo rất hiếm"
+   ],
+   "takeaway": "Khi đổi quân bước vào tàn cuộc, hãy nhớ: Mã thường đáng giá hơn Pháo, vì Pháo cần ngòi mà tàn cuộc thì ít quân.",
+   "takeaway_short": "Tàn cuộc: Mã hơn Pháo"
+  },
+  {
+   "id": "xe-ma-si-tuong",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Mã Sĩ Tượng",
+   "short": "Xe đơn đấu Mã Sĩ Tượng",
+   "material": [
+    "R",
+    "NAB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    13,
+    23
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe đơn đấu Mã cùng một Sĩ một Tượng: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, Xe thắng cả bốn mươi.",
+    "Đen có ba quân phòng thủ nhưng không quân nào đủ sức chống Xe. Đỏ tìm cách bắt quân hoặc tách quân khỏi Tướng."
+   ],
+   "bullets": [
+    "Xe vs Mã Sĩ Tượng: thắng 40/40",
+    "Ba quân thủ vẫn không đủ",
+    "Bắt quân hoặc tách quân khỏi Tướng"
+   ],
+   "takeaway": "Xe là quân mạnh nhất: kể cả trước Mã Sĩ Tượng, Xe vẫn thắng nếu biết tách các quân phòng thủ khỏi nhau.",
+   "takeaway_short": "Tách quân phòng thủ"
   }
  ]
 }
