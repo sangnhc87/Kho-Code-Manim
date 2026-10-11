@@ -13,8 +13,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import CORAL, GREEN, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS160', 'answer': '12/13'}
-PROBLEM = ['Sự kiện xảy ra với xác suất $50%$. A nói thật $75%$,',
-           'B nói thật $80%$; cả hai cùng nói "có".', 'Xác suất sự kiện thật sự đã xảy ra?']
+PROBLEM = ['Sự kiện xảy ra với xác suất $50%$. A nói',
+           'thật $75%$, B nói thật $80%$; cả hai cùng',
+           'nói "có". Xác suất sự kiện đã xảy ra?']
 OPTIONS = ['3/5', '12/13', '4/5']
 CORRECT = 1
 ANSWER_VALUE = 12 / 13
