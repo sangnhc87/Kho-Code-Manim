@@ -51,11 +51,11 @@ class XSS188(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.3
-        s = .44
+        s = .38
         self.cells = VGroup(*[VGroup(Square(side_length=s * .92, stroke_width=0, fill_color=PANEL, fill_opacity=1),
                                      self.MNum(k, 0, SOFT, 14)) for k in range(1, 101)])
         for k, c in enumerate(self.cells):
-            c.move_to([(k % 10 - 4.5) * s, 2.75 - (k // 10) * s, 0])
+            c.move_to([(k % 10 - 4.5) * s, 2.7 - (k // 10) * s, 0])
             c[1].move_to(c[0])
         self.wait_until(.5, t0)
         self.play(FadeIn(self.cells, lag_ratio=.004), run_time=self.rt(.15))

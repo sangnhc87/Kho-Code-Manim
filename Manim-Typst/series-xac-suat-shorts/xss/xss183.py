@@ -35,7 +35,7 @@ BEATS = [
 ]
 
 FORMULAS = formulas('37/72', OPTIONS,
-                    bad='a >= b + c: 1 dot 5 + 2 dot 4 + 3 dot 3 + 4 dot 2 + 5 dot 1 = 35',
+                    bad='n(a >= b + c) = 5 + 8 + 9 + 8 + 5 = 35',
                     total='3 dot 35 = 105',
                     prob='P = (216 - 105)/216 = 111/216 = 37/72')
 
@@ -65,7 +65,7 @@ class XSS183(ShortScene):
     def beat_s2(self, T):
         t0 = self.now()
         self.wait_until(.5, t0)
-        self.write_board(self.M('bad', 1.5))
+        self.write_board(self.M('bad', 1.9))
 
     def beat_s3(self, T):
         t0 = self.now()

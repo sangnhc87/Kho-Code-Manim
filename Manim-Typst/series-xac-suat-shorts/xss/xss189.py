@@ -50,7 +50,7 @@ class XSS189(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        base, h = -.35, 3.1
+        base, h = .25, 2.6
         self.bars = VGroup()
         for k in range(11):
             r = Rectangle(width=.5, height=max(.03, h * comb(10, k) / 252), stroke_width=0,

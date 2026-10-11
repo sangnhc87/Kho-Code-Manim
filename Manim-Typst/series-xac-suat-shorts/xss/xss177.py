@@ -73,6 +73,7 @@ class XSS177(ShortScene):
         slots = VGroup(*[card(.62, .62, GOLD, PANEL, radius=.3, stroke_width=3) for _ in range(4)]) \
             .arrange_in_grid(2, 2, buff=.25).move_to(self.boxes[0][0])
         self.play(FadeIn(slots), run_time=self.rt(.05))
+        self.bring_to_front(self.teams)
         self.play(self.teams[0].animate.move_to(slots[0]), run_time=self.rt(.08))
         self.wait_until(.6, t0)
         self.play(*[s.animate.set_stroke(GOLD, 6) for s in slots[1:]], run_time=self.rt(.05))

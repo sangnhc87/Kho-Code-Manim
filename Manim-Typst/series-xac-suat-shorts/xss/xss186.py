@@ -70,7 +70,8 @@ class XSS186(ShortScene):
     def beat_s2(self, T):
         t0 = self.now()
         rows = VGroup(*[VGroup(*[token(c, GREEN if c == 'T' else CORAL, .26) for c in s]).arrange(buff=.12) for s in SEQS]) \
-            .arrange(buff=.5).move_to([0, .7, 0])
+            .arrange(buff=.4)
+        rows.scale_to_fit_width(min(rows.width, 7.0)).move_to([0, .7, 0])
         self.play(FadeIn(rows, lag_ratio=.25), run_time=self.rt(.15))
         self.wait_until(.55, t0)
         self.write_board(self.M('one', 2.0))
