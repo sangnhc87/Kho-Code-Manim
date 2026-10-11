@@ -9,7 +9,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common import shortlib, voice  # noqa: E402
 
-LEVEL = {'L1': 'Mở đầu', 'L2': 'Cơ bản', 'L3': 'Thông hiểu', 'L4': 'Vận dụng', 'L5': 'Khó', 'L6': 'Rất khó'}
 TAGS = 'shorts,xác suất,toán 10,toán 11,toán 12,ôn thi tốt nghiệp,thử thách toán,Thầy Nguyễn Văn Sang'
 
 
@@ -17,7 +16,7 @@ def metadata(n: int) -> dict:
     e = shortlib.plan_entry(n)
     title = f"Xác suất #{n:03d} · {e['title']} – bạn giải được không? #Shorts"
     desc = '\n'.join([
-        f"🎯 Thử thách xác suất #{n:03d} · Mức {LEVEL[e['level']]}",
+        f"🎯 Thử thách xác suất #{n:03d} · Mức {e['level_name']}",
         '',
         f"❓ {e['problem']}",
         '',
