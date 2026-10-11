@@ -367,6 +367,8 @@ def mate_score(item):
     game = 'red' in item
     if not pr or pr['n'] < (2 if game else 3):
         return None
+    if not game and pr['n'] < 4 and not pr['sacrifices']:
+        return None  # đòn quá ngắn, không thí quân: quá cơ bản cho Shorts
     return (3 * len(pr['sacrifices']) + (2 if len(pr['firsts']) == 1 else 0) + min(pr['n'], 7)
             + (4 if game else 0))
 
