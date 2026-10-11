@@ -235,6 +235,15 @@ def area(a, f, x0, x1, color=CYAN, opacity=.4, samples=60):
                    fill_opacity=opacity)
 
 
+def band(a, top, bottom, x0, x1, color=CYAN, opacity=.4, samples=80):
+    """Filled region between two graphs on [x0, x1] (``top`` above ``bottom``)."""
+    import numpy as _np
+    from manim import Polygon
+    xs = _np.linspace(x0, x1, samples)
+    pts = [a.c2p(v, top(v)) for v in xs] + [a.c2p(v, bottom(v)) for v in xs[::-1]]
+    return Polygon(*pts, stroke_width=0, fill_color=color, fill_opacity=opacity)
+
+
 def signed_area(a, f, x0, x1, pos=GREEN, neg=CORAL, opacity=.45, samples=200):
     """Region split by sign: green above the axis, coral below."""
     import numpy as _np
