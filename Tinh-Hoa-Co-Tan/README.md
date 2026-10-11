@@ -1,4 +1,31 @@
-# TINH HOA CỜ TÀN — bản 3 (dữ liệu bảng tra chessdb.cn)
+# TINH HOA CỜ TÀN — Shorts sát cục & thực chiến danh thủ
+
+**Hướng hiện tại (từ 11/10/2026): chỉ đăng YouTube Shorts**, nội dung ưu tiên:
+
+1. **Sát cục** (`curriculum/mates/*.json`): đòn thí quân, chiếu liên hoàn từ các bộ sưu tập kinh điển
+   (弃车绝杀 bỏ Xe tuyệt sát, 连将带杀 liên tướng đới sát, 妙局杀法, 68 sát pháp, 杀局宝典).
+   Mỗi lời giải được **tự chứng minh** bằng tìm kiếm vét cạn (`xq/mate.py`): bên tấn công chiếu liên tục,
+   xét **mọi** cách chống đỡ; trước khi dựng tập còn chứng minh lại lần nữa.
+2. **"Vì sao xin thua?"**: thế cuối của ván đấu thật (kỳ phổ đại sư), chứng minh bên thắng có sát cục bắt buộc
+   (`scripts/import_game_mates.py`).
+3. **Thực chiến danh thủ**: tàn cuộc ván thật được bảng tra chessdb chấm từng nước (sai lầm, nước duy nhất).
+
+Dựng: `python scripts/build_episodes.py --count 4` (giáo trình đặt nguồn trong `curriculum/topics.json`:
+`mates`, `games`, `game_every`). Nhập nguồn mới:
+
+```bash
+python scripts/import_mates.py end-games/弃车绝杀
+python scripts/import_games.py selected-games/Dai-Su-Ky-Lo-Lu-Kham
+python scripts/import_game_mates.py Dai-Su-Ky-Lo-Lu-Kham
+```
+
+Nguồn kỳ phổ: kho cộng đồng [vietcotuong.com](https://github.com/chasoft/community-xiangqi-games-database)
+(chỉ lấy dữ kiện nước đi; không sao chép lời bình). Lịch tự động: 2 lượt/ngày, mỗi lượt 2 Shorts
+(biến repo `COTAN_DAILY=true`).
+
+---
+
+## Phần nền: tàn cục với bảng tra chessdb.cn
 
 Series video cờ tàn cờ tướng, Manim + Typst, dựng và đăng hoàn toàn trên GitHub Actions.
 **Không chạy engine trên máy cá nhân**: mọi kết luận Thắng/Hòa, số nước đến chiếu bí,
