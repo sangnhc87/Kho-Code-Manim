@@ -242,7 +242,7 @@ class Panel:
     def candidates(rows):
         out = VGroup()
         for r in rows:
-            color = GREEN if r['wdl'] == 'W' else (MUTED if r['wdl'] == 'D' else RED)
+            color = GREEN if r.get('good', r['wdl'] == 'W') else (MUTED if r['wdl'] == 'D' else RED)
             left = label(('★ ' if r['best'] else '   ') + r['vn'], 20, GOLD if r['best'] else LIGHT, bold=r['best'],
                          max_w=2.6)
             right = label(r['result'], 18, color, max_w=2.75)
@@ -348,8 +348,9 @@ class XiangqiLesson(Scene):
                         self.remove(b)
                     badges = []
                     mark = step.get('mark')
-                    color = RED if mark == 'bad' else (GOLD if mark == 'only' else CYAN)
-                    tag = {'only': 'DUY NHẤT', 'wait': 'NƯỚC CHỜ', 'zug': 'BỊ ÉP NƯỚC', 'bad': 'SAI?'}.get(mark)
+                    color = RED if mark == 'bad' else (GOLD if mark in ('only', 'hold') else CYAN)
+                    tag = {'only': 'DUY NHẤT', 'wait': 'NƯỚC CHỜ', 'zug': 'BỊ ÉP NƯỚC', 'bad': 'SAI?',
+                           'hold': 'GIỮ HÒA'}.get(mark)
                     vn = self.vn_of(board.state, step['move'])
                     side = board.state.turn
                     badge = board.move(self, step['move'], color=color, tag=tag)

@@ -84,8 +84,9 @@ def outcome_phrase(wdl, dtm, side_word='Đỏ'):
 def candidate_rows(ply, limit=6):
     ranked = ply['ranked']
     rows, seen = [], set()
-    wins = [m for m in ranked if m['wdl'] == 'W']
-    others = [m for m in ranked if m['wdl'] != 'W']
+    top = ranked[0]['wdl']
+    wins = [m for m in ranked if m['wdl'] == top]
+    others = [m for m in ranked if m['wdl'] != top]
     for m in wins[:limit - min(2, len(others))] + others[:2]:
         if m['move'] in seen:
             continue
@@ -95,9 +96,9 @@ def candidate_rows(ply, limit=6):
         elif m['wdl'] == 'D':
             res = 'Hòa'
         else:
-            res = 'Thua'
+            res = f'Thua – bị bí sau {m["dtm"] // 2} nước' if m['dtm'] else 'Thua'
         rows.append({'move': m['move'], 'vn': m['vn'], 'wdl': m['wdl'], 'result': res,
-                     'best': m['move'] == ply['move']})
+                     'best': m['move'] == ply['move'], 'good': m['wdl'] == top})
     return rows
 
 
@@ -133,7 +134,11 @@ def _attacker_say(w, ply, nxt_ply, pos_after, trap_here):
         if 3 <= d[0] <= 5 and d[1] >= 7 and not any(3 <= sq[0] <= 5 and sq[1] >= 7 and p == 'P'
                                                     for sq, p in before.cells.items()):
             reason.append('Binh đã áp sát cung Đen.')
-    if ply['only']:
+    if ply['only'] and ply['wdl'] == 'D':
+        reason.append('Đỏ cũng phải cẩn thận: đây là nước duy nhất không thua.')
+    elif ply['wdl'] == 'D':
+        pass
+    elif ply['only']:
         if trap_here:
             reason.append(f'Đây là nước duy nhất giữ được thắng lợi; ví dụ nếu đi {trap_here["lure"]["vn"]} thì {outcome_phrase(trap_here["lure"]["wdl"], trap_here["lure"]["dtm"])}.')
         else:
@@ -160,8 +165,13 @@ def _defender_say(w, ply):
                 f'nhưng luật bắt buộc phải đi, nên đành {vn}.')
     if ply['wdl'] == 'D':
         if ply['only']:
-            return f'{vn}. Nước duy nhất giữ hòa của Đen.'
-        return f'{vn}, Đen giữ thế hòa.'
+            lose = sum(1 for m in ply['ranked'] if m['wdl'] == 'L')
+            return w.pick(f'{vn}! Nước duy nhất giữ hòa; {lose} nước còn lại đều thua.',
+                          f'{vn}. Đây là nước giữ hòa duy nhất của Đen.',
+                          f'Đen phải tìm đúng {vn}, mọi nước khác đều thua.')
+        if ply['n_keep'] < ply['n_legal'] and ply['n_keep'] <= 3:
+            return f'{vn}. Chỉ {ply["n_keep"]} nước giữ được hòa ở đây.'
+        return w.pick(f'{vn}, Đen giữ vững thế thủ.', f'Đen đáp {vn}.', f'{vn}.')
     if ply['capture']:
         return f'{vn}, Đen ăn {word(ply["capture"])}.'
     longest = [m for m in ply['ranked'] if m['wdl'] == 'L' and m['dtm'] == ply['dtm']]
@@ -181,7 +191,7 @@ def build_episode(analysis, topic, ep, writer_seed=None):
     n_moves = moves_count(val['dtm']) if val['wdl'] == 'W' else None
     waits = [p for p in main if p.get('zug', {}).get('type') == 'waiting' and p['zug'].get('key')]
     zugs = [p for p in main if p.get('zug', {}).get('type') == 'zugzwang']
-    onlys = [p for p in main if p['side'] == analysis['attacker'] and p['only']]
+    onlys = [p for p in main if p['side'] == analysis['attacker'] and p['only'] and p['wdl'] == 'W']
 
     beats = []
     red_mat, black_mat = material_words(root, 'w'), material_words(root, 'b')
@@ -200,7 +210,7 @@ def build_episode(analysis, topic, ep, writer_seed=None):
         'steps': [{'say': s} for s in topic['theory']],
     })
     q = ('Đỏ đi trước có thắng được không, và nước đầu tiên là gì?' if val['wdl'] == 'W'
-         else 'Đỏ có thắng được không? Đen phải phòng thủ thế nào?')
+         else f'{SIDE[root.turn]} đi trước. Đen phải đi thế nào để giữ hòa?')
     beats.append({
         'kind': 'puzzle', 'label': 'THỬ THÁCH', 'headline': 'Bạn sẽ đi thế nào?',
         'panel': {'countdown': 5},
@@ -228,6 +238,15 @@ def build_episode(analysis, topic, ep, writer_seed=None):
             say.append(f'Còn nếu đi {" hay ".join(draws[:2])} thì {"đều " if len(draws) > 1 else ""}chỉ hòa.')
         if losses:
             say.append(f'Đi {losses[0]} thì Đỏ còn thua.')
+    if val['wdl'] == 'D' and root.turn == 'b':
+        holds = [m for m in first['ranked'] if m['wdl'] == 'D']
+        lost = [m for m in first['ranked'] if m['wdl'] == 'L']
+        say.append(f'Đen có {first["n_legal"]} nước hợp lệ nhưng ' +
+                   (f'chỉ có đúng một nước giữ hòa: {holds[0]["vn"]}.' if len(holds) == 1 else
+                    f'chỉ {len(holds)} nước giữ hòa: {" và ".join(m["vn"] for m in holds)}.'))
+        if lost:
+            quick = min(lost, key=lambda m: m['dtm'])
+            say.append(f'Tất cả các nước còn lại đều thua; ví dụ {quick["vn"]} thì bị chiếu bí chỉ sau {quick["dtm"] // 2} nước.')
     beats.append({'kind': 'candidates', 'label': 'BẢNG TRA', 'headline': 'So sánh các nước đầu',
                   'panel': {'rows': rows}, 'steps': [{'say': ' '.join(say)}]})
 
@@ -245,6 +264,7 @@ def build_episode(analysis, topic, ep, writer_seed=None):
             chunk = []
     if chunk:
         chunks.append(chunk)
+    used_heads = set()
     for c_idx, idxs in enumerate(chunks):
         steps = []
         for i in idxs:
@@ -255,13 +275,20 @@ def build_episode(analysis, topic, ep, writer_seed=None):
                 say = _attacker_say(w, ply, nxt, pos_after, traps_by_ply.get(i))
             else:
                 say = _defender_say(w, ply)
-            mark = 'only' if ply['only'] and ply['side'] == analysis['attacker'] else \
+            mark = 'hold' if ply['only'] and ply['wdl'] == 'D' and ply['side'] != analysis['attacker'] else \
+                   'only' if ply['only'] and ply['side'] == analysis['attacker'] and ply['wdl'] == 'W' else \
                    ('wait' if ply.get('zug', {}).get('type') == 'waiting' and ply['zug'].get('key') else
                     'zug' if ply.get('zug', {}).get('type') == 'zugzwang' else None)
             steps.append({'say': say, 'move': ply['move'], 'ply': i, 'mark': mark,
                           'remain': ply['dtm'] if ply['wdl'] != 'D' else None})
         head_ply = next((main[i] for i in idxs if main[i]['only'] and main[i]['side'] == analysis['attacker']), None)
-        if c_idx == 0:
+        if val['wdl'] == 'D':
+            if any(main[i]['only'] and main[i]['side'] != analysis['attacker'] for i in idxs):
+                headline = ('Nước giữ hòa duy nhất!' if 'Nước giữ hòa duy nhất!' not in used_heads
+                            else w.pick('Lại một nước duy nhất!', 'Thêm một lần thử thách'))
+            else:
+                headline = w.pick('Thủ vững từng nước', 'Đen đứng vững', 'Giữ vững đội hình')
+        elif c_idx == 0:
             headline = 'Nước mở đầu then chốt' if first['only'] else 'Bắt đầu ép cung'
         elif any(main[i]['mate'] for i in idxs):
             headline = 'Đòn kết thúc'
@@ -275,6 +302,10 @@ def build_episode(analysis, topic, ep, writer_seed=None):
             headline = 'Thu hoạch vật chất'
         else:
             headline = w.pick('Siết chặt vòng vây', 'Từng bước thu hẹp', 'Tiếp tục ép cung')
+        used_heads.add(headline)
+        if val['wdl'] == 'D' and c_idx == len(chunks) - 1:
+            steps.append({'say': 'Đến đây Đen đã dựng được thế thủ vững chắc, Đỏ không còn cách nào tiến triển. '
+                                 'Bảng tra xác nhận: hòa cờ.'})
         beats.append({'kind': 'line', 'label': f'BIẾN CHÍNH • CHẶNG {c_idx + 1}', 'headline': headline,
                       'fen': main[idxs[0]]['fen'] if c_idx == 0 else None, 'steps': steps})
         # Bẫy gắn với nước đầu của chặng kế tiếp được trình bày ngay sau chặng này.
@@ -300,7 +331,7 @@ def _trap_beat(w, trap, main):
     if lure['wdl'] == 'D':
         verdict = f'{side} mất thắng, ván cờ trở thành hòa'
     elif lure['wdl'] == 'L':
-        verdict = f'{side} bị chiếu bí sau {lure["dtm"] // 2 + 1} nước'
+        verdict = f'{side} bị chiếu bí sau {lure["dtm"] // 2} nước'
     else:
         verdict = f'{side} vẫn thắng nhưng chậm hơn hẳn'
     steps = [{'say': f'Dừng lại một chút. Ở thế này nếu {side} đi {lure["vn"]}, {kind}, thì sao? '
@@ -315,7 +346,7 @@ def _trap_beat(w, trap, main):
         else:
             say = f'{x["vn"]}{cap}.'
         if x['mate']:
-            say = f'{x["vn"]}. Hết cờ.'
+            say = f'{x["vn"]}{cap}. Hết cờ.'
         steps.append({'say': say, 'move': x['move']})
     if lure['wdl'] == 'D' and lure['piece'] == 'P' and lure['move'][3] == '9':
         tail = ('Binh đã xuống đáy thành Binh già, không bao giờ lùi lại được, và chiến thắng tan biến. '
@@ -373,6 +404,11 @@ def _summary_beat(topic, analysis, first, waits, zugs, onlys, n_moves):
         bullets.append('Kết quả: Hòa nếu Đen phòng thủ chính xác')
         say.append('Tóm tắt bài học. Với phòng thủ chính xác, Đen giữ được hòa.')
     bullets.append(f'Nước đầu: {first["vn"]}')
+    holds = [p for p in analysis['main'] if p['side'] != analysis['attacker'] and p['only'] and p['wdl'] == 'D']
+    if holds:
+        bullets.append(f'{len(holds)} lần Đen chỉ có một nước giữ hòa')
+        say.append(f'Trên đường phòng thủ, có {len(holds)} lần Đen chỉ có đúng một nước giữ hòa. '
+                   'Phòng thủ trong cờ tàn đòi hỏi sự chính xác không kém gì tấn công.')
     if onlys:
         bullets.append(f'{len(onlys)} thời điểm Đỏ chỉ có một nước thắng')
         say.append(f'Trên đường thắng có {len(onlys)} thời điểm Đỏ chỉ có đúng một nước giữ được thắng lợi, đó là những chỗ cần ghi nhớ.')

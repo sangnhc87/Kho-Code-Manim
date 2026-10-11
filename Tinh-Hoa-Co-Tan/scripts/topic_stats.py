@@ -18,11 +18,21 @@ from xq import cdb  # noqa: E402
 from xq.sample import random_position  # noqa: E402
 
 
-def survey(red, black, n, rng):
+FORMATION = {'a': [(3, 9), (5, 9), (4, 8)], 'b': [(2, 9), (6, 9), (4, 7)],
+             'k': [(4, 9), (4, 8), (3, 9), (5, 9)]}
+
+
+def survey(red, black, n, rng, formation=False):
+    from scripts.build_episodes import hanging
     res = {'W': 0, 'D': 0, 'L': 0}
     dtms = []
-    for _ in range(n):
-        pos = random_position(red, black, turn='w', rng=rng)
+    done = 0
+    while done < n:
+        cons = {k: v for k, v in FORMATION.items() if k.upper() in black + 'K'} if formation else None
+        pos = random_position(red, black, turn='w', rng=rng, constraints=cons)
+        if formation and (hanging(pos) or pos.in_check('w')):
+            continue
+        done += 1
         try:
             wdl, dtm = cdb.value(pos.fen())
         except cdb.CdbError as exc:
@@ -44,14 +54,17 @@ def main():
     ap.add_argument('classes', nargs='+')
     ap.add_argument('--n', type=int, default=60)
     ap.add_argument('--seed', type=int, default=1)
+    ap.add_argument('--formation', action='store_true',
+                    help='Sĩ/Tượng/Tướng Đen ở vị trí phòng thủ chuẩn, quân Đỏ không bị treo')
     args = ap.parse_args()
     path = ROOT / 'data' / 'topic_stats.json'
     data = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     rng = random.Random(args.seed)
     for cls in args.classes:
         red, black = (s.replace('-', '') for s in cls.split(':'))
-        data[cls] = survey(red, black, args.n, rng)
-        print(cls, data[cls], flush=True)
+        key = cls + (':F' if args.formation else '')
+        data[key] = survey(red, black, args.n, rng, args.formation)
+        print(key, data[key], flush=True)
         cdb.flush()
         path.write_text(json.dumps(data, ensure_ascii=False, indent=1, sort_keys=True) + '\n',
                         encoding='utf-8')

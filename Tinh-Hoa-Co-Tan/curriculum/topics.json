@@ -864,6 +864,380 @@
    ],
    "takeaway": "Xe đơn không phá được Sĩ Tượng toàn chỉnh tề; cơ hội thắng chỉ đến khi đối phương có khe hở, và phải tận dụng ngay.",
    "takeaway_short": "Tận dụng khe hở ngay lập tức"
+  },
+  {
+   "id": "si-thu-hoa-binh",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Sĩ đơn thủ hòa Binh",
+   "short": "Sĩ đơn chống Binh đơn",
+   "material": [
+    "P",
+    "A"
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Bài trước ta đã thấy Binh đơn hiếm khi thắng được Sĩ đơn: trong năm mươi thế ngẫu nhiên, khoảng chín mươi bốn phần trăm là hòa.",
+    "Nhưng hòa không có nghĩa là Đen đi thế nào cũng được. Có những thế Đen chỉ có một nước giữ hòa, đi sai một nước là bị chiếu bí.",
+    "Nguyên tắc phòng thủ: giữ Sĩ ở vị trí chặn đường Binh, và đừng để Tướng của mình bị Tướng Đỏ khống chế mặt."
+   ],
+   "bullets": [
+    "Binh vs Sĩ: phần lớn hòa",
+    "Hòa vẫn cần đi chính xác",
+    "Sĩ chặn đường Binh",
+    "Tránh bị khống chế mặt Tướng"
+   ],
+   "takeaway": "Thế hòa trên lý thuyết vẫn đòi hỏi bên phòng thủ đi đúng: Sĩ chặn Binh, Tướng tránh bị khống chế mặt.",
+   "takeaway_short": "Hòa vẫn phải đi chính xác"
+  },
+  {
+   "id": "tuong-thu-hoa-binh",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Tượng đơn thủ hòa Binh",
+   "short": "Tượng đơn chống Binh đơn",
+   "material": [
+    "P",
+    "B"
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Binh đơn đấu Tượng đơn: kênh tra năm mươi thế ngẫu nhiên, chín mươi tám phần trăm là hòa.",
+    "Tượng không chặn Binh trực tiếp như Sĩ, nhưng có thể đổi chỗ để chờ nước, còn Tướng Đen tự lo phòng thủ.",
+    "Hôm nay ta xem một thế mà Đen chỉ có rất ít nước giữ hòa, và mọi nước khác đều thua."
+   ],
+   "bullets": [
+    "Binh vs Tượng: gần như luôn hòa",
+    "Tượng dùng để chờ nước",
+    "Tướng Đen tự phòng thủ",
+    "Có thế chỉ một nước giữ hòa"
+   ],
+   "takeaway": "Tượng là quân chờ nước tốt nhất của bên phòng thủ; biết lúc nào đi Tượng, lúc nào đi Tướng là chìa khóa giữ hòa.",
+   "takeaway_short": "Tượng là quân chờ nước"
+  },
+  {
+   "id": "song-si-thu-hoa-ma",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Song Sĩ thủ hòa Mã",
+   "short": "Song Sĩ chống Mã đơn",
+   "material": [
+    "N",
+    "AA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      4,
+      7
+     ]
+    ]
+   },
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Mã đơn thắng chắc Sĩ đơn, nhưng gặp Song Sĩ thì khác: trong năm mươi thế ngẫu nhiên, chín mươi phần trăm là hòa.",
+    "Hai Sĩ bảo vệ lẫn nhau và che chắn quanh Tướng. Mã không thể vừa đe doạ Sĩ vừa chiếu Tướng.",
+    "Dù vậy Đen phải giữ hai Sĩ liên kết; để Sĩ rời nhau là Mã có cơ hội."
+   ],
+   "bullets": [
+    "Mã vs Song Sĩ: phần lớn hòa",
+    "Hai Sĩ bảo vệ lẫn nhau",
+    "Giữ hai Sĩ liên kết",
+    "Sĩ rời nhau là nguy"
+   ],
+   "takeaway": "Song Sĩ liên kết là pháo đài chống Mã đơn; chỉ cần giữ hai Sĩ bảo vệ nhau, Đen hòa.",
+   "takeaway_short": "Giữ hai Sĩ liên kết"
+  },
+  {
+   "id": "song-tuong-thu-hoa-ma",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Song Tượng thủ hòa Mã",
+   "short": "Song Tượng chống Mã đơn",
+   "material": [
+    "N",
+    "BB"
+   ],
+   "constraints": {
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      4,
+      7
+     ]
+    ]
+   },
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Mã đơn đấu Song Tượng: cả năm mươi thế ngẫu nhiên kênh tra đều hòa.",
+    "Hai Tượng liên kết che chắn cho nhau. Mã muốn bắt Tượng thì Tượng kia bảo vệ.",
+    "Hòa nhưng vẫn có bẫy: Tượng đứng sai chỗ có thể bị Mã bắt, hoặc Tướng bị dồn vào thế bí."
+   ],
+   "bullets": [
+    "Mã vs Song Tượng: luôn hòa",
+    "Hai Tượng bảo vệ lẫn nhau",
+    "Cẩn thận Tượng bị bắt",
+    "Không để Tướng bị dồn"
+   ],
+   "takeaway": "Song Tượng liên kết là thế thủ vững chắc trước Mã; chỉ cần giữ hai Tượng bảo vệ nhau.",
+   "takeaway_short": "Giữ hai Tượng liên kết"
+  },
+  {
+   "id": "stt-thu-hoa-phao-binh",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Sĩ Tượng toàn thủ hòa Pháo Binh",
+   "short": "Sĩ Tượng toàn chống Pháo Binh",
+   "material": [
+    "CP",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      4,
+      7
+     ]
+    ]
+   },
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Pháo Binh thắng được Song Sĩ, nhưng gặp Sĩ Tượng toàn đứng chỉnh tề, cả bốn mươi thế kênh tra đều hòa.",
+    "Tượng ngăn Binh, Sĩ che Tướng, và Đen luôn có nước chờ bằng Tượng.",
+    "Hòa nhưng không dễ: Đen phải tránh để Sĩ hoặc Tượng trở thành ngòi cho Pháo Đỏ."
+   ],
+   "bullets": [
+    "Pháo Binh vs Sĩ Tượng toàn: hòa",
+    "Tượng ngăn Binh, Sĩ che Tướng",
+    "Tượng làm nước chờ",
+    "Đừng tạo ngòi cho Pháo"
+   ],
+   "takeaway": "Sĩ Tượng toàn đủ sức chống Pháo Binh, với điều kiện không tự biến quân mình thành ngòi cho Pháo đối phương.",
+   "takeaway_short": "Đừng tự tạo ngòi cho Pháo"
+  },
+  {
+   "id": "stt-thu-hoa-xe",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Sĩ Tượng toàn thủ hòa Xe",
+   "short": "Sĩ Tượng toàn chống Xe đơn",
+   "material": [
+    "R",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      4,
+      7
+     ]
+    ]
+   },
+   "max_first_keep": 2,
+   "episodes": 3,
+   "theory": [
+    "Đây là thế thủ kinh điển nhất: Sĩ Tượng toàn chống Xe đơn. Kênh tra bốn mươi thế có Sĩ Tượng ở vị trí phòng thủ chuẩn: hai mươi bốn thế hòa.",
+    "Bí quyết là giữ liên kết: Sĩ bảo vệ nhau, Tượng bảo vệ nhau, Tướng không rời cung.",
+    "Xe sẽ liên tục đe doạ, và ở nhiều thời điểm Đen chỉ có một nước giữ được liên kết đó."
+   ],
+   "bullets": [
+    "Sĩ Tượng toàn chỉnh tề: phần lớn hòa",
+    "Sĩ bảo vệ Sĩ, Tượng bảo vệ Tượng",
+    "Tướng không rời cung",
+    "Nhiều lúc chỉ một nước giữ hòa"
+   ],
+   "takeaway": "Thủ hòa trước Xe bằng Sĩ Tượng toàn là kỹ năng sống còn: luôn giữ liên kết, và tìm đúng nước duy nhất khi Xe đe doạ.",
+   "takeaway_short": "Luôn giữ liên kết Sĩ Tượng"
   }
  ]
 }

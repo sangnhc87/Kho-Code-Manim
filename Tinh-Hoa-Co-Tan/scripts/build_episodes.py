@@ -58,6 +58,12 @@ def quick_filter(pos, topic):
     lo, hi = topic.get('dtm', [15, 45])
     if want == 'W' and not lo <= best['dtm'] <= hi:
         return None
+    if want == 'D':
+        # Thủ hòa: Đen đi trước, chỉ vài nước giữ hòa, còn lại đều thua.
+        holds = sum(m['wdl'] == 'D' for m in moves)
+        if holds > topic.get('max_first_keep', 2) or holds == len(moves) or len(moves) < 4:
+            return None
+        return {'wins': holds, 'dtm': -max(m['dtm'] for m in moves if m['wdl'] == 'L')}
     wins = sum(m['wdl'] == want for m in moves)
     fastest = sum(m['wdl'] == want and m['dtm'] == best['dtm'] for m in moves)
     if wins == len(moves):
@@ -73,6 +79,9 @@ def quick_filter(pos, topic):
 def score(a):
     att = a['attacker']
     main = a['main']
+    if a['value']['wdl'] == 'D':
+        holds = sum(1 for p in main if p['side'] != att and p['only'])
+        return 3 * min(holds, 5) + 2 * len(a['traps']) + (3 if main and main[0]['only'] else 0)
     onlys = sum(1 for p in main if p['side'] == att and p['only'])
     waits = sum(1 for p in main if p.get('zug', {}).get('type') == 'waiting' and p['zug']['key'])
     zugs = sum(1 for p in main if p.get('zug', {}).get('type') == 'zugzwang')
@@ -86,9 +95,10 @@ def find_position(topic, used, rng, samples, finalists):
     constraints = {k: [tuple(s) for s in v] for k, v in topic.get('constraints', {}).items()}
     pool = []
     for _ in range(samples):
-        pos = random_position(red, black, turn=RED, rng=rng, constraints=constraints)
+        turn = 'b' if topic.get('result') == 'D' else RED
+        pos = random_position(red, black, turn=turn, rng=rng, constraints=constraints)
         key = canonical(pos.fen())
-        if key in used or pos.in_check(RED) or hanging(pos):
+        if key in used or pos.in_check(pos.turn) or (turn == RED and hanging(pos)):
             continue
         try:
             q = quick_filter(pos, topic)
@@ -150,6 +160,15 @@ def episode_hooks(a):
     """Các điểm nhấn của thế cờ, theo thứ tự ưu tiên."""
     main, att = a['main'], a['attacker']
     hooks = []
+    if a['value']['wdl'] == 'D':
+        if main and main[0]['only']:
+            hooks.append('Nước giữ hòa duy nhất')
+        if a['traps']:
+            hooks.append('Một nước sai là thua')
+        if sum(1 for p in main if p['side'] != att and p['only']) >= 2:
+            hooks.append('Phòng thủ từng nước')
+        hooks.append('Nghệ thuật thủ hòa')
+        return hooks
     if main and main[0]['only']:
         hooks.append('Nước thắng duy nhất')
     if any(p.get('zug', {}).get('type') == 'waiting' and p['zug']['key'] for p in main):
