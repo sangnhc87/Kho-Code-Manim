@@ -1238,6 +1238,635 @@
    ],
    "takeaway": "Thủ hòa trước Xe bằng Sĩ Tượng toàn là kỹ năng sống còn: luôn giữ liên kết, và tìm đúng nước duy nhất khi Xe đe doạ.",
    "takeaway_short": "Luôn giữ liên kết Sĩ Tượng"
+  },
+  {
+   "id": "ma-binh-song-si",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Mã Binh",
+   "title": "Mã Binh thắng Song Sĩ",
+   "short": "Mã Binh đấu Song Sĩ",
+   "material": [
+    "NP",
+    "AA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    17,
+    35
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Mã đơn chỉ hòa Song Sĩ, nhưng thêm một Binh thì khác hẳn: bốn mươi thế kênh tra với Song Sĩ ở vị trí phòng thủ chuẩn, Đỏ thắng cả bốn mươi.",
+    "Binh áp sát cung để khóa đường, Mã nhảy vào những điểm mà Sĩ không che được, Tướng Đỏ khống chế mặt Tướng."
+   ],
+   "bullets": [
+    "Mã vs Song Sĩ: phần lớn hòa",
+    "Mã Binh vs Song Sĩ: thắng 40/40",
+    "Binh khóa đường, Mã tấn công",
+    "Tướng Đỏ khống chế mặt Tướng"
+   ],
+   "takeaway": "Một Binh nhỏ bé có thể biến thế hòa thành thế thắng: Binh khóa đường, Mã ra đòn.",
+   "takeaway_short": "Binh khóa, Mã đánh"
+  },
+  {
+   "id": "ma-binh-song-tuong",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Mã Binh",
+   "title": "Mã Binh thắng Song Tượng",
+   "short": "Mã Binh đấu Song Tượng",
+   "material": [
+    "NP",
+    "BB"
+   ],
+   "constraints": {
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    17,
+    31
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Mã Binh đấu Song Tượng ở vị trí phòng thủ chuẩn: kênh tra bốn mươi thế, Đỏ thắng khoảng tám mươi lăm phần trăm.",
+    "Song Tượng không che sát Tướng như Song Sĩ, nên Binh có thể tiến thẳng vào cung, còn Mã tìm cách bắt Tượng hoặc chiếu bí."
+   ],
+   "bullets": [
+    "Mã Binh vs Song Tượng: khoảng 85% thắng",
+    "Binh tiến vào cung",
+    "Mã đe doạ bắt Tượng"
+   ],
+   "takeaway": "Song Tượng để lộ cung cấm: Binh tiến thẳng vào cung, Mã phối hợp ra đòn.",
+   "takeaway_short": "Binh vào cung, Mã ra đòn"
+  },
+  {
+   "id": "ma-binh-si-tuong",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Mã Binh",
+   "title": "Mã Binh thắng Sĩ Tượng",
+   "short": "Mã Binh đấu Sĩ Tượng đơn",
+   "material": [
+    "NP",
+    "AB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    17,
+    41
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Mã Binh đấu một Sĩ một Tượng: bốn mươi thế kênh tra với Sĩ Tượng đứng chuẩn, Đỏ thắng cả bốn mươi.",
+    "Thiếu quân phòng thủ, Đen không thể vừa che Tướng vừa chặn Binh. Đường thắng có thể khá dài nên phải kiên nhẫn."
+   ],
+   "bullets": [
+    "Mã Binh vs Sĩ Tượng: thắng 40/40",
+    "Đen không đủ quân vừa che vừa chặn",
+    "Đường thắng dài, cần kiên nhẫn"
+   ],
+   "takeaway": "Khi bên phòng thủ thiếu quân, hãy buộc họ phải lựa chọn giữa che Tướng và chặn Binh.",
+   "takeaway_short": "Buộc đối phương phải chọn"
+  },
+  {
+   "id": "ma-binh-stt",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Mã Binh",
+   "title": "Mã Binh đấu Sĩ Tượng toàn",
+   "short": "Mã Binh đấu Sĩ Tượng toàn",
+   "material": [
+    "NP",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    19,
+    45
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Mã Binh gặp Sĩ Tượng toàn đứng chỉnh tề: kênh tra bốn mươi thế, chỉ hai thế Đỏ thắng, còn lại là hòa.",
+    "Vì vậy những thế thắng là cực hiếm, thường nhờ thế thủ của Đen có một khe hở nhỏ. Hôm nay ta học cách khai thác một khe hở như thế."
+   ],
+   "bullets": [
+    "Mã Binh vs Sĩ Tượng toàn: thường hòa",
+    "Chỉ thắng khi thế thủ có khe hở",
+    "Mỗi nước đều phải chính xác"
+   ],
+   "takeaway": "Trước Sĩ Tượng toàn, Mã Binh chỉ thắng khi tìm ra khe hở và tận dụng tức thì.",
+   "takeaway_short": "Tìm khe hở, tận dụng ngay"
+  },
+  {
+   "id": "song-ma-stt",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Song Mã",
+   "title": "Song Mã phá Sĩ Tượng toàn",
+   "short": "Song Mã đấu Sĩ Tượng toàn",
+   "material": [
+    "NN",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    25,
+    53
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Hai Mã đấu Sĩ Tượng toàn: bốn mươi thế kênh tra với Sĩ Tượng chỉnh tề, Đỏ thắng ba mươi chín thế.",
+    "Hai Mã bảo vệ lẫn nhau và cùng khống chế nhiều điểm trong cung. Nhưng đường thắng rất dài, thường trên hai mươi nước."
+   ],
+   "bullets": [
+    "Song Mã vs Sĩ Tượng toàn: thắng 39/40",
+    "Hai Mã bảo vệ lẫn nhau",
+    "Đường thắng dài, trên 20 nước"
+   ],
+   "takeaway": "Song Mã là cặp quân phá thành mạnh: hai Mã nâng đỡ nhau, từ từ phá Sĩ Tượng.",
+   "takeaway_short": "Hai Mã nâng đỡ nhau"
+  },
+  {
+   "id": "phao-ma-stt",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Pháo Mã",
+   "title": "Pháo Mã phá Sĩ Tượng toàn",
+   "short": "Pháo Mã đấu Sĩ Tượng toàn",
+   "material": [
+    "CN",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    25,
+    45
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Pháo Mã đấu Sĩ Tượng toàn chỉnh tề: cả bốn mươi thế kênh tra đều là Đỏ thắng.",
+    "Mã làm ngòi cho Pháo, Pháo khống chế lộ cho Mã: đây là cặp phối hợp nổi tiếng nhất trong cờ tàn."
+   ],
+   "bullets": [
+    "Pháo Mã vs Sĩ Tượng toàn: thắng 40/40",
+    "Mã làm ngòi cho Pháo",
+    "Pháo khống chế lộ cho Mã"
+   ],
+   "takeaway": "Pháo Mã bổ sung cho nhau hoàn hảo: Mã làm ngòi, Pháo khống chế, Sĩ Tượng toàn cũng không trụ nổi.",
+   "takeaway_short": "Mã làm ngòi, Pháo khống chế"
+  },
+  {
+   "id": "phao-binh-si-tuong",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Pháo Binh",
+   "title": "Pháo Binh đấu Sĩ Tượng đơn",
+   "short": "Pháo Binh đấu Sĩ Tượng",
+   "material": [
+    "CP",
+    "AB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    19,
+    45
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Pháo Binh đấu một Sĩ một Tượng: kênh tra bốn mươi thế phòng thủ chuẩn, Đỏ thắng khoảng ba phần tám.",
+    "Pháo cần ngòi, Binh cần đường. Khi Sĩ Tượng đứng đúng chỗ, Đen thường hòa, nên những thế thắng đòi hỏi kỹ thuật cao."
+   ],
+   "bullets": [
+    "Pháo Binh vs Sĩ Tượng: khoảng 3/8 thắng",
+    "Pháo cần ngòi, Binh cần đường",
+    "Thế thắng cần kỹ thuật cao"
+   ],
+   "takeaway": "Pháo Binh chỉ thắng Sĩ Tượng khi biến được quân Đen thành ngòi và mở được đường cho Binh.",
+   "takeaway_short": "Biến quân Đen thành ngòi"
+  },
+  {
+   "id": "tam-binh-stt",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Binh",
+   "title": "Ba Binh đấu Sĩ Tượng toàn",
+   "short": "Ba Binh đấu Sĩ Tượng toàn",
+   "material": [
+    "PPP",
+    "AABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    21,
+    51
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Ba Binh qua sông đấu Sĩ Tượng toàn chỉnh tề: kênh tra bốn mươi thế, một nửa thắng, một nửa hòa.",
+    "Binh chỉ tiến không lùi, nên thứ tự đẩy Binh quyết định tất cả: đẩy sai một Binh là mất cơ hội."
+   ],
+   "bullets": [
+    "Ba Binh vs Sĩ Tượng toàn: một nửa thắng",
+    "Thứ tự đẩy Binh quyết định",
+    "Binh không lùi được"
+   ],
+   "takeaway": "Với Binh, mọi bước tiến đều không thể rút lại: hãy tính kỹ thứ tự trước khi đẩy.",
+   "takeaway_short": "Tính kỹ thứ tự đẩy Binh"
+  },
+  {
+   "id": "xe-binh-xe",
+   "module": "Học phần 4 – Phối hợp hai quân",
+   "category": "Tàn Xe Binh",
+   "title": "Xe Binh thắng Xe",
+   "short": "Xe Binh đấu Xe đơn",
+   "material": [
+    "RP",
+    "R"
+   ],
+   "constraints": {
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    13,
+    43
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Binh đấu Xe đơn, Đen không có Sĩ Tượng: kênh tra bốn mươi thế mà quân Đỏ không bị treo, Đỏ thắng khoảng chín phần mười.",
+    "Đây là tàn cuộc thực chiến phổ biến. Xe Đen sẽ chiếu liên tục để quấy rối, nên Tướng Đỏ phải biết tìm chỗ tránh chiếu."
+   ],
+   "bullets": [
+    "Xe Binh vs Xe đơn: khoảng 9/10 thắng",
+    "Xe Đen chiếu quấy rối",
+    "Tướng Đỏ tìm chỗ tránh chiếu"
+   ],
+   "takeaway": "Trong tàn Xe Binh, việc che chắn Tướng mình trước các đòn chiếu quấy rối quan trọng không kém việc tấn công.",
+   "takeaway_short": "Che Tướng trước, tấn công sau"
   }
  ]
 }
