@@ -1,0 +1,1231 @@
+{
+ "source": "https://github.com/chasoft/community-xiangqi-games-database/tree/main/data/end-games/胜和定式",
+ "collection": "end-games/胜和定式",
+ "items": {
+  "三低兵巧胜单缺象": {
+   "fen": "3a1k3/P2Pa1P2/b8/9/9/9/9/9/9/4K4 w",
+   "title": "三低兵巧胜单缺象",
+   "book_result": "W",
+   "book_moves": [
+    "a8b8",
+    "a7c5",
+    "b8c8",
+    "c5a7",
+    "e0e1",
+    "a7c5",
+    "c8c9",
+    "c5e7",
+    "c9d9",
+    "e8d9",
+    "d8d9",
+    "e7c5",
+    "d9e9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 13,
+    "keep": 2,
+    "legal": 10
+   }
+  },
+  "三兵例胜卒单缺士-(一)": {
+   "fen": "4k4/2P1a4/4b1P2/5P3/2b6/9/4p4/9/9/4K4 w",
+   "title": "三兵例胜卒单缺士-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "c8d8",
+    "e3e2",
+    "g7g8",
+    "c5a7",
+    "g8f8",
+    "e8d9",
+    "d8d9",
+    "e9d9",
+    "f8e8",
+    "a7c5",
+    "f6e6",
+    "c5a7",
+    "e6d6",
+    "a7c5",
+    "d6d7",
+    "c5a7",
+    "d7d8"
+   ],
+   "pieces": 9,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 17,
+    "keep": 9,
+    "legal": 12
+   }
+  },
+  "三兵例胜卒单缺士-(二)": {
+   "fen": "3k5/2P2P3/b4a3/3P5/6b2/9/4p4/9/4K4/9 w",
+   "title": "三兵例胜卒单缺士-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "d6e6",
+    "d9e9",
+    "c8d8",
+    "e3d3",
+    "e1d1",
+    "d3e3",
+    "e6f6",
+    "a7c5",
+    "f6f7",
+    "e3e2",
+    "f8e8",
+    "e9f9",
+    "f7f8"
+   ],
+   "pieces": 9,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 13,
+    "keep": 7,
+    "legal": 12
+   }
+  },
+  "三兵例胜士象全": {
+   "fen": "5ab2/3ka4/9/2PP1P3/2b6/9/9/9/9/4K4 w",
+   "title": "三兵例胜士象全",
+   "book_result": "W",
+   "book_moves": [
+    "f6g6",
+    "g9e7",
+    "g6g7",
+    "e7g5",
+    "g7g8",
+    "c5a7",
+    "g8f8",
+    "a7c5",
+    "c6c7",
+    "g5e7",
+    "e0d0",
+    "e7g5",
+    "d6d7",
+    "d8d9",
+    "d7d8",
+    "d9e9",
+    "d8e8",
+    "f9e8",
+    "d0e0",
+    "c5e7",
+    "c7c8",
+    "g5i7",
+    "c8d8",
+    "e8d7",
+    "e0f0"
+   ],
+   "pieces": 9,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 29,
+    "keep": 8,
+    "legal": 10
+   }
+  },
+  "三兵例胜炮双象": {
+   "fen": "9/3P1k3/1c2b4/6PP1/2b6/9/9/9/9/4K4 w",
+   "title": "三兵例胜炮双象",
+   "book_result": "W",
+   "book_moves": [
+    "g6f6",
+    "b7b6",
+    "h6g6",
+    "b6a6",
+    "e0f0",
+    "a6a7",
+    "g6g7",
+    "a7g7",
+    "f6f7",
+    "f8f9",
+    "f7f8",
+    "f9e9",
+    "f8f9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 21,
+    "keep": 5,
+    "legal": 9
+   }
+  },
+  "三兵例胜马双象": {
+   "fen": "3k5/2P2P3/b3b1n2/9/4P4/9/9/9/9/4K4 w",
+   "title": "三兵例胜马双象",
+   "book_result": "W",
+   "book_moves": [
+    "e5e6",
+    "g7e6",
+    "f8e8",
+    "e7g5",
+    "c8d8",
+    "e6d8",
+    "e8e9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 11,
+    "keep": 6,
+    "legal": 11
+   }
+  },
+  "三兵巧和单车-(一)": {
+   "fen": "4k4/9/9/4P4/4PP3/9/4r4/9/9/5K3 w",
+   "title": "三兵巧和单车-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "f0f1",
+    "e3e0",
+    "e6f6",
+    "e0e3",
+    "f6e6",
+    "e9f9",
+    "e6f6",
+    "e3e4",
+    "f1f0",
+    "e4e1",
+    "e5d5",
+    "e1e3",
+    "d5e5",
+    "f9e9",
+    "f6e6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 7
+   }
+  },
+  "三兵巧和单车-(二)": {
+   "fen": "5k3/9/9/9/3P1PP2/9/9/9/4r4/5K3 w",
+   "title": "三兵巧和单车-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "g5h5",
+    "e1e3",
+    "h5g5",
+    "e3e4",
+    "f0f1",
+    "e4d4",
+    "d5e5",
+    "d4g4",
+    "f1e1",
+    "f9e9",
+    "e1d1",
+    "g4d4",
+    "d1e1",
+    "e9d9",
+    "e1e0",
+    "d4e4",
+    "e0f0",
+    "d9e9",
+    "f0f1",
+    "e9f9",
+    "e5d5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 6
+   }
+  },
+  "三兵巧胜单车": {
+   "fen": "5k3/3PP4/1r7/6P2/9/9/9/9/9/3K5 w",
+   "title": "三兵巧胜单车",
+   "book_result": "W",
+   "book_moves": [
+    "g6f6",
+    "b7e7",
+    "d0d1",
+    "e7i7",
+    "d1e1",
+    "i7e7",
+    "e1f1",
+    "e7e6",
+    "f6f7",
+    "e6f6",
+    "f1e1",
+    "f6f7",
+    "e8e9",
+    "f9f8",
+    "d8e8"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 17,
+    "keep": 1,
+    "legal": 9
+   }
+  },
+  "三兵巧胜炮双士": {
+   "fen": "3k5/2P1a4/3c1a3/4P4/3P5/9/9/9/9/4K4 w",
+   "title": "三兵巧胜炮双士",
+   "book_result": "W",
+   "book_moves": [
+    "e6e7",
+    "d7a7",
+    "d5d6",
+    "a7a5",
+    "e7d7",
+    "e8d7",
+    "d6d7",
+    "a5e5",
+    "c8d8",
+    "d9e9",
+    "d7e7",
+    "e5h5",
+    "e0f0",
+    "h5h9",
+    "e7f7",
+    "h9f9",
+    "f7e7",
+    "f9f5",
+    "e7e8",
+    "e9f9",
+    "d8d9",
+    "f5f6",
+    "d9e9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 23,
+    "keep": 5,
+    "legal": 11
+   }
+  },
+  "三兵巧胜炮士象": {
+   "fen": "4c4/3kaP3/1P2b4/9/3P5/9/9/9/9/4K4 w",
+   "title": "三兵巧胜炮士象",
+   "book_result": "W",
+   "book_moves": [
+    "d5d6",
+    "e9d9",
+    "d6c6",
+    "d9e9",
+    "b7c7",
+    "e8f7",
+    "e0f0",
+    "e9a9",
+    "c6d6",
+    "e7g5",
+    "f0e0",
+    "a9a8",
+    "d6d7",
+    "d8d9",
+    "c7c8",
+    "g5e7",
+    "f8f9",
+    "f7e8",
+    "c8d8"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 10,
+    "legal": 12
+   }
+  },
+  "三兵巧胜马双士": {
+   "fen": "3k1a3/2P1a4/5n3/2P1P4/9/9/9/9/9/4K4 w",
+   "title": "三兵巧胜马双士",
+   "book_result": "W",
+   "book_moves": [
+    "c8c9",
+    "d9e9",
+    "e6f6",
+    "f7h6",
+    "c6c7",
+    "h6g4",
+    "c7d7",
+    "g4f6",
+    "d7d8",
+    "f6e4",
+    "e0e1",
+    "e4d6",
+    "c9d9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 15,
+    "keep": 4,
+    "legal": 11
+   }
+  },
+  "三兵巧胜马士象": {
+   "fen": "4k4/2P1aP3/4b4/2n6/3P5/9/9/9/9/4K4 w",
+   "title": "三兵巧胜马士象",
+   "book_result": "W",
+   "book_moves": [
+    "d5d6",
+    "c6a5",
+    "c8d8",
+    "e8f7",
+    "d6d7",
+    "a5c6",
+    "d7e7",
+    "c6e7",
+    "e0e1",
+    "f7e8",
+    "f8e8",
+    "e9f9",
+    "d8d9",
+    "e7c8",
+    "e1e0",
+    "c8d6",
+    "d9e9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 17,
+    "keep": 3,
+    "legal": 12
+   }
+  },
+  "单车例和双卒双象": {
+   "fen": "4k4/9/b3b4/9/9/9/4pp3/9/9/4K2R1 w",
+   "title": "单车例和双卒双象",
+   "book_result": "D",
+   "book_moves": [
+    "h0h4",
+    "a7c5",
+    "h4e4",
+    "e9e8",
+    "e4e5",
+    "e8e9",
+    "e0e1",
+    "e9e8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 15,
+    "legal": 15
+   }
+  },
+  "单车例和双炮": {
+   "fen": "9/4ck3/4Rc3/9/9/9/9/9/9/3K5 w",
+   "title": "单车例和双炮",
+   "book_result": "D",
+   "book_moves": [
+    "e7e6",
+    "f7g7",
+    "e6f6",
+    "g7f7",
+    "d0e0",
+    "e8e9",
+    "f6d6",
+    "f7e7",
+    "e0d0",
+    "e7g7",
+    "d6d8",
+    "e9e8",
+    "d0e0",
+    "g7e7",
+    "e0d0",
+    "e7g7",
+    "d8d7",
+    "g7f7",
+    "d7e7",
+    "f7f6",
+    "e7e6",
+    "f6f7",
+    "d0d1",
+    "f7g7"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 14,
+    "legal": 14
+   }
+  },
+  "单车例和双马": {
+   "fen": "4k4/9/4n4/4R4/5n3/9/9/9/9/4K4 w",
+   "title": "单车例和双马",
+   "book_result": "D",
+   "book_moves": [
+    "e6f6",
+    "e9d9",
+    "e0e1",
+    "d9d8",
+    "f6e6",
+    "d8e8",
+    "e6e5",
+    "e8f8",
+    "e1f1",
+    "f8e8",
+    "f1e1",
+    "e8f8",
+    "e1e0",
+    "f8f9"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 13,
+    "legal": 17
+   }
+  },
+  "单车例和士象全": {
+   "fen": "9/3ka4/3ab4/9/2b1R4/9/9/9/9/4K4 w",
+   "title": "单车例和士象全",
+   "book_result": "D",
+   "book_moves": [
+    "e5h5",
+    "e8f9",
+    "e0d0",
+    "d8d9",
+    "h5d5",
+    "f9e8",
+    "d0e0",
+    "d9e9",
+    "d5h5",
+    "c5a7",
+    "e0f0",
+    "e8f9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 15,
+    "legal": 15
+   }
+  },
+  "单车例和炮双象": {
+   "fen": "2b1k4/9/4b4/4c4/9/9/9/5R3/9/4K4 w",
+   "title": "单车例和炮双象",
+   "book_result": "D",
+   "book_moves": [
+    "f2f6",
+    "e6e4",
+    "f6e6",
+    "e4f4",
+    "e6c6",
+    "f4e4",
+    "c6e6",
+    "e4f4",
+    "e6g6",
+    "f4e4"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 19,
+    "legal": 19
+   }
+  },
+  "单车例和马单缺士": {
+   "fen": "2b1k4/4a4/b3n4/4R4/9/9/9/9/9/4K4 w",
+   "title": "单车例和马单缺士",
+   "book_result": "D",
+   "book_moves": [
+    "e6h6",
+    "e8f9",
+    "h6h5",
+    "f9e8",
+    "h5h9",
+    "e8f9",
+    "e0f0",
+    "a7c5",
+    "h9h5",
+    "c9a7",
+    "h5e5",
+    "f9e8",
+    "f0f1",
+    "e8f9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 15,
+    "legal": 17
+   }
+  },
+  "单车例和马炮": {
+   "fen": "5k3/9/5c1R1/9/4n4/9/9/9/9/5K3 w",
+   "title": "单车例和马炮",
+   "book_result": "D",
+   "book_moves": [
+    "h7h5",
+    "e5d7",
+    "f0e0",
+    "d7f6",
+    "h5e5",
+    "f9f8",
+    "e5e8",
+    "f8f9",
+    "e8e6",
+    "f6g4",
+    "e6g6",
+    "g4f2",
+    "e0e1",
+    "f2d3",
+    "e1f1",
+    "d3e5",
+    "g6g5",
+    "e5d7"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 36,
+    "keep": 11,
+    "legal": 14
+   }
+  },
+  "单车例胜炮卒": {
+   "fen": "4c4/4k4/9/9/9/9/9/5R3/4p4/5K3 w",
+   "title": "单车例胜炮卒",
+   "book_result": "W",
+   "book_moves": [
+    "f2f8",
+    "e8e7",
+    "f8f7",
+    "e7e8",
+    "f7d7",
+    "e9f9",
+    "d7d6",
+    "f9e9",
+    "d6d9"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 23,
+    "keep": 14,
+    "legal": 16
+   }
+  },
+  "单车例胜马双士": {
+   "fen": "4ka3/4an3/9/9/4R4/9/9/9/9/4K4 w",
+   "title": "单车例胜马双士",
+   "book_result": "W",
+   "book_moves": [
+    "e0d0",
+    "f8h9",
+    "e5b5",
+    "e8d9",
+    "b5b8",
+    "f9e8",
+    "d0e0",
+    "h9f8",
+    "b8b7",
+    "f8e6",
+    "b7e7",
+    "e6c5",
+    "e7h7",
+    "e9f9",
+    "h7h9",
+    "f9f8",
+    "h9h5",
+    "c5d7",
+    "h5f5",
+    "e8f7",
+    "e0f0",
+    "d9e8",
+    "f5h5",
+    "d7f6",
+    "h5h6",
+    "f6g4",
+    "h6h8",
+    "f8f9",
+    "h8e8"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 40,
+    "keep": 16,
+    "legal": 18
+   }
+  },
+  "单车例胜马士象": {
+   "fen": "4kn3/4a4/4b4/6R2/9/9/9/9/9/4K4 w",
+   "title": "单车例胜马士象",
+   "book_result": "W",
+   "book_moves": [
+    "g6b6",
+    "e8d9",
+    "b6b9",
+    "f9g7",
+    "e0d0",
+    "g7f5",
+    "b9d9",
+    "e9e8",
+    "d9d8",
+    "e8e9",
+    "d8d5",
+    "f5h6",
+    "d5h5",
+    "h6f7",
+    "h5h7"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 25,
+    "keep": 17,
+    "legal": 20
+   }
+  },
+  "单车和双卒双士": {
+   "fen": "3k5/4a4/5a3/7R1/9/9/4pp3/9/9/4K4 w",
+   "title": "单车和双卒双士",
+   "book_result": "D",
+   "book_moves": [
+    "h6h9",
+    "d9d8",
+    "h9b9",
+    "e3d3",
+    "b9b6",
+    "f3e3",
+    "e0d0",
+    "e8d7"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 19,
+    "legal": 19
+   }
+  },
+  "单车和双卒士": {
+   "fen": "3k5/4a4/9/9/9/9/9/9/3pp4/5K1R1 w",
+   "title": "单车和双卒士",
+   "book_result": "D",
+   "book_moves": [
+    "h0h3",
+    "d9d8",
+    "h3b3",
+    "e8d7",
+    "b3e3",
+    "d8d9",
+    "e3d3",
+    "d9d8",
+    "d3d6",
+    "d1c1",
+    "d6e6",
+    "c1d1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 7,
+    "legal": 11
+   }
+  },
+  "单车和马卒象": {
+   "fen": "9/4k4/3nb4/4p4/9/5R3/9/9/9/4K4 w",
+   "title": "单车和马卒象",
+   "book_result": "D",
+   "book_moves": [
+    "f4h4",
+    "d7c5",
+    "h4h8",
+    "e8e9",
+    "h8h7",
+    "e9e8",
+    "e0e1",
+    "c5d3",
+    "e1e0",
+    "d3c5",
+    "h7f7",
+    "c5d7"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 19,
+    "legal": 20
+   }
+  },
+  "单车和马单缺象": {
+   "fen": "3a1k3/4a4/4bn3/8R/9/9/9/9/9/5K3 w",
+   "title": "单车和马单缺象",
+   "book_result": "D",
+   "book_moves": [
+    "i6i9",
+    "f9f8",
+    "i9g9",
+    "e7c9",
+    "g9g5",
+    "f8f9",
+    "g5c5",
+    "c9e7",
+    "c5c7",
+    "e7g9",
+    "f0f1",
+    "f9e9",
+    "f1e1",
+    "e9f9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 19,
+    "legal": 19
+   }
+  },
+  "单车和马双卒": {
+   "fen": "3k5/9/9/9/9/2R6/3p1n3/4p4/9/4K4 w",
+   "title": "单车和马双卒",
+   "book_result": "D",
+   "book_moves": [
+    "c4f4",
+    "f3g1",
+    "f4f1",
+    "g1h3",
+    "e0f0",
+    "h3f2",
+    "f1g1",
+    "d3d2",
+    "g1g9",
+    "d9d8",
+    "g9g1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 11,
+    "legal": 19
+   }
+  },
+  "单车和马双士卒": {
+   "fen": "9/3ka4/3a1n3/9/2R6/9/3p5/9/9/3K5 w",
+   "title": "单车和马双士卒",
+   "book_result": "D",
+   "book_moves": [
+    "c5d5",
+    "d3c3",
+    "d5a5",
+    "c3d3",
+    "a5a3",
+    "f7e5",
+    "a3a5",
+    "e5f7",
+    "d0d1",
+    "d8d9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 16,
+    "legal": 19
+   }
+  },
+  "单车和马士双卒": {
+   "fen": "4ka3/9/3n5/2R6/9/9/3pp4/9/9/4K4 w",
+   "title": "单车和马士双卒",
+   "book_result": "D",
+   "book_moves": [
+    "c6e6",
+    "f9e8",
+    "e6e7",
+    "d7c9",
+    "e0e1",
+    "c9d7",
+    "e7e6",
+    "d7c9",
+    "e6c6",
+    "c9d7",
+    "c6e6",
+    "d7c9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 15,
+    "legal": 20
+   }
+  },
+  "单车和马象双卒": {
+   "fen": "3k5/6R2/b2n5/9/9/9/3p1p3/9/9/4K4 w",
+   "title": "单车和马象双卒",
+   "book_result": "D",
+   "book_moves": [
+    "g8g6",
+    "f3e3",
+    "g6d6",
+    "d9d8",
+    "e0d0",
+    "a7c5",
+    "d6d5",
+    "c5a7",
+    "d0d1",
+    "a7c5"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 16,
+    "legal": 20
+   }
+  },
+  "单车巧和车炮士": {
+   "fen": "3akr3/4c4/9/2R6/9/9/9/9/9/4K4 w",
+   "title": "单车巧和车炮士",
+   "book_result": "D",
+   "book_moves": [
+    "c6g6",
+    "f9h9",
+    "e0e1",
+    "e9f9",
+    "g6f6",
+    "e8f8",
+    "f6d6",
+    "d9e8",
+    "d6e6",
+    "h9h5",
+    "e6e8",
+    "f8f7",
+    "e8e7",
+    "h5f5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 18
+   }
+  },
+  "单车巧和车马": {
+   "fen": "3akr2n/4a4/9/9/9/7R1/9/9/9/4K4 w",
+   "title": "单车巧和车马",
+   "book_result": "D",
+   "book_moves": [
+    "h4h8",
+    "f9g9",
+    "h8h6",
+    "e9f9",
+    "h6f6",
+    "f9e9",
+    "f6h6",
+    "g9f9",
+    "h6h8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 19
+   }
+  },
+  "单车巧胜三高卒": {
+   "fen": "4k4/9/9/9/9/1R7/3ppp3/9/9/3K5 w",
+   "title": "单车巧胜三高卒",
+   "book_result": "W",
+   "book_moves": [
+    "b4e4",
+    "e9f9",
+    "d0e0",
+    "f3g3",
+    "e4g4",
+    "g3h3",
+    "g4f4",
+    "f9e9",
+    "f4f3",
+    "h3h2",
+    "f3f2",
+    "h2h1",
+    "f2f1",
+    "h1h0",
+    "f1f0",
+    "e3e2",
+    "f0h0",
+    "d3d2",
+    "h0h4",
+    "e2e1",
+    "e0f0",
+    "d2d1",
+    "h4e4",
+    "e9d9",
+    "e4e8"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 29,
+    "keep": 6,
+    "legal": 19
+   }
+  },
+  "单车巧胜双卒双士": {
+   "fen": "3ak4/4a4/9/9/9/6R2/3pp4/9/9/4K4 w",
+   "title": "单车巧胜双卒双士",
+   "book_result": "W",
+   "book_moves": [
+    "g4d4",
+    "d3c3",
+    "d4f4",
+    "c3d3",
+    "e0f0",
+    "d3d2",
+    "f4h4",
+    "e3f3",
+    "h4h2",
+    "d2d1",
+    "h2h3",
+    "f3f2",
+    "h3h2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 39,
+    "keep": 1,
+    "legal": 20
+   }
+  },
+  "单车巧胜双炮": {
+   "fen": "3k5/3c5/9/9/9/4c4/8R/9/9/5K3 w",
+   "title": "单车巧胜双炮",
+   "book_result": "W",
+   "book_moves": [
+    "i3i9",
+    "e4e9",
+    "i9i7",
+    "d8e8",
+    "i7d7",
+    "e8d8",
+    "f0e0",
+    "e9e8",
+    "d7c7",
+    "e8e9",
+    "e0d0",
+    "e9f9",
+    "c7e7",
+    "f9f6",
+    "d0e0",
+    "d8a8",
+    "e7d7",
+    "a8d8",
+    "d7f7",
+    "f6e6",
+    "f7f9",
+    "e6e9",
+    "f9e9"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 33,
+    "keep": 19,
+    "legal": 19
+   }
+  },
+  "单车巧胜双马": {
+   "fen": "9/4k4/4n4/5n3/4R4/9/9/9/9/5K3 w",
+   "title": "单车巧胜双马",
+   "book_result": "W",
+   "book_moves": [
+    "f0e0",
+    "f6g8",
+    "e5e6",
+    "e8e9",
+    "e6g6",
+    "e9d9",
+    "g6d6",
+    "d9e9",
+    "d6d7",
+    "e9e8",
+    "d7b7",
+    "e8d8",
+    "b7b8",
+    "d8d9",
+    "b8e8"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 21,
+    "keep": 2,
+    "legal": 17
+   }
+  },
+  "单车巧胜双高卒双象": {
+   "fen": "2b1k4/9/4b4/5R3/9/9/1pp6/9/9/5K3 w",
+   "title": "单车巧胜双高卒双象",
+   "book_result": "W",
+   "book_moves": [
+    "f6f9",
+    "e9e8",
+    "f0e0",
+    "c9a7",
+    "f9a9",
+    "a7c5",
+    "a9a8",
+    "e8e9",
+    "a8a6",
+    "c3d3",
+    "a6e6",
+    "b3c3",
+    "e6e5",
+    "e9d9",
+    "e5d5",
+    "d9e9",
+    "d5c5"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 29,
+    "keep": 4,
+    "legal": 18
+   }
+  },
+  "单车巧胜士象全-(一)": {
+   "fen": "6b2/3ka2R1/3a5/9/6b2/9/9/9/9/3K5 w",
+   "title": "单车巧胜士象全-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "h8h5",
+    "g9e7",
+    "h5h9",
+    "e8d9",
+    "h9h6",
+    "d9e8",
+    "h6b6",
+    "e8f7",
+    "b6b7",
+    "f7e8",
+    "b7b8",
+    "d8d9",
+    "b8e8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 43,
+    "keep": 6,
+    "legal": 15
+   }
+  },
+  "单车巧胜士象全-(二)": {
+   "fen": "3k1ab2/4a1R2/8b/9/9/9/9/9/9/4K4 w",
+   "title": "单车巧胜士象全-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "g8g7",
+    "d9d8",
+    "g7b7",
+    "d8d9",
+    "b7b9",
+    "d9d8",
+    "b9b5",
+    "d8d9",
+    "b5e5",
+    "d9e9",
+    "e0d0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 49,
+    "keep": 1,
+    "legal": 15
+   }
+  },
+  "单车巧胜炮双士": {
+   "fen": "2c6/3k5/3a1a3/9/9/3R5/9/9/9/4K4 w",
+   "title": "单车巧胜炮双士",
+   "book_result": "W",
+   "book_moves": [
+    "e0d0",
+    "c9d9",
+    "d4e4",
+    "d9i9",
+    "e4e9",
+    "i9i3",
+    "e9c9",
+    "i3d3",
+    "c9c3",
+    "d3d4",
+    "c3c4",
+    "d4d5",
+    "c4c5",
+    "d5d6",
+    "c5c6",
+    "d6d5",
+    "c6d6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 39,
+    "keep": 1,
+    "legal": 18
+   }
+  }
+ }
+}

@@ -237,7 +237,7 @@ def build(topic, ep, fen=None, rng=None, samples=400, finalists=6, catalog=None)
     return data
 
 
-def next_classics(collection, catalog):
+def next_classics(collection, catalog, min_pieces=0):
     """Các thế chưa dựng của một cuốn sách, theo đúng thứ tự trong sách, chỉ lấy thế có bảng tra."""
     data = load_json(ROOT / 'curriculum' / 'classics' / f'{collection}.json', {'items': {}})
     done = {e.get('source_file') for e in catalog['episodes']}
@@ -248,6 +248,8 @@ def next_classics(collection, catalog):
             continue
         if item['tb']['wdl'] == 'W' and item['tb']['dtm'] < 5:
             continue  # chiếu bí 1-2 nước: không đủ nội dung cho một tập
+        if item.get('pieces', 99) < min_pieces:
+            continue
         out.append((f, item))
     return out
 
@@ -322,7 +324,7 @@ def main():
     collections = [args.classic] if args.classic else ([] if args.topic or args.fen else cur.get('classics_first', []))
     built = 0
     for coll in collections:
-        for f, item in next_classics(coll, catalog):
+        for f, item in next_classics(coll, catalog, cur.get('classics_min_pieces', 0)):
             if built >= args.count:
                 break
             ep = 1 + max([e['ep'] for e in catalog['episodes']] or [0])

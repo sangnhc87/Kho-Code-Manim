@@ -7,6 +7,20 @@ from .notation import vn_move
 
 BOOKS = {
     'Co-Tan-Thuc-Dung': {'name': 'Tượng kỳ thực dụng tàn cục', 'author': 'Đồ Cảnh Minh', 'short': 'Thực dụng tàn cục'},
+    'Tan-Cuc-Thuc-Dung-Do-Canh-Minh': {'name': 'Tàn cục thực dụng', 'author': 'Đồ Cảnh Minh', 'short': 'Tàn cục thực dụng'},
+    '胜和定式': {'name': 'Thắng hòa định thức', 'author': '', 'short': 'Định thức thắng hòa'},
+    '实残手册': {'name': 'Sổ tay tàn cục thực dụng', 'author': '', 'short': 'Sổ tay tàn cục'},
+    '实残车兵': {'name': 'Tàn cục thực dụng: Xe Binh', 'author': '', 'short': 'Tàn cục Xe Binh'},
+    '炮马兵残': {'name': 'Tàn cục Pháo Mã Binh', 'author': '', 'short': 'Tàn cục Pháo Mã Binh'},
+    '车马专辑': {'name': 'Chuyên tập Xe Mã', 'author': '', 'short': 'Chuyên tập Xe Mã'},
+    '残局基础': {'name': 'Tàn cục cơ sở', 'author': '', 'short': 'Tàn cục cơ sở'},
+    '高残教程': {'name': 'Giáo trình tàn cục nâng cao', 'author': '', 'short': 'Tàn cục nâng cao'},
+    '大师残局': {'name': 'Tàn cục đại sư', 'author': '', 'short': 'Tàn cục đại sư'},
+    '难胜残局': {'name': 'Tàn cục khó thắng', 'author': '', 'short': 'Tàn cục khó thắng'},
+    '残局胜和': {'name': 'Tàn cục thắng hòa', 'author': '', 'short': 'Tàn cục thắng hòa'},
+    'Quat-Trung-Bi-Tan-Cuc-Pho': {'name': 'Quất Trung Bí', 'author': '', 'short': 'Quất Trung Bí'},
+    'Thao-Luoc-Nguyen-Co-Tan-Cuc-Pho': {'name': 'Thao Lược Nguyên Cơ', 'author': '', 'short': 'Thao Lược Nguyên Cơ'},
+    '吕钦中残': {'name': 'Trung tàn cục của Lữ Khâm', 'author': 'Lữ Khâm', 'short': 'Trung tàn Lữ Khâm'},
 }
 ORDER = 'RNCP'
 WORD = {'R': 'Xe', 'N': 'Mã', 'C': 'Pháo', 'P': 'Binh'}
