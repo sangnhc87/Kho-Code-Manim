@@ -179,8 +179,25 @@ jobs:
       - name: Lưu lịch sử đăng
         if: env.QUALITY == 'full'
         run: |
+          cp ../youtube_uploaded_history.json /tmp/mine.json
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git add ../youtube_uploaded_history.json
-          git commit -m "docs(cotan): youtube history for ${{ matrix.episode }}" || echo "No changes"
-          for i in 1 2 3 4 5; do git pull --rebase --autostash origin main && git push && break; sleep $((i*5)); done
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            # Chỉ chèn các mục của tập này vào bản lịch sử mới nhất (nhiều job ghi song song).
+            python - "${{ matrix.episode }}" <<'PY'
+          import json, sys
+          ep = sys.argv[1]
+          mine = json.load(open('/tmp/mine.json', encoding='utf-8'))
+          path = '../youtube_uploaded_history.json'
+          cur = json.load(open(path, encoding='utf-8'))
+          for k in (f'cotan3_{ep}', f'cotan3_short_{ep}'):
+              if k in mine:
+                  cur[k] = mine[k]
+          open(path, 'w', encoding='utf-8').write(json.dumps(cur, ensure_ascii=False, indent=2) + '\n')
+          PY
+            git add ../youtube_uploaded_history.json
+            git commit -q -m "docs(cotan): youtube history for ${{ matrix.episode }}" || break
+            git push -q origin HEAD:main && break
+            sleep $((i*4))
+          done
