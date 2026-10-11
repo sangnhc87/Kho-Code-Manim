@@ -174,6 +174,11 @@ def _defender_say(w, ply):
         return w.pick(f'{vn}, Đen giữ vững thế thủ.', f'Đen đáp {vn}.', f'{vn}.')
     if ply['capture']:
         return f'{vn}, Đen ăn {word(ply["capture"])}.'
+    suicide = [m for m in ply['ranked'] if m['wdl'] == 'L' and m['dtm'] == 2 and m['move'] != ply['move']]
+    if suicide and ply['dtm'] > 2 and w.rng.random() < .55:
+        return (f'{vn}. Nếu Đen đi {suicide[0]["vn"]} thì sẽ bị chiếu bí ngay lập tức.'
+                if len(suicide) == 1 else
+                f'{vn}. Đen phải cẩn thận: có tới {len(suicide)} nước khác dẫn tới bị chiếu bí ngay.')
     longest = [m for m in ply['ranked'] if m['wdl'] == 'L' and m['dtm'] == ply['dtm']]
     if ply['n_legal'] > 1 and len(longest) == 1 and ply['ranked'][-1]['dtm'] < ply['dtm'] and w.rng.random() < .5:
         return f'{vn}. Đây là cách chống đỡ dai nhất, các nước khác thua nhanh hơn.'
