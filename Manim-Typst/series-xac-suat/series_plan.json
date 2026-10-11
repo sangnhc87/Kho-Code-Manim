@@ -1,0 +1,326 @@
+{
+  "series": "Xác Suất Chuyên Sâu – Từ Cổ Điển Đến Có Điều Kiện, Toàn Phần Và Bayes",
+  "code_prefix": "XS",
+  "master_topic": "Toán 10 (xác suất cổ điển) · Toán 11 (quy tắc tính xác suất) · Toán 12 (xác suất có điều kiện)",
+  "author": "Thầy Nguyễn Văn Sang",
+  "prerequisite_series": "COMB01–COMB25 (Đại số tổ hợp)",
+  "parts": [
+    {
+      "id": "A",
+      "name": "Ngôn ngữ của ngẫu nhiên",
+      "grade": 10,
+      "episodes": [
+        1,
+        6
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Xác suất cổ điển với phép đếm",
+      "grade": 10,
+      "episodes": [
+        7,
+        13
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Các quy tắc tính xác suất",
+      "grade": 11,
+      "episodes": [
+        14,
+        19
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Xác suất có điều kiện, toàn phần, Bayes",
+      "grade": 12,
+      "episodes": [
+        20,
+        27
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Tổng ôn và luyện đề",
+      "grade": 12,
+      "episodes": [
+        28,
+        30
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "n": 1,
+      "title": "Phép Thử Và Không Gian Mẫu",
+      "tag": "Ω Và n(Ω)",
+      "level": "Nền tảng",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 2,
+      "title": "Biến Cố Và Biến Cố Đối",
+      "tag": "Từ Lời Nói Sang Tập Hợp",
+      "level": "Nền tảng",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 3,
+      "title": "Sơ Đồ Cây Và Bảng",
+      "tag": "Liệt Kê Phép Thử Nhiều Bước",
+      "level": "Nền tảng",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 4,
+      "title": "Định Nghĩa Cổ Điển Của Xác Suất",
+      "tag": "Điều Kiện Đồng Khả Năng",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 5,
+      "title": "Tần Suất Và Xác Suất",
+      "tag": "Từ Thí Nghiệm Đến Lý Thuyết",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 6,
+      "title": "Xác Suất Của Biến Cố Đối",
+      "tag": "Bài Toán Ít Nhất Một",
+      "level": "Vận dụng 7+",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 7,
+      "title": "Chọn Đồ Vật",
+      "tag": "Tổ Hợp Trong Tử Và Mẫu",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 8,
+      "title": "Xếp Chỗ Và Lập Số",
+      "tag": "Hoán Vị, Chỉnh Hợp",
+      "level": "Vận dụng 7+",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 9,
+      "title": "Hai Xúc Xắc, Ba Đồng Xu",
+      "tag": "Bảng Tổng Và Tích",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 10,
+      "title": "Chia Nhóm, Rút Thăm, Phân Công",
+      "tag": "Đếm Theo Nhóm",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 11,
+      "title": "Ít Nhất, Nhiều Nhất, Đúng k",
+      "tag": "Chia Trường Hợp Hay Phần Bù",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 12,
+      "title": "Thứ Tự Có Quan Trọng?",
+      "tag": "Đếm Tử Và Mẫu Cùng Một Cách",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 13,
+      "title": "Trực Giác Đánh Lừa: Bài Toán Ngày Sinh",
+      "tag": "Tổng Ôn Phần A – B",
+      "level": "Vận dụng cao 9+",
+      "scope": "extended",
+      "grade": 10,
+      "status": "planned"
+    },
+    {
+      "n": 14,
+      "title": "Biến Cố Hợp, Giao, Xung Khắc",
+      "tag": "Biểu Đồ Venn Động",
+      "level": "Nền tảng",
+      "scope": "core",
+      "grade": 11,
+      "status": "planned"
+    },
+    {
+      "n": 15,
+      "title": "Công Thức Cộng Xác Suất",
+      "tag": "P(A ∪ B) = P(A) + P(B) − P(AB)",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 11,
+      "status": "planned"
+    },
+    {
+      "n": 16,
+      "title": "Biến Cố Độc Lập",
+      "tag": "Trực Giác Và Định Nghĩa",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 11,
+      "status": "planned"
+    },
+    {
+      "n": 17,
+      "title": "Công Thức Nhân Cho Biến Cố Độc Lập",
+      "tag": "Hệ Nối Tiếp, Song Song",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 11,
+      "status": "planned"
+    },
+    {
+      "n": 18,
+      "title": "Phép Thử Lặp",
+      "tag": "Đúng k Lần Thành Công",
+      "level": "Vận dụng 8+",
+      "scope": "extended",
+      "grade": 11,
+      "status": "planned"
+    },
+    {
+      "n": 19,
+      "title": "Tổng Ôn Các Quy Tắc Tính Xác Suất",
+      "tag": "Phối Hợp Cộng Và Nhân",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 11,
+      "status": "planned"
+    },
+    {
+      "n": 20,
+      "title": "Xác Suất Có Điều Kiện",
+      "tag": "Thu Hẹp Không Gian Mẫu",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 21,
+      "title": "Đọc Xác Suất Có Điều Kiện Từ Bảng",
+      "tag": "Bảng Hai Chiều",
+      "level": "Thông hiểu",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 22,
+      "title": "Công Thức Nhân Xác Suất",
+      "tag": "Sơ Đồ Cây Có Trọng Số",
+      "level": "Vận dụng 7+",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 23,
+      "title": "Độc Lập Nhìn Qua Điều Kiện",
+      "tag": "Độc Lập Khác Xung Khắc",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 24,
+      "title": "Công Thức Xác Suất Toàn Phần",
+      "tag": "Chia Nhỏ Theo Nguyên Nhân",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 25,
+      "title": "Công Thức Bayes",
+      "tag": "Lật Ngược Sơ Đồ Cây",
+      "level": "Vận dụng 8+",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 26,
+      "title": "Toàn Phần Và Bayes Nhiều Giả Thuyết",
+      "tag": "Bài Toán Nhiều Bước",
+      "level": "Vận dụng cao 9+",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 27,
+      "title": "Bayes Trong Đời Sống",
+      "tag": "Monty Hall, Lọc Thư Rác, Xét Nghiệm",
+      "level": "Vận dụng cao 9+",
+      "scope": "extended",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 28,
+      "title": "Bẫy Sai Kinh Điển Trong Xác Suất",
+      "tag": "Tự Kiểm Tra Bằng Mô Phỏng",
+      "level": "Tổng hợp",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 29,
+      "title": "Luyện Đề Theo Cấu Trúc Thi Tốt Nghiệp",
+      "tag": "Đề Xác Suất 3 Phần",
+      "level": "Tổng hợp",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    },
+    {
+      "n": 30,
+      "title": "Bản Đồ Tư Duy Xác Suất",
+      "tag": "Chiến Lược Chinh Phục 8+ / 9+",
+      "level": "Tổng hợp",
+      "scope": "core",
+      "grade": 12,
+      "status": "planned"
+    }
+  ]
+}
