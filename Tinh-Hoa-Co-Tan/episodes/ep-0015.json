@@ -1,0 +1,99 @@
+{
+ "id": "ep-0015",
+ "number": 15,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Dương Quan Lân xin thua? Hồ Vinh Hoa thí Binh, bí trong 4 nước",
+ "subtitle": "Sát cục",
+ "fen": "1R3a1c1/r2ka4/2P1N4/8p/p8/9/9/8B/9/4K4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 7
+ },
+ "mate": {
+  "n": 4,
+  "line": [
+   {
+    "move": "c7d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": null
+   },
+   {
+    "move": "d8d7",
+    "side": "b",
+    "forced": false,
+    "capture": "P",
+    "n_replies": 2
+   },
+   {
+    "move": "b9b7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d7d8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e7c6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d8d9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "b7b9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "P"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "029-中炮对双炮过河",
+  "title": "029-中炮对双炮过河"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Dương Quan Lân",
+  "year": "1975",
+  "resigned": true,
+  "red": "胡荣华",
+  "black": "杨官麟"
+ },
+ "youtube_short": {
+  "title": "Vì sao Dương Quan Lân xin thua? Hồ Vinh Hoa thí Binh, bí trong 4 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 4 nước (thí Binh).\nLời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\nThế cờ: \"029-中炮对双炮过河\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
