@@ -82,6 +82,7 @@ class LessonScene(Blocks, Scene):
         footer_l = tx(f"{ep['code']} · {ep['subtitle']}", 15, DIM).move_to([0, -3.76, 0]).to_edge(LEFT, buff=.42)
         footer_r = tx(AUTHOR, 16, SOFT, bold=True).move_to([0, -3.76, 0]).to_edge(RIGHT, buff=.42)
         self.part_label = VGroup()
+        self.code_text = code
         self.chrome.add(top_line, series, code, bars, footer_l, footer_r)
         self.add(self.chrome)
         self.current_part = None
@@ -94,6 +95,11 @@ class LessonScene(Blocks, Scene):
             label = tx(f'PHẦN {idx}  ·  {names[part].upper()}' if 0 < idx < len(names) - 1
                        else names[part].upper(), 17, GOLD, bold=True)
             self.part_label = label.move_to([0, 3.62, 0]).to_edge(RIGHT, buff=.42)
+            code = self.code_text  # long titles: shrink the header so it never runs into the part label
+            room = self.part_label.get_left()[0] - .3 - code.get_left()[0]
+            if code.width > room:
+                left = code.get_left()
+                code.scale(room / code.width).move_to(left, aligned_edge=LEFT)
             self.add(self.part_label)
             self.current_part = part
         self.remove(self.fill)
