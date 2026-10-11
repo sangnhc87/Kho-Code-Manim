@@ -485,3 +485,62 @@ class DiceGridMixin:
     def light(self, cells, color=GOLD, frac=.04, opacity=.55):
         for c in cells:
             self.play(c.animate.set_fill(color, opacity), run_time=self.rt(frac))
+
+
+class TreeMixin:
+    """Weighted probability tree: every edge carries a typeset probability."""
+
+    def prob_tree(self, branches, top=(0, 3.25), dy=1.55, width=6.6, root_label='', edge_size=24, r=.36):
+        """``branches`` = [(label, colour, 'typst prob', [children…]), …]; returns (levels, leaves).
+
+        ``leaves`` is a list of (node mobject, path of branch tuples) for every leaf.
+        """
+        from common.visuals import token, tree
+
+        def build(branch):
+            label, color, prob, kids = branch
+            node = {'m': token(label, color, r), 'e': self.TM(f'${prob}$', edge_size, SOFT),
+                    'kids': [build(k) for k in kids]}
+            node['branch'] = branch
+            return node
+
+        root = {'m': tx(root_label or '•', 26, SOFT), 'kids': [build(b) for b in branches]}
+        _, levels = tree(root, top=top, dy=dy, width=width)
+        leaves = []
+
+        def walk(node, path):
+            if not node['kids']:
+                leaves.append((node['m'], path))
+            for k in node['kids']:
+                walk(k, path + [k['branch']])
+        walk(root, [])
+        return levels, leaves
+
+
+class CountTreeMixin:
+    """Natural-frequency tree: nodes are boxes with counts (10 000 → 100 / 9 900 → …)."""
+
+    def count_tree(self, root, branches, top=3.3, dy=1.6, width=6.8, w=1.55, h=.62):
+        """``branches`` = [(count, colour, label, [children…]), …]; returns (levels, nodes in DFS order)."""
+        from common.visuals import tree
+
+        def box(count, color, label):
+            c = card(w, h, color, PANEL, radius=.12, stroke_width=3)
+            num = self.MNum(count, 0, color, 26).move_to(c)
+            g = VGroup(c, num)
+            if label:
+                g.add(tx(label, 18, SOFT).next_to(c, DOWN, buff=.04))
+            return g
+
+        nodes = []
+
+        def build(b):
+            count, color, label, kids = b
+            n = {'m': box(count, color, label), 'kids': [build(k) for k in kids]}
+            nodes.append(n['m'])
+            return n
+
+        spec = {'m': box(root, WHITE, ''), 'kids': [build(b) for b in branches]}
+        nodes.insert(0, spec['m'])
+        _, levels = tree(spec, top=(0, top), dy=dy, width=width)
+        return levels, nodes
