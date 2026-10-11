@@ -134,9 +134,9 @@ Thứ tự chạy workflow cho mỗi tập: `preview / voice=off` (duyệt hình
 | :--- | :--- |
 | ✅ Đã xuất bản (Phần A hoàn thành) | INT01–INT10: MLP1NJgcDmQ · Q27qaS8mqqE · Fisd_cqawl0 · lev4fL1lWiA · qY4dQR9iTJ0 · 3jVMzUpNcnI · ZWeBNtnR4YM · Atj-EB-GQfA · ch_VYu1z1RA · PEF0teiIS_4 (youtu.be/…) |
 | ✅ Đã xuất bản (Phần B) | INT11: DBPYPT72oGs · INT12: ZJz0wj0IMJ4 · INT13: uVEPl4ZK_NY · INT14: wbWFbtViEeo · INT15: UbUrvBdEIF8 · INT16: HWWuStUPA1Q · INT17: IIwpdS6LCWY · INT18: RIghirN1YsQ · INT19: 8S-n19ydfx0 · INT20: KjX1fa8Ax8w (Phần B hoàn thành) |
-| ✅ Đã xuất bản (Phần C) | INT21: yD60CBm4wKI · INT22: eIhdrvQqCe8 · INT23: JqSfVdBL9Io · INT24: kbrauP0H5WQ · INT25: i-SkEF8PDbw · INT26: 3UEmaUUHBQQ · INT27: 4MShElzFHNo |
-| 🎬 Đã dựng đầy đủ, đang xuất bản | INT28 |
-| ⚪ Kế hoạch | INT29 – INT36 |
+| ✅ Đã xuất bản (Phần C) | INT21: yD60CBm4wKI · INT22: eIhdrvQqCe8 · INT23: JqSfVdBL9Io · INT24: kbrauP0H5WQ · INT25: i-SkEF8PDbw · INT26: 3UEmaUUHBQQ · INT27: 4MShElzFHNo · INT28: -GG3danGTOQ (Phần C hoàn thành) |
+| 🎬 Đã dựng đầy đủ, đang xuất bản (Phần D) | INT29 |
+| ⚪ Kế hoạch | INT30 – INT36 |
 
 ### Khối dùng chung đã có (`common/blocks.py`)
 
