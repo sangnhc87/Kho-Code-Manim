@@ -20,7 +20,49 @@ from xq.commentary import moves_count  # noqa: E402
 MAX_SECONDS = 52
 
 
+def game_short(data, max_plies):
+    """Short cho tập thực chiến: dừng ở khoảnh khắc then chốt đầu tiên của ván."""
+    from xq.board import Position
+    from xq.notation import vn_move
+    trap = next((b for b in data['beats'] if b['kind'] == 'trap'), None)
+    if trap:
+        fen = trap['fen']
+        moves = [st['move'] for st in trap['steps'] if st.get('move')][:max_plies]
+        headline, tag = 'Danh thủ đã đi sai – còn bạn?', 'THỰC CHIẾN DANH THỦ'
+        ask = 'Ở thế này, trong một ván đấu thật, danh thủ đã đi sai. Bạn có tìm ra nước đúng không?'
+    else:
+        line = next(b for b in data['beats'] if b['kind'] == 'line' and any(st.get('mark') in ('only', 'hold') for st in b['steps']))
+        st = next(x for x in line['steps'] if x.get('mark') in ('only', 'hold'))
+        pos = Position.from_fen(data['fen'])
+        for b in data['beats']:
+            if b['kind'] != 'line':
+                continue
+            for x in b['steps']:
+                if x is st:
+                    break
+                if x.get('move'):
+                    pos = pos.play(x['move'])
+            else:
+                continue
+            break
+        fen, moves = pos.fen(), [st['move']]
+        headline, tag = 'Chỉ có một nước đúng!', 'THỰC CHIẾN DANH THỦ'
+        ask = 'Trong ván đấu thật này, chỉ có đúng một nước giữ được kết quả. Bạn tìm ra không?'
+    pos = Position.from_fen(fen)
+    steps = [{'say': ask, 'countdown': 5}]
+    for k, m in enumerate(moves):
+        vn = vn_move(pos, m)
+        steps.append({'say': (f'Đáp án: {vn}!' if k == 0 else f'{vn}.'), 'move': m, 'mark': 'answer' if k == 0 else None})
+        pos = pos.play(m)
+    g = data.get('game', {})
+    steps.append({'say': f'Toàn bộ diễn biến và phân tích bằng bảng tra có trong tập {data["number"]} của kênh Tinh Hoa Cờ Tàn.'})
+    return {'number': data['number'], 'fen': fen, 'headline': headline, 'tag': tag,
+            'verdict': 'Bảng tra cờ tàn chessdb chấm từng nước', 'wdl': 'W', 'steps': steps}
+
+
 def short_script(data, max_plies):
+    if data.get('kind') == 'game':
+        return game_short(data, max_plies)
     a = data['analysis']
     main = a['main']
     val = a['value']
@@ -60,7 +102,7 @@ def main():
     data = json.loads((ROOT / 'episodes' / f'{args.episode}.json').read_text(encoding='utf-8'))
     out = ROOT / 'output' / args.episode
     out.mkdir(parents=True, exist_ok=True)
-    plies = min(len(data['analysis']['main']), 9)
+    plies = min(len(data['analysis']['main']), 9) if data.get('analysis') else 7
     while True:
         short = short_script(data, plies)
         timing = generate_voice({'beats': [{'steps': short['steps']}]}, out / 'voice_short', args.voice)

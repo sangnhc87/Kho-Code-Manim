@@ -20,7 +20,7 @@ def validate_episode(data, check_tablebase=False):
                 raise ValueError(f'{where}: thiếu {key}')
         if beat['kind'] == 'trap':
             pos = Position.from_fen(beat['fen'])
-            if pos.fen() != state.fen():
+            if not beat.get('rewind') and pos.fen() != state.fen():
                 raise ValueError(f'{where}: biến phụ không xuất phát từ thế hiện tại')
         elif beat.get('fen'):
             state = Position.from_fen(beat['fen'])
@@ -37,11 +37,11 @@ def validate_episode(data, check_tablebase=False):
                 raise ValueError(f'{where}: không quay về đúng thế biến chính')
         else:
             state = pos
-    if check_tablebase:
+    if check_tablebase and data.get('kind') != 'game':
         from . import cdb
         wdl, dtm = cdb.value(data['fen'])
         if (wdl, dtm) != (data['verdict']['wdl'], data['verdict']['dtm']):
             raise ValueError(f'Kết luận {data["verdict"]} lệch bảng tra ({wdl}, {dtm})')
-    if data['verdict']['wdl'] == 'W' and not state.is_mate():
+    if data.get('kind') != 'game' and data['verdict']['wdl'] == 'W' and not state.is_mate():
         raise ValueError('Biến chính của thế thắng phải kết thúc bằng thế bí')
     return True

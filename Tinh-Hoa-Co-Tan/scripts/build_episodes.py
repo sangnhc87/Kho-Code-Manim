@@ -287,6 +287,61 @@ def build_classic(collection, file_name, item, ep, topics, catalog):
     return data
 
 
+GAME_BOOKS = {'Dai-Su-Ky-Lo-Ho-Vinh-Hoa': 'Đại sư kỳ lộ Hồ Vinh Hoa'}
+
+
+def next_games(collection, catalog, min_plies=10):
+    """Ván có tàn cuộc đáng xem nhất trước: nhiều sai lầm / nước duy nhất."""
+    data = load_json(ROOT / 'curriculum' / 'games' / f'{collection}.json', {'games': {}})
+    done = {e.get('source_file') for e in catalog['episodes']}
+    good = []
+    for f, g in data['games'].items():
+        es = g.get('endgame')
+        if f in done or not es or len(es['plies']) < min_plies:
+            continue
+        if es['errors'] == 0 and es['only_found'] < 2:
+            continue
+        good.append((-(2 * es['errors'] + es['only_found']), f, g))
+    return [(f, g) for _, f, g in sorted(good)]
+
+
+def build_game(collection, file_name, game, ep, catalog):
+    from xq.game_episode import build_game_episode
+    beats, info = build_game_episode(game, GAME_BOOKS.get(collection, collection), ep)
+    es = game['endgame']
+    names = ' – '.join(n for n in (info['red'], info['black']) if not n.startswith('kỳ thủ')) or 'Danh thủ'
+    hook = 'Sai lầm ở tàn cuộc' if info['errors'] else 'Nước duy nhất của danh thủ'
+    title = f'Thực chiến: {names}' + (f' ({info["year"]})' if info['year'] else '') + f': {hook}'
+    desc = (f'{title}\n\nTàn cuộc trong ván đấu thật'
+            + (f' năm {info["year"]}' if info['year'] else '') +
+            f', được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\n'
+            f'Bảng tra: {info["verdict"]} • Ván thật: {info["real"]} • {info["errors"]} sai lầm • '
+            f'{info["finds"]} nước duy nhất.\n\nThế vào tàn cuộc (FEN): {es["entry_fen"]}\n'
+            f'Kỳ phổ: {GAME_BOOKS.get(collection, collection)} (kho cộng đồng vietcotuong.com).\n\n'
+            '☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n'
+            '#CoTuong #CoTan #TinhHoaCoTan #ThucChien')
+    data = {
+        'id': f'ep-{ep:04d}', 'number': ep, 'kind': 'game', 'topic': f'game-{collection}',
+        'category': 'Thực chiến danh thủ', 'title': title, 'subtitle': 'Tàn cuộc thực chiến',
+        'fen': es['entry_fen'], 'verdict': {'wdl': es['entry_value'], 'dtm': es['entry_dtm']},
+        'base_status': 'Bảng tra chessdb', 'source': 'chessdb.cn EGTB (DTM)',
+        'game': {k: game[k] for k in ('red', 'black', 'event', 'date', 'result', 'title')},
+        'beats': beats, 'analysis': None,
+        'youtube': {'title': f'{title} | Tinh Hoa Cờ Tàn #{ep}', 'description': desc,
+                    'tags': ['cờ tướng', 'cờ tàn', 'thực chiến', 'danh thủ', 'tinh hoa cờ tàn', 'xiangqi'],
+                    'playlist': 'Tinh Hoa Cờ Tàn | Thực chiến danh thủ'},
+    }
+    from xq.validate import validate_episode
+    validate_episode(data)
+    (EPISODES / f'ep-{ep:04d}.json').write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n',
+                                               encoding='utf-8')
+    catalog['episodes'].append({'ep': ep, 'topic': data['topic'], 'fen': es['entry_fen'],
+                                'key': canonical(es['entry_fen']), 'title': title, 'source_file': file_name})
+    CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    print(f'ep-{ep:04d}: {title}  ({len(beats)} phân đoạn)')
+    return data
+
+
 def next_topics(topics, catalog, count, per_pass=2):
     """Thứ tự phát sóng theo vòng: mỗi vòng, mỗi chủ đề thêm tối đa per_pass tập.
 
@@ -322,18 +377,33 @@ def main():
     topics = cur['topics']
     catalog = load_json(CATALOG, {'episodes': []})
     collections = [args.classic] if args.classic else ([] if args.topic or args.fen else cur.get('classics_first', []))
+    game_colls = [] if args.classic or args.topic or args.fen else cur.get('games', [])
+    every = cur.get('game_every', 3)
     built = 0
-    for coll in collections:
-        for f, item in next_classics(coll, catalog, cur.get('classics_min_pieces', 0)):
-            if built >= args.count:
-                break
-            ep = 1 + max([e['ep'] for e in catalog['episodes']] or [0])
-            try:
-                build_classic(coll, f, item, ep, topics, catalog)
-                built += 1
-            except (cdb.CdbError, ValueError) as exc:
-                print(f'CẢNH BÁO: bỏ qua {f}: {exc}')
-                cdb.flush()
+    skip = set()
+    while built < args.count and collections:
+        ep = 1 + max([e['ep'] for e in catalog['episodes']] or [0])
+        games = [(c, f, g) for c in game_colls for f, g in next_games(c, catalog)]
+        try:
+            if games and ep % every == 0:
+                c, f, g = games[0]
+                build_game(c, f, g, ep, catalog)
+            else:
+                todo = [(c, f, it) for c in collections for f, it in next_classics(c, catalog, cur.get('classics_min_pieces', 0))
+                        if f not in skip]
+                if not todo:
+                    break
+                c, f, it = todo[0]
+                try:
+                    build_classic(c, f, it, ep, topics, catalog)
+                except (cdb.CdbError, ValueError) as exc:
+                    print(f'CẢNH BÁO: bỏ qua {f}: {exc}')
+                    skip.add(f)
+                    cdb.flush()
+                    continue
+            built += 1
+        finally:
+            cdb.flush()
     if built >= args.count or args.classic:
         return
     args.count -= built

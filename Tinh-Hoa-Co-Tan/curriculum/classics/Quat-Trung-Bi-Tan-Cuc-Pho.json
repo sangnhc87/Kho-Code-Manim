@@ -1,0 +1,3452 @@
+{
+ "source": "https://github.com/chasoft/community-xiangqi-games-database/tree/main/data/end-games/Quat-Trung-Bi-Tan-Cuc-Pho",
+ "collection": "end-games/Quat-Trung-Bi-Tan-Cuc-Pho",
+ "items": {
+  "001-声势相倚": {
+   "fen": "4k4/8C/9/p8/9/3R5/9/3RB4/r3r4/3K5 w",
+   "title": "001-声势相倚",
+   "book_result": "W",
+   "book_moves": [
+    "i8a8",
+    "a1b1",
+    "d4d9",
+    "e9e8",
+    "d9d8",
+    "e8e9",
+    "d8b8",
+    "b1b8",
+    "d2d9"
+   ],
+   "pieces": 9,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "002-异地同心": {
+   "fen": "5k3/8P/4ra3/9/9/9/9/5R1R1/4r4/5K3 w",
+   "title": "002-异地同心",
+   "book_result": "W",
+   "book_moves": [
+    "h2h9",
+    "f9f8",
+    "h9h8",
+    "f8f9",
+    "h8e8",
+    "e7e8",
+    "f2f7",
+    "e8f8",
+    "f7f8",
+    "f9e9",
+    "f8f9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "003-双车难破马炮士象全": {
+   "fen": "4k4/9/9/9/9/9/4r4/3NB4/4A1r2/3CKAB2 w",
+   "title": "003-双车难破马炮士象全",
+   "book_result": "D",
+   "book_moves": [
+    "d0c0"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "004-双车难破车炮双士": {
+   "fen": "3k5/9/9/9/4r4/9/9/5R3/2r1A4/3CKA3 w",
+   "title": "004-双车难破车炮双士",
+   "book_result": "D",
+   "book_moves": [
+    "f2i2"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 11,
+    "legal": 27
+   }
+  },
+  "005-借车使炮-(一)": {
+   "fen": "3a1kbn1/4P4/1c2n1r2/4p4/9/CC5pp/9/9/r1p1p4/3K3RR w",
+   "title": "005-借车使炮-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "h0f0",
+    "g7f7",
+    "b4f4",
+    "f7g7",
+    "f4g4",
+    "g7f7",
+    "a4f4",
+    "f7g7",
+    "f4h4",
+    "g7f7",
+    "g4f4",
+    "f7g7",
+    "f4i4",
+    "g7f7",
+    "h4f4",
+    "f7g7",
+    "f4b4",
+    "g7f7",
+    "i4f4",
+    "f7g7",
+    "f4c4",
+    "g7f7",
+    "f0f7",
+    "b7f7",
+    "c4c9",
+    "d9e8",
+    "b4b9",
+    "f9f8",
+    "i0i8"
+   ],
+   "pieces": 19,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "006-借车使炮-(二)": {
+   "fen": "3ak4/4a4/2c6/5N3/4p4/9/9/crnpC2C1/3pA1p2/3AK2R1 w",
+   "title": "006-借车使炮-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "f6d7",
+    "e9f9",
+    "h0f0",
+    "e8f7",
+    "h2f2",
+    "f7e8",
+    "f2d2",
+    "e8f7",
+    "e2f2",
+    "f7e8",
+    "f2c2",
+    "e8f7",
+    "d2f2",
+    "f7e8",
+    "f2b2",
+    "e8f7",
+    "f0f7",
+    "c7f7",
+    "b2b9",
+    "d9e8",
+    "c2c9"
+   ],
+   "pieces": 18,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "007-借炮使马-(一)": {
+   "fen": "2bak4/4a4/9/4pNpNn/6b2/9/4P4/3p5/crR1K3C/2nr5 w",
+   "title": "007-借炮使马-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "h6g8",
+    "e9f9",
+    "i1f1",
+    "e8f7",
+    "f6g4",
+    "f7e8",
+    "g4f2",
+    "e8f7",
+    "f2h3",
+    "f7e8",
+    "h3f4",
+    "e8f7",
+    "f4e6",
+    "f7e8",
+    "e6f4",
+    "e8f7",
+    "f4d5",
+    "f7e8",
+    "d5f6",
+    "e8f7",
+    "f6d7",
+    "f7e8",
+    "g8f6",
+    "e8f7",
+    "f6g4",
+    "f7e8",
+    "g4f2",
+    "e8f7",
+    "f2h3",
+    "f7e8",
+    "h3f4",
+    "e8f7",
+    "f4g6",
+    "f7e8",
+    "g6f8",
+    "e8f7",
+    "f8d9",
+    "f7e8",
+    "d9f8",
+    "e8f7",
+    "f8h7",
+    "f7e8",
+    "h7f6",
+    "e8f7",
+    "f6g4",
+    "f7e8",
+    "g4f2",
+    "e8f7",
+    "f2d1",
+    "f7e8",
+    "c1c9"
+   ],
+   "pieces": 19,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "008-借炮使马-(二)": {
+   "fen": "2bak4/4a4/1C2b4/4pNp2/9/9/9/2n1BCN2/3rA4/1cBAK4 w",
+   "title": "008-借炮使马-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "f6g8",
+    "e9f9",
+    "g2f4",
+    "e8f7",
+    "f4g6",
+    "f7e8",
+    "g6f4",
+    "e8f7",
+    "f4e6",
+    "f7e8",
+    "e6f4",
+    "e8f7",
+    "f4d5",
+    "f7e8",
+    "d5f6",
+    "e8f7",
+    "f6d7",
+    "f7e8",
+    "g8f6",
+    "e8f7",
+    "f6h5",
+    "f7e8",
+    "h5f4",
+    "e8f7",
+    "f4g6",
+    "f7e8",
+    "g6h8",
+    "f9f8",
+    "h8f7",
+    "f8f7",
+    "d7e5",
+    "f7f8",
+    "e5f7"
+   ],
+   "pieces": 19,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "009-双马饮泉-杨官璘改编": {
+   "fen": "4kab2/1N1Pa4/4b4/3N4p/9/2B6/8n/9/4Ap3/3AK3c w",
+   "title": "009-双马饮泉-杨官璘改编",
+   "book_result": "W",
+   "book_moves": [
+    "b8d7",
+    "f1f0",
+    "e0f0",
+    "i3g2",
+    "f0e0",
+    "g2h0",
+    "e1f0",
+    "h0i2",
+    "f0e1",
+    "i2g1",
+    "e0f0",
+    "i0g0",
+    "f0f1",
+    "i6i5",
+    "e1f2",
+    "i5i4",
+    "f1e1",
+    "i4i3",
+    "d8d9",
+    "e9d9",
+    "d7b8",
+    "d9e9",
+    "d6c8",
+    "e9d9",
+    "c8e7",
+    "d9e9",
+    "e7c8",
+    "e9d9",
+    "c8d6",
+    "d9e9",
+    "d6f7"
+   ],
+   "pieces": 16,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "010-车马炮局": {
+   "fen": "3akab2/2r6/4b4/2C4N1/9/9/9/1p3p3/4p4/3K3R1 w",
+   "title": "010-车马炮局",
+   "book_result": "W",
+   "book_moves": [
+    "h6f7",
+    "c8f8",
+    "h0h8",
+    "f8f7",
+    "h8d8",
+    "d9e8",
+    "c6e6"
+   ],
+   "pieces": 13,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "010-车马炮局-杨官璘改编": {
+   "fen": "3akab2/2r6/4b4/2C4N1/9/7R1/9/1p3p3/4p4/3K5 w",
+   "title": "010-车马炮局-杨官璘改编",
+   "book_result": "W",
+   "book_moves": [
+    "h6f7",
+    "c8f8",
+    "h4d4",
+    "f8f7",
+    "d4d8",
+    "d9e8",
+    "c6e6"
+   ],
+   "pieces": 13,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "011-车马冷着-(一)": {
+   "fen": "6b2/2N2k3/4b4/7R1/9/9/3p5/4B4/4rp3/3K5 w",
+   "title": "011-车马冷着-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "h6h8",
+    "f8f9",
+    "h8h4",
+    "f9f8",
+    "c8d6",
+    "f8f9",
+    "h4f4",
+    "f9e9",
+    "f4b4",
+    "e9f9",
+    "d6f5",
+    "f9e9",
+    "f5g7",
+    "e9d9",
+    "b4d4",
+    "d9e9",
+    "d4d3"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "012-车马冷着-(二)": {
+   "fen": "2ba1k3/4a4/4b4/5N1R1/9/9/3pp4/4B4/4rp3/2BK5 w",
+   "title": "012-车马冷着-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "h6h9",
+    "f9f8",
+    "f6h7",
+    "f8f7",
+    "h9h8",
+    "e7g9",
+    "h8g8",
+    "f7e7",
+    "g8g4",
+    "e8f7",
+    "h7f6",
+    "e7e8",
+    "g4g8",
+    "e8e7",
+    "g8d8",
+    "f7e8",
+    "d8d4",
+    "e7f7",
+    "d4f4",
+    "f7e7",
+    "f6g8"
+   ],
+   "pieces": 14,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "013-平车炮士胜车双象": {
+   "fen": "9/4k4/4bR3/9/2b6/4r4/9/9/3KC4/3A5 w",
+   "title": "013-平车炮士胜车双象",
+   "book_result": "W",
+   "book_moves": [
+    "d1d2",
+    "e4e3",
+    "e1e2",
+    "e3e4",
+    "d0e1",
+    "e4e3",
+    "e1f2",
+    "e3e4",
+    "e2e1",
+    "e4e3",
+    "f7f5",
+    "c5a7",
+    "f5a5",
+    "a7c9",
+    "a5c5",
+    "e8f8",
+    "c5c8",
+    "f8f9",
+    "c8e8"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 99,
+    "keep": 9,
+    "legal": 22
+   }
+  },
+  "014-车马难胜车双士": {
+   "fen": "4k4/9/9/9/9/9/4r1n2/3R1A3/4A4/3K5 w",
+   "title": "014-车马难胜车双士",
+   "book_result": "D",
+   "book_moves": [
+    "d2d4"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 12,
+    "legal": 15
+   }
+  },
+  "015-车马不胜单车": {
+   "fen": "n2rka3/4a4/9/9/9/9/9/9/9/1R2K4 w",
+   "title": "015-车马不胜单车",
+   "book_result": "D",
+   "book_moves": [
+    "b0b8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 14
+   }
+  },
+  "016-车炮难胜车双士": {
+   "fen": "9/4ck3/9/9/4R4/3r5/9/5A3/4A4/4K4 w",
+   "title": "016-车炮难胜车双士",
+   "book_result": "D",
+   "book_moves": [
+    "e0f0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 5,
+    "legal": 7
+   }
+  },
+  "017-车炮象对车双相": {
+   "fen": "9/5k3/4c4/9/2br5/4R4/9/4B4/9/4K1B2 w",
+   "title": "017-车炮象对车双相",
+   "book_result": "D",
+   "book_moves": [
+    "e4e6",
+    "d5d2",
+    "e6e5",
+    "f8f7",
+    "e5e6",
+    "c5a7",
+    "e6e5",
+    "a7c9",
+    "e5e6",
+    "d2d6",
+    "e6e5",
+    "e7e6",
+    "g0i2",
+    "c9e7",
+    "i2g4",
+    "e7g9",
+    "e5e3",
+    "f7f8",
+    "e3e5",
+    "f8f9",
+    "e5e3",
+    "e6e7",
+    "e3e5",
+    "f9e9",
+    "e0f0",
+    "d6f6",
+    "f0e0",
+    "f6f4",
+    "e0d0",
+    "f4d4",
+    "d0e0",
+    "e9e8",
+    "g4i2",
+    "d4i4",
+    "i2g0",
+    "i4a4",
+    "g0i2",
+    "a4a0",
+    "e0e1",
+    "a0i0",
+    "i2g4",
+    "i0i5",
+    "e5e6",
+    "i5g5",
+    "e1f1",
+    "g5f5",
+    "f1e1",
+    "f5f4",
+    "g4i2",
+    "f4i4",
+    "i2g0",
+    "i4g4",
+    "e1d1",
+    "g4d4",
+    "d1e1",
+    "d4d2",
+    "e6e4",
+    "g9i7",
+    "e4e6",
+    "i7g5",
+    "e6e5",
+    "e8d8",
+    "e1f1",
+    "d2d1",
+    "f1f0",
+    "d1d0",
+    "f0f1",
+    "d0g0",
+    "e5e4",
+    "g0g1",
+    "f1f0",
+    "g1g3",
+    "e4f4",
+    "g3e3",
+    "e2c4",
+    "e3e5",
+    "f0f1",
+    "d8e8",
+    "f1f0",
+    "e7e6",
+    "f0f1",
+    "g5e7",
+    "f1f0",
+    "e7c5",
+    "f4f2",
+    "e5e4",
+    "c4a2",
+    "e6h6",
+    "f0f1",
+    "h6h0"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "L",
+    "dtm": 104,
+    "keep": 6,
+    "legal": 6
+   }
+  },
+  "018-车炮和单车": {
+   "fen": "3rka3/4a4/2Rc5/9/9/9/9/9/9/4K4 w",
+   "title": "018-车炮和单车",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 15
+   }
+  },
+  "019-车炮胜单车": {
+   "fen": "5k3/9/9/9/9/9/9/4C2R1/4r4/3K5 w",
+   "title": "019-车炮胜单车",
+   "book_result": "W",
+   "book_moves": [
+    "h2h9",
+    "f9f8",
+    "h9h8",
+    "f8f9",
+    "h8e8",
+    "e1f1",
+    "e2h2",
+    "f1f2",
+    "h2h9",
+    "f2f1",
+    "d0e0",
+    "f1f3",
+    "e8e9",
+    "f9f8",
+    "h9f9",
+    "f3g3",
+    "e9e5"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 29,
+    "keep": 1,
+    "legal": 25
+   }
+  },
+  "020-平车炮胜士": {
+   "fen": "9/5k3/3a5/9/9/9/9/4R3C/4K4/5r3 w",
+   "title": "020-平车炮胜士",
+   "book_result": "W",
+   "book_moves": [
+    "i2g2",
+    "f8f9",
+    "e2e7",
+    "f0f2",
+    "g2g7"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 25,
+    "legal": 27
+   }
+  },
+  "021-单车和车炮": {
+   "fen": "5k3/4R4/4cr3/9/9/9/9/9/9/4K4 w",
+   "title": "021-单车和车炮",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 12
+   }
+  },
+  "022-平车炮和象": {
+   "fen": "9/4k4/9/9/9/9/1c2r4/BR7/3K5/9 w",
+   "title": "022-平车炮和象",
+   "book_result": "D",
+   "book_moves": [
+    "b2c2",
+    "b3b5",
+    "c2d2",
+    "b5b0",
+    "a2c4",
+    "e3e0",
+    "d2e2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 5,
+    "legal": 13
+   }
+  },
+  "023-平车马保炮和车卒": {
+   "fen": "4k1b2/4a4/4ba3/9/9/9/9/5R1N1/4p1r2/5KC2 w",
+   "title": "023-平车马保炮和车卒",
+   "book_result": "D",
+   "book_moves": [
+    "f2e2"
+   ],
+   "pieces": 11,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "024-平车相保炮和车卒": {
+   "fen": "2b1k4/4a4/3ab4/9/9/9/9/B2R5/4p4/1rCK5 w",
+   "title": "024-平车相保炮和车卒",
+   "book_result": "D",
+   "book_moves": [
+    "d2e2",
+    "b0b1",
+    "e2d2",
+    "e8f7",
+    "c0c4",
+    "b1c1",
+    "c4b4",
+    "e7g9",
+    "d2e2",
+    "e9f9",
+    "e2d2",
+    "f7e8",
+    "b4b0"
+   ],
+   "pieces": 11,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "025-车兵难破双卒士象全": {
+   "fen": "2bak4/4a4/4b4/4P4/8R/9/4pp3/9/9/4K4 w",
+   "title": "025-车兵难破双卒士象全",
+   "book_result": "D",
+   "book_moves": [
+    "i5e5"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 69,
+    "keep": 20,
+    "legal": 23
+   }
+  },
+  "026-平车炮和车卒": {
+   "fen": "3k5/9/9/9/9/4R4/9/9/3r1p3/4K1C2 w",
+   "title": "026-平车炮和车卒",
+   "book_result": "D",
+   "book_moves": [
+    "e4e5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 10,
+    "legal": 28
+   }
+  },
+  "027-两平车兵负双士": {
+   "fen": "9/4a4/3ak4/9/3P5/5RB2/3pp4/4B4/4rp3/3K5 w",
+   "title": "027-两平车兵负双士",
+   "book_result": "L",
+   "book_moves": [
+    "d5d6",
+    "e8d9",
+    "f4f8",
+    "d7e8",
+    "f8f5",
+    "e8d7",
+    "f5e5",
+    "e7f7",
+    "d6d7",
+    "f7f8",
+    "d7e7",
+    "f8f9",
+    "e5f5",
+    "f9e9",
+    "f5i5",
+    "d9e8",
+    "i5i8",
+    "e8f9",
+    "i8b8",
+    "e9d9",
+    "e7d7",
+    "d9e9",
+    "d7d8"
+   ],
+   "pieces": 12,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "028-平车双卒难破士相全": {
+   "fen": "4k4/9/9/9/9/2B6/7r1/2R2A3/1p2Ap3/2BK5 w",
+   "title": "028-平车双卒难破士相全",
+   "book_result": "D",
+   "book_moves": [
+    "c4a2"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "029-平车兵胜士": {
+   "fen": "5k3/3P5/5a3/9/5r3/4R4/9/9/4A4/4K4 w",
+   "title": "029-平车兵胜士",
+   "book_result": "W",
+   "book_moves": [
+    "e4e2",
+    "f5d5",
+    "e2h2",
+    "f9f8",
+    "e0f0",
+    "d5e5",
+    "h2h8",
+    "f8f9",
+    "h8h1",
+    "f9f8",
+    "h1f1",
+    "e5e7",
+    "e1d2",
+    "e7d7",
+    "f1f6",
+    "d7e7",
+    "f6f3",
+    "e7d7",
+    "f3f1",
+    "d7a7",
+    "f1e1",
+    "a7a0",
+    "f0f1",
+    "a0a5",
+    "d8e8",
+    "f8f9",
+    "e1e2",
+    "a5f5",
+    "e2f2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 25,
+    "keep": 15,
+    "legal": 23
+   }
+  },
+  "030-车卒难胜双炮双相": {
+   "fen": "4k4/9/9/9/9/9/r8/C3B3C/3p5/4K1B2 w",
+   "title": "030-车卒难胜双炮双相",
+   "book_result": "D",
+   "book_moves": [
+    "i2f2"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 18
+   }
+  },
+  "031-两平车兵负单士": {
+   "fen": "3k5/9/4Pa3/9/4R4/9/4pp3/4B4/3pr4/2B2K3 w",
+   "title": "031-两平车兵负单士",
+   "book_result": "L",
+   "book_moves": [
+    "e5d5",
+    "d9e9",
+    "d5b5",
+    "e9d9",
+    "b5b9",
+    "d9d8",
+    "b9b7",
+    "d8d9",
+    "e7d7",
+    "d9e9",
+    "d7d8",
+    "e9f9",
+    "b7f7",
+    "f9e9",
+    "f7f8"
+   ],
+   "pieces": 11,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "032-车卒难破双炮兵": {
+   "fen": "1C7/4k4/1P7/9/9/9/9/9/4p4/rC1K5 w",
+   "title": "032-车卒难破双炮兵",
+   "book_result": "D",
+   "book_moves": [
+    "b9b8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 13
+   }
+  },
+  "033-两平车兵难胜单士象": {
+   "fen": "9/3R2P2/3ak4/4p4/4r1b2/9/9/4B4/9/4K1B2 w",
+   "title": "033-两平车兵难胜单士象",
+   "book_result": "D",
+   "book_moves": [
+    "d8d9",
+    "e5d5",
+    "d9e9",
+    "d7e8",
+    "g8f8",
+    "d5d8",
+    "e0f0",
+    "e6e5",
+    "e9h9",
+    "e8f7",
+    "h9b9",
+    "e5e4",
+    "b9b7",
+    "d8d7",
+    "b7b6",
+    "d7d4",
+    "b6f6",
+    "e4f4"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "034-两平车兵难胜": {
+   "fen": "9/6P2/4k4/3Rp4/4r1b2/9/9/9/3K5/9 w",
+   "title": "034-两平车兵难胜",
+   "book_result": "D",
+   "book_moves": [
+    "d6d7",
+    "e7e8",
+    "d7f7",
+    "e5d5",
+    "d1e1",
+    "e8d8",
+    "g8f8",
+    "e6e5",
+    "f7f5",
+    "g5e7",
+    "f5f6",
+    "e7c5",
+    "f6c6",
+    "e5e4",
+    "c6c8",
+    "d8d7",
+    "c8c9",
+    "d7d8",
+    "c9e9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 14,
+    "legal": 16
+   }
+  },
+  "035-两平车兵能和": {
+   "fen": "4k4/P3a4/5r3/8p/2b6/9/9/7R1/4K4/9 w",
+   "title": "035-两平车兵能和",
+   "book_result": "D",
+   "book_moves": [
+    "h2h9",
+    "f7f9",
+    "h9h6",
+    "f9f7",
+    "h6i6",
+    "e9f9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 20,
+    "legal": 22
+   }
+  },
+  "036-平车兵闷士": {
+   "fen": "3ak4/4a1P2/9/9/9/8R/9/9/5r3/4KA3 w",
+   "title": "036-平车兵闷士",
+   "book_result": "W",
+   "book_moves": [
+    "i4i9",
+    "f1f9",
+    "i9g9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 5,
+    "keep": 9,
+    "legal": 22
+   }
+  },
+  "037-平车兵胜象": {
+   "fen": "4k4/5P3/9/9/2b1r4/5R3/9/9/5K3/9 w",
+   "title": "037-平车兵胜象",
+   "book_result": "W",
+   "book_moves": [
+    "f8g8",
+    "e9e8",
+    "f4f9",
+    "e8d8",
+    "g8f8",
+    "c5a7",
+    "f9b9",
+    "a7c5",
+    "f1f0",
+    "e5d5",
+    "b9b6",
+    "d8d7",
+    "b6e6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 41,
+    "keep": 6,
+    "legal": 18
+   }
+  },
+  "038-平车兵用车-(占中)": {
+   "fen": "4k4/5P3/9/9/4r4/5R3/9/9/5K3/9 w",
+   "title": "038-平车兵用车-(占中)",
+   "book_result": "W",
+   "book_moves": [
+    "f8g8",
+    "e5e3",
+    "f4f9",
+    "e9e8",
+    "g8f8",
+    "e8d8",
+    "f9b9",
+    "e3e4",
+    "b9b8",
+    "d8d7",
+    "b8e8"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 24,
+    "keep": 7,
+    "legal": 18
+   }
+  },
+  "039-平车卒胜士": {
+   "fen": "9/5k3/4b4/9/4r4/3R5/9/3Ap4/3K5/9 w",
+   "title": "039-平车卒胜士",
+   "book_result": "L",
+   "book_moves": [
+    "d4d7",
+    "f8e8",
+    "d7d4",
+    "e5b5",
+    "d4d6",
+    "b5b8",
+    "d1d0",
+    "b8d8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "L",
+    "dtm": 26,
+    "keep": 16,
+    "legal": 16
+   }
+  },
+  "040-平车兵难胜士": {
+   "fen": "3ak4/9/4r4/5P3/9/2R6/9/9/9/3K5 w",
+   "title": "040-平车兵难胜士",
+   "book_result": "D",
+   "book_moves": [
+    "c4d4",
+    "d9e8",
+    "d4d6",
+    "e7e3",
+    "f6g6",
+    "e3e7",
+    "g6f6",
+    "e7e3",
+    "d6b6",
+    "e8d9",
+    "b6d6",
+    "d9e8",
+    "d0d1",
+    "e3e4",
+    "f6g6",
+    "e4e7",
+    "g6f6",
+    "e7e3",
+    "f6g6",
+    "e3e7",
+    "d1d0",
+    "e7d7",
+    "d6d7",
+    "e8d7",
+    "g6f6",
+    "d7e8",
+    "f6e6",
+    "e8d9"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 21
+   }
+  },
+  "041-平车仕和卒-(一)": {
+   "fen": "4k4/4a4/4r4/9/9/9/9/3R1A3/3K1p3/9 w",
+   "title": "041-平车仕和卒-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 8,
+    "legal": 13
+   }
+  },
+  "042-平车仕和卒-(二)": {
+   "fen": "2b1k4/9/4b4/9/9/3R5/9/9/1r1p5/3AK4 w",
+   "title": "042-平车仕和卒-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "d4d5"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 7,
+    "legal": 18
+   }
+  },
+  "043-平车底兵胜": {
+   "fen": "2P2R3/4r4/3k5/9/9/9/9/9/5K3/9 w",
+   "title": "043-平车底兵胜",
+   "book_result": "W",
+   "book_moves": [
+    "f1f0",
+    "e8h8",
+    "f9e9",
+    "h8g8",
+    "f0e0",
+    "g8h8",
+    "e9e5",
+    "h8h0",
+    "e0e1",
+    "h0d0",
+    "e5e9"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 19,
+    "keep": 5,
+    "legal": 16
+   }
+  },
+  "044-一车单士和车卒": {
+   "fen": "2b1k4/9/4b4/9/r8/9/9/9/p2R5/4KA3 w",
+   "title": "044-一车单士和车卒",
+   "book_result": "D",
+   "book_moves": [
+    "f0e1",
+    "e7g9",
+    "e0d0",
+    "a5a4",
+    "d1d9",
+    "e9e8",
+    "d9d1",
+    "a1a0",
+    "e1f2",
+    "a4a2",
+    "d1e1",
+    "c9e7",
+    "e1e4"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 8,
+    "legal": 20
+   }
+  },
+  "045-一车能破士象全-(一)": {
+   "fen": "3a2b2/3ka4/4b4/9/9/2B3R2/9/B2A5/9/3AK4 w",
+   "title": "045-一车能破士象全-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "g4g8",
+    "g9i7",
+    "d2e1",
+    "i7g9",
+    "e1f0",
+    "g9i7",
+    "e0e1",
+    "i7g9",
+    "g8g6",
+    "e8d7",
+    "g6b6",
+    "d9e8",
+    "e1d1"
+   ],
+   "pieces": 11,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 49,
+    "keep": 5,
+    "legal": 20
+   }
+  },
+  "046-一车能破士象全-(二)": {
+   "fen": "3a1k3/2R1a4/b8/9/2b6/9/9/9/9/4K4 w",
+   "title": "046-一车能破士象全-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "c8c7",
+    "f9f8",
+    "c7h7",
+    "f8f9",
+    "h7h9",
+    "f9f8",
+    "h9h5",
+    "f8f9",
+    "h5f5",
+    "f9e9",
+    "f5e5",
+    "e9f9",
+    "e0e1",
+    "f9e9",
+    "e1f1"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 51,
+    "keep": 1,
+    "legal": 10
+   }
+  },
+  "047-一车能破士象全-(三)": {
+   "fen": "9/4aR3/3k1a2b/9/6b2/9/9/9/9/4K4 w",
+   "title": "047-一车能破士象全-(三)",
+   "book_result": "W",
+   "book_moves": [
+    "f8h8",
+    "d7d8",
+    "h8h6",
+    "d8d9",
+    "h6d6",
+    "d9e9",
+    "d6d7",
+    "e9f9",
+    "d7b7",
+    "f9f8",
+    "b7b9",
+    "e8d7",
+    "e0f0",
+    "g5e7",
+    "b9i9",
+    "i7g5",
+    "i9i8",
+    "f8f9",
+    "i8d8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 53,
+    "keep": 3,
+    "legal": 8
+   }
+  },
+  "048-一车能破士象全-(四)": {
+   "fen": "3a5/5k3/2R1ba3/9/2b6/9/9/9/5K3/9 w",
+   "title": "048-一车能破士象全-(四)",
+   "book_result": "W",
+   "book_moves": [
+    "c7d7",
+    "d9e8",
+    "d7b7",
+    "e7c9",
+    "b7b5",
+    "c9e7",
+    "b5b9",
+    "e8f9",
+    "b9e9",
+    "e7g5",
+    "e9e6",
+    "f9e8",
+    "e6g6",
+    "g5e7",
+    "g6g8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 47,
+    "keep": 1,
+    "legal": 11
+   }
+  },
+  "049-一车能破士象全-(五)": {
+   "fen": "5k3/4a4/3a4b/9/6b2/9/7R1/9/9/4K4 w",
+   "title": "049-一车能破士象全-(五)",
+   "book_result": "W",
+   "book_moves": [
+    "h3h9",
+    "f9f8",
+    "h9i9",
+    "f8f7",
+    "i9i8",
+    "e8f9",
+    "i8h8",
+    "f9e8",
+    "e0e1",
+    "e8d9",
+    "h8h6"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 45,
+    "keep": 2,
+    "legal": 19
+   }
+  },
+  "050-一车能破士象全-(六)": {
+   "fen": "2bak4/2R1a4/b8/9/9/9/9/9/9/4K4 w",
+   "title": "050-一车能破士象全-(六)",
+   "book_result": "W",
+   "book_moves": [
+    "c8c7",
+    "e9f9",
+    "c7h7",
+    "f9f8",
+    "h7h5",
+    "f8f9",
+    "h5f5",
+    "f9e9",
+    "f5e5",
+    "e9f9",
+    "e0e1",
+    "f9e9",
+    "e1f1"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 49,
+    "keep": 1,
+    "legal": 16
+   }
+  },
+  "051-一车能破士象全-(七)": {
+   "fen": "3k1ab2/4a4/8b/9/9/9/9/9/4K4/8R w",
+   "title": "051-一车能破士象全-(七)",
+   "book_result": "W",
+   "book_moves": [
+    "i0i5",
+    "d9e9",
+    "i5e5",
+    "e9d9",
+    "e1e0",
+    "d9e9",
+    "e0d0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 45,
+    "keep": 1,
+    "legal": 18
+   }
+  },
+  "052-一车能破士象全-(八)": {
+   "fen": "3a5/4a4/5k2b/9/6b2/9/9/9/9/2R1K4 w",
+   "title": "052-一车能破士象全-(八)",
+   "book_result": "W",
+   "book_moves": [
+    "c0c6",
+    "f7f8",
+    "c6f6",
+    "e8f7",
+    "e0f0",
+    "d9e8",
+    "f6h6",
+    "e8d7",
+    "h6h7",
+    "d7e8",
+    "h7h8",
+    "f8f9",
+    "h8e8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 41,
+    "keep": 13,
+    "legal": 14
+   }
+  },
+  "053-一车能破士象全-(九)": {
+   "fen": "5a3/4ak3/2R1b4/9/2b6/9/9/9/9/4K4 w",
+   "title": "053-一车能破士象全-(九)",
+   "book_result": "W",
+   "book_moves": [
+    "c7c6",
+    "e8f7",
+    "c6h6",
+    "f9e8",
+    "e0f0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 41,
+    "keep": 5,
+    "legal": 10
+   }
+  },
+  "054-一车能破士象全-(十)": {
+   "fen": "3k1a3/4a4/b8/9/2b6/1R7/9/9/9/4K4 w",
+   "title": "054-一车能破士象全-(十)",
+   "book_result": "W",
+   "book_moves": [
+    "b4b9",
+    "d9d8",
+    "b9a9",
+    "d8d7",
+    "a9a8",
+    "a7c9",
+    "a8c8",
+    "c5a7",
+    "e0e1"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 45,
+    "keep": 1,
+    "legal": 19
+   }
+  },
+  "055-一车能破士象全-(十一)": {
+   "fen": "4k4/9/9/9/9/2B6/9/B2A5/2r1A4/5K3 w",
+   "title": "055-一车能破士象全-(十一)",
+   "book_result": "L",
+   "book_moves": [
+    "f0f1",
+    "c1c3",
+    "f1f0",
+    "c3f3",
+    "f0e0",
+    "f3f2",
+    "e0d0",
+    "f2h2",
+    "d0d1",
+    "h2h0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 6
+   }
+  },
+  "056-一车难破士象全-(十二)": {
+   "fen": "4k4/9/9/9/9/9/9/B2K5/4A1r2/2B2A3 w",
+   "title": "056-一车难破士象全-(十二)",
+   "book_result": "D",
+   "book_moves": [
+    "d2d1",
+    "g1g4",
+    "d1d0",
+    "g4e4",
+    "d0d1",
+    "e4d4",
+    "e1d2",
+    "e9d9",
+    "f0e1",
+    "d4b4",
+    "d1d0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 5
+   }
+  },
+  "057-只马当士": {
+   "fen": "4k4/9/9/9/9/9/9/4B4/4Ar3/2B1KN3 w",
+   "title": "057-只马当士",
+   "book_result": "D",
+   "book_moves": [
+    "c0a2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 8
+   }
+  },
+  "058-只马当相": {
+   "fen": "4k4/9/9/9/9/9/9/3N5/2r1A4/2B1KA3 w",
+   "title": "058-只马当相",
+   "book_result": "D",
+   "book_moves": [
+    "e0d0",
+    "e9d9",
+    "c0e2",
+    "c1a1",
+    "e2g0",
+    "a1a0",
+    "d0d1",
+    "a0a4",
+    "g0e2",
+    "a4e4",
+    "e2g0",
+    "d9d8",
+    "d1d0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 9
+   }
+  },
+  "059-一车能禁士炮卒": {
+   "fen": "3cka3/4a4/9/p8/2p6/7R1/9/9/9/4K4 w",
+   "title": "059-一车能禁士炮卒",
+   "book_result": "W",
+   "book_moves": [
+    "h4b4",
+    "a6a5",
+    "e0e1",
+    "d9d7",
+    "b4b9",
+    "d7d9",
+    "b9c9",
+    "a5a4",
+    "c9c5",
+    "a4b4",
+    "c5c9",
+    "b4b3",
+    "e1e2",
+    "b3b2",
+    "e2e1",
+    "b2b1",
+    "e1e2",
+    "b1a1",
+    "c9b9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 35,
+    "keep": 2,
+    "legal": 20
+   }
+  },
+  "060-一车难破双士炮-(一)": {
+   "fen": "4k4/9/9/9/9/9/9/3A1K3/4A1r2/5C3 b",
+   "title": "060-一车难破双士炮-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "g1g0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 13,
+    "legal": 15
+   }
+  },
+  "061-一车难破炮双士-(二)": {
+   "fen": "3ck4/4a4/3a5/9/9/4R4/9/9/4K4/9 w",
+   "title": "061-一车难破炮双士-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "e4e5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 15,
+    "legal": 17
+   }
+  },
+  "062-车胜炮双象": {
+   "fen": "2bk5/R8/b8/8c/9/9/9/9/9/4K4 w",
+   "title": "062-车胜炮双象",
+   "book_result": "W",
+   "book_moves": [
+    "a8i8",
+    "i6d6",
+    "i8i9",
+    "d9d8",
+    "i9i7",
+    "d6d3",
+    "i7i5",
+    "d3d6",
+    "i5d5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 25,
+    "keep": 4,
+    "legal": 12
+   }
+  },
+  "063-车和炮双相": {
+   "fen": "4k4/9/9/9/9/4C4/6r2/4B4/9/4K1B2 w",
+   "title": "063-车和炮双相",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1",
+    "g3e3",
+    "e4d4",
+    "e3b3",
+    "d4e4"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 6,
+    "legal": 20
+   }
+  },
+  "064-车破马双象-(一)": {
+   "fen": "2b1k1n2/9/4b4/4R4/9/9/9/9/9/4K4 w",
+   "title": "064-车破马双象-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "e6g6",
+    "e9d9",
+    "g6f6",
+    "d9e9",
+    "e0f0",
+    "c9a7",
+    "f6f9",
+    "e9e8",
+    "f0e0",
+    "e8d8",
+    "f9a9",
+    "a7c5",
+    "a9e9",
+    "g9h7",
+    "e9f9",
+    "h7g5",
+    "f9f5",
+    "g5h3",
+    "e0e1",
+    "c5a7",
+    "f5e5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 33,
+    "keep": 16,
+    "legal": 17
+   }
+  },
+  "065-车破马双象-(二)": {
+   "fen": "4k1b2/9/4n3b/4R4/9/9/9/9/9/4K4 w",
+   "title": "065-车破马双象-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "e6e5",
+    "e9d9",
+    "e5b5",
+    "d9d8",
+    "b5b8",
+    "d8d9",
+    "b8b4",
+    "d9d8",
+    "b4d4",
+    "d8e8",
+    "d4d9",
+    "e8f8",
+    "d9e9",
+    "f8f7",
+    "e0e1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 24,
+    "keep": 7,
+    "legal": 17
+   }
+  },
+  "066-一车难破马双相": {
+   "fen": "4k4/9/9/9/9/6B2/4r4/4N3B/9/4K4 w",
+   "title": "066-一车难破马双相",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 4
+   }
+  },
+  "067-一车难破马兵双相": {
+   "fen": "4k4/9/9/8r/9/1NB6/2P6/4B4/9/4K4 w",
+   "title": "067-一车难破马兵双相",
+   "book_result": "D",
+   "book_moves": [
+    "b4a2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 8
+   }
+  },
+  "068-一车难破马兵相-(一)": {
+   "fen": "4k3N/9/1r7/9/9/9/4P4/4B4/4K4/9 w",
+   "title": "068-一车难破马兵相-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "i9g8",
+    "e9e8",
+    "g8f6",
+    "b7f7",
+    "f6g4"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 10
+   }
+  },
+  "069-一车难破马兵相-(二)": {
+   "fen": "4k4/9/9/9/4P4/2N1r4/9/4B4/4K4/9 w",
+   "title": "069-一车难破马兵相-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "c4d6",
+    "e4e3",
+    "d6c4",
+    "e3e4",
+    "c4b6",
+    "e9e8",
+    "b6c4",
+    "e8e7",
+    "c4a5",
+    "e7e8",
+    "a5c4",
+    "e8f8",
+    "e5f5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 13
+   }
+  },
+  "070-车攻马双士-(一)": {
+   "fen": "4ka3/4an3/9/9/4R4/9/9/9/9/4K4 w",
+   "title": "070-车攻马双士-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "e5b5",
+    "e9d9",
+    "b5d5",
+    "d9e9",
+    "d5h5"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 40,
+    "keep": 16,
+    "legal": 18
+   }
+  },
+  "071-车攻马双士-(二)": {
+   "fen": "2R6/3ka4/3a5/3n5/9/9/9/9/9/3K5 w",
+   "title": "071-车攻马双士-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "c9c6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 23,
+    "keep": 16,
+    "legal": 19
+   }
+  },
+  "072-车攻马双士-(三)": {
+   "fen": "4ka1n1/4a4/9/9/4R4/9/9/9/9/3K5 w",
+   "title": "072-车攻马双士-(三)",
+   "book_result": "W",
+   "book_moves": [
+    "e5b5",
+    "e8d9",
+    "b5b8",
+    "h9g7",
+    "b8b9",
+    "f9e8",
+    "b9b6",
+    "e8f9",
+    "b6g6",
+    "g7h9",
+    "g6g8"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 39,
+    "keep": 17,
+    "legal": 18
+   }
+  },
+  "073-车攻马双士-(四)": {
+   "fen": "3a1k3/4a4/4R4/9/2n6/9/9/9/9/4K4 w",
+   "title": "073-车攻马双士-(四)",
+   "book_result": "W",
+   "book_moves": [
+    "e7h7",
+    "c5d7",
+    "h7h9",
+    "f9f8",
+    "h9h5",
+    "f8f9",
+    "h5f5",
+    "f9e9",
+    "f5f7",
+    "d7c9",
+    "e0e1",
+    "c9a8",
+    "f7h7",
+    "e9f9",
+    "h7h9",
+    "f9f8",
+    "h9h6",
+    "f8f9",
+    "h6f6",
+    "f9e9",
+    "e1f1",
+    "a8c9",
+    "f6g6",
+    "e8f9",
+    "g6g9",
+    "d9e8",
+    "f1e1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 37,
+    "keep": 11,
+    "legal": 17
+   }
+  },
+  "074-车破双士双卒-(一)": {
+   "fen": "4ka3/4a4/9/9/5R3/4pp3/9/9/4A4/3AK4 w",
+   "title": "074-车破双士双卒-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "e1f0",
+    "f4g4",
+    "e0e1",
+    "g4f4",
+    "f5f6",
+    "f4g4",
+    "f6d6",
+    "g4f4",
+    "e1d1",
+    "f4g4",
+    "d6b6",
+    "e8d9",
+    "b6e6"
+   ],
+   "pieces": 9,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 45,
+    "keep": 3,
+    "legal": 17
+   }
+  },
+  "075-车破双士双卒-(二)": {
+   "fen": "4ka3/4a4/9/9/9/1R7/4pp3/9/9/4K4 w",
+   "title": "075-车破双士双卒-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "b4f4",
+    "e9d9",
+    "f4d4",
+    "d9e9",
+    "e0d0",
+    "f3g3",
+    "d4b4",
+    "e8d9",
+    "b4e4"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 39,
+    "keep": 1,
+    "legal": 20
+   }
+  },
+  "076-单车和双兵双士": {
+   "fen": "4k4/9/9/4PP3/9/4r4/9/5A3/4AK3/9 w",
+   "title": "076-单车和双兵双士",
+   "book_result": "D",
+   "book_moves": [
+    "f1f0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 5,
+    "legal": 8
+   }
+  },
+  "077-单车和双兵双相": {
+   "fen": "4k4/9/9/4PP3/9/9/4r4/4B4/9/4K1B2 w",
+   "title": "077-单车和双兵双相",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 8
+   }
+  },
+  "078-一车难破双马炮兵-(一)": {
+   "fen": "3C5/2CP5/4k4/9/9/4r4/9/9/3K5/9 w",
+   "title": "078-一车难破双马炮兵-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 10,
+    "legal": 22
+   }
+  },
+  "079-一车难破双炮兵-(二)": {
+   "fen": "3Ck4/3PC4/9/9/9/4r4/9/9/3K5/9 w",
+   "title": "079-一车难破双炮兵-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 6,
+    "legal": 13
+   }
+  },
+  "080-一车难破炮双兵-(一)": {
+   "fen": "3C5/2PP5/4k4/9/9/4r4/9/9/3K5/9 w",
+   "title": "080-一车难破炮双兵-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 13
+   }
+  },
+  "081-一车难破炮双兵-(二)": {
+   "fen": "5k3/9/9/3PP4/9/9/6r2/4C4/9/4K4 w",
+   "title": "081-一车难破炮双兵-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1",
+    "g3e3",
+    "e6f6",
+    "f9f8",
+    "d6c6",
+    "e3f3",
+    "f6e6",
+    "f3h3",
+    "c6d6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 9,
+    "legal": 18
+   }
+  },
+  "082-一车难破双兵炮-(三)": {
+   "fen": "4k4/9/9/4C4/4PP3/9/5r3/9/9/4K4 w",
+   "title": "082-一车难破双兵炮-(三)",
+   "book_result": "D",
+   "book_moves": [
+    "e0e1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 15
+   }
+  },
+  "083-一车难破双兵炮-(四)": {
+   "fen": "4k4/5PP2/9/9/9/4r4/9/9/5K3/5C3 w",
+   "title": "083-一车难破双兵炮-(四)",
+   "book_result": "D",
+   "book_moves": [
+    "g8h8"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 13
+   }
+  },
+  "084-一车难破马双兵": {
+   "fen": "4k4/9/4N4/3PP4/9/9/6r2/9/9/3K5 w",
+   "title": "084-一车难破马双兵",
+   "book_result": "D",
+   "book_moves": [
+    "d0d1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 11
+   }
+  },
+  "085-一车难破马炮": {
+   "fen": "4k4/9/9/9/9/6N2/9/3K5/4r4/3C5 w",
+   "title": "085-一车难破马炮",
+   "book_result": "D",
+   "book_moves": [
+    "g4f6"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 17
+   }
+  },
+  "086-一车难破双马": {
+   "fen": "4k4/9/9/9/9/4rN3/9/4N4/3K5/9 w",
+   "title": "086-一车难破双马",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 15
+   }
+  },
+  "087-一车难破三兵-(一)": {
+   "fen": "9/4k4/9/4P4/4PP3/4r4/9/9/3K5/9 w",
+   "title": "087-一车难破三兵-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "e6f6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 8
+   }
+  },
+  "088-一车难破三兵-(二)": {
+   "fen": "5k3/9/9/2PPP4/9/9/4r4/9/9/3K5 w",
+   "title": "088-一车难破三兵-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "c6b6",
+    "f9e9",
+    "b6c6",
+    "e9d9",
+    "e6f6",
+    "e3e1",
+    "c6b6",
+    "d9e9",
+    "b6c6",
+    "e1e3",
+    "f6e6",
+    "e9d9",
+    "e6f6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 6
+   }
+  },
+  "089-一车破三卒": {
+   "fen": "5k3/9/9/4R4/9/9/3ppp3/9/9/3K2B2 w",
+   "title": "089-一车破三卒",
+   "book_result": "W",
+   "book_moves": [
+    "d0e0",
+    "f3g3",
+    "e6f6",
+    "f9e9",
+    "g0i2",
+    "g3h3",
+    "e0f0",
+    "h3g3",
+    "f6e6",
+    "e9d9",
+    "f0e0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 31,
+    "keep": 16,
+    "legal": 18
+   }
+  },
+  "090-车能破双炮": {
+   "fen": "3ck4/4c4/4R4/9/9/9/9/9/9/3K5 w",
+   "title": "090-车能破双炮",
+   "book_result": "W",
+   "book_moves": [
+    "d0d1",
+    "d9d8",
+    "e7c7",
+    "d8d9",
+    "d1e1",
+    "d9d5",
+    "c7c9",
+    "d5d9",
+    "c9c8",
+    "e8e7",
+    "c8c7",
+    "e7e8",
+    "c7d7",
+    "d9c9",
+    "e1d1"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 41,
+    "keep": 8,
+    "legal": 16
+   }
+  },
+  "091-车难胜双炮": {
+   "fen": "4k4/9/9/3r5/9/3C5/9/9/3K5/3C5 w",
+   "title": "091-车难胜双炮",
+   "book_result": "D",
+   "book_moves": [
+    "d1d2",
+    "d6d5",
+    "d2d1"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 12
+   }
+  },
+  "092-双炮胜双士": {
+   "fen": "5k3/4a4/3a5/9/9/9/9/3K5/4C4/5C3 w",
+   "title": "092-双炮胜双士",
+   "book_result": "W",
+   "book_moves": [
+    "e1f1",
+    "f9e9",
+    "d2e2",
+    "e9d9",
+    "f1d1",
+    "d9e9",
+    "f0f3",
+    "e9f9",
+    "f3e3",
+    "f9f8",
+    "d1f1",
+    "f8f9",
+    "e2e1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 9,
+    "keep": 31,
+    "legal": 33
+   }
+  },
+  "093-双炮不胜双相": {
+   "fen": "4c4/3c5/4k4/9/9/9/9/4B4/3K5/6B2 w",
+   "title": "093-双炮不胜双相",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 6
+   }
+  },
+  "094-马兵能攻炮卒士象全": {
+   "fen": "c1ba5/4ak3/b5PN1/2p6/p7p/9/9/9/9/4K4 w",
+   "title": "094-马兵能攻炮卒士象全",
+   "book_result": "W",
+   "book_moves": [
+    "g7g8",
+    "f8f9",
+    "g8g9",
+    "f9e9",
+    "h7f6",
+    "a9a8",
+    "f6d7",
+    "a8d8",
+    "d7b6",
+    "a5a4",
+    "b6c8",
+    "a4b4",
+    "c8d6"
+   ],
+   "pieces": 12,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "095-马兵能攻士象全": {
+   "fen": "3k5/5P3/3a1a2b/2N6/6b2/9/9/9/9/3K5 w",
+   "title": "095-马兵能攻士象全",
+   "book_result": "W",
+   "book_moves": [
+    "c6e5"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 21,
+    "keep": 2,
+    "legal": 13
+   }
+  },
+  "095-马兵难攻士象全": {
+   "fen": "3k5/5P3/3a1a2b/2N6/6b2/9/9/9/9/3K5 b",
+   "title": "095-马兵难攻士象全",
+   "book_result": "D",
+   "book_moves": [
+    "d9e9"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 4
+   }
+  },
+  "096-马卒难攻士相全": {
+   "fen": "3k5/9/9/9/9/6B2/2n6/3A5/5p3/3K1AB2 w",
+   "title": "096-马卒难攻士相全",
+   "book_result": "D",
+   "book_moves": [
+    "g0i2"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 5
+   }
+  },
+  "097-马卒能攻单缺相": {
+   "fen": "4k4/9/9/9/9/6B2/9/3A5/3pAK1n1/9 w",
+   "title": "097-马卒能攻单缺相",
+   "book_result": "L",
+   "book_moves": [
+    "e1d0",
+    "d1d0",
+    "d2e1",
+    "d0e0",
+    "e1d2",
+    "e9e8",
+    "d2e1",
+    "h1g3",
+    "f1f2",
+    "g3e4",
+    "f2e2",
+    "e8d8",
+    "e1f2",
+    "e4g3",
+    "e2e1",
+    "e0f0",
+    "g4e2",
+    "d8e8"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "L",
+    "dtm": 36,
+    "keep": 5,
+    "legal": 5
+   }
+  },
+  "097-马卒难攻单缺相": {
+   "fen": "4k4/9/9/9/9/2B6/9/3A5/3pAK1n1/9 w",
+   "title": "097-马卒难攻单缺相",
+   "book_result": "D",
+   "book_moves": [
+    "e1d0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 5
+   }
+  },
+  "098-马卒难攻单缺士": {
+   "fen": "4k4/9/9/9/9/6B2/9/4B4/1n1K1p3/3A5 w",
+   "title": "098-马卒难攻单缺士",
+   "book_result": "D",
+   "book_moves": [
+    "g4i2",
+    "b1c3",
+    "d1d2",
+    "c3e2",
+    "d2d1",
+    "e2f0",
+    "d1d2",
+    "f0h1",
+    "i2g4",
+    "h1g3",
+    "d2d1",
+    "e9e8",
+    "d1d2",
+    "g3e4",
+    "d2d1",
+    "e4f2",
+    "g4e2",
+    "e8e9",
+    "d1d2",
+    "f2e4",
+    "d2d1",
+    "e4c3",
+    "d1d2",
+    "c3e2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 3
+   }
+  },
+  "099-马兵攻双士炮卒": {
+   "fen": "1c1ak3N/4aP3/9/9/9/9/9/p8/9/4K4 w",
+   "title": "099-马兵攻双士炮卒",
+   "book_result": "W",
+   "book_moves": [
+    "f8g8",
+    "e9f9",
+    "i9h7",
+    "b9b7",
+    "g8g9",
+    "f9e9",
+    "h7f6",
+    "b7b8",
+    "f6d7",
+    "b8d8",
+    "d7b6",
+    "a2b2",
+    "b6c8",
+    "b2c2",
+    "c8d6"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 13,
+    "keep": 1,
+    "legal": 8
+   }
+  },
+  "100-马兵攻双士卒": {
+   "fen": "9/3ka4/1NP2a3/9/9/8p/9/9/9/4K4 w",
+   "title": "100-马兵攻双士卒",
+   "book_result": "W",
+   "book_moves": [
+    "c7c8",
+    "d8d9",
+    "c8d8",
+    "d9e9",
+    "b7d6",
+    "e9f9",
+    "e0f0",
+    "f9e9",
+    "d6f5",
+    "i4i3",
+    "f5h6"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 43,
+    "keep": 1,
+    "legal": 8
+   }
+  },
+  "101-马卒难胜双相炮": {
+   "fen": "4k4/9/9/9/9/6B2/6n2/4B1C2/4p4/5K3 w",
+   "title": "101-马卒难胜双相炮",
+   "book_result": "D",
+   "book_moves": [
+    "e2c0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 4,
+    "legal": 9
+   }
+  },
+  "102-马兵能攻单象炮": {
+   "fen": "3k2b2/4P4/2c6/2N6/9/9/9/9/9/4K4 w",
+   "title": "102-马兵能攻单象炮",
+   "book_result": "W",
+   "book_moves": [
+    "e0e1",
+    "g9i7",
+    "c6d4",
+    "i7g9",
+    "d4e6",
+    "c7c9",
+    "e8d8",
+    "d9e9",
+    "e1f1",
+    "c9c4",
+    "e6c7",
+    "c4f4",
+    "d8e8",
+    "e9f9",
+    "c7e6",
+    "f4f6",
+    "e6f8",
+    "f6g6",
+    "f1e1",
+    "g6g8",
+    "f8g6",
+    "g8g7",
+    "e1e2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 21,
+    "keep": 7,
+    "legal": 11
+   }
+  },
+  "103-马卒难胜马炮": {
+   "fen": "5k3/9/9/9/9/9/3n1N3/4C4/4p4/5K3 w",
+   "title": "103-马卒难胜马炮",
+   "book_result": "D",
+   "book_moves": [
+    "e2d2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 9,
+    "legal": 15
+   }
+  },
+  "104-马卒难相胜": {
+   "fen": "4k4/9/9/4P4/9/9/9/6n2/4p1N2/5K3 w",
+   "title": "104-马卒难相胜",
+   "book_result": "D",
+   "book_moves": [
+    "e6d6",
+    "g2e3",
+    "g1e2",
+    "e3c2",
+    "d6e6",
+    "c2d0",
+    "e2g3",
+    "e9e8",
+    "e6d6",
+    "d0b1",
+    "g3e2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 3
+   }
+  },
+  "105-马卒难胜炮": {
+   "fen": "4k4/9/9/9/9/9/3nC4/5K3/4p4/9 w",
+   "title": "105-马卒难胜炮",
+   "book_result": "D",
+   "book_moves": [
+    "f2e2"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 1
+   }
+  },
+  "106-马兵易胜马": {
+   "fen": "9/4P4/3k5/2N1n4/9/9/9/9/9/4K4 w",
+   "title": "106-马兵易胜马",
+   "book_result": "D",
+   "book_moves": [
+    "c6b8",
+    "d7e7",
+    "e8f8",
+    "e7f7",
+    "b8d7",
+    "e6d4",
+    "f8g8",
+    "d4e6",
+    "e0e1",
+    "e6c7",
+    "d7e9",
+    "c7e8",
+    "e1e0"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 9,
+    "keep": 8,
+    "legal": 13
+   }
+  },
+  "107-炮兵能胜士象全-(一)": {
+   "fen": "4kab2/4a4/4b4/4P4/9/9/9/9/3K5/7C1 w",
+   "title": "107-炮兵能胜士象全-(一)",
+   "book_result": "W",
+   "book_moves": [
+    "e6e7",
+    "e8d7",
+    "h0h9",
+    "d7e8",
+    "d1d2",
+    "e8f7",
+    "e7f7",
+    "e9e8",
+    "h9h8",
+    "e8e9",
+    "f7f8",
+    "f9e8",
+    "h8e8",
+    "g9i7",
+    "e8e6",
+    "i7g5",
+    "e6f6",
+    "g5i7",
+    "f6h6",
+    "i7g9",
+    "h6h8"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 21,
+    "keep": 1,
+    "legal": 23
+   }
+  },
+  "108-炮兵能胜士象全-(二)": {
+   "fen": "2baka3/5P3/b8/9/9/9/9/9/3K5/7C1 w",
+   "title": "108-炮兵能胜士象全-(二)",
+   "book_result": "W",
+   "book_moves": [
+    "h0e0",
+    "a7c5",
+    "e0e4",
+    "c5a7",
+    "d1e1",
+    "a7c5",
+    "e1f1",
+    "c5a7",
+    "e4h4",
+    "f9e8",
+    "f1e1",
+    "a7c5",
+    "h4c4",
+    "c5a7",
+    "e1e0",
+    "c9e7",
+    "c4e4",
+    "a7c9",
+    "e0f0"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 21,
+    "keep": 6,
+    "legal": 22
+   }
+  },
+  "109-炮兵士攻单缺象": {
+   "fen": "9/3k1P3/3a1a3/9/2b6/6B2/9/3AKA3/9/3C5 w",
+   "title": "109-炮兵士攻单缺象",
+   "book_result": "W",
+   "book_moves": [
+    "e2e1",
+    "c5a7",
+    "g4e2",
+    "a7c5",
+    "e2c4",
+    "c5a7",
+    "d0c0",
+    "d8d9",
+    "c0f0",
+    "f7e8",
+    "f8e8",
+    "d7e8",
+    "f0d0",
+    "d9e9",
+    "d0e0"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 57,
+    "keep": 15,
+    "legal": 17
+   }
+  },
+  "110-炮兵攻单缺象": {
+   "fen": "4ka3/3Pa4/8b/7Cp/9/9/9/9/1p5p1/4K4 w",
+   "title": "110-炮兵攻单缺象",
+   "book_result": "W",
+   "book_moves": [
+    "h6h8",
+    "b1c1",
+    "e0e1",
+    "i6i5",
+    "d8c8",
+    "i5i4",
+    "c8c9",
+    "i4h4",
+    "h8h6",
+    "i7g9",
+    "h6b6",
+    "g9e7",
+    "b6e6",
+    "h4g4",
+    "e1e2",
+    "g4f4",
+    "e2d2"
+   ],
+   "pieces": 10,
+   "tb": {
+    "status": "book"
+   }
+  },
+  "111-炮兵能攻双士炮": {
+   "fen": "2cCka3/3Pa4/9/9/9/9/9/9/4K4/9 w",
+   "title": "111-炮兵能攻双士炮",
+   "book_result": "W",
+   "book_moves": [
+    "e1e2",
+    "c9c7",
+    "d9b9",
+    "c7e7",
+    "b9b0",
+    "e8d7",
+    "b0e0",
+    "f9e8",
+    "e2f2",
+    "e7e3",
+    "e0e2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 29,
+    "keep": 1,
+    "legal": 7
+   }
+  },
+  "112-一炮两兵胜双象": {
+   "fen": "2b1C1b2/4PP3/3k5/9/9/9/9/9/9/5K3 w",
+   "title": "112-一炮两兵胜双象",
+   "book_result": "W",
+   "book_moves": [
+    "f0e0",
+    "c9a7",
+    "e9b9",
+    "a7c5",
+    "b9b6",
+    "c5e7",
+    "b6h6",
+    "e7c9",
+    "h6h8",
+    "c9a7",
+    "e8d8",
+    "a7c9",
+    "f8e8",
+    "c9a7",
+    "h8f8",
+    "a7c9",
+    "f8f9"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 19,
+    "keep": 5,
+    "legal": 7
+   }
+  },
+  "113-炮兵取单象": {
+   "fen": "4C4/4P4/3k5/9/6b2/9/9/9/9/4K4 w",
+   "title": "113-炮兵取单象",
+   "book_result": "W",
+   "book_moves": [
+    "e0e1",
+    "g5i7",
+    "e9b9",
+    "i7g5",
+    "b9b7"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 7,
+    "keep": 10,
+    "legal": 12
+   }
+  },
+  "114-炮兵禁单象": {
+   "fen": "9/3k5/9/4P4/2b6/9/9/4C4/5K3/9 w",
+   "title": "114-炮兵禁单象",
+   "book_result": "W",
+   "book_moves": [
+    "e2b2",
+    "d8e8",
+    "e6d6",
+    "c5a7",
+    "d6d7",
+    "a7c5",
+    "b2b6",
+    "e8e9",
+    "b6d6",
+    "e9e8",
+    "f1f2",
+    "e8e9",
+    "d7d8",
+    "c5a7",
+    "d6b6",
+    "a7c9",
+    "b6b8"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 17,
+    "keep": 18,
+    "legal": 19
+   }
+  },
+  "115-炮卒难取相": {
+   "fen": "4k4/9/9/9/9/9/9/4B4/3cp4/5K3 w",
+   "title": "115-炮卒难取相",
+   "book_result": "D",
+   "book_moves": [
+    "e2g4"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 3
+   }
+  },
+  "116-平炮和多士": {
+   "fen": "4ca3/9/3ak4/9/9/9/9/3C5/3K5/9 w",
+   "title": "116-平炮和多士",
+   "book_result": "D",
+   "book_moves": [
+    "d1d0",
+    "d7e8",
+    "d2b2",
+    "e9d9",
+    "b2b7"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 12,
+    "legal": 13
+   }
+  },
+  "117-单炮和双炮": {
+   "fen": "4c4/9/2c1k4/9/9/9/9/3K5/9/3C5 w",
+   "title": "117-单炮和双炮",
+   "book_result": "D",
+   "book_moves": [
+    "d0d1"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 10
+   }
+  },
+  "118-一炮禁三卒": {
+   "fen": "5k3/9/6C2/9/6p2/7p1/9/7p1/9/4K4 w",
+   "title": "118-一炮禁三卒",
+   "book_result": "D",
+   "book_moves": [
+    "g7f7",
+    "g5g4",
+    "f7f0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 13
+   }
+  },
+  "119-炮兵有相胜双象": {
+   "fen": "6b2/3k5/4b4/1P7/9/6B2/9/6C2/4K4/9 w",
+   "title": "119-炮兵有相胜双象",
+   "book_result": "W",
+   "book_moves": [
+    "b6c6",
+    "g9i7",
+    "c6d6",
+    "d8d9",
+    "d6d7",
+    "i7g5",
+    "g2e2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 27,
+    "keep": 18,
+    "legal": 20
+   }
+  },
+  "120-炮兵胜卒双士": {
+   "fen": "3aka3/9/9/p8/4P4/2C6/9/9/9/4K4 w",
+   "title": "120-炮兵胜卒双士",
+   "book_result": "W",
+   "book_moves": [
+    "c4e4",
+    "f9e8",
+    "e4f4",
+    "a6a5",
+    "e5f5",
+    "a5a4",
+    "f4f0",
+    "a4b4",
+    "f5f6",
+    "b4c4",
+    "f6f7",
+    "c4d4",
+    "f7f8",
+    "d4e4",
+    "e0e1",
+    "e4e3",
+    "f0c0",
+    "e8d7",
+    "c0e0"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 47,
+    "keep": 1,
+    "legal": 21
+   }
+  },
+  "121-炮兵攻双士": {
+   "fen": "4k4/4a1P2/5a3/9/9/9/9/3K5/9/5C3 w",
+   "title": "121-炮兵攻双士",
+   "book_result": "W",
+   "book_moves": [
+    "g8f8",
+    "e8d7",
+    "f0d0",
+    "d7e8",
+    "d2d1",
+    "e8d7",
+    "d0d7",
+    "e9d9",
+    "d7d8",
+    "d9e9",
+    "d8b8",
+    "f7e8",
+    "d1e1"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 11,
+    "keep": 18,
+    "legal": 19
+   }
+  },
+  "122-炮兵攻双卒": {
+   "fen": "3k5/9/9/6p2/9/4P4/9/7C1/5p3/4K4 w",
+   "title": "122-炮兵攻双卒",
+   "book_result": "W",
+   "book_moves": [
+    "e4e5",
+    "d9e9",
+    "h2e2",
+    "e9d9",
+    "e5f5",
+    "d9e9",
+    "e0d0",
+    "f1e1",
+    "e2e7",
+    "e9e8",
+    "e7g7",
+    "e8e9",
+    "f5f6",
+    "g6g5",
+    "f6g6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 39,
+    "keep": 1,
+    "legal": 18
+   }
+  },
+  "123-炮兵取边卒": {
+   "fen": "5k3/9/9/p8/9/4P4/9/2C6/9/4K4 w",
+   "title": "123-炮兵取边卒",
+   "book_result": "W",
+   "book_moves": [
+    "e4e5",
+    "f9e9",
+    "c2e2",
+    "e9d9",
+    "e2f2",
+    "d9e9",
+    "f2f5",
+    "e9e8",
+    "e0d0",
+    "e8e9",
+    "e5d5"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 35,
+    "keep": 1,
+    "legal": 20
+   }
+  },
+  "124-炮兵胜单炮": {
+   "fen": "5c3/9/5k3/4P4/9/9/9/3KB4/9/4C4 w",
+   "title": "124-炮兵胜单炮",
+   "book_result": "W",
+   "book_moves": [
+    "e0h0",
+    "f7f8",
+    "h0h2",
+    "f8f7",
+    "e2g4",
+    "f7f8",
+    "d2e2",
+    "f8f7",
+    "h2f2",
+    "f9f2",
+    "e6f6",
+    "f7f8",
+    "e2f2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 27,
+    "keep": 14,
+    "legal": 17
+   }
+  },
+  "125-炮卒有士难胜炮": {
+   "fen": "3c5/4a4/C3k4/9/9/9/9/3K5/4p4/9 w",
+   "title": "125-炮卒有士难胜炮",
+   "book_result": "D",
+   "book_moves": [
+    "a7b7"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 11
+   }
+  },
+  "126-炮仕胜双士": {
+   "fen": "3k5/4a4/5a3/9/9/9/9/3A1K3/9/4C4 w",
+   "title": "126-炮仕胜双士",
+   "book_result": "W",
+   "book_moves": [
+    "e0d0",
+    "d9e9",
+    "f2e2",
+    "e9f9",
+    "d0d1",
+    "f9e9",
+    "d2e1",
+    "e9d9",
+    "d1d0",
+    "d9e9",
+    "e2d2",
+    "e9f9",
+    "e1f2",
+    "f9e9",
+    "d0f0",
+    "e9f9",
+    "d2e2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 41,
+    "keep": 18,
+    "legal": 18
+   }
+  },
+  "127-一马能和士象炮": {
+   "fen": "4k4/6c2/3a1a2b/6N2/6b2/9/9/9/5K3/9 w",
+   "title": "127-一马能和士象炮",
+   "book_result": "D",
+   "book_moves": [
+    "f1f0",
+    "g8g9",
+    "g6h8",
+    "g9g8",
+    "h8g6"
+   ],
+   "pieces": 8,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 8
+   }
+  },
+  "128-马决破士": {
+   "fen": "9/3kaN3/9/9/9/9/9/9/9/4K4 w",
+   "title": "128-马决破士",
+   "book_result": "W",
+   "book_moves": [
+    "f8e6",
+    "d8d7",
+    "e6g7",
+    "e8f7",
+    "g7f5",
+    "f7e8",
+    "f5d6",
+    "e8f9",
+    "d6b7"
+   ],
+   "pieces": 4,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 19,
+    "keep": 6,
+    "legal": 6
+   }
+  },
+  "129-马难破相": {
+   "fen": "4k4/9/9/9/9/9/9/B4n3/9/3K5 w",
+   "title": "129-马难破相",
+   "book_result": "D",
+   "book_moves": [
+    "a2c0"
+   ],
+   "pieces": 4,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 2
+   }
+  },
+  "129-马难破相-01": {
+   "fen": "4k4/9/9/9/9/9/9/B4n3/9/3K5 b",
+   "title": "129-马难破相-01",
+   "book_result": "L",
+   "book_moves": [
+    "f2d3",
+    "a2c0",
+    "d3f4"
+   ],
+   "pieces": 4,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 19,
+    "keep": 4,
+    "legal": 10
+   }
+  },
+  "130-双兵能破单缺象": {
+   "fen": "3ak4/4aP3/b8/9/9/6P2/9/9/9/4K4 w",
+   "title": "130-双兵能破单缺象",
+   "book_result": "W",
+   "book_moves": [
+    "g4g5",
+    "a7c5",
+    "g5g6",
+    "c5e7",
+    "g6g7",
+    "e7g5",
+    "g7g8",
+    "g5i7",
+    "e0e1",
+    "i7g5",
+    "g8g9",
+    "g5e7",
+    "e1e2"
+   ],
+   "pieces": 7,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 17,
+    "keep": 1,
+    "legal": 7
+   }
+  },
+  "131-双兵破双士": {
+   "fen": "3a5/3Pak3/9/9/5P3/9/9/9/9/4K4 w",
+   "title": "131-双兵破双士",
+   "book_result": "W",
+   "book_moves": [
+    "f5e5",
+    "f8f7",
+    "e5e6",
+    "f7f8",
+    "e6e7"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 13,
+    "keep": 7,
+    "legal": 9
+   }
+  },
+  "132-双仕和双卒": {
+   "fen": "4k4/9/9/9/9/9/9/3A2p2/3pAK3/9 w",
+   "title": "132-双仕和双卒",
+   "book_result": "D",
+   "book_moves": [
+    "e1f0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 4
+   }
+  },
+  "133-双兵破双缺士": {
+   "fen": "9/1P1k5/4b4/3P5/6b2/9/9/9/9/4K4 w",
+   "title": "133-双兵破双缺士",
+   "book_result": "W",
+   "book_moves": [
+    "b8c8",
+    "d8e8",
+    "d6e6",
+    "e7g9",
+    "e0d0",
+    "g9i7",
+    "c8d8",
+    "e8f8",
+    "e6f6"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "W",
+    "dtm": 15,
+    "keep": 7,
+    "legal": 9
+   }
+  },
+  "134-双相和双卒-(一)": {
+   "fen": "4k4/9/9/9/9/2B6/9/1p2B1p2/5K3/9 w",
+   "title": "134-双相和双卒-(一)",
+   "book_result": "D",
+   "book_moves": [
+    "e2c0"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 5
+   }
+  },
+  "135-双相和双卒-(二)": {
+   "fen": "4k4/9/9/9/9/2B6/9/4B1p2/5K1p1/9 w",
+   "title": "135-双相和双卒-(二)",
+   "book_result": "D",
+   "book_moves": [
+    "c4a2",
+    "h1g1",
+    "f1e1",
+    "g2f2",
+    "a2c4",
+    "e9d9",
+    "e2g4",
+    "g1f1",
+    "e1e0",
+    "f2g2",
+    "g4i2"
+   ],
+   "pieces": 6,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 2,
+    "legal": 5
+   }
+  },
+  "136-一兵和士炮": {
+   "fen": "4c4/3ka4/9/9/3P5/9/9/9/5K3/9 w",
+   "title": "136-一兵和士炮",
+   "book_result": "D",
+   "book_moves": [
+    "f1f0"
+   ],
+   "pieces": 5,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 3,
+    "legal": 5
+   }
+  },
+  "137-兵士能和有士炮": {
+   "fen": "5c3/4k4/3a1a3/6P2/2b3b2/9/9/5A3/5K3/9 w",
+   "title": "137-兵士能和有士炮",
+   "book_result": "D",
+   "book_moves": [
+    "g6h6"
+   ],
+   "pieces": 9,
+   "tb": {
+    "status": "egtb",
+    "wdl": "D",
+    "dtm": 0,
+    "keep": 1,
+    "legal": 4
+   }
+  }
+ }
+}

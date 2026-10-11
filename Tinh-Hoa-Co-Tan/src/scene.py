@@ -310,9 +310,11 @@ class XiangqiLesson(Scene):
         panel = Panel(self)
         self.title_card(out / 'cards' / 'intro.png', 3.2)
         verdict = data['verdict']
-        base_status = ('Bảng tra chessdb: Đỏ thắng' if verdict['wdl'] == 'W' else 'Bảng tra chessdb: Hòa')
+        base_status = data.get('base_status') or ('Bảng tra chessdb: Đỏ thắng' if verdict['wdl'] == 'W'
+                                                  else 'Bảng tra chessdb: Hòa')
         panel.set_status(base_status)
         movelist = MoveList()
+        last_status = [None]
         badges = []
         if len(timing) != len(data['beats']):
             raise ValueError('Số đoạn âm thanh khác số phân đoạn kịch bản')
@@ -362,6 +364,11 @@ class XiangqiLesson(Scene):
                     badge = board.move(self, step['move'], color=color, tag=tag)
                     if badge:
                         badges.append(badge)
+                    if step.get('status') and kind != 'trap':
+                        last_status[0] = step['status']
+                    if step.get('status'):
+                        panel.set_status(step['status'], GREEN if 'Đỏ thắng' in step['status'] else
+                                         (RED if 'Đen thắng' in step['status'] else MUTED))
                     if step.get('face_file'):
                         self.face_line(board, step['face_file'])
                     if kind == 'line':
@@ -394,7 +401,7 @@ class XiangqiLesson(Scene):
                 badges = []
                 board.reset(self, beat['return_fen'])
                 self.play(board.frame.animate.set_stroke('#856344', width=4), run_time=.3)
-                panel.set_status(base_status)
+                panel.set_status(last_status[0] if last_status[0] else base_status)
         self.title_card(out / 'cards' / 'outro.png', 7.0)
 
     @staticmethod
