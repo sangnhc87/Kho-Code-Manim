@@ -9,6 +9,10 @@ sys.path.insert(0, str(ROOT))
 
 from common import shortlib, voice  # noqa: E402
 from scripts.finalize import metadata  # noqa: E402
+try:
+    from common.short import ShortScene  # noqa: E402
+except ImportError:  # Manim missing: skip the reserved-name check
+    ShortScene = object
 
 STANDARD = {'hook', 'guess', 'answer', 'outro'}
 
@@ -30,6 +34,9 @@ class Shorts(unittest.TestCase):
                 n = int(code[3:])
                 self.assertIn(f'N = {n}\n', src)
                 self.assertNotRegex(src, r'self\.paths\b', 'self.paths belongs to ShortScene (file locations)')
+                reserved = '|'.join(n for n in dir(ShortScene) if not n.startswith('_') and callable(getattr(ShortScene, n)))
+                clash = re.search(rf'self\.({reserved})\s*=[^=]', src)
+                self.assertIsNone(clash, f'overwrites ShortScene method: {clash and clash.group(1)}')
                 self.assertNotIn('shift=[', src, 'FadeIn(shift=[...]) breaks: a list times 0 becomes []')
                 for b in mod.BEATS:
                     if b.id not in STANDARD:

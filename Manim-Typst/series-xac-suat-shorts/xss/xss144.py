@@ -49,7 +49,7 @@ class XSS144(ShortScene):
     def hook_visual(self, t0):
         self.board_top = -1.3
         W, H, x0, y0 = 6.4, 3.0, -3.2, -.2
-        self.box = Rectangle(width=W, height=H, stroke_color=STROKE, stroke_width=3).move_to([x0 + W / 2, y0 + H / 2, 0])
+        self.area = Rectangle(width=W, height=H, stroke_color=STROKE, stroke_width=3).move_to([x0 + W / 2, y0 + H / 2, 0])
         self.math = Rectangle(width=W * .6, height=H, stroke_width=0, fill_color=CYAN, fill_opacity=.35) \
             .move_to([x0 + W * .3, y0 + H / 2, 0])
         self.both = Rectangle(width=W * .6, height=H * .7, stroke_width=0, fill_color=GOLD, fill_opacity=.75) \
@@ -58,7 +58,7 @@ class XSS144(ShortScene):
                              self.TM('$"0,7"$', 26, GOLD).next_to(self.both, [1, 0, 0], buff=-.75),
                              tx('không học Toán', 22, SOFT).move_to([x0 + W * .8, y0 + H / 2, 0]))
         self.wait_until(.5, t0)
-        self.play(FadeIn(self.box), run_time=self.rt(.05))
+        self.play(FadeIn(self.area), run_time=self.rt(.05))
 
     def beat_s1(self, T):
         t0 = self.now()
