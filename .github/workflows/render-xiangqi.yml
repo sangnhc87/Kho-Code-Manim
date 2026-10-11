@@ -118,7 +118,10 @@ jobs:
           python -m pip install -r requirements.txt
       - uses: typst-community/setup-typst@v5
       - name: Kiểm tra kịch bản trước khi tạo âm thanh/video
-        run: CDB_OFFLINE=1 python scripts/produce.py --episode "${{ matrix.episode }}" --skip-render
+        run: |
+          # Sinh lại lời bình bằng code mới nhất (không gọi mạng), rồi kiểm tra.
+          python scripts/rebuild_beats.py "${{ matrix.episode }}"
+          CDB_OFFLINE=1 python scripts/produce.py --episode "${{ matrix.episode }}" --skip-render
       - name: Render MP4
         env:
           ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
