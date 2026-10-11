@@ -5,7 +5,7 @@ import sys
 from math import comb
 from pathlib import Path
 
-from manim import Create, DashedLine, FadeIn, Line, VGroup, VMobject
+from manim import Create, DOWN, DashedLine, FadeIn, Line, VGroup, VMobject
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.kit import tx  # noqa: E402
@@ -82,7 +82,7 @@ class XSS087(ShortScene):
                       tx('…', 30, SOFT), self.TM('người $23$: $343/365$', 26, SOFT)).arrange([0, -1, 0], buff=.15)
         rows.move_to([0, 1.5, 0])
         for r in rows:
-            self.play(FadeIn(r, shift=[0, -.1, 0]), run_time=self.rt(.08))
+            self.play(FadeIn(r, shift=DOWN * .1), run_time=self.rt(.08))
             self.wait(self.rt(.05))
         self.rows = rows
 

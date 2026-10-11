@@ -6,7 +6,7 @@ from fractions import Fraction as F
 from itertools import combinations
 from pathlib import Path
 
-from manim import DOWN, FadeIn, VGroup
+from manim import DOWN, FadeIn, RIGHT, VGroup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.kit import card, tx  # noqa: E402
@@ -64,13 +64,13 @@ class XSS081(ShortScene):
         self.wait_until(.3, t0)
         self.play(FadeIn(self.steps[0][1]), FadeIn(self.steps[1][1]), FadeIn(self.steps[2][1]), run_time=self.rt(.06))
         self.wait_until(.55, t0)
-        self.play(FadeIn(self.steps[0][0], shift=[.3, 0, 0]), run_time=self.rt(.08))
+        self.play(FadeIn(self.steps[0][0], shift=RIGHT * .3), run_time=self.rt(.08))
 
     def beat_s2(self, T):
         t0 = self.now()
-        self.play(FadeIn(self.steps[1][0], shift=[.3, 0, 0]), run_time=self.rt(.08))
+        self.play(FadeIn(self.steps[1][0], shift=RIGHT * .3), run_time=self.rt(.08))
         self.wait_until(.5, t0)
-        self.play(FadeIn(self.steps[2][0], shift=[.3, 0, 0]), run_time=self.rt(.08))
+        self.play(FadeIn(self.steps[2][0], shift=RIGHT * .3), run_time=self.rt(.08))
 
     def beat_s3(self, T):
         t0 = self.now()

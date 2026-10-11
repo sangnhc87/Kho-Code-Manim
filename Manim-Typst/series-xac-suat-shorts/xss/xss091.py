@@ -7,7 +7,7 @@ from itertools import permutations
 from math import e, factorial
 from pathlib import Path
 
-from manim import FadeIn, VGroup
+from manim import FadeIn, RIGHT, VGroup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.kit import tx  # noqa: E402
@@ -72,7 +72,7 @@ class XSS091(ShortScene):
         self.rows = rows
         for i, r in enumerate(rows[:5]):
             self.wait_until(.08 + .17 * i, t0)
-            self.play(FadeIn(r, shift=[.2, 0, 0]), run_time=self.rt(.05))
+            self.play(FadeIn(r, shift=RIGHT * .2), run_time=self.rt(.05))
 
     def beat_s2(self, T):
         t0 = self.now()

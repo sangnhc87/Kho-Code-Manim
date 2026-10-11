@@ -6,7 +6,7 @@ from fractions import Fraction as F
 from itertools import product
 from pathlib import Path
 
-from manim import FadeIn, VGroup
+from manim import FadeIn, RIGHT, VGroup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.kit import tx  # noqa: E402
@@ -63,7 +63,7 @@ class XSS048(ShortScene):
         seq = VGroup(*[VGroup(coin(f, .7), tx(f'lần {i + 1}', 24, SOFT)).arrange([0, -1, 0], buff=.15)
                        for i, f in enumerate('SSN')]).arrange(buff=.5).move_to([0, 1.3, 0])
         for s in seq:
-            self.play(FadeIn(s, shift=[.3, 0, 0]), run_time=self.rt(.08))
+            self.play(FadeIn(s, shift=RIGHT * .3), run_time=self.rt(.08))
         self.seq = seq
         self.wait_until(.65, t0)
         self.play(self.seq[2][0].animate.scale(1.2), run_time=self.rt(.05))

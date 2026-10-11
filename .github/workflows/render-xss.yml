@@ -126,9 +126,9 @@ jobs:
       - name: Render
         run: |
           if [ "$QUALITY" = full ]; then
-            manim --disable_caching -qh -r 1080,1920 --fps 30 "xss/$SH.py" "$CODE"
+            timeout 40m manim --disable_caching -qh -r 1080,1920 --fps 30 "xss/$SH.py" "$CODE"
           else
-            manim --disable_caching -ql -r 540,960 --fps 15 "xss/$SH.py" "$CODE"
+            timeout 40m manim --disable_caching -ql -r 540,960 --fps 15 "xss/$SH.py" "$CODE"
           fi
           VIDEO=$(find media/videos -type f -name "$CODE.mp4" | head -n 1)
           test -n "$VIDEO"

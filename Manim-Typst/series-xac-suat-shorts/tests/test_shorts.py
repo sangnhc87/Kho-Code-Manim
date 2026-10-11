@@ -29,6 +29,7 @@ class Shorts(unittest.TestCase):
                 src = (ROOT / 'xss' / f'{code}.py').read_text('utf-8')
                 n = int(code[3:])
                 self.assertIn(f'N = {n}\n', src)
+                self.assertNotIn('shift=[', src, 'FadeIn(shift=[...]) breaks: a list times 0 becomes []')
                 for b in mod.BEATS:
                     if b.id not in STANDARD:
                         self.assertRegex(src, rf'def beat_{b.id}\(self, T\)')

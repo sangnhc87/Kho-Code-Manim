@@ -5,7 +5,7 @@ import sys
 from fractions import Fraction as F
 from pathlib import Path
 
-from manim import FadeIn, VGroup
+from manim import FadeIn, RIGHT, VGroup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.kit import tx  # noqa: E402
@@ -56,7 +56,7 @@ class XSS096(ShortScene):
                             for i, v in enumerate((3, 1, 5, 6))]).arrange(buff=.3).move_to([0, 1.5, 0])
         self.wait_until(.45, t0)
         for s in self.seq:
-            self.play(FadeIn(s, shift=[.2, 0, 0]), run_time=self.rt(.07))
+            self.play(FadeIn(s, shift=RIGHT * .2), run_time=self.rt(.07))
         self.play(self.seq[3][0][0].animate.set_stroke(GOLD, 6), run_time=self.rt(.04))
 
     def beat_s1(self, T):
