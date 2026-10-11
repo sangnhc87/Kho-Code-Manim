@@ -74,6 +74,17 @@ def mate_short(data):
     tag = ('SÁT CỤC • ' + sp.upper()) if sp else 'SÁT CỤC LIÊN HOÀN'
     ask = (f'{side} đi trước, chiếu bí trong {n} nước, nước nào cũng là nước chiếu.'
            + (f' Lời giải có cả đòn {sp}.' if sp else '') + ' Bạn tìm ra không? Hãy để lại đáp án ở phần bình luận!')
+    g = data.get('game')
+    if g:
+        where = f'Ván đấu thật năm {g["year"]}' if g.get('year') else 'Một ván đấu thật'
+        who = g.get('loser') or ('Đen' if side == 'Đỏ' else 'Đỏ')
+        if g.get('resigned'):
+            ask = (f'{where}. Đến thế này, {who} xin thua. Vì sao? Vì {side} có đòn chiếu bí trong {n} nước'
+                   + (f', kèm {sp}' if sp else '') + '. Bạn có nhìn ra không?')
+            headline = f'Vì sao {who} xin thua?'
+        else:
+            ask = f'{where}. {g.get("winner") or side} kết thúc ván bằng đòn chiếu bí {n} nước. Bạn tìm ra không?'
+        tag = 'THỰC CHIẾN DANH THỦ' + (' • ' + sp.upper() if sp else '')
     steps = [{'say': ask, 'countdown': 6}]
     pos = Position.from_fen(data['fen'])
     attacker = pos.turn

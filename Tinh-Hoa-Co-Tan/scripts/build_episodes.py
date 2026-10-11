@@ -359,9 +359,11 @@ def sac_phrase(sacs):
 
 def mate_score(item):
     pr = item.get('proof')
-    if not pr or pr['n'] < 3:
+    game = 'red' in item
+    if not pr or pr['n'] < (2 if game else 3):
         return None
-    return 3 * len(pr['sacrifices']) + (2 if len(pr['firsts']) == 1 else 0) + min(pr['n'], 7)
+    return (3 * len(pr['sacrifices']) + (2 if len(pr['firsts']) == 1 else 0) + min(pr['n'], 7)
+            + (4 if game else 0))
 
 
 def next_mates(collections, catalog):
@@ -375,8 +377,15 @@ def next_mates(collections, catalog):
             if sc is None or f in done or canonical(item['proof']['fen']) in used:
                 continue
             pool.append((-sc, coll, f, item))
-    pool.sort(key=lambda t: t[0])
-    return [(c, f, it) for _, c, f, it in pool]
+    # Xoay vòng giữa các nguồn (thực chiến, thí Xe, liên hoàn...), trong mỗi nguồn ưu tiên đòn hay nhất.
+    groups = {c: sorted([t for t in pool if t[1] == c], key=lambda t: t[0]) for c in collections}
+    out = []
+    while any(groups.values()):
+        for c in collections:
+            if groups[c]:
+                _, cc, f, it = groups[c].pop(0)
+                out.append((cc, f, it))
+    return out
 
 
 def build_mate(collection, file_name, item, ep, catalog):
@@ -389,7 +398,19 @@ def build_mate(collection, file_name, item, ep, catalog):
     side = 'Đỏ' if pr['fen'].split()[1] == 'w' else 'Đen'
     sp = sac_phrase(pr['sacrifices'])
     title = (f'{sp[0].upper() + sp[1:]}, chiếu bí trong {n} nước!' if sp else f'Chiếu liên hoàn, bí trong {n} nước!')
-    yt_title = f'{title} Bạn giải được không? #Shorts'
+    game = None
+    if 'red' in item:
+        from xq.game_episode import year_of
+        from xq.players import vn_name
+        win = 'w' if pr['fen'].split()[1] == 'w' else 'b'
+        winner = vn_name(item['red'] if win == 'w' else item['black'])
+        loser = vn_name(item['black'] if win == 'w' else item['red'])
+        game = {'winner': winner, 'loser': loser, 'year': year_of(item.get('date')), 'resigned': item.get('resigned'),
+                'red': item['red'], 'black': item['black']}
+        who = loser or ('Đen' if win == 'w' else 'Đỏ')
+        title = (f'Vì sao {who} xin thua? ' if item.get('resigned') else '') + \
+                (f'{winner} ' if winner else '') + (sp + ', ' if sp else '') + f'bí trong {n} nước'
+    yt_title = f'{title}{"" if title[-1] in "!?" else "!"} Bạn giải được không? #Shorts'
     desc = (f'{side} đi trước, chiếu bí trong {n} nước' + (f' ({sp})' if sp else '') + '.\n'
             'Lời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\n'
             f'Thế cờ: "{item.get("title", file_name)}" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n'
@@ -400,7 +421,7 @@ def build_mate(collection, file_name, item, ep, catalog):
         'verdict': {'wdl': 'W', 'dtm': 2 * n - 1}, 'mate': {'n': n, 'line': pr['line'], 'sacrifices': pr['sacrifices'],
                                                           'unique': len(firsts) == 1, 'side': side},
         'source': {'collection': collection, 'file': file_name, 'title': item.get('title')},
-        'beats': [], 'analysis': None,
+        'beats': [], 'analysis': None, 'game': game,
         'youtube_short': {'title': yt_title, 'description': desc,
                           'tags': ['shorts', 'cờ tướng', 'sát cục', 'câu đố cờ tướng', 'tinh hoa cờ tàn']},
     }
