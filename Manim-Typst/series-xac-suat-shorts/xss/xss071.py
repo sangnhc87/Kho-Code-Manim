@@ -53,14 +53,14 @@ class XSS071(TreeMixin, ShortScene):
     N = 71
 
     def hook_visual(self, t0):
-        self.board_top = -.9
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.1), dy=1.6, width=5.0, root_label='sau lần 1')
+        self.board_top = -1.4
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.3), dy=1.8, width=5.4, root_label='sau lần 1')
 
     def beat_s1(self, T):
         t0 = self.now()
         self.wait_until(.3, t0)
         self.play(FadeIn(self.levels[0]), FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.2))
-        self.play(FadeIn(tx('B: bệnh   K: khỏe', 24, SOFT).move_to([0, -.45, 0])), run_time=self.rt(.04))
+        self.play(FadeIn(tx('B: bệnh   K: khỏe', 24, SOFT).move_to([0, -.95, 0])), run_time=self.rt(.04))
 
     def beat_s2(self, T):
         t0 = self.now()

@@ -53,8 +53,8 @@ class XSS068(TreeMixin, ShortScene):
     N = 68
 
     def hook_visual(self, t0):
-        self.board_top = -1.0
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.2), dy=1.6, width=6.2, root_label='sản phẩm')
+        self.board_top = -1.45
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.3), dy=1.8, width=6.8, root_label='sản phẩm')
 
     def beat_s1(self, T):
         t0 = self.now()

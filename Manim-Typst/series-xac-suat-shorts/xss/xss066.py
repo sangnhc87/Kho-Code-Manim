@@ -6,7 +6,7 @@ from fractions import Fraction as F
 from itertools import permutations
 from pathlib import Path
 
-from manim import DOWN, FadeIn
+from manim import FadeIn
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from common.kit import tx  # noqa: E402
@@ -54,7 +54,7 @@ class XSS066(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.0
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.2), dy=1.6, width=6.2, root_label='rút')
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.3), dy=1.8, width=6.8, root_label='rút')
         self.wait_until(.55, t0)
         self.play(*[FadeIn(lv) for lv in self.levels], run_time=self.rt(.2))
 
@@ -77,4 +77,4 @@ class XSS066(TreeMixin, ShortScene):
         t0 = self.now()
         self.wait_until(.25, t0)
         self.write_board(tx('= P(viên thứ nhất đỏ)', 30, GOLD, bold=True), anim='fade')
-        self.play(FadeIn(tx('toàn phần', 24, SOFT).next_to(self.board_items[-1], DOWN, buff=.15)), run_time=self.rt(.03))
+        self.write_board(tx('công thức toàn phần', 24, SOFT), anim='fade')

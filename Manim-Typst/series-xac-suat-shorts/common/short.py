@@ -500,7 +500,7 @@ class DiceGridMixin:
 class TreeMixin:
     """Weighted probability tree: every edge carries a typeset probability."""
 
-    def prob_tree(self, branches, top=(0, 3.25), dy=1.55, width=6.6, root_label='', edge_size=24, r=.36):
+    def prob_tree(self, branches, top=(0, 3.3), dy=1.8, width=6.8, root_label='', edge_size=31, r=.44):
         """``branches`` = [(label, colour, 'typst prob', [children…]), …]; returns (levels, leaves).
 
         ``leaves`` is a list of (node mobject, path of branch tuples) for every leaf.

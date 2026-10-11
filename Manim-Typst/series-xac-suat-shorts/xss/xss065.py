@@ -55,7 +55,7 @@ class XSS065(TreeMixin, ShortScene):
     N = 65
 
     def hook_visual(self, t0):
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.2), dy=1.6, width=6.2, root_label='rút')
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.3), dy=1.8, width=6.8, root_label='rút')
         self.wait_until(.6, t0)
         self.play(FadeIn(self.levels[0]), run_time=self.rt(.05))
 
@@ -63,11 +63,11 @@ class XSS065(TreeMixin, ShortScene):
         t0 = self.now()
         self.wait_until(.25, t0)
         self.play(FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.2))
-        self.play(FadeIn(tx('lần 1', 22, SOFT).move_to([-3.6, 3.2 - 1.6, 0])), run_time=self.rt(.04))
+        self.play(FadeIn(tx('lần 1', 22, SOFT).move_to([-3.6, 3.3 - 1.8, 0])), run_time=self.rt(.04))
 
     def beat_s2(self, T):
         t0 = self.now()
-        self.play(FadeIn(self.levels[2], lag_ratio=.15), FadeIn(tx('lần 2', 22, SOFT).move_to([-3.6, 3.2 - 3.2, 0])),
+        self.play(FadeIn(self.levels[2], lag_ratio=.15), FadeIn(tx('lần 2', 22, SOFT).move_to([-3.6, 3.3 - 3.6, 0])),
                   run_time=self.rt(.2))
         self.wait_until(.55, t0)
         self.board_top = -1.0
