@@ -1867,6 +1867,442 @@
    ],
    "takeaway": "Trong tàn Xe Binh, việc che chắn Tướng mình trước các đòn chiếu quấy rối quan trọng không kém việc tấn công.",
    "takeaway_short": "Che Tướng trước, tấn công sau"
+  },
+  {
+   "id": "xe-binh-xe-si",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Binh",
+   "title": "Xe Binh đấu Xe Sĩ",
+   "short": "Xe Binh đấu Xe Sĩ",
+   "material": [
+    "RP",
+    "RA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    15,
+    45
+   ],
+   "max_first_keep": 3,
+   "episodes": 3,
+   "theory": [
+    "Xe Binh đấu Xe Sĩ là tàn cuộc rất hay gặp trong thực chiến. Kênh tra bốn mươi thế với Sĩ Đen ở vị trí phòng thủ: sáu phần mười Đỏ thắng, bốn phần mười hòa.",
+    "Nghĩa là thắng hay hòa phụ thuộc vào từng chi tiết: vị trí Binh, vị trí Tướng Đỏ, và Xe Đen có chiếu quấy rối được hay không.",
+    "Hôm nay ta xem một thế Đỏ thắng, nơi những nước then chốt quyết định tất cả."
+   ],
+   "bullets": [
+    "Xe Binh vs Xe Sĩ: khoảng 6/10 thắng",
+    "Chi tiết vị trí quyết định kết quả",
+    "Tướng Đỏ tránh chiếu quấy rối"
+   ],
+   "takeaway": "Trong tàn Xe Binh đấu Xe Sĩ, mỗi chi tiết vị trí đều có thể đổi thắng thành hòa, nên phải tính chính xác từng nước.",
+   "takeaway_short": "Chi tiết quyết định thắng hòa"
+  },
+  {
+   "id": "xe-binh-xe-tuong",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Binh",
+   "title": "Xe Binh đấu Xe Tượng",
+   "short": "Xe Binh đấu Xe Tượng",
+   "material": [
+    "RP",
+    "RB"
+   ],
+   "constraints": {
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    15,
+    39
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Binh đấu Xe Tượng: kênh tra bốn mươi thế với Tượng Đen đứng phòng thủ, sáu phần mười Đỏ thắng.",
+    "Tượng không che sát Tướng như Sĩ, nhưng có thể chặn Binh từ xa. Đỏ cần dùng Xe để đuổi Tượng hoặc khóa đường Tướng."
+   ],
+   "bullets": [
+    "Xe Binh vs Xe Tượng: khoảng 6/10 thắng",
+    "Tượng chặn Binh từ xa",
+    "Xe Đỏ đuổi Tượng, khóa Tướng"
+   ],
+   "takeaway": "Đấu Xe Tượng, Xe Đỏ phải vừa ngăn Xe Đen chiếu quấy rối vừa đẩy được Binh qua hàng phòng ngự của Tượng.",
+   "takeaway_short": "Vừa phòng thủ vừa đẩy Binh"
+  },
+  {
+   "id": "xe-binh-xe-si-tuong",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Binh",
+   "title": "Xe Binh đấu Xe Sĩ Tượng",
+   "short": "Xe Binh đấu Xe Sĩ Tượng",
+   "material": [
+    "RP",
+    "RAB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    13,
+    33
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Thêm cả Sĩ lẫn Tượng, bên Đen phòng thủ tốt hơn hẳn: trong bốn mươi thế kênh tra, chỉ khoảng một phần ba Đỏ thắng.",
+    "Những thế thắng thường đến từ đòn chiến thuật: chiếu đôi, bắt quân, hoặc Binh xông vào đúng lúc Đen sơ hở."
+   ],
+   "bullets": [
+    "Xe Binh vs Xe Sĩ Tượng: phần lớn hòa",
+    "Thắng nhờ đòn chiến thuật",
+    "Tận dụng lúc Đen sơ hở"
+   ],
+   "takeaway": "Khi đối phương đủ quân phòng thủ, chỉ có đòn chiến thuật đúng lúc mới mang lại chiến thắng.",
+   "takeaway_short": "Đòn chiến thuật đúng lúc"
+  },
+  {
+   "id": "xe-ma-xe",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Mã",
+   "title": "Xe Mã thắng Xe",
+   "short": "Xe Mã đấu Xe đơn",
+   "material": [
+    "RN",
+    "R"
+   ],
+   "constraints": {
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    11,
+    21
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Mã đấu Xe đơn không Sĩ Tượng: kênh tra bốn mươi thế, Đỏ thắng ba mươi chín thế.",
+    "Mã che chắn cho Tướng Đỏ trước các đòn chiếu của Xe Đen, đồng thời cùng Xe tạo thế chiếu bí."
+   ],
+   "bullets": [
+    "Xe Mã vs Xe: thắng 39/40",
+    "Mã che Tướng khỏi chiếu quấy rối",
+    "Xe Mã phối hợp chiếu bí"
+   ],
+   "takeaway": "Xe Mã phối hợp vừa công vừa thủ: Mã che Tướng, Xe dồn ép, Tướng Đen không có đường thoát.",
+   "takeaway_short": "Mã che Tướng, Xe dồn ép"
+  },
+  {
+   "id": "xe-ma-xe-si",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Mã",
+   "title": "Xe Mã thắng Xe Sĩ",
+   "short": "Xe Mã đấu Xe Sĩ",
+   "material": [
+    "RN",
+    "RA"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    15,
+    43
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Mã đấu Xe Sĩ: bốn mươi thế kênh tra với Sĩ Đen đứng phòng thủ, Đỏ thắng ba mươi chín thế.",
+    "Thêm một Sĩ chỉ làm đường thắng dài hơn: trung bình khoảng mười một nước."
+   ],
+   "bullets": [
+    "Xe Mã vs Xe Sĩ: thắng 39/40",
+    "Đường thắng khoảng 11 nước",
+    "Kiên nhẫn phá Sĩ"
+   ],
+   "takeaway": "Một Sĩ không đủ cứu Xe Đen trước Xe Mã; điều cần là kiên nhẫn và chính xác.",
+   "takeaway_short": "Kiên nhẫn và chính xác"
+  },
+  {
+   "id": "xe-ma-xe-si-tuong",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Mã",
+   "title": "Xe Mã đấu Xe Sĩ Tượng",
+   "short": "Xe Mã đấu Xe Sĩ Tượng",
+   "material": [
+    "RN",
+    "RAB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    21,
+    61
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Mã đấu Xe Sĩ Tượng: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, Đỏ thắng chín phần mười.",
+    "Nhưng đường thắng rất dài, trung bình khoảng mười sáu nước, có thế hơn ba mươi nước. Đây là bài học về kế hoạch dài hơi."
+   ],
+   "bullets": [
+    "Xe Mã vs Xe Sĩ Tượng: 9/10 thắng",
+    "Đường thắng dài, trung bình 16 nước",
+    "Cần kế hoạch dài hơi"
+   ],
+   "takeaway": "Thắng Xe Sĩ Tượng bằng Xe Mã cần một kế hoạch dài hơi: từng bước cải thiện vị trí trước khi ra đòn.",
+   "takeaway_short": "Kế hoạch dài hơi"
+  },
+  {
+   "id": "xe-phao-xe",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe Pháo",
+   "title": "Xe Pháo đấu Xe",
+   "short": "Xe Pháo đấu Xe đơn",
+   "material": [
+    "RC",
+    "R"
+   ],
+   "constraints": {
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    17,
+    33
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe Pháo đấu Xe đơn: bốn mươi thế kênh tra, tám phần mười Đỏ thắng, hai phần mười hòa.",
+    "So với Xe Mã đấu Xe, thắng ba mươi chín trên bốn mươi thế, thì Xe Pháo khó thắng hơn rõ rệt: Pháo cần ngòi mới chiếu được, nên đòn phối hợp với Xe hạn chế hơn.",
+    "Hôm nay ta xem một thế thắng và tìm hiểu cách Xe Pháo tạo ngòi để ra đòn."
+   ],
+   "bullets": [
+    "Xe Pháo vs Xe: 8/10 thắng",
+    "Khó hơn Xe Mã vs Xe (39/40)",
+    "Pháo cần ngòi để chiếu"
+   ],
+   "takeaway": "Xe Pháo đấu Xe vẫn thường thắng, nhưng phải chủ động tạo ngòi cho Pháo; thiếu ngòi, Pháo không giúp được Xe.",
+   "takeaway_short": "Chủ động tạo ngòi cho Pháo"
   }
  ]
 }
