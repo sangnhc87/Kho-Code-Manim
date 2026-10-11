@@ -140,6 +140,45 @@ class Blocks:
         self.play(FadeIn(pause, scale=1.1), run_time=self.rt(.06))
         self.tf_rows, self.tf_pause = rows, pause
 
+    def mc_question(self, t0, n, stem, options, fracs=(.25, .55)):
+        """Phần I (trắc nghiệm): câu ``n``, ``stem`` = list of lines, ``options`` = 4 mobjects (A–D, lưới 2×2)."""
+        head = VGroup(badge(f'CÂU {n}', CYAN, 20), tx('trắc nghiệm – Phần I', 19, SOFT)).arrange(RIGHT, buff=.3) \
+            .move_to([0, 2.72, 0]).to_edge(LEFT, buff=.6)
+        body = VGroup(*stem).arrange(DOWN, aligned_edge=LEFT, buff=.25).next_to(head, DOWN, buff=.4) \
+            .align_to(head, LEFT)
+        if body.width > 12:
+            body.scale_to_fit_width(12)
+        opts = VGroup()
+        for k, (letter, m) in enumerate(zip('ABCD', options)):
+            r = VGroup(tx(f'{letter}.', 26, GOLD, bold=True), m).arrange(RIGHT, buff=.25)
+            if r.width > 5.4:
+                r.scale_to_fit_width(5.4)
+            opts.add(r)
+        grid_top = body.get_bottom()[1] - .45
+        cell_h = max(max(o.height for o in opts) + .35, .9)
+        for k, o in enumerate(opts):
+            o.move_to([-5.6 + 6.3 * (k % 2), grid_top - cell_h * (k // 2 + .5), 0], aligned_edge=LEFT)
+        self.play(FadeIn(head), FadeIn(body, shift=UP * .1), run_time=self.rt(.08))
+        self.wait_until(fracs[0], t0)
+        self.play(LaggedStart(*[FadeIn(o, shift=RIGHT * .15) for o in opts], lag_ratio=.25), run_time=self.rt(.1))
+        self.wait_until(fracs[1], t0)
+        pause = self.pause_chip(TF_SOLUTION_Y)
+        self.play(FadeIn(pause, scale=1.1), run_time=self.rt(.05))
+        self.mc_opts, self.mc_pause = opts, pause
+
+    def mc_mark(self, i, solution=None):
+        """Highlight option ``i`` (0–3) as correct; optional worked line replaces the pause chip."""
+        from manim import SurroundingRectangle
+        anims = [FadeOut(self.mc_pause), FadeIn(SurroundingRectangle(self.mc_opts[i], color=GREEN, buff=.14,
+                                                                       corner_radius=.1)),
+                 *[o.animate.set_opacity(.35) for k, o in enumerate(self.mc_opts) if k != i]]
+        if solution is not None:
+            if solution.width > 12.2:
+                solution.scale_to_fit_width(12.2)
+            solution.move_to([0, TF_SOLUTION_Y, 0])
+            anims.append(FadeIn(solution, shift=UP * .1))
+        return anims
+
     def tf_key(self, answers):
         """Answer key next to the question header, e.g. answers = 'ĐSĐĐ'."""
         text = '   '.join(f'{k}) {a}' for k, a in zip('abcd', answers))
