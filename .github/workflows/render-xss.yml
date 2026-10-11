@@ -39,7 +39,8 @@ permissions:
   contents: write
 
 concurrency:
-  group: render-xss
+  # one queue per selection: batches run side by side, scheduled runs never overlap each other
+  group: render-xss-${{ github.event_name == 'schedule' && 'schedule' || inputs.select }}
   cancel-in-progress: false
 
 env:

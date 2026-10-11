@@ -217,3 +217,73 @@ def token(label, color=CYAN, r=0.36, size=None):
     c = Circle(radius=r, fill_color=color, fill_opacity=1, stroke_color=INK, stroke_width=2)
     t = Text(label, font=FONT, font_size=size or int(70 * r), color=INK, weight='BOLD').move_to(c)
     return VGroup(c, t)
+
+
+def venn(r=1.45, gap=1.5, color_a=CYAN, color_b=CORAL, center=(0, 1.2)):
+    """Two overlapping circles; ``g.a``, ``g.b`` and region builders ``g.only_a()``, ``g.both()``, ``g.only_b()``."""
+    from manim import Difference, Intersection
+    cx, cy = center
+    a = Circle(radius=r, stroke_color=color_a, stroke_width=5).move_to([cx - gap / 2, cy, 0])
+    b = Circle(radius=r, stroke_color=color_b, stroke_width=5).move_to([cx + gap / 2, cy, 0])
+    g = VGroup(a, b)
+    g.a, g.b = a, b
+    g.both = lambda color=GOLD, op=.55: Intersection(a, b, fill_color=color, fill_opacity=op, stroke_width=0)
+    g.only_a = lambda color=color_a, op=.4: Difference(a, b, fill_color=color, fill_opacity=op, stroke_width=0)
+    g.only_b = lambda color=color_b, op=.4: Difference(b, a, fill_color=color, fill_opacity=op, stroke_width=0)
+    return g
+
+
+def unit_square(p, q, side=4.2, center=(0, 1.15), color_a=CYAN, color_b=CORAL):
+    """Unit square split at x = p (event A on the left) and y = q (event B on top).
+
+    ``g.region(key)`` returns a filled rectangle for 'AB', 'Ab', 'aB', 'ab' (lower case = complement),
+    whose area is exactly the probability when A and B are independent.
+    """
+    from manim import Rectangle
+    cx, cy = center
+    x0, y1 = cx - side / 2, cy + side / 2
+    frame = Square(side_length=side, stroke_color=SOFT, stroke_width=3).move_to([cx, cy, 0])
+    vx = x0 + side * p
+    hy = y1 - side * q
+    lines = VGroup(Line([vx, cy - side / 2, 0], [vx, y1, 0], color=color_a, stroke_width=4),
+                   Line([x0, hy, 0], [x0 + side, hy, 0], color=color_b, stroke_width=4))
+    g = VGroup(frame, lines)
+
+    def region(key, color=GOLD, op=.6):
+        left = key[0] == 'A'
+        top = key[1] == 'B'
+        w = side * (p if left else 1 - p)
+        h = side * (q if top else 1 - q)
+        x = x0 + (w / 2 if left else side * p + w / 2)
+        y = y1 - (h / 2 if top else side * q + h / 2)
+        return Rectangle(width=w, height=h, fill_color=color, fill_opacity=op, stroke_width=0).move_to([x, y, 0])
+
+    g.region = region
+    g.vx, g.hy, g.x0, g.y1, g.side = vx, hy, x0, y1, side
+    return g
+
+
+def circuit(n, parallel=False, w=1.0, h=.6, color=CYAN):
+    """n components in series (a row) or in parallel (a column between two rails)."""
+    boxes = VGroup(*[RoundedRectangle(width=w, height=h, corner_radius=.1, stroke_color=color, stroke_width=4,
+                                      fill_color='#14233B', fill_opacity=1) for _ in range(n)])
+    if parallel:
+        boxes.arrange(DOWN, buff=.45)
+        left = boxes.get_left()[0] - .9
+        right = boxes.get_right()[0] + .9
+        wires = VGroup(Line([left, boxes.get_top()[1] - h / 2, 0], [left, boxes.get_bottom()[1] + h / 2, 0]),
+                       Line([right, boxes.get_top()[1] - h / 2, 0], [right, boxes.get_bottom()[1] + h / 2, 0]),
+                       Line([left - .8, boxes.get_y(), 0], [left, boxes.get_y(), 0]),
+                       Line([right, boxes.get_y(), 0], [right + .8, boxes.get_y(), 0]))
+        for b in boxes:
+            wires.add(Line([left, b.get_y(), 0], b.get_left()), Line(b.get_right(), [right, b.get_y(), 0]))
+    else:
+        boxes.arrange(RIGHT, buff=.7)
+        wires = VGroup(Line(boxes.get_left() + LEFT * .8, boxes[0].get_left()),
+                       Line(boxes[-1].get_right(), boxes.get_right() + RIGHT * .8))
+        for a, b in zip(boxes, boxes[1:]):
+            wires.add(Line(a.get_right(), b.get_left()))
+    wires.set_stroke(SOFT, 4)
+    g = VGroup(wires, boxes)
+    g.boxes = boxes
+    return g
