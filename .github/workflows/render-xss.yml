@@ -1,0 +1,211 @@
+name: Render XSS - Xac suat 3 phut (Shorts)
+
+on:
+  workflow_dispatch:
+    inputs:
+      select:
+        description: 'Shorts: pending | 1-10 | xss003,xss007'
+        required: true
+        default: 'pending'
+      quality:
+        description: 'preview (540x960) or full (1080x1920, publishable)'
+        required: true
+        type: choice
+        options: [full, preview]
+        default: full
+      voice:
+        description: 'Vietnamese narration (Edge TTS)'
+        required: true
+        type: choice
+        options: ['on', 'off']
+        default: 'on'
+      upload:
+        description: 'Upload to YouTube as Shorts (full + voice on only)'
+        required: true
+        type: boolean
+        default: true
+      limit:
+        description: 'At most this many Shorts in one run (0 = all selected)'
+        required: true
+        default: '0'
+  schedule:
+    # Publish whatever is produced but not yet on YouTube. The YouTube API quota resets at
+    # midnight Pacific (≈ 07:00 UTC); when it runs out, uploads stay pending for the next run.
+    - cron: '35 7 * * *'
+    - cron: '35 13 * * *'
+    - cron: '35 19 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render-xss
+  cancel-in-progress: false
+
+env:
+  SELECT: ${{ github.event_name == 'schedule' && 'pending' || inputs.select }}
+  QUALITY: ${{ github.event_name == 'schedule' && 'full' || inputs.quality }}
+  VOICE: ${{ github.event_name == 'schedule' && 'on' || inputs.voice }}
+  UPLOAD: ${{ github.event_name == 'schedule' && 'true' || inputs.upload }}
+  LIMIT: ${{ github.event_name == 'schedule' && '3' || inputs.limit }}
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      shorts: ${{ steps.pick.outputs.shorts }}
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-xac-suat-shorts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify every planned answer
+        run: python shorts_plan.py
+      - id: pick
+        name: Pick Shorts to build
+        run: |
+          LIST=$(python scripts/pending.py --select "$SELECT" --limit "$LIMIT")
+          echo "Selected: $LIST"
+          echo "shorts=$LIST" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: plan
+    if: ${{ needs.plan.outputs.shorts != '[]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        short: ${{ fromJSON(needs.plan.outputs.shorts) }}
+    env:
+      SH: ${{ matrix.short }}
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-xac-suat-shorts
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: System dependencies and fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg pkg-config build-essential libcairo2-dev libpango1.0-dev \
+            fonts-noto-core fonts-noto-extra fonts-dejavu-core
+          echo "CODE=$(echo "$SH" | tr a-z A-Z)" >> "$GITHUB_ENV"
+          echo "KEY=xss_${SH#xss}" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '^0.14.0'
+
+      - name: Install Manim and dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Checks
+        run: |
+          python shorts_plan.py
+          python -m unittest discover -s tests -v
+
+      - name: Typst formulas
+        run: python scripts/build_typst.py --short "$SH"
+
+      - name: Narration and runtime plan (≤ 3 minutes)
+        run: python scripts/prepare_voice.py --short "$SH" --voice "$VOICE"
+
+      - name: Render
+        run: |
+          if [ "$QUALITY" = full ]; then
+            manim --disable_caching -qh -r 1080,1920 --fps 30 "xss/$SH.py" "$CODE"
+          else
+            manim --disable_caching -ql -r 540,960 --fps 15 "xss/$SH.py" "$CODE"
+          fi
+          VIDEO=$(find media/videos -type f -name "$CODE.mp4" | head -n 1)
+          test -n "$VIDEO"
+          echo "VIDEO=$VIDEO" >> "$GITHUB_ENV"
+
+      - name: Subtitles and YouTube metadata
+        run: python scripts/finalize.py --short "$SH"
+
+      - name: QA
+        run: python scripts/qa_short.py --short "$SH" --video "$VIDEO" --quality "$QUALITY" --voice "$VOICE"
+
+      - name: Keep MP4 and QA stills
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.short }}-${{ env.QUALITY }}
+          path: |
+            Manim-Typst/series-xac-suat-shorts/media/videos/**/${{ env.CODE }}.mp4
+            Manim-Typst/series-xac-suat-shorts/artifacts/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Upload to YouTube Shorts
+        id: upload
+        if: ${{ env.UPLOAD == 'true' && env.QUALITY == 'full' && env.VOICE == 'on' }}
+        continue-on-error: true   # quota exhausted → stays pending, the next scheduled run retries
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          git fetch -q origin main
+          if git show origin/main:youtube_uploaded_history.json | python -c "import json,sys,os; sys.exit(0 if os.environ['KEY'] in json.load(sys.stdin) else 1)"; then
+            echo "$KEY already on YouTube, skipping"; exit 0
+          fi
+          python -m pip install -q google-api-python-client google-auth-oauthlib google-auth-httplib2
+          META="artifacts/${SH}_youtube.json"
+          python - "$META" <<'PY'
+          import json, sys
+          m = json.load(open(sys.argv[1], encoding='utf-8'))
+          open('/tmp/desc.txt', 'w', encoding='utf-8').write(m['description'])
+          open('/tmp/title.txt', 'w', encoding='utf-8').write(m['title'])
+          open('/tmp/tags.txt', 'w', encoding='utf-8').write(m['tags'])
+          PY
+          python ../../scripts/upload_to_youtube.py \
+            --file "$VIDEO" \
+            --title "$(cat /tmp/title.txt)" \
+            --description-file /tmp/desc.txt \
+            --tags "$(cat /tmp/tags.txt)" \
+            --playlist-title "Xác Suất 3 Phút – 120 Thử Thách | Thầy Nguyễn Văn Sang" \
+            --history-key "$KEY" \
+            --category-id 27 \
+            --privacy public
+          echo "uploaded=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit YouTube history
+        if: ${{ steps.upload.outputs.uploaded == 'true' }}
+        run: |
+          python - "$KEY" <<'PY'
+          import json, sys
+          key = sys.argv[1]
+          data = json.load(open('../../youtube_uploaded_history.json', encoding='utf-8'))
+          json.dump({key: data[key]}, open('/tmp/xss_entry.json', 'w', encoding='utf-8'), ensure_ascii=False)
+          PY
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python - <<'PY'
+          import json
+          path = '../../youtube_uploaded_history.json'
+          data = json.load(open(path, encoding='utf-8'))
+          data.update(json.load(open('/tmp/xss_entry.json', encoding='utf-8')))
+          json.dump(data, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+          PY
+            git add ../../youtube_uploaded_history.json
+            git commit -q -m "docs(xss): auto-update youtube_uploaded_history.json for $SH" || { echo "No changes"; exit 0; }
+            git push -q origin HEAD:main && exit 0
+            echo "push failed, retry $i"; sleep $((i * 9))
+          done
+          exit 1
