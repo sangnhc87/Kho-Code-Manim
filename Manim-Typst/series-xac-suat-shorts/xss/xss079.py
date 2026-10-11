@@ -15,7 +15,9 @@ from common.theme import CORAL, CYAN, GOLD  # noqa: E402
 from common.visuals import die  # noqa: E402
 
 EPISODE = {'code': 'XSS079', 'answer': 'Có'}
-PROBLEM = ['Gieo hai xúc xắc. $A$: con thứ nhất ra số chẵn;', '$B$: tổng là số chẵn. $A$ và $B$ có độc lập?']
+PROBLEM = ['Gieo hai xúc xắc. $A$: con thứ nhất',
+           'ra số chẵn; $B$: tổng là số chẵn.',
+           '$A$ và $B$ có độc lập?']
 OPTIONS = ['"Có"', '"Không"', '"Không đủ dữ kiện"']
 CORRECT = 0
 ANSWER_VALUE = None

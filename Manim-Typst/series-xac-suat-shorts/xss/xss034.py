@@ -15,7 +15,8 @@ from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: 
 from common.theme import CYAN, GOLD, PANEL, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS034', 'answer': '2/5'}
-PROBLEM = ['Rút ngẫu nhiên $2$ thẻ từ $5$ thẻ ghi số $1$ đến $5$.', 'Xác suất tổng hai số là số chẵn?']
+PROBLEM = ['Rút ngẫu nhiên $2$ thẻ từ $5$ thẻ ghi số $1$',
+           'đến $5$. Xác suất tổng hai số là số chẵn?']
 OPTIONS = ['1/2', '2/5', '3/5']
 CORRECT = 1
 ANSWER_VALUE = .4

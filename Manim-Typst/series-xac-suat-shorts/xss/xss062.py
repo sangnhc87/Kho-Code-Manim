@@ -15,7 +15,8 @@ from common.theme import CORAL, CYAN, GOLD, PANEL, SOFT, STROKE  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS062', 'answer': '1/3'}
-PROBLEM = ['Gia đình có $2$ con, biết có ít nhất một con trai.', 'Xác suất cả hai đều là trai?']
+PROBLEM = ['Gia đình có $2$ con, biết có ít nhất một',
+           'con trai. Xác suất cả hai đều là trai?']
 OPTIONS = ['1/2', '1/3', '1/4']
 CORRECT = 1
 ANSWER_VALUE = 1 / 3

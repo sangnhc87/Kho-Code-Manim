@@ -15,7 +15,8 @@ from common.theme import CORAL, GREEN, SOFT  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS047', 'answer': '175/256'}
-PROBLEM = ['Đoán mò $4$ câu trắc nghiệm, mỗi câu $4$ phương án.', 'Xác suất đúng ít nhất $1$ câu?']
+PROBLEM = ['Đoán mò $4$ câu trắc nghiệm, mỗi câu $4$',
+           'phương án. Xác suất đúng ít nhất $1$ câu?']
 OPTIONS = ['1', '175/256', '1/4']
 CORRECT = 1
 ANSWER_VALUE = 175 / 256

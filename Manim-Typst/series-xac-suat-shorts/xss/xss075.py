@@ -13,8 +13,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import CORAL, GOLD, GREEN, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS075', 'answer': '0,48'}
-PROBLEM = ['Qua vòng $1$ với xác suất $"0,8"$. Nếu đã qua vòng $1$ thì qua',
-           'vòng $2$ với xác suất $"0,6"$. Xác suất qua cả hai vòng?']
+PROBLEM = ['Qua vòng $1$ với xác suất $"0,8"$. Nếu đã qua',
+           'vòng $1$ thì qua vòng $2$ với xác suất $"0,6"$.',
+           'Xác suất qua cả hai vòng?']
 OPTIONS = ['"1,4"', '"0,48"', '"0,6"']
 CORRECT = 1
 ANSWER_VALUE = .48

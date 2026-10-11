@@ -15,7 +15,8 @@ from common.theme import CYAN, GOLD, GREEN, SOFT  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS053', 'answer': '2/5'}
-PROBLEM = ['Chia ngẫu nhiên $6$ bạn thành $2$ nhóm, mỗi nhóm $3$ bạn.', 'Xác suất A và B cùng nhóm?']
+PROBLEM = ['Chia ngẫu nhiên $6$ bạn thành $2$ nhóm, mỗi',
+           'nhóm $3$ bạn. Xác suất A và B cùng nhóm?']
 OPTIONS = ['1/2', '2/5', '1/3']
 CORRECT = 1
 ANSWER_VALUE = .4
@@ -50,6 +51,7 @@ class XSS053(ShortScene):
     N = 53
 
     def hook_visual(self, t0):
+        self.board_top = -1.05
         self.people = VGroup(*[token(c, GOLD if c in 'AB' else CYAN, .45) for c in 'ABCDEF']).arrange(buff=.25)
         self.people.move_to([0, 1.3, 0])
         self.wait_until(.5, t0)

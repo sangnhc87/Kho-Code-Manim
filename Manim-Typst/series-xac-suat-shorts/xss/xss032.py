@@ -15,7 +15,8 @@ from common.theme import CYAN, GOLD, SOFT  # noqa: E402
 from common.visuals import die  # noqa: E402
 
 EPISODE = {'code': 'XSS032', 'answer': '5/12'}
-PROBLEM = ['Gieo xúc xắc hai lần.', 'Xác suất lần thứ hai lớn hơn lần thứ nhất?']
+PROBLEM = ['Gieo xúc xắc hai lần. Xác suất lần',
+           'thứ hai lớn hơn lần thứ nhất?']
 OPTIONS = ['1/2', '5/12', '1/3']
 CORRECT = 1
 ANSWER_VALUE = 5 / 12

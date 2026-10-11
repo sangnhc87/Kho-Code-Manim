@@ -14,6 +14,12 @@ STANDARD = {'hook', 'guess', 'answer', 'outro'}
 
 
 class Shorts(unittest.TestCase):
+    def test_problem_lines_fit(self):
+        import subprocess
+        out = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'wrap_problems.py'), '--check'],
+                             capture_output=True, text=True)
+        self.assertEqual(out.returncode, 0, out.stdout)
+
     def test_each_short(self):
         made = shortlib.produced()
         self.assertTrue(made)

@@ -14,8 +14,9 @@ from common.theme import CYAN, GOLD  # noqa: E402
 from xss.xss076 import BRANCHES  # noqa: E402
 
 EPISODE = {'code': 'XSS077', 'answer': '9/16'}
-PROBLEM = ['$P("mưa") = "0,3"$; tắc đường: $"0,6"$ khi mưa, $"0,2"$ khi không.',
-           'Hôm nay bị tắc đường. Xác suất trời đã mưa?']
+PROBLEM = ['$P("mưa") = "0,3"$; tắc đường: $"0,6"$ khi mưa,',
+           '$"0,2"$ khi không. Hôm nay bị tắc đường.',
+           'Xác suất trời đã mưa?']
 OPTIONS = ['"0,3"', '9/16', '"0,6"']
 CORRECT = 1
 ANSWER_VALUE = 9 / 16

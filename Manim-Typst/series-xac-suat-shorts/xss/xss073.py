@@ -14,8 +14,9 @@ from common.theme import CYAN, GOLD  # noqa: E402
 from xss.xss072 import BRANCHES  # noqa: E402
 
 EPISODE = {'code': 'XSS073', 'answer': '3/4'}
-PROBLEM = ['Hộp I: $3$ đỏ, $2$ xanh. Hộp II: $1$ đỏ, $4$ xanh. Chọn một hộp,',
-           'rút $1$ bi được bi đỏ. Xác suất bi đó từ hộp I?']
+PROBLEM = ['Hộp I: $3$ đỏ, $2$ xanh. Hộp II: $1$ đỏ, $4$',
+           'xanh. Chọn một hộp, rút $1$ bi được bi',
+           'đỏ. Xác suất bi đó từ hộp I?']
 OPTIONS = ['1/2', '3/4', '3/5']
 CORRECT = 1
 ANSWER_VALUE = .75

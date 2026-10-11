@@ -13,8 +13,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import CORAL, GOLD, GREEN, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS071', 'answer': '≈ 0,80'}
-PROBLEM = ['Như thử thách #$070$: sau lần $1$ dương tính, $P("bệnh") = 1/6$.',
-           'Xét nghiệm lần $2$ (độc lập) cũng dương tính. $P("bệnh")$?']
+PROBLEM = ['Như thử thách #$070$: sau lần $1$ dương',
+           'tính, $P("bệnh") = 1/6$. Xét nghiệm lần $2$',
+           '(độc lập) cũng dương tính. $P("bệnh")$?']
 OPTIONS = ['"0,99"', 'approx "0,80"', '1/3']
 CORRECT = 1
 ANSWER_VALUE = .8

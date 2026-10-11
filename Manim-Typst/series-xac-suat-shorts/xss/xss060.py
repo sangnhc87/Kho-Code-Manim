@@ -15,7 +15,8 @@ from common.theme import CYAN, GOLD  # noqa: E402
 from common.visuals import die  # noqa: E402
 
 EPISODE = {'code': 'XSS060', 'answer': '4/9'}
-PROBLEM = ['Gieo hai con xúc xắc. Xác suất hai số chấm', 'hơn kém nhau không quá $1$?']
+PROBLEM = ['Gieo hai con xúc xắc. Xác suất hai số',
+           'chấm hơn kém nhau không quá $1$?']
 OPTIONS = ['1/6', '4/9', '1/3']
 CORRECT = 1
 ANSWER_VALUE = 4 / 9

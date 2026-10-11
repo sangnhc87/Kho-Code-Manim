@@ -13,8 +13,9 @@ from common.short import CountTreeMixin, PARTS, Beat, ShortScene, formulas, outr
 from common.theme import CORAL, GOLD, GREEN, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS070', 'answer': '1/6 ≈ 0,17'}
-PROBLEM = ['Bệnh gặp ở $1%$ dân số. Xét nghiệm đúng với $99%$ người bệnh,',
-           'báo nhầm dương tính $5%$ người khỏe. Dương tính thì $P("bệnh")$?']
+PROBLEM = ['Bệnh gặp ở $1%$ dân số. Xét nghiệm đúng',
+           'với $99%$ người bệnh, báo nhầm dương tính',
+           '$5%$ người khỏe. Dương tính thì $P("bệnh")$?']
 OPTIONS = ['"0,99"', '"0,95"', '1/6 approx "0,17"']
 CORRECT = 2
 ANSWER_VALUE = 1 / 6

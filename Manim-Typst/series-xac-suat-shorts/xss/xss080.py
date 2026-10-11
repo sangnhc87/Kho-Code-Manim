@@ -14,7 +14,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import GOLD, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS080', 'answer': '1/3'}
-PROBLEM = ['$3$ người lần lượt rút $3$ lá thăm, chỉ $1$ lá trúng thưởng.', 'Xác suất người rút THỨ BA trúng?']
+PROBLEM = ['$3$ người lần lượt rút $3$ lá thăm,',
+           'chỉ $1$ lá trúng thưởng. Xác suất',
+           'người rút THỨ BA trúng?']
 OPTIONS = ['1/2', '1/3', '2/3']
 CORRECT = 1
 ANSWER_VALUE = 1 / 3

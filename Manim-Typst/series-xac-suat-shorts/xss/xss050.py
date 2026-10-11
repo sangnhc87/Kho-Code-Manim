@@ -16,7 +16,8 @@ from common.theme import CORAL, CYAN, SOFT  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS050', 'answer': '5/6'}
-PROBLEM = ['Chọn ngẫu nhiên $3$ người từ $6$ nam và $4$ nữ.', 'Xác suất có ít nhất $1$ nữ?']
+PROBLEM = ['Chọn ngẫu nhiên $3$ người từ $6$ nam và',
+           '$4$ nữ. Xác suất có ít nhất $1$ nữ?']
 OPTIONS = ['2/5', '5/6', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 5 / 6

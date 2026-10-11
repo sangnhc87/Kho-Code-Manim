@@ -15,7 +15,9 @@ from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: 
 from common.theme import CYAN, GOLD, PANEL_2, SOFT, STROKE, WHITE  # noqa: E402
 
 EPISODE = {'code': 'XSS059', 'answer': '8/15'}
-PROBLEM = ['Chọn ngẫu nhiên $2$ số khác nhau từ $1$ đến $10$.', 'Xác suất tích hai số chia hết cho $3$?']
+PROBLEM = ['Chọn ngẫu nhiên $2$ số khác nhau',
+           'từ $1$ đến $10$. Xác suất tích hai',
+           'số chia hết cho $3$?']
 OPTIONS = ['3/10', '8/15', '1/3']
 CORRECT = 1
 ANSWER_VALUE = 8 / 15

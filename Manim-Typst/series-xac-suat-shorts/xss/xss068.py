@@ -13,7 +13,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import CORAL, CYAN, GREEN, PURPLE, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS068', 'answer': '0,032'}
-PROBLEM = ['Xưởng I làm $60%$ sản phẩm ($2%$ lỗi), xưởng II làm', '$40%$ ($5%$ lỗi). Xác suất một sản phẩm bị lỗi?']
+PROBLEM = ['Xưởng I làm $60%$ sản phẩm ($2%$ lỗi),',
+           'xưởng II làm $40%$ ($5%$ lỗi). Xác suất',
+           'một sản phẩm bị lỗi?']
 OPTIONS = ['"0,035"', '"0,032"', '"0,07"']
 CORRECT = 1
 ANSWER_VALUE = .032

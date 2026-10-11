@@ -14,7 +14,8 @@ from common.theme import CORAL, CYAN, GOLD, SOFT  # noqa: E402
 from xss.xss062 import KIDS, family  # noqa: E402
 
 EPISODE = {'code': 'XSS063', 'answer': '1/2'}
-PROBLEM = ['Gia đình có $2$ con, biết CON CẢ là con trai.', 'Xác suất cả hai đều là trai?']
+PROBLEM = ['Gia đình có $2$ con, biết CON CẢ là con',
+           'trai. Xác suất cả hai đều là trai?']
 OPTIONS = ['1/2', '1/3', '1/4']
 CORRECT = 0
 ANSWER_VALUE = .5

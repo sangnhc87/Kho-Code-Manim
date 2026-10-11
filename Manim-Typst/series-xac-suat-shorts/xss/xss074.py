@@ -14,8 +14,9 @@ from common.theme import CYAN, GOLD, PURPLE  # noqa: E402
 from common.visuals import BALL_COLORS, urn  # noqa: E402
 
 EPISODE = {'code': 'XSS074', 'answer': '13/25'}
-PROBLEM = ['Hộp I: $3$ đỏ, $2$ xanh. Hộp II: $2$ đỏ, $2$ xanh. Chuyển $1$ bi',
-           'từ hộp I sang hộp II, rồi rút $1$ bi ở hộp II. $P("đỏ")$?']
+PROBLEM = ['Hộp I: $3$ đỏ, $2$ xanh. Hộp II: $2$ đỏ, $2$',
+           'xanh. Chuyển $1$ bi từ hộp I sang hộp II,',
+           'rồi rút $1$ bi ở hộp II. $P("đỏ")$?']
 OPTIONS = ['1/2', '13/25', '3/5']
 CORRECT = 1
 ANSWER_VALUE = 13 / 25

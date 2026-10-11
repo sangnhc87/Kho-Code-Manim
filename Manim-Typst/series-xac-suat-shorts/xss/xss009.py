@@ -14,7 +14,8 @@ from common.theme import CORAL, GOLD, INK, SOFT  # noqa: E402
 from common.visuals import urn  # noqa: E402
 
 EPISODE = {'code': 'XSS009', 'answer': '3/5'}
-PROBLEM = ['Hộp có $3$ bi đỏ, $2$ bi xanh.', 'Lấy ngẫu nhiên $1$ bi. Xác suất được bi đỏ?']
+PROBLEM = ['Hộp có $3$ bi đỏ, $2$ bi xanh. Lấy ngẫu',
+           'nhiên $1$ bi. Xác suất được bi đỏ?']
 OPTIONS = ['2/5', '3/5', '3/2']
 CORRECT = 1
 ANSWER_VALUE = .6

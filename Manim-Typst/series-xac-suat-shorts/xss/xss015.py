@@ -13,7 +13,9 @@ from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: 
 from common.theme import CORAL, GOLD, PANEL, SOFT, STROKE, WHITE  # noqa: E402
 
 EPISODE = {'code': 'XSS015', 'answer': '2/7'}
-PROBLEM = ['Sinh nhật năm nay của bạn rơi vào', 'thứ Bảy hoặc Chủ nhật với xác suất bao nhiêu?']
+PROBLEM = ['Sinh nhật năm nay của bạn rơi vào thứ',
+           'Bảy hoặc Chủ nhật với xác suất bao',
+           'nhiêu?']
 OPTIONS = ['1/7', '2/7', '2/5']
 CORRECT = 1
 ANSWER_VALUE = 2 / 7

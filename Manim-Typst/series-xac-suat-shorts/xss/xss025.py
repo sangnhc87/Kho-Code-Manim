@@ -15,7 +15,9 @@ from common.theme import CORAL, CYAN, SOFT  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS025', 'answer': '22/145'}
-PROBLEM = ['Lớp có $30$ bạn, trong đó $12$ bạn nữ.', 'Chọn ngẫu nhiên $2$ bạn. Xác suất cả hai là nữ?']
+PROBLEM = ['Lớp có $30$ bạn, trong đó $12$ bạn',
+           'nữ. Chọn ngẫu nhiên $2$ bạn. Xác',
+           'suất cả hai là nữ?']
 OPTIONS = ['2/5', '4/25', '22/145']
 CORRECT = 2
 ANSWER_VALUE = 22 / 145

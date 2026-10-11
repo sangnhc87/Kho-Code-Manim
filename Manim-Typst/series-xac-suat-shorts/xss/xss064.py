@@ -13,8 +13,9 @@ from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: 
 from common.theme import CORAL, CYAN, GOLD, PANEL_2, SOFT, STROKE, WHITE  # noqa: E402
 
 EPISODE = {'code': 'XSS064', 'answer': '0,4 và 0,6'}
-PROBLEM = ['$100$ học sinh: $60$ nam ($24$ đeo kính), $40$ nữ ($16$ đeo kính).',
-           'Tính $P("kính" | "nam")$ và $P("nam" | "kính")$.']
+PROBLEM = ['$100$ học sinh: $60$ nam ($24$ đeo kính),',
+           '$40$ nữ ($16$ đeo kính). Tính $P("kính" | "nam")$',
+           'và $P("nam" | "kính")$.']
 OPTIONS = ['"0,4" " và " "0,6"', '"0,6" " và " "0,4"', '"0,24" " và " "0,24"']
 CORRECT = 0
 ANSWER_VALUE = None

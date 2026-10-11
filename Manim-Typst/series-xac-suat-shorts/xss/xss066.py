@@ -15,7 +15,9 @@ from common.theme import GOLD, SOFT  # noqa: E402
 from xss.xss065 import BALLS, BRANCHES  # noqa: E402
 
 EPISODE = {'code': 'XSS066', 'answer': '5/8'}
-PROBLEM = ['Hộp $5$ bi đỏ, $3$ bi xanh. Rút lần lượt $2$ bi', 'không hoàn lại. Xác suất bi THỨ HAI là đỏ?']
+PROBLEM = ['Hộp $5$ bi đỏ, $3$ bi xanh. Rút lần',
+           'lượt $2$ bi không hoàn lại. Xác',
+           'suất bi THỨ HAI là đỏ?']
 OPTIONS = ['4/7', '5/8', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 5 / 8

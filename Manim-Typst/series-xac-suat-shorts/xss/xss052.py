@@ -13,7 +13,9 @@ from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: 
 from common.theme import CORAL, CYAN, GOLD, PANEL, SOFT, STROKE  # noqa: E402
 
 EPISODE = {'code': 'XSS052', 'answer': '17/81'}
-PROBLEM = ['Chọn ngẫu nhiên một số có $3$ chữ số đôi một khác nhau.', 'Xác suất số đó chia hết cho $5$?']
+PROBLEM = ['Chọn ngẫu nhiên một số có $3$ chữ',
+           'số đôi một khác nhau. Xác suất',
+           'số đó chia hết cho $5$?']
 OPTIONS = ['1/5', '17/81', '1/10']
 CORRECT = 1
 ANSWER_VALUE = 17 / 81

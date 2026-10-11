@@ -15,7 +15,9 @@ from common.theme import GOLD, PANEL, SOFT, STROKE  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS022', 'answer': '2/5'}
-PROBLEM = ['Lập số có $2$ chữ số khác nhau từ $1, 2, 3, 4, 5$.', 'Chọn ngẫu nhiên một số. Xác suất số đó chẵn?']
+PROBLEM = ['Lập số có $2$ chữ số khác nhau từ',
+           '$1, 2, 3, 4, 5$. Chọn ngẫu nhiên một',
+           'số. Xác suất số đó chẵn?']
 OPTIONS = ['1/2', '2/5', '3/5']
 CORRECT = 1
 ANSWER_VALUE = .4

@@ -16,7 +16,9 @@ from common.theme import CORAL, CYAN, GOLD, GREEN, PURPLE, SOFT  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS051', 'answer': '3/5'}
-PROBLEM = ['Xếp ngẫu nhiên $5$ bạn vào $5$ ghế hàng ngang.', 'Xác suất A và B KHÔNG ngồi cạnh nhau?']
+PROBLEM = ['Xếp ngẫu nhiên $5$ bạn vào $5$ ghế',
+           'hàng ngang. Xác suất A và B',
+           'KHÔNG ngồi cạnh nhau?']
 OPTIONS = ['2/5', '3/5', '4/5']
 CORRECT = 1
 ANSWER_VALUE = .6

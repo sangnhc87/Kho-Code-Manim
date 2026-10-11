@@ -14,8 +14,9 @@ from common.theme import GOLD, PURPLE, SOFT  # noqa: E402
 from xss.xss068 import BRANCHES  # noqa: E402
 
 EPISODE = {'code': 'XSS069', 'answer': '0,625'}
-PROBLEM = ['Xưởng I: $60%$ sản phẩm, $2%$ lỗi; xưởng II: $40%$, $5%$ lỗi.',
-           'Biết sản phẩm bị lỗi. Xác suất nó từ xưởng II?']
+PROBLEM = ['Xưởng I: $60%$ sản phẩm, $2%$ lỗi; xưởng',
+           'II: $40%$, $5%$ lỗi. Biết sản phẩm bị lỗi.',
+           'Xác suất nó từ xưởng II?']
 OPTIONS = ['"0,4"', '"0,625"', '"0,05"']
 CORRECT = 1
 ANSWER_VALUE = .625

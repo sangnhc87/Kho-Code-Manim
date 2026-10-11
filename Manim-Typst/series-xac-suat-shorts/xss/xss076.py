@@ -13,7 +13,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import CORAL, CYAN, GOLD, GREEN, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS076', 'answer': '0,32'}
-PROBLEM = ['$P("mưa") = "0,3"$. Tắc đường với xác suất $"0,6"$ khi mưa,', '$"0,2"$ khi không mưa. Xác suất hôm nay tắc đường?']
+PROBLEM = ['$P("mưa") = "0,3"$. Tắc đường với xác suất',
+           '$"0,6"$ khi mưa, $"0,2"$ khi không mưa. Xác',
+           'suất hôm nay tắc đường?']
 OPTIONS = ['"0,4"', '"0,32"', '"0,8"']
 CORRECT = 1
 ANSWER_VALUE = .32

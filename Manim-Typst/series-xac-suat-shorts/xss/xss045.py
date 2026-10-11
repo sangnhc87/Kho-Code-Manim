@@ -14,7 +14,9 @@ from common.theme import CORAL, GREEN, SOFT  # noqa: E402
 from common.visuals import circuit  # noqa: E402
 
 EPISODE = {'code': 'XSS045', 'answer': '0,99'}
-PROBLEM = ['$2$ linh kiện mắc song song, mỗi cái hoạt động với', 'xác suất $"0,9"$ (độc lập). Xác suất mạch hoạt động?']
+PROBLEM = ['$2$ linh kiện mắc song song, mỗi cái',
+           'hoạt động với xác suất $"0,9"$ (độc lập).',
+           'Xác suất mạch hoạt động?']
 OPTIONS = ['"0,81"', '"0,99"', '"0,9"']
 CORRECT = 1
 ANSWER_VALUE = .99

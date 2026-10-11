@@ -14,7 +14,8 @@ from common.theme import CORAL, CYAN, GOLD  # noqa: E402
 from common.visuals import die_row, venn  # noqa: E402
 
 EPISODE = {'code': 'XSS058', 'answer': 'Không'}
-PROBLEM = ['$A$, $B$ xung khắc và cùng có xác suất dương.', '$A$ và $B$ có độc lập không?']
+PROBLEM = ['$A$, $B$ xung khắc và cùng có xác suất',
+           'dương. $A$ và $B$ có độc lập không?']
 OPTIONS = ['"Có"', '"Không"', '"Tùy bài"']
 CORRECT = 1
 ANSWER_VALUE = None

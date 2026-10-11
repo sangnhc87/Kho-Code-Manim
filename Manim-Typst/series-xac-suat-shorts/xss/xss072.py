@@ -14,7 +14,9 @@ from common.theme import CORAL, CYAN, PURPLE  # noqa: E402
 from common.visuals import BALL_COLORS, urn  # noqa: E402
 
 EPISODE = {'code': 'XSS072', 'answer': '2/5'}
-PROBLEM = ['Hộp I: $3$ đỏ, $2$ xanh. Hộp II: $1$ đỏ, $4$ xanh.', 'Chọn ngẫu nhiên một hộp rồi rút $1$ bi. $P("đỏ")$?']
+PROBLEM = ['Hộp I: $3$ đỏ, $2$ xanh. Hộp II: $1$',
+           'đỏ, $4$ xanh. Chọn ngẫu nhiên một',
+           'hộp rồi rút $1$ bi. $P("đỏ")$?']
 OPTIONS = ['1/2', '2/5', '4/5']
 CORRECT = 1
 ANSWER_VALUE = .4

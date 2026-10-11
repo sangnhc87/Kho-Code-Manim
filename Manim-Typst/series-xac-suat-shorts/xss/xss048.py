@@ -15,7 +15,8 @@ from common.theme import CYAN, GOLD, SOFT  # noqa: E402
 from common.visuals import coin  # noqa: E402
 
 EPISODE = {'code': 'XSS048', 'answer': '1/8'}
-PROBLEM = ['Tung đồng xu cho đến khi ra mặt ngửa thì dừng.', 'Xác suất phải tung đúng $3$ lần?']
+PROBLEM = ['Tung đồng xu cho đến khi ra mặt ngửa thì',
+           'dừng. Xác suất phải tung đúng $3$ lần?']
 OPTIONS = ['1/3', '1/8', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 1 / 8

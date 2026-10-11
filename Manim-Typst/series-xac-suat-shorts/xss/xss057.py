@@ -53,8 +53,8 @@ class XSS057(ShortScene):
     def hook_visual(self, t0):
         self.board_top = -1.1
         self.sq = unit_square(.4, .5, 3.7, (.2, 1.35))
-        labs = VGroup(self.TM('$A$: "0,4"', 24, CYAN).next_to(self.sq[0], DOWN, buff=.12).align_to(self.sq[0], LEFT),
-                      self.TM('$B$: "0,5"', 24, CORAL).rotate(1.5708).next_to(self.sq[0], LEFT, buff=.12)
+        labs = VGroup(self.TM('$A$: $"0,4"$', 24, CYAN).next_to(self.sq[0], DOWN, buff=.12).align_to(self.sq[0], LEFT),
+                      self.TM('$B$: $"0,5"$', 24, CORAL).rotate(1.5708).next_to(self.sq[0], LEFT, buff=.12)
                       .align_to(self.sq[0], UP))
         self.wait_until(.5, t0)
         self.play(FadeIn(self.sq), FadeIn(labs), run_time=self.rt(.15))
@@ -75,6 +75,7 @@ class XSS057(ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
+        self.clear_board(.03)
         m = self.M('prob', 1.9)
         self.write_board(m)
         self.frame(m)

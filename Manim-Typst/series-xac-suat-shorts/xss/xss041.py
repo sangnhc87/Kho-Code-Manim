@@ -14,7 +14,9 @@ from common.theme import CORAL, GOLD  # noqa: E402
 from xss.shooters import ShooterSquare  # noqa: E402
 
 EPISODE = {'code': 'XSS041', 'answer': '0,56'}
-PROBLEM = ['Hai xạ thủ bắn độc lập, trúng với xác suất', '$"0,8"$ và $"0,7"$. Xác suất cả hai cùng trúng?']
+PROBLEM = ['Hai xạ thủ bắn độc lập, trúng',
+           'với xác suất $"0,8"$ và $"0,7"$. Xác',
+           'suất cả hai cùng trúng?']
 OPTIONS = ['"1,5"', '"0,56"', '"0,75"']
 CORRECT = 1
 ANSWER_VALUE = .56

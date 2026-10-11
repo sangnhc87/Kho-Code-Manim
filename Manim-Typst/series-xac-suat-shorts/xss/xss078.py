@@ -13,8 +13,9 @@ from common.short import CountTreeMixin, PARTS, Beat, ShortScene, formulas, outr
 from common.theme import CORAL, CYAN, GOLD, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS078', 'answer': '20/23 ≈ 0,87'}
-PROBLEM = ['$40%$ thư là thư rác. Chữ "khuyến mãi" có trong $30%$ thư rác',
-           'và $3%$ thư thường. Thư có chữ đó: $P("rác")$?']
+PROBLEM = ['$40%$ thư là thư rác. Chữ "khuyến mãi"',
+           'có trong $30%$ thư rác và $3%$ thư thường.',
+           'Thư có chữ đó: $P("rác")$?']
 OPTIONS = ['"0,3"', '"0,4"', '20/23 approx "0,87"']
 CORRECT = 2
 ANSWER_VALUE = 20 / 23

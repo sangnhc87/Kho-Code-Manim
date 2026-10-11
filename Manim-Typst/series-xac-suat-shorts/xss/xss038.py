@@ -14,8 +14,9 @@ from common.theme import CORAL, CYAN, GOLD  # noqa: E402
 from common.visuals import venn  # noqa: E402
 
 EPISODE = {'code': 'XSS038', 'answer': '7/8'}
-PROBLEM = ['Lớp $40$ bạn: $25$ thích Toán, $20$ thích Anh, $10$ thích cả hai.',
-           'Chọn $1$ bạn. Xác suất bạn đó thích ít nhất một môn?']
+PROBLEM = ['Lớp $40$ bạn: $25$ thích Toán, $20$ thích Anh,',
+           '$10$ thích cả hai. Chọn $1$ bạn. Xác suất',
+           'bạn đó thích ít nhất một môn?']
 OPTIONS = ['9/8', '7/8', '3/4']
 CORRECT = 1
 ANSWER_VALUE = 7 / 8

@@ -16,7 +16,9 @@ from common.theme import SOFT  # noqa: E402
 from common.visuals import ball, urn  # noqa: E402
 
 EPISODE = {'code': 'XSS049', 'answer': '3/11'}
-PROBLEM = ['Hộp có $5$ bi đỏ, $4$ bi xanh, $3$ bi vàng.', 'Lấy ngẫu nhiên $3$ bi. Xác suất đủ cả ba màu?']
+PROBLEM = ['Hộp có $5$ bi đỏ, $4$ bi xanh, $3$',
+           'bi vàng. Lấy ngẫu nhiên $3$ bi.',
+           'Xác suất đủ cả ba màu?']
 OPTIONS = ['1/3', '3/11', '1/4']
 CORRECT = 1
 ANSWER_VALUE = 3 / 11

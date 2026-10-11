@@ -15,7 +15,9 @@ from common.theme import CORAL, CYAN, GOLD  # noqa: E402
 from common.visuals import urn  # noqa: E402
 
 EPISODE = {'code': 'XSS056', 'answer': '9/25 và 3/10'}
-PROBLEM = ['Hộp $3$ bi đỏ, $2$ bi xanh. Rút lần lượt $2$ bi. $P("2 đỏ")$', 'khi CÓ hoàn lại và khi KHÔNG hoàn lại?']
+PROBLEM = ['Hộp $3$ bi đỏ, $2$ bi xanh. Rút lần',
+           'lượt $2$ bi. $P("2 đỏ")$ khi CÓ hoàn',
+           'lại và khi KHÔNG hoàn lại?']
 OPTIONS = ['9/25 " và " 3/10', '3/10 " và " 9/25', '9/25 " và " 9/25']
 CORRECT = 0
 ANSWER_VALUE = None

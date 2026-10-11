@@ -15,7 +15,9 @@ from common.theme import CORAL, GOLD, SOFT  # noqa: E402
 from common.visuals import BALL_COLORS  # noqa: E402
 
 EPISODE = {'code': 'XSS065', 'answer': '5/14'}
-PROBLEM = ['Hộp $5$ bi đỏ, $3$ bi xanh. Rút lần lượt $2$ bi', 'không hoàn lại. Xác suất cả hai bi đều đỏ?']
+PROBLEM = ['Hộp $5$ bi đỏ, $3$ bi xanh. Rút lần',
+           'lượt $2$ bi không hoàn lại. Xác',
+           'suất cả hai bi đều đỏ?']
 OPTIONS = ['25/64', '5/14', '5/8']
 CORRECT = 1
 ANSWER_VALUE = 5 / 14

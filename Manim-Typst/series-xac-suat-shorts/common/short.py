@@ -312,8 +312,10 @@ class ShortScene(Scene):
 
     # -------------------------------------------------------------- standard beats
     def header(self):
-        title = tx(self.entry['title'], 52, GOLD, bold=True, max_w=7.4).move_to([0, TITLE_Y, 0])
-        prob = self.lines(self.short.PROBLEM, 34).next_to(title, DOWN, buff=.3)
+        three = len(self.short.PROBLEM) >= 3
+        title = tx(self.entry['title'], 48 if three else 52, GOLD, bold=True, max_w=7.4).move_to([0, TITLE_Y + .05 * three, 0])
+        prob = self.lines(self.short.PROBLEM, 31 if three else 34, buff=.14 if three else .2) \
+            .next_to(title, DOWN, buff=.22 if three else .3)
         return title, prob
 
     def beat_hook(self, T):
@@ -328,12 +330,20 @@ class ShortScene(Scene):
         """Override: put the props of the problem on the stage."""
 
     def options(self):
+        keys = [f'opt{i}' for i in range(len(self.short.OPTIONS))]
+        wide = any(self.M(k, 1.75).width > 1.4 for k in keys)  # long options: one per row
         opts = VGroup()
-        for letter, key in zip('ABCD', [f'opt{i}' for i in range(len(self.short.OPTIONS))]):
-            c = card(2.1, 1.3, STROKE, PANEL, radius=.18, stroke_width=3)
-            m = self.M(key, 1.75, max_w=1.35)
-            row = VGroup(tx(letter, 36, GOLD, bold=True), m).arrange(RIGHT, buff=.18)
+        for letter, key in zip('ABCD', keys):
+            c = card(5.6, .82, STROKE, PANEL, radius=.16, stroke_width=3) if wide else \
+                card(2.1, 1.3, STROKE, PANEL, radius=.18, stroke_width=3)
+            m = self.M(key, 1.5, max_w=4.4) if wide else self.M(key, 1.75, max_w=1.35)
+            if wide and m.height > .7:
+                m.scale_to_fit_height(.7)
+            row = VGroup(tx(letter, 36, GOLD, bold=True), m).arrange(RIGHT, buff=.25)
             opts.add(VGroup(c, row.move_to(c)))
+        if wide:
+            opts.arrange(DOWN, buff=.14)
+            return opts.move_to([BOARD_X, -2.1, 0])
         opts.arrange(RIGHT, buff=.22)
         if opts.width > BOARD_W:
             opts.scale_to_fit_width(BOARD_W)

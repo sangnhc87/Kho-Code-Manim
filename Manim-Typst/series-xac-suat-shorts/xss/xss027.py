@@ -15,7 +15,8 @@ from common.theme import CORAL, CYAN, GOLD, GREEN  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS027', 'answer': '1/3'}
-PROBLEM = ['Xếp ngẫu nhiên $3$ bạn A, B, C thành một hàng.', 'Xác suất bạn A đứng đầu hàng?']
+PROBLEM = ['Xếp ngẫu nhiên $3$ bạn A, B, C thành một',
+           'hàng. Xác suất bạn A đứng đầu hàng?']
 OPTIONS = ['1/6', '1/3', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 1 / 3
