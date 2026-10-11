@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Dựng YouTube Short câu đố cho một tập: python scripts/make_short.py --episode ep-0001 [--quality full].
 
-Short gồm: đề bài + đếm ngược, đáp án (vài nước đầu của biến chính), kết luận bảng tra,
+Short gồm: đề bài + đếm ngược, đáp án (vài nước đầu của biến chính), kết luận,
 lời mời xem tập đầy đủ. Lời đọc giới hạn để video dưới 60 giây.
 """
 import argparse
@@ -55,9 +55,10 @@ def game_short(data, max_plies):
         steps.append({'say': (f'Đáp án: {vn}!' if k == 0 else f'{vn}.'), 'move': m, 'mark': 'answer' if k == 0 else None})
         pos = pos.play(m)
     g = data.get('game', {})
-    steps.append({'say': f'Toàn bộ diễn biến và phân tích bằng bảng tra có trong tập {data["number"]} của kênh Tinh Hoa Cờ Tàn.'})
+    steps.append({'say': 'Bạn có tìm ra không? Theo dõi kênh Tinh Hoa Cờ Tàn để xem thêm thực chiến danh thủ!'})
     return {'number': data['number'], 'fen': fen, 'headline': headline, 'tag': tag,
-            'verdict': 'Bảng tra cờ tàn chessdb chấm từng nước', 'wdl': 'W', 'steps': steps}
+            'verdict': 'Tàn cuộc thực chiến', 'wdl': 'W', 'steps': steps,
+            'footer': 'Tinh Hoa Cờ Tàn • Thực chiến danh thủ'}
 
 
 PIECE = {'R': 'Xe', 'N': 'Mã', 'C': 'Pháo', 'P': 'Binh', 'A': 'Sĩ', 'B': 'Tượng', 'K': 'Tướng'}
@@ -71,21 +72,25 @@ def mate_short(data):
     n, side = m['n'], m['side']
     sp = sac_phrase(m['sacrifices'])
     headline = f'{side} đi – chiếu bí trong {n} nước!'
-    tag = ('SÁT CỤC • ' + sp.upper()) if sp else 'SÁT CỤC LIÊN HOÀN'
-    ask = (f'{side} đi, chiếu bí trong {n} nước.' + (f' Có cả đòn {sp}.' if sp else ' Toàn nước chiếu.')
-           + ' Bạn tìm ra không?')
+    tag = 'SÁT CỤC'
+    ask = f'{side} đi, chiếu bí trong {n} nước. Bạn tìm ra không?'
     g = data.get('game')
     if g:
         where = f'Ván đấu thật năm {g["year"]}' if g.get('year') else 'Một ván đấu thật'
         who = g.get('loser') or ('Đen' if side == 'Đỏ' else 'Đỏ')
         if g.get('resigned'):
-            ask = (f'{where}. Đến thế này, {who} xin thua. Vì sao? Vì {side} có đòn chiếu bí trong {n} nước'
-                   + (f', kèm {sp}' if sp else '') + '. Bạn có nhìn ra không?')
+            ask = f'{where}. Đến thế này, {who} xin thua. Vì sao? Bạn có nhìn ra không?'
             headline = f'Vì sao {who} xin thua?'
         else:
             ask = f'{where}. {g.get("winner") or side} kết thúc ván bằng đòn chiếu bí {n} nước. Bạn tìm ra không?'
-        tag = 'THỰC CHIẾN DANH THỦ' + (' • ' + sp.upper() if sp else '')
+        tag = 'THỰC CHIẾN DANH THỦ'
     steps = [{'say': ask, 'countdown': 5}]
+    from xq.patterns import mate_patterns
+    end = Position.from_fen(data['fen'])
+    for x in m['line']:
+        end = end.play(x['move'])
+    found = mate_patterns(end)
+    pattern = found[0] if found else ''
     pos = Position.from_fen(data['fen'])
     attacker = pos.turn
     for k, x in enumerate(m['line']):
@@ -94,6 +99,8 @@ def mate_short(data):
         if pos.turn == attacker:
             if nxt.is_mate():
                 say, tagx = f'{vn}. Chiếu bí!', 'BÍ!'
+                if pattern:
+                    say = f'{vn}. Chiếu bí! Thế sát {pattern}.'
             elif x.get('sacrifice'):
                 say, tagx = f'{vn}! Thí {PIECE[x["sacrifice"]]}!', f'THÍ {PIECE[x["sacrifice"]].upper()}!'
             else:
@@ -106,11 +113,11 @@ def mate_short(data):
             forced = ', bắt buộc' if x.get('forced') and not cap else ''
             steps.append({'say': f'{vn}{cap}{forced}.', 'move': x['move']})
         pos = nxt
-    steps.append({'say': 'Đã kiểm chứng mọi cách chống đỡ. Theo dõi kênh để xem sát cục mỗi ngày!'})
+    steps.append({'say': 'Bạn giải đúng không? Theo dõi kênh để xem sát cục mỗi ngày!'})
     return {'number': data['number'], 'fen': data['fen'], 'headline': headline, 'tag': tag,
-            'verdict': f'Bí trong {n} nước • đã kiểm chứng', 'wdl': 'W', 'steps': steps,
-            'footer': 'Lời giải kiểm chứng mọi cách chống đỡ • Tinh Hoa Cờ Tàn',
-            'flash': ((sp.upper() + ' • ') if sp else 'CHIẾU LIÊN HOÀN • ') + f'BÍ {n} NƯỚC'}
+            'verdict': (pattern if pattern else f'Bí trong {n} nước'), 'wdl': 'W', 'steps': steps,
+            'footer': 'Tinh Hoa Cờ Tàn • Sát cục mỗi ngày',
+            'flash': f'{side.upper()} ĐI • BÍ {n} NƯỚC'}
 
 
 def short_script(data, max_plies):
@@ -142,8 +149,7 @@ def short_script(data, max_plies):
         mark = 'only' if ply['only'] and ply['wdl'] == 'W' else ('hold' if ply['only'] and ply['wdl'] == 'D' else None)
         say = ply['vn'] + ('. Hết cờ!' if ply['mate'] else '.')
         steps.append({'say': say, 'move': ply['move'], 'mark': mark})
-    steps.append({'say': f'Bảng tra cờ tàn xác nhận: {verdict}. Lời giải đầy đủ có trong tập {data["number"]} '
-                         'của kênh Tinh Hoa Cờ Tàn.'})
+    steps.append({'say': f'Kết quả: {verdict}. Bạn giải đúng không? Theo dõi kênh Tinh Hoa Cờ Tàn nhé!'})
     return {'number': data['number'], 'fen': a['fen'], 'headline': headline, 'tag': tag,
             'verdict': verdict, 'wdl': val['wdl'], 'steps': steps}
 

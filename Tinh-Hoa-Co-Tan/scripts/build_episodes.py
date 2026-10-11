@@ -406,8 +406,7 @@ def build_mate(collection, file_name, item, ep, catalog):
     for x in pr['line'][:-1]:
         pos = pos.play(x['move'])
     last = PIECE_VN.get(pos.cells[(ord(pr['line'][-1]['move'][0]) - 97, int(pr['line'][-1]['move'][1]))].upper(), 'Tướng')
-    title = (f'Sát cục #{ep}: {sp}, {last} chiếu bí sau {n} nước!' if sp else
-             f'Sát cục #{ep}: {n} nước chiếu liên hoàn, {last} kết liễu!')
+    title = f'Sát cục #{ep}: {side} đi, chiếu bí trong {n} nước!'
     game = None
     if 'red' in item:
         from xq.game_episode import year_of
@@ -418,11 +417,12 @@ def build_mate(collection, file_name, item, ep, catalog):
         game = {'winner': winner, 'loser': loser, 'year': year_of(item.get('date')), 'resigned': item.get('resigned'),
                 'red': item['red'], 'black': item['black']}
         who = loser or ('Đen' if win == 'w' else 'Đỏ')
-        title = (f'Vì sao {who} xin thua? ' if item.get('resigned') else '') + \
-                (f'{winner} ' if winner else '') + (sp + ', ' if sp else '') + f'bí trong {n} nước'
-    yt_title = f'{title}{"" if title[-1] in "!?" else "!"} Bạn giải được không? #Shorts'
-    desc = (f'{side} đi trước, chiếu bí trong {n} nước' + (f' ({sp})' if sp else '') + '.\n'
-            'Lời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\n'
+        yr = f' ({game["year"]})' if game['year'] else ''
+        title = (f'Vì sao {who} xin thua?{yr}' if item.get('resigned') else
+                 f'{winner or side} kết thúc ván đấu bằng sát cục {n} nước{yr}')
+    yt_title = f'{title}{"" if title[-1] in "!?)" else "!"} Bạn giải được không? #Shorts'
+    desc = (f'{side} đi trước, chiếu bí trong {n} nước. Bạn tìm ra không? Đáp án trong video.\n'
+            ''
             f'Thế cờ: "{item.get("title", file_name)}" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n'
             '#Shorts #CoTuong #SatCuc #TinhHoaCoTan')
     data = {
