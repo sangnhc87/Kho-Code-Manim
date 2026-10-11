@@ -23,6 +23,13 @@ thế đó Đỏ **chiếu bí sau 12 nước**, kết thúc bằng thế Đen h
 6. **Giải phẫu thế bí**: ô thoát nào bị quân nào khống chế.
 7. **Tổng kết**.
 
+Hai dạng tập:
+- **Thế thắng** (`result` mặc định `W`): Đỏ đi trước, tìm đường thắng nhanh nhất.
+- **Thủ hòa** (`"result": "D"` trong chủ đề): Đen đi trước, chỉ 1–2 nước giữ hòa, mọi nước khác thua.
+
+Mỗi tập kèm một **YouTube Short** câu đố khung dọc (dưới 60 giây): đề bài, đếm ngược, đáp án,
+kết luận bảng tra (`scripts/make_short.py`, `src/short_scene.py`).
+
 ## Cấu trúc
 
 ```text
@@ -50,11 +57,17 @@ src/scene.py         cảnh Manim
 | `build_count` | Số tập mới dựng theo giáo trình (tra chessdb ngay trên runner, tự commit) |
 | `episodes` | `new` (vừa dựng), `latest`, `unpublished`, `ep-0001,ep-0002`, `range:1-5` |
 | `quality` | `preview` 480p chỉ để xem (artifact); `full` 1080p **và đăng YouTube công khai** |
+| `targets` | `both` (video + Short), `video`, `short` |
 | `voice` | `edge` (vi-VN-NamMinhNeural) hoặc `zalo` (cần secret `ZALO_API_KEY`) |
 
 Chạy tự động mỗi ngày (2 tập mới, 1080p, đăng YouTube): đặt biến repo
 **Settings → Secrets and variables → Actions → Variables → `COTAN_DAILY` = `true`**.
-Hạn mức YouTube API mặc định cho phép khoảng 6 lượt tải lên/ngày.
+Hạn mức YouTube API mặc định cho phép khoảng 6 lượt tải lên/ngày (mỗi tập = 2 lượt: video + Short).
+Tập đăng lỗi (ví dụ hết hạn mức) có thể đăng bù bằng `episodes=unpublished`.
+
+Quy tắc vận hành: các lượt render có thể chạy song song, nhưng **không chạy hai lượt có
+`build_count > 0` cùng lúc** (sẽ trùng số tập). Lịch sử đăng ghi theo khoá `cotan3_ep-XXXX`
+và `cotan3_short_ep-XXXX` trong `youtube_uploaded_history.json`.
 
 ## Mở rộng tới 1000 tập
 
