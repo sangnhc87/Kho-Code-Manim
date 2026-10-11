@@ -59,7 +59,7 @@ class XSS095(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.45
-        self.g = grid(14, 14, .33).move_to([.15, 1.15, 0])
+        self.g = grid(14, 14, .31).move_to([.15, .95, 0])
         heads = [tx('trai', 18, CYAN).next_to(self.g.cells[0][3], [0, 1, 0], buff=.1),
                  tx('gái', 18, CORAL).next_to(self.g.cells[0][10], [0, 1, 0], buff=.1),
                  tx('trai', 18, CYAN).rotate(1.5708).next_to(self.g.cells[3][0], [-1, 0, 0], buff=.1),

@@ -55,10 +55,11 @@ class XSS099(ShortScene):
     N = 99
 
     def hook_visual(self, t0):
-        self.pts = polygon_pts(6, 2.0, (0, 1.3))
+        self.board_top = -1.35
+        self.pts = polygon_pts(6, 2.0, (0, 1.4))
         self.hexa = VGroup(Polygon(*self.pts, stroke_color=SOFT, stroke_width=4),
                            *[Dot(p, radius=.12, color=WHITE) for p in self.pts],
-                           *[self.TM(f'${k + 1}$', 26, SOFT).move_to([p[0] * 1.15, 1.3 + (p[1] - 1.3) * 1.15, 0])
+                           *[self.TM(f'${k + 1}$', 26, SOFT).move_to([p[0] * 1.15, 1.4 + (p[1] - 1.4) * 1.15, 0])
                              for k, p in enumerate(self.pts)])
         self.wait_until(.4, t0)
         self.play(FadeIn(self.hexa), run_time=self.rt(.15))

@@ -337,11 +337,11 @@ class ShortScene(Scene):
         wide = any(self.M(k, 1.75).width > 1.4 for k in keys)  # long options: one per row
         opts = VGroup()
         for letter, key in zip('ABCD', keys):
-            c = card(5.6, .82, STROKE, PANEL, radius=.16, stroke_width=3) if wide else \
+            c = card(5.6, 1.0, STROKE, PANEL, radius=.16, stroke_width=3) if wide else \
                 card(2.1, 1.3, STROKE, PANEL, radius=.18, stroke_width=3)
-            m = self.M(key, 1.5, max_w=4.4) if wide else self.M(key, 1.75, max_w=1.35)
-            if wide and m.height > .7:
-                m.scale_to_fit_height(.7)
+            m = self.M(key, 1.75, max_w=4.5) if wide else self.M(key, 1.75, max_w=1.35)
+            if wide and m.height > .86:
+                m.scale_to_fit_height(.86)
             row = VGroup(tx(letter, 36, GOLD, bold=True), m).arrange(RIGHT, buff=.25)
             opts.add(VGroup(c, row.move_to(c)))
         if wide:
@@ -435,7 +435,7 @@ class ShortScene(Scene):
             name = tx(nxt['title'], 40, WHITE, bold=True, max_w=6.2).move_to(box.get_center() + DOWN * .25)
             self.play(FadeIn(box), FadeIn(tag, shift=DOWN * .1), Write(name), run_time=self.rt(.14))
         self.wait_until(.6, t0)
-        follow = VGroup(badge('THEO DÕI', CORAL, 26), tx('để không bỏ lỡ 120 thử thách', 26, SOFT)) \
+        follow = VGroup(badge('THEO DÕI', CORAL, 26), tx('để không bỏ lỡ thử thách mới mỗi ngày', 26, SOFT)) \
             .arrange(DOWN, buff=.2).move_to([0, -1.4, 0])
         self.play(FadeIn(follow, shift=UP * .15), run_time=self.rt(.08))
 

@@ -75,6 +75,7 @@ class XSS112(ShortScene):
 
     def beat_s2(self, T):
         t0 = self.now()
+        self.clear_board(.03)
         m = self.M('sol', 2.1)
         self.write_board(m)
         self.frame(m)

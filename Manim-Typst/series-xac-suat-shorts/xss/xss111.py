@@ -59,8 +59,8 @@ class XSS111(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.3
-        self.rows = VGroup(*[VGroup(*[token(ch, CYAN if ch == 'A' else CORAL, .21) for ch in o]).arrange(buff=.06)
-                             for o in ORDERS]).arrange_in_grid(5, 2, buff=(.8, .2)).move_to([0, 1.3, 0])
+        self.rows = VGroup(*[VGroup(*[token(ch, CYAN if ch == 'A' else CORAL, .27) for ch in o]).arrange(buff=.06)
+                             for o in ORDERS]).arrange_in_grid(5, 2, buff=(.5, .14)).move_to([0, 1.2, 0])
         self.wait_until(.5, t0)
         self.play(FadeIn(self.rows[0], lag_ratio=.2), run_time=self.rt(.1))
 
@@ -75,7 +75,7 @@ class XSS111(ShortScene):
         self.clear_board(.03)
         self.wait_until(.35, t0)
         self.play(*[r.animate.set_opacity(.2) for r, o in zip(self.rows, ORDERS) if not always_ahead(o)],
-                  *[r.animate.scale(1.2) for r, o in zip(self.rows, ORDERS) if always_ahead(o)], run_time=self.rt(.12))
+                  *[r.animate.scale(1.12) for r, o in zip(self.rows, ORDERS) if always_ahead(o)], run_time=self.rt(.12))
         self.write_board(tx('chỉ 2 thứ tự thỏa mãn', 30, GOLD, bold=True), anim='fade')
 
     def beat_s3(self, T):
@@ -85,6 +85,6 @@ class XSS111(ShortScene):
         self.write_board(m)
         self.frame(m)
         self.wait_until(.5, t0)
-        self.write_board(self.M('thm', 1.6), anim='fade')
+        self.write_board(self.M('thm', 2.0), anim='fade')
 
 

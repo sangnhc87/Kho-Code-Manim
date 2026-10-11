@@ -103,7 +103,7 @@
 | **XSS080** | Rút thăm trước hay sau? | 3 người lần lượt rút 3 lá thăm, chỉ 1 lá trúng. P(người thứ ba trúng)? | 1/3 | tree | XS22 |
 | **XSS081** | Lần thứ 3 mới gặp lỗi | 10 sản phẩm có 3 lỗi, kiểm tra lần lượt. P(lần thứ 3 mới gặp sản phẩm lỗi đầu tiên)? | 7/40 | tree | XS22 |
 | **XSS082** | Ba viên đạn | Mỗi viên trúng đích với xác suất 0,6; bắn đến khi trúng, tối đa 3 viên. P(trúng đích)? | 0,936 | tree | XS17 |
-| **XSS083** | Từ P(A|B) ra P(A ∪ B) | P(A) = 0,5; P(B) = 0,4; P(A\|B) = 0,3. Tính P(A ∪ B). | 0,78 | venn | XS22 |
+| **XSS083** | Từ điều kiện tới phép hợp | P(A) = 0,5; P(B) = 0,4; P(A\|B) = 0,3. Tính P(A ∪ B). | 0,78 | venn | XS22 |
 | **XSS084** | Ai bắn trúng? | Hai xạ thủ 0,8 và 0,7; biết có đúng một viên trúng. P(người thứ nhất trúng)? | 12/19 | tree | XS25 |
 | **XSS085** | Đồng xu hai mặt ngửa | 2 đồng xu thường, 1 đồng hai mặt ngửa. Chọn 1 đồng, tung được ngửa. P(đó là đồng hai mặt ngửa)? | 1/2 | tree | XS25 |
 
@@ -116,7 +116,7 @@
 | **XSS088** | Cần bao nhiêu người? | Cần ít nhất bao nhiêu người để P(trùng ngày sinh) > 99 %? | 57 | curve | XS13 |
 | **XSS089** | Bốn cặp vợ chồng | 4 cặp vợ chồng xếp hàng ngang ngẫu nhiên. P(mọi cặp đều ngồi cạnh nhau)? | 1/105 | cards | XS12 |
 | **XSS090** | Thư bỏ nhầm phong bì | 4 lá thư bỏ ngẫu nhiên vào 4 phong bì. P(không lá nào đúng địa chỉ)? | 3/8 | cards | XS13 |
-| **XSS091** | Con số 1/e | n lá thư, n phong bì, n rất lớn. P(không lá nào đúng) tiến về đâu? | 1/e ≈ 0,368 | curve | XS13 |
+| **XSS091** | Hằng số e xuất hiện | n lá thư, n phong bì, n rất lớn. P(không lá nào đúng) tiến về đâu? | 1/e ≈ 0,368 | curve | XS13 |
 | **XSS092** | Chia tiền cược | Ai thắng trước 3 ván được thưởng; A thắng 2, B thắng 1 thì dừng. Chia thưởng theo P(A thắng)? | 3/4 | tree | XS22 |
 | **XSS093** | Đi ngẫu nhiên | Mỗi bước tiến hoặc lùi 1 với xác suất 1/2. P(sau 4 bước về đúng chỗ cũ)? | 3/8 | tree | XS18 |
 | **XSS094** | Hộp của Bertrand | 3 hộp: 2 vàng, 2 bạc, 1 vàng 1 bạc. Chọn hộp, rút được đồng vàng. P(đồng còn lại cũng vàng)? | 2/3 | tree | XS25 |
@@ -318,7 +318,7 @@
 | **XSS245** | Có 6 thì khác nhau? | Gieo 3 xúc xắc, biết có ít nhất một mặt 6. P(ba mặt khác nhau)? | 60/91 | grid | XS20 |
 | **XSS246** | Ba phát trúng liên tiếp | Bắn 5 phát (mỗi phát trúng 0,6), biết trúng đúng 3 phát. P(3 phát trúng liên tiếp)? | 3/10 | tree | XS18 |
 | **XSS247** | Chọn n rồi chọn m | Chọn ngẫu nhiên n từ 1 đến 4, rồi chọn ngẫu nhiên m từ 1 đến n. P(m = 1)? | 25/48 | tree | XS24 |
-| **XSS248** | Biết m = 1, n bằng mấy? | Như trên, biết m = 1. P(n = 1)? | 12/25 | tree | XS25 |
+| **XSS248** | Lần ngược hai bước chọn | Như trên, biết m = 1. P(n = 1)? | 12/25 | tree | XS25 |
 
 ## L15 · Tham số xuôi – ngược (XSS249 – XSS264) · 75 – 150 s
 
@@ -332,7 +332,7 @@
 | **XSS254** | Tìm số bi đỏ hộp II | Hộp I: 2 đỏ 3 xanh; II: x đỏ 2 xanh. Chọn hộp ngẫu nhiên rồi rút 1 bi, P(đỏ) = 1/2. Tìm x. | x = 3 | tree | XS24 |
 | **XSS255** | Tham số sau khi chuyển bi | Chuyển 1 bi từ I (3 đỏ 1 xanh) sang II (a đỏ 2 xanh), rút từ II: P(đỏ) = 5/8. Tìm a. | a = 3 | tree | XS24 |
 | **XSS256** | Tìm tay nghề xạ thủ | Hai xạ thủ trúng p và 0,8. P(đúng 1 người trúng) = 0,38. Tìm p. | p = 0,7 | tree | XS17 |
-| **XSS257** | P(A | A ∪ B) | A, B độc lập, P(A) = 0,5; P(B) = 0,4. Tính P(A \| A ∪ B). | 5/7 | square | XS23 |
+| **XSS257** | Điều kiện là một phép hợp | A, B độc lập, P(A) = 0,5; P(B) = 0,4. Tính P(A \| A ∪ B). | 5/7 | square | XS23 |
 | **XSS258** | Nhóm có bao nhiêu bạn? | n bạn xếp hàng ngang, P(Hà và Lan đứng cạnh nhau) = 1/4. Tìm n. | n = 8 | cards | XS12 |
 | **XSS259** | n đỏ, n xanh | Hộp n đỏ, n xanh. Rút 2 bi, P(cùng màu) = 4/9. Tìm n. | n = 5 | urn | XS07 |
 | **XSS260** | Đồng xu lệch bao nhiêu? | Xu lệch, ngửa với xác suất p > 1/2. Tung 2 lần, P(1 ngửa 1 sấp) = 0,48. Tìm p. | p = 0,6 | tree | XS18 |

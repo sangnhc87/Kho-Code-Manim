@@ -47,6 +47,7 @@ class XSS101(ShortScene):
     N = 101
 
     def hook_visual(self, t0):
+        self.board_top = -1.4
         pts = polygon_pts(6, 1.9, (0, 1.3))
         self.table = Circle(radius=1.15, stroke_color=STROKE, stroke_width=4, fill_color='#14233B', fill_opacity=1) \
             .move_to([0, 1.3, 0])

@@ -51,7 +51,7 @@ class XSS088(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.0
-        x0, x1, y0, y1 = -3.3, 3.0, -.3, 2.9
+        x0, x1, y0, y1 = -2.75, 3.1, -.3, 2.9
         X = lambda n: x0 + (x1 - x0) * n / 70  # noqa: E731
         Y = lambda p: y0 + (y1 - y0) * p  # noqa: E731
         self.X, self.Y = X, Y

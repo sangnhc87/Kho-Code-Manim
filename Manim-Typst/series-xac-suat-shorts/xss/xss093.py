@@ -72,22 +72,22 @@ class XSS093(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        self.frame_grid, self.paths = self.lattice()
+        self.frame_grid, self.walks = self.lattice()
         self.wait_until(.55, t0)
         self.play(FadeIn(self.frame_grid), run_time=self.rt(.08))
-        self.play(Create(self.paths[5]), run_time=self.rt(.15))
+        self.play(Create(self.walks[5]), run_time=self.rt(.15))
 
     def beat_s1(self, T):
         t0 = self.now()
-        self.play(*[Create(p) for p in self.paths], run_time=self.rt(.35))
+        self.play(*[Create(p) for p in self.walks], run_time=self.rt(.35))
         self.wait_until(.5, t0)
         self.write_board(self.M('n', 2.1))
 
     def beat_s2(self, T):
         t0 = self.now()
         self.clear_board(.03)
-        self.play(*[p.animate.set_stroke(opacity=.15) for p, w in zip(self.paths, WALKS) if sum(w)],
-                  *[p.animate.set_stroke(width=6) for p, w in zip(self.paths, WALKS) if not sum(w)], run_time=self.rt(.1))
+        self.play(*[p.animate.set_stroke(opacity=.15) for p, w in zip(self.walks, WALKS) if sum(w)],
+                  *[p.animate.set_stroke(width=6) for p, w in zip(self.walks, WALKS) if not sum(w)], run_time=self.rt(.1))
         self.wait_until(.5, t0)
         self.write_board(self.M('a', 2.1))
 

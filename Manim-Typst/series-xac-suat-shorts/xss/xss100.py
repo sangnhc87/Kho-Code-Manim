@@ -59,6 +59,7 @@ class XSS100(ShortScene):
     N = 100
 
     def hook_visual(self, t0):
+        self.board_top = -1.4
         self.pts = polygon_pts(8, 2.0, (0, 1.3), start=90)
         self.oct = VGroup(Circle(radius=2.0, stroke_color=STROKE, stroke_width=2).move_to([0, 1.3, 0]),
                           Polygon(*self.pts, stroke_color=SOFT, stroke_width=4),

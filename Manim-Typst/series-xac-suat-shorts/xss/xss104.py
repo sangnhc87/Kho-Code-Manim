@@ -61,7 +61,7 @@ class XSS104(TreeMixin, ShortScene):
     N = 104
 
     def hook_visual(self, t0):
-        self.urns = VGroup(urn('RRRRBB', 6, .27), urn('RRRBBB', 6, .27)).arrange(buff=.5).move_to([0, 1.5, 0])
+        self.urns = VGroup(urn('RRRRBB', 3, .3), urn('RRRBBB', 3, .3)).arrange(buff=1.0).move_to([0, 1.5, 0])
         labs = VGroup(tx('hộp I', 26, CYAN, bold=True).next_to(self.urns[0], DOWN, buff=.15),
                       tx('hộp II', 26, PURPLE, bold=True).next_to(self.urns[1], DOWN, buff=.15))
         self.labs = labs

@@ -14,10 +14,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import CORAL, CYAN, SOFT, WHITE  # noqa: E402
 
 EPISODE = {'code': 'XSS092', 'answer': '3/4'}
-PROBLEM = ['Ai thắng $3$ ván trước được cả tiền',
-           'thưởng. Đang $2 - 1$ cho A thì phải dừng.',
-           'Chia thưởng theo $P("A thắng")$ bằng bao',
-           'nhiêu?']
+PROBLEM = ['Ai thắng $3$ ván trước được cả thưởng.',
+           'Đang $2 - 1$ cho A thì phải dừng.',
+           'Chia thưởng theo $P("A thắng")$ thế nào?']
 OPTIONS = ['2/3', '3/4', '1/2']
 CORRECT = 1
 ANSWER_VALUE = .75

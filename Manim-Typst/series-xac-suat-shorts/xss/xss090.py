@@ -39,7 +39,7 @@ BEATS = [
 
 FORMULAS = formulas('3/8', OPTIONS,
                     n='n(Omega) = 4! = 24',
-                    ie='D_4 = 24 - 4 dot 6 + 6 dot 2 - 4 dot 1 + 1 = 9',
+                    ie='D_4 = 24 - 24 + 12 - 4 + 1 = 9',
                     prob='P = 9/24 = 3/8')
 
 
@@ -75,7 +75,7 @@ class XSS090(ShortScene):
         t0 = self.now()
         self.clear_board(.03)
         self.wait_until(.25, t0)
-        m = self.M('ie', 1.5)
+        m = self.M('ie', 2.0)
         self.write_board(m)
         self.frame(m)
 

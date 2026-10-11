@@ -68,7 +68,7 @@ class XSS097(ShortScene):
         t0 = self.now()
         self.clear_board(.03)
         self.wait_until(.35, t0)
-        self.play(FadeIn(self.TM('mỗi vòng: A $1/2$, B $1/4$', 32, GOLD, bold=True).move_to([0, .1, 0])), run_time=self.rt(.06))
+        self.play(FadeIn(self.TM('mỗi vòng: A $1/2$, B $1/4$', 32, GOLD, bold=True).move_to([0, -.15, 0])), run_time=self.rt(.06))
 
     def beat_s3(self, T):
         t0 = self.now()
