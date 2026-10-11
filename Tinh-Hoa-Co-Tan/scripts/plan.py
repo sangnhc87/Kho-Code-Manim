@@ -1,19 +1,33 @@
-"""Generate bounded per-run GH Actions matrix; catalog size has no fixed limit."""
+#!/usr/bin/env python3
+"""Ma trận GitHub Actions: latest | all | unpublished | ep-0001,ep-0002 | range:1-12 | new:ep-0007,ep-0008."""
 import json
 import sys
 from pathlib import Path
 
-all_ids=sorted(p.stem for p in (Path(__file__).resolve().parents[1]/'episodes').glob('tap-*.json'))
-arg=(sys.argv[1] if len(sys.argv)>1 else 'latest').strip().lower()
-if not all_ids: raise SystemExit('No episode files!')
-if arg=='latest': ids=[all_ids[-1]]
-elif arg=='all': ids=all_ids
+ROOT = Path(__file__).resolve().parents[1]
+ids = sorted(p.stem for p in (ROOT / 'episodes').glob('ep-*.json'))
+arg = (sys.argv[1] if len(sys.argv) > 1 else 'latest').strip()
+if not ids:
+    raise SystemExit('Chưa có tập nào trong episodes/')
+if arg == 'latest':
+    pick = [ids[-1]]
+elif arg == 'all':
+    pick = ids
+elif arg == 'unpublished':
+    hist_path = ROOT.parent / 'youtube_uploaded_history.json'
+    hist = json.loads(hist_path.read_text(encoding='utf-8')) if hist_path.exists() else {}
+    pick = [i for i in ids if f'cotan3_{i}' not in hist]
 elif arg.startswith('range:'):
-    a,b=arg[6:].split('-',1)
-    ids=[f'tap-{n:04d}' for n in range(int(a),int(b)+1)]
-else: ids=[a.strip() for a in arg.split(',') if a.strip()]
-if len(ids)>128:
-    raise SystemExit('Maximum 128 per workflow run; use range:0001-0128 etc. Catalog size is unlimited.')
-if not ids or any(i not in all_ids for i in ids):
-    raise SystemExit(f'Invalid episode selection {ids}; catalog has {len(all_ids)} entries.')
-print(json.dumps({'include':[{'episode':id} for id in dict.fromkeys(ids)]},separators=(',',':')))
+    a, b = arg[6:].split('-', 1)
+    pick = [f'ep-{n:04d}' for n in range(int(a), int(b) + 1)]
+elif arg.startswith('new:'):
+    pick = [x for x in arg[4:].split(',') if x]
+else:
+    pick = [x.strip() for x in arg.split(',') if x.strip()]
+pick = list(dict.fromkeys(pick))
+missing = [i for i in pick if i not in ids]
+if missing or not pick:
+    raise SystemExit(f'Lựa chọn không hợp lệ: {missing or arg}')
+if len(pick) > 64:
+    raise SystemExit('Tối đa 64 tập mỗi lần chạy; hãy dùng range:')
+print(json.dumps({'include': [{'episode': i} for i in pick]}, separators=(',', ':')))

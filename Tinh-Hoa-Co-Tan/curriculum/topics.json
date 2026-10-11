@@ -1,0 +1,476 @@
+{
+ "note": "Giáo trình theo thứ tự phát sóng. Mọi con số trong 'theory' lấy từ khảo sát bảng tra chessdb (scripts/topic_stats.py, data/topic_stats.json). material = [quân Đỏ, quân Đen] không kể Tướng; constraints giới hạn ô đặt quân khi tìm thế (toạ độ [cột 0-8, hàng 0-9], hàng 0 là đáy Đỏ).",
+ "topics": [
+  {
+   "id": "binh-tuong-don",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Binh",
+   "title": "Binh thắng Tướng đơn",
+   "short": "Binh đơn đấu Tướng đơn",
+   "material": [
+    "P",
+    ""
+   ],
+   "constraints": {
+    "P": [
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      5
+     ],
+     [
+      2,
+      5
+     ],
+     [
+      3,
+      5
+     ],
+     [
+      4,
+      5
+     ],
+     [
+      5,
+      5
+     ],
+     [
+      6,
+      5
+     ],
+     [
+      7,
+      5
+     ],
+     [
+      8,
+      5
+     ],
+     [
+      0,
+      6
+     ],
+     [
+      1,
+      6
+     ],
+     [
+      2,
+      6
+     ],
+     [
+      3,
+      6
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      5,
+      6
+     ],
+     [
+      6,
+      6
+     ],
+     [
+      7,
+      6
+     ],
+     [
+      8,
+      6
+     ],
+     [
+      0,
+      7
+     ],
+     [
+      1,
+      7
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      3,
+      7
+     ],
+     [
+      4,
+      7
+     ],
+     [
+      5,
+      7
+     ],
+     [
+      6,
+      7
+     ],
+     [
+      7,
+      7
+     ],
+     [
+      8,
+      7
+     ],
+     [
+      0,
+      8
+     ],
+     [
+      1,
+      8
+     ],
+     [
+      2,
+      8
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      6,
+      8
+     ],
+     [
+      7,
+      8
+     ],
+     [
+      8,
+      8
+     ]
+    ]
+   },
+   "dtm": [
+    9,
+    25
+   ],
+   "max_first_keep": 4,
+   "episodes": 3,
+   "theory": [
+    "Đây là thế tàn nền tảng nhất: một Binh đã qua sông cùng Tướng, đấu với Tướng đơn.",
+    "Kênh đã tra một trăm thế ngẫu nhiên trên bảng tra cờ tàn: chỉ cần Binh chưa xuống tới hàng đáy, Đỏ thắng trong tất cả các thế.",
+    "Ngược lại, khi Binh đã xuống hàng đáy, người ta gọi là Binh già, thì cả hai mươi lăm thế được thử đều hòa, vì Binh không bao giờ đi lùi được.",
+    "Bí quyết: dùng Tướng Đỏ chiếm lộ để khống chế mặt Tướng Đen, rồi mới đưa Binh vào cung, tuyệt đối không vội đẩy Binh xuống đáy."
+   ],
+   "bullets": [
+    "Binh chưa xuống đáy: Đỏ luôn thắng",
+    "Binh già (đã xuống đáy): chỉ hòa",
+    "Tướng Đỏ khống chế mặt Tướng",
+    "Không vội đẩy Binh xuống đáy"
+   ],
+   "takeaway": "Với tàn Binh, Tướng Đỏ là quân tấn công quan trọng nhất: khống chế mặt Tướng trước, rồi mới đưa Binh vào cung, và đừng bao giờ vội đẩy Binh xuống hàng đáy.",
+   "takeaway_short": "Tướng khống chế trước, Binh vào sau"
+  },
+  {
+   "id": "ma-tuong-don",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Mã",
+   "title": "Mã thắng Tướng đơn",
+   "short": "Mã đơn đấu Tướng đơn",
+   "material": [
+    "N",
+    ""
+   ],
+   "dtm": [
+    7,
+    15
+   ],
+   "max_first_keep": 5,
+   "episodes": 2,
+   "theory": [
+    "Một Mã cùng Tướng có thắng được Tướng đơn không? Bảng tra trả lời: có. Trong năm mươi thế ngẫu nhiên kênh khảo sát, Đỏ thắng cả năm mươi thế, và thế dài nhất cũng chỉ cần sáu nước.",
+    "Có hai luật giúp Mã làm được điều này. Thứ nhất, luật lộ mặt tướng: hai Tướng không được đối mặt trên cùng một lộ khi giữa chúng không có quân nào, nên Tướng Đỏ khống chế được cả một lộ.",
+    "Thứ hai, trong cờ tướng, bên hết nước đi là thua, kể cả khi không bị chiếu. Vì vậy Mã chỉ cần chiếm nốt những ô cuối cùng."
+   ],
+   "bullets": [
+    "Mã + Tướng luôn thắng Tướng đơn",
+    "Tướng Đỏ khống chế một lộ nhờ luật lộ mặt tướng",
+    "Hết nước đi cũng là thua",
+    "Mã khoá nốt các ô còn lại"
+   ],
+   "takeaway": "Trong cờ tàn, Tướng là một quân tấn công: nhờ luật lộ mặt tướng, Tướng Đỏ khống chế cả một lộ, Mã chỉ việc khoá nốt những ô còn lại.",
+   "takeaway_short": "Tướng Đỏ là quân tấn công"
+  },
+  {
+   "id": "phao-si-tuong-don",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Pháo",
+   "title": "Pháo cần ngòi: Pháo Sĩ thắng Tướng đơn",
+   "short": "Pháo Sĩ đấu Tướng đơn",
+   "material": [
+    "CA",
+    ""
+   ],
+   "dtm": [
+    7,
+    15
+   ],
+   "max_first_keep": 5,
+   "episodes": 2,
+   "theory": [
+    "Pháo là quân mạnh nhưng có một điểm yếu: muốn chiếu thì phải có ngòi, tức là một quân đứng giữa Pháo và Tướng địch.",
+    "Bảng tra xác nhận điều này rất rõ: Pháo đơn cùng Tướng đấu Tướng đơn thì cả năm mươi thế được thử đều hòa.",
+    "Nhưng chỉ cần thêm một Sĩ làm ngòi, Đỏ thắng trong cả năm mươi thế, thường chỉ sau năm, sáu nước.",
+    "Kỹ thuật: Tướng Đỏ khống chế mặt Tướng, Sĩ đứng làm ngòi, Pháo chiếu từ phía sau ngòi."
+   ],
+   "bullets": [
+    "Pháo đơn: chỉ hòa",
+    "Pháo + Sĩ: luôn thắng",
+    "Sĩ đứng làm ngòi cho Pháo",
+    "Tướng Đỏ khống chế mặt Tướng"
+   ],
+   "takeaway": "Pháo không có ngòi thì không chiếu được. Trong tàn cuộc, Sĩ của chính mình là chiếc ngòi tốt nhất.",
+   "takeaway_short": "Pháo cần ngòi, Sĩ là ngòi"
+  },
+  {
+   "id": "ma-si",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Mã",
+   "title": "Mã thắng Sĩ đơn",
+   "short": "Mã đơn đấu Sĩ đơn",
+   "material": [
+    "N",
+    "A"
+   ],
+   "dtm": [
+    21,
+    37
+   ],
+   "max_first_keep": 4,
+   "episodes": 3,
+   "theory": [
+    "Mã đấu Sĩ đơn là bài học kỹ thuật kinh điển. Trong năm mươi thế ngẫu nhiên được tra, Đỏ thắng tất cả.",
+    "Nhưng đường thắng không ngắn: trung bình khoảng mười lăm nước, có thế phải gần hai mươi nước.",
+    "Sĩ Đen vừa che chắn cho Tướng, vừa có thể vô tình chặn mất đường thoát của chính Tướng mình.",
+    "Đỏ phải phối hợp nhịp nhàng: Tướng chiếm lộ khống chế, Mã từng bước dồn ép, và khi cần thì đi nước chờ để Đen tự phá thế thủ."
+   ],
+   "bullets": [
+    "Mã thắng Sĩ đơn trong mọi thế khảo sát",
+    "Đường thắng dài: cần kiên nhẫn",
+    "Nước chờ buộc Đen tự phá thế",
+    "Sĩ Đen có thể tự chặn Tướng"
+   ],
+   "takeaway": "Thắng Sĩ đơn bằng Mã là bài kiểm tra về sự kiên nhẫn: Tướng khống chế, Mã dồn ép, và đúng lúc thì nhường nước để Đen tự đi vào chỗ chết.",
+   "takeaway_short": "Kiên nhẫn: khống chế rồi nhường nước"
+  },
+  {
+   "id": "song-binh-si",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Binh",
+   "title": "Song Binh phá Sĩ đơn",
+   "short": "Hai Binh đấu Sĩ đơn",
+   "material": [
+    "PP",
+    "A"
+   ],
+   "dtm": [
+    15,
+    29
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Một Binh đấu Sĩ đơn thường chỉ hòa: trong năm mươi thế kênh tra, chỉ khoảng sáu phần trăm thắng.",
+    "Nhưng hai Binh thì khác hẳn: tỉ lệ thắng tăng lên gần chín phần mười.",
+    "Hai Binh hỗ trợ nhau: một Binh khoá đường, một Binh tiến vào cung. Tướng Đỏ vẫn giữ vai trò khống chế mặt Tướng.",
+    "Điều cần tránh là để cả hai Binh xuống đáy quá sớm, vì Binh xuống đáy thì mất hết sức tấn công."
+   ],
+   "bullets": [
+    "Một Binh vs Sĩ: phần lớn hòa",
+    "Hai Binh vs Sĩ: gần 9/10 thắng",
+    "Một Binh khoá, một Binh tiến",
+    "Không để Binh xuống đáy sớm"
+   ],
+   "takeaway": "Hai Binh phối hợp mạnh hơn rất nhiều lần một Binh: một Binh khoá đường, một Binh tiến vào cung, Tướng Đỏ khống chế mặt Tướng.",
+   "takeaway_short": "Một Binh khoá, một Binh tiến"
+  },
+  {
+   "id": "binh-si",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Binh",
+   "title": "Binh đơn thắng Sĩ đơn: thế đặc biệt",
+   "short": "Binh đơn đấu Sĩ đơn",
+   "material": [
+    "P",
+    "A"
+   ],
+   "constraints": {
+    "P": [
+     [
+      3,
+      6
+     ],
+     [
+      4,
+      6
+     ],
+     [
+      5,
+      6
+     ],
+     [
+      3,
+      7
+     ],
+     [
+      4,
+      7
+     ],
+     [
+      5,
+      7
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      6,
+      7
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      5,
+      8
+     ],
+     [
+      4,
+      8
+     ]
+    ]
+   },
+   "dtm": [
+    9,
+    25
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Binh đơn đấu Sĩ đơn về nguyên tắc là thế hòa: trong năm mươi thế ngẫu nhiên, chỉ khoảng sáu phần trăm Đỏ thắng được.",
+    "Sĩ Đen chặn đường Binh, còn Tướng Đen có chỗ để thở. Muốn thắng, Đỏ cần những điều kiện đặc biệt: Binh đã áp sát cung, Tướng Đỏ khống chế đúng lộ, Sĩ Đen đứng lệch.",
+    "Hôm nay chúng ta học một thế như vậy, nơi mỗi nước của Đỏ đều phải tuyệt đối chính xác."
+   ],
+   "bullets": [
+    "Binh vs Sĩ: nguyên tắc là hòa",
+    "Chỉ thắng khi Đen lạc vị",
+    "Binh áp sát cung + Tướng khống chế",
+    "Mỗi nước phải chính xác"
+   ],
+   "takeaway": "Thế hòa trên lý thuyết vẫn có thể thắng khi đối phương lạc vị, nhưng chỉ khi bên mạnh hơn tìm được đúng nước duy nhất.",
+   "takeaway_short": "Thế hòa vẫn thắng nếu Đen lạc vị"
+  },
+  {
+   "id": "phao-binh-song-si",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Pháo Binh",
+   "title": "Pháo Binh thắng Song Sĩ",
+   "short": "Pháo Binh đấu Song Sĩ",
+   "material": [
+    "CP",
+    "AA"
+   ],
+   "dtm": [
+    17,
+    31
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Pháo Binh đấu Song Sĩ: bảng tra cho thấy gần chín phần mười số thế Đỏ thắng.",
+    "Nhưng đổi Song Sĩ thành Song Tượng thì kết quả đảo ngược, chỉ khoảng sáu phần trăm thắng; còn gặp Sĩ Tượng toàn thì cả năm mươi thế được thử đều hòa.",
+    "Lý do: Song Sĩ đứng quanh Tướng nên dễ trở thành ngòi cho Pháo, và dễ chặn đường thoát của chính Tướng mình.",
+    "Kỹ thuật: Binh áp sát cung, Pháo mượn Sĩ Đen làm ngòi, Tướng Đỏ khống chế mặt Tướng."
+   ],
+   "bullets": [
+    "Pháo Binh vs Song Sĩ: phần lớn thắng",
+    "vs Song Tượng: phần lớn hòa",
+    "vs Sĩ Tượng toàn: hòa",
+    "Pháo mượn Sĩ Đen làm ngòi"
+   ],
+   "takeaway": "Sĩ Đen đứng quanh Tướng vừa là lá chắn vừa là ngòi cho Pháo Đỏ. Nắm được điều đó, Pháo Binh thắng Song Sĩ.",
+   "takeaway_short": "Pháo mượn Sĩ Đen làm ngòi"
+  },
+  {
+   "id": "ma-tuong-den",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Mã",
+   "title": "Mã đơn thắng Tượng đơn: thế đặc biệt",
+   "short": "Mã đơn đấu Tượng đơn",
+   "material": [
+    "N",
+    "B"
+   ],
+   "dtm": [
+    15,
+    29
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Nếu Mã thắng chắc Sĩ đơn, thì gặp Tượng đơn lại khó hơn nhiều: trong năm mươi thế được tra, chỉ khoảng ba phần mười Đỏ thắng.",
+    "Tượng đứng xa Tướng nên không tự chặn Tướng như Sĩ, và Tượng có thể đổi chỗ liên tục để chờ nước.",
+    "Đỏ chỉ thắng khi Tướng Đen bị dồn vào vị trí xấu, hoặc Tượng bị Mã bắt. Hôm nay ta xem một thế thắng như vậy."
+   ],
+   "bullets": [
+    "Mã vs Sĩ đơn: luôn thắng",
+    "Mã vs Tượng đơn: khoảng 3/10 thắng",
+    "Tượng có thể chờ nước",
+    "Thắng khi Tướng Đen lạc vị"
+   ],
+   "takeaway": "Cùng là một quân phòng thủ, nhưng Tượng khó phá hơn Sĩ vì không tự chặn Tướng. Muốn thắng phải tận dụng lúc Tướng Đen lạc vị.",
+   "takeaway_short": "Tượng khó phá hơn Sĩ"
+  },
+  {
+   "id": "song-binh-song-si",
+   "module": "Học phần 1 – Cờ tàn căn bản",
+   "category": "Tàn Binh",
+   "title": "Song Binh phá Song Sĩ",
+   "short": "Hai Binh đấu Song Sĩ",
+   "material": [
+    "PP",
+    "AA"
+   ],
+   "dtm": [
+    19,
+    37
+   ],
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Hai Binh đấu Song Sĩ: trong năm mươi thế được tra, Đỏ thắng khoảng ba phần tư.",
+    "Song Sĩ là bức tường che Tướng, nhưng cũng làm cung chật lại, khiến Tướng Đen ít chỗ chạy.",
+    "Kế hoạch: Tướng Đỏ khống chế mặt Tướng, hai Binh lần lượt áp sát cung, không để Binh nào xuống đáy vô ích."
+   ],
+   "bullets": [
+    "Song Binh vs Song Sĩ: khoảng 3/4 thắng",
+    "Song Sĩ làm cung chật",
+    "Hai Binh áp sát cung",
+    "Không để Binh xuống đáy vô ích"
+   ],
+   "takeaway": "Khi phòng thủ bằng Song Sĩ, cung cấm trở nên chật chội. Hai Binh áp sát cùng Tướng khống chế là đủ để phá thế.",
+   "takeaway_short": "Song Sĩ làm cung chật"
+  }
+ ]
+}

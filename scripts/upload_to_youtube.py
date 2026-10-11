@@ -439,6 +439,8 @@ def main():
     parser.add_argument("--description", default="", help="Mô tả video")
     parser.add_argument("--description-file", help="File mô tả (ghi đè mô tả mặc định của bài, ví dụ mô tả có mốc chương)")
     parser.add_argument("--tags", default="", help="Tags video (ngăn cách bằng dấu phẩy)")
+    parser.add_argument("--playlist-title", help="(chế độ --file) thêm video vào playlist này")
+    parser.add_argument("--history-key", help="(chế độ --file) khoá ghi vào youtube_uploaded_history.json")
     parser.add_argument("--privacy", choices=["public", "unlisted", "private"], default="public", help="Chế độ hiển thị (mặc định: public)")
     parser.add_argument("--series", choices=["trai_phang", "to_hop", "thong_ke", "cotan", "nguyen_ham_tich_phan"], help="Chạy theo chuỗi khóa học")
     parser.add_argument("--lesson", type=int, help="Chỉ định số bài cần tải (ví dụ: --lesson 1)")
@@ -574,15 +576,31 @@ Cảm ơn bạn rất nhiều vì đã đồng hành cùng kênh!
             handle_series_upload(youtube, args.series, privacy=args.privacy, limit=args.limit)
     elif args.file:
         title = args.title or Path(args.file).stem.replace("_", " ")
-        upload_single_file(
+        desc = Path(args.description_file).read_text(encoding="utf-8") if args.description_file else args.description
+        video_id, video_url = upload_single_file(
             youtube=youtube,
             video_path=args.file,
             title=title,
-            description=args.description,
+            description=desc,
             tags=args.tags,
             privacy=args.privacy,
             category_id=args.category_id,
         )
+        if video_id and args.playlist_title:
+            playlist_id = get_or_create_playlist(youtube, args.playlist_title, args.playlist_title)
+            add_video_to_playlist(youtube, playlist_id, video_id)
+        if video_id and args.history_key:
+            history = load_history()
+            history[args.history_key] = {
+                "title": title,
+                "video_id": video_id,
+                "url": video_url,
+                "file": str(args.file),
+                "uploaded_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+            }
+            save_history(history)
+        if not video_id:
+            sys.exit(1)
     else:
         print("Vui lòng cung cấp --series [trai_phang|to_hop|thong_ke] hoặc --file [duong_dan_mp4]")
 

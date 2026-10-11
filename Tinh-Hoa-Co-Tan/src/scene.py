@@ -1,296 +1,438 @@
-"""Reusable 16:9 Xiangqi documentary scene for Manim Community 0.19+.
-Reads episode JSON, audio timing and Typst title cards from environment.
+"""Cảnh Manim cho một tập Tinh Hoa Cờ Tàn (định dạng episodes/ep-XXXX.json).
+
+Đọc kịch bản, thời lượng từng câu thoại (voice/timing.json) và thẻ Typst
+từ biến môi trường. Đỏ ở phía dưới, toạ độ trùng với chessdb (a0 = góc dưới trái).
+Mỗi bước (step) = một câu thoại + tối đa một nước đi, nên nước đi luôn khớp lời.
 """
 from __future__ import annotations
+
 import json
-import math
 import os
+import re
+import sys
 import textwrap
 from pathlib import Path
-from manim import *
-from src.core import Board, parse_square
-from src.engine_coords import board_fen
-from src.layout import (BOARD_GRID_STEP, BOARD_CENTER_X, BOARD_CENTER_Y,
-                        HEADER_LINE_Y, assert_safe_layout)
+
+from manim import *  # noqa: F401,F403
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from src.layout import BOARD_CENTER_X, BOARD_CENTER_Y, BOARD_GRID_STEP, HEADER_LINE_Y, assert_safe_layout  # noqa: E402
+from xq.board import Position, parse_sq, side_of  # noqa: E402
 
 BG = '#0B1320'
 PANEL = '#15243A'
 GOLD = '#F5BF70'
-SAND = '#E4C492'
 RED = '#C94346'
 INK = '#2F2721'
 LIGHT = '#F4EFE1'
-MUTED = '#B5C5D6'
+MUTED = '#9FB3C8'
 GREEN = '#54CEA9'
 CYAN = '#6ED6EF'
-config.background_color = BG  # Must be set before Manim creates the camera.
+ORANGE = '#F29D52'
+LINE = '#8A6540'
+config.background_color = BG
 FONT = 'Noto Sans'
 CJK = 'Noto Sans CJK SC'
-PIECE_GLYPH = {'K':'帥','A':'仕','B':'相','E':'相','N':'傌','H':'傌','R':'俥','C':'炮','P':'兵',
-               'k':'將','a':'士','b':'象','e':'象','n':'馬','h':'馬','r':'車','c':'砲','p':'卒'}
+GLYPH = {'K': '帥', 'A': '仕', 'B': '相', 'N': '傌', 'R': '俥', 'C': '炮', 'P': '兵',
+         'k': '將', 'a': '士', 'b': '象', 'n': '馬', 'r': '車', 'c': '砲', 'p': '卒'}
+PANEL_X = 3.21
+PANEL_W = 6.02
+TEXT_W = 5.55
 
 
-def text_lines(value, width=31, max_lines=3):
-    lines = textwrap.wrap(str(value), width=width, break_long_words=False, break_on_hyphens=False)
-    if len(lines) > max_lines:
-        lines = lines[:max_lines]
-        lines[-1] = lines[-1].rstrip(' .,') + '…'
-    return '\n'.join(lines)
+def label(value, size, color=LIGHT, bold=False, wrap=None, lines=3, max_w=TEXT_W, max_h=None):
+    text = str(value)
+    if wrap:
+        parts = textwrap.wrap(text, width=wrap, break_long_words=False)
+        if len(parts) > lines:
+            parts = parts[:lines]
+            parts[-1] = parts[-1].rstrip(' .,') + '…'
+        text = '\n'.join(parts)
+    obj = Text(text, font=FONT, font_size=size, color=color, weight=BOLD if bold else NORMAL,
+               line_spacing=1.15)
+    if obj.width > max_w:
+        obj.scale_to_fit_width(max_w)
+    if max_h and obj.height > max_h:
+        obj.scale_to_fit_height(max_h)
+    return obj
 
 
-def fit_label(value, x, y, max_width, max_height, font_size,
-              color, bold=False, wrap=None, max_lines=3):
-    """Auto-fit real Pango text bounds; never let captions overflow the panel."""
-    content = text_lines(value,wrap,max_lines) if wrap else str(value)
-    obj = Text(content,font=FONT,font_size=font_size,color=color,
-               weight='BOLD' if bold else 'NORMAL',line_spacing=1.18)
-    if obj.width > max_width:
-        obj.scale(max_width / obj.width)
-    if obj.height > max_height:
-        obj.scale(max_height / obj.height)
-    return obj.move_to([x,y,0])
+def pages(text, limit=135):
+    """Chia lời bình thành các trang phụ đề theo câu, mỗi trang tối đa ~3 dòng."""
+    sentences = []
+    for sen in re.split(r'(?<=[.!?])\s+', text.strip()):
+        while len(sen) > limit and ', ' in sen[:limit]:
+            cut = sen[:limit].rindex(', ') + 1
+            sentences.append(sen[:cut])
+            sen = sen[cut:].strip()
+        sentences.append(sen)
+    out, cur = [], ''
+    for sen in sentences:
+        if cur and len(cur) + 1 + len(sen) > limit:
+            out.append(cur)
+            cur = sen
+        else:
+            cur = (cur + ' ' + sen).strip()
+    if cur:
+        out.append(cur)
+    return out
 
 
-class XiangqiDisplay(VGroup):
-    """Board coordinates a0 = black top-left, i9 = red bottom-right."""
-    def __init__(self, state, **kwargs):
-        super().__init__(**kwargs)
-        self.state = state
-        # 16:9 Manim frame: x = -7.11..7.11, y = -4..4.
-        # Reserve y>3.18 for the header and y<-3.52 for the footer.
-        # The entire board including its border must fit within this safe area.
+class Board(VGroup):
+    def __init__(self, fen):
+        super().__init__()
         assert_safe_layout()
         self.step = BOARD_GRID_STEP
         self.ox, self.oy = BOARD_CENTER_X, BOARD_CENTER_Y
+        self.frame = None
+        self.add(self.art())
         self.pieces = {}
-        self.add(self.board_art())
-        for pos, piece in state.cells.items():
-            mob = self.make_piece(piece).move_to(self.xy(pos))
-            self.pieces[pos] = mob
-            self.add(mob)
+        self.state = Position.from_fen(fen)
+        for sq, p in self.state.cells.items():
+            self._spawn(sq, p)
 
-    def xy(self, square):
-        if isinstance(square,str): square = parse_square(square)
-        x, y = square
-        return np.array([self.ox + (x-4)*self.step, self.oy + (4.5-y)*self.step, 0])
+    def xy(self, sq):
+        if isinstance(sq, str):
+            sq = parse_sq(sq)
+        x, y = sq
+        return np.array([self.ox + (x - 4) * self.step, self.oy + (y - 4.5) * self.step, 0])
 
-    def board_art(self):
-        s=self.step
-        art=VGroup()
-        # Subtle backlight and wood-esque board with no external artwork dependency.
-        art.add(RoundedRectangle(width=s*8+0.57,height=s*9+0.52,
-                  corner_radius=0.16,fill_color='#E4C89B',fill_opacity=1,
-                  stroke_width=4,stroke_color='#856344').move_to(self.xy((4,4.5))))
-        lines=VGroup()
+    def art(self):
+        s = self.step
+        g = VGroup()
+        self.frame = RoundedRectangle(width=s * 8 + .57, height=s * 9 + .52, corner_radius=.16,
+                                      fill_color='#E4C89B', fill_opacity=1, stroke_width=4,
+                                      stroke_color='#856344').move_to(self.xy((4, 4.5)))
+        g.add(self.frame)
+        kw = dict(stroke_color=LINE, stroke_width=1.65)
         for y in range(10):
-            lines.add(Line(self.xy((0,y)),self.xy((8,y)),stroke_color='#8A6540',stroke_width=1.65))
+            g.add(Line(self.xy((0, y)), self.xy((8, y)), **kw))
         for x in range(9):
-            if x in (0,8):
-                lines.add(Line(self.xy((x,0)),self.xy((x,9)),stroke_color='#8A6540',stroke_width=1.65))
+            if x in (0, 8):
+                g.add(Line(self.xy((x, 0)), self.xy((x, 9)), **kw))
             else:
-                lines.add(Line(self.xy((x,0)),self.xy((x,4)),stroke_color='#8A6540',stroke_width=1.65))
-                lines.add(Line(self.xy((x,5)),self.xy((x,9)),stroke_color='#8A6540',stroke_width=1.65))
-        for top in (0,7):
-            lines.add(Line(self.xy((3,top)),self.xy((5,top+2)),stroke_color='#8A6540',stroke_width=1.65))
-            lines.add(Line(self.xy((5,top)),self.xy((3,top+2)),stroke_color='#8A6540',stroke_width=1.65))
-        art.add(lines)
-        river = Text('楚 河      漢 界',font=CJK,font_size=19,color='#89623E').move_to(self.xy((4,4.5)))
-        art.add(river)
-        # Captions use display coordinates, with rank 0 on Black's side.
-        # Cột cờ tướng: Đỏ (9 đến 1 từ trái sang phải), Đen (1 đến 9 từ trái sang phải)
+                g.add(Line(self.xy((x, 0)), self.xy((x, 4)), **kw))
+                g.add(Line(self.xy((x, 5)), self.xy((x, 9)), **kw))
+        for base in (0, 7):
+            g.add(Line(self.xy((3, base)), self.xy((5, base + 2)), **kw))
+            g.add(Line(self.xy((5, base)), self.xy((3, base + 2)), **kw))
+        g.add(Text('楚 河            漢 界', font=CJK, font_size=19, color='#89623E').move_to(self.xy((4, 4.5))))
+        # Số cột: Đỏ đếm 9..1 từ trái sang phải (phía dưới), Đen đếm 1..9 (phía trên).
         for x in range(9):
-            art.add(Text(str(9-x),font=FONT,font_size=12,color=LIGHT).move_to(
-                [self.xy((x,9))[0],-3.30,0]))
-            art.add(Text(str(x+1),font=FONT,font_size=12,color=LIGHT).move_to(
-                [self.xy((x,0))[0],2.95,0]))
-        return art
+            g.add(Text(str(9 - x), font=FONT, font_size=13, color=LIGHT).move_to(
+                [self.xy((x, 0))[0], -3.33, 0]))
+            g.add(Text(str(x + 1), font=FONT, font_size=13, color=MUTED).move_to(
+                [self.xy((x, 9))[0], 3.07, 0]))
+        return g
 
-    def make_piece(self,piece):
-        red=piece.isupper()
-        body=Circle(radius=0.235,fill_color='#F5E4C3',fill_opacity=1,
-                    stroke_width=2.6,stroke_color=RED if red else INK)
-        inner=Circle(radius=0.205,stroke_color=RED if red else INK,
-                     stroke_width=0.75,stroke_opacity=0.55)
-        label=Text(PIECE_GLYPH[piece],font=CJK,font_size=24,
-                   weight='BOLD',color=RED if red else INK)
-        return VGroup(body,inner,label)
+    def make_piece(self, p):
+        red = p.isupper()
+        col = RED if red else INK
+        return VGroup(Circle(radius=.235, fill_color='#F5E4C3', fill_opacity=1, stroke_width=2.6, stroke_color=col),
+                      Circle(radius=.205, stroke_color=col, stroke_width=.75, stroke_opacity=.55),
+                      Text(GLYPH[p], font=CJK, font_size=24, weight=BOLD, color=col))
 
-    def reset_position(self, fen, scene):
-        """Show complete board throughout; only pieces change between branches."""
-        new_state=Board.fen(fen)
-        if self.state.cells == new_state.cells and self.state.turn == new_state.turn:
+    def _spawn(self, sq, p):
+        mob = self.make_piece(p).move_to(self.xy(sq))
+        self.pieces[sq] = mob
+        self.add(mob)
+        return mob
+
+    def reset(self, scene, fen):
+        new = Position.from_fen(fen)
+        if new.cells == self.state.cells:
+            self.state = new
             return
-        old_mobs=VGroup(*self.pieces.values())
-        if len(self.pieces):
-            scene.play(FadeOut(old_mobs),run_time=.22)
-            self.remove(*list(self.pieces.values()))
-        self.state=new_state
-        self.pieces={}
-        new_mobs=VGroup()
-        for pos,piece in new_state.cells.items():
-            mob=self.make_piece(piece).move_to(self.xy(pos))
-            self.pieces[pos]=mob
-            self.add(mob)
-            new_mobs.add(mob)
-        scene.play(FadeIn(new_mobs),run_time=.25)
+        old = VGroup(*self.pieces.values())
+        scene.play(FadeOut(old), run_time=.3)
+        self.remove(*self.pieces.values())
+        self.pieces = {}
+        self.state = new
+        fresh = VGroup(*[self._spawn(sq, p) for sq, p in new.cells.items()])
+        scene.play(FadeIn(fresh), run_time=.35)
 
-    def move_piece(self,uci,scene,available=1.6):
-        src,dst=parse_square(uci[:2]),parse_square(uci[2:])
-        mob=self.pieces.pop(src)
-        captured=self.pieces.pop(dst,None)
-        cue=Circle(radius=0.27,color=GOLD,stroke_width=5).move_to(self.xy(src))
-        hint=Arrow(self.xy(src),self.xy(dst),buff=0.26,stroke_width=4,
-                   max_tip_length_to_length_ratio=0.18,color=CYAN)
-        scene.play(Create(cue),GrowArrow(hint),run_time=0.32)
-        if captured is not None:
-            scene.play(FadeOut(captured,scale=0.4),run_time=0.28)
-            self.remove(captured)
-        scene.play(mob.animate.move_to(self.xy(dst)),run_time=min(0.85,available*.65),rate_func=smooth)
-        self.pieces[dst]=mob
-        self.state.play(uci[:2],uci[2:])
-        scene.play(FadeOut(hint),FadeOut(cue),run_time=0.23)
+    def move(self, scene, uci, color=CYAN, tag=None):
+        src, dst = parse_sq(uci[:2]), parse_sq(uci[2:])
+        mob = self.pieces.pop(src)
+        victim = self.pieces.pop(dst, None)
+        ring = Circle(radius=.28, color=GOLD, stroke_width=5).move_to(self.xy(src))
+        arrow = Arrow(self.xy(src), self.xy(dst), buff=.26, stroke_width=5, color=color,
+                      max_tip_length_to_length_ratio=.2)
+        scene.play(Create(ring), GrowArrow(arrow), run_time=.3)
+        anims = [mob.animate.move_to(self.xy(dst))]
+        if victim is not None:
+            anims.append(FadeOut(victim, scale=.3))
+        scene.play(*anims, run_time=.55, rate_func=smooth)
+        if victim is not None:
+            self.remove(victim)
+        self.pieces[dst] = mob
+        self.state = self.state.play(uci)
+        extras = [FadeOut(arrow), FadeOut(ring)]
+        badge = None
+        if tag:
+            badge = label(tag, 15, color=BG, bold=True)
+            box = RoundedRectangle(width=badge.width + .22, height=.32, corner_radius=.08,
+                                   fill_color=color, fill_opacity=1, stroke_width=0)
+            badge = VGroup(box, badge.move_to(box)).next_to(mob, DOWN if dst[1] >= 8 else UP, buff=.06)
+            scene.play(FadeIn(badge, shift=UP * .1), *extras, run_time=.25)
+        else:
+            scene.play(*extras, run_time=.2)
+        if self.state.in_check(self.state.turn):
+            k = self.state.king_sq(self.state.turn)
+            flash = Circle(radius=.31, color=RED, stroke_width=6).move_to(self.xy(k))
+            scene.play(Create(flash), run_time=.2)
+            scene.play(FadeOut(flash), run_time=.25)
+        return badge
 
-    def highlight(self, scene, square, color=GOLD, seconds=0.7):
-        cue=Circle(radius=.32,stroke_width=5,color=color).move_to(self.xy(square))
-        scene.play(Create(cue),run_time=.2)
-        scene.wait(max(0.1,seconds-.35))
-        scene.play(FadeOut(cue),run_time=.15)
 
-    def horse_leg(self,scene,start,end):
-        x,y=parse_square(start); a,b=parse_square(end)
-        if sorted((abs(x-a),abs(y-b))) != [1,2]: return
-        leg=(x+(1 if a>x else -1),y) if abs(a-x)==2 else (x,y+(1 if b>y else -1))
-        dots=VGroup(Dot(self.xy(leg),radius=.105,color=GOLD),
-                    DashedLine(self.xy((x,y)),self.xy(leg),color=GOLD),
-                    DashedLine(self.xy(leg),self.xy((a,b)),color=CYAN))
-        scene.play(Create(dots),run_time=.45)
-        scene.wait(.4)
-        scene.play(FadeOut(dots),run_time=.3)
+class Panel:
+    def __init__(self, scene):
+        self.scene = scene
+        bg = RoundedRectangle(width=PANEL_W, height=6.07, corner_radius=.2, stroke_width=1.4,
+                              stroke_color='#35465D', fill_color=PANEL, fill_opacity=1).move_to([PANEL_X, -.10, 0])
+        cap_bg = RoundedRectangle(width=PANEL_W - .3, height=1.36, corner_radius=.14, stroke_width=0,
+                                  fill_color='#0F1B2D', fill_opacity=1).move_to([PANEL_X, -1.93, 0])
+        self.tag = label(' ', 16, GREEN, bold=True).move_to([PANEL_X, 2.62, 0])
+        self.head = label(' ', 26, GOLD, bold=True).move_to([PANEL_X, 2.13, 0])
+        self.body = VGroup()
+        self.caption = label(' ', 19).move_to(cap_bg)
+        self.status = label(' ', 15, MUTED).move_to([PANEL_X, -2.86, 0])
+        scene.add(bg, cap_bg, self.tag, self.head, self.caption, self.status)
+        self.cap_bg = cap_bg
+
+    def swap(self, attr, new, run_time=.35):
+        old = getattr(self, attr)
+        self.scene.play(FadeOut(old, run_time=run_time * .6), FadeIn(new, run_time=run_time))
+        setattr(self, attr, new)
+
+    def set_header(self, tag, head, tag_color=GREEN):
+        new_tag = label(tag, 16, tag_color, bold=True, max_w=5.4).move_to([PANEL_X, 2.62, 0])
+        new_head = label(head, 26, GOLD, bold=True, wrap=34, lines=2, max_h=.8).move_to([PANEL_X, 2.13, 0])
+        self.scene.play(FadeOut(self.tag), FadeOut(self.head), FadeIn(new_tag), FadeIn(new_head), run_time=.4)
+        self.tag, self.head = new_tag, new_head
+
+    def set_caption(self, text):
+        new = label(text, 19, LIGHT, wrap=48, lines=4, max_w=PANEL_W - .55, max_h=1.2).move_to(self.cap_bg)
+        self.scene.remove(self.caption)
+        self.scene.add(new)
+        self.caption = new
+
+    def set_status(self, text, color=MUTED):
+        new = label(text, 15, color, max_w=5.6).move_to([PANEL_X, -2.86, 0])
+        self.scene.remove(self.status)
+        self.scene.add(new)
+        self.status = new
+
+    def set_body(self, group):
+        top = 1.72
+        if len(group):
+            group.move_to([PANEL_X, 0, 0]).align_to([0, top, 0], UP)
+            if group.height > 2.85:
+                group.scale_to_fit_height(2.85).align_to([0, top, 0], UP)
+        self.swap('body', group)
+
+    # ---- các kiểu nội dung ----
+    @staticmethod
+    def bullets(items):
+        rows = VGroup(*[label('•  ' + t, 21, LIGHT, wrap=40, lines=2) for t in items])
+        rows.arrange(DOWN, aligned_edge=LEFT, buff=.2)
+        return rows
+
+    @staticmethod
+    def candidates(rows):
+        out = VGroup()
+        for r in rows:
+            color = GREEN if r['wdl'] == 'W' else (MUTED if r['wdl'] == 'D' else RED)
+            left = label(('★ ' if r['best'] else '   ') + r['vn'], 20, GOLD if r['best'] else LIGHT, bold=r['best'],
+                         max_w=2.6)
+            right = label(r['result'], 18, color, max_w=2.75)
+            line = VGroup(left, right)
+            left.move_to([1.85, 0, 0], aligned_edge=LEFT).set_x(.45, direction=LEFT)
+            right.set_x(6.0, direction=RIGHT)
+            out.add(line)
+        out.arrange(DOWN, buff=.17)
+        for line in out:
+            line[0].set_x(.45, direction=LEFT)
+            line[1].set_x(6.0, direction=RIGHT)
+        return out
+
+
+class MoveList:
+    """Biên bản nước đi kiểu sổ ghi: số hiệp | nước Đỏ | nước Đen."""
+
+    def __init__(self):
+        self.rows = []  # [số hiệp, nước Đỏ, nước Đen]
+
+    def push(self, vn, side):
+        if side == 'w' or not self.rows or self.rows[-1][2]:
+            n = self.rows[-1][0] + 1 if self.rows else 1
+            self.rows.append([n, vn, ''] if side == 'w' else [n, '…', vn])
+        else:
+            self.rows[-1][2] = vn
+
+    def render(self, last=6):
+        group = VGroup()
+        shown = self.rows[-last:]
+        for i, (n, r, b) in enumerate(shown):
+            current = i == len(shown) - 1
+            c_red = GOLD if current and not b else LIGHT
+            c_blk = GOLD if current and b else LIGHT
+            num = label(f'{n}.', 18, MUTED)
+            red = label(r, 18, c_red, max_w=2.45)
+            blk = label(b, 18, c_blk, max_w=2.45) if b else Dot(radius=.01, fill_opacity=0)
+            num.set_x(.55, direction=LEFT)
+            red.set_x(1.05, direction=LEFT)
+            blk.set_x(3.65, direction=LEFT)
+            row = VGroup(num, red, blk)
+            group.add(row)
+        group.arrange(DOWN, buff=.16, aligned_edge=LEFT)
+        for row in group:
+            row[0].set_x(.55, direction=LEFT)
+            row[1].set_x(1.05, direction=LEFT)
+            row[2].set_x(3.65, direction=LEFT)
+        return group
 
 
 class XiangqiLesson(Scene):
     def construct(self):
-        episode_file=Path(os.environ['XIANGQI_EPISODE'])
-        out=Path(os.environ['XIANGQI_OUTPUT'])
-        data=json.loads(episode_file.read_text(encoding='utf-8'))
-        timing=json.loads((out/'voice'/'timing.json').read_text(encoding='utf-8'))
-        board=XiangqiDisplay(Board.fen(data['fen']))
-
-        # Consistent frame-safe, 16:9 design. No content overlaps the board.
-        brand=Text('TINH HOA CỜ TÀN',font=FONT,font_size=26,
-                   color=GOLD,weight='BOLD')
-        brand.to_edge(LEFT,buff=.64).move_to([-6.34,3.57,0],aligned_edge=LEFT)
-        sub_title = data.get('category', 'CHUYÊN ĐỀ CỜ TÀN').upper()
-        series=Text(f"{data['id'].upper()}  •  {sub_title}",font=FONT,
-                    font_size=15,color=MUTED)
-        series.move_to([6.27,3.57,0],aligned_edge=RIGHT)
-        header_line=Line([-6.35,HEADER_LINE_Y,0],[6.34,HEADER_LINE_Y,0],
-                         color='#35465D',stroke_width=1.3)
-
-        footer_bg=Rectangle(width=14.22,height=.40,
-              fill_color='#09101C',fill_opacity=.96,stroke_width=0)
-        footer_bg.to_edge(DOWN,buff=0)
-        footer=Text('☕ Ủng hộ kênh ly cà phê — VPBank: 10389821115 (Quét VietQR cuối video)',
-                    font=FONT,font_size=13,color=MUTED)
-        footer.move_to(footer_bg)
-
-        right_bg=RoundedRectangle(width=6.02,height=6.07,
-             corner_radius=.20,stroke_width=1.4,stroke_color='#35465D',
-             fill_color=PANEL,fill_opacity=1)
-        right_bg.move_to([3.21,-.10,0])
-        segment=Text('MỞ ĐẦU',font=FONT,font_size=17,
-                     color=GREEN,weight='BOLD').move_to([3.20,2.60,0])
-        chapter=fit_label(data.get('title','TINH HOA CỜ TÀN'),
-                 x=3.20,y=2.03,max_width=5.20,max_height=.55,font_size=24,
-                 color=LIGHT,bold=True)
-        headline=fit_label('ĐỎ ĐI TRƯỚC',
-                 x=3.20,y=1.20,max_width=5.27,max_height=.94,font_size=29,
-                 color=GOLD,bold=True,wrap=26,max_lines=2)
-        divider=Line([.62,.36,0],[5.80,.36,0],
-                     color='#46607A',stroke_width=1.5)
-        tip_label=Text('QUY ƯỚC: TIẾN — THOÁI — BÌNH',font=FONT,font_size=14,
-                       color=CYAN,weight='BOLD').move_to([3.20,-.08,0])
-        insight=fit_label('Chờ phân tích nước đầu.',
-                 x=3.20,y=-1.20,max_width=5.10,max_height=1.70,font_size=25,
-                 color=LIGHT,wrap=32,max_lines=4)
-        goal_text = data.get('goal_text', 'MỤC TIÊU: BẮT SĨ' if 'sĩ' in data.get('title','').lower() else 'MỤC TIÊU: BẮT TƯỢNG')
-        stamp_label=(f'{goal_text} • CHƯA XÉT LUẬT LẶP NƯỚC'
-               if data.get('analysis_status') in ('four_piece_retrograde_ordinary_moves', 'four_piece_elephant_retrograde', 'andor_mate_search')
-               else 'BIẾN MINH HỌA • CHƯA CHỨNG MINH THẮNG')
-        stamp=fit_label(stamp_label,x=3.20,y=-2.70,
-                 max_width=5.22,max_height=.23,font_size=12,color=MUTED)
-        # Fail early if later design changes accidentally crop the board again.
-        if board.get_top()[1] > header_line.get_y() - .15:
-            raise ValueError('Layout: board intersects the header safe area')
-        if board.get_bottom()[1] < footer_bg.get_top()[1] + .15:
-            raise ValueError('Layout: board intersects the footer safe area')
-        if board.get_right()[0] > right_bg.get_left()[0] - .20:
-            raise ValueError('Layout: board intersects the teaching panel')
-        self.add(board,right_bg,header_line,divider,chapter,headline,
-                 insight,segment,tip_label,stamp,brand,series,footer_bg,footer)
-        self.opening_card(out)
+        data = json.loads(Path(os.environ['XIANGQI_EPISODE']).read_text(encoding='utf-8'))
+        out = Path(os.environ['XIANGQI_OUTPUT'])
+        timing = json.loads((out / 'voice' / 'timing.json').read_text(encoding='utf-8'))
+        board = Board(data['fen'])
+        self.chrome(data)
+        self.add(board)
+        panel = Panel(self)
+        self.title_card(out / 'cards' / 'intro.png', 3.2)
+        verdict = data['verdict']
+        base_status = ('Bảng tra chessdb: Đỏ thắng' if verdict['wdl'] == 'W' else 'Bảng tra chessdb: Hòa')
+        panel.set_status(base_status)
+        movelist = MoveList()
+        badges = []
         if len(timing) != len(data['beats']):
-            raise ValueError('Number of audio clips differs from episode segments')
-        timeline=[]
-        for i,(beat,audio) in enumerate(zip(data['beats'],timing)):
-            # audio duration is source of truth; video segment extends to include animations.
-            start=self.time
-            entry={'beat':i+1,'label':beat['label'],'start':float(start),
-                   'initial_fen':board_fen(board.state),'moves':[]}
-            if beat.get('fen'):
-                board.reset_position(beat['fen'],self)
-            # Start voice after changing to the position under discussion.
-            start=self.time
-            self.add_sound(audio['audio'])
-            next_segment=fit_label(beat['label'].upper(),x=3.20,y=2.60,
-                 max_width=5.00,max_height=.32,font_size=17,color=GREEN,bold=True)
-            next_title=fit_label(beat['headline'],x=3.20,y=1.20,
-                 max_width=5.27,max_height=.94,font_size=29,color=GOLD,
-                 bold=True,wrap=26,max_lines=2)
-            next_insight=fit_label(beat['insight'],x=3.20,y=-1.20,
-                 max_width=5.10,max_height=1.70,font_size=25,color=LIGHT,
-                 wrap=32,max_lines=4)
-            self.play(Transform(segment,next_segment),Transform(headline,next_title),
-                      Transform(insight,next_insight),run_time=.55)
-            moves=beat.get('moves',[])
-            if beat.get('horse_leg'):
-                pair=beat['horse_leg']
-                board.horse_leg(self,pair[0],pair[1])
-            if beat.get('spotlight') and beat.get('spotlight_before'):
-                board.highlight(self,beat['spotlight'])
-            for uci in moves:
-                board.move_piece(uci,self)
-                entry['moves'].append({'display_move':uci,'time':float(self.time),
-                                      'fen':board_fen(board.state)})
-                self.wait(.28)
-            if beat.get('spotlight') and not beat.get('spotlight_before'):
-                board.highlight(self,beat['spotlight'])
-            # Optional dramatic delay following the spoken segment.
-            self.wait(max(.1, audio['seconds']+float(beat.get('pause',.65))-(self.time-start)))
-            entry['end']=float(self.time)
-            timeline.append(entry)
-        self.closing_card(out)
-        (out/'timeline.json').write_text(json.dumps(timeline,ensure_ascii=False,indent=2)+'\n',
-                                        encoding='utf-8')
+            raise ValueError('Số đoạn âm thanh khác số phân đoạn kịch bản')
+        for beat, clips in zip(data['beats'], timing):
+            for b in badges:
+                self.remove(b)
+            badges = []
+            kind = beat['kind']
+            if beat.get('fen') and kind != 'trap':
+                board.reset(self, beat['fen'])
+            if kind == 'trap':
+                board.reset(self, beat['fen'])
+                self.play(board.frame.animate.set_stroke(ORANGE, width=7), run_time=.3)
+            panel.set_header(beat['label'], beat['headline'], ORANGE if kind == 'trap' else GREEN)
+            p = beat.get('panel', {})
+            if kind in ('intro', 'theory', 'summary'):
+                panel.set_body(Panel.bullets(p['bullets']))
+            elif kind == 'candidates':
+                panel.set_body(Panel.candidates(p['rows']))
+            elif kind == 'puzzle':
+                panel.set_body(VGroup())
+            elif kind == 'line':
+                panel.set_body(movelist.render())
+            elif kind == 'trap':
+                panel.set_body(Panel.bullets([p['verdict']]))
+                panel.set_status('BIẾN THAM KHẢO – không phải biến chính', ORANGE)
+            elif kind == 'mate':
+                panel.set_body(VGroup())
+                self.mate_marks(board, p['mate'])
+            trap_list = MoveList()
+            for step, clip in zip(beat['steps'], clips):
+                start = self.time
+                cap_pages = pages(step['say'])
+                total_chars = sum(len(x) for x in cap_pages)
+                panel.set_caption(cap_pages[0])
+                self.add_sound(clip['audio'])
+                if step.get('move'):
+                    for b in badges:
+                        self.remove(b)
+                    badges = []
+                    mark = step.get('mark')
+                    color = RED if mark == 'bad' else (GOLD if mark == 'only' else CYAN)
+                    tag = {'only': 'DUY NHẤT', 'wait': 'NƯỚC CHỜ', 'zug': 'BỊ ÉP NƯỚC', 'bad': 'SAI?'}.get(mark)
+                    vn = self.vn_of(board.state, step['move'])
+                    side = board.state.turn
+                    badge = board.move(self, step['move'], color=color, tag=tag)
+                    if badge:
+                        badges.append(badge)
+                    if kind == 'line':
+                        movelist.push(vn, side)
+                        panel.set_body(movelist.render())
+                        if step.get('remain') is not None:
+                            left = (step['remain']) // 2
+                            panel.set_status(f'{base_status} • còn {left} nước đến bí' if left else
+                                             'Đen hết nước – Đỏ thắng', GREEN if not left else MUTED)
+                    elif kind == 'trap':
+                        trap_list.push(vn, side)
+                        panel.set_body(trap_list.render(4))
+                if kind == 'puzzle':
+                    self.wait(max(.1, clip['seconds'] - (self.time - start)))
+                    self.countdown(p.get('countdown', 5))
+                    continue
+                elapsed_chars = len(cap_pages[0])
+                for page in cap_pages[1:]:
+                    at = clip['seconds'] * elapsed_chars / total_chars
+                    if at > self.time - start:
+                        self.wait(at - (self.time - start))
+                    panel.set_caption(page)
+                    elapsed_chars += len(page)
+                self.wait(max(.15, clip['seconds'] + .3 - (self.time - start)))
+            if kind == 'mate':
+                self.remove(*self.mate_group)
+            if kind == 'trap':
+                for b in badges:
+                    self.remove(b)
+                badges = []
+                board.reset(self, beat['return_fen'])
+                self.play(board.frame.animate.set_stroke('#856344', width=4), run_time=.3)
+                panel.set_status(base_status)
+        self.title_card(out / 'cards' / 'outro.png', 7.0)
 
-    def opening_card(self,out):
-        png=out/'cards'/'intro.png'
-        if not png.exists(): return
-        art=ImageMobject(str(png))
-        art.set_width(10.7)
-        art.move_to(ORIGIN)
-        scrim=Rectangle(width=14.5,height=8.3,fill_color=BG,fill_opacity=.96,stroke_width=0)
-        self.play(FadeIn(scrim),FadeIn(art,scale=.94),run_time=.7)
-        self.wait(1)
-        self.play(FadeOut(art),FadeOut(scrim),run_time=.65)
+    @staticmethod
+    def vn_of(state, move):
+        from xq.notation import vn_move
+        return vn_move(state, move)
 
-    def closing_card(self,out):
-        png=out/'cards'/'outro.png'
-        if not png.exists(): return
-        art=ImageMobject(str(png))
-        art.set_width(10.8)
-        art.move_to(ORIGIN)
-        scrim=Rectangle(width=14.5,height=8.3,fill_color=BG,fill_opacity=.95,stroke_width=0)
-        self.play(FadeIn(scrim),FadeIn(art,scale=.95),run_time=.8)
-        self.wait(6.5)
-        self.play(FadeOut(art),FadeOut(scrim),run_time=.6)
+    def countdown(self, n):
+        for i in range(n, 0, -1):
+            num = Text(str(i), font=FONT, font_size=96, color=GOLD, weight=BOLD).move_to([PANEL_X, .35, 0])
+            self.play(FadeIn(num, scale=1.3), run_time=.25)
+            self.wait(.5)
+            self.play(FadeOut(num), run_time=.25)
+
+    def mate_marks(self, board, mate):
+        group = VGroup()
+        for e in mate['escapes']:
+            c = board.xy(e['sq'])
+            col = MUTED if 'blocked_by_own' in e else RED
+            group.add(Cross(scale_factor=.16, stroke_color=col, stroke_width=6).move_to(c))
+            for g in e.get('guards', []):
+                gsq = g.split(':')[0]
+                group.add(DashedLine(board.xy(gsq), c, color=ORANGE, stroke_width=3, dash_length=.08))
+        for ch in mate['checkers']:
+            group.add(Circle(radius=.3, color=RED, stroke_width=6).move_to(board.xy(ch.split(':')[0])))
+        group.add(Circle(radius=.32, color=GOLD, stroke_width=6).move_to(board.xy(mate['king'])))
+        self.play(Create(group), run_time=1.0)
+        self.mate_group = [group]
+
+    def chrome(self, data):
+        brand = Text('TINH HOA CỜ TÀN', font=FONT, font_size=26, color=GOLD, weight=BOLD)
+        brand.move_to([-6.34, 3.57, 0], aligned_edge=LEFT)
+        series = label(f'TẬP {data["number"]}  •  {data["category"].upper()}', 15, MUTED, max_w=7)
+        series.move_to([6.27, 3.57, 0], aligned_edge=RIGHT)
+        hline = Line([-6.35, HEADER_LINE_Y, 0], [6.34, HEADER_LINE_Y, 0], color='#35465D', stroke_width=1.3)
+        foot_bg = Rectangle(width=14.22, height=.40, fill_color='#09101C', fill_opacity=.96, stroke_width=0).to_edge(DOWN, buff=0)
+        foot = Text('☕ Ủng hộ kênh ly cà phê — VPBank: 10389821115 (Quét VietQR cuối video)  •  Dữ liệu: bảng tra cờ tàn chessdb.cn',
+                    font=FONT, font_size=12, color=MUTED).move_to(foot_bg)
+        if foot.width > 13.6:
+            foot.scale_to_fit_width(13.6)
+        self.add(brand, series, hline, foot_bg, foot)
+
+    def title_card(self, png, seconds):
+        if not png.exists():
+            return
+        art = ImageMobject(str(png)).set_width(10.8).move_to(ORIGIN)
+        scrim = Rectangle(width=14.5, height=8.3, fill_color=BG, fill_opacity=.96, stroke_width=0)
+        self.play(FadeIn(scrim), FadeIn(art, scale=.95), run_time=.6)
+        self.wait(seconds)
+        self.play(FadeOut(art), FadeOut(scrim), run_time=.5)

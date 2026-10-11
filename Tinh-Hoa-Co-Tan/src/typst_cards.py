@@ -32,7 +32,7 @@ def make_cards(data, folder):
 #v(3mm)
 #text(size: 11.5pt, fill: rgb("#B8C9DA"), {subhead_literal})
 #v(1fr)
-#text(size: 9.5pt, fill: rgb("#E9B66E"))[Tuyệt kỹ và bí quyết cờ tàn căn bản đến nâng cao • Chúc các bạn kỳ nghệ tinh tiến!]
+#text(size: 9.5pt, fill: rgb("#E9B66E"))[Tập {data.get("number", "")} • Mọi kết luận được kiểm chứng bằng bảng tra cờ tàn chessdb.cn]
 '''
 
     if has_qr:
