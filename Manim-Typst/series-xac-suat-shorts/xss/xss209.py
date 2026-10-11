@@ -13,9 +13,9 @@ from common.short import PARTS, Beat, ShortScene, TreeMixin, formulas, outro_tex
 from common.theme import GOLD, PURPLE, SOFT  # noqa: E402
 
 EPISODE = {'code': 'XSS209', 'answer': '19/40'}
-PROBLEM = ['An rút hộp I ($2$ đỏ $3$ xanh), Bình rút hộp',
-           'II ($3$ đỏ $1$ xanh), luân phiên, An trước;',
-           'ai được đỏ trước thắng. Xác suất An thắng?']
+PROBLEM = ['An rút hộp I ($2$ đỏ $3$ xanh), Bình rút',
+           'hộp II ($3$ đỏ $1$ xanh), luân phiên, An',
+           'trước, ai đỏ trước thắng. $P("An thắng")$?']
 OPTIONS = ['2/5', '19/40', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 19 / 40
