@@ -14,6 +14,7 @@ from common.theme import CORAL, CYAN, GOLD, GREEN, PANEL, PANEL_2, PURPLE, SOFT,
 
 BOARD_X = 0.55
 TF_SOLUTION_Y = -2.72   # worked line under a Đúng/Sai question
+STAGE_BOTTOM = -3.05    # lowest y for stage content (progress bar below)
 GOAL_COLORS = (CYAN, GREEN, GOLD)
 
 
@@ -284,6 +285,9 @@ class Blocks:
     def centre(self, *mobs, top=2.55, gap=.42):
         """Stack mobjects centred on the full width (no graph column)."""
         g = VGroup(*mobs).arrange(DOWN, buff=gap)
+        room = top - STAGE_BOTTOM
+        if g.height > room:  # never run into the progress bar
+            g.scale(room / g.height)
         g.move_to([0, top, 0], aligned_edge=UP)
         return g
 

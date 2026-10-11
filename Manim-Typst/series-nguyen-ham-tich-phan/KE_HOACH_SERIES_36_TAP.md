@@ -133,9 +133,9 @@ Thứ tự chạy workflow cho mỗi tập: `preview / voice=off` (duyệt hình
 | Trạng thái | Tập |
 | :--- | :--- |
 | ✅ Đã xuất bản (Phần A hoàn thành) | INT01–INT10: MLP1NJgcDmQ · Q27qaS8mqqE · Fisd_cqawl0 · lev4fL1lWiA · qY4dQR9iTJ0 · 3jVMzUpNcnI · ZWeBNtnR4YM · Atj-EB-GQfA · ch_VYu1z1RA · PEF0teiIS_4 (youtu.be/…) |
-| ✅ Đã xuất bản (Phần B) | INT11: DBPYPT72oGs · INT12: ZJz0wj0IMJ4 · INT13: uVEPl4ZK_NY |
-| 🎬 Đã dựng đầy đủ, đang xuất bản | INT14 · INT15 |
-| ⚪ Kế hoạch | INT16 – INT36 |
+| ✅ Đã xuất bản (Phần B) | INT11: DBPYPT72oGs · INT12: ZJz0wj0IMJ4 · INT13: uVEPl4ZK_NY · INT14: wbWFbtViEeo · INT15: UbUrvBdEIF8 |
+| 🎬 Đã dựng đầy đủ, đang xuất bản | INT16 |
+| ⚪ Kế hoạch | INT17 – INT36 |
 
 ### Khối dùng chung đã có (`common/blocks.py`)
 
