@@ -189,13 +189,13 @@ class ShortScene(Scene):
             d = new
         return d
 
-    def run_sim(self, freqs, label_n, label_f, frac, y=-1.6, color=GREEN):
+    def run_sim(self, freqs, label_n, label_f, frac, y=-1.6, color=GREEN, nd=3):
         """Live counter of a seeded simulation: number of trials and running frequency."""
         from manim import ValueTracker, always_redraw, smooth
         n = ValueTracker(1)
         read = always_redraw(lambda: VGroup(
             VGroup(tx(label_n, 30, SOFT), self.MNum(int(n.get_value()), 0, WHITE, 34)).arrange(RIGHT, buff=.2),
-            VGroup(tx(label_f, 30, SOFT), self.MNum(freqs[int(n.get_value()) - 1], 3, color, 34)).arrange(RIGHT, buff=.2))
+            VGroup(tx(label_f, 30, SOFT), self.MNum(freqs[int(n.get_value()) - 1], nd, color, 34)).arrange(RIGHT, buff=.2))
             .arrange(DOWN, aligned_edge=RIGHT, buff=.22).move_to([BOARD_X, y, 0]))
         self.add(read)
         self.play(n.animate.set_value(len(freqs)), run_time=self.rt(frac), rate_func=smooth)
