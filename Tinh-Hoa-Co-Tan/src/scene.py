@@ -340,7 +340,7 @@ class XiangqiLesson(Scene):
                 panel.set_body(Panel.bullets([p['verdict']]))
                 panel.set_status('BIẾN THAM KHẢO – không phải biến chính', ORANGE)
             elif kind == 'mate':
-                panel.set_body(VGroup())
+                panel.set_body(Panel.bullets(p['bullets']) if p.get('bullets') else VGroup())
                 self.mate_marks(board, p['mate'])
             trap_list = MoveList()
             for step, clip in zip(beat['steps'], clips):
@@ -362,6 +362,8 @@ class XiangqiLesson(Scene):
                     badge = board.move(self, step['move'], color=color, tag=tag)
                     if badge:
                         badges.append(badge)
+                    if step.get('face_file'):
+                        self.face_line(board, step['face_file'])
                     if kind == 'line':
                         movelist.push(vn, side)
                         panel.set_body(movelist.render())
@@ -399,6 +401,21 @@ class XiangqiLesson(Scene):
     def vn_of(state, move):
         from xq.notation import vn_move
         return vn_move(state, move)
+
+    def face_line(self, board, file_letter):
+        """Minh hoạ luật lộ mặt tướng: Tướng Đỏ khống chế các ô trống phía trên trên cùng lộ."""
+        k = board.state.king_sq('w')
+        top = k[1] + 1
+        while top <= 9 and (k[0], top) not in board.state.cells:
+            top += 1
+        end = (k[0], min(top, 9) if top <= 9 else 9)
+        line = Line(board.xy(k), board.xy(end), color=GOLD, stroke_width=7, stroke_opacity=.75)
+        marks = VGroup(*[Square(side_length=.32 * board.step / BOARD_GRID_STEP, stroke_width=0,
+                                fill_color=GOLD, fill_opacity=.35).move_to(board.xy((k[0], y)))
+                         for y in range(7, 10) if (k[0], y) not in board.state.cells and y < top])
+        self.play(Create(line), FadeIn(marks), run_time=.45)
+        self.wait(.9)
+        self.play(FadeOut(line), FadeOut(marks), run_time=.35)
 
     def countdown(self, n):
         for i in range(n, 0, -1):

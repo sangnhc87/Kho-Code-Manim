@@ -284,8 +284,11 @@ def build_episode(analysis, topic, ep, writer_seed=None):
                    'only' if ply['only'] and ply['side'] == analysis['attacker'] and ply['wdl'] == 'W' else \
                    ('wait' if ply.get('zug', {}).get('type') == 'waiting' and ply['zug'].get('key') else
                     'zug' if ply.get('zug', {}).get('type') == 'zugzwang' else None)
-            steps.append({'say': say, 'move': ply['move'], 'ply': i, 'mark': mark,
-                          'remain': ply['dtm'] if ply['wdl'] != 'D' else None})
+            step = {'say': say, 'move': ply['move'], 'ply': i, 'mark': mark,
+                    'remain': ply['dtm'] if ply['wdl'] != 'D' else None}
+            if 'luật lộ mặt tướng' in say and ply['piece'] == 'K':
+                step['face_file'] = ply['move'][2]  # vẽ đường khống chế dọc lộ của Tướng Đỏ
+            steps.append(step)
         head_ply = next((main[i] for i in idxs if main[i]['only'] and main[i]['side'] == analysis['attacker']), None)
         if val['wdl'] == 'D':
             if any(main[i]['only'] and main[i]['side'] != analysis['attacker'] for i in idxs):
@@ -397,7 +400,9 @@ def _mate_beat(analysis):
     if pieces['face']:
         parts.append('Hãy nhớ: trong cờ tàn, Tướng không chỉ để phòng thủ. Chiếm đúng lộ, Tướng trở thành một quân tấn công thực thụ.')
     return {'kind': 'mate', 'label': 'GIẢI PHẪU THẾ BÍ', 'headline': 'Vì sao Đen hết đường?',
-            'steps': [{'say': ' '.join(parts)}], 'panel': {'mate': mate}}
+            'steps': [{'say': ' '.join(parts)}],
+            'panel': {'mate': mate, 'bullets': [('Bị chiếu bí' if mate['in_check'] else 'Hết nước đi (không bị chiếu)')]
+                      + [g[0].upper() + g[1:] for g in guard_words]}}
 
 
 def _summary_beat(topic, analysis, first, waits, zugs, onlys, n_moves):
