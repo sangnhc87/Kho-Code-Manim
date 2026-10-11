@@ -110,7 +110,8 @@ def mate_short(data):
                          'Theo dõi kênh Tinh Hoa Cờ Tàn để xem sát cục mỗi ngày.'})
     return {'number': data['number'], 'fen': data['fen'], 'headline': headline, 'tag': tag,
             'verdict': f'Bí trong {n} nước • đã kiểm chứng', 'wdl': 'W', 'steps': steps,
-            'footer': 'Lời giải kiểm chứng mọi cách chống đỡ • Tinh Hoa Cờ Tàn'}
+            'footer': 'Lời giải kiểm chứng mọi cách chống đỡ • Tinh Hoa Cờ Tàn',
+            'flash': ((sp.upper() + ' • ') if sp else 'CHIẾU LIÊN HOÀN • ') + f'BÍ {n} NƯỚC'}
 
 
 def short_script(data, max_plies):

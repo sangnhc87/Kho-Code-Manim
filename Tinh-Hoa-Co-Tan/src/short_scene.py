@@ -22,6 +22,17 @@ W = 4.5  # khung dọc: rộng 4.5, cao 8 đơn vị Manim
 
 
 class XiangqiShort(Scene):
+    def flash(self, text, color, hold=1.0):
+        """Chữ lớn giữa màn hình để giữ người xem ở giây đầu và lúc kết liễu."""
+        lines = [t.strip() for t in text.split('•') if t.strip()]
+        txt = VGroup(*[label(t, 40, LIGHT, bold=True, max_w=W - 1.1) for t in lines]).arrange(DOWN, buff=.18)
+        box = RoundedRectangle(width=txt.width + .5, height=txt.height + .4, corner_radius=.15,
+                               fill_color=color, fill_opacity=.92, stroke_color=GOLD, stroke_width=3)
+        grp = VGroup(box, txt.move_to(box)).move_to([0, -.3, 0])
+        self.play(FadeIn(grp, scale=1.6), run_time=.35)
+        self.wait(hold)
+        self.play(FadeOut(grp, scale=.8), run_time=.3)
+
     def construct(self):
         out = Path(os.environ['XIANGQI_OUTPUT'])
         data = json.loads((out / 'short.json').read_text(encoding='utf-8'))
@@ -35,6 +46,8 @@ class XiangqiShort(Scene):
         foot = label(data.get('footer') or f'Lời giải đầy đủ: Tập {data["number"]} trên kênh', 14, MUTED,
                      max_w=W - .4).move_to([0, -3.9, 0])
         self.add(board, brand, title, tag, cap_bg, foot)
+        if data.get('flash'):
+            self.flash(data['flash'], RED, hold=1.1)
         caption = VGroup()
         badges = []
         for step, clip in zip(data['steps'], clips):
@@ -74,6 +87,8 @@ class XiangqiShort(Scene):
                     self.play(FadeIn(disk), FadeIn(num, scale=1.3), run_time=.25)
                     self.wait(.5)
                     self.play(FadeOut(disk), FadeOut(num), run_time=.25)
+        if board.state.is_mate():
+            self.flash('CHIẾU BÍ!', RED, hold=.9)
         verdict = label(data['verdict'], 22, GREEN if data['wdl'] == 'W' else CYAN, bold=True,
                         wrap=26, lines=2, max_w=W - .3, max_h=.5).move_to([0, 2.42, 0])
         self.play(FadeOut(tag), FadeIn(verdict), run_time=.3)
