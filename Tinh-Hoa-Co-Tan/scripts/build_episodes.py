@@ -311,6 +311,10 @@ def build_game(collection, file_name, game, ep, catalog):
     es = game['endgame']
     names = ' – '.join(n for n in (info['red'], info['black']) if not n.startswith('kỳ thủ')) or 'Danh thủ'
     hook = 'Sai lầm ở tàn cuộc' if info['errors'] else 'Nước duy nhất của danh thủ'
+    who = ' – '.join(n for n in (info['red'], info['black']) if not n.startswith('kỳ thủ'))
+    short_title = ((f'Danh thủ cũng đi sai! Bạn tìm ra nước đúng? ' if info['errors'] else
+                    'Chỉ một nước đúng – danh thủ có tìm ra? ')
+                   + (f'({who}{", " + info["year"] if info["year"] else ""}) ' if who else '') + '#Shorts')
     title = f'Thực chiến: {names}' + (f' ({info["year"]})' if info['year'] else '') + f': {hook}'
     desc = (f'{title}\n\nTàn cuộc trong ván đấu thật'
             + (f' năm {info["year"]}' if info['year'] else '') +
@@ -327,6 +331,7 @@ def build_game(collection, file_name, game, ep, catalog):
         'base_status': 'Bảng tra chessdb', 'source': 'chessdb.cn EGTB (DTM)',
         'game': {k: game[k] for k in ('red', 'black', 'event', 'date', 'result', 'title')},
         'beats': beats, 'analysis': None,
+        'youtube_short': {'title': short_title, 'description': desc.replace('#ThucChien', '#ThucChien #Shorts')},
         'youtube': {'title': f'{title} | Tinh Hoa Cờ Tàn #{ep}', 'description': desc,
                     'tags': ['cờ tướng', 'cờ tàn', 'thực chiến', 'danh thủ', 'tinh hoa cờ tàn', 'xiangqi'],
                     'playlist': 'Tinh Hoa Cờ Tàn | Thực chiến danh thủ'},
@@ -397,7 +402,12 @@ def build_mate(collection, file_name, item, ep, catalog):
         raise ValueError(f'Chứng minh không khớp cho {file_name}')
     side = 'Đỏ' if pr['fen'].split()[1] == 'w' else 'Đen'
     sp = sac_phrase(pr['sacrifices'])
-    title = (f'{sp[0].upper() + sp[1:]}, chiếu bí trong {n} nước!' if sp else f'Chiếu liên hoàn, bí trong {n} nước!')
+    pos = Position.from_fen(pr['fen'])
+    for x in pr['line'][:-1]:
+        pos = pos.play(x['move'])
+    last = PIECE_VN.get(pos.cells[(ord(pr['line'][-1]['move'][0]) - 97, int(pr['line'][-1]['move'][1]))].upper(), 'Tướng')
+    title = (f'Sát cục #{ep}: {sp}, {last} chiếu bí sau {n} nước!' if sp else
+             f'Sát cục #{ep}: {n} nước chiếu liên hoàn, {last} kết liễu!')
     game = None
     if 'red' in item:
         from xq.game_episode import year_of
