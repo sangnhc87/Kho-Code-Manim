@@ -6,7 +6,18 @@ from .board import Position
 KINDS = {'intro', 'theory', 'puzzle', 'candidates', 'line', 'trap', 'mate', 'summary'}
 
 
+def validate_mate(data):
+    pos = Position.from_fen(data['fen'])
+    for x in data['mate']['line']:
+        pos = pos.play(x['move'])
+    if not pos.is_mate():
+        raise ValueError('Lời giải sát cục không kết thúc bằng thế bí')
+    return True
+
+
 def validate_episode(data, check_tablebase=False):
+    if data.get('kind') == 'mate':
+        return validate_mate(data)
     for key in ('id', 'number', 'title', 'category', 'fen', 'verdict', 'beats', 'youtube'):
         if key not in data:
             raise ValueError(f'Thiếu trường {key}')

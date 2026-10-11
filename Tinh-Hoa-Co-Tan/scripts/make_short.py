@@ -60,7 +60,51 @@ def game_short(data, max_plies):
             'verdict': 'Bảng tra cờ tàn chessdb chấm từng nước', 'wdl': 'W', 'steps': steps}
 
 
+PIECE = {'R': 'Xe', 'N': 'Mã', 'C': 'Pháo', 'P': 'Binh', 'A': 'Sĩ', 'B': 'Tượng', 'K': 'Tướng'}
+
+
+def mate_short(data):
+    from scripts.build_episodes import sac_phrase
+    from xq.board import Position
+    from xq.notation import vn_move
+    m = data['mate']
+    n, side = m['n'], m['side']
+    sp = sac_phrase(m['sacrifices'])
+    headline = f'{side} đi – chiếu bí trong {n} nước!'
+    tag = ('SÁT CỤC • ' + sp.upper()) if sp else 'SÁT CỤC LIÊN HOÀN'
+    ask = (f'{side} đi trước, chiếu bí trong {n} nước, nước nào cũng là nước chiếu.'
+           + (f' Lời giải có cả đòn {sp}.' if sp else '') + ' Bạn tìm ra không? Hãy để lại đáp án ở phần bình luận!')
+    steps = [{'say': ask, 'countdown': 6}]
+    pos = Position.from_fen(data['fen'])
+    attacker = pos.turn
+    for k, x in enumerate(m['line']):
+        vn = vn_move(pos, x['move'])
+        nxt = pos.play(x['move'])
+        if pos.turn == attacker:
+            if nxt.is_mate():
+                say, tagx = f'{vn}. Chiếu bí!', 'BÍ!'
+            elif x.get('sacrifice'):
+                say, tagx = f'{vn}! Thí {PIECE[x["sacrifice"]]}!', f'THÍ {PIECE[x["sacrifice"]].upper()}!'
+            else:
+                say, tagx = f'{vn}, chiếu!', None
+            if k == 0:
+                say = 'Đáp án: ' + say
+            steps.append({'say': say, 'move': x['move'], 'mark': 'answer' if k == 0 else None, 'tag': tagx})
+        else:
+            cap = f', ăn {PIECE[x["capture"].upper()]}' if x.get('capture') else ''
+            forced = ', bắt buộc' if x.get('forced') else ''
+            steps.append({'say': f'{vn}{cap}{forced}.', 'move': x['move']})
+        pos = nxt
+    steps.append({'say': f'Đã kiểm chứng bằng máy tính: dù đối phương chống đỡ thế nào cũng bị bí trong {n} nước. '
+                         'Theo dõi kênh Tinh Hoa Cờ Tàn để xem sát cục mỗi ngày.'})
+    return {'number': data['number'], 'fen': data['fen'], 'headline': headline, 'tag': tag,
+            'verdict': f'Bí trong {n} nước • đã kiểm chứng', 'wdl': 'W', 'steps': steps,
+            'footer': 'Lời giải kiểm chứng mọi cách chống đỡ • Tinh Hoa Cờ Tàn'}
+
+
 def short_script(data, max_plies):
+    if data.get('kind') == 'mate':
+        return mate_short(data)
     if data.get('kind') == 'game':
         return game_short(data, max_plies)
     a = data['analysis']
@@ -107,7 +151,7 @@ def main():
         short = short_script(data, plies)
         timing = generate_voice({'beats': [{'steps': short['steps']}]}, out / 'voice_short', args.voice)
         total = sum(c['seconds'] + .5 for c in timing[0]) + 6.5
-        if total <= MAX_SECONDS or plies <= 2:
+        if total <= MAX_SECONDS or plies <= 2 or data.get('kind') == 'mate':
             break
         plies -= 1
     (out / 'short.json').write_text(json.dumps(short, ensure_ascii=False, indent=1), encoding='utf-8')

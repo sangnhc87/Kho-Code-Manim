@@ -1,0 +1,1386 @@
+{
+ "source": "https://github.com/chasoft/community-xiangqi-games-database/tree/main/data/end-games/连将带杀",
+ "collection": "end-games/连将带杀",
+ "items": {
+  "0201": {
+   "title": "0201",
+   "start_fen": "3a1kb2/3Pa4/4bN3/4C1n2/9/2p3B2/1c2C4/B1p6/5K3/6r2 w",
+   "book_moves": [
+    "e6f6",
+    "g6f8",
+    "f7h8",
+    "f9e9",
+    "f6b6",
+    "c4b4",
+    "b6c6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0202": {
+   "title": "0202",
+   "start_fen": "2b3b2/4a4/CCca1k3/6N2/9/9/9/9/2r3p2/3AK4 w",
+   "book_moves": [
+    "a7a8",
+    "e8d9",
+    "g6h8",
+    "f7f8",
+    "b7b8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 2,
+    "fen": "2ba2b2/C8/1Cca1k3/6N2/9/9/9/9/2r3p2/3AK4 w",
+    "n": 2,
+    "firsts": [
+     "g6h8"
+    ],
+    "line": [
+     {
+      "move": "g6h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b7b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 7
+   }
+  },
+  "0203": {
+   "title": "0203",
+   "start_fen": "2bak4/C8/b2a5/3N5/1C7/9/9/4B2pn/2n1A3c/5K3 w",
+   "book_moves": [
+    "d6f7",
+    "e9e8",
+    "b5b8",
+    "e8e7",
+    "f7e5",
+    "d7e8",
+    "b8b4"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0204": {
+   "title": "0204",
+   "start_fen": "3k1aN1C/3r5/9/9/2p6/9/2P6/3p5/9/4K4 w",
+   "book_moves": [
+    "g9i8",
+    "f9e8",
+    "i8g7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0205": {
+   "title": "0205",
+   "start_fen": "2C2k3/2n1a4/1C2N4/9/9/9/9/5p3/3p3n1/4K4 w",
+   "book_moves": [
+    "b7b9",
+    "f9f8",
+    "e7g6",
+    "f8f7",
+    "g6h8",
+    "f7f8",
+    "c9i9"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0206": {
+   "title": "0206",
+   "start_fen": "3a1kb2/3na4/3Nbn3/p8/2C6/4C4/c8/8B/4p2p1/5K3 w",
+   "book_moves": [
+    "c5c9",
+    "f9f8",
+    "d7e5",
+    "d8e6",
+    "e4e6",
+    "e7c9",
+    "e5g6",
+    "f8f9",
+    "g6h8",
+    "f9f8",
+    "e6i6",
+    "a3g3",
+    "i2g4"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0207": {
+   "title": "0207",
+   "start_fen": "3a1k1N1/4a4/b6C1/9/5C3/2c3P2/2n6/4p4/1p7/3K5 w",
+   "book_moves": [
+    "h7i7",
+    "f9e9",
+    "i7i9",
+    "e8f9",
+    "h9g7",
+    "f9e8",
+    "f5f9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 2,
+    "fen": "3ak2N1/4a4/b7C/9/5C3/2c3P2/2n6/4p4/1p7/3K5 w",
+    "n": 3,
+    "firsts": [
+     "i7i9"
+    ],
+    "line": [
+     {
+      "move": "i7i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f5f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 23
+   }
+  },
+  "0208": {
+   "title": "0208",
+   "start_fen": "4k3C/4a4/9/4N4/4C4/p8/9/4B4/rp7/1c1K5 w",
+   "book_moves": [
+    "e6g7",
+    "e8f7",
+    "g7i8",
+    "e9e8",
+    "i8g9",
+    "e8e7",
+    "i9i6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0209": {
+   "title": "0209",
+   "start_fen": "2b1kaN2/9/3a4b/7C1/2p1C4/9/n8/3p5/9/r1BAK4 w",
+   "book_moves": [
+    "h6e6",
+    "e9d9",
+    "g9f7",
+    "d7e8",
+    "e5d5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0210": {
+   "title": "0210",
+   "start_fen": "9/4k4/3Nba3/3C5/2b5p/3C5/6P2/3AB4/1n5pn/2B2K1c1 w",
+   "book_moves": [
+    "d6e6",
+    "e7g9",
+    "d7c9",
+    "e8e9",
+    "d4b4",
+    "e9f9",
+    "c9d7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0211": {
+   "title": "0211",
+   "start_fen": "3ak2N1/9/b4a3/4C4/2p5C/9/9/4BAp2/2r1A1n2/3K5 w",
+   "book_moves": [
+    "h9i7",
+    "e9e8",
+    "i7g8",
+    "e8f8",
+    "e6f6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0212": {
+   "title": "0212",
+   "start_fen": "5ab2/3k5/3Nba3/2C6/8C/4p4/8P/3pB4/5p1n1/3K1AB1c w",
+   "book_moves": [
+    "i5d5",
+    "d8e8",
+    "d5e5",
+    "e7c5",
+    "d7c9",
+    "e8e9",
+    "c6b6",
+    "e9d9",
+    "e5d5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0213": {
+   "title": "0213",
+   "start_fen": "5ab2/3ka4/4b4/3C1N3/9/4p2C1/9/3AB3n/2p2p3/3K1AB1c w",
+   "book_moves": [
+    "h4h5",
+    "e8f7",
+    "h5e5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0214": {
+   "title": "0214",
+   "start_fen": "2bk5/9/3Cb4/5N3/5C3/9/8P/B2A3p1/c1p6/4KAB1r w",
+   "book_moves": [
+    "d7d4",
+    "d9e9",
+    "f5e5",
+    "e7g9",
+    "f6g8",
+    "e9e8",
+    "d4h4",
+    "e8d8",
+    "e5d5",
+    "g9e7",
+    "g8f6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0215": {
+   "title": "0215",
+   "start_fen": "5a3/3kar1C1/6N2/7C1/9/9/7c1/B2A1p3/1np6/4K4 w",
+   "book_moves": [
+    "g7e6",
+    "d8d7",
+    "e6c5",
+    "d7d8",
+    "c5b7",
+    "d8d7",
+    "h6a6",
+    "h3c3",
+    "a2c4"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0216": {
+   "title": "0216",
+   "start_fen": "4k4/2P1aP3/9/4n4/9/9/9/9/4K4/9 w",
+   "book_moves": [
+    "c8d8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0217": {
+   "title": "0217",
+   "start_fen": "2bakab2/9/9/3R3N1/9/6B2/9/3pBp3/2r6/4K4 w",
+   "book_moves": [
+    "h6f7",
+    "e9e8",
+    "d6d8",
+    "e8e7",
+    "f7e5",
+    "f9e8",
+    "e5g6",
+    "e7f7",
+    "d8d5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0218": {
+   "title": "0218",
+   "start_fen": "2b1ka3/4aP1R1/1N2b4/9/2p6/2n6/9/9/3pA4/2rA1K3 w",
+   "book_moves": [
+    "f8e8",
+    "f9e8",
+    "h8h9",
+    "e8f9",
+    "h9f9",
+    "e9e8",
+    "f9f8",
+    "e8e9",
+    "b7d6",
+    "e9d9",
+    "d6b5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0219": {
+   "title": "0219",
+   "start_fen": "2b3b2/9/2N1ka3/3R5/9/2Bp5/1n7/4B4/2r2p3/3K5 w",
+   "book_moves": [
+    "d6d8",
+    "f7e8",
+    "d8e8",
+    "e7d7",
+    "c7d5",
+    "b3c5",
+    "d5f6",
+    "c5e6",
+    "e8e6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0220": {
+   "title": "0220",
+   "start_fen": "2b2ab2/5k3/9/3R1N3/9/2B1p4/9/3nB4/2r2p3/3K5 w",
+   "book_moves": [
+    "d6d8",
+    "f8f7",
+    "f6d7",
+    "d2c4",
+    "e2c4",
+    "c1c0",
+    "d0d1",
+    "c0g0",
+    "d7e5",
+    "f7e7",
+    "d8f8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0221": {
+   "title": "0221",
+   "start_fen": "2N6/5k3/5a3/5R3/9/2B6/9/3nB4/2r2p3/3K5 w",
+   "book_moves": [
+    "f6e6",
+    "f7e8",
+    "e6e8",
+    "f8f7",
+    "c9d7",
+    "d2c4",
+    "e2c4",
+    "c1e1",
+    "c4e2"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0222": {
+   "title": "0222",
+   "start_fen": "2Nk5/9/5a3/4R4/9/2Bpp4/3n5/4B4/4r4/3K5 w",
+   "book_moves": [
+    "c9a8",
+    "d9d8",
+    "a8c7",
+    "d8d7",
+    "e6d6",
+    "d7e7",
+    "d6d8",
+    "f7e8",
+    "d8e8",
+    "e7f7",
+    "c7d9"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0223": {
+   "title": "0223",
+   "start_fen": "4Na3/7R1/3ak4/9/9/9/8n/2pnB4/7r1/3K1A3 w",
+   "book_moves": [
+    "h8f8",
+    "d7e8",
+    "f8f3"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0224": {
+   "title": "0224",
+   "start_fen": "4Na3/4a3R/5k3/9/9/3pp4/9/B3Bn3/4r4/3K5 w",
+   "book_moves": [
+    "e9c8",
+    "e8d7",
+    "c8d6",
+    "f7e7",
+    "i8f8",
+    "d7e8",
+    "f8f5",
+    "e7d7",
+    "f5d5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0225": {
+   "title": "0225",
+   "start_fen": "3a2b2/3k5/N2a5/8R/6b2/3p5/8n/B1r6/9/4K4 w",
+   "book_moves": [
+    "a7b9",
+    "c2c9",
+    "i6c6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0226": {
+   "title": "0226",
+   "start_fen": "3k5/2N1a4/3ab4/9/R3p1b2/3p5/9/B3B1n2/4r4/3K5 w",
+   "book_moves": [
+    "a5a9",
+    "d9d8",
+    "c8a7",
+    "e1c1",
+    "a2c4",
+    "e8f7",
+    "a9e9",
+    "d7e8",
+    "a7c6",
+    "d8d7",
+    "e9b9"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0227": {
+   "title": "0227",
+   "start_fen": "3a5/3k5/N2a4b/9/8p/9/7Rn/4B4/2r6/4K4 w",
+   "book_moves": [
+    "e2c4",
+    "c1c0",
+    "e0e1",
+    "c0c4",
+    "a7b9",
+    "c4c9",
+    "h3c3"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0228": {
+   "title": "0228",
+   "start_fen": "3a1a3/9/4kN3/9/9/9/P6R1/4B4/r1ppAp3/2B1KA3 w",
+   "book_moves": [
+    "f7e9",
+    "e7e8",
+    "h3e3",
+    "e8d8",
+    "e9f7",
+    "d8d7",
+    "f7e5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0229": {
+   "title": "0229",
+   "start_fen": "3a1ab2/4k2N1/4b4/9/2p6/P8/8R/3pB3n/r3A1p2/c1BA1K3 w",
+   "book_moves": [
+    "i3i8",
+    "e7c9",
+    "h8f7",
+    "e8e7",
+    "f7e5",
+    "d9e8",
+    "i8i6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0230": {
+   "title": "0230",
+   "start_fen": "2ba1k3/4a4/2P1c4/6R2/2p2N3/9/9/B7n/2r3p2/4K4 w",
+   "book_moves": [
+    "g6g9",
+    "f9f8",
+    "g9g8",
+    "f8f9",
+    "f5g7",
+    "e8f7",
+    "g8g9",
+    "f9f8",
+    "g9f9",
+    "f8e8",
+    "f9f7",
+    "e7e1",
+    "c7d7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0231": {
+   "title": "0231",
+   "start_fen": "3ak4/2R6/9/4p1N2/9/6B2/4P1n1P/9/2p1A1r2/4KAB1c w",
+   "book_moves": [
+    "g6f8",
+    "d9e8",
+    "c8c9",
+    "e8d9",
+    "f8d9",
+    "e9e8",
+    "c9c8",
+    "e8e9",
+    "d9c7",
+    "e9f9",
+    "c7e6",
+    "f9e9",
+    "e6g7",
+    "e9d9",
+    "c8c9",
+    "d9d8",
+    "c9c5",
+    "d8d9",
+    "c5d5",
+    "d9e9",
+    "e0d0"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0232": {
+   "title": "0232",
+   "start_fen": "1R1ak4/9/b3N4/9/9/9/r1P6/3A5/c2p5/4K4 w",
+   "book_moves": [
+    "e0f0",
+    "e9e8",
+    "e7g8",
+    "e8d8",
+    "b9b8",
+    "d8d7",
+    "g8f6",
+    "d7e7",
+    "b8b7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 4,
+    "fen": "1R1a5/3k2N2/b8/9/9/9/r1P6/3A5/c2p5/5K3 w",
+    "n": 3,
+    "firsts": [
+     "b9b8"
+    ],
+    "line": [
+     {
+      "move": "b9b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b8b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 24
+   }
+  },
+  "0233": {
+   "title": "0233",
+   "start_fen": "3N1k3/9/b4a3/9/p2R5/9/P3p4/4B4/r3Anp2/3K2B2 w",
+   "book_moves": [
+    "d5i5",
+    "f9e9",
+    "i5i9",
+    "e9e8",
+    "d9c7",
+    "e8f8",
+    "i9e9",
+    "a7c5",
+    "c7e6",
+    "c5e7",
+    "e9e7",
+    "f8f9",
+    "e6g7",
+    "f9f8",
+    "e7e9",
+    "f7e8",
+    "e9e8",
+    "f8f7",
+    "g7f5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0234": {
+   "title": "0234",
+   "start_fen": "2ba3N1/4a4/4k4/9/2b1P4/9/n8/3A5/2p2p3/4K4 w",
+   "book_moves": [
+    "e5e6",
+    "e7d7",
+    "e6d6",
+    "d7d8",
+    "h9f8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0235": {
+   "title": "0235",
+   "start_fen": "CC1a3nc/5k3/2N2a3/p8/9/9/8P/4B4/4A1p1r/4K1B2 w",
+   "book_moves": [
+    "c7e6",
+    "f8e8",
+    "b9b5",
+    "e8e7",
+    "a9a7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0236": {
+   "title": "0236",
+   "start_fen": "1C3k3/3Ca1N2/3a5/9/9/9/8P/9/2p3p1r/4K1B2 w",
+   "book_moves": [
+    "d8a8",
+    "g1f1",
+    "g8e9",
+    "e8d9",
+    "e9d7",
+    "d9e8",
+    "a8a9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 2,
+    "fen": "1C3k3/C3a1N2/3a5/9/9/9/8P/9/2p2p2r/4K1B2 w",
+    "n": 3,
+    "firsts": [
+     "g8e9"
+    ],
+    "line": [
+     {
+      "move": "g8e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a8a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N"
+    ],
+    "pieces": 12,
+    "nodes": 21
+   }
+  },
+  "0237": {
+   "title": "0237",
+   "start_fen": "2ba5/4k4/1C3a3/9/2b6/5NP2/4C4/5A2B/1p3p2r/1c1K1A3 w",
+   "book_moves": [
+    "b7e7",
+    "e8f8",
+    "e7e5",
+    "f8f9",
+    "f4e6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0238": {
+   "title": "0238",
+   "start_fen": "1Cba2b2/2N2k3/5a3/C8/6p2/9/9/9/3p3r1/1cBA1KB2 w",
+   "book_moves": [
+    "b9b8",
+    "f8f9",
+    "a6f6",
+    "f7e8",
+    "b8b5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0239": {
+   "title": "0239",
+   "start_fen": "2ba1ab2/4k4/9/9/5N3/9/3C5/3C3p1/3p4r/1n3KB2 w",
+   "book_moves": [
+    "f5d6",
+    "e8e7",
+    "d6c8",
+    "e7e8",
+    "d3b3"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0240": {
+   "title": "0240",
+   "start_fen": "3a1k3/4a4/6R2/9/9/2p6/n8/9/1C1r5/4KA3 w",
+   "book_moves": [
+    "b1b8",
+    "d1d8",
+    "g7g9",
+    "f9f8",
+    "g9g8",
+    "f8f7",
+    "g8g6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0241": {
+   "title": "0241",
+   "start_fen": "2b1k4/9/4b4/4R2N1/2p6/8P/9/B2A1A2c/2r3p2/4K4 w",
+   "book_moves": [
+    "h6g8",
+    "e9e8",
+    "g8e7",
+    "c9e7",
+    "e6e7",
+    "e8d8",
+    "e7e6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0242": {
+   "title": "0242",
+   "start_fen": "3k1a3/4an3/b7b/2pN5/9/3R5/9/B2A5/2r3p2/4K4 w",
+   "book_moves": [
+    "d6e8",
+    "d9e9",
+    "d4b4",
+    "a7c9",
+    "b4b9",
+    "e9d9",
+    "b9c9",
+    "d9d8",
+    "c9c8",
+    "d8d9",
+    "e8c7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0243": {
+   "title": "0243",
+   "start_fen": "4kab2/2R1a4/c3b4/3r3N1/9/9/7n1/2RA5/4pp3/3K5 w",
+   "book_moves": [
+    "c8d8",
+    "d6d8",
+    "h6g8",
+    "e9d9",
+    "c2c9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 2,
+    "fen": "4kab2/3ra4/c3b4/7N1/9/9/7n1/2RA5/4pp3/3K5 w",
+    "n": 2,
+    "firsts": [
+     "h6g8"
+    ],
+    "line": [
+     {
+      "move": "h6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c2c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 16
+   }
+  },
+  "0244": {
+   "title": "0244",
+   "start_fen": "2b1ka3/3ra4/b2N5/pNp1R1p1p/1Cc6/4Cn3/P3P4/6n2/9/1cBAKAB2 w",
+   "book_moves": [
+    "b6c8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0245": {
+   "title": "0245",
+   "start_fen": "2R6/3ka1PC1/3ac4/9/9/9/P8/1r1A1An2/6p2/2B1K4 w",
+   "book_moves": [
+    "g8g9",
+    "e8f9",
+    "c9c8",
+    "d8d9",
+    "g9f9"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0246": {
+   "title": "0246",
+   "start_fen": "C3kr3/4a4/3ac4/3r5/5n3/9/CR2p4/B8/4A4/4KAB2 w",
+   "book_moves": [
+    "b3b9",
+    "e8d9",
+    "b9b6",
+    "d9e8",
+    "a9b9"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0247": {
+   "title": "0247",
+   "start_fen": "3rka3/2P1a4/b3R1n2/6R1p/9/1r5C1/9/3AB4/1Np3p2/1cBAK4 w",
+   "book_moves": [
+    "e2c4"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0248": {
+   "title": "0248",
+   "start_fen": "5k1C1/3Pa4/b1n2a2N/6P2/9/4p4/9/5Kn2/4p4/c8 w",
+   "book_moves": [
+    "h9i9",
+    "f9e9",
+    "i7h9",
+    "e8f9",
+    "h9g7",
+    "f9e8",
+    "g7i8",
+    "e9f9",
+    "i8g9",
+    "f9f8",
+    "g6g7",
+    "a0g0",
+    "d8e8",
+    "c7e8",
+    "g7f7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 12,
+    "fen": "6N1C/3Pak3/b1n2aP2/9/9/4p4/9/5Kn2/4p4/6c2 w",
+    "n": 2,
+    "firsts": [
+     "d8e8"
+    ],
+    "line": [
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "c7e8",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "g7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 14,
+    "nodes": 13
+   }
+  },
+  "0249": {
+   "title": "0249",
+   "start_fen": "2baka3/4n4/4b4/p1p1C1N2/9/2P5C/P5p1P/4B4/4AK3/2BA3rc w",
+   "book_moves": [
+    "g6e7",
+    "c9e7",
+    "i4e4",
+    "h0h7",
+    "e6a6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0250": {
+   "title": "0250",
+   "start_fen": "3a1P3/C2k5/4b3b/9/2NP5/6n2/9/2p1B4/4p4/c2K5 w",
+   "book_moves": [
+    "c5d7",
+    "d8d7",
+    "d5d6",
+    "d7d8",
+    "d6d7",
+    "d8e8",
+    "d7d8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 2,
+    "fen": "3a1P3/C8/3kb3b/9/3P5/6n2/9/2p1B4/4p4/c2K5 w",
+    "n": 3,
+    "firsts": [
+     "d5d6"
+    ],
+    "line": [
+     {
+      "move": "d5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 7
+   }
+  },
+  "0251": {
+   "title": "0251",
+   "start_fen": "2P2a3/3ka4/6C2/p8/2N6/9/P1P6/4B2p1/1c1r4c/4K1B1R w",
+   "book_moves": [
+    "g7a7",
+    "e8d7",
+    "e2c4"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0252": {
+   "title": "0252",
+   "start_fen": "c1bak1C2/4a4/6P2/p3p3p/1n7/9/P3P3P/2p1C4/3KA4/2r2ABR1 w",
+   "book_moves": [
+    "e2h2",
+    "e8d7",
+    "h2h9",
+    "e9e8",
+    "h0h8",
+    "e8e7",
+    "h8f8",
+    "d7e8",
+    "h9h7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0253": {
+   "title": "0253",
+   "start_fen": "CRbk1abr1/4a4/8n/9/9/9/9/B3BC3/4AK3/3A3r1 w",
+   "book_moves": [
+    "f2f8",
+    "d9e9",
+    "b9c9",
+    "e8d9",
+    "f8b8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0254": {
+   "title": "0254",
+   "start_fen": "C3kab2/4a4/4b4/p8/4r1r2/2R6/9/4C2p1/4A4/2B1KABc1 w",
+   "book_moves": [
+    "c4c9",
+    "e8d9",
+    "c9c5",
+    "d9e8",
+    "e2b2",
+    "e9d9",
+    "c5c9",
+    "d9d8",
+    "c9c8",
+    "d8d7",
+    "b2b7",
+    "e7c5",
+    "c8c7",
+    "d7d8",
+    "a9a8",
+    "g9e7",
+    "c7c9",
+    "d8d7",
+    "c9c7",
+    "d7d8",
+    "c7c8",
+    "d8d7",
+    "b7b8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0255": {
+   "title": "0255",
+   "start_fen": "9/4ak3/9/4R4/9/9/9/9/4KC3/5r3 w",
+   "book_moves": [
+    "e6f6",
+    "e8f7",
+    "f6f5"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0256": {
+   "title": "0256",
+   "start_fen": "5a3/5k3/9/9/9/4R4/5N3/8B/1rp1A2p1/2B1K3c w",
+   "book_moves": [
+    "f3h4",
+    "b1b7",
+    "h4g6",
+    "b7g7",
+    "e1d2",
+    "f9e8",
+    "e4e8",
+    "f8f9",
+    "e8e9",
+    "f9f8",
+    "e9e4"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0257": {
+   "title": "0257",
+   "start_fen": "2ba1kb2/4a4/5N3/9/7P1/5R1p1/4p4/2n1BA3/3p5/4K1Br1 w",
+   "book_moves": [
+    "f7d6",
+    "e8f7",
+    "f4f7",
+    "f9e9",
+    "f7f8",
+    "d9e8",
+    "f8e8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0258": {
+   "title": "0258",
+   "start_fen": "2b6/3Pak3/4ba2c/9/4N4/P3p2R1/9/9/r4p3/2BK5 w",
+   "book_moves": [
+    "h4h7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0259": {
+   "title": "0259",
+   "start_fen": "9/4ak3/5a2c/9/4N4/P3p2R1/9/9/r4p3/2BK5 w",
+   "book_moves": [
+    "h4h7",
+    "e8d9",
+    "e5d7",
+    "f8e8",
+    "h7h8",
+    "e8e7",
+    "d7e5",
+    "f7e8",
+    "h8h6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0260": {
+   "title": "0260",
+   "start_fen": "4k4/4a4/5aN2/7R1/9/P8/9/2p6/2r1A1p2/c1BAK4 w",
+   "book_moves": [
+    "e1d2",
+    "e9d9",
+    "h6d6",
+    "d9e9",
+    "d6b6",
+    "e9d9",
+    "g7f9"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0261": {
+   "title": "0261",
+   "start_fen": "2ba3RC/4ak3/n3b4/pc2N3p/1r7/P3P4/2P5P/2n6/4A4/3AK1B2 w",
+   "book_moves": [
+    "h9h8",
+    "f8f7",
+    "h8h7",
+    "f7f8",
+    "e6g7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0262": {
+   "title": "0262",
+   "start_fen": "2b1ka1R1/2Nra3R/4b4/8p/N5pn1/9/9/3pB4/4A2r1/4KAB1c w",
+   "book_moves": [
+    "i8e8",
+    "e9e8",
+    "h9h8",
+    "e8e9",
+    "h8d8",
+    "d2e2",
+    "d8f8",
+    "e9d9",
+    "f8f9",
+    "d9d8",
+    "a5b7",
+    "d8e8",
+    "c8d6"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 6,
+    "fen": "2b1ka3/2NR5/4b4/8p/N5pn1/9/9/4p4/4A2r1/4KAB1c w",
+    "n": 4,
+    "firsts": [
+     "d8f8"
+    ],
+    "line": [
+     {
+      "move": "d8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a5b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8b6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 17,
+    "nodes": 407
+   }
+  },
+  "0263": {
+   "title": "0263",
+   "start_fen": "2ba1k3/3RC4/4R4/8p/8c/2n6/2r1P3r/4B4/4A4/2BAK4 w",
+   "book_moves": [
+    "e7f7",
+    "f9e9",
+    "e0f0",
+    "d9e8",
+    "f7f8",
+    "i3f3",
+    "f8f3",
+    "c4e5",
+    "f3f8",
+    "e8f7",
+    "f8g8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0264": {
+   "title": "0264",
+   "start_fen": "3a1kb2/4a3C/4b4/C6Rp/1r4p2/5p3/P3P1n1P/4B1N2/c3A2c1/4KAB2 w",
+   "book_moves": [
+    "h6h8",
+    "e7c9",
+    "i8i9",
+    "g9e7",
+    "a6g6"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0265": {
+   "title": "0265",
+   "start_fen": "5ab2/3ka4/4b4/p2P5/1N2C1p2/2P1n4/P8/2nAB4/4A4/c4K3 w",
+   "book_moves": [
+    "e5d5",
+    "e8d7",
+    "d6d7",
+    "d8e8",
+    "d7d8",
+    "e8e9",
+    "b5c7"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "0266": {
+   "title": "0266",
+   "start_fen": "1rbak1b2/3Ra4/4c4/p7p/2p3N2/4P2p1/P6rP/1n2C4/3R5/c1BAKAB2 w",
+   "book_moves": [
+    "g5f7",
+    "e9f9",
+    "f7h8",
+    "f9e9",
+    "d1f1"
+   ],
+   "result": "未知",
+   "proof": null
+  }
+ }
+}

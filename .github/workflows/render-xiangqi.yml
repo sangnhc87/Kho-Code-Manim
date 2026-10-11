@@ -151,19 +151,21 @@ jobs:
           EP="${{ matrix.episode }}"
           python - "$EP" <<'PY'
           import json, sys
-          d = json.load(open(f'episodes/{sys.argv[1]}.json', encoding='utf-8'))['youtube']
-          open('yt_title.txt', 'w', encoding='utf-8').write(d['title'])
-          open('yt_desc.txt', 'w', encoding='utf-8').write(d['description'])
-          open('yt_tags.txt', 'w', encoding='utf-8').write(','.join(d['tags']))
-          open('yt_playlist.txt', 'w', encoding='utf-8').write(d['playlist'])
           full = json.load(open(f'episodes/{sys.argv[1]}.json', encoding='utf-8'))
-          kind = 'thủ hòa' if full['verdict']['wdl'] == 'D' else 'cờ tàn'
-          open('yt_short_title.txt', 'w', encoding='utf-8').write(
-              f"Thử thách {kind} #{full['number']}: {full['subtitle']} – bạn giải được không? #Shorts")
-          open('yt_short_desc.txt', 'w', encoding='utf-8').write(
-              f"Câu đố {kind}: tìm nước đi đúng trong thế {full['subtitle']}.\n"
-              f"Lời giải đầy đủ: video \"{d['title']}\" trên kênh.\n"
-              "Kết luận kiểm chứng bằng bảng tra cờ tàn chessdb.cn.\n\n#Shorts #CoTuong #CoTan #TinhHoaCoTan")
+          d = full.get('youtube') or {}
+          open('yt_title.txt', 'w', encoding='utf-8').write(d.get('title', ''))
+          open('yt_desc.txt', 'w', encoding='utf-8').write(d.get('description', ''))
+          open('yt_tags.txt', 'w', encoding='utf-8').write(','.join(d.get('tags', [])))
+          open('yt_playlist.txt', 'w', encoding='utf-8').write(d.get('playlist', ''))
+          ys = full.get('youtube_short')
+          if not ys:
+              kind = 'thủ hòa' if full['verdict']['wdl'] == 'D' else 'cờ tàn'
+              ys = {'title': f"Thử thách {kind} #{full['number']}: {full['subtitle']} – bạn giải được không? #Shorts",
+                    'description': (f"Câu đố {kind}: tìm nước đi đúng trong thế {full['subtitle']}.\n"
+                                    f"Lời giải đầy đủ: video \"{d.get('title', '')}\" trên kênh.\n"
+                                    "Kết luận kiểm chứng bằng bảng tra cờ tàn chessdb.cn.\n\n#Shorts #CoTuong #CoTan #TinhHoaCoTan")}
+          open('yt_short_title.txt', 'w', encoding='utf-8').write(ys['title'])
+          open('yt_short_desc.txt', 'w', encoding='utf-8').write(ys['description'])
           PY
           [ -f "output/$EP/$EP.mp4" ] && python ../scripts/upload_to_youtube.py \
             --file "output/$EP/$EP.mp4" \

@@ -30,6 +30,8 @@ def main():
     for ep_id in dict.fromkeys(ids):
         path = ROOT / 'episodes' / f'{ep_id}.json'
         data = json.loads(path.read_text(encoding='utf-8'))
+        if data.get('kind') in ('game', 'mate'):
+            continue  # kịch bản dựng sẵn, không có phân tích bảng tra để dựng lại
         topic = data.get('topic_data') or topics[data['topic']]
         data['beats'] = build_episode(data['analysis'], topic, data['number'])
         if 'classic' not in data:  # tập từ sách giữ nguyên mô tả có ghi nguồn

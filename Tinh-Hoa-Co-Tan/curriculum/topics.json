@@ -1,13 +1,20 @@
 {
  "note": "Giáo trình theo thứ tự phát sóng. Mọi con số trong 'theory' lấy từ khảo sát bảng tra chessdb (scripts/topic_stats.py, data/topic_stats.json). material = [quân Đỏ, quân Đen] không kể Tướng; constraints giới hạn ô đặt quân khi tìm thế (toạ độ [cột 0-8, hàng 0-9], hàng 0 là đáy Đỏ).",
+ "mates": [
+  "弃车绝杀",
+  "连将带杀",
+  "妙局杀法",
+  "68-Sat-Phap-Co-Ban",
+  "杀局宝典"
+ ],
+ "games": [
+  "Dai-Su-Ky-Lo-Ho-Vinh-Hoa"
+ ],
+ "game_every": 4,
  "classics_first": [
   "Co-Tan-Thuc-Dung"
  ],
  "classics_min_pieces": 7,
- "games": [
-  "Dai-Su-Ky-Lo-Ho-Vinh-Hoa"
- ],
- "game_every": 3,
  "topics": [
   {
    "id": "binh-tuong-don",

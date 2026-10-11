@@ -188,13 +188,49 @@ class Position:
                     and (src[0] + dx // 2, src[1] + dy // 2) not in self.cells)
         return False
 
-    def in_check(self, side):
+    def in_check_slow(self, side):
         k = self.king_sq(side)
         if k is None:
             return True
         if self.kings_facing():
             return True
         return any(side_of(p) != side and self.attacks(sq, k) for sq, p in self.cells.items())
+
+    def in_check(self, side):
+        """Kiểm tra chiếu nhanh: dò từ ô Tướng ra các hướng thay vì xét mọi quân."""
+        cells = self.cells
+        k = self.king_sq(side)
+        if k is None:
+            return True
+        kx, ky = k
+        red = side == RED
+        R, C, N, P, K = ('r', 'c', 'n', 'p', 'k') if red else ('R', 'C', 'N', 'P', 'K')
+        for dx, dy in ORTHO:
+            x, y, screen = kx + dx, ky + dy, False
+            while 0 <= x <= 8 and 0 <= y <= 9:
+                q = cells.get((x, y))
+                if q:
+                    if not screen:
+                        if q == R or (q == K and dx == 0):
+                            return True
+                        screen = True
+                    else:
+                        if q == C:
+                            return True
+                        break
+                x, y = x + dx, y + dy
+        for (sx, sy), (lx, ly) in KNIGHT_STEPS:
+            src = (kx - sx, ky - sy)
+            if cells.get(src) == N and (src[0] + lx, src[1] + ly) not in cells:
+                return True
+        fwd = 1 if not red else -1  # hướng tiến của Tốt đối phương
+        if cells.get((kx, ky - fwd)) == P:
+            return True
+        for dx in (-1, 1):
+            q = (kx + dx, ky)
+            if cells.get(q) == P and not own_half(q, BLACK if red else RED):
+                return True
+        return False
 
     def checkers(self, side):
         """Danh sách ô các quân đang chiếu Tướng của side."""
@@ -252,14 +288,21 @@ class Position:
 
     def legal_moves(self):
         moves = []
-        for src, p in list(self.cells.items()):
+        cells = self.cells
+        for src, p in list(cells.items()):
             if side_of(p) != self.turn:
                 continue
             for dst in self.pseudo_targets(src):
-                if self.cells.get(dst, '').upper() == 'K':
+                victim = cells.get(dst)
+                if victim and victim.upper() == 'K':
                     continue
-                nxt = self._apply(src, dst)
-                if not nxt.in_check(self.turn):
+                # đi thử tại chỗ rồi hoàn lại (nhanh hơn tạo thế mới)
+                cells[dst] = cells.pop(src)
+                ok = not self.in_check(self.turn)
+                cells[src] = cells.pop(dst)
+                if victim:
+                    cells[dst] = victim
+                if ok:
                     moves.append(sq_name(src) + sq_name(dst))
         return sorted(moves)
 

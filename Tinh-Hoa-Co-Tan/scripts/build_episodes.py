@@ -342,6 +342,77 @@ def build_game(collection, file_name, game, ep, catalog):
     return data
 
 
+PIECE_VN = {'R': 'Xe', 'N': 'Mã', 'C': 'Pháo', 'P': 'Binh', 'A': 'Sĩ', 'B': 'Tượng'}
+
+
+def sac_phrase(sacs):
+    """['R','R','C'] -> 'thí 2 Xe và Pháo'."""
+    if not sacs:
+        return ''
+    parts = []
+    for u in 'RNCPAB':
+        k = sacs.count(u)
+        if k:
+            parts.append(f'{k} {PIECE_VN[u]}' if k > 1 else PIECE_VN[u])
+    return 'thí ' + (' và '.join([', '.join(parts[:-1]), parts[-1]]) if len(parts) > 1 else parts[0])
+
+
+def mate_score(item):
+    pr = item.get('proof')
+    if not pr or pr['n'] < 3:
+        return None
+    return 3 * len(pr['sacrifices']) + (2 if len(pr['firsts']) == 1 else 0) + min(pr['n'], 7)
+
+
+def next_mates(collections, catalog):
+    done = {e.get('source_file') for e in catalog['episodes']}
+    used = {e['key'] for e in catalog['episodes']}
+    pool = []
+    for coll in collections:
+        data = load_json(ROOT / 'curriculum' / 'mates' / f'{coll}.json', {'items': {}})
+        for f, item in data['items'].items():
+            sc = mate_score(item)
+            if sc is None or f in done or canonical(item['proof']['fen']) in used:
+                continue
+            pool.append((-sc, coll, f, item))
+    pool.sort(key=lambda t: t[0])
+    return [(c, f, it) for _, c, f, it in pool]
+
+
+def build_mate(collection, file_name, item, ep, catalog):
+    from xq.mate import Prover
+    pr = item['proof']
+    # Kiểm chứng lại trước khi dựng (chứng minh lặp lại, không tin dữ liệu đã lưu).
+    n, firsts = Prover(max_nodes=200_000).solve(pr['fen'], max_n=pr['n'])
+    if n != pr['n'] or pr['line'][0]['move'] not in firsts:
+        raise ValueError(f'Chứng minh không khớp cho {file_name}')
+    side = 'Đỏ' if pr['fen'].split()[1] == 'w' else 'Đen'
+    sp = sac_phrase(pr['sacrifices'])
+    title = (f'{sp[0].upper() + sp[1:]}, chiếu bí trong {n} nước!' if sp else f'Chiếu liên hoàn, bí trong {n} nước!')
+    yt_title = f'{title} Bạn giải được không? #Shorts'
+    desc = (f'{side} đi trước, chiếu bí trong {n} nước' + (f' ({sp})' if sp else '') + '.\n'
+            'Lời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\n'
+            f'Thế cờ: "{item.get("title", file_name)}" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n'
+            '#Shorts #CoTuong #SatCuc #TinhHoaCoTan')
+    data = {
+        'id': f'ep-{ep:04d}', 'number': ep, 'kind': 'mate', 'topic': f'mate-{collection}',
+        'category': 'Sát cục', 'title': title, 'subtitle': 'Sát cục', 'fen': pr['fen'],
+        'verdict': {'wdl': 'W', 'dtm': 2 * n - 1}, 'mate': {'n': n, 'line': pr['line'], 'sacrifices': pr['sacrifices'],
+                                                          'unique': len(firsts) == 1, 'side': side},
+        'source': {'collection': collection, 'file': file_name, 'title': item.get('title')},
+        'beats': [], 'analysis': None,
+        'youtube_short': {'title': yt_title, 'description': desc,
+                          'tags': ['shorts', 'cờ tướng', 'sát cục', 'câu đố cờ tướng', 'tinh hoa cờ tàn']},
+    }
+    (EPISODES / f'ep-{ep:04d}.json').write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n',
+                                               encoding='utf-8')
+    catalog['episodes'].append({'ep': ep, 'topic': data['topic'], 'fen': pr['fen'], 'key': canonical(pr['fen']),
+                                'title': title, 'source_file': file_name})
+    CATALOG.write_text(json.dumps(catalog, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+    print(f'ep-{ep:04d}: {title}')
+    return data
+
+
 def next_topics(topics, catalog, count, per_pass=2):
     """Thứ tự phát sóng theo vòng: mỗi vòng, mỗi chủ đề thêm tối đa per_pass tập.
 
@@ -376,6 +447,29 @@ def main():
     cur = load_json(CURRICULUM, {})
     topics = cur['topics']
     catalog = load_json(CATALOG, {'episodes': []})
+    mate_colls = [] if args.classic or args.topic or args.fen else cur.get('mates', [])
+    built = 0
+    while mate_colls and built < args.count:
+        ep = 1 + max([e['ep'] for e in catalog['episodes']] or [0])
+        games = [(c, f, g) for c in cur.get('games', []) for f, g in next_games(c, catalog)]
+        if games and ep % cur.get('game_every', 4) == 0:
+            build_game(*games[0], ep, catalog)
+            built += 1
+            continue
+        todo = next_mates(mate_colls, catalog)
+        if not todo:
+            break
+        c, f, it = todo[0]
+        try:
+            build_mate(c, f, it, ep, catalog)
+            built += 1
+        except ValueError as exc:
+            print('CẢNH BÁO:', exc)
+            it['proof'] = None
+    if mate_colls:
+        if built < args.count:
+            raise SystemExit(f'Chỉ dựng được {built}/{args.count} tập')
+        return
     collections = [args.classic] if args.classic else ([] if args.topic or args.fen else cur.get('classics_first', []))
     game_colls = [] if args.classic or args.topic or args.fen else cur.get('games', [])
     every = cur.get('game_every', 3)

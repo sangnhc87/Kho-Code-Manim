@@ -16,7 +16,7 @@ elif arg == 'all':
 elif arg == 'unpublished':
     hist_path = ROOT.parent / 'youtube_uploaded_history.json'
     hist = json.loads(hist_path.read_text(encoding='utf-8')) if hist_path.exists() else {}
-    pick = [i for i in ids if f'cotan3_{i}' not in hist]
+    pick = [i for i in ids if f'cotan3_short_{i}' not in hist]  # kênh hiện chỉ đăng Shorts
 elif arg.startswith('range:'):
     a, b = arg[6:].split('-', 1)
     pick = [f'ep-{n:04d}' for n in range(int(a), int(b) + 1)]

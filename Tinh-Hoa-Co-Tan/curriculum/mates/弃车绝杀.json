@@ -1,0 +1,2289 @@
+{
+ "source": "https://github.com/chasoft/community-xiangqi-games-database/tree/main/data/end-games/弃车绝杀",
+ "collection": "end-games/弃车绝杀",
+ "items": {
+  "妙弃双车-1": {
+   "title": "妙弃双车-1",
+   "start_fen": "r1bak4/3RaR3/n2cb1n2/p3p3p/2pc2p2/6r2/P1P1P3P/NC2C1N2/4A4/2BAK1B2 w",
+   "book_moves": [
+    "b2b7",
+    "d5d8",
+    "b7e7",
+    "e8f9",
+    "f8f7",
+    "d7f7",
+    "e2e6"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 6,
+    "fen": "r1baka3/3c5/n3Ccn2/p3p3p/2p3p2/6r2/P1P1P3P/N3C1N2/4A4/2BAK1B2 w",
+    "n": 1,
+    "firsts": [
+     "e2e6"
+    ],
+    "line": [
+     {
+      "move": "e2e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 28,
+    "nodes": 2
+   }
+  },
+  "妙弃双车-2": {
+   "title": "妙弃双车-2",
+   "start_fen": "1r1a1k3/3Ra4/n2cb1n2/p1p3p1p/4C4/2P1r4/P3N1P1P/4BC3/4A4/2BAK2R1 w",
+   "book_moves": [
+    "d8d7",
+    "e8d7",
+    "h0h4",
+    "e4e5",
+    "e3f5",
+    "f9e9",
+    "f5g7",
+    "e7g9",
+    "h4h9",
+    "d7e8",
+    "h9g9",
+    "e8f9",
+    "g9f9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 10,
+    "fen": "1r1ak1bR1/4a4/n5N2/p1p3p1p/4r4/2P6/P5P1P/4BC3/4A4/2BAK4 w",
+    "n": 2,
+    "firsts": [
+     "h9g9"
+    ],
+    "line": [
+     {
+      "move": "h9g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 23,
+    "nodes": 4
+   }
+  },
+  "妙弃双车-3": {
+   "title": "妙弃双车-3",
+   "start_fen": "4k4/2Cna4/3ab4/5R3/6b2/1R4PN1/4r4/2n1B4/4A2r1/c1BAKC3 w",
+   "book_moves": [
+    "f6f9",
+    "e9f9",
+    "b4b9",
+    "f9f8",
+    "h4g6",
+    "f8f7",
+    "e1f2",
+    "e3f3",
+    "b9f9",
+    "e8f9",
+    "g6e5"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4k4/2Cna4/3ab4/5R3/6b2/1R4PN1/4r4/2n1B4/4A2r1/c1BAKC3 w",
+    "n": 6,
+    "firsts": [
+     "f6f9"
+    ],
+    "line": [
+     {
+      "move": "f6f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "b4b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e1f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e3f3",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h4g6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "g6e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R"
+    ],
+    "pieces": 21,
+    "nodes": 459
+   }
+  },
+  "妙弃双车-4": {
+   "title": "妙弃双车-4",
+   "start_fen": "2bk1a3/4a4/4b3n/9/3P3r1/2R6/5R3/4CA2B/4K4/2BA3r1 w",
+   "book_moves": [
+    "c4c9",
+    "e7c9",
+    "f3f9",
+    "d9d8",
+    "e2d2",
+    "e8d7",
+    "f9f7",
+    "h5e5",
+    "d5e5",
+    "d8e8",
+    "d2e2",
+    "c9e7",
+    "e5e6",
+    "h0d0",
+    "e6e7",
+    "e8d8",
+    "f7i7"
+   ],
+   "result": "红胜",
+   "proof": null
+  },
+  "妙弃双车-5": {
+   "title": "妙弃双车-5",
+   "start_fen": "1r2kab2/4a2r1/4b4/pCp1nN2p/4C4/2Pn2P2/P6cP/4B4/4A4/1RBAK2R1 w",
+   "book_moves": [
+    "h0h3",
+    "h8f8",
+    "e5e7",
+    "e9d9",
+    "h3h5",
+    "e6f4",
+    "e7e4",
+    "f8f6",
+    "b6f6",
+    "b9b0",
+    "h5d5",
+    "e8d7",
+    "d5d7",
+    "d9e9",
+    "f6e6"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 10,
+    "fen": "3k1ab2/4a4/9/p1p2C2p/7R1/2PnCnP2/P7P/4B4/4A4/1rBAK4 w",
+    "n": 3,
+    "firsts": [
+     "h5d5"
+    ],
+    "line": [
+     {
+      "move": "h5d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d5d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 22,
+    "nodes": 15
+   }
+  },
+  "妙弃双车-6": {
+   "title": "妙弃双车-6",
+   "start_fen": "3akabr1/7C1/2N1b2R1/p1C1p4/2P2c3/6p2/P4nr2/5R2B/4A4/2BAK4 w",
+   "book_moves": [
+    "h8a8",
+    "h9h7",
+    "a8a9",
+    "d9e8",
+    "c7a8",
+    "f3d2",
+    "f2d2",
+    "f5e5",
+    "e1f0",
+    "g3e3",
+    "d0e1",
+    "e3b3",
+    "e0d0",
+    "e8d7",
+    "a8c9",
+    "b3b9",
+    "d2b2",
+    "b9a9",
+    "c9d7",
+    "e9d9",
+    "c6d6"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 18,
+    "fen": "r1N1kab2/9/3ab2r1/p1C1p4/2P1c4/6p2/P8/1R6B/4A4/2BK1A3 w",
+    "n": 2,
+    "firsts": [
+     "c9d7"
+    ],
+    "line": [
+     {
+      "move": "c9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 21,
+    "nodes": 8
+   }
+  },
+  "妙弃双车-7": {
+   "title": "妙弃双车-7",
+   "start_fen": "1R1ak1b1r/4a2N1/4b2C1/4p4/7n1/6B2/P1nrP1P2/9/4A1C2/c1BAKR3 w",
+   "book_moves": [
+    "b9b8",
+    "i9i8",
+    "f0f9",
+    "e8f9",
+    "h8f7",
+    "i8f8",
+    "b8f8",
+    "d9e8",
+    "f8f9",
+    "e9f9",
+    "g1f1",
+    "h5f6",
+    "h7h9",
+    "f9f8",
+    "f7h8",
+    "f6h5",
+    "h9i9",
+    "h5g7",
+    "i9i8",
+    "g7i8",
+    "h8f7",
+    "f8f7",
+    "e1f2"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 18,
+    "fen": "6b1C/4ak1N1/4b1n2/4p4/9/6B2/P1nrP1P2/9/4AC3/c1BAK4 w",
+    "n": 3,
+    "firsts": [
+     "i9i8"
+    ],
+    "line": [
+     {
+      "move": "i9i8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "g7i8",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "h8f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "e1f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "C",
+     "N"
+    ],
+    "pieces": 20,
+    "nodes": 32
+   }
+  },
+  "妙弃双车-8": {
+   "title": "妙弃双车-8",
+   "start_fen": "1nbaka1n1/9/5r2b/p1p1C3p/3N2p2/3R5/P1P1P4/3C5/4A2rc/1RB1KAB1c w",
+   "book_moves": [
+    "b0b8",
+    "h1h6",
+    "d5e7",
+    "f9e8",
+    "d4d9",
+    "e9d9",
+    "b8d8",
+    "d9e9",
+    "d8e8",
+    "e9d9",
+    "e8e9",
+    "d9d8",
+    "e9d9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 2,
+    "fen": "1nbaka1n1/1R7/5r2b/p1p1C2rp/3N2p2/3R5/P1P1P4/3C5/4A3c/2B1KAB1c w",
+    "n": 6,
+    "firsts": [
+     "d5e7"
+    ],
+    "line": [
+     {
+      "move": "d5e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d4d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "b8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d2f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 6
+     },
+     {
+      "move": "e6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R",
+     "C"
+    ],
+    "pieces": 28,
+    "nodes": 2577
+   }
+  },
+  "妙弃双车-9": {
+   "title": "妙弃双车-9",
+   "start_fen": "3k1a1r1/4a1P2/b3b4/1R6p/1N1P5/R8/4c1n1P/C1CAB4/2prA4/5K2c w",
+   "book_moves": [
+    "b6b9",
+    "e7c9",
+    "b5c7",
+    "d9e9",
+    "a4h4",
+    "h9h4",
+    "b9c9",
+    "a7c9",
+    "a2a9",
+    "c9a7",
+    "c7b9",
+    "e8d9",
+    "b9a7",
+    "e9e8",
+    "g8f8",
+    "e8d8",
+    "a7c6",
+    "d8d7",
+    "d5d6",
+    "d7e7",
+    "d6e6",
+    "e7d7",
+    "e6e7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 6,
+    "fen": "1Rb1ka3/4a1P2/b1N6/8p/3P5/7r1/4c1n1P/C1CAB4/2prA4/5K2c w",
+    "n": 9,
+    "firsts": [
+     "b9c9"
+    ],
+    "line": [
+     {
+      "move": "b9c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "b"
+     },
+     {
+      "move": "a7c9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "a2a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9a7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "c7b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b9a7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "a7c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 23,
+    "nodes": 1024
+   }
+  },
+  "妙手献车-1": {
+   "title": "妙手献车-1",
+   "start_fen": "r1b1kab2/1N1Rar3/n1c1c1n2/p3p3p/9/7R1/P3P3P/4C3C/4A4/2B1KAB2 w",
+   "book_moves": [
+    "i2g2",
+    "g9i7",
+    "h4h8",
+    "f8h8",
+    "e2e6",
+    "a7c8",
+    "e0d0",
+    "c7d7",
+    "d8d7",
+    "c8d6",
+    "d7d9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 10,
+    "fen": "r1b1ka3/1N2a2r1/3Rc1n1b/p2nC3p/9/9/P3P3P/6C2/4A4/2BK1AB2 w",
+    "n": 1,
+    "firsts": [
+     "d7d9"
+    ],
+    "line": [
+     {
+      "move": "d7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 24,
+    "nodes": 2
+   }
+  },
+  "妙手献车-2": {
+   "title": "妙手献车-2",
+   "start_fen": "2bakab2/9/2n2R3/p1p1p3p/9/9/P1P1c1P1P/4C4/1r2A4/RNBCKA2r w",
+   "book_moves": [
+    "a0a1",
+    "b1a1",
+    "b0c2",
+    "a1b1",
+    "c2e3",
+    "c9e7",
+    "e3d5",
+    "c7b9",
+    "f7f8",
+    "d9e8",
+    "d5e7",
+    "i0i3",
+    "e7g8",
+    "i3g3",
+    "f8e8",
+    "e9d9",
+    "e2d2",
+    "b1d1",
+    "e8e9",
+    "d9d8",
+    "e9b9",
+    "g3g7",
+    "b9b1"
+   ],
+   "result": "红胜",
+   "proof": null
+  },
+  "妙手献车-3": {
+   "title": "妙手献车-3",
+   "start_fen": "3aka3/9/n3C4/p5p1p/2R6/6P2/P3P3P/4C4/3r3r1/R1BAKAB1c w",
+   "book_moves": [
+    "a0a1",
+    "h1f1",
+    "a1d1",
+    "f1d1",
+    "e7c7",
+    "d9e8",
+    "c7g7",
+    "e9d9",
+    "c5c7",
+    "d1d0",
+    "e0e1",
+    "d0d7",
+    "c7d7",
+    "e8d7",
+    "g7a7"
+   ],
+   "result": "红胜",
+   "proof": null
+  },
+  "妙手献车-4": {
+   "title": "妙手献车-4",
+   "start_fen": "2bak1n2/1r2a4/4b3c/pC4N1p/2P2R3/6p2/P1p5P/4C4/c3A4/1RB1KABr1 w",
+   "book_moves": [
+    "b6c6",
+    "b8b0",
+    "g6e7",
+    "i7f7",
+    "e7c8",
+    "e9f9",
+    "e2f2",
+    "f9f8",
+    "c8d6",
+    "e8d7",
+    "e1d0",
+    "a1e1",
+    "e0e1",
+    "c9e7",
+    "f5f7",
+    "f8e8",
+    "f7e7",
+    "e8d8",
+    "f2f8",
+    "h0h8",
+    "e7e8"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 20,
+    "fen": "3a2n2/3k1C1r1/3aR4/p1CN4p/2P6/6p2/P1p5P/9/4K4/1rBA1AB2 w",
+    "n": 1,
+    "firsts": [
+     "e7e8"
+    ],
+    "line": [
+     {
+      "move": "e7e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 22,
+    "nodes": 3
+   }
+  },
+  "妙手献车-5": {
+   "title": "妙手献车-5",
+   "start_fen": "2b1ka1r1/3Ra4/1rn1b4/p1p1p4/5np1p/2P6/P3N1P1c/2NCC3B/4A4/4KA2R w",
+   "book_moves": [
+    "i0h0",
+    "h9h0",
+    "e3f5",
+    "e7g9",
+    "f5d6",
+    "g9e7",
+    "e2e7",
+    "e8d7",
+    "d2d7",
+    "b7b2",
+    "e7c7",
+    "f9e8",
+    "d7e7",
+    "e8d7",
+    "d8d7",
+    "c9e7",
+    "d7e7",
+    "e9d9",
+    "c2d4",
+    "h0h6",
+    "d6c8",
+    "d9d8",
+    "c7a7",
+    "b2b8",
+    "d4c6",
+    "d8d9",
+    "e7d7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 24,
+    "fen": "9/1rNk5/C3R4/p1p1p2r1/6p1p/2PN5/P5P1c/8B/4A4/4KA3 w",
+    "n": 2,
+    "firsts": [
+     "d4c6"
+    ],
+    "line": [
+     {
+      "move": "d4c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 20,
+    "nodes": 12
+   }
+  },
+  "妙手献车-6": {
+   "title": "妙手献车-6",
+   "start_fen": "2bakr3/4a4/4b3n/p1p1RNn2/8p/2C6/P5P1c/9/5RCr1/2BAKAB2 w",
+   "book_moves": [
+    "g1g6",
+    "h1h6",
+    "c4c9",
+    "e7c9",
+    "f6e8",
+    "f9f1",
+    "e8c9",
+    "d9e8",
+    "e6e8",
+    "e9d9",
+    "e8e9",
+    "d9d8",
+    "c9b7",
+    "d8d7",
+    "e9e7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 6,
+    "fen": "2bak4/4N4/8n/p1p1R1Cr1/8p/9/P5P1c/9/5r3/2BAKAB2 w",
+    "n": 5,
+    "firsts": [
+     "e8c9"
+    ],
+    "line": [
+     {
+      "move": "e8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e6e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e8e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 20,
+    "nodes": 325
+   }
+  },
+  "妙手献车-7": {
+   "title": "妙手献车-7",
+   "start_fen": "4kabr1/4a4/2n1b1c1n/p1p5p/4N1p2/2P1C3P/P4RP2/2N1C4/3r5/1RBAKAB1c w",
+   "book_moves": [
+    "b0b1",
+    "d1d6",
+    "e5f7",
+    "e9d9",
+    "e4d4",
+    "d6e6",
+    "c2e3",
+    "e6e3",
+    "f3e3",
+    "e8f7",
+    "d4d1",
+    "f7e8",
+    "e3b3",
+    "d9e9",
+    "b3b9",
+    "c7d9",
+    "b9d9",
+    "e9d9",
+    "b1b9",
+    "d9d8",
+    "e2d2"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 20,
+    "fen": "1R3abr1/3ka4/4b1c1n/p1p5p/6p2/2P5P/P5P2/4C4/3C5/2BAKAB1c w",
+    "n": 1,
+    "firsts": [
+     "e2d2"
+    ],
+    "line": [
+     {
+      "move": "e2d2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 25,
+    "nodes": 4
+   }
+  },
+  "妙手献车-8": {
+   "title": "妙手献车-8",
+   "start_fen": "1r2kab1r/4a4/n1R1b1n1c/p1p1p3p/9/2PN5/P3P3P/3CC1N2/5R3/c1BAKAB2 w",
+   "book_moves": [
+    "c7a7",
+    "g7f5",
+    "f1b1",
+    "b9c9",
+    "d4f5",
+    "i7a7",
+    "f5h6",
+    "a7a8",
+    "b1b8",
+    "i9h9",
+    "h6g8",
+    "e9d9",
+    "d2d3",
+    "h9h8",
+    "e2d2"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 14,
+    "fen": "2rk1ab2/cR2a1Nr1/4b4/p1p1p3p/9/2P6/P2CP3P/4C1N2/9/c1BAKAB2 w",
+    "n": 1,
+    "firsts": [
+     "e2d2"
+    ],
+    "line": [
+     {
+      "move": "e2d2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 27,
+    "nodes": 3
+   }
+  },
+  "弃车攻杀-1": {
+   "title": "弃车攻杀-1",
+   "start_fen": "2Rckn3/3PaR3/4ban2/6C2/C5b2/P5B2/1r2c4/4B4/2p1A2r1/4KA3 w",
+   "book_moves": [
+    "d8d9",
+    "e8d9",
+    "a5e5",
+    "f7e8",
+    "f8e8",
+    "g7e8",
+    "g6g9",
+    "f9g7",
+    "g9d9",
+    "b3c3",
+    "c9a9",
+    "e9f9",
+    "d9d8",
+    "c3c9",
+    "a9c9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 12,
+    "fen": "R2C1k3/4n4/4b1n2/9/4C1b2/P5B2/2r1c4/4B4/2p1A2r1/4KA3 w",
+    "n": 2,
+    "firsts": [
+     "d9d8"
+    ],
+    "line": [
+     {
+      "move": "d9d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c3c9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a9c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 18,
+    "nodes": 28
+   }
+  },
+  "弃车攻杀-2": {
+   "title": "弃车攻杀-2",
+   "start_fen": "1n1k2b2/4a1P2/3ab4/p1pR4p/3NNn3/2P6/P2C4P/4r2p1/4A4/3AK3c w",
+   "book_moves": [
+    "e5f7",
+    "f5d6",
+    "d3d6",
+    "b9d8",
+    "d6e6",
+    "d8b9",
+    "d5c7",
+    "b9c7",
+    "e6d6"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 6,
+    "fen": "1n1k2b2/4a1P2/3abN3/p1p1C3p/3N5/2P6/P7P/4r2p1/4A4/3AK3c w",
+    "n": 2,
+    "firsts": [
+     "d5c7"
+    ],
+    "line": [
+     {
+      "move": "d5c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "b9c7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "e6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N"
+    ],
+    "pieces": 22,
+    "nodes": 9
+   }
+  },
+  "弃车攻杀-3": {
+   "title": "弃车攻杀-3",
+   "start_fen": "3a1k3/4a4/b4c2b/1N2P4/4C4/5R3/9/3A1A3/5K3/4c1r2 w",
+   "book_moves": [
+    "f4f7",
+    "e8f7",
+    "e5f5",
+    "f7e8",
+    "e6f6",
+    "e8f7",
+    "f6f7",
+    "f9e9",
+    "b6c8",
+    "e9e8",
+    "c8d6",
+    "e8e9",
+    "f7f8",
+    "e0e8",
+    "f5e5",
+    "e8d8",
+    "d6e8"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 14,
+    "fen": "3ak4/4cP3/b7b/3N5/5C3/9/9/3A1A3/5K3/6r2 w",
+    "n": 2,
+    "firsts": [
+     "f5e5"
+    ],
+    "line": [
+     {
+      "move": "f5e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8a8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 33
+   }
+  },
+  "弃车攻杀-4": {
+   "title": "弃车攻杀-4",
+   "start_fen": "3akabr1/3R5/2n1bc1cn/2C1p1p1p/7r1/R8/2P1P1P1P/N3C4/8N/2BAKAB2 w",
+   "book_moves": [
+    "e2e6",
+    "f9e8",
+    "d8e8",
+    "e9f9",
+    "e8e9",
+    "f9f8",
+    "e6f6",
+    "f7g7",
+    "f6f3",
+    "d9e8",
+    "c6c4",
+    "h5e5",
+    "c4f4"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 12,
+    "fen": "4R1br1/4ak3/2n1b1ccn/6p1p/4r4/R1C6/2P1PCP1P/N8/8N/2BAKAB2 w",
+    "n": 1,
+    "firsts": [
+     "c4f4"
+    ],
+    "line": [
+     {
+      "move": "c4f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 27,
+    "nodes": 4
+   }
+  },
+  "弃车攻杀-5": {
+   "title": "弃车攻杀-5",
+   "start_fen": "C3kab2/9/3ab4/p3N4/4r4/2R3Pn1/P7P/1p2B4/4A4/4KABc1 w",
+   "book_moves": [
+    "c4c9",
+    "e9e8",
+    "c9c8",
+    "e8e9",
+    "e6c7",
+    "e5c5",
+    "c7a8",
+    "c5b5",
+    "a8c9",
+    "b5b9",
+    "c8e8",
+    "e9d9",
+    "c9d7",
+    "b9b7",
+    "d7b8",
+    "b7b8",
+    "e8b8"
+   ],
+   "result": "红胜",
+   "proof": null
+  },
+  "弃车攻杀-6": {
+   "title": "弃车攻杀-6",
+   "start_fen": "2bakab2/3R5/2n1c4/p1p1p3p/1r2P1p2/9/c1P1N1r1P/4C4/4CR3/2BAKAB2 w",
+   "book_moves": [
+    "e3d5",
+    "g3d3",
+    "d5e7",
+    "d3d8",
+    "f1f9",
+    "e9e8",
+    "e5e6",
+    "d8d1",
+    "e6d6",
+    "e8d8",
+    "f9d9",
+    "c7d9",
+    "e7f9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 10,
+    "fen": "2ba1Rb2/3k5/2n1N4/p1pP4p/1r4p2/9/c1P5P/4C4/3rC4/2BAKAB2 w",
+    "n": 2,
+    "firsts": [
+     "f9d9"
+    ],
+    "line": [
+     {
+      "move": "f9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "c7d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e7c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 24,
+    "nodes": 34
+   }
+  },
+  "弃车攻杀-7": {
+   "title": "弃车攻杀-7",
+   "start_fen": "4kab2/C2R5/b5n2/pn2p1P1p/9/3R5/P5r1P/4BC1c1/r4p3/3K1AB1c w",
+   "book_moves": [
+    "d8c8",
+    "a1a0",
+    "e2c0",
+    "f9e8",
+    "c8c9",
+    "a7c9",
+    "a8a9",
+    "e8d9",
+    "d4d9",
+    "e9e8",
+    "d9e9",
+    "e8f8",
+    "g6f6",
+    "g3f3",
+    "f6f7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 4,
+    "fen": "4k1b2/C1R1a4/b5n2/pn2p1P1p/9/3R5/P5r1P/5C1c1/5p3/r1BK1AB1c w",
+    "n": 6,
+    "firsts": [
+     "c8c9"
+    ],
+    "line": [
+     {
+      "move": "c8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "a7c9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "a8a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d4d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "g3f3",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 25,
+    "nodes": 950
+   }
+  },
+  "弃车攻杀-8": {
+   "title": "弃车攻杀-8",
+   "start_fen": "1r1a1kb2/4ac1R1/2N6/p6Cp/2b6/8P/P7R/1rn6/4ApC2/c3KAB2 w",
+   "book_moves": [
+    "h8f8",
+    "f9f8",
+    "i3f3",
+    "e8f7",
+    "h6f6",
+    "f7e8",
+    "f6f1",
+    "e8f7",
+    "f3f7",
+    "f8f7",
+    "e1f2"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1r1a1kb2/4ac1R1/2N6/p6Cp/2b6/8P/P7R/1rn6/4ApC2/c3KAB2 w",
+    "n": 6,
+    "firsts": [
+     "h8f8"
+    ],
+    "line": [
+     {
+      "move": "h8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "c"
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "i3f3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6f1",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f3f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e1f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R"
+    ],
+    "pieces": 24,
+    "nodes": 409
+   }
+  },
+  "舍车取势-1": {
+   "title": "舍车取势-1",
+   "start_fen": "4ka3/4a4/2C6/4R1p2/n7p/2P3P2/4P3P/3Cn1N2/4A4/crBAK4 w",
+   "book_moves": [
+    "c0e2",
+    "b0b6",
+    "e2c0",
+    "b6e6",
+    "c7h7",
+    "e9d9",
+    "g2f4",
+    "e6a6",
+    "f4d5",
+    "e8d7",
+    "d5e7",
+    "d7e8",
+    "h7h6",
+    "a6a7",
+    "e7d5",
+    "e8d7",
+    "d5f6",
+    "d7e8",
+    "f6d7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 18,
+    "fen": "3k1a3/4a4/r8/5NpC1/n7p/2P3P2/4P3P/3C5/4A4/c1BAK4 w",
+    "n": 1,
+    "firsts": [
+     "f6d7"
+    ],
+    "line": [
+     {
+      "move": "f6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 19,
+    "nodes": 4
+   }
+  },
+  "舍车取势-2": {
+   "title": "舍车取势-2",
+   "start_fen": "2bcka3/4a1c2/1Cn1b1nr1/p1C1rR2p/6p2/2P6/P5P1P/N3B1N2/4A4/3RKAB2 w",
+   "book_moves": [
+    "d0d8",
+    "c9a7",
+    "f6f8",
+    "g7h5",
+    "c4c5",
+    "g8g7",
+    "d8c8",
+    "h5g3",
+    "a2c3",
+    "a7c9",
+    "c3b5",
+    "g3e2",
+    "g0e2",
+    "g7g2",
+    "c8d8",
+    "c9a7",
+    "b5c7",
+    "e6e2",
+    "b7b9",
+    "a7c9",
+    "c6c9",
+    "d9b9",
+    "d8d9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 18,
+    "fen": "3cka3/3RaR3/bCN1b2r1/p1C5p/2P3p2/9/P7P/4r1c2/4A4/4KA3 w",
+    "n": 3,
+    "firsts": [
+     "b7b9"
+    ],
+    "line": [
+     {
+      "move": "b7b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "a7c9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c6c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "d9b9",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 23,
+    "nodes": 131
+   }
+  },
+  "舍车取势-3": {
+   "title": "舍车取势-3",
+   "start_fen": "2crkab1r/4a4/2n1b2cn/p1R1p1p1p/2p6/P5P2/2P1P3P/NC2C1N2/5R3/2BAKAB2 w",
+   "book_moves": [
+    "c6c7",
+    "h7c7",
+    "b2b9",
+    "e8d7",
+    "e2e6",
+    "f9e8",
+    "f0e1",
+    "i7h9",
+    "e0f0",
+    "h9g7",
+    "f1f7",
+    "i9i7",
+    "a2b4",
+    "i7h7",
+    "b4a6",
+    "c7c8",
+    "a6b8"
+   ],
+   "result": "未知",
+   "proof": null
+  },
+  "舍车取势-4": {
+   "title": "舍车取势-4",
+   "start_fen": "r1bakab2/9/nc2c1n2/p1p1p1R1p/9/6C2/P1P1P1P1P/R3C1N2/2r1A4/3AK1B2 w",
+   "book_moves": [
+    "g6g7",
+    "b7g7",
+    "e2e6",
+    "f9e8",
+    "a2f2",
+    "g7h7",
+    "e0f0",
+    "h7h9",
+    "f2f7",
+    "c1c3",
+    "f7g7",
+    "g9i7",
+    "g7i7",
+    "h9f9",
+    "i7i9",
+    "c3c5",
+    "i9f9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 16,
+    "fen": "r1bakc2R/4a4/n3c4/p1p1C3p/2r6/6C2/P3P1P1P/6N2/4A4/3A1KB2 w",
+    "n": 1,
+    "firsts": [
+     "i9f9"
+    ],
+    "line": [
+     {
+      "move": "i9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 24,
+    "nodes": 3
+   }
+  },
+  "舍车取势-5": {
+   "title": "舍车取势-5",
+   "start_fen": "1C2ka3/4a4/bNccbrn1N/4p3p/9/7R1/n1C1P3P/4BA3/4A4/4K1B2 w",
+   "book_moves": [
+    "h4c4",
+    "a3b5",
+    "c3c7",
+    "b5c7",
+    "c4c7",
+    "d7b7",
+    "e0d0",
+    "b7b8",
+    "c7c9",
+    "e8d9",
+    "c9d9",
+    "e9e8",
+    "d9d8",
+    "e8e9",
+    "d8b8"
+   ],
+   "result": "红胜",
+   "proof": null
+  },
+  "舍车取势-6": {
+   "title": "舍车取势-6",
+   "start_fen": "4kab2/4a4/4b3n/p1pN2p2/1rn5p/1CR6/P1P5P/4C4/4K4/1RBr1AB1c w",
+   "book_moves": [
+    "c4c5",
+    "c6c5",
+    "d6b5",
+    "d0d7",
+    "b5a7",
+    "e9d9",
+    "b4d4",
+    "d7c7",
+    "b0b9",
+    "e7c9",
+    "b9b8",
+    "g9e7",
+    "b8d8",
+    "d9e9",
+    "e1d1",
+    "c9a7",
+    "d4e4",
+    "c7c9",
+    "e2e7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 18,
+    "fen": "2r1ka3/3Ra4/b3b3n/p5p2/2p5p/4C4/P1P5P/4C4/3K5/2B2AB1c w",
+    "n": 1,
+    "firsts": [
+     "e2e7"
+    ],
+    "line": [
+     {
+      "move": "e2e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 22,
+    "nodes": 4
+   }
+  },
+  "舍车取势-7": {
+   "title": "舍车取势-7",
+   "start_fen": "3k1abr1/4a4/2n1b1nc1/p1p2P2p/6p2/2P6/P5rcP/C1N1C1N2/4A4/1RB1KABR1 w",
+   "book_moves": [
+    "h0h3",
+    "g3h3",
+    "c2e3",
+    "g7h5",
+    "a2d2",
+    "d9e9",
+    "e3d5",
+    "h3d3",
+    "g2f4",
+    "d3d4",
+    "f6f7",
+    "c7d9",
+    "b0b9",
+    "h5g3",
+    "e2e6",
+    "h7h0",
+    "d5b6",
+    "d4d8",
+    "f4d5",
+    "d8d5",
+    "b6c8",
+    "d5d8",
+    "b9d9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 20,
+    "fen": "1R1nkabr1/4a4/4bP3/pNp1C3p/3r2p2/2P6/P5n1P/3C5/4A4/2B1KABc1 w",
+    "n": 2,
+    "firsts": [
+     "b6c8"
+    ],
+    "line": [
+     {
+      "move": "b6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d5d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "n"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 27,
+    "nodes": 7
+   }
+  },
+  "车置虎口-1": {
+   "title": "车置虎口-1",
+   "start_fen": "2bak1b2/3Ra4/2N3n2/p1p1p1p1p/9/2r3P2/P3P3P/4C4/c2KAR3/1r3AB2 w",
+   "book_moves": [
+    "f1f7",
+    "g9e7",
+    "f7g7",
+    "c4f4",
+    "e2e6",
+    "e9f9",
+    "g7h7",
+    "f4c4",
+    "h7h9",
+    "f9f8",
+    "c7d9",
+    "f8f7",
+    "h9h7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 10,
+    "fen": "2ba3R1/3Rak3/2N1b4/p1p1C1p1p/9/2r3P2/P3P3P/9/c2KA4/1r3AB2 w",
+    "n": 2,
+    "firsts": [
+     "c7d9"
+    ],
+    "line": [
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 24,
+    "nodes": 17
+   }
+  },
+  "车置虎口-2": {
+   "title": "车置虎口-2",
+   "start_fen": "1rbak1b2/1C1Rac3/nR4n2/p1p1pNp1p/6r2/P8/2P1P3P/4C4/9/2BAKAB2 w",
+   "book_moves": [
+    "f6g8",
+    "e9f9",
+    "b8e8",
+    "d9e8",
+    "b7f7",
+    "b9b8",
+    "d8d4",
+    "b8b5",
+    "e2f2",
+    "b5f5",
+    "f7f8",
+    "f9e9",
+    "f8f9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 10,
+    "fen": "2b2kb2/4acN2/n4Rn2/p1p1p1p1p/5rr2/P2R5/2P1P3P/5C3/9/2BAKAB2 w",
+    "n": 2,
+    "firsts": [
+     "f7f8"
+    ],
+    "line": [
+     {
+      "move": "f7f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 27,
+    "nodes": 12
+   }
+  },
+  "车置虎口-3": {
+   "title": "车置虎口-3",
+   "start_fen": "r1b1kab2/3Ra4/nC1c5/2R5p/p2Np1pn1/4c4/P5r1P/B3C1N2/4A4/4KAB2 w",
+   "book_moves": [
+    "c6e6",
+    "e4e6",
+    "e2e6",
+    "e8f7",
+    "d8d7",
+    "a7b5",
+    "d7d8",
+    "a9a6",
+    "b7b6",
+    "a6b6",
+    "d5c7",
+    "b6d6",
+    "d8e8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 12,
+    "fen": "2b1kab2/3R5/2N2a3/3rC3p/pn2p1pn1/9/P5r1P/B5N2/4A4/4KAB2 w",
+    "n": 1,
+    "firsts": [
+     "d8e8"
+    ],
+    "line": [
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 24,
+    "nodes": 4
+   }
+  },
+  "车置虎口-4": {
+   "title": "车置虎口-4",
+   "start_fen": "3k1a3/4a4/nR2b4/7C1/4N4/6B2/9/C4K3/3r5/3n1A3 w",
+   "book_moves": [
+    "f0e1",
+    "d1e1",
+    "b7d7",
+    "e8d7",
+    "a2d2",
+    "d9e9",
+    "h6e6",
+    "f9e8",
+    "e6e1",
+    "e7c9",
+    "e1e3",
+    "d0c2",
+    "e5c6",
+    "e8f7",
+    "c6e7",
+    "d7e8",
+    "e7c8",
+    "e9f9",
+    "e3f3"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 14,
+    "fen": "2b1k4/9/n2a1a3/2N6/9/6B2/4C4/2nC1K3/9/9 w",
+    "n": 3,
+    "firsts": [
+     "c6e7"
+    ],
+    "line": [
+     {
+      "move": "c6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e3d3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 69
+   }
+  },
+  "车置虎口-5": {
+   "title": "车置虎口-5",
+   "start_fen": "2rnkabr1/4a4/4c3b/p1pP1R2p/3N3n1/2P6/P7P/R3C4/1C7/2BAKAB2 w",
+   "book_moves": [
+    "f0e1",
+    "c9b9",
+    "d6d7",
+    "b9b1",
+    "d7d8",
+    "d9b8",
+    "f6f8",
+    "b1b7",
+    "e0f0",
+    "h5g7",
+    "d8e8",
+    "g7e8",
+    "f8f9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 12,
+    "fen": "4kabr1/1n2nR3/1r2c3b/p1p5p/3N5/2P6/P7P/R3C4/4A4/2BA1KB2 w",
+    "n": 1,
+    "firsts": [
+     "f8f9"
+    ],
+    "line": [
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 24,
+    "nodes": 3
+   }
+  },
+  "车置虎口-6": {
+   "title": "车置虎口-6",
+   "start_fen": "r1bakab2/4n4/2c6/C3p3p/3n1Np2/9/PR2P1P1P/4B1r2/C4R3/2BAKA3 w",
+   "book_moves": [
+    "b3b6",
+    "d5b6",
+    "a6e6",
+    "e8f6",
+    "a1a9",
+    "b6d7",
+    "f5d6",
+    "f6h7",
+    "a9a4",
+    "e9e8",
+    "f1c1",
+    "c7a7",
+    "c1c8",
+    "e8e7",
+    "a4e4",
+    "e7f7",
+    "e6e5"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 12,
+    "fen": "2ba1ab2/4k4/c2n3n1/3NC3p/6p2/C8/P3P1P1P/4B1r2/2R6/2BAKA3 w",
+    "n": 3,
+    "firsts": [
+     "c1c8"
+    ],
+    "line": [
+     {
+      "move": "c1c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "a4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 24,
+    "nodes": 33
+   }
+  }
+ }
+}
