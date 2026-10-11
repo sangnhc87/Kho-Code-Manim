@@ -75,7 +75,7 @@ class XSS118(ShortScene):
         self.play(self.dice.animate.set_opacity(0), run_time=self.rt(.04))
         self.remove(self.dice)
         self.cols = VGroup(self.column(PARTS9, 9, CYAN), self.column(PARTS10, 10, CORAL)).arrange(buff=.4) \
-            .move_to([0, 1.45, 0])
+            .move_to([0, 1.65, 0])
         self.play(FadeIn(self.cols, lag_ratio=.3), run_time=self.rt(.12))
 
     def add_counts(self, col, parts, color):

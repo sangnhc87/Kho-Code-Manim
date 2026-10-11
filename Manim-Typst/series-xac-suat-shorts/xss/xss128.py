@@ -54,7 +54,8 @@ class XSS128(ShortScene):
     def hook_visual(self, t0):
         self.board_top = -1.35
         self.rows = VGroup(*[VGroup(*[coin(c, .2) for c in s]).arrange(buff=.04) for s in SEQS]) \
-            .arrange_in_grid(4, 4, buff=(.35, .18)).move_to([0, 1.3, 0])
+            .arrange_in_grid(4, 4, buff=(.35, .18))
+        self.rows.scale_to_fit_width(min(self.rows.width, 7.2)).move_to([0, 1.3, 0])
         self.wait_until(.5, t0)
         self.play(FadeIn(self.rows, lag_ratio=.04), run_time=self.rt(.25))
 

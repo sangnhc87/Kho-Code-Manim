@@ -62,7 +62,7 @@ class XSS127(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.3
-        base, top = -.55, 2.6
+        base, top = -.1, 2.75
         self.bars, self.labs = VGroup(), VGroup()
         for i, n in enumerate((1, 3, 5, 7)):
             v = float(best_of(n))
