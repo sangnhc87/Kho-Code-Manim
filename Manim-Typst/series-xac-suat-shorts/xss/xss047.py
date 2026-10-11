@@ -58,7 +58,7 @@ class XSS047(ShortScene):
         for i in range(4):
             opts = VGroup(*[token(c, SOFT, .3) for c in 'ABCD']).arrange(buff=.2)
             self.rows.add(VGroup(tx(f'Câu {i + 1}', 26, SOFT, bold=True), opts).arrange(buff=.4))
-        self.rows.arrange([0, -1, 0], buff=.28).move_to([0, 1.3, 0])
+        self.rows.arrange([0, -1, 0], buff=.28).scale(1.3).move_to([0, 1.3, 0])
         self.wait_until(.4, t0)
         self.play(FadeIn(self.rows, lag_ratio=.2), run_time=self.rt(.25))
 

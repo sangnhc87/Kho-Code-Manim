@@ -49,8 +49,8 @@ class XSS045(ShortScene):
     N = 45
 
     def hook_visual(self, t0):
-        self.c = circuit(2, True, 1.2, .7).move_to([0, 1.3, 0])
-        self.tags = VGroup(*[self.TM('$"0,9"$', 26, SOFT).next_to(b, RIGHT, buff=.2).shift([0, .35, 0])
+        self.c = circuit(2, True, 1.7, .95).move_to([0, 1.3, 0])
+        self.tags = VGroup(*[self.TM('$"0,9"$', 32, SOFT).next_to(b, RIGHT, buff=.2).shift([0, .35, 0])
                              for b in self.c.boxes])
         self.wait_until(.5, t0)
         self.play(FadeIn(self.c), FadeIn(self.tags), run_time=self.rt(.15))

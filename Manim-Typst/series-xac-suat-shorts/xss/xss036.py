@@ -9,7 +9,7 @@ from pathlib import Path
 from manim import FadeIn, VGroup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from common.kit import cross, tx  # noqa: E402
+from common.kit import tx  # noqa: E402
 from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: E402,F401
 from common.theme import CORAL, GREEN  # noqa: E402
 from common.visuals import die  # noqa: E402
@@ -73,7 +73,6 @@ class XSS036(ShortScene):
         self.write_board(w)
         self.wait_until(.6, t0)
         self.write_board(tx('gieo 6 lần chắc chắn ra 6? Vô lý!', 28, CORAL, bold=True), anim='fade')
-        self.play(FadeIn(cross(CORAL, .6).next_to(w, [1, 0, 0], buff=.2)), run_time=self.rt(.03))
 
     def beat_s2(self, T):
         t0 = self.now()
@@ -86,10 +85,11 @@ class XSS036(ShortScene):
     def beat_s3(self, T):
         t0 = self.now()
         self.clear_board(.03)
-        m = self.M('prob', 1.9)
+        m = self.M('prob', 1.7)
         self.write_board(m)
         self.frame(m)
         self.wait_until(.55, t0)
-        self.run_sim(wins(), 'số ván:', 'tỉ lệ thắng:', .35, y=-2.55)
+        self.clear_board(.02)
+        self.run_sim(wins(), 'số ván:', 'tỉ lệ thắng:', .35, y=-1.6)
 
 

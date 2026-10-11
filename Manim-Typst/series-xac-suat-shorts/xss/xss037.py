@@ -85,6 +85,7 @@ class XSS037(ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
-        self.run_sim(wins(), 'số ván:', 'tỉ lệ thắng:', .3, y=-2.55, color=CORAL)
+        self.clear_board(.02)
+        self.run_sim(wins(), 'số ván:', 'tỉ lệ thắng:', .3, y=-1.6, color=CORAL)
         self.wait_until(.6, t0)
-        self.play(FadeIn(tx('Pascal – Fermat, 1654', 28, SOFT, bold=True).move_to([0, -.55, 0])), run_time=self.rt(.05))
+        self.write_board(tx('Pascal – Fermat, 1654', 28, SOFT, bold=True), anim='fade')
