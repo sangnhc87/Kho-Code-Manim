@@ -1,4 +1,4 @@
-"""Kế hoạch 280 Shorts "Xác suất 3 phút" – nguồn dữ liệu duy nhất.
+"""Kế hoạch 360 Shorts "Xác suất 3 phút" – nguồn dữ liệu duy nhất.
 
 Mỗi Short có đề, đáp án hiển thị, kiểu hình trực quan, tập XS liên quan và một
 phép kiểm chứng: đáp án được tính lại bằng liệt kê vét cạn (itertools) hoặc
@@ -225,6 +225,84 @@ def cube_hitting():
     return 1 + e1
 
 
+
+def land(n, steps, probs, bad=()):
+    """Quy hoạch động: P(đáp đúng ô n) khi mỗi bước tiến steps[i] với xác suất probs[i]; ô trong bad là hố."""
+    q = {0: F(1)}
+    for k in range(1, n + 1):
+        q[k] = 0 if k in bad else sum(pr * q.get(k - st, 0) for st, pr in zip(steps, probs) if k - st >= 0)
+    return q[n]
+
+
+def cross_river(n):
+    """Kỳ vọng số bước (1 hoặc 2 lá, mỗi loại 1/2) để tới hoặc vượt lá n: E(k) = 1 + (E(k − 1) + E(k − 2))/2."""
+    e = {-1: F(0), 0: F(0)}
+    for k in range(1, n + 1):
+        e[k] = 1 + (e[k - 1] + e[k - 2]) / 2
+    return e[n]
+
+
+def lattice_paths(r, u):
+    return list(set(permutations('R' * r + 'U' * u)))
+
+
+def at(path, k):
+    return path[:k].count('R'), path[:k].count('U')
+
+
+def visits(path, pt):
+    return any(at(path, k) == pt for k in range(len(path) + 1))
+
+
+def polygon_sides(t, n):
+    a, b, c = t
+    return sum(1 for d in (b - a, c - b, n - c + a) if d in (1, n - 1))
+
+
+def arcs(t, n):
+    a, b, c = t
+    return b - a, c - b, n - c + a
+
+
+def quad_contains_centre(q, n):
+    return 2 * max((q[(i + 1) % 4] - q[i]) % n for i in range(4)) < n
+
+
+def dist2(p, q):
+    return sum((a - b) ** 2 for a, b in zip(p, q))
+
+
+def is_right(t):
+    s = sorted(dist2(a, b) for a, b in combinations(t, 2))
+    return s[0] + s[1] == s[2]
+
+
+def colors(**k):
+    return [c + str(i) for c, n in k.items() for i in range(n)]
+
+
+def robots_meet():
+    paths = lattice_paths(2, 2)
+    a = [at(p, 2) for p in paths]
+    b = [(2 - x, 2 - y) for x, y in a]
+    return F(sum(1 for x in a for y in b if x == y), len(a) * len(b))
+
+
+def round_table_no_couple():
+    good = total = 0
+    for p in permutations(range(1, 8)):
+        seat = (0,) + p
+        total += 1
+        good += all(seat[i] // 2 != seat[(i + 1) % 8] // 2 for i in range(8))
+    return F(good, total)
+
+
+def snake_ladder():
+    """0 → 4, ngửa +1, sấp +2, ô 3 là rắn về ô 1: E1 = 2 + E2, E2 = 1 + E1/2, E0 = 1 + (E1 + E2)/2."""
+    e1, e2 = two_by_two([(1, -1, 2), (F(-1, 2), 1, 1)])
+    return 1 + (e1 + e2) / 2
+
+
 LEVELS = (
     ('L1', 'Mở đầu', (1, 15), '30 – 60 s'),
     ('L2', 'Cơ bản', (16, 35), '45 – 75 s'),
@@ -244,6 +322,12 @@ LEVELS = (
     ('L14', 'Đa điều kiện', (233, 248), '75 – 150 s'),
     ('L15', 'Tham số xuôi – ngược', (249, 264), '75 – 150 s'),
     ('L16', 'Cây hay – lạ', (265, 280), '90 – 175 s'),
+    # nhánh 4: vận dụng cao
+    ('L17', 'Ếch nhảy', (281, 296), '75 – 150 s'),
+    ('L18', 'Quy hoạch động', (297, 312), '90 – 170 s'),
+    ('L19', 'Hình học có điều kiện', (313, 328), '75 – 160 s'),
+    ('L20', 'Bi vận dụng cao', (329, 344), '75 – 160 s'),
+    ('L21', 'Xếp chỗ – toa tàu', (345, 360), '75 – 160 s'),
 )
 
 TWO_KIDS = list(product('TG', repeat=2))  # T = trai, G = gái; (con cả, con út)
@@ -860,6 +944,187 @@ SHORTS = [
      'XS28', window_boy(), F(1, 2)),
     ('Ba người, ba cơ hội', 'A, B, C lần lượt gieo xúc xắc; A thắng nếu ra 1; B nếu ra 1, 2; C nếu ra 1, 2, 3. P(A thắng)?', '3/13',
      'tree', 'XS30', F(1, 6) / (1 - F(5, 6) * F(4, 6) * F(3, 6)), F(3, 13)),
+    # ================= NHÁNH 4 · VẬN DỤNG CAO =================
+    # ---------------- L17 · ẾCH NHẢY, DI CHUYỂN NGẪU NHIÊN ----------------
+    ('Ếch nhảy 1, 2, 3 lá', 'Ếch ở lá 0, mỗi lần nhảy tới 1, 2 hoặc 3 lá (xác suất như nhau). P(ếch đáp đúng lá 4)?', '37/81',
+     'tree', 'XS30', land(4, (1, 2, 3), (F(1, 3),) * 3), F(37, 81)),
+    ('Ếch thích nhảy tới', 'Ếch trên trục số, mỗi bước +1 (xác suất 2/3) hoặc −1. P(sau 4 bước ở vị trí 2)?', '32/81', 'tree',
+     'XS18', P(lambda w: sum(w) == 2, product((1, 1, -1), repeat=4)), F(32, 81)),
+    ('Ếch về chỗ cũ', 'Ếch mỗi bước nhảy trái hoặc phải 1 ô (1/2). P(sau 6 bước về đúng chỗ cũ)?', '5/16', 'tree', 'XS18',
+     P(lambda w: sum(w) == 0, product((1, -1), repeat=6)), F(5, 16)),
+    ('Ếch trên hình vuông', 'Ếch ở một đỉnh hình vuông, mỗi bước sang một đỉnh kề. P(sau 4 bước ở đỉnh đối diện)?', '1/2',
+     'tree', 'XS30', P(lambda w: sum(w) % 4 == 2, product((1, -1), repeat=4)), F(1, 2)),
+    ('Ếch trên ngũ giác', 'Ếch ở một đỉnh ngũ giác, mỗi bước sang một đỉnh kề. P(sau 5 bước về chỗ cũ)?', '1/16', 'tree', 'XS30',
+     P(lambda w: sum(w) % 5 == 0, product((1, -1), repeat=5)), F(1, 16)),
+    ('Lá sen bị hỏng', 'Ếch ở lá 0, mỗi lần nhảy 1 hoặc 2 lá (1/2); lá 3 hỏng, đáp vào là rơi. P(ếch đáp lá 5)?', '3/16', 'tree',
+     'XS30', land(5, (1, 2), (F(1, 2),) * 2, bad=(3,)), F(3, 16)),
+    ('Biết ếch tới lá 4', 'Ếch ở lá 0, mỗi lần nhảy 1 hoặc 2 lá (1/2). Biết ếch đáp lá 4: P(nó từng đáp lá 2)?', '9/11', 'tree',
+     'XS25', land(2, (1, 2), (F(1, 2),) * 2) ** 2 / land(4, (1, 2), (F(1, 2),) * 2), F(9, 11)),
+    ('Kiến đi qua hai điểm', 'Kiến từ (0; 0), mỗi bước sang phải hoặc lên (1/2). P(đi qua cả (1; 1) và (3; 3))?', '3/16', 'grid',
+     'XS22', P(lambda w: at(w, 2) == (1, 1) and at(w, 6) == (3, 3), product('RU', repeat=6)), F(3, 16)),
+    ('Ếch có gió đẩy', 'Ếch ở 0, mỗi bước +1 (3/4) hoặc −1 (1/4). P(chạm 2 trước khi chạm −2)?', '9/10', 'tree', 'XS30',
+     (1 - F(1, 3) ** 2) / (1 - F(1, 3) ** 4), F(9, 10)),
+    ('Hai ếch gặp nhau', 'Ếch A ở 0, ếch B ở 4; mỗi giây mỗi con nhảy ±1 (1/2), độc lập. P(gặp nhau sau đúng 2 giây)?', '1/16',
+     'tree', 'XS30', P(lambda w: w[0] + w[1] == 2 and w[2] + w[3] == -2, product((1, -1), repeat=4)), F(1, 16)),
+    ('Ếch quen hướng', 'Bước đầu ±1 (1/2); sau đó giữ hướng cũ với xác suất 2/3. P(sau 3 bước cách gốc 3 đơn vị)?', '4/9',
+     'tree', 'XS22', 2 * F(1, 2) * F(2, 3) * F(2, 3), F(4, 9)),
+    ('Bao nhiêu bước qua sông?', 'Tung xu: ngửa nhảy 1 lá, sấp nhảy 2 lá. Trung bình cần mấy bước để tới hoặc vượt lá 4?',
+     '23/8', 'tree', 'XS30', cross_river(4), F(23, 8)),
+    ('Ếch giữa hai bờ', 'Lá 1, 2, 3, 4 thẳng hàng; lá 1 và 4 là bờ. Ếch ở lá 2, mỗi bước ±1 (1/2). P(lên bờ ở lá 4)?', '1/3',
+     'tree', 'XS30', F(2 - 1, 4 - 1), F(1, 3)),
+    ('Mấy bước thì lên bờ?', 'Như trên: ếch ở lá 2. Trung bình mấy bước thì lên bờ?', '2', 'tree', 'XS30',
+     two_by_two([(1, F(-1, 2), 1), (F(-1, 2), 1, 1)])[0], 2),
+    ('Ếch lười', 'Mỗi giây ếch nhảy trái 1/4, phải 1/4, đứng yên 1/2. P(sau 2 giây ở đúng chỗ cũ)?', '3/8', 'tree', 'XS18',
+     P(lambda w: sum(w) == 0, product((-1, 1, 0, 0), repeat=2)), F(3, 8)),
+    ('Chưa từng sang bờ âm', 'Ếch nhảy ±1 (1/2) trong 4 bước. Biết cuối cùng về gốc: P(chưa lần nào ở vị trí âm)?', '1/3',
+     'tree', 'XS20', given(lambda w: all(sum(w[:k]) >= 0 for k in range(5)), lambda w: sum(w) == 0,
+                            product((1, -1), repeat=4)), F(1, 3)),
+    # ---------------- L18 · QUY HOẠCH ĐỘNG: 2, 3 KIỂU BƯỚC ----------------
+    ('Lên 6 bậc', 'Chọn ngẫu nhiên một cách lên 6 bậc thang, mỗi bước 1 hoặc 2 bậc. P(dùng đúng hai bước 2 bậc)?', '6/13',
+     'tree', 'XS10', P(lambda w: w.count(2) == 2, [w for n in range(7) for w in product((1, 2), repeat=n) if sum(w) == 6]),
+     F(6, 13)),
+    ('Bước 1, 2, 3 bậc', 'Chọn ngẫu nhiên một cách lên 5 bậc, mỗi bước 1, 2 hoặc 3 bậc. P(không dùng bước 3 bậc)?', '8/13',
+     'tree', 'XS10', P(lambda w: 3 not in w, [w for n in range(6) for w in product((1, 2, 3), repeat=n) if sum(w) == 5]),
+     F(8, 13)),
+    ('Bước dài hay bước ngắn', 'Mỗi bước lên 1 bậc (1/3) hoặc 2 bậc (2/3). P(chân chạm đúng bậc 4)?', '55/81', 'tree', 'XS30',
+     land(4, (1, 2), (F(1, 3), F(2, 3))), F(55, 81)),
+    ('Đường ngắn nhất qua (1; 1)', 'Chọn ngẫu nhiên một đường ngắn nhất từ (0; 0) tới (3; 3) trên lưới. P(đi qua (1; 1))?', '3/5',
+     'grid', 'XS10', P(lambda w: visits(w, (1, 1)), lattice_paths(3, 3)), F(3, 5)),
+    ('Tránh điểm (1; 1)', 'Như trên, biết đường đi không qua (1; 1). P(đường đi qua (2; 2))?', '1/2', 'grid', 'XS20',
+     given(lambda w: visits(w, (2, 2)), lambda w: not visits(w, (1, 1)), lattice_paths(3, 3)), F(1, 2)),
+    ('Robot rẽ ngẫu nhiên', 'Robot từ (0; 0) tới (3; 3), mỗi ngã rẽ chọn phải/lên (1/2), chạm mép thì đi thẳng. '
+     'P(qua góc (3; 0))?', '1/8', 'grid', 'XS28', F(1, 2) ** 3, F(1, 8)),
+    ('Quân vua trên bàn 3 × 3', 'Quân vua ở góc bàn 3 × 3, mỗi bước sang một ô kề cạnh ngẫu nhiên. P(sau 2 bước ở ô tâm)?', '1/3',
+     'grid', 'XS30', F(1, 3), F(1, 3)),
+    ('Quân mã trên bàn 3 × 3', 'Quân mã ở góc bàn 3 × 3, mỗi bước đi một nước mã hợp lệ ngẫu nhiên. P(sau 4 bước về chỗ cũ)?',
+     '3/8', 'grid', 'XS30', P(lambda w: sum(w) % 8 == 0, product((1, -1), repeat=4)), F(3, 8)),
+    ('Hai vũng nước', 'Đường ngắn nhất ngẫu nhiên từ (0; 0) tới (3; 3), tránh (1; 2) và (2; 1). P(đường đi khô ráo)?', '1/10',
+     'grid', 'XS10', P(lambda w: not visits(w, (1, 2)) and not visits(w, (2, 1)), lattice_paths(3, 3)), F(1, 10)),
+    ('Không ba ngửa liền', 'Tung xu 6 lần. P(không có 3 lần ngửa liên tiếp)?', '11/16', 'tree', 'XS18',
+     P(lambda w: 'NNN' not in ''.join(w), product('SN', repeat=6)), F(11, 16)),
+    ('Tám lần không hai ngửa', 'Tung xu 8 lần. P(không có 2 lần ngửa liên tiếp)?', '55/256', 'tree', 'XS18',
+     P(lambda w: 'NN' not in ''.join(w), product('SN', repeat=8)), F(55, 256)),
+    ('Tổng dồn chạm đúng 6', 'Gieo xúc xắc nhiều lần, cộng dồn số chấm. P(tổng có lúc bằng đúng 6)?', '16807/46656 ≈ 0,36',
+     'tree', 'XS30', land(6, range(1, 7), (F(1, 6),) * 6), F(16807, 46656)),
+    ('Rắn và thang mini', 'Ô 0 → 4: ngửa tiến 1, sấp tiến 2; đáp ô 3 là bị rắn đẩy về ô 1. Trung bình mấy lượt về đích?', '6',
+     'tree', 'XS30', snake_ladder(), 6),
+    ('Tiến, tiến hai, lùi', 'Mỗi lượt đi +1, +2 hoặc −1 (như nhau). P(sau 3 lượt ở đúng vị trí 3)?', '4/27', 'tree', 'XS18',
+     P(lambda w: sum(w) == 3, product((1, 2, -1), repeat=3)), F(4, 27)),
+    ('Chờ ba ngửa liên tiếp', 'Tung xu đến khi có 3 lần ngửa liên tiếp. Trung bình cần bao nhiêu lần?', '14', 'sim', 'XS30',
+     2 ** 4 - 2, 14),
+    ('Hai robot ngược chiều', 'Robot A từ (0; 0) tới (2; 2), B từ (2; 2) về (0; 0), cùng tốc độ, chọn đường ngắn nhất ngẫu nhiên. '
+     'P(gặp nhau)?', '1/2', 'grid', 'XS30', robots_meet(), F(1, 2)),
+    # ---------------- L19 · XÁC SUẤT CÓ ĐIỀU KIỆN TRONG HÌNH HỌC ----------------
+    ('Có cạnh lục giác thì vuông?', 'Chọn 3 đỉnh lục giác đều, biết tam giác có cạnh là cạnh lục giác. P(tam giác vuông)?', '2/3',
+     'geo', 'XS20', given(lambda t: polygon_kind(t, 6) == 'vuông', lambda t: polygon_sides(t, 6) >= 1,
+                          combinations(range(6), 3)), F(2, 3)),
+    ('Cân rồi có đều?', 'Chọn 3 đỉnh của đa giác đều 12 cạnh, biết tam giác cân. P(tam giác đều)?', '1/13', 'geo', 'XS20',
+     given(lambda t: len(set(arcs(t, 12))) == 1, lambda t: len(set(arcs(t, 12))) < 3, combinations(range(12), 3)), F(1, 13)),
+    ('Điểm dưới đường chéo', 'Chọn x, y ngẫu nhiên trong [0; 1], biết x + y < 1. P(x < 2y)?', '2/3', 'square', 'XS30',
+     F(1, 3) / F(1, 2), F(2, 3)),
+    ('Phần trái dài hơn 0,3', 'Chọn điểm x ngẫu nhiên trên đoạn [0; 1]. Biết x > 0,3: P(x > 2(1 − x))?', '10/21', 'geo', 'XS30',
+     F(1, 3) / F(7, 10), F(10, 21)),
+    ('Bẻ que có điều kiện', 'Bẻ que tại 2 điểm ngẫu nhiên, biết đoạn bên trái ngắn hơn nửa que. P(ba đoạn tạo tam giác)?', '1/3',
+     'square', 'XS30', F(1, 8) / F(3, 8), F(1, 3)),
+    ('An đến sớm', 'Hai bạn đến ngẫu nhiên trong 1 giờ, chờ nhau 15 phút. Biết An đến trong 15 phút đầu. P(gặp nhau)?', '3/8',
+     'square', 'XS30', (F(1, 32) + F(1, 16)) / F(1, 4), F(3, 8)),
+    ('Không cạnh nào là cạnh đa giác', 'Chọn 3 đỉnh đa giác đều 10 cạnh, biết tam giác không có cạnh nào là cạnh đa giác. '
+     'P(tam giác tù)?', '1/5', 'geo', 'XS20',
+     given(lambda t: polygon_kind(t, 10) == 'tù', lambda t: polygon_sides(t, 10) == 0, combinations(range(10), 3)), F(1, 5)),
+    ('Tam giác trên lưới 3 × 3', 'Chọn 3 trong 9 điểm lưới 3 × 3, biết chúng tạo thành tam giác. P(tam giác vuông)?', '11/19',
+     'geo', 'XS20', given(is_right, lambda t: not collinear(*t), combinations(product(range(3), repeat=2), 3)), F(11, 19)),
+    ('Đường chéo khối lập phương', 'Chọn 2 đỉnh hình lập phương, biết đoạn nối không phải cạnh. P(là đường chéo khối)?', '1/4',
+     'geo', 'XS20', given(lambda e: dist2(*e) == 3, lambda e: dist2(*e) != 1, combinations(product((0, 1), repeat=3), 2)),
+     F(1, 4)),
+    ('Vuông cân trong lập phương', 'Chọn 3 đỉnh hình lập phương, biết được tam giác vuông. P(tam giác vuông cân)?', '1/2', 'geo',
+     'XS20', given(lambda t: len({dist2(a, b) for a, b in combinations(t, 2)}) == 2, is_right,
+                   combinations(product((0, 1), repeat=3), 3)), F(1, 2)),
+    ('Điểm xúc xắc trong hình tròn', 'Gieo 2 xúc xắc được điểm (a; b), biết a² + b² < 25. P(điểm nằm trên đường y = x)?', '3/13',
+     'grid', 'XS20', given(lambda w: w[0] == w[1], lambda w: w[0] ** 2 + w[1] ** 2 < 25, TWO), F(3, 13)),
+    ('Tâm và hai đỉnh lục giác', 'Chọn 2 đỉnh lục giác đều, cùng tâm O tạo tam giác (không suy biến). P(tam giác đều)?', '1/2',
+     'geo', 'XS20', given(lambda e: (e[1] - e[0]) in (1, 5), lambda e: e[1] - e[0] != 3, combinations(range(6), 2)),
+     F(1, 2)),
+    ('Tứ giác chứa tâm', 'Chọn 4 đỉnh bát giác đều, biết tứ giác chứa tâm ở bên trong. P(hình chữ nhật)?', '3/19', 'geo', 'XS20',
+     given(lambda q: all((x + 4) % 8 in q for x in q), lambda q: quad_contains_centre(q, 8), combinations(range(8), 4)),
+     F(3, 19)),
+    ('Dây cung dài', 'Chọn 2 đỉnh đa giác đều 12 cạnh, biết dây nối không qua tâm. P(dây dài hơn cạnh tam giác đều nội tiếp)?',
+     '1/5', 'geo', 'XS20', given(lambda c: min(c[1] - c[0], 12 - c[1] + c[0]) > 4, lambda c: c[1] - c[0] != 6,
+                                 combinations(range(12), 2)), F(1, 5)),
+    ('Bát giác: vuông thì có cân?', 'Chọn 3 đỉnh bát giác đều, biết được tam giác vuông. P(tam giác vuông cân)?', '1/3', 'geo',
+     'XS20', given(lambda t: len(set(arcs(t, 8))) == 2, lambda t: polygon_kind(t, 8) == 'vuông', combinations(range(8), 3)),
+     F(1, 3)),
+    ('Góc 150 độ', 'Chọn 3 đỉnh đa giác đều 12 cạnh, biết tam giác tù. P(tam giác có một góc 150°)?', '1/10', 'geo', 'XS20',
+     given(lambda t: 10 in arcs(t, 12), lambda t: polygon_kind(t, 12) == 'tù', combinations(range(12), 3)), F(1, 10)),
+    # ---------------- L20 · BÀI TOÁN BI VẬN DỤNG CAO ----------------
+    ('Bi đầu và bi cuối', 'Hộp 4 đỏ 4 xanh, rút lần lượt đến hết. P(bi đầu tiên và bi cuối cùng đều đỏ)?', '3/14', 'urn', 'XS22',
+     P(lambda w: w[0] == w[-1] == 'R', set(permutations('RRRRBBBB'))), F(3, 14)),
+    ('Ít nhất hai đỏ', 'Hộp 5 đỏ 5 xanh, rút 4 bi, biết có ít nhất 2 bi đỏ. P(đúng 2 bi đỏ)?', '20/31', 'urn', 'XS20',
+     given(lambda h: sum(b[0] == 'R' for b in h) == 2, lambda h: sum(b[0] == 'R' for b in h) >= 2,
+           combinations(colors(R=5, B=5), 4)), F(20, 31)),
+    ('Đến khi trùng màu', 'Hộp có 3 màu, mỗi màu 2 bi. Rút lần lượt đến khi có 2 bi cùng màu. P(cần đúng 4 lần)?', '2/5', 'urn',
+     'XS22', P(lambda w: len({b[0] for b in w}) == 3, permutations(colors(R=2, B=2, Y=2), 3)), F(2, 5)),
+    ('Tổng chia hết cho 3', 'Rút 3 bi từ 10 bi đánh số 1 đến 10. P(tổng ba số chia hết cho 3)?', '7/20', 'urn', 'XS10',
+     P(lambda t: sum(t) % 3 == 0, combinations(range(1, 11), 3)), F(7, 20)),
+    ('Ba số tăng dần', 'Rút 3 lần có hoàn lại từ 5 bi số 1 đến 5. P(số sau luôn lớn hơn số trước)?', '2/25', 'urn', 'XS10',
+     P(lambda w: w[0] < w[1] < w[2], product(range(1, 6), repeat=3)), F(2, 25)),
+    ('Có vàng thì đủ màu?', 'Hộp 4 đỏ 3 xanh 2 vàng, rút 3 bi, biết có ít nhất 1 bi vàng. P(đủ ba màu)?', '24/49', 'urn', 'XS20',
+     given(lambda h: len({b[0] for b in h}) == 3, lambda h: any(b[0] == 'Y' for b in h), combinations(colors(R=4, B=3, Y=2), 3)),
+     F(24, 49)),
+    ('Đỏ áp đảo', 'Hộp 6 đỏ 4 xanh, rút 5 bi. P(số bi đỏ nhiều hơn số bi xanh)?', '31/42', 'urn', 'XS11',
+     P(lambda h: sum(b[0] == 'R' for b in h) >= 3, combinations(colors(R=6, B=4), 5)), F(31, 42)),
+    ('Ai rút đỏ trước?', 'Hộp 2 đỏ 3 xanh. A, B lần lượt rút không hoàn lại (A trước), ai được đỏ trước thắng. P(A thắng)?', '3/5',
+     'urn', 'XS22', P(lambda w: w.index('R') % 2 == 0, set(permutations('RRBBB'))), F(3, 5)),
+    ('Hộp bí ẩn ba bi', 'Hộp 3 bi, số bi đỏ là 0, 1, 2, 3 như nhau. Rút có hoàn lại 2 lần đều đỏ. P(cả 3 bi đều đỏ)?', '9/14',
+     'urn', 'XS26', F(1, 4) / sum(F(1, 4) * F(k, 3) ** 2 for k in range(4)), F(9, 14)),
+    ('Lần thứ ba cũng đỏ?', 'Như trên: đã rút 2 lần đều đỏ. P(lần rút thứ ba cũng đỏ)?', '6/7', 'urn', 'XS26',
+     sum(F(k, 3) ** 3 for k in range(4)) / sum(F(k, 3) ** 2 for k in range(4)), F(6, 7)),
+    ('Đúng hai màu', 'Hộp 5 đỏ 4 xanh 3 trắng, rút 3 bi. P(có đúng hai màu)?', '29/44', 'urn', 'XS11',
+     P(lambda h: len({b[0] for b in h}) == 2, combinations(colors(R=5, B=4, W=3), 3)), F(29, 44)),
+    ('Tổng chẵn thì cùng lẻ?', 'Rút lần lượt 2 bi từ 9 bi số 1 đến 9, biết tổng chẵn. P(cả hai số lẻ)?', '5/8', 'urn', 'XS20',
+     given(lambda w: w[0] % 2 == 1, lambda w: (w[0] + w[1]) % 2 == 0, permutations(range(1, 10), 2)), F(5, 8)),
+    ('Chia bi vào ba hộp', 'Chia ngẫu nhiên 3 đỏ, 3 xanh vào 3 hộp, mỗi hộp 2 bi. P(hộp nào cũng có 1 đỏ 1 xanh)?', '2/5', 'urn',
+     'XS10', P(lambda w: all(w[2 * i] != w[2 * i + 1] for i in range(3)), set(permutations('RRRBBB'))), F(2, 5)),
+    ('Hộp nào cũng đủ màu', 'Chia 9 bi (3 đỏ, 3 xanh, 3 vàng) vào 3 hộp, mỗi hộp 3 bi. P(hộp nào cũng đủ 3 màu)?', '9/70', 'urn',
+     'XS10', P(lambda w: all(len(set(w[3 * i:3 * i + 3])) == 3 for i in range(3)), set(permutations('RRRBBBYYY'))),
+     F(9, 70)),
+    ('Màu nào hết trước?', 'Hộp 3 đỏ 2 xanh, rút lần lượt đến khi hết hẳn một màu. P(màu xanh hết trước)?', '3/5', 'urn', 'XS30',
+     P(lambda w: w[-1] == 'R', set(permutations('RRRBB'))), F(3, 5)),
+    ('Bi cuối cùng bất biến', 'Hộp 5 đỏ 4 xanh. Mỗi lần lấy 2 bi: cùng màu thì bỏ vào 1 đỏ, khác màu thì bỏ vào 1 xanh. '
+     'Bi cuối cùng màu gì?', 'Đỏ (chắc chắn)', 'urn', 'XS30', 4 % 2, 0),
+    # ---------------- L21 · XẾP CHỖ: DÃY GHẾ, TOA TÀU, NHÓM HỌC SINH ----------------
+    ('Nam nữ xen kẽ', '3 nam, 3 nữ ngồi ngẫu nhiên vào dãy 6 ghế. P(nam nữ ngồi xen kẽ)?', '1/10', 'cards', 'XS12',
+     P(lambda w: all(w[i] != w[i + 1] for i in range(5)), set(permutations('MMMFFF'))), F(1, 10)),
+    ('Ba gia đình', '3 gia đình, mỗi nhà 2 người, ngồi ngẫu nhiên vào dãy 6 ghế. P(ai cũng ngồi cạnh người nhà)?', '1/15', 'cards',
+     'XS12', P(lambda w: all(abs(w.index(2 * k) - w.index(2 * k + 1)) == 1 for k in range(3)), permutations(range(6))),
+     F(1, 15)),
+    ('Mỗi toa hai người', '6 hành khách, mỗi người chọn ngẫu nhiên 1 trong 3 toa tàu. P(mỗi toa đúng 2 người)?', '10/81', 'cards',
+     'XS10', P(lambda w: all(w.count(c) == 2 for c in range(3)), product(range(3), repeat=6)), F(10, 81)),
+    ('Toa nào cũng có khách', '5 hành khách, mỗi người chọn ngẫu nhiên 1 trong 3 toa. P(toa nào cũng có người)?', '50/81',
+     'cards', 'XS11', P(lambda w: len(set(w)) == 3, product(range(3), repeat=5)), F(50, 81)),
+    ('Bốn người bốn toa', '4 hành khách, mỗi người chọn ngẫu nhiên 1 trong 4 toa. P(mỗi toa đúng 1 người)?', '3/32', 'cards',
+     'XS10', P(lambda w: len(set(w)) == 4, product(range(4), repeat=4)), F(3, 32)),
+    ('Toa 1 trống', '5 hành khách chọn ngẫu nhiên 1 trong 3 toa. Biết toa 1 trống: P(toa 2 cũng trống)?', '1/32', 'cards', 'XS20',
+     given(lambda w: 1 not in w, lambda w: 0 not in w, product(range(3), repeat=5)), F(1, 32)),
+    ('Hai dãy ghế đối diện', 'Hai dãy ghế đối diện, mỗi dãy 3 ghế; 3 nam 3 nữ ngồi ngẫu nhiên. P(nam nào cũng đối diện nữ)?',
+     '2/5', 'cards', 'XS12', P(lambda w: all(w[i] != w[i + 3] for i in range(3)), set(permutations('MMMFFF'))), F(2, 5)),
+    ('Bốn cặp quanh bàn tròn', '4 cặp vợ chồng ngồi ngẫu nhiên quanh bàn tròn 8 ghế. P(không cặp nào ngồi cạnh nhau)?',
+     '31/105', 'geo', 'XS13', round_table_no_couple(), F(31, 105)),
+    ('Không ai ngồi cạnh ai', 'Dãy 10 ghế, 4 người chọn ngẫu nhiên 4 ghế. P(không có 2 người nào ngồi cạnh nhau)?', '1/6',
+     'cards', 'XS12', P(lambda c: all(c[i + 1] - c[i] > 1 for i in range(3)), combinations(range(10), 4)), F(1, 6)),
+    ('Ba ghế không kề trên bàn tròn', 'Chọn 3 trong 10 ghế quanh bàn tròn. P(không có 2 ghế nào kề nhau)?', '5/12', 'geo', 'XS12',
+     P(lambda c: all((c[(i + 1) % 3] - c[i]) % 10 not in (1, 9) for i in range(3)), combinations(range(10), 3)), F(5, 12)),
+    ('A trước B trước C', '5 học sinh A, B, C, D, E xếp hàng ngẫu nhiên. P(A đứng trước B và B đứng trước C)?', '1/6', 'cards',
+     'XS12', P(lambda w: w.index('A') < w.index('B') < w.index('C'), permutations('ABCDE')), F(1, 6)),
+    ('Biết A trước B', '5 học sinh xếp hàng, biết A đứng trước B. P(A đứng đầu hàng)?', '2/5', 'cards', 'XS20',
+     given(lambda w: w[0] == 'A', lambda w: w.index('A') < w.index('B'), permutations('ABCDE')), F(2, 5)),
+    ('Ba lớp, sáu bạn', '3 lớp, mỗi lớp 2 bạn, ngồi ngẫu nhiên vào dãy 6 ghế. P(không 2 bạn cùng lớp ngồi cạnh nhau)?', '1/3',
+     'cards', 'XS13', P(lambda w: all(w[i] != w[i + 1] for i in range(5)), set(permutations('AABBCC'))), F(1, 3)),
+    ('Hai toa bốn chỗ', '8 người xếp ngẫu nhiên vào 2 toa, mỗi toa 4 chỗ. P(An và Bình cùng toa)?', '3/7', 'cards', 'XS10',
+     F(3, 7), F(comb(6, 2), comb(7, 3))),
+    ('Thang máy năm tầng', '4 người vào thang máy, mỗi người ra ngẫu nhiên ở 1 trong 5 tầng. P(4 người ra ở 4 tầng khác nhau)?',
+     '24/125', 'cards', 'XS10', P(lambda w: len(set(w)) == 4, product(range(5), repeat=4)), F(24, 125)),
+    ('An ngồi một mình', '5 hành khách chọn 3 toa; biết toa nào cũng có người. P(An ở một toa chỉ có mình An)?', '7/25', 'cards',
+     'XS20', given(lambda w: w.count(w[0]) == 1, lambda w: len(set(w)) == 3, product(range(3), repeat=5)), F(7, 25)),
 ]
 
 
@@ -870,7 +1135,7 @@ def check(actual, expected):
 
 
 def build():
-    assert len(SHORTS) == 280, len(SHORTS)
+    assert len(SHORTS) == 360, len(SHORTS)
     rows, bad = [], []
     for i, (title, problem, answer, visual, xs, actual, expected) in enumerate(SHORTS, 1):
         if not check(actual, expected):
@@ -885,13 +1150,13 @@ def build():
     for r in rows:
         yt = f"Xác suất #{r['n']:03d} · {r['title']} – bạn giải được không? #Shorts"
         assert len(yt) <= 100, yt
-    plan = {'series': 'Xác Suất 3 Phút – 280 Thử Thách Từ Dễ Đến Học Sinh Giỏi', 'code_prefix': 'XSS',
+    plan = {'series': 'Xác Suất 3 Phút – 360 Thử Thách Từ Dễ Đến Vận Dụng Cao', 'code_prefix': 'XSS',
             'author': 'Thầy Nguyễn Văn Sang', 'format': {'width': 1080, 'height': 1920, 'max_seconds': 180},
             'levels': [{'code': c, 'name': n, 'shorts': list(r), 'length': ln} for c, n, r, ln in LEVELS],
             'shorts': rows}
     Path(__file__).with_name('shorts_plan.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n',
                                                             encoding='utf-8')
-    md = ['# DANH SÁCH 280 SHORTS · XÁC SUẤT 3 PHÚT', '',
+    md = ['# DANH SÁCH 360 SHORTS · XÁC SUẤT 3 PHÚT', '',
           '> Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê '
           'vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.', '']
     for code, name, (lo, hi), length in LEVELS:

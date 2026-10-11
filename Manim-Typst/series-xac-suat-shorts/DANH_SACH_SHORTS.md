@@ -1,4 +1,4 @@
-# DANH SÁCH 280 SHORTS · XÁC SUẤT 3 PHÚT
+# DANH SÁCH 360 SHORTS · XÁC SUẤT 3 PHÚT
 
 > Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.
 
@@ -361,3 +361,108 @@
 | **XSS278** | Bốn bạn chuyền bóng | 4 bạn, mỗi lần chuyền bóng ngẫu nhiên cho 1 trong 3 bạn kia. P(sau 4 lần, bóng về người đầu)? | 7/27 | tree | XS30 |
 | **XSS279** | Cậu bé bên cửa sổ | Gia đình 2 con; nhìn qua cửa sổ thấy ngẫu nhiên 1 đứa là trai. P(cả hai là trai)? | 1/2 | tree | XS28 |
 | **XSS280** | Ba người, ba cơ hội | A, B, C lần lượt gieo xúc xắc; A thắng nếu ra 1; B nếu ra 1, 2; C nếu ra 1, 2, 3. P(A thắng)? | 3/13 | tree | XS30 |
+
+## L17 · Ếch nhảy (XSS281 – XSS296) · 75 – 150 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS281** | Ếch nhảy 1, 2, 3 lá | Ếch ở lá 0, mỗi lần nhảy tới 1, 2 hoặc 3 lá (xác suất như nhau). P(ếch đáp đúng lá 4)? | 37/81 | tree | XS30 |
+| **XSS282** | Ếch thích nhảy tới | Ếch trên trục số, mỗi bước +1 (xác suất 2/3) hoặc −1. P(sau 4 bước ở vị trí 2)? | 32/81 | tree | XS18 |
+| **XSS283** | Ếch về chỗ cũ | Ếch mỗi bước nhảy trái hoặc phải 1 ô (1/2). P(sau 6 bước về đúng chỗ cũ)? | 5/16 | tree | XS18 |
+| **XSS284** | Ếch trên hình vuông | Ếch ở một đỉnh hình vuông, mỗi bước sang một đỉnh kề. P(sau 4 bước ở đỉnh đối diện)? | 1/2 | tree | XS30 |
+| **XSS285** | Ếch trên ngũ giác | Ếch ở một đỉnh ngũ giác, mỗi bước sang một đỉnh kề. P(sau 5 bước về chỗ cũ)? | 1/16 | tree | XS30 |
+| **XSS286** | Lá sen bị hỏng | Ếch ở lá 0, mỗi lần nhảy 1 hoặc 2 lá (1/2); lá 3 hỏng, đáp vào là rơi. P(ếch đáp lá 5)? | 3/16 | tree | XS30 |
+| **XSS287** | Biết ếch tới lá 4 | Ếch ở lá 0, mỗi lần nhảy 1 hoặc 2 lá (1/2). Biết ếch đáp lá 4: P(nó từng đáp lá 2)? | 9/11 | tree | XS25 |
+| **XSS288** | Kiến đi qua hai điểm | Kiến từ (0; 0), mỗi bước sang phải hoặc lên (1/2). P(đi qua cả (1; 1) và (3; 3))? | 3/16 | grid | XS22 |
+| **XSS289** | Ếch có gió đẩy | Ếch ở 0, mỗi bước +1 (3/4) hoặc −1 (1/4). P(chạm 2 trước khi chạm −2)? | 9/10 | tree | XS30 |
+| **XSS290** | Hai ếch gặp nhau | Ếch A ở 0, ếch B ở 4; mỗi giây mỗi con nhảy ±1 (1/2), độc lập. P(gặp nhau sau đúng 2 giây)? | 1/16 | tree | XS30 |
+| **XSS291** | Ếch quen hướng | Bước đầu ±1 (1/2); sau đó giữ hướng cũ với xác suất 2/3. P(sau 3 bước cách gốc 3 đơn vị)? | 4/9 | tree | XS22 |
+| **XSS292** | Bao nhiêu bước qua sông? | Tung xu: ngửa nhảy 1 lá, sấp nhảy 2 lá. Trung bình cần mấy bước để tới hoặc vượt lá 4? | 23/8 | tree | XS30 |
+| **XSS293** | Ếch giữa hai bờ | Lá 1, 2, 3, 4 thẳng hàng; lá 1 và 4 là bờ. Ếch ở lá 2, mỗi bước ±1 (1/2). P(lên bờ ở lá 4)? | 1/3 | tree | XS30 |
+| **XSS294** | Mấy bước thì lên bờ? | Như trên: ếch ở lá 2. Trung bình mấy bước thì lên bờ? | 2 | tree | XS30 |
+| **XSS295** | Ếch lười | Mỗi giây ếch nhảy trái 1/4, phải 1/4, đứng yên 1/2. P(sau 2 giây ở đúng chỗ cũ)? | 3/8 | tree | XS18 |
+| **XSS296** | Chưa từng sang bờ âm | Ếch nhảy ±1 (1/2) trong 4 bước. Biết cuối cùng về gốc: P(chưa lần nào ở vị trí âm)? | 1/3 | tree | XS20 |
+
+## L18 · Quy hoạch động (XSS297 – XSS312) · 90 – 170 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS297** | Lên 6 bậc | Chọn ngẫu nhiên một cách lên 6 bậc thang, mỗi bước 1 hoặc 2 bậc. P(dùng đúng hai bước 2 bậc)? | 6/13 | tree | XS10 |
+| **XSS298** | Bước 1, 2, 3 bậc | Chọn ngẫu nhiên một cách lên 5 bậc, mỗi bước 1, 2 hoặc 3 bậc. P(không dùng bước 3 bậc)? | 8/13 | tree | XS10 |
+| **XSS299** | Bước dài hay bước ngắn | Mỗi bước lên 1 bậc (1/3) hoặc 2 bậc (2/3). P(chân chạm đúng bậc 4)? | 55/81 | tree | XS30 |
+| **XSS300** | Đường ngắn nhất qua (1; 1) | Chọn ngẫu nhiên một đường ngắn nhất từ (0; 0) tới (3; 3) trên lưới. P(đi qua (1; 1))? | 3/5 | grid | XS10 |
+| **XSS301** | Tránh điểm (1; 1) | Như trên, biết đường đi không qua (1; 1). P(đường đi qua (2; 2))? | 1/2 | grid | XS20 |
+| **XSS302** | Robot rẽ ngẫu nhiên | Robot từ (0; 0) tới (3; 3), mỗi ngã rẽ chọn phải/lên (1/2), chạm mép thì đi thẳng. P(qua góc (3; 0))? | 1/8 | grid | XS28 |
+| **XSS303** | Quân vua trên bàn 3 × 3 | Quân vua ở góc bàn 3 × 3, mỗi bước sang một ô kề cạnh ngẫu nhiên. P(sau 2 bước ở ô tâm)? | 1/3 | grid | XS30 |
+| **XSS304** | Quân mã trên bàn 3 × 3 | Quân mã ở góc bàn 3 × 3, mỗi bước đi một nước mã hợp lệ ngẫu nhiên. P(sau 4 bước về chỗ cũ)? | 3/8 | grid | XS30 |
+| **XSS305** | Hai vũng nước | Đường ngắn nhất ngẫu nhiên từ (0; 0) tới (3; 3), tránh (1; 2) và (2; 1). P(đường đi khô ráo)? | 1/10 | grid | XS10 |
+| **XSS306** | Không ba ngửa liền | Tung xu 6 lần. P(không có 3 lần ngửa liên tiếp)? | 11/16 | tree | XS18 |
+| **XSS307** | Tám lần không hai ngửa | Tung xu 8 lần. P(không có 2 lần ngửa liên tiếp)? | 55/256 | tree | XS18 |
+| **XSS308** | Tổng dồn chạm đúng 6 | Gieo xúc xắc nhiều lần, cộng dồn số chấm. P(tổng có lúc bằng đúng 6)? | 16807/46656 ≈ 0,36 | tree | XS30 |
+| **XSS309** | Rắn và thang mini | Ô 0 → 4: ngửa tiến 1, sấp tiến 2; đáp ô 3 là bị rắn đẩy về ô 1. Trung bình mấy lượt về đích? | 6 | tree | XS30 |
+| **XSS310** | Tiến, tiến hai, lùi | Mỗi lượt đi +1, +2 hoặc −1 (như nhau). P(sau 3 lượt ở đúng vị trí 3)? | 4/27 | tree | XS18 |
+| **XSS311** | Chờ ba ngửa liên tiếp | Tung xu đến khi có 3 lần ngửa liên tiếp. Trung bình cần bao nhiêu lần? | 14 | sim | XS30 |
+| **XSS312** | Hai robot ngược chiều | Robot A từ (0; 0) tới (2; 2), B từ (2; 2) về (0; 0), cùng tốc độ, chọn đường ngắn nhất ngẫu nhiên. P(gặp nhau)? | 1/2 | grid | XS30 |
+
+## L19 · Hình học có điều kiện (XSS313 – XSS328) · 75 – 160 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS313** | Có cạnh lục giác thì vuông? | Chọn 3 đỉnh lục giác đều, biết tam giác có cạnh là cạnh lục giác. P(tam giác vuông)? | 2/3 | geo | XS20 |
+| **XSS314** | Cân rồi có đều? | Chọn 3 đỉnh của đa giác đều 12 cạnh, biết tam giác cân. P(tam giác đều)? | 1/13 | geo | XS20 |
+| **XSS315** | Điểm dưới đường chéo | Chọn x, y ngẫu nhiên trong [0; 1], biết x + y < 1. P(x < 2y)? | 2/3 | square | XS30 |
+| **XSS316** | Phần trái dài hơn 0,3 | Chọn điểm x ngẫu nhiên trên đoạn [0; 1]. Biết x > 0,3: P(x > 2(1 − x))? | 10/21 | geo | XS30 |
+| **XSS317** | Bẻ que có điều kiện | Bẻ que tại 2 điểm ngẫu nhiên, biết đoạn bên trái ngắn hơn nửa que. P(ba đoạn tạo tam giác)? | 1/3 | square | XS30 |
+| **XSS318** | An đến sớm | Hai bạn đến ngẫu nhiên trong 1 giờ, chờ nhau 15 phút. Biết An đến trong 15 phút đầu. P(gặp nhau)? | 3/8 | square | XS30 |
+| **XSS319** | Không cạnh nào là cạnh đa giác | Chọn 3 đỉnh đa giác đều 10 cạnh, biết tam giác không có cạnh nào là cạnh đa giác. P(tam giác tù)? | 1/5 | geo | XS20 |
+| **XSS320** | Tam giác trên lưới 3 × 3 | Chọn 3 trong 9 điểm lưới 3 × 3, biết chúng tạo thành tam giác. P(tam giác vuông)? | 11/19 | geo | XS20 |
+| **XSS321** | Đường chéo khối lập phương | Chọn 2 đỉnh hình lập phương, biết đoạn nối không phải cạnh. P(là đường chéo khối)? | 1/4 | geo | XS20 |
+| **XSS322** | Vuông cân trong lập phương | Chọn 3 đỉnh hình lập phương, biết được tam giác vuông. P(tam giác vuông cân)? | 1/2 | geo | XS20 |
+| **XSS323** | Điểm xúc xắc trong hình tròn | Gieo 2 xúc xắc được điểm (a; b), biết a² + b² < 25. P(điểm nằm trên đường y = x)? | 3/13 | grid | XS20 |
+| **XSS324** | Tâm và hai đỉnh lục giác | Chọn 2 đỉnh lục giác đều, cùng tâm O tạo tam giác (không suy biến). P(tam giác đều)? | 1/2 | geo | XS20 |
+| **XSS325** | Tứ giác chứa tâm | Chọn 4 đỉnh bát giác đều, biết tứ giác chứa tâm ở bên trong. P(hình chữ nhật)? | 3/19 | geo | XS20 |
+| **XSS326** | Dây cung dài | Chọn 2 đỉnh đa giác đều 12 cạnh, biết dây nối không qua tâm. P(dây dài hơn cạnh tam giác đều nội tiếp)? | 1/5 | geo | XS20 |
+| **XSS327** | Bát giác: vuông thì có cân? | Chọn 3 đỉnh bát giác đều, biết được tam giác vuông. P(tam giác vuông cân)? | 1/3 | geo | XS20 |
+| **XSS328** | Góc 150 độ | Chọn 3 đỉnh đa giác đều 12 cạnh, biết tam giác tù. P(tam giác có một góc 150°)? | 1/10 | geo | XS20 |
+
+## L20 · Bi vận dụng cao (XSS329 – XSS344) · 75 – 160 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS329** | Bi đầu và bi cuối | Hộp 4 đỏ 4 xanh, rút lần lượt đến hết. P(bi đầu tiên và bi cuối cùng đều đỏ)? | 3/14 | urn | XS22 |
+| **XSS330** | Ít nhất hai đỏ | Hộp 5 đỏ 5 xanh, rút 4 bi, biết có ít nhất 2 bi đỏ. P(đúng 2 bi đỏ)? | 20/31 | urn | XS20 |
+| **XSS331** | Đến khi trùng màu | Hộp có 3 màu, mỗi màu 2 bi. Rút lần lượt đến khi có 2 bi cùng màu. P(cần đúng 4 lần)? | 2/5 | urn | XS22 |
+| **XSS332** | Tổng chia hết cho 3 | Rút 3 bi từ 10 bi đánh số 1 đến 10. P(tổng ba số chia hết cho 3)? | 7/20 | urn | XS10 |
+| **XSS333** | Ba số tăng dần | Rút 3 lần có hoàn lại từ 5 bi số 1 đến 5. P(số sau luôn lớn hơn số trước)? | 2/25 | urn | XS10 |
+| **XSS334** | Có vàng thì đủ màu? | Hộp 4 đỏ 3 xanh 2 vàng, rút 3 bi, biết có ít nhất 1 bi vàng. P(đủ ba màu)? | 24/49 | urn | XS20 |
+| **XSS335** | Đỏ áp đảo | Hộp 6 đỏ 4 xanh, rút 5 bi. P(số bi đỏ nhiều hơn số bi xanh)? | 31/42 | urn | XS11 |
+| **XSS336** | Ai rút đỏ trước? | Hộp 2 đỏ 3 xanh. A, B lần lượt rút không hoàn lại (A trước), ai được đỏ trước thắng. P(A thắng)? | 3/5 | urn | XS22 |
+| **XSS337** | Hộp bí ẩn ba bi | Hộp 3 bi, số bi đỏ là 0, 1, 2, 3 như nhau. Rút có hoàn lại 2 lần đều đỏ. P(cả 3 bi đều đỏ)? | 9/14 | urn | XS26 |
+| **XSS338** | Lần thứ ba cũng đỏ? | Như trên: đã rút 2 lần đều đỏ. P(lần rút thứ ba cũng đỏ)? | 6/7 | urn | XS26 |
+| **XSS339** | Đúng hai màu | Hộp 5 đỏ 4 xanh 3 trắng, rút 3 bi. P(có đúng hai màu)? | 29/44 | urn | XS11 |
+| **XSS340** | Tổng chẵn thì cùng lẻ? | Rút lần lượt 2 bi từ 9 bi số 1 đến 9, biết tổng chẵn. P(cả hai số lẻ)? | 5/8 | urn | XS20 |
+| **XSS341** | Chia bi vào ba hộp | Chia ngẫu nhiên 3 đỏ, 3 xanh vào 3 hộp, mỗi hộp 2 bi. P(hộp nào cũng có 1 đỏ 1 xanh)? | 2/5 | urn | XS10 |
+| **XSS342** | Hộp nào cũng đủ màu | Chia 9 bi (3 đỏ, 3 xanh, 3 vàng) vào 3 hộp, mỗi hộp 3 bi. P(hộp nào cũng đủ 3 màu)? | 9/70 | urn | XS10 |
+| **XSS343** | Màu nào hết trước? | Hộp 3 đỏ 2 xanh, rút lần lượt đến khi hết hẳn một màu. P(màu xanh hết trước)? | 3/5 | urn | XS30 |
+| **XSS344** | Bi cuối cùng bất biến | Hộp 5 đỏ 4 xanh. Mỗi lần lấy 2 bi: cùng màu thì bỏ vào 1 đỏ, khác màu thì bỏ vào 1 xanh. Bi cuối cùng màu gì? | Đỏ (chắc chắn) | urn | XS30 |
+
+## L21 · Xếp chỗ – toa tàu (XSS345 – XSS360) · 75 – 160 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS345** | Nam nữ xen kẽ | 3 nam, 3 nữ ngồi ngẫu nhiên vào dãy 6 ghế. P(nam nữ ngồi xen kẽ)? | 1/10 | cards | XS12 |
+| **XSS346** | Ba gia đình | 3 gia đình, mỗi nhà 2 người, ngồi ngẫu nhiên vào dãy 6 ghế. P(ai cũng ngồi cạnh người nhà)? | 1/15 | cards | XS12 |
+| **XSS347** | Mỗi toa hai người | 6 hành khách, mỗi người chọn ngẫu nhiên 1 trong 3 toa tàu. P(mỗi toa đúng 2 người)? | 10/81 | cards | XS10 |
+| **XSS348** | Toa nào cũng có khách | 5 hành khách, mỗi người chọn ngẫu nhiên 1 trong 3 toa. P(toa nào cũng có người)? | 50/81 | cards | XS11 |
+| **XSS349** | Bốn người bốn toa | 4 hành khách, mỗi người chọn ngẫu nhiên 1 trong 4 toa. P(mỗi toa đúng 1 người)? | 3/32 | cards | XS10 |
+| **XSS350** | Toa 1 trống | 5 hành khách chọn ngẫu nhiên 1 trong 3 toa. Biết toa 1 trống: P(toa 2 cũng trống)? | 1/32 | cards | XS20 |
+| **XSS351** | Hai dãy ghế đối diện | Hai dãy ghế đối diện, mỗi dãy 3 ghế; 3 nam 3 nữ ngồi ngẫu nhiên. P(nam nào cũng đối diện nữ)? | 2/5 | cards | XS12 |
+| **XSS352** | Bốn cặp quanh bàn tròn | 4 cặp vợ chồng ngồi ngẫu nhiên quanh bàn tròn 8 ghế. P(không cặp nào ngồi cạnh nhau)? | 31/105 | geo | XS13 |
+| **XSS353** | Không ai ngồi cạnh ai | Dãy 10 ghế, 4 người chọn ngẫu nhiên 4 ghế. P(không có 2 người nào ngồi cạnh nhau)? | 1/6 | cards | XS12 |
+| **XSS354** | Ba ghế không kề trên bàn tròn | Chọn 3 trong 10 ghế quanh bàn tròn. P(không có 2 ghế nào kề nhau)? | 5/12 | geo | XS12 |
+| **XSS355** | A trước B trước C | 5 học sinh A, B, C, D, E xếp hàng ngẫu nhiên. P(A đứng trước B và B đứng trước C)? | 1/6 | cards | XS12 |
+| **XSS356** | Biết A trước B | 5 học sinh xếp hàng, biết A đứng trước B. P(A đứng đầu hàng)? | 2/5 | cards | XS20 |
+| **XSS357** | Ba lớp, sáu bạn | 3 lớp, mỗi lớp 2 bạn, ngồi ngẫu nhiên vào dãy 6 ghế. P(không 2 bạn cùng lớp ngồi cạnh nhau)? | 1/3 | cards | XS13 |
+| **XSS358** | Hai toa bốn chỗ | 8 người xếp ngẫu nhiên vào 2 toa, mỗi toa 4 chỗ. P(An và Bình cùng toa)? | 3/7 | cards | XS10 |
+| **XSS359** | Thang máy năm tầng | 4 người vào thang máy, mỗi người ra ngẫu nhiên ở 1 trong 5 tầng. P(4 người ra ở 4 tầng khác nhau)? | 24/125 | cards | XS10 |
+| **XSS360** | An ngồi một mình | 5 hành khách chọn 3 toa; biết toa nào cũng có người. P(An ở một toa chỉ có mình An)? | 7/25 | cards | XS20 |

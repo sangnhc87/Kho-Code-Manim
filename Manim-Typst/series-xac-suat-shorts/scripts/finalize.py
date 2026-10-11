@@ -23,8 +23,8 @@ def metadata(n: int) -> dict:
         'Dừng video, tự giải rồi xem lời giải bằng hình động. Đáp án ở cuối video.',
         'Mọi đáp án trong series đều được kiểm tra lại bằng máy tính (liệt kê, phân số chính xác, mô phỏng).',
         '',
-        '📚 Series "Xác suất 3 phút": 280 thử thách từ dễ đến đề học sinh giỏi: xác suất cổ điển, quy tắc cộng – nhân, '
-        'sơ đồ cây, xác suất có điều kiện, toàn phần, Bayes, bốc bi – chuyển bi, câu chặn điểm 8 – 9 – 10.',
+        '📚 Series "Xác suất 3 phút": 360 thử thách từ dễ đến vận dụng cao: xác suất cổ điển, quy tắc cộng – nhân, '
+        'sơ đồ cây, xác suất có điều kiện, toàn phần, Bayes, bốc bi – chuyển bi, câu chặn điểm 8 – 9 – 10, ếch nhảy, quy hoạch động, xếp chỗ.',
         '👨‍🏫 Thầy Nguyễn Văn Sang',
         '',
         '#Shorts #XacSuat #Toan10 #Toan11 #Toan12 #OnThiTotNghiep',
