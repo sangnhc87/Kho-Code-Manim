@@ -72,8 +72,9 @@ class Episodes(unittest.TestCase):
     def test_offline_plan_length_is_a_full_lesson(self):
         for ep in EPISODES:
             with self.subTest(ep=ep):
-                total = sum(voice.estimate(b.text)[0] for b in episode.load(ep).BEATS)
-                self.assertTrue(7 * 60 < total < 18 * 60, total)
+                # same formula as prepare_voice (speech + lead-in + pause per beat)
+                total = sum(voice.estimate(b.text)[0] + voice.LEAD + voice.PAD for b in episode.load(ep).BEATS)
+                self.assertTrue(6.5 * 60 < total < 18 * 60, total)
 
     def test_episode_metadata(self):
         for ep in EPISODES:

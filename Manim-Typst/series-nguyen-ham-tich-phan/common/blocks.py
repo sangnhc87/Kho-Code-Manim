@@ -97,16 +97,36 @@ class Blocks:
             if r.height < .6:  # keep room for the Đúng/Sai slot of short rows
                 r.add(Rectangle(width=.01, height=.6, stroke_opacity=0, fill_opacity=0).move_to(r.get_left()))
             bodies.add(r)
-        bodies.arrange(DOWN, aligned_edge=LEFT, buff=.14)
         top = lines.get_bottom()[1] - .22
         room = top - (TF_SOLUTION_Y + .5)
-        if bodies.height > room:
-            bodies.scale(room / bodies.height)
-        bodies.move_to([0, top, 0], aligned_edge=UP).align_to(head, LEFT).shift(RIGHT * .3)
         rows = VGroup()
-        for r in bodies:
-            slot = RoundedRectangle(width=1.25, height=min(.5, .9 * r.height), corner_radius=.08, stroke_color=STROKE,
-                                    stroke_width=2, fill_color=PANEL_2, fill_opacity=1).move_to([5.6, r.get_y(), 0])
+        one_col = bodies.copy().arrange(DOWN, aligned_edge=LEFT, buff=.14)
+        if one_col.height * .72 <= room:
+            # one column, shrunk if needed, slots on the right edge
+            bodies.arrange(DOWN, aligned_edge=LEFT, buff=.14)
+            if bodies.height > room:
+                bodies.scale(room / bodies.height)
+            bodies.move_to([0, top, 0], aligned_edge=UP).align_to(head, LEFT).shift(RIGHT * .3)
+            slots_x = [5.6] * 4
+        else:
+            # tall statements: 2 × 2 grid (a, b left; c, d right), each with its own slot
+            col_w = 4.7
+            for r in bodies:
+                if r.width > col_w:
+                    r.scale_to_fit_width(col_w)
+            left, right = VGroup(bodies[0], bodies[1]), VGroup(bodies[2], bodies[3])
+            for col in (left, right):
+                col.arrange(DOWN, aligned_edge=LEFT, buff=.3)
+            h = max(left.height, right.height)
+            if h > room:
+                for col in (left, right):
+                    col.scale(room / h)
+            left.move_to([-6.6 + .3, top, 0], aligned_edge=UP + LEFT)
+            right.move_to([.35, top, 0], aligned_edge=UP + LEFT)
+            slots_x = [-.55, -.55, 6.25, 6.25]
+        for r, sx in zip(bodies, slots_x):
+            slot = RoundedRectangle(width=1.15, height=min(.5, .9 * r.height), corner_radius=.08, stroke_color=STROKE,
+                                    stroke_width=2, fill_color=PANEL_2, fill_opacity=1).move_to([sx, r.get_y(), 0])
             rows.add(VGroup(r, slot))
         self.play(FadeIn(head), run_time=self.rt(.04))
         self.play(FadeIn(lines[0], shift=UP * .1), run_time=self.rt(.08))
