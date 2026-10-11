@@ -17,6 +17,11 @@ on:
         type: choice
         options: [preview, full]
         default: preview
+      targets:
+        description: 'Dựng gì: both = video + Short; video = chỉ video; short = chỉ Short'
+        type: choice
+        options: [both, video, short]
+        default: both
       voice:
         description: 'edge = giọng nam tiếng Việt; zalo = nam miền Nam (cần ZALO_API_KEY)'
         type: choice
@@ -35,6 +40,7 @@ env:
   EPISODES: ${{ github.event_name == 'schedule' && 'new' || inputs.episodes }}
   QUALITY: ${{ github.event_name == 'schedule' && 'full' || inputs.quality }}
   VOICE: ${{ github.event_name == 'schedule' && 'edge' || inputs.voice }}
+  TARGETS: ${{ github.event_name == 'schedule' && 'both' || inputs.targets }}
 jobs:
   build:
     if: github.event_name != 'schedule' || vars.COTAN_DAILY == 'true'
@@ -114,8 +120,10 @@ jobs:
         env:
           ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
         run: |
-          python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
-          python scripts/make_short.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
+          if [ "$TARGETS" != "short" ]; then
+            python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
+          fi
+          [ "$TARGETS" = "video" ] || python scripts/make_short.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
       - uses: actions/upload-artifact@v4
         with:
           name: cotan-${{ matrix.episode }}
@@ -123,7 +131,7 @@ jobs:
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}.mp4
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}_short.mp4
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/timeline.json
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 14
       - name: Đăng YouTube (chỉ khi quality=full)
         if: env.QUALITY == 'full'
@@ -150,7 +158,7 @@ jobs:
               f"Lời giải đầy đủ: video \"{d['title']}\" trên kênh.\n"
               "Kết luận kiểm chứng bằng bảng tra cờ tàn chessdb.cn.\n\n#Shorts #CoTuong #CoTan #TinhHoaCoTan")
           PY
-          python ../scripts/upload_to_youtube.py \
+          [ -f "output/$EP/$EP.mp4" ] && python ../scripts/upload_to_youtube.py \
             --file "output/$EP/$EP.mp4" \
             --title "$(cat yt_title.txt)" \
             --description-file yt_desc.txt \
