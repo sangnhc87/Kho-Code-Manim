@@ -1,0 +1,121 @@
+{
+ "id": "ep-0011",
+ "number": 11,
+ "kind": "mate",
+ "topic": "mate-弃车绝杀",
+ "category": "Sát cục",
+ "title": "Thí 2 Xe và Pháo, chiếu bí trong 6 nước!",
+ "subtitle": "Sát cục",
+ "fen": "1nbaka1n1/1R7/5r2b/p1p1C2rp/3N2p2/3R5/P1P1P4/3C5/4A3c/2B1KAB1c w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 11
+ },
+ "mate": {
+  "n": 6,
+  "line": [
+   {
+    "move": "d5e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f9e8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 3
+   },
+   {
+    "move": "d4d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "a"
+   },
+   {
+    "move": "e9d9",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "b8d8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "d9e9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "d8e8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "d2f2",
+    "side": "w",
+    "check": true,
+    "sacrifice": "C",
+    "capture": null
+   },
+   {
+    "move": "f7e7",
+    "side": "b",
+    "forced": false,
+    "capture": "N",
+    "n_replies": 6
+   },
+   {
+    "move": "e6f6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R",
+   "R",
+   "C"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "弃车绝杀",
+  "file": "妙弃双车-8",
+  "title": "妙弃双车-8"
+ },
+ "beats": [],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Thí 2 Xe và Pháo, chiếu bí trong 6 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 6 nước (thí 2 Xe và Pháo).\nLời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\nThế cờ: \"妙弃双车-8\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

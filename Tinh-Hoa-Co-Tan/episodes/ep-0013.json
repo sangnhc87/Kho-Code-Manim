@@ -1,0 +1,120 @@
+{
+ "id": "ep-0013",
+ "number": 13,
+ "kind": "mate",
+ "topic": "mate-弃车绝杀",
+ "category": "Sát cục",
+ "title": "Thí 2 Xe, chiếu bí trong 6 nước!",
+ "subtitle": "Sát cục",
+ "fen": "4k4/2Cna4/3ab4/5R3/6b2/1R4PN1/4r4/2n1B4/4A2r1/c1BAKC3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 11
+ },
+ "mate": {
+  "n": 6,
+  "line": [
+   {
+    "move": "f6f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "b4b9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f9f8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "e1f2",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e3f3",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "h4g6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f8f7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "b9f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "e8f9",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "g6e5",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "弃车绝杀",
+  "file": "妙弃双车-3",
+  "title": "妙弃双车-3"
+ },
+ "beats": [],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Thí 2 Xe, chiếu bí trong 6 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 6 nước (thí 2 Xe).\nLời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\nThế cờ: \"妙弃双车-3\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

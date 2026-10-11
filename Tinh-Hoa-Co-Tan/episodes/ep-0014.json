@@ -1,0 +1,120 @@
+{
+ "id": "ep-0014",
+ "number": 14,
+ "kind": "mate",
+ "topic": "mate-弃车绝杀",
+ "category": "Sát cục",
+ "title": "Thí 2 Xe, chiếu bí trong 6 nước!",
+ "subtitle": "Sát cục",
+ "fen": "1r1a1kb2/4ac1R1/2N6/p6Cp/2b6/8P/P7R/1rn6/4ApC2/c3KAB2 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 11
+ },
+ "mate": {
+  "n": 6,
+  "line": [
+   {
+    "move": "h8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "c"
+   },
+   {
+    "move": "f9f8",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "i3f3",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8f7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "h6f6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f7e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f6f1",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "p"
+   },
+   {
+    "move": "e8f7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f3f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "a"
+   },
+   {
+    "move": "f8f7",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "e1f2",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "弃车绝杀",
+  "file": "弃车攻杀-8",
+  "title": "弃车攻杀-8"
+ },
+ "beats": [],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Thí 2 Xe, chiếu bí trong 6 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 6 nước (thí 2 Xe).\nLời giải được kiểm chứng bằng tìm kiếm vét cạn: xét mọi cách chống đỡ của đối phương.\nThế cờ: \"弃车攻杀-8\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
