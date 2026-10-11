@@ -52,8 +52,8 @@ class XSS131(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.4
-        self.cells = VGroup(*[VGroup(*[token(c, COL[c], .17, 16) for c in w]).arrange(buff=.03) for w in OUTS]) \
-            .arrange_in_grid(9, 3, buff=(.45, .12)).move_to([0, 1.15, 0])
+        self.cells = VGroup(*[VGroup(*[token(c, COL[c], .15, 15) for c in w]).arrange(buff=.03) for w in OUTS]) \
+            .arrange_in_grid(9, 3, buff=(.5, .08)).move_to([0, .95, 0])
         self.wait_until(.55, t0)
         self.play(FadeIn(self.cells[:3], lag_ratio=.3), run_time=self.rt(.1))
 
