@@ -145,12 +145,30 @@ jobs:
       - name: Commit YouTube history
         if: ${{ inputs.upload && inputs.quality == 'fullhd' && inputs.voice == 'on' }}
         run: |
+          # Other workflows (e.g. Cờ tàn) write the same file concurrently: keep only our
+          # entry, then re-apply it on top of the latest main instead of rebasing.
+          N=$((10#${EP#int}))
+          KEY=$(printf 'nguyen_ham_tich_phan_%02d' "$N")
+          python - "$KEY" <<'PY'
+          import json, sys
+          key = sys.argv[1]
+          data = json.load(open('../../youtube_uploaded_history.json', encoding='utf-8'))
+          json.dump({key: data[key]}, open('/tmp/int_entry.json', 'w', encoding='utf-8'), ensure_ascii=False)
+          PY
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          git add ../../youtube_uploaded_history.json
-          git commit -m "docs(int): auto-update youtube_uploaded_history.json for $EP" || { echo "No changes"; exit 0; }
-          for i in 1 2 3 4; do
-            git pull --rebase --autostash origin main && git push && exit 0
-            echo "push failed, retry $i"; sleep $((i * 10))
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python - <<'PY'
+          import json
+          path = '../../youtube_uploaded_history.json'
+          data = json.load(open(path, encoding='utf-8'))
+          data.update(json.load(open('/tmp/int_entry.json', encoding='utf-8')))
+          json.dump(data, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+          PY
+            git add ../../youtube_uploaded_history.json
+            git commit -q -m "docs(int): auto-update youtube_uploaded_history.json for $EP" || { echo "No changes"; exit 0; }
+            git push -q origin HEAD:main && exit 0
+            echo "push failed, retry $i"; sleep $((i * 7))
           done
           exit 1
