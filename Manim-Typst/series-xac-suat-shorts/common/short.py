@@ -38,7 +38,8 @@ BOARD_W = 6.8
 CAPTION_Y = -4.22
 LEVEL_NAMES = {'L1': 'MỞ ĐẦU', 'L2': 'CƠ BẢN', 'L3': 'THÔNG HIỂU', 'L4': 'VẬN DỤNG', 'L5': 'KHÓ', 'L6': 'RẤT KHÓ',
                'L7': 'SƠ ĐỒ CÂY', 'L8': 'CÓ ĐIỀU KIỆN', 'L9': 'TOÀN PHẦN – BAYES', 'L10': 'CHẶN ĐIỂM 8-9-10',
-               'L11': 'HỌC SINH GIỎI'}
+               'L11': 'HỌC SINH GIỎI', 'L12': 'BỐC BI ĐA HỘP', 'L13': 'CHUYỂN BI', 'L14': 'ĐA ĐIỀU KIỆN',
+               'L15': 'THAM SỐ XUÔI – NGƯỢC', 'L16': 'CÂY HAY – LẠ'}
 
 
 @dataclass(frozen=True)
@@ -67,7 +68,7 @@ def outro_text(n: int) -> str:
         nxt = plan[n]
         return (f'Bạn trả lời đúng chưa? Bình luận đáp án của bạn nhé! '
                 f'Thử thách số {n + 1} tiếp theo: {nxt["title"]}. Theo dõi kênh để không bỏ lỡ!')
-    return 'Bạn đã đi hết hai trăm thử thách xác suất. Bình luận câu bạn thích nhất nhé!'
+    return 'Bạn đã đi hết toàn bộ chuỗi thử thách xác suất. Bình luận câu bạn thích nhất nhé!'
 
 
 class ShortScene(Scene):

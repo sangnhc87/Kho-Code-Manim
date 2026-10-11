@@ -1,4 +1,4 @@
-# DANH SÁCH 200 SHORTS · XÁC SUẤT 3 PHÚT
+# DANH SÁCH 280 SHORTS · XÁC SUẤT 3 PHÚT
 
 > Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.
 
@@ -256,3 +256,108 @@
 | **XSS198** | Loạt luân lưu | Mỗi đội sút 5 quả luân lưu, mỗi quả vào 0,75. P(hòa sau 5 lượt)? | ≈ 0,29 | sim | XS30 |
 | **XSS199** | Giải độc đắc 6/45 | Chọn 6 số trong 45 số. P(trùng đủ 6 số được quay)? | 1/8 145 060 | cards | XS07 |
 | **XSS200** | Monty Hall 100 cửa | 100 cửa, 1 cửa có xe. Bạn chọn 1, người dẫn mở 98 cửa có dê. Đổi cửa: P(trúng xe)? | 99/100 | cards | XS28 |
+
+## L12 · Bốc bi đa hộp (XSS201 – XSS216) · 75 – 150 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS201** | Mỗi hộp một bi | Hộp I: 3 đỏ 2 xanh; hộp II: 2 đỏ 4 xanh. Rút mỗi hộp 1 bi. P(hai bi cùng màu)? | 7/15 | tree | XS17 |
+| **XSS202** | Cùng màu thì màu gì? | Như trên, biết hai bi cùng màu. P(cả hai bi đều đỏ)? | 3/7 | tree | XS20 |
+| **XSS203** | Ba hộp, đúng hai đỏ | Hộp k có k đỏ và 4 − k xanh (k = 1, 2, 3). Rút mỗi hộp 1 bi. P(đúng 2 bi đỏ)? | 13/32 | tree | XS18 |
+| **XSS204** | Bi đỏ duy nhất từ đâu? | Như trên, biết rút được đúng 1 bi đỏ. P(bi đỏ đó từ hộp 3)? | 9/13 | tree | XS25 |
+| **XSS205** | Tung xu chọn hộp | Hộp I: 4 đỏ 1 xanh; hộp II: 1 đỏ 4 xanh. Tung xu chọn hộp, rút 2 bi. P(1 đỏ 1 xanh)? | 2/5 | tree | XS24 |
+| **XSS206** | Bi thứ hai cùng hộp | Như trên: rút 1 bi được đỏ, rút tiếp bi thứ hai cùng hộp. P(bi thứ hai cũng đỏ)? | 3/5 | tree | XS26 |
+| **XSS207** | Hoàn lại vẫn phụ thuộc | Như trên nhưng rút có hoàn lại: lần 1 đỏ. P(lần 2 cũng đỏ)? | 17/25 | tree | XS23 |
+| **XSS208** | Xúc xắc chọn hộp, hai bi đỏ | Gieo xúc xắc: ra 6 chọn hộp A (5 đỏ 1 xanh), khác 6 chọn hộp B (2 đỏ 4 xanh). Rút 2 bi đều đỏ. P(hộp A)? | 2/3 | tree | XS25 |
+| **XSS209** | Luân phiên hai hộp | An rút ở hộp I (2 đỏ 3 xanh), Bình ở hộp II (3 đỏ 1 xanh), luân phiên, không hoàn lại; ai được đỏ trước thắng. P(An thắng)? | 19/40 | tree | XS22 |
+| **XSS210** | Đến khi đủ hai màu | Hộp 3 đỏ 2 xanh, rút lần lượt đến khi có đủ hai màu. P(cần đúng 3 lần)? | 3/10 | tree | XS22 |
+| **XSS211** | Hai bi xanh liền nhau | Hộp 4 đỏ 2 xanh, rút lần lượt đến hết. P(hai bi xanh được rút liền nhau)? | 1/3 | urn | XS12 |
+| **XSS212** | Đỏ luôn không ít hơn | Hộp 3 đỏ 3 xanh, rút lần lượt đến hết. P(mọi lúc số đỏ đã rút ≥ số xanh)? | 1/4 | urn | XS30 |
+| **XSS213** | Số lớn nhất là 7 | Rút 3 bi từ 10 bi đánh số 1 đến 10. P(số lớn nhất là 7)? | 1/8 | urn | XS07 |
+| **XSS214** | Nhỏ nhất 3, lớn nhất 7 | Như trên, biết số nhỏ nhất là 3. P(số lớn nhất là 7)? | 1/7 | urn | XS20 |
+| **XSS215** | Ba hộp, hai bi khác màu | Hộp I: 2 đỏ 2 xanh; II: 3 đỏ 1 xanh; III: 4 đỏ. Chọn hộp, rút 2 bi khác màu. P(hộp I)? | 4/7 | tree | XS26 |
+| **XSS216** | Thêm bi cùng màu | Hộp 1 đỏ 1 xanh; rút 1 bi, trả lại kèm 1 bi cùng màu, rút lần 2 được đỏ. P(lần 1 đỏ)? | 2/3 | tree | XS25 |
+
+## L13 · Chuyển bi (XSS217 – XSS232) · 90 – 170 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS217** | Chuyển một, rút hai | Hộp I: 3 đỏ 2 xanh; II: 2 đỏ 2 xanh. Chuyển 1 bi từ I sang II, rồi rút 2 bi từ II. P(2 đỏ)? | 11/50 | tree | XS24 |
+| **XSS218** | Bi chuyển màu gì? | Như trên, biết 2 bi rút từ II đều đỏ. P(bi đã chuyển là đỏ)? | 9/11 | tree | XS25 |
+| **XSS219** | Chuyển đi rồi chuyển về | Hộp I: 2 đỏ 1 xanh; II: 1 đỏ 2 xanh. Chuyển 1 bi I → II, rồi 1 bi II → I, rút từ I. P(đỏ)? | 7/12 | tree | XS24 |
+| **XSS220** | Truy ngược hai lần chuyển | Như trên, biết bi rút từ I là đỏ. P(bi chuyển I → II lúc đầu là đỏ)? | 4/7 | tree | XS25 |
+| **XSS221** | Chuyển hai, rút hai | Hộp I: 3 đỏ 3 xanh; II: 2 đỏ 2 xanh. Chuyển 2 bi I → II, rồi rút 2 bi từ II. P(cùng màu)? | 32/75 | tree | XS24 |
+| **XSS222** | Hai bi chuyển đều đỏ? | Như trên, biết 2 bi rút từ II đều đỏ. P(2 bi đã chuyển đều đỏ)? | 3/8 | tree | XS26 |
+| **XSS223** | Đổi bi giữa hai hộp | Hộp I: 3 đỏ 1 xanh; II: 1 đỏ 3 xanh. Đổi ngẫu nhiên 1 bi của I lấy 1 bi của II, rồi rút từ I. P(đỏ)? | 5/8 | tree | XS24 |
+| **XSS224** | Đổi hai lần, về như cũ | Như trên, đổi bi 2 lần. P(hộp I lại có đúng 3 đỏ 1 xanh)? | 11/32 | tree | XS24 |
+| **XSS225** | Đồng xu quyết định số bi | Ngửa: chuyển 1 bi, sấp: chuyển 2 bi từ hộp I (3 đỏ 1 xanh) sang II (1 đỏ 1 xanh); rút 1 bi từ II. P(đỏ)? | 29/48 | tree | XS26 |
+| **XSS226** | Bi bị giấu đi | Hộp 3 đỏ 2 xanh. Lấy 1 bi cất đi không xem, rồi rút 1 bi. P(bi rút ra đỏ)? | 3/5 | tree | XS28 |
+| **XSS227** | Bi giấu màu gì? | Như trên, biết bi rút ra đỏ. P(bi đã cất đi cũng đỏ)? | 1/2 | tree | XS25 |
+| **XSS228** | Chuyền qua ba hộp | Hộp I: 2 đỏ; II và III: mỗi hộp 1 đỏ 1 xanh. Chuyển 1 bi I → II → III rồi rút từ III. P(đỏ)? | 5/9 | tree | XS24 |
+| **XSS229** | Hai hộp đổ vào một | Lấy 1 bi từ I (2 đỏ 1 xanh) và 1 bi từ II (1 đỏ 2 xanh) bỏ vào III (1 đỏ). Rút từ III. P(đỏ)? | 2/3 | tree | XS24 |
+| **XSS230** | Bi từ hộp II đỏ không? | Như trên, biết bi rút từ III là đỏ. P(bi lấy từ II là đỏ)? | 4/9 | tree | XS26 |
+| **XSS231** | Chuyển hai vào hộp toàn xanh | Chuyển 2 bi từ I (4 đỏ 2 xanh) sang II (2 xanh), rút 1 bi II được đỏ. P(đúng 1 bi đỏ đã được chuyển)? | 2/5 | tree | XS26 |
+| **XSS232** | Đi một vòng trở về | Hộp I: 3 đỏ 2 xanh; II: 2 đỏ 3 xanh. Chuyển 1 bi I → II rồi 1 bi II → I. P(hộp I như cũ)? | 17/30 | tree | XS24 |
+
+## L14 · Đa điều kiện (XSS233 – XSS248) · 75 – 150 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS233** | Hai điều kiện cùng lúc | Gieo 2 xúc xắc, biết tổng chẵn và có mặt 6. P(tổng ≥ 10)? | 3/5 | grid | XS20 |
+| **XSS234** | Ngửa đầu và ít nhất hai ngửa | Tung xu 3 lần, biết lần 1 ngửa và có ít nhất 2 ngửa. P(cả 3 lần ngửa)? | 1/3 | tree | XS20 |
+| **XSS235** | Ai bắn trượt? | Ba xạ thủ trúng 0,5; 0,6; 0,7. Biết đúng 2 người trúng. P(người thứ nhất trượt)? | 21/44 | tree | XS25 |
+| **XSS236** | Ít nhất hai người trúng | Như trên, biết có ít nhất 2 người trúng. P(cả 3 cùng trúng)? | 21/65 | tree | XS20 |
+| **XSS237** | Xúc xắc rồi đồng xu | Gieo xúc xắc được k chấm rồi tung k đồng xu. P(không có mặt ngửa nào)? | 21/128 | tree | XS24 |
+| **XSS238** | Không ngửa nào, xúc xắc ra mấy? | Như trên, biết không có mặt ngửa nào. P(xúc xắc ra 1 chấm)? | 32/63 | tree | XS25 |
+| **XSS239** | Gieo đến khi ra 6: không nhớ | Gieo đến khi ra 6. Biết cần ít nhất 3 lần. P(cần đúng 4 lần)? | 5/36 | tree | XS20 |
+| **XSS240** | Có cả trai lẫn gái | Gia đình 4 con, biết có cả trai lẫn gái. P(đúng 2 trai)? | 3/7 | tree | XS20 |
+| **XSS241** | Xu bí ẩn: lần hai | Chọn ngẫu nhiên xu chuẩn hoặc xu lệch (ngửa 0,9), tung 2 lần. Lần 1 ngửa: P(lần 2 ngửa)? | 53/70 | tree | XS23 |
+| **XSS242** | Xu bí ẩn: lần ba | Như trên, biết 2 lần đầu đều ngửa. P(lần 3 ngửa)? | 427/530 ≈ 0,806 | tree | XS26 |
+| **XSS243** | Bị loại ở vòng nào? | Qua vòng 1: 0,8; qua 1 thì qua vòng 2: 0,6; qua 2 thì qua vòng 3: 0,5. Biết bị loại. P(loại ở vòng 2)? | 8/19 | tree | XS25 |
+| **XSS244** | Ba mặt khác nhau có 6? | Gieo 3 xúc xắc, biết ba mặt khác nhau. P(có mặt 6)? | 1/2 | grid | XS20 |
+| **XSS245** | Có 6 thì khác nhau? | Gieo 3 xúc xắc, biết có ít nhất một mặt 6. P(ba mặt khác nhau)? | 60/91 | grid | XS20 |
+| **XSS246** | Ba phát trúng liên tiếp | Bắn 5 phát (mỗi phát trúng 0,6), biết trúng đúng 3 phát. P(3 phát trúng liên tiếp)? | 3/10 | tree | XS18 |
+| **XSS247** | Chọn n rồi chọn m | Chọn ngẫu nhiên n từ 1 đến 4, rồi chọn ngẫu nhiên m từ 1 đến n. P(m = 1)? | 25/48 | tree | XS24 |
+| **XSS248** | Biết m = 1, n bằng mấy? | Như trên, biết m = 1. P(n = 1)? | 12/25 | tree | XS25 |
+
+## L15 · Tham số xuôi – ngược (XSS249 – XSS264) · 75 – 150 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS249** | Hộp có bao nhiêu bi? | Hộp có n bi, trong đó 3 đỏ. Rút 2 bi, P(2 đỏ) = 1/5. Tìm n. | n = 6 | urn | XS07 |
+| **XSS250** | Hai đáp số cho x | Hộp 5 đỏ, x xanh. Rút 2 bi, P(khác màu) = 5/9. Tìm x. | x = 4 hoặc x = 5 | urn | XS07 |
+| **XSS251** | Tìm xác suất bắn trúng | Bắn 2 phát độc lập, P(trúng ít nhất 1 phát) = 0,96. Tìm xác suất trúng p mỗi phát. | p = 0,8 | tree | XS17 |
+| **XSS252** | Bắn bao nhiêu phát? | Mỗi phát trúng 0,3. Bắn ít nhất bao nhiêu phát để P(trúng ít nhất 1) ≥ 0,95? | 9 | tree | XS18 |
+| **XSS253** | Tỉ lệ bệnh là bao nhiêu? | Xét nghiệm nhạy 90 %, dương tính giả 10 %. P(bệnh \| dương tính) = 0,5. Tìm tỉ lệ bệnh x. | x = 0,1 | square | XS27 |
+| **XSS254** | Tìm số bi đỏ hộp II | Hộp I: 2 đỏ 3 xanh; II: x đỏ 2 xanh. Chọn hộp ngẫu nhiên rồi rút 1 bi, P(đỏ) = 1/2. Tìm x. | x = 3 | tree | XS24 |
+| **XSS255** | Tham số sau khi chuyển bi | Chuyển 1 bi từ I (3 đỏ 1 xanh) sang II (a đỏ 2 xanh), rút từ II: P(đỏ) = 5/8. Tìm a. | a = 3 | tree | XS24 |
+| **XSS256** | Tìm tay nghề xạ thủ | Hai xạ thủ trúng p và 0,8. P(đúng 1 người trúng) = 0,38. Tìm p. | p = 0,7 | tree | XS17 |
+| **XSS257** | P(A | A ∪ B) | A, B độc lập, P(A) = 0,5; P(B) = 0,4. Tính P(A \| A ∪ B). | 5/7 | square | XS23 |
+| **XSS258** | Nhóm có bao nhiêu bạn? | n bạn xếp hàng ngang, P(Hà và Lan đứng cạnh nhau) = 1/4. Tìm n. | n = 8 | cards | XS12 |
+| **XSS259** | n đỏ, n xanh | Hộp n đỏ, n xanh. Rút 2 bi, P(cùng màu) = 4/9. Tìm n. | n = 5 | urn | XS07 |
+| **XSS260** | Đồng xu lệch bao nhiêu? | Xu lệch, ngửa với xác suất p > 1/2. Tung 2 lần, P(1 ngửa 1 sấp) = 0,48. Tìm p. | p = 0,6 | tree | XS18 |
+| **XSS261** | p nào tốt nhất? | Xu lệch ngửa p, tung 3 lần. p bằng bao nhiêu thì P(đúng 2 ngửa) lớn nhất? | p = 2/3 | curve | XS18 |
+| **XSS262** | Ít nhất bao nhiêu bi đỏ? | Hộp n đỏ, 3 xanh. Tìm n nhỏ nhất để P(rút 2 bi đều đỏ) > 1/2. | n = 8 | urn | XS07 |
+| **XSS263** | Đài báo nhầm bao nhiêu? | Mưa 30 %; trời mưa thì báo mưa 90 %. P(mưa \| báo mưa) = 0,72. Tìm tỉ lệ báo mưa khi trời tạnh. | 0,15 | tree | XS27 |
+| **XSS264** | Chọn hộp I với xác suất p | Hộp I: 3 đỏ 1 xanh; II: 1 đỏ 3 xanh; chọn I với xác suất p. Rút được đỏ thì P(hộp I) = 0,9. Tìm p. | p = 0,75 | tree | XS25 |
+
+## L16 · Cây hay – lạ (XSS265 – XSS280) · 90 – 175 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS265** | Xu lệch hóa công bằng | Xu lệch ngửa 0,7. Tung từng cặp: NS thì A, SN thì B, còn lại tung lại. Trung bình mấy cặp? | 50/21 ≈ 2,38 | tree | XS30 |
+| **XSS266** | Trò craps | Gieo 2 xúc xắc: 7, 11 thắng; 2, 3, 12 thua; khác thì gieo tiếp đến khi lặp lại số đó (thắng) hoặc ra 7 (thua). P(thắng)? | 244/495 ≈ 0,493 | tree | XS30 |
+| **XSS267** | Con bạc có lợi thế | Có 2 đồng, mỗi ván thắng 2/3 (thêm 1 đồng) hoặc thua. Dừng khi có 4 đồng hoặc hết tiền. P(đạt 4)? | 4/5 | tree | XS30 |
+| **XSS268** | Dẫn 2–0 trong loạt 7 ván | Thắng 4 ván trước là vô địch, A thắng mỗi ván 0,6 và đang dẫn 2–0. P(A vô địch)? | ≈ 0,913 | tree | XS30 |
+| **XSS269** | Người dẫn không biết | Monty Hall nhưng người dẫn không biết, mở ngẫu nhiên và tình cờ ra dê. Đổi cửa: P(trúng xe)? | 1/2 | tree | XS28 |
+| **XSS270** | Dòng họ tuyệt chủng | Mỗi cá thể sinh 0, 1, 2 con với xác suất 1/4, 1/4, 1/2. P(dòng họ từ một cá thể tuyệt chủng)? | 1/2 | tree | XS30 |
+| **XSS271** | Bàn Galton | Bi rơi qua 4 hàng đinh, mỗi đinh lệch trái hoặc phải 1/2. P(rơi vào ô chính giữa)? | 3/8 | tree | XS18 |
+| **XSS272** | Hai khâu kiểm tra | Hàng lỗi 10 %; mỗi khâu bắt lỗi 90 %, báo nhầm hàng tốt 5 %. Hàng qua cả 2 khâu: P(là hàng lỗi)? | 4/3253 ≈ 0,0012 | tree | XS27 |
+| **XSS273** | Nhánh đấu loại trực tiếp | A gặp B, C gặp D, thắng vào chung kết. A thắng ai cũng 0,6; các trận khác 1/2. P(C vô địch)? | 0,22 | tree | XS22 |
+| **XSS274** | Chuột trong mê cung | Chuột chọn ngẫu nhiên 1 trong 3 cửa: cửa 1 ra ngoài sau 2 phút, cửa 2, 3 quay lại sau 3 và 5 phút. Trung bình bao lâu ra? | 10 phút | tree | XS30 |
+| **XSS275** | Hơn nhau hai ngửa | Tung xu đến khi số ngửa hơn số sấp 2 hoặc ngược lại. P(dừng sau đúng 4 lần)? | 1/4 | tree | XS30 |
+| **XSS276** | Ba người, cùng tháng sinh | 3 người. P(có ít nhất 2 người sinh cùng tháng)? | 17/72 | tree | XS13 |
+| **XSS277** | Kiến về đỉnh đối diện | Kiến đi ngẫu nhiên trên cạnh hình lập phương. Trung bình bao nhiêu bước tới đỉnh đối diện? | 10 | tree | XS30 |
+| **XSS278** | Bốn bạn chuyền bóng | 4 bạn, mỗi lần chuyền bóng ngẫu nhiên cho 1 trong 3 bạn kia. P(sau 4 lần, bóng về người đầu)? | 7/27 | tree | XS30 |
+| **XSS279** | Cậu bé bên cửa sổ | Gia đình 2 con; nhìn qua cửa sổ thấy ngẫu nhiên 1 đứa là trai. P(cả hai là trai)? | 1/2 | tree | XS28 |
+| **XSS280** | Ba người, ba cơ hội | A, B, C lần lượt gieo xúc xắc; A thắng nếu ra 1; B nếu ra 1, 2; C nếu ra 1, 2, 3. P(A thắng)? | 3/13 | tree | XS30 |

@@ -1,8 +1,8 @@
 # KẾ HOẠCH SERIES SHORTS · XÁC SUẤT 3 PHÚT
-## 200 thử thách xác suất: từ Mở đầu đến đề Học sinh giỏi
+## 280 thử thách xác suất: từ Mở đầu đến đề Học sinh giỏi
 
-> **Tác giả:** Thầy Nguyễn Văn Sang · **Mã:** `XSS001 → XSS200` · **Định dạng:** YouTube Shorts dọc 1080×1920, tối đa 3 phút.
-> **Danh sách đầy đủ 200 Shorts:** [`DANH_SACH_SHORTS.md`](DANH_SACH_SHORTS.md) · **Dữ liệu máy đọc:** [`shorts_plan.json`](shorts_plan.json) · **Nguồn và kiểm chứng:** [`shorts_plan.py`](shorts_plan.py).
+> **Tác giả:** Thầy Nguyễn Văn Sang · **Mã:** `XSS001 → XSS280` · **Định dạng:** YouTube Shorts dọc 1080×1920, tối đa 3 phút.
+> **Danh sách đầy đủ 280 Shorts:** [`DANH_SACH_SHORTS.md`](DANH_SACH_SHORTS.md) · **Dữ liệu máy đọc:** [`shorts_plan.json`](shorts_plan.json) · **Nguồn và kiểm chứng:** [`shorts_plan.py`](shorts_plan.py).
 > **Series dài đi kèm:** Xác suất chuyên sâu `XS01 – XS30` ([kế hoạch](../series-xac-suat/KE_HOACH_SERIES_30_TAP.md)). Mỗi Short dẫn về đúng một tập dài.
 
 ---
@@ -25,6 +25,12 @@ Mỗi Short là **một câu đố xác suất trọn vẹn**: đề bài trong 
 | **L9** | Toàn phần – Bayes | 161 – 175 | 15 | 75 – 150 s | Nhân chứng taxi, đoán mò, dự báo, tín hiệu nhiễu, câu hỏi nhạy cảm, cập nhật niềm tin nhiều bước |
 | **L10** | Chặn điểm 8-9-10 | 176 – 190 | 15 | 90 – 170 s | Dạng câu khó nhất đề tốt nghiệp: tổ hợp trong xác suất, xếp chỗ, đa giác đều, Bayes kiểu trả lời ngắn |
 | **L11** | Học sinh giỏi | 191 – 200 | 10 | 120 – 180 s | Gối của Lewis Carroll, nghịch lý Simpson, bi cuối cùng, cầu thang, bài toán thư ký, Monty Hall 100 cửa |
+| | **Nhánh 3** | | | | **Xác suất có điều kiện nâng cao** |
+| **L12** | Bốc bi đa hộp | 201 – 216 | 16 | 75 – 150 s | Rút từ nhiều hộp, luân phiên hai hộp, rút đến khi đủ màu, bi đánh số, Bayes ba hộp |
+| **L13** | Chuyển bi | 217 – 232 | 16 | 90 – 170 s | Chuyển 1 – 2 bi, chuyển đi rồi chuyển về, đổi bi, chuyền qua ba hộp, bi bị giấu, truy ngược Bayes |
+| **L14** | Đa điều kiện | 233 – 248 | 16 | 75 – 150 s | Hai điều kiện cùng lúc, đa phép thử (xúc xắc rồi đồng xu), xu bí ẩn (độc lập có điều kiện), không nhớ |
+| **L15** | Tham số xuôi – ngược | 249 – 264 | 16 | 75 – 150 s | Cho xác suất, tìm số bi / p / tỉ lệ bệnh / tham số sau khi chuyển bi; tìm n nhỏ nhất; p tối ưu |
+| **L16** | Cây hay – lạ | 265 – 280 | 16 | 90 – 175 s | Craps, xu lệch hóa công bằng, tuyệt chủng, Galton, mê cung, Monty không biết, cậu bé bên cửa sổ |
 
 🟣 Từ L5 – L6 có nhiều bài **vượt chương trình phổ thông**. Video ghi rõ "thử thách mở rộng" để học sinh không học lệch trọng tâm.
 

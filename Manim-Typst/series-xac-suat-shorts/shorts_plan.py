@@ -1,4 +1,4 @@
-"""Kế hoạch 200 Shorts "Xác suất 3 phút" – nguồn dữ liệu duy nhất.
+"""Kế hoạch 280 Shorts "Xác suất 3 phút" – nguồn dữ liệu duy nhất.
 
 Mỗi Short có đề, đáp án hiển thị, kiểu hình trực quan, tập XS liên quan và một
 phép kiểm chứng: đáp án được tính lại bằng liệt kê vét cạn (itertools) hoặc
@@ -140,6 +140,91 @@ def ordered(s):
     return list(s) == sorted(set(s))
 
 
+def process(boxes, moves):
+    """boxes: list of strings like 'RRB'. moves: (src, dst, k) moves k random balls; ('swap', a, b) swaps one random ball each.
+    Returns [(prob, history, boxes)] – history[i] = sorted colours moved at step i."""
+    states = [(F(1), (), tuple(boxes))]
+    for mv in moves:
+        new = []
+        for pr, hist, bx in states:
+            if mv[0] == 'swap':
+                _, a, b = mv
+                for i, j in product(range(len(bx[a])), range(len(bx[b]))):
+                    nb = list(bx)
+                    nb[a] = bx[a][:i] + bx[a][i + 1:] + bx[b][j]
+                    nb[b] = bx[b][:j] + bx[b][j + 1:] + bx[a][i]
+                    new.append((pr / (len(bx[a]) * len(bx[b])), hist + (bx[a][i] + bx[b][j],), tuple(nb)))
+                continue
+            src, dst, k = mv
+            idx = list(combinations(range(len(bx[src])), k))
+            for c in idx:
+                moved = ''.join(bx[src][i] for i in c)
+                nb = list(bx)
+                nb[src] = ''.join(x for i, x in enumerate(bx[src]) if i not in c)
+                nb[dst] = bx[dst] + moved
+                new.append((pr / len(idx), hist + (''.join(sorted(moved)),), tuple(nb)))
+        states = new
+    return states
+
+def draw(states, box, k, event, cond=lambda h, bx: True):
+    """P(event on drawn colours | cond on history) with k balls drawn from `box` at the end."""
+    num = den = F(0)
+    for pr, h, bx in states:
+        if not cond(h, bx):
+            continue
+        idx = list(combinations(bx[box], k))
+        for c in idx:
+            p = pr / len(idx)
+            den += p
+            if event(''.join(sorted(c)), h):
+                num += p
+    return num / den
+
+def bayes(states, box, k, observed, target):
+    """P(target(history) | drawn colours satisfy observed)."""
+    num = den = F(0)
+    for pr, h, bx in states:
+        idx = list(combinations(bx[box], k))
+        for c in idx:
+            d = ''.join(sorted(c))
+            if observed(d):
+                den += pr / len(idx)
+                if target(h):
+                    num += pr / len(idx)
+    return num / den
+
+
+def monty_fall():
+    """Người dẫn KHÔNG biết, mở ngẫu nhiên 1 trong 2 cửa còn lại và tình cờ là dê; bạn giữ cửa 0."""
+    num = den = F(0)
+    for car in range(3):
+        for opened in (1, 2):
+            pr = F(1, 3) * F(1, 2)
+            if opened != car:
+                den += pr
+                num += pr * (car != 0)
+    return num / den
+
+
+def window_boy():
+    """Gia đình 2 con, nhìn qua cửa sổ thấy ngẫu nhiên một đứa là trai."""
+    num = den = F(0)
+    for kids in product('TG', repeat=2):
+        for seen in kids:
+            pr = F(1, 4) * F(1, 2)
+            if seen == 'T':
+                den += pr
+                num += pr * (kids == ('T', 'T'))
+    return num / den
+
+
+def cube_hitting():
+    """Kỳ vọng số bước để kiến đi từ một đỉnh lập phương tới đỉnh đối diện (E0 = 1 + E1, ...)."""
+    # E1 = 1 + E0/3 + 2 E2/3 ; E2 = 1 + 2 E1/3 ; E0 = 1 + E1
+    e1, e2 = two_by_two([(F(1) - F(1, 3), F(-2, 3), 1 + F(1, 3)), (F(-2, 3), 1, 1)])
+    return 1 + e1
+
+
 LEVELS = (
     ('L1', 'Mở đầu', (1, 15), '30 – 60 s'),
     ('L2', 'Cơ bản', (16, 35), '45 – 75 s'),
@@ -153,6 +238,12 @@ LEVELS = (
     ('L9', 'Toàn phần – Bayes', (161, 175), '75 – 150 s'),
     ('L10', 'Chặn điểm 8-9-10', (176, 190), '90 – 170 s'),
     ('L11', 'Học sinh giỏi', (191, 200), '120 – 180 s'),
+    # nhánh 3: xác suất có điều kiện nâng cao
+    ('L12', 'Bốc bi đa hộp', (201, 216), '75 – 150 s'),
+    ('L13', 'Chuyển bi', (217, 232), '90 – 170 s'),
+    ('L14', 'Đa điều kiện', (233, 248), '75 – 150 s'),
+    ('L15', 'Tham số xuôi – ngược', (249, 264), '75 – 150 s'),
+    ('L16', 'Cây hay – lạ', (265, 280), '90 – 175 s'),
 )
 
 TWO_KIDS = list(product('TG', repeat=2))  # T = trai, G = gái; (con cả, con út)
@@ -588,6 +679,187 @@ SHORTS = [
      F(1, comb(45, 6)), F(1, 8145060)),
     ('Monty Hall 100 cửa', '100 cửa, 1 cửa có xe. Bạn chọn 1, người dẫn mở 98 cửa có dê. Đổi cửa: P(trúng xe)?', '99/100',
      'cards', 'XS28', 1 - F(1, 100), F(99, 100)),
+    # ================= NHÁNH 3 · XÁC SUẤT CÓ ĐIỀU KIỆN NÂNG CAO =================
+    # ---------------- L12 · BỐC BI ĐA HỘP, NHIỀU GIAI ĐOẠN ----------------
+    ('Mỗi hộp một bi', 'Hộp I: 3 đỏ 2 xanh; hộp II: 2 đỏ 4 xanh. Rút mỗi hộp 1 bi. P(hai bi cùng màu)?', '7/15', 'tree', 'XS17',
+     F(3, 5) * F(2, 6) + F(2, 5) * F(4, 6), F(7, 15)),
+    ('Cùng màu thì màu gì?', 'Như trên, biết hai bi cùng màu. P(cả hai bi đều đỏ)?', '3/7', 'tree', 'XS20',
+     F(3, 5) * F(2, 6) / F(7, 15), F(3, 7)),
+    ('Ba hộp, đúng hai đỏ', 'Hộp k có k đỏ và 4 − k xanh (k = 1, 2, 3). Rút mỗi hộp 1 bi. P(đúng 2 bi đỏ)?', '13/32', 'tree',
+     'XS18', P(lambda w: sum(c == 'R' for c in w) == 2, product('RBBB', 'RRBB', 'RRRB')), F(13, 32)),
+    ('Bi đỏ duy nhất từ đâu?', 'Như trên, biết rút được đúng 1 bi đỏ. P(bi đỏ đó từ hộp 3)?', '9/13', 'tree', 'XS25',
+     given(lambda w: w[2] == 'R', lambda w: sum(c == 'R' for c in w) == 1, product('RBBB', 'RRBB', 'RRRB')), F(9, 13)),
+    ('Tung xu chọn hộp', 'Hộp I: 4 đỏ 1 xanh; hộp II: 1 đỏ 4 xanh. Tung xu chọn hộp, rút 2 bi. P(1 đỏ 1 xanh)?', '2/5', 'tree',
+     'XS24', F(1, 2) * F(4, 10) + F(1, 2) * F(4, 10), F(2, 5)),
+    ('Bi thứ hai cùng hộp', 'Như trên: rút 1 bi được đỏ, rút tiếp bi thứ hai cùng hộp. P(bi thứ hai cũng đỏ)?', '3/5', 'tree',
+     'XS26', F(4, 5) * F(3, 4) + F(1, 5) * 0, F(3, 5)),
+    ('Hoàn lại vẫn phụ thuộc', 'Như trên nhưng rút có hoàn lại: lần 1 đỏ. P(lần 2 cũng đỏ)?', '17/25', 'tree', 'XS23',
+     (F(1, 2) * F(4, 5) ** 2 + F(1, 2) * F(1, 5) ** 2) / F(1, 2), F(17, 25)),
+    ('Xúc xắc chọn hộp, hai bi đỏ', 'Gieo xúc xắc: ra 6 chọn hộp A (5 đỏ 1 xanh), khác 6 chọn hộp B (2 đỏ 4 xanh). '
+     'Rút 2 bi đều đỏ. P(hộp A)?', '2/3', 'tree', 'XS25',
+     F(1, 6) * F(10, 15) / (F(1, 6) * F(10, 15) + F(5, 6) * F(1, 15)), F(2, 3)),
+    ('Luân phiên hai hộp', 'An rút ở hộp I (2 đỏ 3 xanh), Bình ở hộp II (3 đỏ 1 xanh), luân phiên, không hoàn lại; '
+     'ai được đỏ trước thắng. P(An thắng)?', '19/40', 'tree', 'XS22',
+     F(2, 5) + F(3, 5) * F(1, 4) * F(2, 4), F(19, 40)),
+    ('Đến khi đủ hai màu', 'Hộp 3 đỏ 2 xanh, rút lần lượt đến khi có đủ hai màu. P(cần đúng 3 lần)?', '3/10', 'tree', 'XS22',
+     P(lambda w: len(set(w[:2])) == 1 and w[2] != w[0], set(permutations('RRRBB'))), F(3, 10)),
+    ('Hai bi xanh liền nhau', 'Hộp 4 đỏ 2 xanh, rút lần lượt đến hết. P(hai bi xanh được rút liền nhau)?', '1/3', 'urn', 'XS12',
+     P(lambda w: 'BB' in ''.join(w), set(permutations('RRRRBB'))), F(1, 3)),
+    ('Đỏ luôn không ít hơn', 'Hộp 3 đỏ 3 xanh, rút lần lượt đến hết. P(mọi lúc số đỏ đã rút ≥ số xanh)?', '1/4', 'urn', 'XS30',
+     P(lambda w: all(w[:k].count('R') >= w[:k].count('B') for k in range(7)), set(permutations('RRRBBB'))), F(1, 4)),
+    ('Số lớn nhất là 7', 'Rút 3 bi từ 10 bi đánh số 1 đến 10. P(số lớn nhất là 7)?', '1/8', 'urn', 'XS07',
+     P(lambda t: max(t) == 7, combinations(range(1, 11), 3)), F(1, 8)),
+    ('Nhỏ nhất 3, lớn nhất 7', 'Như trên, biết số nhỏ nhất là 3. P(số lớn nhất là 7)?', '1/7', 'urn', 'XS20',
+     given(lambda t: max(t) == 7, lambda t: min(t) == 3, combinations(range(1, 11), 3)), F(1, 7)),
+    ('Ba hộp, hai bi khác màu', 'Hộp I: 2 đỏ 2 xanh; II: 3 đỏ 1 xanh; III: 4 đỏ. Chọn hộp, rút 2 bi khác màu. P(hộp I)?', '4/7',
+     'tree', 'XS26', F(4, 6) / (F(4, 6) + F(3, 6) + 0), F(4, 7)),
+    ('Thêm bi cùng màu', 'Hộp 1 đỏ 1 xanh; rút 1 bi, trả lại kèm 1 bi cùng màu, rút lần 2 được đỏ. P(lần 1 đỏ)?', '2/3', 'tree',
+     'XS25', F(1, 2) * F(2, 3) / (F(1, 2) * F(2, 3) + F(1, 2) * F(1, 3)), F(2, 3)),
+    # ---------------- L13 · CHUYỂN BI ĐA GIAI ĐOẠN ----------------
+    ('Chuyển một, rút hai', 'Hộp I: 3 đỏ 2 xanh; II: 2 đỏ 2 xanh. Chuyển 1 bi từ I sang II, rồi rút 2 bi từ II. P(2 đỏ)?',
+     '11/50', 'tree', 'XS24', draw(process(['RRRBB', 'RRBB'], [(0, 1, 1)]), 1, 2, lambda d, h: d == 'RR'), F(11, 50)),
+    ('Bi chuyển màu gì?', 'Như trên, biết 2 bi rút từ II đều đỏ. P(bi đã chuyển là đỏ)?', '9/11', 'tree', 'XS25',
+     bayes(process(['RRRBB', 'RRBB'], [(0, 1, 1)]), 1, 2, lambda d: d == 'RR', lambda h: h[0] == 'R'), F(9, 11)),
+    ('Chuyển đi rồi chuyển về', 'Hộp I: 2 đỏ 1 xanh; II: 1 đỏ 2 xanh. Chuyển 1 bi I → II, rồi 1 bi II → I, rút từ I. P(đỏ)?',
+     '7/12', 'tree', 'XS24', draw(process(['RRB', 'RBB'], [(0, 1, 1), (1, 0, 1)]), 0, 1, lambda d, h: d == 'R'), F(7, 12)),
+    ('Truy ngược hai lần chuyển', 'Như trên, biết bi rút từ I là đỏ. P(bi chuyển I → II lúc đầu là đỏ)?', '4/7', 'tree', 'XS25',
+     bayes(process(['RRB', 'RBB'], [(0, 1, 1), (1, 0, 1)]), 0, 1, lambda d: d == 'R', lambda h: h[0] == 'R'), F(4, 7)),
+    ('Chuyển hai, rút hai', 'Hộp I: 3 đỏ 3 xanh; II: 2 đỏ 2 xanh. Chuyển 2 bi I → II, rồi rút 2 bi từ II. P(cùng màu)?',
+     '32/75', 'tree', 'XS24', draw(process(['RRRBBB', 'RRBB'], [(0, 1, 2)]), 1, 2, lambda d, h: len(set(d)) == 1), F(32, 75)),
+    ('Hai bi chuyển đều đỏ?', 'Như trên, biết 2 bi rút từ II đều đỏ. P(2 bi đã chuyển đều đỏ)?', '3/8', 'tree', 'XS26',
+     bayes(process(['RRRBBB', 'RRBB'], [(0, 1, 2)]), 1, 2, lambda d: d == 'RR', lambda h: h[0] == 'RR'), F(3, 8)),
+    ('Đổi bi giữa hai hộp', 'Hộp I: 3 đỏ 1 xanh; II: 1 đỏ 3 xanh. Đổi ngẫu nhiên 1 bi của I lấy 1 bi của II, rồi rút từ I. '
+     'P(đỏ)?', '5/8', 'tree', 'XS24', draw(process(['RRRB', 'RBBB'], [('swap', 0, 1)]), 0, 1, lambda d, h: d == 'R'),
+     F(5, 8)),
+    ('Đổi hai lần, về như cũ', 'Như trên, đổi bi 2 lần. P(hộp I lại có đúng 3 đỏ 1 xanh)?', '11/32', 'tree', 'XS24',
+     sum(p for p, h, b in process(['RRRB', 'RBBB'], [('swap', 0, 1)] * 2) if sorted(b[0]) == sorted('RRRB')), F(11, 32)),
+    ('Đồng xu quyết định số bi', 'Ngửa: chuyển 1 bi, sấp: chuyển 2 bi từ hộp I (3 đỏ 1 xanh) sang II (1 đỏ 1 xanh); '
+     'rút 1 bi từ II. P(đỏ)?', '29/48', 'tree', 'XS26',
+     F(1, 2) * draw(process(['RRRB', 'RB'], [(0, 1, 1)]), 1, 1, lambda d, h: d == 'R')
+     + F(1, 2) * draw(process(['RRRB', 'RB'], [(0, 1, 2)]), 1, 1, lambda d, h: d == 'R'), F(29, 48)),
+    ('Bi bị giấu đi', 'Hộp 3 đỏ 2 xanh. Lấy 1 bi cất đi không xem, rồi rút 1 bi. P(bi rút ra đỏ)?', '3/5', 'tree', 'XS28',
+     draw(process(['RRRBB', ''], [(0, 1, 1)]), 0, 1, lambda d, h: d == 'R'), F(3, 5)),
+    ('Bi giấu màu gì?', 'Như trên, biết bi rút ra đỏ. P(bi đã cất đi cũng đỏ)?', '1/2', 'tree', 'XS25',
+     bayes(process(['RRRBB', ''], [(0, 1, 1)]), 0, 1, lambda d: d == 'R', lambda h: h[0] == 'R'), F(1, 2)),
+    ('Chuyền qua ba hộp', 'Hộp I: 2 đỏ; II và III: mỗi hộp 1 đỏ 1 xanh. Chuyển 1 bi I → II → III rồi rút từ III. P(đỏ)?',
+     '5/9', 'tree', 'XS24', draw(process(['RR', 'RB', 'RB'], [(0, 1, 1), (1, 2, 1)]), 2, 1, lambda d, h: d == 'R'), F(5, 9)),
+    ('Hai hộp đổ vào một', 'Lấy 1 bi từ I (2 đỏ 1 xanh) và 1 bi từ II (1 đỏ 2 xanh) bỏ vào III (1 đỏ). Rút từ III. P(đỏ)?',
+     '2/3', 'tree', 'XS24', draw(process(['RRB', 'RBB', 'R'], [(0, 2, 1), (1, 2, 1)]), 2, 1, lambda d, h: d == 'R'), F(2, 3)),
+    ('Bi từ hộp II đỏ không?', 'Như trên, biết bi rút từ III là đỏ. P(bi lấy từ II là đỏ)?', '4/9', 'tree', 'XS26',
+     bayes(process(['RRB', 'RBB', 'R'], [(0, 2, 1), (1, 2, 1)]), 2, 1, lambda d: d == 'R', lambda h: h[1] == 'R'), F(4, 9)),
+    ('Chuyển hai vào hộp toàn xanh', 'Chuyển 2 bi từ I (4 đỏ 2 xanh) sang II (2 xanh), rút 1 bi II được đỏ. '
+     'P(đúng 1 bi đỏ đã được chuyển)?', '2/5', 'tree', 'XS26',
+     bayes(process(['RRRRBB', 'BB'], [(0, 1, 2)]), 1, 1, lambda d: d == 'R', lambda h: h[0] == 'BR'), F(2, 5)),
+    ('Đi một vòng trở về', 'Hộp I: 3 đỏ 2 xanh; II: 2 đỏ 3 xanh. Chuyển 1 bi I → II rồi 1 bi II → I. P(hộp I như cũ)?', '17/30',
+     'tree', 'XS24',
+     sum(p for p, h, b in process(['RRRBB', 'RRBBB'], [(0, 1, 1), (1, 0, 1)]) if sorted(b[0]) == sorted('RRRBB')), F(17, 30)),
+    # ---------------- L14 · ĐA ĐIỀU KIỆN, ĐA PHÉP THỬ ----------------
+    ('Hai điều kiện cùng lúc', 'Gieo 2 xúc xắc, biết tổng chẵn và có mặt 6. P(tổng ≥ 10)?', '3/5', 'grid', 'XS20',
+     given(lambda w: sum(w) >= 10, lambda w: sum(w) % 2 == 0 and 6 in w, TWO), F(3, 5)),
+    ('Ngửa đầu và ít nhất hai ngửa', 'Tung xu 3 lần, biết lần 1 ngửa và có ít nhất 2 ngửa. P(cả 3 lần ngửa)?', '1/3', 'tree',
+     'XS20', given(lambda w: w.count('N') == 3, lambda w: w[0] == 'N' and w.count('N') >= 2, product('SN', repeat=3)),
+     F(1, 3)),
+    ('Ai bắn trượt?', 'Ba xạ thủ trúng 0,5; 0,6; 0,7. Biết đúng 2 người trúng. P(người thứ nhất trượt)?', '21/44', 'tree', 'XS25',
+     F(21, 100) / (F(21, 100) + F(14, 100) + F(9, 100)), F(21, 44)),
+    ('Ít nhất hai người trúng', 'Như trên, biết có ít nhất 2 người trúng. P(cả 3 cùng trúng)?', '21/65', 'tree', 'XS20',
+     F(21, 100) / (F(44, 100) + F(21, 100)), F(21, 65)),
+    ('Xúc xắc rồi đồng xu', 'Gieo xúc xắc được k chấm rồi tung k đồng xu. P(không có mặt ngửa nào)?', '21/128', 'tree', 'XS24',
+     sum(F(1, 6) * F(1, 2) ** k for k in range(1, 7)), F(21, 128)),
+    ('Không ngửa nào, xúc xắc ra mấy?', 'Như trên, biết không có mặt ngửa nào. P(xúc xắc ra 1 chấm)?', '32/63', 'tree', 'XS25',
+     F(1, 12) / F(21, 128), F(32, 63)),
+    ('Gieo đến khi ra 6: không nhớ', 'Gieo đến khi ra 6. Biết cần ít nhất 3 lần. P(cần đúng 4 lần)?', '5/36', 'tree', 'XS20',
+     (F(5, 6) ** 3 * F(1, 6)) / F(5, 6) ** 2, F(5, 36)),
+    ('Có cả trai lẫn gái', 'Gia đình 4 con, biết có cả trai lẫn gái. P(đúng 2 trai)?', '3/7', 'tree', 'XS20',
+     given(lambda w: w.count('T') == 2, lambda w: 0 < w.count('T') < 4, product('TG', repeat=4)), F(3, 7)),
+    ('Xu bí ẩn: lần hai', 'Chọn ngẫu nhiên xu chuẩn hoặc xu lệch (ngửa 0,9), tung 2 lần. Lần 1 ngửa: P(lần 2 ngửa)?', '53/70',
+     'tree', 'XS23', (F(1, 2) * F(1, 4) + F(1, 2) * F(81, 100)) / (F(1, 2) * F(1, 2) + F(1, 2) * F(9, 10)), F(53, 70)),
+    ('Xu bí ẩn: lần ba', 'Như trên, biết 2 lần đầu đều ngửa. P(lần 3 ngửa)?', '427/530 ≈ 0,806', 'tree', 'XS26',
+     (F(1, 8) + F(729, 1000)) / (F(1, 4) + F(81, 100)), F(427, 530)),
+    ('Bị loại ở vòng nào?', 'Qua vòng 1: 0,8; qua 1 thì qua vòng 2: 0,6; qua 2 thì qua vòng 3: 0,5. Biết bị loại. '
+     'P(loại ở vòng 2)?', '8/19', 'tree', 'XS25', F(32, 100) / (F(20, 100) + F(32, 100) + F(24, 100)), F(8, 19)),
+    ('Ba mặt khác nhau có 6?', 'Gieo 3 xúc xắc, biết ba mặt khác nhau. P(có mặt 6)?', '1/2', 'grid', 'XS20',
+     given(lambda w: 6 in w, lambda w: len(set(w)) == 3, THREE), F(1, 2)),
+    ('Có 6 thì khác nhau?', 'Gieo 3 xúc xắc, biết có ít nhất một mặt 6. P(ba mặt khác nhau)?', '60/91', 'grid', 'XS20',
+     given(lambda w: len(set(w)) == 3, lambda w: 6 in w, THREE), F(60, 91)),
+    ('Ba phát trúng liên tiếp', 'Bắn 5 phát (mỗi phát trúng 0,6), biết trúng đúng 3 phát. P(3 phát trúng liên tiếp)?', '3/10',
+     'tree', 'XS18', given(lambda w: '111' in ''.join(map(str, w)), lambda w: sum(w) == 3, product((0, 1), repeat=5)),
+     F(3, 10)),
+    ('Chọn n rồi chọn m', 'Chọn ngẫu nhiên n từ 1 đến 4, rồi chọn ngẫu nhiên m từ 1 đến n. P(m = 1)?', '25/48', 'tree', 'XS24',
+     sum(F(1, 4) * F(1, n) for n in range(1, 5)), F(25, 48)),
+    ('Biết m = 1, n bằng mấy?', 'Như trên, biết m = 1. P(n = 1)?', '12/25', 'tree', 'XS25',
+     F(1, 4) / F(25, 48), F(12, 25)),
+    # ---------------- L15 · BÀI TOÁN CHỨA THAM SỐ: XUÔI – NGƯỢC ----------------
+    ('Hộp có bao nhiêu bi?', 'Hộp có n bi, trong đó 3 đỏ. Rút 2 bi, P(2 đỏ) = 1/5. Tìm n.', 'n = 6', 'urn', 'XS07',
+     [n for n in range(3, 60) if F(comb(3, 2), comb(n, 2)) == F(1, 5)], [6]),
+    ('Hai đáp số cho x', 'Hộp 5 đỏ, x xanh. Rút 2 bi, P(khác màu) = 5/9. Tìm x.', 'x = 4 hoặc x = 5', 'urn', 'XS07',
+     [x for x in range(60) if F(5 * x, comb(5 + x, 2)) == F(5, 9)], [4, 5]),
+    ('Tìm xác suất bắn trúng', 'Bắn 2 phát độc lập, P(trúng ít nhất 1 phát) = 0,96. Tìm xác suất trúng p mỗi phát.', 'p = 0,8',
+     'tree', 'XS17', [F(k, 100) for k in range(101) if (1 - F(k, 100)) ** 2 == F(4, 100)], [F(4, 5)]),
+    ('Bắn bao nhiêu phát?', 'Mỗi phát trúng 0,3. Bắn ít nhất bao nhiêu phát để P(trúng ít nhất 1) ≥ 0,95?', '9', 'tree', 'XS18',
+     next(n for n in range(1, 50) if 1 - F(7, 10) ** n >= F(95, 100)), 9),
+    ('Tỉ lệ bệnh là bao nhiêu?', 'Xét nghiệm nhạy 90 %, dương tính giả 10 %. P(bệnh | dương tính) = 0,5. Tìm tỉ lệ bệnh x.',
+     'x = 0,1', 'square', 'XS27',
+     [F(k, 100) for k in range(1, 100) if F(9, 10) * F(k, 100) / (F(9, 10) * F(k, 100) + F(1, 10) * (1 - F(k, 100))) == F(1, 2)],
+     [F(1, 10)]),
+    ('Tìm số bi đỏ hộp II', 'Hộp I: 2 đỏ 3 xanh; II: x đỏ 2 xanh. Chọn hộp ngẫu nhiên rồi rút 1 bi, P(đỏ) = 1/2. Tìm x.', 'x = 3',
+     'tree', 'XS24', [x for x in range(60) if F(1, 2) * (F(2, 5) + F(x, x + 2)) == F(1, 2)], [3]),
+    ('Tham số sau khi chuyển bi', 'Chuyển 1 bi từ I (3 đỏ 1 xanh) sang II (a đỏ 2 xanh), rút từ II: P(đỏ) = 5/8. Tìm a.', 'a = 3',
+     'tree', 'XS24', [a for a in range(60) if F(3, 4) * F(a + 1, a + 3) + F(1, 4) * F(a, a + 3) == F(5, 8)], [3]),
+    ('Tìm tay nghề xạ thủ', 'Hai xạ thủ trúng p và 0,8. P(đúng 1 người trúng) = 0,38. Tìm p.', 'p = 0,7', 'tree', 'XS17',
+     [F(k, 100) for k in range(101) if F(k, 100) * F(2, 10) + (1 - F(k, 100)) * F(8, 10) == F(38, 100)], [F(7, 10)]),
+    ('P(A | A ∪ B)', 'A, B độc lập, P(A) = 0,5; P(B) = 0,4. Tính P(A | A ∪ B).', '5/7', 'square', 'XS23',
+     F(1, 2) / (1 - F(1, 2) * F(3, 5)), F(5, 7)),
+    ('Nhóm có bao nhiêu bạn?', 'n bạn xếp hàng ngang, P(Hà và Lan đứng cạnh nhau) = 1/4. Tìm n.', 'n = 8', 'cards', 'XS12',
+     [n for n in range(2, 60) if F(2, n) == F(1, 4)], [8]),
+    ('n đỏ, n xanh', 'Hộp n đỏ, n xanh. Rút 2 bi, P(cùng màu) = 4/9. Tìm n.', 'n = 5', 'urn', 'XS07',
+     [n for n in range(1, 60) if F(2 * comb(n, 2), comb(2 * n, 2)) == F(4, 9)], [5]),
+    ('Đồng xu lệch bao nhiêu?', 'Xu lệch, ngửa với xác suất p > 1/2. Tung 2 lần, P(1 ngửa 1 sấp) = 0,48. Tìm p.', 'p = 0,6',
+     'tree', 'XS18', [F(k, 100) for k in range(51, 101) if 2 * F(k, 100) * (1 - F(k, 100)) == F(48, 100)], [F(3, 5)]),
+    ('p nào tốt nhất?', 'Xu lệch ngửa p, tung 3 lần. p bằng bao nhiêu thì P(đúng 2 ngửa) lớn nhất?', 'p = 2/3', 'curve', 'XS18',
+     max((F(k, 300) for k in range(301)), key=lambda p: 3 * p * p * (1 - p)), F(2, 3)),
+    ('Ít nhất bao nhiêu bi đỏ?', 'Hộp n đỏ, 3 xanh. Tìm n nhỏ nhất để P(rút 2 bi đều đỏ) > 1/2.', 'n = 8', 'urn', 'XS07',
+     next(n for n in range(2, 60) if F(comb(n, 2), comb(n + 3, 2)) > F(1, 2)), 8),
+    ('Đài báo nhầm bao nhiêu?', 'Mưa 30 %; trời mưa thì báo mưa 90 %. P(mưa | báo mưa) = 0,72. Tìm tỉ lệ báo mưa khi trời tạnh.',
+     '0,15', 'tree', 'XS27',
+     [F(k, 100) for k in range(101) if F(27, 100) / (F(27, 100) + F(7, 10) * F(k, 100)) == F(72, 100)], [F(3, 20)]),
+    ('Chọn hộp I với xác suất p', 'Hộp I: 3 đỏ 1 xanh; II: 1 đỏ 3 xanh; chọn I với xác suất p. Rút được đỏ thì P(hộp I) = 0,9. '
+     'Tìm p.', 'p = 0,75', 'tree', 'XS25',
+     [F(k, 100) for k in range(101) if 3 * F(k, 100) / (3 * F(k, 100) + 1 - F(k, 100)) == F(9, 10)], [F(3, 4)]),
+    # ---------------- L16 · CÂY HAY – LẠ – PHỨC TẠP ----------------
+    ('Xu lệch hóa công bằng', 'Xu lệch ngửa 0,7. Tung từng cặp: NS thì A, SN thì B, còn lại tung lại. Trung bình mấy cặp?',
+     '50/21 ≈ 2,38', 'tree', 'XS30', 1 / (2 * F(7, 10) * F(3, 10)), F(50, 21)),
+    ('Trò craps', 'Gieo 2 xúc xắc: 7, 11 thắng; 2, 3, 12 thua; khác thì gieo tiếp đến khi lặp lại số đó (thắng) hoặc ra 7 (thua). '
+     'P(thắng)?', '244/495 ≈ 0,493', 'tree', 'XS30',
+     F(8, 36) + sum(F(c, 36) * F(c, c + 6) for c in (3, 4, 5, 5, 4, 3)), F(244, 495)),
+    ('Con bạc có lợi thế', 'Có 2 đồng, mỗi ván thắng 2/3 (thêm 1 đồng) hoặc thua. Dừng khi có 4 đồng hoặc hết tiền. P(đạt 4)?',
+     '4/5', 'tree', 'XS30', (1 - F(1, 2) ** 2) / (1 - F(1, 2) ** 4), F(4, 5)),
+    ('Dẫn 2–0 trong loạt 7 ván', 'Thắng 4 ván trước là vô địch, A thắng mỗi ván 0,6 và đang dẫn 2–0. P(A vô địch)?', '≈ 0,913',
+     'tree', 'XS30', round(float(sum(comb(1 + k, k) * F(3, 5) ** 2 * F(2, 5) ** k for k in range(4))), 3), .913),
+    ('Người dẫn không biết', 'Monty Hall nhưng người dẫn không biết, mở ngẫu nhiên và tình cờ ra dê. Đổi cửa: P(trúng xe)?', '1/2',
+     'tree', 'XS28', monty_fall(), F(1, 2)),
+    ('Dòng họ tuyệt chủng', 'Mỗi cá thể sinh 0, 1, 2 con với xác suất 1/4, 1/4, 1/2. P(dòng họ từ một cá thể tuyệt chủng)?', '1/2',
+     'tree', 'XS30', min(q for q in (F(1, 2), F(1)) if q == F(1, 4) + q / 4 + q * q / 2), F(1, 2)),
+    ('Bàn Galton', 'Bi rơi qua 4 hàng đinh, mỗi đinh lệch trái hoặc phải 1/2. P(rơi vào ô chính giữa)?', '3/8', 'tree', 'XS18',
+     P(lambda w: sum(w) == 2, product((0, 1), repeat=4)), F(3, 8)),
+    ('Hai khâu kiểm tra', 'Hàng lỗi 10 %; mỗi khâu bắt lỗi 90 %, báo nhầm hàng tốt 5 %. Hàng qua cả 2 khâu: P(là hàng lỗi)?',
+     '4/3253 ≈ 0,0012', 'tree', 'XS27',
+     F(1, 10) * F(1, 100) / (F(1, 10) * F(1, 100) + F(9, 10) * F(95, 100) ** 2), F(4, 3253)),
+    ('Nhánh đấu loại trực tiếp', 'A gặp B, C gặp D, thắng vào chung kết. A thắng ai cũng 0,6; các trận khác 1/2. P(C vô địch)?',
+     '0,22', 'tree', 'XS22', round(.5 * (.6 * .4 + .4 * .5), 2), .22),
+    ('Chuột trong mê cung', 'Chuột chọn ngẫu nhiên 1 trong 3 cửa: cửa 1 ra ngoài sau 2 phút, cửa 2, 3 quay lại sau 3 và 5 phút. '
+     'Trung bình bao lâu ra?', '10 phút', 'tree', 'XS30', (F(2) + 3 + 5) / 3 / (1 - F(2, 3)), 10),
+    ('Hơn nhau hai ngửa', 'Tung xu đến khi số ngửa hơn số sấp 2 hoặc ngược lại. P(dừng sau đúng 4 lần)?', '1/4', 'tree', 'XS30',
+     P(lambda w: w[0] != w[1] and w[2] == w[3], product((0, 1), repeat=4)), F(1, 4)),
+    ('Ba người, cùng tháng sinh', '3 người. P(có ít nhất 2 người sinh cùng tháng)?', '17/72', 'tree', 'XS13',
+     1 - F(12 * 11 * 10, 12 ** 3), F(17, 72)),
+    ('Kiến về đỉnh đối diện', 'Kiến đi ngẫu nhiên trên cạnh hình lập phương. Trung bình bao nhiêu bước tới đỉnh đối diện?', '10',
+     'tree', 'XS30', cube_hitting(), 10),
+    ('Bốn bạn chuyền bóng', '4 bạn, mỗi lần chuyền bóng ngẫu nhiên cho 1 trong 3 bạn kia. P(sau 4 lần, bóng về người đầu)?',
+     '7/27', 'tree', 'XS30', ant(4, 0, lambda v: [u for u in range(4) if u != v])[0], F(7, 27)),
+    ('Cậu bé bên cửa sổ', 'Gia đình 2 con; nhìn qua cửa sổ thấy ngẫu nhiên 1 đứa là trai. P(cả hai là trai)?', '1/2', 'tree',
+     'XS28', window_boy(), F(1, 2)),
+    ('Ba người, ba cơ hội', 'A, B, C lần lượt gieo xúc xắc; A thắng nếu ra 1; B nếu ra 1, 2; C nếu ra 1, 2, 3. P(A thắng)?', '3/13',
+     'tree', 'XS30', F(1, 6) / (1 - F(5, 6) * F(4, 6) * F(3, 6)), F(3, 13)),
 ]
 
 
@@ -598,7 +870,7 @@ def check(actual, expected):
 
 
 def build():
-    assert len(SHORTS) == 200, len(SHORTS)
+    assert len(SHORTS) == 280, len(SHORTS)
     rows, bad = [], []
     for i, (title, problem, answer, visual, xs, actual, expected) in enumerate(SHORTS, 1):
         if not check(actual, expected):
@@ -613,13 +885,13 @@ def build():
     for r in rows:
         yt = f"Xác suất #{r['n']:03d} · {r['title']} – bạn giải được không? #Shorts"
         assert len(yt) <= 100, yt
-    plan = {'series': 'Xác Suất 3 Phút – 200 Thử Thách Từ Dễ Đến Học Sinh Giỏi', 'code_prefix': 'XSS',
+    plan = {'series': 'Xác Suất 3 Phút – 280 Thử Thách Từ Dễ Đến Học Sinh Giỏi', 'code_prefix': 'XSS',
             'author': 'Thầy Nguyễn Văn Sang', 'format': {'width': 1080, 'height': 1920, 'max_seconds': 180},
             'levels': [{'code': c, 'name': n, 'shorts': list(r), 'length': ln} for c, n, r, ln in LEVELS],
             'shorts': rows}
     Path(__file__).with_name('shorts_plan.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2) + '\n',
                                                             encoding='utf-8')
-    md = ['# DANH SÁCH 200 SHORTS · XÁC SUẤT 3 PHÚT', '',
+    md = ['# DANH SÁCH 280 SHORTS · XÁC SUẤT 3 PHÚT', '',
           '> Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê '
           'vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.', '']
     for code, name, (lo, hi), length in LEVELS:
