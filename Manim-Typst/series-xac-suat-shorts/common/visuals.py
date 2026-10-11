@@ -287,3 +287,10 @@ def circuit(n, parallel=False, w=1.0, h=.6, color=CYAN):
     g = VGroup(wires, boxes)
     g.boxes = boxes
     return g
+
+
+def polygon_pts(n, r=2.1, center=(0, 1.3), start=90):
+    import math
+    cx, cy = center
+    return [[cx + r * math.cos(math.radians(start + 360 * k / n)), cy + r * math.sin(math.radians(start + 360 * k / n)), 0]
+            for k in range(n)]
