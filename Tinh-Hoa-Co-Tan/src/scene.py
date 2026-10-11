@@ -79,11 +79,11 @@ def pages(text, limit=135):
 
 
 class Board(VGroup):
-    def __init__(self, fen):
+    def __init__(self, fen, center=(BOARD_CENTER_X, BOARD_CENTER_Y), step=BOARD_GRID_STEP):
         super().__init__()
         assert_safe_layout()
-        self.step = BOARD_GRID_STEP
-        self.ox, self.oy = BOARD_CENTER_X, BOARD_CENTER_Y
+        self.step = step
+        self.ox, self.oy = center
         self.frame = None
         self.add(self.art())
         self.pieces = {}
@@ -100,7 +100,8 @@ class Board(VGroup):
     def art(self):
         s = self.step
         g = VGroup()
-        self.frame = RoundedRectangle(width=s * 8 + .57, height=s * 9 + .52, corner_radius=.16,
+        k = s / BOARD_GRID_STEP
+        self.frame = RoundedRectangle(width=s * 8 + .57 * k, height=s * 9 + .52 * k, corner_radius=.16 * k,
                                       fill_color='#E4C89B', fill_opacity=1, stroke_width=4,
                                       stroke_color='#856344').move_to(self.xy((4, 4.5)))
         g.add(self.frame)
@@ -116,21 +117,25 @@ class Board(VGroup):
         for base in (0, 7):
             g.add(Line(self.xy((3, base)), self.xy((5, base + 2)), **kw))
             g.add(Line(self.xy((5, base)), self.xy((3, base + 2)), **kw))
-        g.add(Text('楚 河            漢 界', font=CJK, font_size=19, color='#89623E').move_to(self.xy((4, 4.5))))
+        g.add(Text('楚 河            漢 界', font=CJK, font_size=19 * k, color='#89623E').move_to(self.xy((4, 4.5))))
         # Số cột: Đỏ đếm 9..1 từ trái sang phải (phía dưới), Đen đếm 1..9 (phía trên).
+        k = s / BOARD_GRID_STEP
+        bottom = self.xy((4, 0))[1] - .26 * k - .225 * k
+        top = self.xy((4, 9))[1] + .26 * k + .165 * k
         for x in range(9):
-            g.add(Text(str(9 - x), font=FONT, font_size=13, color=LIGHT).move_to(
-                [self.xy((x, 0))[0], -3.33, 0]))
-            g.add(Text(str(x + 1), font=FONT, font_size=13, color=MUTED).move_to(
-                [self.xy((x, 9))[0], 3.07, 0]))
+            g.add(Text(str(9 - x), font=FONT, font_size=13 * k, color=LIGHT).move_to(
+                [self.xy((x, 0))[0], bottom, 0]))
+            g.add(Text(str(x + 1), font=FONT, font_size=13 * k, color=MUTED).move_to(
+                [self.xy((x, 9))[0], top, 0]))
         return g
 
     def make_piece(self, p):
         red = p.isupper()
         col = RED if red else INK
-        return VGroup(Circle(radius=.235, fill_color='#F5E4C3', fill_opacity=1, stroke_width=2.6, stroke_color=col),
-                      Circle(radius=.205, stroke_color=col, stroke_width=.75, stroke_opacity=.55),
-                      Text(GLYPH[p], font=CJK, font_size=24, weight=BOLD, color=col))
+        k = self.step / BOARD_GRID_STEP
+        return VGroup(Circle(radius=.235 * k, fill_color='#F5E4C3', fill_opacity=1, stroke_width=2.6, stroke_color=col),
+                      Circle(radius=.205 * k, stroke_color=col, stroke_width=.75, stroke_opacity=.55),
+                      Text(GLYPH[p], font=CJK, font_size=24 * k, weight=BOLD, color=col))
 
     def _spawn(self, sq, p):
         mob = self.make_piece(p).move_to(self.xy(sq))
@@ -155,8 +160,9 @@ class Board(VGroup):
         src, dst = parse_sq(uci[:2]), parse_sq(uci[2:])
         mob = self.pieces.pop(src)
         victim = self.pieces.pop(dst, None)
-        ring = Circle(radius=.28, color=GOLD, stroke_width=5).move_to(self.xy(src))
-        arrow = Arrow(self.xy(src), self.xy(dst), buff=.26, stroke_width=5, color=color,
+        k = self.step / BOARD_GRID_STEP
+        ring = Circle(radius=.28 * k, color=GOLD, stroke_width=5).move_to(self.xy(src))
+        arrow = Arrow(self.xy(src), self.xy(dst), buff=.26 * k, stroke_width=5, color=color,
                       max_tip_length_to_length_ratio=.2)
         scene.play(Create(ring), GrowArrow(arrow), run_time=.3)
         anims = [mob.animate.move_to(self.xy(dst))]
@@ -179,7 +185,7 @@ class Board(VGroup):
             scene.play(*extras, run_time=.2)
         if self.state.in_check(self.state.turn):
             k = self.state.king_sq(self.state.turn)
-            flash = Circle(radius=.31, color=RED, stroke_width=6).move_to(self.xy(k))
+            flash = Circle(radius=.31 * self.step / BOARD_GRID_STEP, color=RED, stroke_width=6).move_to(self.xy(k))
             scene.play(Create(flash), run_time=.2)
             scene.play(FadeOut(flash), run_time=.25)
         return badge

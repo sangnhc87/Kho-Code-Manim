@@ -113,12 +113,15 @@ jobs:
       - name: Render MP4
         env:
           ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
-        run: python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
+        run: |
+          python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
+          python scripts/make_short.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
       - uses: actions/upload-artifact@v4
         with:
           name: cotan-${{ matrix.episode }}
           path: |
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}.mp4
+            Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/${{ matrix.episode }}_short.mp4
             Tinh-Hoa-Co-Tan/output/${{ matrix.episode }}/timeline.json
           if-no-files-found: error
           retention-days: 14
@@ -138,6 +141,14 @@ jobs:
           open('yt_desc.txt', 'w', encoding='utf-8').write(d['description'])
           open('yt_tags.txt', 'w', encoding='utf-8').write(','.join(d['tags']))
           open('yt_playlist.txt', 'w', encoding='utf-8').write(d['playlist'])
+          full = json.load(open(f'episodes/{sys.argv[1]}.json', encoding='utf-8'))
+          kind = 'thủ hòa' if full['verdict']['wdl'] == 'D' else 'cờ tàn'
+          open('yt_short_title.txt', 'w', encoding='utf-8').write(
+              f"Thử thách {kind} #{full['number']}: {full['subtitle']} – bạn giải được không? #Shorts")
+          open('yt_short_desc.txt', 'w', encoding='utf-8').write(
+              f"Câu đố {kind}: tìm nước đi đúng trong thế {full['subtitle']}.\n"
+              f"Lời giải đầy đủ: video \"{d['title']}\" trên kênh.\n"
+              "Kết luận kiểm chứng bằng bảng tra cờ tàn chessdb.cn.\n\n#Shorts #CoTuong #CoTan #TinhHoaCoTan")
           PY
           python ../scripts/upload_to_youtube.py \
             --file "output/$EP/$EP.mp4" \
@@ -148,6 +159,16 @@ jobs:
             --history-key "cotan3_$EP" \
             --category-id 27 \
             --privacy public
+          if [ -f "output/$EP/${EP}_short.mp4" ]; then
+            python ../scripts/upload_to_youtube.py \
+              --file "output/$EP/${EP}_short.mp4" \
+              --title "$(cat yt_short_title.txt)" \
+              --description-file yt_short_desc.txt \
+              --tags "shorts,cờ tướng,cờ tàn,câu đố cờ tướng,tinh hoa cờ tàn" \
+              --history-key "cotan3_short_$EP" \
+              --category-id 27 \
+              --privacy public || echo "Short chưa đăng được"
+          fi
       - name: Lưu lịch sử đăng
         if: env.QUALITY == 'full'
         run: |
