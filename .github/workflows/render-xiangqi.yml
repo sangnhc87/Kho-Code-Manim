@@ -65,7 +65,11 @@ jobs:
           git config user.email "actions@github.com"
           git add episodes catalog.json data
           git commit -m "feat(cotan): dựng $new từ bảng tra chessdb" || echo "Không có gì mới"
-          git pull --rebase --autostash origin main
+          if ! git pull --rebase --autostash origin main; then
+            # Xung đột chỉ có thể ở cache chessdb: gộp hai bên rồi tiếp tục.
+            (cd .. && python Tinh-Hoa-Co-Tan/scripts/merge_cdb.py $(git diff --name-only --diff-filter=U))
+            GIT_EDITOR=true git rebase --continue
+          fi
           git push
       - id: plan
         env:
