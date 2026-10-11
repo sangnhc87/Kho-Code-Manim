@@ -221,6 +221,30 @@ class Blocks:
         self.wait_until(.88, t0)
         self.play(*[FadeOut(m) for m in self.stage()], run_time=self.rt(.08))
 
+    def show_axes(self, a, frac=.05):
+        self.play(FadeIn(a), FadeIn(a.labels), run_time=self.rt(frac))
+
+    def centre(self, *mobs, top=2.55, gap=.42):
+        """Stack mobjects centred on the full width (no graph column)."""
+        g = VGroup(*mobs).arrange(DOWN, buff=gap)
+        g.move_to([0, top, 0], aligned_edge=UP)
+        return g
+
+    def worked(self, t0, tag, keys, fracs, scales=None, box_last=True, gap=.34):
+        """Centred worked example: badge + formula lines revealed at the given beat fractions."""
+        self.clear_stage(.05)
+        scales = scales or [1.6] * len(keys)
+        tagm = badge(tag, GOLD, 20)
+        lines = [self.M(k, s) for k, s in zip(keys, scales)]
+        self.centre(tagm, *lines, top=2.75, gap=gap)
+        self.play(FadeIn(tagm), run_time=self.rt(.03))
+        for frac, m in zip(fracs, lines):
+            self.wait_until(frac, t0)
+            self.play(Write(m), run_time=self.rt(.12))
+        if box_last:
+            self.play(FadeIn(self.box(lines[-1], GREEN)), run_time=self.rt(.04))
+        return lines
+
     def box(self, mob, color=GOLD):
         from manim import SurroundingRectangle
         return SurroundingRectangle(mob, color=color, buff=.16, corner_radius=.1)

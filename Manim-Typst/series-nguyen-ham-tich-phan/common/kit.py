@@ -208,6 +208,24 @@ def gauge(value_fn, vmax, center, radius=1.0, unit='m/s', color=CYAN):
     return VGroup(arc, ticks, always_redraw(needle), readout)
 
 
+def tank(level_fn, capacity=100, center=(-1.25, -.5), w=1.5, h=3.6, unit='lít', color=CYAN):
+    """Open tank whose water level follows level_fn() (same unit as capacity)."""
+    cx, cy = center
+    shell = VGroup(Line([cx - w / 2, cy + h / 2, 0], [cx - w / 2, cy - h / 2, 0], color=SOFT, stroke_width=3),
+                   Line([cx - w / 2, cy - h / 2, 0], [cx + w / 2, cy - h / 2, 0], color=SOFT, stroke_width=3),
+                   Line([cx + w / 2, cy - h / 2, 0], [cx + w / 2, cy + h / 2, 0], color=SOFT, stroke_width=3))
+    ticks = VGroup()
+    for k in range(1, 5):
+        y = cy - h / 2 + h * k / 4
+        ticks.add(Line([cx + w / 2, y, 0], [cx + w / 2 + .1, y, 0], color=SOFT, stroke_width=2),
+                  tx(vn(capacity * k / 4, 0), 14, SOFT).move_to([cx + w / 2 + .42, y, 0]))
+    water = always_redraw(lambda: RoundedRectangle(
+        width=w - .08, height=max(h * level_fn() / capacity, .01), corner_radius=.02, fill_color=color,
+        fill_opacity=.55, stroke_width=0).move_to([cx, cy - h / 2 + h * level_fn() / capacity / 2, 0]))
+    label = tx(unit, 14, DIM).move_to([cx + w / 2 + .42, cy - h / 2 - .2, 0])
+    return VGroup(water, shell, ticks, label)
+
+
 def card(width, height, stroke=STROKE, fill=PANEL_2, radius=0.16, opacity=1.0, stroke_width=1.6):
     return RoundedRectangle(width=width, height=height, corner_radius=radius, fill_color=fill,
                             fill_opacity=opacity, stroke_color=stroke, stroke_width=stroke_width)
@@ -238,5 +256,5 @@ def underline(m, color=GOLD, buff=0.08, width=3):
 
 
 __all__ = ['tx', 'para', 'vn', 'Formula', 'axes', 'clipped', 'slope_field', 'tangent', 'dot', 'car',
-           'gauge', 'card', 'dashed', 'check', 'cross', 'badge', 'underline', 'screen_dir',
+           'gauge', 'card', 'dashed', 'tank', 'check', 'cross', 'badge', 'underline', 'screen_dir',
            'CYAN', 'DIM', 'GOLD', 'GREEN', 'SOFT', 'WHITE', 'CORAL']
