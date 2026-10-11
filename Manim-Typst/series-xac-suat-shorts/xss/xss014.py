@@ -61,8 +61,9 @@ class XSS014(ShortScene):
         for k in range(1, 21):
             sq = Square(side_length=1.05, stroke_color=STROKE, stroke_width=2, fill_color=PANEL_2, fill_opacity=1)
             cells.add(VGroup(sq, self.TM(f'${k}$', 30, WHITE).move_to(sq)))
-        cells.arrange_in_grid(4, 5, buff=.1).move_to([0, 1.25, 0])
+        cells.arrange_in_grid(4, 5, buff=.1).move_to([0, 1.5, 0])
         self.cells = cells
+        self.board_top = -1.15
         self.play(FadeIn(cells, lag_ratio=.05), run_time=self.rt(.35))
         self.wait_until(.7, t0)
         self.write_board(self.M('n', 2.1))
@@ -78,6 +79,7 @@ class XSS014(ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
+        self.clear_board(.03)
         m = self.M('prob', 2.1)
         self.write_board(m)
         self.frame(m)

@@ -71,5 +71,6 @@ class XSS016(DiceGridMixin, ShortScene):
     def beat_s3(self, T):
         t0 = self.now()
         self.wait_until(.15, t0)
+        self.clear_board(.03)
         self.write_board(VGroup(tx('đường chéo dài nhất', 30, GOLD, bold=True), tx('nhiều cách nhất', 28, SOFT))
                          .arrange(buff=.3), anim='fade')

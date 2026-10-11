@@ -8,9 +8,9 @@ from pathlib import Path
 from manim import DOWN, UP, FadeIn, Line, Rectangle, VGroup
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from common.kit import tx  # noqa: E402
 from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: E402,F401
 from common.theme import CYAN, GOLD, SOFT  # noqa: E402
+
 from common.visuals import die  # noqa: E402
 
 EPISODE = {'code': 'XSS018', 'answer': '7'}
@@ -89,5 +89,4 @@ class XSS018(ShortScene):
         self.write_board(m)
         self.frame(m)
         self.wait_until(.6, t0)
-        self.write_board(self.M('low', 1.6), anim='fade')
-        self.write_board(tx('đỉnh tam giác', 26, GOLD), anim='fade')
+        self.write_board(self.M('low', 1.7), anim='fade')

@@ -52,7 +52,7 @@ def three_coin_tree():
         root['kids'].append({'m': coin(a, .3), 'kids': mid})
     g, levels = tree(root, top=(0, 3.35), dy=1.08, width=6.9)
     leaves = [k['m'] for c in root['kids'] for m in c['kids'] for k in m['kids']]
-    labels = VGroup(*[tx(w, 22, SOFT, bold=True).next_to(leaf, DOWN, buff=.12) for w, leaf in zip(LEAVES, leaves)])
+    labels = VGroup(*[tx(w, 20, SOFT, bold=True).next_to(leaf, DOWN, buff=.12) for w, leaf in zip(LEAVES, leaves)])
     return levels, labels
 
 
@@ -78,7 +78,7 @@ class XSS019(ShortScene):
         self.clear_board(.03)
         for i, w in enumerate(LEAVES):
             if w.count('N') == 2:
-                self.play(self.labels[i].animate.set_color(GOLD).scale(1.3), run_time=self.rt(.08))
+                self.play(self.labels[i].animate.set_color(GOLD), run_time=self.rt(.08))
 
     def beat_s3(self, T):
         t0 = self.now()

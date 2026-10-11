@@ -53,10 +53,10 @@ class XSS022(ShortScene):
     def hook_visual(self, t0):
         self.digits = VGroup(*[token(str(d), GOLD if d % 2 == 0 else SOFT, .42) for d in range(1, 6)]) \
             .arrange(buff=.3).move_to([0, 2.3, 0])
-        self.slots = VGroup(*[card(1.3, 1.5, STROKE, PANEL, stroke_width=3) for _ in range(2)]).arrange(buff=.3) \
-            .move_to([0, .55, 0])
-        names = VGroup(tx('chục', 22, SOFT).move_to(self.slots[0]),
-                       tx('đơn vị', 22, SOFT).move_to(self.slots[1]))
+        self.slots = VGroup(*[card(1.8, 1.7, STROKE, PANEL, stroke_width=3) for _ in range(2)]).arrange(buff=.4) \
+            .move_to([0, .75, 0])
+        names = VGroup(tx('chục', 30, SOFT).move_to(self.slots[0]),
+                       tx('đơn vị', 30, SOFT).move_to(self.slots[1]))
         self.names = names
         self.wait_until(.35, t0)
         self.play(FadeIn(self.digits, lag_ratio=.15), run_time=self.rt(.15))

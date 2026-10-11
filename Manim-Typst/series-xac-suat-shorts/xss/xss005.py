@@ -21,7 +21,7 @@ OPTIONS = ['1/3', '1/2', '1/4']
 CORRECT = 1
 ANSWER_VALUE = .5
 TRIALS = 400
-SEED = 5
+SEED = 21
 
 
 def mixed_frequency():
@@ -55,7 +55,7 @@ FORMULAS = formulas('1/2', OPTIONS,
 def validate() -> bool:
     space = list(product('SN', repeat=2))
     assert Fraction(sum(set(w) == {'S', 'N'} for w in space), len(space)) == Fraction(1, 2)
-    assert abs(mixed_frequency()[-1] - .5) < .06
+    assert abs(mixed_frequency()[-1] - .5) < .01
     assert OPTIONS[CORRECT] == '1/2'
     return True
 
@@ -81,7 +81,7 @@ class XSS005(ShortScene):
         x = cross(CORAL, 1.0).move_to(self.wrong)
         self.play(FadeIn(x, scale=1.5), run_time=self.rt(.06))
         self.wait_until(.5, t0)
-        self.play(FadeIn(tx('không đồng khả năng!', 34, CORAL, bold=True).move_to([-.25, -.9, 0]), shift=UP * .1),
+        self.play(FadeIn(tx('không đồng khả năng!', 34, CORAL, bold=True).move_to([-.25, -1.5, 0]), shift=UP * .1),
                   run_time=self.rt(.08))
 
     def beat_s2(self, T):

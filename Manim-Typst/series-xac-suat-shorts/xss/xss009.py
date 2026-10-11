@@ -74,8 +74,8 @@ class XSS009(ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
-        self.wait_until(.05, t0)
-        r = self.M('ratio', 1.6)
+        self.clear_board(.03)
+        r = self.M('ratio', 1.9)
         self.write_board(r, anim='fade')
         self.play(FadeIn(cross(CORAL, .5).next_to(r, RIGHT, buff=.25)), run_time=self.rt(.04))
         self.wait_until(.6, t0)

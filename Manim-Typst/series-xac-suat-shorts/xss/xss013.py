@@ -67,8 +67,8 @@ class XSS013(ShortScene):
         t0 = self.now()
         self.play(self.c.animate.scale(.1).set_opacity(0), run_time=self.rt(.05))
         self.remove(self.c)
-        dots = VGroup(*[coin('N' if h else 'S', .2) for h in layout()]).arrange_in_grid(10, 10, buff=.07)
-        dots.move_to([0, 1.25, 0])
+        dots = VGroup(*[coin('N' if h else 'S', .17) for h in layout()]).arrange_in_grid(10, 10, buff=.06)
+        dots.move_to([0, 1.55, 0])
         self.play(FadeIn(dots, lag_ratio=.01), run_time=self.rt(.4))
         self.dots = dots
         self.wait_until(.7, t0)
@@ -80,7 +80,7 @@ class XSS013(ShortScene):
 
     def beat_s2(self, T):
         t0 = self.now()
-        self.board_top = -1.25
+        self.board_top = -1.3
         self.wait_until(.35, t0)
         m = self.M('freq', 2.2)
         self.write_board(m)

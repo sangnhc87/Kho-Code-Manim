@@ -26,8 +26,9 @@ def uploaded() -> set[str]:
 def select(spec: str) -> list[str]:
     done = uploaded()
     made = shortlib.produced()
-    if spec in ('', 'pending'):
-        return [c for c in made if f'xss_{c[3:]}' not in done]
+    if spec in ('', 'pending'):  # only reviewed Shorts (ready.json) are published automatically
+        ready = json.loads((ROOT / 'ready.json').read_text('utf-8'))['ready_max']
+        return [c for c in made if f'xss_{c[3:]}' not in done and int(c[3:]) <= ready]
     out = []
     for part in spec.split(','):
         m = re.fullmatch(r'(?:xss)?0*(\d+)\s*-\s*(?:xss)?0*(\d+)', part.strip())

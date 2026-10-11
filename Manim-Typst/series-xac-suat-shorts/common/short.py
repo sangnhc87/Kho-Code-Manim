@@ -356,9 +356,9 @@ class ShortScene(Scene):
         if getattr(self, 'guess_opts', None) is not None and self.guess_opts in self.mobjects:
             self.remove(self.guess_opts)
         self.clear_board(.03)
-        low = [m for m in self.stage() if m.get_center()[1] < -.6]  # leftovers in the board zone
-        if low:
-            self.play(*[FadeOut(m) for m in low], run_time=self.rt(.03))
+        stage = [m for m in self.stage() if m not in self.board_items]
+        if any(m.get_bottom()[1] < -.95 for m in stage):  # the stage reaches the answer zone: clear it
+            self.play(*[FadeOut(m) for m in stage], run_time=self.rt(.04))
         ans = VGroup(badge('ĐÁP ÁN', GREEN, 28), self.M('answer', 2.0, max_w=4.4)).arrange(RIGHT, buff=.4)
         ans.move_to([BOARD_X, -1.75, 0])
         frame = self.box(ans, GREEN)
@@ -382,10 +382,10 @@ class ShortScene(Scene):
         for v, lab, word in ((0, '0', 'không thể'), (.5, '"0,5"', ''), (1, '1', 'chắc chắn')):
             x = x0 + width * v
             ticks.add(Line([x, y - .16, 0], [x, y + .16, 0], color=SOFT, stroke_width=3))
-            ticks.add(self.TM(f'${lab}$', 22, SOFT).next_to([x, y - .18, 0], DOWN, buff=.06))
+            t = self.TM(f'${lab}$', 22, SOFT).next_to([x, y - .18, 0], DOWN, buff=.06)
+            ticks.add(t)
             if word:
-                w = tx(word, 18, DIM).next_to([x, y + .16, 0], UP, buff=.08)
-                ticks.add(w.shift(RIGHT * (w.width / 2 - .05) * (1 if v == 0 else -1)))
+                ticks.add(tx(word, 17, DIM).next_to(t, DOWN, buff=.03))
         mark = Triangle(fill_color=GOLD, fill_opacity=1, stroke_width=0).scale(.13).rotate(PI)
         mark.move_to([x0 + width * value, y + .3, 0])
         return VGroup(VGroup(base, ticks), VGroup(fill, mark))

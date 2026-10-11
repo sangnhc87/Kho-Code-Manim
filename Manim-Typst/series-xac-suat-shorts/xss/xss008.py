@@ -66,6 +66,7 @@ class XSS008(ShortScene):
 
     def beat_s2(self, T):
         t0 = self.now()
+        self.clear_board(.03)
         self.play(*[d[0].animate.set_stroke(CORAL, 6) for d in self.row],
                   *[FadeIn(cross(CORAL, .6).move_to(d)) for d in self.row], run_time=self.rt(.1))
         self.wait_until(.45, t0)

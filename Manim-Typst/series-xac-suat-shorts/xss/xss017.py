@@ -66,8 +66,9 @@ class XSS017(DiceGridMixin, ShortScene):
     def beat_s3(self, T):
         t0 = self.now()
         self.play(self.g.cells[3][3].animate.set_fill(CYAN, .7), run_time=self.rt(.05))
-        self.write_board(tx('(4; 4) chỉ có 1 ô', 28, CYAN, bold=True), anim='fade')
+        self.write_board(tx('(4; 4) chỉ có 1 ô', 30, CYAN, bold=True), anim='fade')
         self.wait_until(.5, t0)
+        self.clear_board(.03)
         m = self.M('prob', 2.2)
         self.write_board(m)
         self.frame(m)

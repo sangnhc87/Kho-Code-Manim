@@ -72,7 +72,8 @@ class XSS020(ShortScene):
 
     def beat_s3(self, T):
         t0 = self.now()
-        m = self.M('calc', 2.2)
+        self.clear_board(.03)
+        m = self.M('calc', 2.3)
         self.write_board(m)
         self.frame(m)
         self.wait_until(.6, t0)
