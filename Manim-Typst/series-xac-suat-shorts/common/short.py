@@ -388,10 +388,11 @@ class ShortScene(Scene):
             self.remove(self.guess_opts)
         self.clear_board(.03)
         stage = [m for m in self.stage() if m not in self.board_items]
-        if any(m.get_bottom()[1] < -.95 for m in stage):  # the stage reaches the answer zone: clear it
-            self.play(*[FadeOut(m) for m in stage], run_time=self.rt(.04))
         ans = VGroup(badge('ĐÁP ÁN', GREEN, 28), self.M('answer', 2.0, max_w=4.4)).arrange(RIGHT, buff=.4)
         ans.move_to([BOARD_X, -1.75, 0])
+        limit = min(-.95, ans.get_top()[1] + .3)  # the stage reaches the answer box (+ frame): clear it
+        if any(m.get_bottom()[1] < limit for m in stage):
+            self.play(*[FadeOut(m) for m in stage], run_time=self.rt(.04))
         frame = self.box(ans, GREEN)
         self.play(FadeIn(ans, scale=1.15), Create(frame), run_time=self.rt(.12))
         self.board_items = [ans, frame]

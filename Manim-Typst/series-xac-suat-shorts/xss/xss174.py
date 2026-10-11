@@ -64,7 +64,7 @@ class XSS174(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.5
-        self.urns = VGroup(*[urn('RB', 2, .3) for _ in range(3)]).arrange(buff=.7).move_to([0, 1.8, 0])
+        self.urns = VGroup(*[urn('RB', 2, .26) for _ in range(3)]).arrange(buff=.35).move_to([0, 1.8, 0])
         self.labs = VGroup(*[tx(n, 24, SOFT).next_to(u, [0, -1, 0]) for n, u in zip(('I', 'II', 'III'), self.urns)])
         self.wait_until(.55, t0)
         self.play(FadeIn(self.urns, lag_ratio=.3), FadeIn(self.labs), run_time=self.rt(.1))

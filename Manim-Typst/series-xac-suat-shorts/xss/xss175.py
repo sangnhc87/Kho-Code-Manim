@@ -14,7 +14,7 @@ from common.theme import CORAL, CYAN, GOLD, PURPLE  # noqa: E402
 from common.visuals import coin  # noqa: E402
 
 EPISODE = {'code': 'XSS175', 'answer': '29/36'}
-PROBLEM = ['Ba xu: chuẩn, lệch (ngửa $3/4$), hai mặt',
+PROBLEM = ['Ba xu: chuẩn, lệch (ngửa $75%$), hai mặt',
            'ngửa. Chọn $1$ đồng, tung ra ngửa. Xác',
            'suất lần tung tiếp theo cũng ngửa?']
 OPTIONS = ['3/4', '29/36', '5/6']
