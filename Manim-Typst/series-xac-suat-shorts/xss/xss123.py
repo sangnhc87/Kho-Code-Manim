@@ -52,7 +52,7 @@ class XSS123(TreeMixin, ShortScene):
     N = 123
 
     def hook_visual(self, t0):
-        self.board_top = -1.5
+        self.board_top = -1.9
         self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.05), dy=1.25, width=6.4, root_label='ném', r=.4,
                                                   edge_size=30)
         self.wait_until(.55, t0)
@@ -62,7 +62,7 @@ class XSS123(TreeMixin, ShortScene):
         t0 = self.now()
         self.play(FadeIn(self.levels[2], lag_ratio=.3), run_time=self.rt(.1))
         self.play(FadeIn(self.levels[3], lag_ratio=.3), run_time=self.rt(.1))
-        self.play(FadeIn(tx('V: vào   T: trượt', 24, SOFT).move_to([0, -1.15, 0])), run_time=self.rt(.04))
+        self.play(FadeIn(tx('V: vào   T: trượt', 24, SOFT).move_to([0, -1.5, 0])), run_time=self.rt(.04))
         self.wait_until(.6, t0)
         self.play(self.leaves[-1][0].animate.scale(1.4), run_time=self.rt(.06))
 

@@ -73,7 +73,7 @@ class XSS104(TreeMixin, ShortScene):
         self.play(self.urns.animate.set_opacity(0), self.labs.animate.set_opacity(0), run_time=self.rt(.03))
         self.remove(self.urns, self.labs)
         self.board_top = -1.1
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.3), dy=1.8, width=6.6, root_label='chuyển 2 bi')
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.95), dy=1.75, width=6.6, root_label='chuyển 2 bi')
         self.play(FadeIn(self.levels[0]), FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.15))
         self.wait_until(.55, t0)
         self.write_board(self.M('moves', 1.3))

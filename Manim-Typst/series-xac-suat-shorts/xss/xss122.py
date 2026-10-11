@@ -41,7 +41,7 @@ BEATS = [
 
 FORMULAS = formulas('2', OPTIONS,
                     probs='2/5, quad 3/10, quad 1/5, quad 1/10',
-                    exp='E = 1 dot 2/5 + 2 dot 3/10 + 3 dot 1/5 + 4 dot 1/10 = 2',
+                    exp='E = 2/5 + 6/10 + 3/5 + 4/10 = 2',
                     gen='E = (5 + 1)/(2 + 1) = 2')
 
 
@@ -58,8 +58,8 @@ class XSS122(TreeMixin, ShortScene):
     N = 122
 
     def hook_visual(self, t0):
-        self.board_top = -1.7
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.05), dy=1.2, width=6.8, root_label='rút', r=.38,
+        self.board_top = -1.65
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.0), dy=.98, width=6.8, root_label='rút', r=.36,
                                                   edge_size=30)
         self.wait_until(.6, t0)
         self.play(FadeIn(self.levels[0]), run_time=self.rt(.05))
@@ -81,7 +81,7 @@ class XSS122(TreeMixin, ShortScene):
     def beat_s3(self, T):
         t0 = self.now()
         self.clear_board(.03)
-        m = self.M('exp', 1.7)
+        m = self.M('exp', 2.0)
         self.write_board(m)
         self.frame(m)
         self.wait_until(.65, t0)

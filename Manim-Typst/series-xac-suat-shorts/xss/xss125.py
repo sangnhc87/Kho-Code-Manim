@@ -50,7 +50,7 @@ class XSS125(TreeMixin, ShortScene):
     N = 125
 
     def hook_visual(self, t0):
-        self.board_top = -1.45
+        self.board_top = -1.65
         self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.05), dy=1.75, width=6.8, root_label='hôm nay mưa')
         self.wait_until(.6, t0)
         self.play(FadeIn(self.levels[0]), run_time=self.rt(.05))
@@ -60,7 +60,7 @@ class XSS125(TreeMixin, ShortScene):
         self.play(FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.12))
         self.wait_until(.5, t0)
         self.play(FadeIn(self.levels[2], lag_ratio=.15), run_time=self.rt(.15))
-        self.play(FadeIn(tx('M: mưa   T: tạnh', 24, SOFT).move_to([0, -.95, 0])), run_time=self.rt(.04))
+        self.play(FadeIn(tx('M: mưa   T: tạnh', 24, SOFT).move_to([0, -1.22, 0])), run_time=self.rt(.04))
 
     def beat_s2(self, T):
         t0 = self.now()

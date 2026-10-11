@@ -53,7 +53,7 @@ class XSS093(ShortScene):
     N = 93
 
     def lattice(self):
-        x0, dx, y0, dy = -3.0, 1.45, 1.3, .52
+        x0, dx, y0, dy = -3.0, 1.45, 1.1, .45
         P = lambda t, h: [x0 + dx * t, y0 + dy * h, 0]  # noqa: E731
         grid = VGroup(*[Line(P(0, h), P(4, h), color=STROKE, stroke_width=1.5) for h in range(-4, 5)])
         zero = Line(P(0, 0), P(4, 0), color=SOFT, stroke_width=3)

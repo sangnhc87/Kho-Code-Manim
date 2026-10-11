@@ -71,7 +71,7 @@ class XSS092(TreeMixin, ShortScene):
         self.play(self.score.animate.set_opacity(0), self.need.animate.set_opacity(0), run_time=self.rt(.04))
         self.remove(self.score, self.need)
         self.board_top = -1.0
-        levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.3), dy=1.8, width=5.6, root_label='ván tới')
+        levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.95), dy=1.7, width=5.6, root_label='ván tới')
         self.play(*[FadeIn(lv, lag_ratio=.2) for lv in levels], run_time=self.rt(.2))
         self.wait_until(.6, t0)
         self.play(self.leaves[-1][0].animate.scale(1.35), run_time=self.rt(.05))

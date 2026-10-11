@@ -54,7 +54,7 @@ class XSS071(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.4
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.85), dy=1.6, width=5.4, root_label='sau lần 1')
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.55), dy=1.5, width=5.4, root_label='sau lần 1')
 
     def beat_s1(self, T):
         t0 = self.now()

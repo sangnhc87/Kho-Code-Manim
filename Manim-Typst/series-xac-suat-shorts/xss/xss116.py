@@ -81,7 +81,8 @@ class XSS116(ShortScene):
             groups.append(VGroup(box, self.TM('$?$', 28, SOFT).move_to(box)))
             if i < 4:
                 groups.append(playing_card('A', 'SHDC'[i], .55))
-        self.scheme = VGroup(*groups).arrange(buff=.1).move_to([0, .55, 0])
+        self.scheme = VGroup(*groups).arrange(buff=.1)
+        self.scheme.scale_to_fit_width(min(self.scheme.width, 7.4)).move_to([0, .55, 0])
         self.wait_until(.3, t0)
         self.play(FadeIn(self.scheme, lag_ratio=.12), run_time=self.rt(.25))
 

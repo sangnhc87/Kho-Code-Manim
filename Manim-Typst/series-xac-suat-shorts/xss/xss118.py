@@ -62,9 +62,9 @@ class XSS118(ShortScene):
 
     def column(self, parts, total, color):
         head = tx(f'tổng {total}', 30, color, bold=True)
-        rows = VGroup(*[self.TM(f'${a} + {b} + {c}$', 28, SOFT) for a, b, c in parts]).arrange(DOWN, buff=.16)
-        box = card(3.2, 4.1, color, PANEL, radius=.18, stroke_width=3)
-        return VGroup(box, VGroup(head, rows).arrange(DOWN, buff=.25).move_to(box))
+        rows = VGroup(*[self.TM(f'${a} + {b} + {c}$', 26, SOFT) for a, b, c in parts]).arrange(DOWN, buff=.11)
+        box = card(3.3, 3.55, color, PANEL, radius=.18, stroke_width=3)
+        return VGroup(box, VGroup(head, rows).arrange(DOWN, buff=.18).move_to(box))
 
     def hook_visual(self, t0):
         self.board_top = -1.25
@@ -75,7 +75,7 @@ class XSS118(ShortScene):
         self.play(self.dice.animate.set_opacity(0), run_time=self.rt(.04))
         self.remove(self.dice)
         self.cols = VGroup(self.column(PARTS9, 9, CYAN), self.column(PARTS10, 10, CORAL)).arrange(buff=.4) \
-            .move_to([0, 1.0, 0])
+            .move_to([0, 1.45, 0])
         self.play(FadeIn(self.cols, lag_ratio=.3), run_time=self.rt(.12))
 
     def add_counts(self, col, parts, color):
@@ -99,7 +99,7 @@ class XSS118(ShortScene):
         self.add_counts(self.cols[1], PARTS10, GOLD)
         self.write_board(self.M('n10', 1.8))
         self.wait_until(.75, t0)
-        self.play(self.cols[0][1][1][5].animate.set_color(CORAL).scale(1.2), run_time=self.rt(.05))
+        self.play(self.cols[0][1][1][5].animate.set_color(CORAL), run_time=self.rt(.05))
 
     def beat_s3(self, T):
         self.clear_board(.03)

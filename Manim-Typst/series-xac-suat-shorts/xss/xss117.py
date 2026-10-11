@@ -73,9 +73,9 @@ class XSS117(ShortScene):
                           fill_color=GREEN if p > .99 else (GOLD if p > .5 else CORAL), fill_opacity=.85)
             b.move_to([x, base + b.height / 2, 0])
             self.bars.add(b)
-            self.labels.add(VGroup(self.MNum(p * 100, 1, SOFT, 26), tx('%', 22, SOFT)).arrange(buff=.05)
-                            .next_to(b, UP, buff=.08),
-                            self.TM(f'$k = {k}$', 24, SOFT).next_to([x, base, 0], DOWN, buff=.12))
+            self.labels.add(VGroup(VGroup(self.MNum(p * 100, 1, SOFT, 26), tx('%', 22, SOFT)).arrange(buff=.05)
+                                   .next_to(b, UP, buff=.08),
+                                   self.TM(f'$k = {k}$', 24, SOFT).next_to([x, base, 0], DOWN, buff=.12)))
         self.line = DashedLine([-3.4, base + (top - base) * .99, 0], [3.4, base + (top - base) * .99, 0],
                                color=CYAN, stroke_width=3)
         self.wait_until(.6, t0)

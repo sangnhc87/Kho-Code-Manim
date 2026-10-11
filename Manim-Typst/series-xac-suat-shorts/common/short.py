@@ -320,6 +320,7 @@ class ShortScene(Scene):
         title = tx(self.entry['title'], 48 if three else 52, GOLD, bold=True, max_w=7.4).move_to([0, TITLE_Y + .05 * three, 0])
         prob = self.lines(self.short.PROBLEM, 31 if three else 34, buff=.14 if three else .2) \
             .next_to(title, DOWN, buff=.22 if three else .3)
+        self.problem_bottom = prob.get_bottom()[1]
         return title, prob
 
     def beat_hook(self, T):
@@ -519,6 +520,13 @@ class TreeMixin:
             return node
 
         root = {'m': tx(root_label or '•', 26, SOFT), 'kids': [build(b) for b in branches]}
+        if hasattr(self, 'problem_bottom') and top[1] > self.problem_bottom - .62:
+            # never let the root touch the problem text; keep the leaves where they were by tightening dy
+            def depth(bs):
+                return 1 + max((depth(b[3]) for b in bs), default=0) if bs else 0
+            d = depth(branches)
+            shift = top[1] - (self.problem_bottom - .62)
+            top, dy = (top[0], top[1] - shift), dy - shift / max(d, 1)
         _, levels = tree(root, top=top, dy=dy, width=width)
         leaves = []
 

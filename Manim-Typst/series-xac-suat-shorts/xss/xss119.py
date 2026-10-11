@@ -16,10 +16,9 @@ from common.theme import CORAL, CYAN, GOLD, SOFT  # noqa: E402
 from common.visuals import urn  # noqa: E402
 
 EPISODE = {'code': 'XSS119', 'answer': '1/11 với mọi k'}
-PROBLEM = ['Bình $1$ đỏ $1$ xanh. Rút $1$ bi, trả lại',
-           'kèm thêm $1$ bi cùng màu; làm $10$ lần.',
-           'Xác suất có đúng $k$ bi đỏ được thêm',
-           'vào ($k = 0, 1, ..., 10$)?']
+PROBLEM = ['Bình $1$ đỏ $1$ xanh. Rút $1$ bi, trả lại kèm',
+           '$1$ bi cùng màu; làm $10$ lần. Xác suất',
+           'có đúng $k$ bi đỏ được thêm vào?']
 OPTIONS = ['C_10^k / 2^10', '1/11', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 1 / 11
