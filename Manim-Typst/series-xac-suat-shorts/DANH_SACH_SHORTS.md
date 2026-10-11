@@ -1,4 +1,4 @@
-# DANH SÁCH 360 SHORTS · XÁC SUẤT 3 PHÚT
+# DANH SÁCH 440 SHORTS · XÁC SUẤT 3 PHÚT
 
 > Sinh tự động từ `shorts_plan.py` (`python shorts_plan.py`). Mọi đáp án đã được máy tính lại bằng liệt kê vét cạn, phân số chính xác hoặc mô phỏng có seed. Đừng sửa tay file này.
 
@@ -466,3 +466,108 @@
 | **XSS358** | Hai toa bốn chỗ | 8 người xếp ngẫu nhiên vào 2 toa, mỗi toa 4 chỗ. P(An và Bình cùng toa)? | 3/7 | cards | XS10 |
 | **XSS359** | Thang máy năm tầng | 4 người vào thang máy, mỗi người ra ngẫu nhiên ở 1 trong 5 tầng. P(4 người ra ở 4 tầng khác nhau)? | 24/125 | cards | XS10 |
 | **XSS360** | An ngồi một mình | 5 hành khách chọn 3 toa; biết toa nào cũng có người. P(An ở một toa chỉ có mình An)? | 7/25 | cards | XS20 |
+
+## L22 · Đa hành động (XSS361 – XSS376) · 75 – 160 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS361** | Xúc xắc quyết định số bi | Gieo xúc xắc được k rồi rút k bi từ hộp 4 đỏ 3 xanh. P(k bi rút ra đều đỏ)? | 1/6 | tree | XS24 |
+| **XSS362** | Toàn đỏ thì xúc xắc ra mấy? | Như trên, biết k bi rút ra đều đỏ. P(xúc xắc ra 1)? | 4/7 | tree | XS25 |
+| **XSS363** | Chẵn hộp I, lẻ hộp II | Xúc xắc chẵn: rút từ hộp I (3 đỏ 2 xanh), lẻ: hộp II (1 đỏ 4 xanh), rút lần lượt 2 bi. Biết bi thứ hai đỏ: P(bi thứ nhất đỏ)? | 3/8 | tree | XS26 |
+| **XSS364** | Số ngửa quyết định số bi | Tung 2 xu được k ngửa, rồi rút k + 1 bi từ hộp 3 đỏ 3 xanh. P(có ít nhất 1 bi đỏ)? | 61/80 | tree | XS24 |
+| **XSS365** | Có đỏ thì hai xu ngửa? | Như trên, biết có ít nhất 1 bi đỏ. P(cả hai xu đều ngửa)? | 19/61 | tree | XS25 |
+| **XSS366** | Xúc xắc pha màu hộp | Gieo xúc xắc được k; hộp có k bi đỏ và 6 − k bi xanh. Rút 1 bi được đỏ: P(k = 6)? | 2/7 | tree | XS25 |
+| **XSS367** | Chọn hộp, chuyển, rồi rút | Xúc xắc 1–4: chuyển 1 bi từ I (2 đỏ 1 xanh) sang II (1 đỏ 2 xanh), 5–6: chuyển ngược lại; rút 1 bi từ hộp nhận. P(đỏ)? | 17/36 | tree | XS26 |
+| **XSS368** | Đỏ gieo xúc xắc, xanh tung xu | Rút 1 bi (2 đỏ 2 xanh): đỏ thì gieo xúc xắc, xanh thì tung xu; ra 6 hoặc ngửa là thắng. Biết thắng: P(đã rút đỏ)? | 1/4 | tree | XS25 |
+| **XSS369** | Xanh thì thêm hai xanh | Hộp 3 đỏ 2 xanh: rút 1 bi, đỏ thì bỏ ra ngoài, xanh thì trả lại kèm 2 bi xanh; rút lần hai được xanh. P(lần một xanh)? | 16/37 | tree | XS25 |
+| **XSS370** | Đúng một ngửa | Gieo xúc xắc được k rồi tung k đồng xu, được đúng 1 ngửa. P(k ≤ 2)? | 8/15 | tree | XS25 |
+| **XSS371** | Hộp vàng hay hộp trắng? | Gieo 2 xúc xắc: tổng ≥ 10 rút từ hộp vàng (4 đỏ 1 xanh), ngược lại hộp trắng (1 đỏ 4 xanh). Được đỏ: P(tổng ≥ 10)? | 4/9 | tree | XS25 |
+| **XSS372** | Biết m = 3 | Gieo xúc xắc được n, rồi chọn ngẫu nhiên m từ 1 đến n. Biết m = 3: P(n = 6)? | 10/57 | tree | XS25 |
+| **XSS373** | Gieo hai lần lấy lớn nhất | Tung xu: ngửa thì gieo xúc xắc 2 lần lấy số lớn nhất, sấp thì gieo 1 lần. Kết quả là 6: P(đã ra ngửa)? | 11/17 | tree | XS25 |
+| **XSS374** | Một hay hai xúc xắc? | Rút 1 bi (1 đỏ 2 xanh): đỏ thì gieo 2 xúc xắc, xanh thì gieo 1. Số chấm (tổng) bằng 4: P(rút đỏ)? | 1/5 | tree | XS25 |
+| **XSS375** | Nhiệm vụ nào thất bại? | Bốc thăm 1 trong 3 nhiệm vụ, thành công 0,9; 0,6; 0,3. Biết An thất bại: P(An bốc nhiệm vụ 3)? | 7/12 | tree | XS25 |
+| **XSS376** | Ra 6 được gieo thêm | Gieo xúc xắc; nếu ra 6 thì gieo thêm 1 lần và cộng điểm. Biết tổng điểm chẵn: P(lần đầu ra 6)? | 1/5 | tree | XS25 |
+
+## L23 · Điều kiện dừng (XSS377 – XSS392) · 75 – 160 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS377** | Dừng trong ba lần | Gieo xúc xắc đến khi ra 6. Biết số lần gieo không quá 3: P(đúng 2 lần)? | 30/91 | tree | XS20 |
+| **XSS378** | Dừng ở lần thứ tư | Tung xu đến khi được 2 lần ngửa. Biết dừng ở lần 4: P(lần 1 là ngửa)? | 1/3 | tree | XS20 |
+| **XSS379** | Đủ hai đỏ ở lần bốn | Hộp 3 đỏ 3 xanh, rút lần lượt đến khi được 2 bi đỏ. P(dừng ở lần thứ 4)? | 3/10 | urn | XS22 |
+| **XSS380** | Kết thúc trước lượt 5 | A, B lần lượt gieo xúc xắc (A trước), ai ra 6 trước thắng. Biết kết thúc trước lượt 5: P(A thắng)? | 6/11 | tree | XS20 |
+| **XSS381** | Hai mặt giống nhau liền | Tung xu đến khi có 2 lần liên tiếp cùng mặt. P(dừng sau đúng 4 lần)? | 1/8 | tree | XS22 |
+| **XSS382** | Phi tiêu tối đa bốn lần | Ném phi tiêu đến khi trúng (mỗi lần 0,4), tối đa 4 lần. Biết có trúng: P(trúng ngay lần 1)? | 125/272 | tree | XS25 |
+| **XSS383** | Số lần rút là số chẵn | Rút có hoàn lại (2 đỏ 3 xanh) đến khi được đỏ. Biết số lần rút là chẵn: P(đúng 2 lần)? | 16/25 | tree | XS20 |
+| **XSS384** | Hai phát trúng liền | Bắn đến khi trúng 2 phát liên tiếp hoặc hết 4 viên, mỗi phát trúng 0,6. P(dừng vì trúng 2 liên tiếp)? | 81/125 | tree | XS22 |
+| **XSS385** | Tổng vượt 3 | Gieo xúc xắc đến khi tổng ≥ 4. Biết dừng ở lần 2: P(lần đầu ra 1)? | 4/15 | tree | XS25 |
+| **XSS386** | Dừng ở +2 hay −2? | Ngửa (2/3) +1 điểm, sấp −1; dừng khi đạt +2 hoặc −2. Biết dừng sau đúng 4 lần: P(dừng ở +2)? | 4/5 | tree | XS25 |
+| **XSS387** | Đến khi gặp số chẵn | Rút lần lượt từ 6 bi số 1 đến 6 đến khi gặp số chẵn. Biết cần ít nhất 2 lần: P(cần đúng 3 lần)? | 3/10 | urn | XS20 |
+| **XSS388** | Vòng quay ba ô | Vòng quay A (1/2), B (1/3), C (1/6); quay đến khi ra C. Biết quay đúng 3 lần: P(có ít nhất 1 lần A)? | 21/25 | tree | XS20 |
+| **XSS389** | C thắng ngay vòng đầu? | A, B, C lần lượt gieo xúc xắc, ai ra 6 trước thắng. Biết C thắng: P(C thắng ở lượt đầu của C)? | 91/216 | tree | XS25 |
+| **XSS390** | Đỏ lần hai ở lần năm | Rút có hoàn lại (1 đỏ 2 xanh) đến khi được đỏ lần thứ hai. P(dừng ở lần 5)? | 32/243 | tree | XS18 |
+| **XSS391** | Ba lần thất bại rồi | Mỗi lần thử thành công 0,2, độc lập. Biết 3 lần đầu đều thất bại: P(thành công trong 2 lần tiếp)? | 0,36 | tree | XS23 |
+| **XSS392** | Đỏ hay hai vàng liền? | Rút có hoàn lại (1 đỏ 1 xanh 1 vàng); dừng khi rút được đỏ hoặc 2 lần liên tiếp vàng. P(dừng vì đỏ)? | 4/5 | tree | XS30 |
+
+## L24 · Cây vận dụng cao (XSS393 – XSS408) · 90 – 175 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS393** | Ba đồng xu, tung lại | Ba xu: chuẩn, hai mặt ngửa, hai mặt sấp. Chọn 1, tung ra ngửa; tung lại đồng đó. P(lại ngửa)? | 5/6 | tree | XS26 |
+| **XSS394** | Hai xét nghiệm trái ngược | Bệnh 2 %. Test A: nhạy 0,9, dương giả 0,1; test B: nhạy 0,8, dương giả 0,05. A dương, B âm: P(bệnh)? | 36/967 ≈ 0,037 | tree | XS27 |
+| **XSS395** | Ngày kia mưa thì mai? | Hôm nay mưa; mưa thì mai mưa 0,6, tạnh thì mai mưa 0,2. Biết ngày kia mưa: P(ngày mai mưa)? | 9/11 | tree | XS25 |
+| **XSS396** | Hai sản phẩm cùng lô | Dây chuyền I (60 %) lỗi 3 %, II (40 %) lỗi 5 %. Lấy 2 sản phẩm cùng một dây chuyền, cả 2 lỗi. P(dây chuyền II)? | 27/77 | tree | XS26 |
+| **XSS397** | Ba trạm trung chuyển | Tín hiệu qua 3 trạm, mỗi trạm lật bit với xác suất 0,1. P(tín hiệu nhận được đúng)? | 0,756 | tree | XS22 |
+| **XSS398** | Tin đồn qua ba người | A kể B, B kể C; mỗi lần kể đúng 0,8, sai thì đảo nghĩa. Sự thật "có" hay "không" như nhau. C nghe "có": P(sự thật là có)? | 0,68 | tree | XS27 |
+| **XSS399** | Thắng hai ván liên tiếp | Ai thắng 2 ván liên tiếp trước là vô địch; A thắng mỗi ván 0,6. P(A vô địch)? | 63/95 | tree | XS30 |
+| **XSS400** | Ba tù nhân | 3 tù nhân, 1 người được tha. Cai ngục nói với A: "B sẽ bị xử". P(A được tha)? | 1/3 | tree | XS28 |
+| **XSS401** | Hộp hai bi bí ẩn | Hộp 2 bi, mỗi bi đỏ hoặc xanh (1/2), độc lập. Rút có hoàn lại 3 lần đều đỏ: P(cả 2 bi đều đỏ)? | 4/5 | tree | XS26 |
+| **XSS402** | Kéo dài không đổi cuộc chơi | Gieo xúc xắc: 1, 2 thắng; 3 thua; 4, 5, 6 gieo lại. Biết trò chơi kéo dài ít nhất 3 lượt: P(thắng)? | 2/3 | tree | XS28 |
+| **XSS403** | Đỏ thì sang hộp kia | Rút từ hộp I (2 đỏ 1 xanh): đỏ thì bỏ sang hộp II (1 đỏ 2 xanh) rồi rút từ II, xanh thì rút tiếp từ I. P(lần hai đỏ)? | 2/3 | tree | XS24 |
+| **XSS404** | Lần hai đỏ thì lần một? | Như trên, biết lần rút thứ hai được đỏ. P(lần một rút xanh)? | 1/2 | tree | XS25 |
+| **XSS405** | Kiến trên tứ diện | Kiến ở đỉnh A của tứ diện, mỗi bước sang 1 trong 3 đỉnh còn lại. P(sau 5 bước về A)? | 20/81 | tree | XS30 |
+| **XSS406** | Tổng số ngửa là 2 | An và Bình mỗi người tung 2 xu. Biết tổng số ngửa là 2: P(mỗi người đúng 1 ngửa)? | 2/3 | tree | XS20 |
+| **XSS407** | Sinh đến khi có con trai | Mỗi gia đình sinh đến khi có con trai, tối đa 3 con. Tỉ lệ con trai trong toàn bộ trẻ em? | 1/2 | tree | XS28 |
+| **XSS408** | Có hòa thì sao? | Mỗi ván A thắng 0,5, hòa 0,2, thua 0,3; dừng khi A thắng 2 ván hoặc thua 2 ván. P(A thắng chung cuộc)? | 175/256 | tree | XS30 |
+
+## L25 · Hay – lạ – độc đáo (XSS409 – XSS424) · 75 – 170 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS409** | Xúc xắc không bắc cầu | Xúc xắc A: 2 2 4 4 9 9; B: 1 1 6 6 8 8; C: 3 3 5 5 7 7. A thắng B 5/9, B thắng C 5/9. P(C thắng A)? | 5/9 | grid | XS30 |
+| **XSS410** | Hành khách mất vé | n hành khách lên máy bay n ghế; người đầu mất vé ngồi bừa, người sau ngồi đúng ghế nếu còn. P(người cuối đúng ghế)? | 1/2 | cards | XS30 |
+| **XSS411** | Trùng sinh nhật với bạn | Lớp 23 người. P(có người trùng ngày sinh với chính bạn)? | ≈ 0,059 | curve | XS13 |
+| **XSS412** | Đồng xu trên nền gạch | Ném đồng xu bán kính 1 lên nền gạch ô vuông cạnh 4. P(đồng xu nằm gọn trong một ô)? | 1/4 | square | XS30 |
+| **XSS413** | Đếm cá trong hồ | Đánh dấu 50 con cá rồi thả lại. Lần sau bắt 40 con thấy 8 con có dấu. Ước lượng số cá trong hồ? | 250 | sim | XS05 |
+| **XSS414** | Chuỗi dài là bình thường | Tung xu 20 lần. P(có ít nhất 4 lần liên tiếp cùng mặt)? | ≈ 0,768 | tree | XS30 |
+| **XSS415** | Đoán lá đỏ | Lật dần bộ bài, bạn được hô "đỏ" đúng một lần trước một lá. Chiến thuật tốt nhất thắng với xác suất? | 1/2 | cards | XS30 |
+| **XSS416** | Ba chiếc mũ | 3 người đội mũ đỏ/xanh ngẫu nhiên, thấy mũ người khác, được đoán hoặc bỏ qua. Cả đội thắng nếu có người đúng và không ai sai. Chiến thuật tốt nhất? | 3/4 | tree | XS30 |
+| **XSS417** | Bốn tù nhân, bốn hộp | 4 tù nhân, 4 hộp chứa tên ngẫu nhiên; mỗi người mở 2 hộp tìm tên mình. Chiến thuật đi theo vòng: P(ai cũng tìm thấy)? | 5/12 | cards | XS30 |
+| **XSS418** | Penney ba đồng xu | Tung xu liên tục. P("sấp ngửa ngửa" xuất hiện trước "ngửa ngửa ngửa")? | 7/8 | sim | XS30 |
+| **XSS419** | Hai hộp diêm | Mỗi túi có 1 hộp 2 que, mỗi lần lấy ngẫu nhiên 1 túi. Khi thấy một hộp rỗng: P(hộp kia cũng rỗng)? | 3/8 | tree | XS30 |
+| **XSS420** | Xếp hàng không có tiền thối | 2 người cầm tờ 10 nghìn, 2 người cầm tờ 20 nghìn xếp hàng mua vé 10 nghìn; quầy không có tiền lẻ. P(không ai phải chờ)? | 1/3 | cards | XS30 |
+| **XSS421** | Bốn điểm trên nửa đường tròn | Chọn 4 điểm ngẫu nhiên trên đường tròn. P(cả 4 cùng nằm trên một nửa đường tròn)? | 1/2 | geo | XS30 |
+| **XSS422** | Que gãy làm đôi | Bẻ que tại một điểm ngẫu nhiên. P(đoạn dài gấp ít nhất 2 lần đoạn ngắn)? | 2/3 | geo | XS30 |
+| **XSS423** | Nghịch lý xe buýt | Xe buýt cách nhau 10 phút hoặc 20 phút (xen kẽ). Bạn đến bến ngẫu nhiên. P(rơi vào khoảng 20 phút)? | 2/3 | geo | XS28 |
+| **XSS424** | Lớp 30 người, tháng sinh | Lớp có 30 học sinh. P(có ít nhất 2 bạn sinh cùng tháng)? | 1 (chắc chắn) | grid | XS13 |
+
+## L26 · Mẹo đếm – đối xứng (XSS425 – XSS440) · 60 – 150 s
+
+| Mã | Tiêu đề | Đề bài | Đáp án | Hình | Tập đầy đủ |
+| :--- | :--- | :--- | :---: | :---: | :---: |
+| **XSS425** | Đủ sáu mặt trong sáu lần | Gieo 6 con xúc xắc. P(xuất hiện đủ 6 mặt)? | 5/324 | grid | XS09 |
+| **XSS426** | Mỗi người một lá át | Chia bộ bài 52 lá cho 4 người, mỗi người 13 lá. P(mỗi người có đúng 1 lá át)? | 2197/20825 ≈ 0,105 | cards | XS10 |
+| **XSS427** | Cùng màu hay khác màu? | Rút 2 lá từ bộ bài 52 lá. P(hai lá khác màu)? | 26/51 | cards | XS07 |
+| **XSS428** | Tổng ba xúc xắc lớn hơn 10 | Gieo 3 xúc xắc. P(tổng số chấm lớn hơn 10)? | 1/2 | grid | XS09 |
+| **XSS429** | Cao nhất cạnh thấp nhất | 10 bạn xếp hàng ngẫu nhiên. P(bạn cao nhất đứng cạnh bạn thấp nhất)? | 1/5 | cards | XS12 |
+| **XSS430** | Tích chia hết cho 6 | Gieo 3 xúc xắc. P(tích số chấm chia hết cho 6)? | 133/216 | grid | XS15 |
+| **XSS431** | Tích chia hết cho 4 | Chọn 3 số khác nhau từ 1 đến 20. P(tích chia hết cho 4)? | 53/76 | grid | XS15 |
+| **XSS432** | Chia kẹo | 10 viên kẹo giống nhau chia cho 3 bạn, mọi cách chia đồng khả năng. P(bạn nào cũng có kẹo)? | 6/11 | grid | XS10 |
+| **XSS433** | Ước chính phương | Chọn ngẫu nhiên một ước dương của 360. P(ước đó là số chính phương)? | 1/6 | grid | XS07 |
+| **XSS434** | Đúng một lá đúng chỗ | Xếp ngẫu nhiên 5 lá thư vào 5 phong bì. P(có đúng 1 lá đúng địa chỉ)? | 3/8 | cards | XS13 |
+| **XSS435** | Tập con có tổng chẵn | Chọn ngẫu nhiên một tập con của {1; 2; 3; 4; 5}. P(tổng các phần tử là số chẵn)? | 1/2 | grid | XS30 |
+| **XSS436** | A là tập con của B | Chọn ngẫu nhiên 2 tập con A, B của {1; 2; 3}. P(A ⊂ B)? | 27/64 | grid | XS30 |
+| **XSS437** | Số này chia hết số kia | Gieo 2 xúc xắc được a, b. P(a là ước của b)? | 7/18 | grid | XS09 |
+| **XSS438** | Bốn xúc xắc sát nhau | Gieo 4 xúc xắc. P(số lớn nhất và nhỏ nhất hơn kém nhau không quá 1)? | 19/324 | grid | XS09 |
+| **XSS439** | Hai ô trên bàn cờ | Chọn 2 ô của bàn cờ 8 × 8. P(cùng màu và không cùng hàng, cùng cột)? | 25/63 | grid | XS07 |
+| **XSS440** | Monty Hall bốn cửa | 4 cửa, 1 có xe. Bạn chọn 1, người dẫn mở 2 cửa có dê. Đổi sang cửa còn lại: P(trúng xe)? | 3/4 | cards | XS28 |

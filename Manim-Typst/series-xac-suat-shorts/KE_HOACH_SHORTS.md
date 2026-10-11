@@ -1,8 +1,8 @@
 # KẾ HOẠCH SERIES SHORTS · XÁC SUẤT 3 PHÚT
-## 360 thử thách xác suất: từ Mở đầu đến đề Học sinh giỏi
+## 440 thử thách xác suất: từ Mở đầu đến đề Học sinh giỏi
 
-> **Tác giả:** Thầy Nguyễn Văn Sang · **Mã:** `XSS001 → XSS360` · **Định dạng:** YouTube Shorts dọc 1080×1920, tối đa 3 phút.
-> **Danh sách đầy đủ 360 Shorts:** [`DANH_SACH_SHORTS.md`](DANH_SACH_SHORTS.md) · **Dữ liệu máy đọc:** [`shorts_plan.json`](shorts_plan.json) · **Nguồn và kiểm chứng:** [`shorts_plan.py`](shorts_plan.py).
+> **Tác giả:** Thầy Nguyễn Văn Sang · **Mã:** `XSS001 → XSS440` · **Định dạng:** YouTube Shorts dọc 1080×1920, tối đa 3 phút.
+> **Danh sách đầy đủ 440 Shorts:** [`DANH_SACH_SHORTS.md`](DANH_SACH_SHORTS.md) · **Dữ liệu máy đọc:** [`shorts_plan.json`](shorts_plan.json) · **Nguồn và kiểm chứng:** [`shorts_plan.py`](shorts_plan.py).
 > **Series dài đi kèm:** Xác suất chuyên sâu `XS01 – XS30` ([kế hoạch](../series-xac-suat/KE_HOACH_SERIES_30_TAP.md)). Mỗi Short dẫn về đúng một tập dài.
 
 ---
@@ -37,6 +37,12 @@ Mỗi Short là **một câu đố xác suất trọn vẹn**: đề bài trong 
 | **L19** | Hình học có điều kiện | 313 – 328 | 16 | 75 – 160 s | Đa giác đều, lưới điểm, hình lập phương, xác suất hình học có điều kiện (bẻ que, hẹn gặp) |
 | **L20** | Bi vận dụng cao | 329 – 344 | 16 | 75 – 160 s | Rút đến hết, đến khi trùng màu, chia bi vào hộp, hộp bí ẩn, bất biến chẵn lẻ |
 | **L21** | Xếp chỗ – toa tàu | 345 – 360 | 16 | 75 – 160 s | Dãy ghế, hai dãy đối diện, bàn tròn, toa tàu, thang máy, nhóm học sinh cùng lớp |
+| | **Nhánh 5** | | | | **Có điều kiện đa hành động, điều kiện dừng, cây VDC, ý tưởng độc đáo** |
+| **L22** | Đa hành động | 361 – 376 | 16 | 75 – 160 s | Xúc xắc quyết định số bi / hộp / màu, rồi rút bi; tung xu rồi gieo xúc xắc; truy ngược Bayes qua nhiều hành động |
+| **L23** | Điều kiện dừng | 377 – 392 | 16 | 75 – 160 s | Biết dừng ở lần k, biết dừng trước lượt 5, biết số lần rút chẵn, dừng vì sự kiện nào, tính không nhớ |
+| **L24** | Cây vận dụng cao | 393 – 408 | 16 | 90 – 175 s | Hai xét nghiệm trái ngược, tin đồn qua nhiều người, ba tù nhân, thắng 2 ván liên tiếp, có hòa, tứ diện |
+| **L25** | Hay – lạ – độc đáo | 409 – 424 | 16 | 75 – 170 s | Xúc xắc không bắc cầu, hành khách mất vé, ba chiếc mũ, tù nhân và hộp, xếp hàng không tiền thối, nghịch lý xe buýt, Dirichlet |
+| **L26** | Mẹo đếm – đối xứng | 425 – 440 | 16 | 60 – 150 s | Đối xứng tổng xúc xắc, bù trừ (tích chia hết cho 6), chia kẹo, ước chính phương, tập con, Monty Hall 4 cửa |
 
 🟣 Từ L5 – L6 có nhiều bài **vượt chương trình phổ thông**. Video ghi rõ "thử thách mở rộng" để học sinh không học lệch trọng tâm.
 

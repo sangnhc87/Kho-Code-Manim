@@ -40,7 +40,9 @@ LEVEL_NAMES = {'L1': 'MỞ ĐẦU', 'L2': 'CƠ BẢN', 'L3': 'THÔNG HIỂU', 'L
                'L7': 'SƠ ĐỒ CÂY', 'L8': 'CÓ ĐIỀU KIỆN', 'L9': 'TOÀN PHẦN – BAYES', 'L10': 'CHẶN ĐIỂM 8-9-10',
                'L11': 'HỌC SINH GIỎI', 'L12': 'BỐC BI ĐA HỘP', 'L13': 'CHUYỂN BI', 'L14': 'ĐA ĐIỀU KIỆN',
                'L15': 'THAM SỐ XUÔI – NGƯỢC', 'L16': 'CÂY HAY – LẠ', 'L17': 'ẾCH NHẢY', 'L18': 'QUY HOẠCH ĐỘNG',
-               'L19': 'HÌNH HỌC CÓ ĐIỀU KIỆN', 'L20': 'BI VẬN DỤNG CAO', 'L21': 'XẾP CHỖ – TOA TÀU'}
+               'L19': 'HÌNH HỌC CÓ ĐIỀU KIỆN', 'L20': 'BI VẬN DỤNG CAO', 'L21': 'XẾP CHỖ – TOA TÀU',
+               'L22': 'ĐA HÀNH ĐỘNG', 'L23': 'ĐIỀU KIỆN DỪNG', 'L24': 'CÂY VẬN DỤNG CAO', 'L25': 'HAY – LẠ – ĐỘC ĐÁO',
+               'L26': 'MẸO ĐẾM – ĐỐI XỨNG'}
 
 
 @dataclass(frozen=True)
