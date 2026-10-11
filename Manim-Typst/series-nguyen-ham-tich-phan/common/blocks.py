@@ -159,6 +159,25 @@ class Blocks:
         chars = VGroup(*[tx(ch, 30, GREEN, bold=True).move_to(cells[i]) for i, ch in enumerate(str(value)[:4])])
         return VGroup(tx('Phiếu trả lời:', 20, SOFT), VGroup(cells, chars)).arrange(RIGHT, buff=.25)
 
+    def sign_table(self, points, signs, label='f(x)', width=6.2, zeros=None):
+        """Bảng xét dấu: ``points`` = mốc x (chuỗi), ``signs`` = '+'/'−' giữa hai mốc liên tiếp.
+
+        ``zeros`` = chỉ số các mốc mà f bằng 0 (mặc định: mọi mốc trong).
+        """
+        lw, h = 1.1, .62
+        n = len(points)
+        xs = [lw + .45 + i * (width - lw - .9) / (n - 1) for i in range(n)]
+        zeros = range(1, n - 1) if zeros is None else zeros
+        border = Rectangle(width=width, height=2 * h, stroke_color=STROKE, stroke_width=2).move_to([width / 2, 0, 0])
+        grid = VGroup(Line([0, 0, 0], [width, 0, 0]), Line([lw, h, 0], [lw, -h, 0])).set_stroke(STROKE, 2)
+        head = VGroup(tx('x', 23, SOFT, slant=True).move_to([lw / 2, h / 2, 0]),
+                      tx(label, 23, SOFT).move_to([lw / 2, -h / 2, 0]))
+        marks = VGroup(*[tx(p, 23, WHITE).move_to([xs[i], h / 2, 0]) for i, p in enumerate(points)])
+        zs = VGroup(*[tx('0', 23, WHITE).move_to([xs[i], -h / 2, 0]) for i in zeros])
+        sg = VGroup(*[tx(s, 30, GREEN if s == '+' else CORAL, bold=True).move_to([(xs[i] + xs[i + 1]) / 2, -h / 2, 0])
+                      for i, s in enumerate(signs)])
+        return VGroup(border, grid, head, marks, zs, sg)
+
     def verify_plot(self, a, f, F, x_from, x_to, frac, x_min=None, x_max=None, f_color=CYAN, F_color=GOLD,
                     readout_at=(BOARD_X, -1.75)):
         """Graphs of f and F; a moving x shows: slope of F's tangent = height of f."""
@@ -210,6 +229,8 @@ class Blocks:
                 .arrange(RIGHT, buff=.25)
             if r.width > 8.6:
                 r.scale_to_fit_width(8.6)
+            if r.height > 1.02:  # integrals with limits: keep rows from touching
+                r.scale_to_fit_height(1.02)
             r.move_to([0, 1.45 - 1.15 * i, 0]).to_edge(LEFT, buff=.8)
             group.add(r)
         for frac, r in zip(fracs, group):
@@ -232,6 +253,9 @@ class Blocks:
         body = VGroup(*lines).arrange(DOWN, buff=.3).next_to(title, DOWN, buff=.4)
         if body.width > 10:
             body.scale_to_fit_width(10)
+        if body.height > 2.3:
+            body.scale_to_fit_height(2.3)
+        body.next_to(title, DOWN, buff=.4)
         thanks = tx('Cảm ơn các em đã theo dõi!', 28, GOLD, bold=True).move_to([0, -2.5, 0])
         self.play(FadeIn(box), FadeIn(tag, shift=DOWN * .2), run_time=self.rt(.08))
         self.play(Write(title), run_time=self.rt(.14))

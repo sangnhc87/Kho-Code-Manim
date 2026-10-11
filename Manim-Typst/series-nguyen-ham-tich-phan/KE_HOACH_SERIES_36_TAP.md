@@ -133,13 +133,13 @@ Thứ tự chạy workflow cho mỗi tập: `preview / voice=off` (duyệt hình
 | Trạng thái | Tập |
 | :--- | :--- |
 | ✅ Đã xuất bản (Phần A hoàn thành) | INT01–INT10: MLP1NJgcDmQ · Q27qaS8mqqE · Fisd_cqawl0 · lev4fL1lWiA · qY4dQR9iTJ0 · 3jVMzUpNcnI · ZWeBNtnR4YM · Atj-EB-GQfA · ch_VYu1z1RA · PEF0teiIS_4 (youtu.be/…) |
-| ✅ Đã xuất bản (Phần B) | INT11: DBPYPT72oGs · INT12: ZJz0wj0IMJ4 |
-| 🎬 Đã dựng đầy đủ, đang xuất bản | INT13 |
-| ⚪ Kế hoạch | INT14 – INT36 |
+| ✅ Đã xuất bản (Phần B) | INT11: DBPYPT72oGs · INT12: ZJz0wj0IMJ4 · INT13: uVEPl4ZK_NY |
+| 🎬 Đã dựng đầy đủ, đang xuất bản | INT14 |
+| ⚪ Kế hoạch | INT15 – INT36 |
 
 ### Khối dùng chung đã có (`common/blocks.py`)
 
-Thẻ tiêu đề · thẻ mục tiêu · câu Đúng/Sai 4 ý · phiếu trả lời ngắn · đồ thị kiểm tra "độ dốc F = chiều cao f" ·
+Thẻ tiêu đề · thẻ mục tiêu · câu Đúng/Sai 4 ý (tự chuyển lưới 2×2) · bảng xét dấu · phiếu trả lời ngắn · đồ thị kiểm tra "độ dốc F = chiều cao f" ·
 3 ý cần nhớ · bài tập tự luyện có đáp số · thẻ tập sau. Mỗi tập mới chỉ cần viết phần hoạt họa riêng.
 
 Lịch đề xuất: 2 tập/tuần → hoàn thành 36 tập trong khoảng 18 tuần; ưu tiên Phần A và B trước kỳ thi học kỳ II.
