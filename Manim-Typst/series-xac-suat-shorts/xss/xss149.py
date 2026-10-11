@@ -78,4 +78,5 @@ class XSS149(ShortScene):
         t0 = self.now()
         self.write_board(self.TM('nhỏ hơn $1/64$', 26, CORAL, bold=True), anim='fade')
         self.wait_until(.6, t0)
-        self.write_board(self.M('comb', 1.7), anim='fade')
+        self.clear_board(.03)
+        self.write_board(self.M('comb', 2.0), anim='fade')
