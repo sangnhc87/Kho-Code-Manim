@@ -165,3 +165,55 @@ def grid(rows, cols, cell=0.78, stroke=STROKE, fill='#14233B'):
         cells.append(line)
     g.cells = cells
     return g
+
+
+# ------------------------------------------------------------------ rows and decks
+def die_row(values=(1, 2, 3, 4, 5, 6), s=0.95, buff=0.18):
+    g = VGroup(*[die(v, s) for v in values]).arrange(RIGHT, buff=buff)
+    return g
+
+
+RANKS = ('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K')
+SUIT_ORDER = ('S', 'H', 'D', 'C')
+
+
+def mini_deck(w=0.5, buff=0.04):
+    """52 small cards: 4 rows (♠ ♥ ♦ ♣) × 13 ranks; ``g.cards[(rank, suit)]``."""
+    g, cards = VGroup(), {}
+    h = w * 1.36
+    for i, suit in enumerate(SUIT_ORDER):
+        sym, col = SUITS[suit]
+        for j, rank in enumerate(RANKS):
+            body = RoundedRectangle(width=w, height=h, corner_radius=w * .12, fill_color=WHITE, fill_opacity=1,
+                                    stroke_color='#CBD5E1', stroke_width=1)
+            lab = VGroup(Text(rank, font=FONT, font_size=int(30 * w), color=col, weight='BOLD'),
+                         Text(sym, font_size=int(26 * w), color=col)).arrange(DOWN, buff=.02)
+            if lab.width > w * .85:
+                lab.scale_to_fit_width(w * .85)
+            c = VGroup(body, lab.move_to(body))
+            c.move_to([(j - 6) * (w + buff), (1.5 - i) * (h + buff), 0])
+            cards[(rank, suit)] = c
+            g.add(c)
+    g.cards = cards
+    return g
+
+
+def dice_grid(cell=0.66, die_s=0.5):
+    """6 × 6 sample space of two dice: column headers = die 1, row headers = die 2.
+
+    ``g.cells[i][j]`` is the outcome (die 1 = j + 1, die 2 = i + 1).
+    """
+    g = grid(6, 6, cell)
+    top = VGroup(*[die(v, die_s).move_to(g.cells[0][v - 1].get_center() + UP * cell) for v in range(1, 7)])
+    left = VGroup(*[die(v, die_s, color='#DCE7F3').move_to(g.cells[v - 1][0].get_center() + LEFT * cell)
+                    for v in range(1, 7)])
+    out = VGroup(g, top, left)
+    out.cells, out.top, out.left = g.cells, top, left
+    return out
+
+
+def token(label, color=CYAN, r=0.36, size=None):
+    """Round labelled marker (child T/G, person, digit slot…)."""
+    c = Circle(radius=r, fill_color=color, fill_opacity=1, stroke_color=INK, stroke_width=2)
+    t = Text(label, font=FONT, font_size=size or int(70 * r), color=INK, weight='BOLD').move_to(c)
+    return VGroup(c, t)

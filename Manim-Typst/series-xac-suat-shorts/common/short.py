@@ -85,6 +85,7 @@ class ShortScene(Scene):
         self.overruns = []
         self.fixed = []
         self.clock = 0.0
+        self.board_top = BOARD_TOP  # a Short with a tall stage may start its board lower
 
     def rt(self, frac, minimum=None):
         lo = 1.5 / config.frame_rate if minimum is None else minimum
@@ -272,11 +273,11 @@ class ShortScene(Scene):
                 m.next_to(self.board_items[-1], DOWN, buff=gap)
                 m.set_x(BOARD_X)
             else:
-                m.move_to([BOARD_X, BOARD_TOP, 0], aligned_edge=UP)
+                m.move_to([BOARD_X, self.board_top, 0], aligned_edge=UP)
             self.board_items.append(m)
         allb = VGroup(*self.board_items)
         if allb.get_bottom()[1] < BOARD_BOTTOM:  # keep clear of the captions
-            allb.scale((BOARD_TOP - BOARD_BOTTOM) / allb.height).move_to([BOARD_X, BOARD_TOP, 0], aligned_edge=UP)
+            allb.scale((self.board_top - BOARD_BOTTOM) / allb.height).move_to([BOARD_X, self.board_top, 0], aligned_edge=UP)
         self.play(*[(Write(m) if anim == 'write' else FadeIn(m, shift=UP * .1)) for m in mobs],
                   run_time=self.rt(frac))
 
@@ -355,7 +356,7 @@ class ShortScene(Scene):
         if getattr(self, 'guess_opts', None) is not None and self.guess_opts in self.mobjects:
             self.remove(self.guess_opts)
         self.clear_board(.03)
-        low = [m for m in self.stage() if m.get_center()[1] < -1.2]  # leftovers in the board zone
+        low = [m for m in self.stage() if m.get_center()[1] < -.6]  # leftovers in the board zone
         if low:
             self.play(*[FadeOut(m) for m in low], run_time=self.rt(.03))
         ans = VGroup(badge('ĐÁP ÁN', GREEN, 28), self.M('answer', 2.0, max_w=4.4)).arrange(RIGHT, buff=.4)
@@ -451,3 +452,22 @@ class ShortScene(Scene):
                 'short': self.code.upper(), 'voice': plan['voice'], 'fps': config.frame_rate, 'starts': starts,
                 'total': round(self.renderer.time, 3), 'overruns': self.overruns,
             }, ensure_ascii=False, indent=2), encoding='utf-8')
+
+
+class DiceGridMixin:
+    """Helpers for Shorts built on the 6 × 6 table of two dice."""
+
+    def show_grid(self, frac=.35, sums=False, center=(.1, 1.0)):
+        from common.visuals import dice_grid
+        self.board_top = -1.65
+        self.g = dice_grid(.66, .5).move_to([center[0], center[1], 0])
+        self.play(FadeIn(self.g, lag_ratio=.01), run_time=self.rt(frac))
+        if sums:
+            self.sum_labels = VGroup(*[self.MNum(i + j + 2, 0, SOFT, 22).move_to(self.g.cells[j][i])
+                                       for i in range(6) for j in range(6)])
+            self.play(FadeIn(self.sum_labels, lag_ratio=.01), run_time=self.rt(.15))
+        return self.g
+
+    def light(self, cells, color=GOLD, frac=.04, opacity=.55):
+        for c in cells:
+            self.play(c.animate.set_fill(color, opacity), run_time=self.rt(frac))
