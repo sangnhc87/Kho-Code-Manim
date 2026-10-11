@@ -1,0 +1,2153 @@
+{
+ "id": "ep-0008",
+ "number": 8,
+ "topic": "ma-si",
+ "category": "Tàn Mã",
+ "title": "Mã thắng Sĩ đơn – Thế 1: Nước thắng duy nhất",
+ "subtitle": "Mã đơn đấu Sĩ đơn",
+ "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 27
+ },
+ "source": "chessdb.cn EGTB (DTM)",
+ "beats": [
+  {
+   "kind": "intro",
+   "label": "THẾ CỜ",
+   "headline": "Mã thắng Sĩ đơn",
+   "panel": {
+    "bullets": [
+     "Đỏ: Tướng, Mã",
+     "Đen: Tướng, Sĩ",
+     "Đỏ đi trước"
+    ]
+   },
+   "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+   "steps": [
+    {
+     "say": "Chào mừng các bạn đến với Tinh Hoa Cờ Tàn, tập 8. Chủ đề hôm nay: Mã thắng Sĩ đơn. Bên Đỏ còn Tướng, Mã; bên Đen còn Tướng, Sĩ. Đỏ đi trước."
+    }
+   ]
+  },
+  {
+   "kind": "theory",
+   "label": "KIẾN THỨC NỀN",
+   "headline": "Mã đơn đấu Sĩ đơn",
+   "panel": {
+    "bullets": [
+     "Mã thắng Sĩ đơn trong mọi thế khảo sát",
+     "Đường thắng dài: cần kiên nhẫn",
+     "Nước chờ buộc Đen tự phá thế",
+     "Sĩ Đen có thể tự chặn Tướng"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Mã đấu Sĩ đơn là bài học kỹ thuật kinh điển. Trong năm mươi thế ngẫu nhiên được tra, Đỏ thắng tất cả."
+    },
+    {
+     "say": "Nhưng đường thắng không ngắn: trung bình khoảng mười lăm nước, có thế phải gần hai mươi nước."
+    },
+    {
+     "say": "Sĩ Đen vừa che chắn cho Tướng, vừa có thể vô tình chặn mất đường thoát của chính Tướng mình."
+    },
+    {
+     "say": "Đỏ phải phối hợp nhịp nhàng: Tướng chiếm lộ khống chế, Mã từng bước dồn ép, và khi cần thì đi nước chờ để Đen tự phá thế thủ."
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Bạn sẽ đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Trước khi xem lời giải, bạn hãy tạm dừng video và tự suy nghĩ. Đỏ đi trước có thắng được không, và nước đầu tiên là gì?"
+    }
+   ]
+  },
+  {
+   "kind": "candidates",
+   "label": "BẢNG TRA",
+   "headline": "So sánh các nước đầu",
+   "panel": {
+    "rows": [
+     {
+      "move": "f2e2",
+      "vn": "Tướng 4 bình 5",
+      "wdl": "W",
+      "result": "Thắng – bí sau 14 nước",
+      "best": true
+     },
+     {
+      "move": "f2f1",
+      "vn": "Tướng 4 thoái 1",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": false
+     }
+    ]
+   },
+   "steps": [
+    {
+     "say": "Theo bảng tra cờ tàn của chessdb, thế cờ này Đỏ thắng, chiếu bí sau 14 nước nếu hai bên cùng chơi chính xác. Trong 2 nước hợp lệ, chỉ có đúng một nước thắng: Tướng 4 bình 5. Còn nếu đi Tướng 4 thoái 1 thì chỉ hòa."
+    }
+   ]
+  },
+  {
+   "kind": "trap",
+   "label": "BẪY CẦN TRÁNH",
+   "headline": "Nếu Tướng 4 thoái 1?",
+   "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+   "return_fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+   "steps": [
+    {
+     "say": "Dừng lại một chút. Ở thế này nếu Đỏ đi Tướng 4 thoái 1, một nước tự nhiên, thì sao? Bảng tra trả lời: Đỏ mất thắng, ván cờ trở thành hòa."
+    },
+    {
+     "say": "Tướng 4 thoái 1.",
+     "move": "f2f1",
+     "mark": "bad"
+    },
+    {
+     "say": "Tướng 6 tiến 1.",
+     "move": "f9f8"
+    },
+    {
+     "say": "Tướng 4 thoái 1.",
+     "move": "f1f0"
+    },
+    {
+     "say": "Sĩ 4 thoái 5! Nước duy nhất, và chính là lời đáp chính xác.",
+     "move": "d7e8"
+    },
+    {
+     "say": "Chỉ một nước thiếu chính xác là công sức cả ván đổ sông đổ biển. Quay lại biến chính."
+    }
+   ],
+   "panel": {
+    "verdict": "Đỏ mất thắng, ván cờ trở thành hòa"
+   }
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 1",
+   "headline": "Nước mở đầu then chốt",
+   "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+   "steps": [
+    {
+     "say": "Tướng 4 bình 5. Tướng Đỏ chiếm lộ 5, nhờ luật lộ mặt tướng mà Tướng Đen không thể bước sang lộ này. Đây là nước duy nhất giữ được thắng lợi; ví dụ nếu đi Tướng 4 thoái 1 thì kết quả chỉ là hòa.",
+     "move": "f2e2",
+     "ply": 0,
+     "mark": "only",
+     "remain": 27
+    },
+    {
+     "say": "Đen đáp Sĩ 4 thoái 5.",
+     "move": "d7e8",
+     "ply": 1,
+     "mark": null,
+     "remain": 26
+    },
+    {
+     "say": "Mã 4 tiến 6.",
+     "move": "f7d8",
+     "ply": 2,
+     "mark": null,
+     "remain": 25
+    },
+    {
+     "say": "Đen đi Tướng 6 bình 5.",
+     "move": "f9e9",
+     "ply": 3,
+     "mark": null,
+     "remain": 24
+    },
+    {
+     "say": "Tướng 5 thoái 1. Đây là nước chờ: Đỏ không tấn công gì thêm, chỉ trao lượt cho Đen. Bảng tra cho biết nếu Đen phải đi ở thế này thì Đen thua.",
+     "move": "e2e1",
+     "ply": 4,
+     "mark": "wait",
+     "remain": 23
+    },
+    {
+     "say": "Đen đi Tướng 5 bình 6.",
+     "move": "e9f9",
+     "ply": 5,
+     "mark": null,
+     "remain": 22
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 2",
+   "headline": "Siết chặt vòng vây",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Mã 6 thoái 5.",
+     "move": "d8e6",
+     "ply": 6,
+     "mark": null,
+     "remain": 21
+    },
+    {
+     "say": "Sĩ 5 tiến 4. Đây là cách chống đỡ dai nhất, các nước khác thua nhanh hơn.",
+     "move": "e8d7",
+     "ply": 7,
+     "mark": null,
+     "remain": 20
+    },
+    {
+     "say": "Mã 5 tiến 3, chiếu Tướng. Tướng Đen chỉ còn đúng một ô để di chuyển.",
+     "move": "e6g7",
+     "ply": 8,
+     "mark": null,
+     "remain": 19
+    },
+    {
+     "say": "Bắt buộc: Tướng 6 tiến 1.",
+     "move": "f9f8",
+     "ply": 9,
+     "mark": null,
+     "remain": 18
+    },
+    {
+     "say": "Tướng 5 thoái 1. Đỏ có thể nhường lượt ở đây, vì Đen phải đi thì thế thủ càng xấu.",
+     "move": "e1e0",
+     "ply": 10,
+     "mark": null,
+     "remain": 17
+    },
+    {
+     "say": "Tướng 6 tiến 1. Đây là cách chống đỡ dai nhất, các nước khác thua nhanh hơn.",
+     "move": "f8f7",
+     "ply": 11,
+     "mark": null,
+     "remain": 16
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 3",
+   "headline": "Siết chặt vòng vây",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Mã 3 thoái 2. Tướng Đen chỉ còn đúng một ô để di chuyển.",
+     "move": "g7h5",
+     "ply": 12,
+     "mark": null,
+     "remain": 15
+    },
+    {
+     "say": "Sĩ 4 thoái 5.",
+     "move": "d7e8",
+     "ply": 13,
+     "mark": null,
+     "remain": 14
+    },
+    {
+     "say": "Mã 2 tiến 4.",
+     "move": "h5f6",
+     "ply": 14,
+     "mark": null,
+     "remain": 13
+    },
+    {
+     "say": "Sĩ 5 thoái 6.",
+     "move": "e8f9",
+     "ply": 15,
+     "mark": null,
+     "remain": 12
+    },
+    {
+     "say": "Mã 4 tiến 2.",
+     "move": "f6h7",
+     "ply": 16,
+     "mark": null,
+     "remain": 11
+    },
+    {
+     "say": "Bắt buộc: Sĩ 6 tiến 5.",
+     "move": "f9e8",
+     "ply": 17,
+     "mark": null,
+     "remain": 10
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 4",
+   "headline": "Thu hoạch vật chất",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Mã 2 tiến 3, chiếu Tướng.",
+     "move": "h7g9",
+     "ply": 18,
+     "mark": null,
+     "remain": 9
+    },
+    {
+     "say": "Bắt buộc: Tướng 6 thoái 1.",
+     "move": "f7f8",
+     "ply": 19,
+     "mark": null,
+     "remain": 8
+    },
+    {
+     "say": "Mã 3 thoái 5, ăn Sĩ.",
+     "move": "g9e8",
+     "ply": 20,
+     "mark": null,
+     "remain": 7
+    },
+    {
+     "say": "Đen đi Tướng 6 tiến 1.",
+     "move": "f8f7",
+     "ply": 21,
+     "mark": null,
+     "remain": 6
+    },
+    {
+     "say": "Mã 5 thoái 4.",
+     "move": "e8f6",
+     "ply": 22,
+     "mark": null,
+     "remain": 5
+    },
+    {
+     "say": "Đen chỉ có một nước hợp lệ: Tướng 6 thoái 1.",
+     "move": "f7f8",
+     "ply": 23,
+     "mark": null,
+     "remain": 4
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 5",
+   "headline": "Đòn kết thúc",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Mã 4 tiến 2, chiếu Tướng.",
+     "move": "f6h7",
+     "ply": 24,
+     "mark": null,
+     "remain": 3
+    },
+    {
+     "say": "Tướng 6 tiến 1.",
+     "move": "f8f7",
+     "ply": 25,
+     "mark": null,
+     "remain": 2
+    },
+    {
+     "say": "Tướng 5 tiến 1. Đen tuy không bị chiếu nhưng đã hết nước đi hợp lệ, theo luật cờ tướng là thua cờ.",
+     "move": "e0e1",
+     "ply": 26,
+     "mark": "wait",
+     "remain": 1
+    }
+   ]
+  },
+  {
+   "kind": "mate",
+   "label": "GIẢI PHẪU THẾ BÍ",
+   "headline": "Vì sao Đen hết đường?",
+   "steps": [
+    {
+     "say": "Tướng Đen không bị chiếu, nhưng bên Đen không còn nước đi hợp lệ nào. Các ô thoát quanh Tướng Đen: 1 ô bị Mã Đỏ khống chế; 1 ô bị Tướng Đỏ khống chế theo luật lộ mặt tướng. Hãy nhớ: trong cờ tàn, Tướng không chỉ để phòng thủ. Chiếm đúng lộ, Tướng trở thành một quân tấn công thực thụ."
+    }
+   ],
+   "panel": {
+    "mate": {
+     "loser": "b",
+     "king": "f7",
+     "in_check": false,
+     "checkers": [],
+     "escapes": [
+      {
+       "sq": "e7",
+       "guards": [
+        "e1:K:mặt"
+       ]
+      },
+      {
+       "sq": "f8",
+       "guards": [
+        "h7:N"
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "summary",
+   "label": "TỔNG KẾT",
+   "headline": "Ghi nhớ",
+   "panel": {
+    "bullets": [
+     "Kết quả: Đỏ thắng, bí sau 14 nước",
+     "Nước đầu: Tướng 4 bình 5",
+     "1 thời điểm Đỏ chỉ có một nước thắng",
+     "Biết dùng nước chờ để trao lượt",
+     "Kiên nhẫn: khống chế rồi nhường nước"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Tóm tắt bài học. Thế cờ này Đỏ thắng, chiếu bí sau 14 nước khi hai bên chơi tối ưu."
+    },
+    {
+     "say": "Trên đường thắng có 1 thời điểm Đỏ chỉ có đúng một nước giữ được thắng lợi, đó là những chỗ cần ghi nhớ."
+    },
+    {
+     "say": "Kỹ thuật nước chờ, tức là trao lượt cho đối phương khi họ đang ở thế bất lợi, xuất hiện 2 lần."
+    },
+    {
+     "say": "Thắng Sĩ đơn bằng Mã là bài kiểm tra về sự kiên nhẫn: Tướng khống chế, Mã dồn ép, và đúng lúc thì nhường nước để Đen tự đi vào chỗ chết."
+    },
+    {
+     "say": "Nếu thấy bài học hữu ích, hãy bấm thích, đăng ký kênh và chia sẻ cho bạn cờ. Hẹn gặp lại ở tập sau."
+    }
+   ]
+  }
+ ],
+ "youtube": {
+  "title": "Mã thắng Sĩ đơn – Thế 1: Nước thắng duy nhất | Tinh Hoa Cờ Tàn #8",
+  "description": "Mã thắng Sĩ đơn – Thế 1: Nước thắng duy nhất\n\nMã đơn đấu Sĩ đơn — Đỏ đi trước thắng, chiếu bí sau 14 nước (theo bảng tra cờ tàn chessdb.cn, hai bên chơi tối ưu).\n\nThế cờ (FEN): 5k3/9/3a1N3/9/9/9/9/5K3/9/9 w\n\nBiến chính:\n1. Tướng 4 bình 5   Sĩ 4 thoái 5\n2. Mã 4 tiến 6   Tướng 6 bình 5\n3. Tướng 5 thoái 1   Tướng 5 bình 6\n4. Mã 6 thoái 5   Sĩ 5 tiến 4\n5. Mã 5 tiến 3   Tướng 6 tiến 1\n6. Tướng 5 thoái 1   Tướng 6 tiến 1\n7. Mã 3 thoái 2   Sĩ 4 thoái 5\n8. Mã 2 tiến 4   Sĩ 5 thoái 6\n9. Mã 4 tiến 2   Sĩ 6 tiến 5\n10. Mã 2 tiến 3   Tướng 6 thoái 1\n11. Mã 3 thoái 5   Tướng 6 tiến 1\n12. Mã 5 thoái 4   Tướng 6 thoái 1\n13. Mã 4 tiến 2   Tướng 6 tiến 1\n14. Tướng 5 tiến 1\n\nChuyên đề: Tàn Mã. Kiến thức nền: Thắng Sĩ đơn bằng Mã là bài kiểm tra về sự kiên nhẫn: Tướng khống chế, Mã dồn ép, và đúng lúc thì nhường nước để Đen tự đi vào chỗ chết.\n\nMọi kết luận thắng/hòa và số nước đều được tra từ bảng tra cờ tàn (endgame tablebase) của Cơ sở dữ liệu đám mây chessdb.cn.\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #TànMã",
+  "tags": [
+   "cờ tướng",
+   "cờ tàn",
+   "tinh hoa cờ tàn",
+   "học cờ tướng",
+   "tàn mã",
+   "mã đơn đấu sĩ đơn",
+   "xiangqi",
+   "endgame"
+  ],
+  "playlist": "Tinh Hoa Cờ Tàn | Tàn Mã"
+ },
+ "analysis": {
+  "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+  "attacker": "w",
+  "value": {
+   "wdl": "W",
+   "dtm": 27
+  },
+  "main": [
+   {
+    "move": "f2e2",
+    "vn": "Tướng 4 bình 5",
+    "short": "Tg4-5",
+    "piece": "K",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 27,
+    "n_legal": 2,
+    "n_keep": 1,
+    "only": true,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f2e2",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Tướng 4 bình 5"
+     },
+     {
+      "move": "f2f1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 4 thoái 1"
+     }
+    ],
+    "n_bad": 1
+   },
+   {
+    "move": "d7e8",
+    "vn": "Sĩ 4 thoái 5",
+    "short": "S4/5",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/9/3a1N3/9/9/9/9/4K4/9/9 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 26,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "d7e8",
+      "score": -29974,
+      "wdl": "L",
+      "dtm": 26,
+      "vn": "Sĩ 4 thoái 5"
+     },
+     {
+      "move": "f9f8",
+      "score": -29978,
+      "wdl": "L",
+      "dtm": 22,
+      "vn": "Tướng 6 tiến 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "f7d8",
+    "vn": "Mã 4 tiến 6",
+    "short": "M4.6",
+    "piece": "N",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/4a4/5N3/9/9/9/9/4K4/9/9 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 25,
+    "n_legal": 11,
+    "n_keep": 7,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "f7d8",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Mã 4 tiến 6"
+     },
+     {
+      "move": "f7g5",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 4 thoái 3"
+     },
+     {
+      "move": "f7d6",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 4 thoái 6"
+     },
+     {
+      "move": "f7g9",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 4 tiến 3"
+     },
+     {
+      "move": "f7h8",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 4 tiến 2"
+     },
+     {
+      "move": "f7e5",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Mã 4 thoái 5"
+     },
+     {
+      "move": "f7h6",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Mã 4 thoái 2"
+     },
+     {
+      "move": "e2e1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 thoái 1"
+     },
+     {
+      "move": "e2f2",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 4"
+     },
+     {
+      "move": "e2d2",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "f7e9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 4 tiến 5"
+     }
+    ],
+    "n_bad": 4
+   },
+   {
+    "move": "f9e9",
+    "vn": "Tướng 6 bình 5",
+    "short": "Tg6-5",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/3Na4/9/9/9/9/9/4K4/9/9 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 24,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f9e9",
+      "score": -29976,
+      "wdl": "L",
+      "dtm": 24,
+      "vn": "Tướng 6 bình 5"
+     },
+     {
+      "move": "f9f8",
+      "score": -29980,
+      "wdl": "L",
+      "dtm": 20,
+      "vn": "Tướng 6 tiến 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e2e1",
+    "vn": "Tướng 5 thoái 1",
+    "short": "Tg5/1",
+    "piece": "K",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "4k4/3Na4/9/9/9/9/9/4K4/9/9 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 23,
+    "n_legal": 7,
+    "n_keep": 6,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "e2e1",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Tướng 5 thoái 1"
+     },
+     {
+      "move": "d8e6",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Mã 6 thoái 5"
+     },
+     {
+      "move": "d8b9",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Mã 6 tiến 8"
+     },
+     {
+      "move": "d8c6",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Mã 6 thoái 7"
+     },
+     {
+      "move": "d8b7",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Mã 6 thoái 8"
+     },
+     {
+      "move": "e2f2",
+      "score": 29965,
+      "wdl": "W",
+      "dtm": 35,
+      "vn": "Tướng 5 bình 4"
+     },
+     {
+      "move": "e2d2",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     }
+    ],
+    "zug": {
+     "type": "waiting",
+     "pass_dtm": 22,
+     "key": true
+    },
+    "n_bad": 1
+   },
+   {
+    "move": "e9f9",
+    "vn": "Tướng 5 bình 6",
+    "short": "Tg5-6",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "4k4/3Na4/9/9/9/9/9/9/4K4/9 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 22,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e9f9",
+      "score": -29978,
+      "wdl": "L",
+      "dtm": 22,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e9d9",
+      "score": -29986,
+      "wdl": "L",
+      "dtm": 14,
+      "vn": "Tướng 5 bình 4"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "d8e6",
+    "vn": "Mã 6 thoái 5",
+    "short": "M6/5",
+    "piece": "N",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/3Na4/9/9/9/9/9/9/4K4/9 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 21,
+    "n_legal": 7,
+    "n_keep": 7,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "d8e6",
+      "score": 29979,
+      "wdl": "W",
+      "dtm": 21,
+      "vn": "Mã 6 thoái 5"
+     },
+     {
+      "move": "e1e0",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Tướng 5 thoái 1"
+     },
+     {
+      "move": "e1d1",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e1e2",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "d8c6",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Mã 6 thoái 7"
+     },
+     {
+      "move": "d8b7",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Mã 6 thoái 8"
+     },
+     {
+      "move": "d8b9",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Mã 6 tiến 8"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e8d7",
+    "vn": "Sĩ 5 tiến 4",
+    "short": "S5.4",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/4a4/9/4N4/9/9/9/9/4K4/9 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 20,
+    "n_legal": 4,
+    "n_keep": 4,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e8d7",
+      "score": -29980,
+      "wdl": "L",
+      "dtm": 20,
+      "vn": "Sĩ 5 tiến 4"
+     },
+     {
+      "move": "f9e9",
+      "score": -29988,
+      "wdl": "L",
+      "dtm": 12,
+      "vn": "Tướng 6 bình 5"
+     },
+     {
+      "move": "e8f7",
+      "score": -29988,
+      "wdl": "L",
+      "dtm": 12,
+      "vn": "Sĩ 5 tiến 6"
+     },
+     {
+      "move": "e8d9",
+      "score": -29988,
+      "wdl": "L",
+      "dtm": 12,
+      "vn": "Sĩ 5 thoái 4"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e6g7",
+    "vn": "Mã 5 tiến 3",
+    "short": "M5.3",
+    "piece": "N",
+    "capture": null,
+    "check": true,
+    "mate": false,
+    "fen": "5k3/9/3a5/4N4/9/9/9/9/4K4/9 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 19,
+    "n_legal": 11,
+    "n_keep": 10,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "e6g7",
+      "score": 29981,
+      "wdl": "W",
+      "dtm": 19,
+      "vn": "Mã 5 tiến 3"
+     },
+     {
+      "move": "e1d1",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e6f4",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 5 thoái 4"
+     },
+     {
+      "move": "e6d4",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 5 thoái 6"
+     },
+     {
+      "move": "e6g5",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 5 thoái 3"
+     },
+     {
+      "move": "e6c5",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 5 thoái 7"
+     },
+     {
+      "move": "e6d8",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 5 tiến 6"
+     },
+     {
+      "move": "e1e0",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Tướng 5 thoái 1"
+     },
+     {
+      "move": "e1e2",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "e6c7",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Mã 5 tiến 7"
+     },
+     {
+      "move": "e6f8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 5 tiến 4"
+     }
+    ],
+    "n_bad": 1
+   },
+   {
+    "move": "f9f8",
+    "vn": "Tướng 6 tiến 1",
+    "short": "Tg6.1",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5k3/9/3a2N2/9/9/9/9/9/4K4/9 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 18,
+    "n_legal": 1,
+    "n_keep": 1,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f9f8",
+      "score": -29982,
+      "wdl": "L",
+      "dtm": 18,
+      "vn": "Tướng 6 tiến 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e1e0",
+    "vn": "Tướng 5 thoái 1",
+    "short": "Tg5/1",
+    "piece": "K",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/5k3/3a2N2/9/9/9/9/9/4K4/9 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 17,
+    "n_legal": 11,
+    "n_keep": 9,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e1e0",
+      "score": 29983,
+      "wdl": "W",
+      "dtm": 17,
+      "vn": "Tướng 5 thoái 1"
+     },
+     {
+      "move": "e1e2",
+      "score": 29983,
+      "wdl": "W",
+      "dtm": 17,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "e1d1",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "g7h5",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 3 thoái 2"
+     },
+     {
+      "move": "g7f5",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 3 thoái 4"
+     },
+     {
+      "move": "g7i6",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 3 thoái 1"
+     },
+     {
+      "move": "g7i8",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 3 tiến 1"
+     },
+     {
+      "move": "g7h9",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 3 tiến 2"
+     },
+     {
+      "move": "g7e6",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Mã 3 thoái 5"
+     },
+     {
+      "move": "g7e8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 3 tiến 5"
+     },
+     {
+      "move": "g7f9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 3 tiến 4"
+     }
+    ],
+    "zug": {
+     "type": "waiting",
+     "pass_dtm": 16,
+     "key": false
+    },
+    "n_bad": 2
+   },
+   {
+    "move": "f8f7",
+    "vn": "Tướng 6 tiến 1",
+    "short": "Tg6.1",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/5k3/3a2N2/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 16,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f8f7",
+      "score": -29984,
+      "wdl": "L",
+      "dtm": 16,
+      "vn": "Tướng 6 tiến 1"
+     },
+     {
+      "move": "d7e8",
+      "score": -29992,
+      "wdl": "L",
+      "dtm": 8,
+      "vn": "Sĩ 4 thoái 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "g7h5",
+    "vn": "Mã 3 thoái 2",
+    "short": "M3/2",
+    "piece": "N",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/9/3a1kN2/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 15,
+    "n_legal": 8,
+    "n_keep": 8,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "g7h5",
+      "score": 29985,
+      "wdl": "W",
+      "dtm": 15,
+      "vn": "Mã 3 thoái 2"
+     },
+     {
+      "move": "g7f5",
+      "score": 29981,
+      "wdl": "W",
+      "dtm": 19,
+      "vn": "Mã 3 thoái 4"
+     },
+     {
+      "move": "g7i8",
+      "score": 29981,
+      "wdl": "W",
+      "dtm": 19,
+      "vn": "Mã 3 tiến 1"
+     },
+     {
+      "move": "g7i6",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 3 thoái 1"
+     },
+     {
+      "move": "g7f9",
+      "score": 29977,
+      "wdl": "W",
+      "dtm": 23,
+      "vn": "Mã 3 tiến 4"
+     },
+     {
+      "move": "e0e1",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "g7h9",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Mã 3 tiến 2"
+     },
+     {
+      "move": "e0d0",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Tướng 5 bình 6"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "d7e8",
+    "vn": "Sĩ 4 thoái 5",
+    "short": "S4/5",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/9/3a1k3/9/7N1/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 14,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "d7e8",
+      "score": -29986,
+      "wdl": "L",
+      "dtm": 14,
+      "vn": "Sĩ 4 thoái 5"
+     },
+     {
+      "move": "f7f8",
+      "score": -29990,
+      "wdl": "L",
+      "dtm": 10,
+      "vn": "Tướng 6 thoái 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "h5f6",
+    "vn": "Mã 2 tiến 4",
+    "short": "M2.4",
+    "piece": "N",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/4a4/5k3/9/7N1/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 13,
+    "n_legal": 8,
+    "n_keep": 8,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "h5f6",
+      "score": 29987,
+      "wdl": "W",
+      "dtm": 13,
+      "vn": "Mã 2 tiến 4"
+     },
+     {
+      "move": "h5f4",
+      "score": 29979,
+      "wdl": "W",
+      "dtm": 21,
+      "vn": "Mã 2 thoái 4"
+     },
+     {
+      "move": "h5g7",
+      "score": 29975,
+      "wdl": "W",
+      "dtm": 25,
+      "vn": "Mã 2 tiến 3"
+     },
+     {
+      "move": "e0e1",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "h5i3",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 2 thoái 1"
+     },
+     {
+      "move": "h5g3",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 2 thoái 3"
+     },
+     {
+      "move": "h5i7",
+      "score": 29971,
+      "wdl": "W",
+      "dtm": 29,
+      "vn": "Mã 2 tiến 1"
+     },
+     {
+      "move": "e0d0",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Tướng 5 bình 6"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e8f9",
+    "vn": "Sĩ 5 thoái 6",
+    "short": "S5/6",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/4a4/5k3/5N3/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 12,
+    "n_legal": 4,
+    "n_keep": 4,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e8f9",
+      "score": -29988,
+      "wdl": "L",
+      "dtm": 12,
+      "vn": "Sĩ 5 thoái 6"
+     },
+     {
+      "move": "e8d9",
+      "score": -29988,
+      "wdl": "L",
+      "dtm": 12,
+      "vn": "Sĩ 5 thoái 4"
+     },
+     {
+      "move": "f7f8",
+      "score": -29992,
+      "wdl": "L",
+      "dtm": 8,
+      "vn": "Tướng 6 thoái 1"
+     },
+     {
+      "move": "e8d7",
+      "score": -29998,
+      "wdl": "L",
+      "dtm": 2,
+      "vn": "Sĩ 5 tiến 4"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "f6h7",
+    "vn": "Mã 4 tiến 2",
+    "short": "M4.2",
+    "piece": "N",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5a3/9/5k3/5N3/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 11,
+    "n_legal": 9,
+    "n_keep": 9,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "f6h7",
+      "score": 29989,
+      "wdl": "W",
+      "dtm": 11,
+      "vn": "Mã 4 tiến 2"
+     },
+     {
+      "move": "e0e1",
+      "score": 29985,
+      "wdl": "W",
+      "dtm": 15,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "f6g4",
+      "score": 29985,
+      "wdl": "W",
+      "dtm": 15,
+      "vn": "Mã 4 thoái 3"
+     },
+     {
+      "move": "f6h5",
+      "score": 29985,
+      "wdl": "W",
+      "dtm": 15,
+      "vn": "Mã 4 thoái 2"
+     },
+     {
+      "move": "f6d5",
+      "score": 29985,
+      "wdl": "W",
+      "dtm": 15,
+      "vn": "Mã 4 thoái 6"
+     },
+     {
+      "move": "f6d7",
+      "score": 29985,
+      "wdl": "W",
+      "dtm": 15,
+      "vn": "Mã 4 tiến 6"
+     },
+     {
+      "move": "e0f0",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Tướng 5 bình 4"
+     },
+     {
+      "move": "e0d0",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "f6e4",
+      "score": 29965,
+      "wdl": "W",
+      "dtm": 35,
+      "vn": "Mã 4 thoái 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "f9e8",
+    "vn": "Sĩ 6 tiến 5",
+    "short": "S6.5",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "5a3/9/5k1N1/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 10,
+    "n_legal": 1,
+    "n_keep": 1,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f9e8",
+      "score": -29990,
+      "wdl": "L",
+      "dtm": 10,
+      "vn": "Sĩ 6 tiến 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "h7g9",
+    "vn": "Mã 2 tiến 3",
+    "short": "M2.3",
+    "piece": "N",
+    "capture": null,
+    "check": true,
+    "mate": false,
+    "fen": "9/4a4/5k1N1/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 9,
+    "n_legal": 8,
+    "n_keep": 7,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "h7g9",
+      "score": 29991,
+      "wdl": "W",
+      "dtm": 9,
+      "vn": "Mã 2 tiến 3"
+     },
+     {
+      "move": "e0e1",
+      "score": 29987,
+      "wdl": "W",
+      "dtm": 13,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "h7f6",
+      "score": 29987,
+      "wdl": "W",
+      "dtm": 13,
+      "vn": "Mã 2 thoái 4"
+     },
+     {
+      "move": "h7g5",
+      "score": 29979,
+      "wdl": "W",
+      "dtm": 21,
+      "vn": "Mã 2 thoái 3"
+     },
+     {
+      "move": "e0d0",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "h7i5",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Mã 2 thoái 1"
+     },
+     {
+      "move": "h7i9",
+      "score": 29967,
+      "wdl": "W",
+      "dtm": 33,
+      "vn": "Mã 2 tiến 1"
+     },
+     {
+      "move": "h7f8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 2 tiến 4"
+     }
+    ],
+    "n_bad": 1
+   },
+   {
+    "move": "f7f8",
+    "vn": "Tướng 6 thoái 1",
+    "short": "Tg6/1",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "6N2/4a4/5k3/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 8,
+    "n_legal": 1,
+    "n_keep": 1,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f7f8",
+      "score": -29992,
+      "wdl": "L",
+      "dtm": 8,
+      "vn": "Tướng 6 thoái 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "g9e8",
+    "vn": "Mã 3 thoái 5",
+    "short": "M3/5",
+    "piece": "N",
+    "capture": "a",
+    "check": false,
+    "mate": false,
+    "fen": "6N2/4ak3/9/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 7,
+    "n_legal": 6,
+    "n_keep": 5,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "g9e8",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 3 thoái 5"
+     },
+     {
+      "move": "g9i8",
+      "score": 29973,
+      "wdl": "W",
+      "dtm": 27,
+      "vn": "Mã 3 thoái 1"
+     },
+     {
+      "move": "e0d0",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e0e1",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "g9h7",
+      "score": 29969,
+      "wdl": "W",
+      "dtm": 31,
+      "vn": "Mã 3 thoái 2"
+     },
+     {
+      "move": "g9f7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 3 thoái 4"
+     }
+    ],
+    "n_bad": 1
+   },
+   {
+    "move": "f8f7",
+    "vn": "Tướng 6 tiến 1",
+    "short": "Tg6.1",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/4Nk3/9/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 6,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f8f7",
+      "score": -29994,
+      "wdl": "L",
+      "dtm": 6,
+      "vn": "Tướng 6 tiến 1"
+     },
+     {
+      "move": "f8f9",
+      "score": -29994,
+      "wdl": "L",
+      "dtm": 6,
+      "vn": "Tướng 6 thoái 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e8f6",
+    "vn": "Mã 5 thoái 4",
+    "short": "M5/4",
+    "piece": "N",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/4N4/5k3/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 5,
+    "n_legal": 8,
+    "n_keep": 8,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e0e1",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "e8f6",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 5 thoái 4"
+     },
+     {
+      "move": "e8g7",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 5 thoái 3"
+     },
+     {
+      "move": "e8c7",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 5 thoái 7"
+     },
+     {
+      "move": "e8c9",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 5 tiến 7"
+     },
+     {
+      "move": "e8g9",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 5 tiến 3"
+     },
+     {
+      "move": "e0d0",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e8d6",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 5 thoái 6"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "f7f8",
+    "vn": "Tướng 6 thoái 1",
+    "short": "Tg6/1",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/9/5k3/5N3/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 4,
+    "n_legal": 1,
+    "n_keep": 1,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f7f8",
+      "score": -29996,
+      "wdl": "L",
+      "dtm": 4,
+      "vn": "Tướng 6 thoái 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "f6h7",
+    "vn": "Mã 4 tiến 2",
+    "short": "M4.2",
+    "piece": "N",
+    "capture": null,
+    "check": true,
+    "mate": false,
+    "fen": "9/5k3/9/5N3/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 3,
+    "n_legal": 11,
+    "n_keep": 11,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e0e1",
+      "score": 29997,
+      "wdl": "W",
+      "dtm": 3,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "f6h7",
+      "score": 29997,
+      "wdl": "W",
+      "dtm": 3,
+      "vn": "Mã 4 tiến 2"
+     },
+     {
+      "move": "f6d7",
+      "score": 29997,
+      "wdl": "W",
+      "dtm": 3,
+      "vn": "Mã 4 tiến 6"
+     },
+     {
+      "move": "e0d0",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e0f0",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Tướng 5 bình 4"
+     },
+     {
+      "move": "f6g4",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 4 thoái 3"
+     },
+     {
+      "move": "f6h5",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 4 thoái 2"
+     },
+     {
+      "move": "f6d5",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 4 thoái 6"
+     },
+     {
+      "move": "f6g8",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 4 tiến 3"
+     },
+     {
+      "move": "f6e8",
+      "score": 29993,
+      "wdl": "W",
+      "dtm": 7,
+      "vn": "Mã 4 tiến 5"
+     },
+     {
+      "move": "f6e4",
+      "score": 29991,
+      "wdl": "W",
+      "dtm": 9,
+      "vn": "Mã 4 thoái 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "f8f7",
+    "vn": "Tướng 6 tiến 1",
+    "short": "Tg6.1",
+    "piece": "k",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "fen": "9/5k3/7N1/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "L",
+    "dtm": 2,
+    "n_legal": 2,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "f8f7",
+      "score": -29998,
+      "wdl": "L",
+      "dtm": 2,
+      "vn": "Tướng 6 tiến 1"
+     },
+     {
+      "move": "f8f9",
+      "score": -29998,
+      "wdl": "L",
+      "dtm": 2,
+      "vn": "Tướng 6 thoái 1"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e0e1",
+    "vn": "Tướng 5 tiến 1",
+    "short": "Tg5.1",
+    "piece": "K",
+    "capture": null,
+    "check": false,
+    "mate": true,
+    "fen": "9/9/5k1N1/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "W",
+    "dtm": 1,
+    "n_legal": 8,
+    "n_keep": 7,
+    "only": false,
+    "only_fastest": true,
+    "ranked": [
+     {
+      "move": "e0e1",
+      "score": 29999,
+      "wdl": "W",
+      "dtm": 1,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "e0d0",
+      "score": 29997,
+      "wdl": "W",
+      "dtm": 3,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "h7i5",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 2 thoái 1"
+     },
+     {
+      "move": "h7f6",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 2 thoái 4"
+     },
+     {
+      "move": "h7i9",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 2 tiến 1"
+     },
+     {
+      "move": "h7g5",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 2 thoái 3"
+     },
+     {
+      "move": "h7g9",
+      "score": 29995,
+      "wdl": "W",
+      "dtm": 5,
+      "vn": "Mã 2 tiến 3"
+     },
+     {
+      "move": "h7f8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Mã 2 tiến 4"
+     }
+    ],
+    "zug": {
+     "type": "waiting",
+     "pass_dtm": 0,
+     "key": true
+    },
+    "n_bad": 1
+   }
+  ],
+  "end_fen": "9/9/5k1N1/9/9/9/9/9/4K4/9 b",
+  "mate": {
+   "loser": "b",
+   "king": "f7",
+   "in_check": false,
+   "checkers": [],
+   "escapes": [
+    {
+     "sq": "e7",
+     "guards": [
+      "e1:K:mặt"
+     ]
+    },
+    {
+     "sq": "f8",
+     "guards": [
+      "h7:N"
+     ]
+    }
+   ]
+  },
+  "traps": [
+   {
+    "ply": 0,
+    "fen": "5k3/9/3a1N3/9/9/9/9/5K3/9/9 w",
+    "lure": {
+     "move": "f2f1",
+     "score": 0,
+     "wdl": "D",
+     "dtm": 0,
+     "vn": "Tướng 4 thoái 1",
+     "short": "Tg4/1",
+     "piece": "K",
+     "capture": null,
+     "check": false,
+     "mate": false,
+     "kind": "same_piece"
+    },
+    "line": [
+     {
+      "move": "f9f8",
+      "vn": "Tướng 6 tiến 1",
+      "short": "Tg6.1",
+      "piece": "k",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "fen": "5k3/9/3a1N3/9/9/9/9/9/5K3/9 b",
+      "side": "b",
+      "wdl": "D",
+      "dtm": 0,
+      "n_legal": 2,
+      "n_keep": 2,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "f9f8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 6 tiến 1"
+       },
+       {
+        "move": "d7e8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Sĩ 4 thoái 5"
+       }
+      ]
+     },
+     {
+      "move": "f1f0",
+      "vn": "Tướng 4 thoái 1",
+      "short": "Tg4/1",
+      "piece": "K",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "fen": "9/5k3/3a1N3/9/9/9/9/9/5K3/9 w",
+      "side": "w",
+      "wdl": "D",
+      "dtm": 0,
+      "n_legal": 3,
+      "n_keep": 3,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "f1f0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 4 thoái 1"
+       },
+       {
+        "move": "f1e1",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 4 bình 5"
+       },
+       {
+        "move": "f1f2",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 4 tiến 1"
+       }
+      ]
+     },
+     {
+      "move": "d7e8",
+      "vn": "Sĩ 4 thoái 5",
+      "short": "S4/5",
+      "piece": "a",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "fen": "9/5k3/3a1N3/9/9/9/9/9/9/5K3 b",
+      "side": "b",
+      "wdl": "D",
+      "dtm": 0,
+      "n_legal": 3,
+      "n_keep": 1,
+      "only": true,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "d7e8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Sĩ 4 thoái 5"
+       },
+       {
+        "move": "f8e8",
+        "score": -29968,
+        "wdl": "L",
+        "dtm": 32,
+        "vn": "Tướng 6 bình 5"
+       },
+       {
+        "move": "f8f9",
+        "score": -29972,
+        "wdl": "L",
+        "dtm": 28,
+        "vn": "Tướng 6 thoái 1"
+       }
+      ]
+     }
+    ],
+    "final_fen": "9/4ak3/5N3/9/9/9/9/9/9/5K3 w",
+    "final_mate": false
+   }
+  ]
+ }
+}
