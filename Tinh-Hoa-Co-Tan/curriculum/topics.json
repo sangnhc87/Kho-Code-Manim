@@ -2521,6 +2521,156 @@
    ],
    "takeaway": "Xe là quân mạnh nhất: kể cả trước Mã Sĩ Tượng, Xe vẫn thắng nếu biết tách các quân phòng thủ khỏi nhau.",
    "takeaway_short": "Tách quân phòng thủ"
+  },
+  {
+   "id": "xe-phao-si-tuong",
+   "module": "Học phần 5 – Tàn Xe thực chiến",
+   "category": "Tàn Xe",
+   "title": "Xe thắng Pháo Sĩ Tượng",
+   "short": "Xe đơn đấu Pháo Sĩ Tượng",
+   "material": [
+    "R",
+    "CAB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "dtm": [
+    15,
+    31
+   ],
+   "max_first_keep": 3,
+   "episodes": 2,
+   "theory": [
+    "Xe đơn đấu Pháo cùng một Sĩ một Tượng: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, Xe thắng cả bốn mươi.",
+    "Pháo Đen có sẵn ngòi là Sĩ và Tượng, nên Đỏ phải luôn để ý những đòn chiếu bất ngờ trong lúc tấn công."
+   ],
+   "bullets": [
+    "Xe vs Pháo Sĩ Tượng: thắng 40/40",
+    "Pháo Đen có sẵn ngòi",
+    "Tấn công nhưng đề phòng phản chiếu"
+   ],
+   "takeaway": "Trước Pháo có ngòi, bên mạnh vẫn phải phòng thủ: kiểm tra mọi đường chiếu của Pháo trước mỗi nước tấn công.",
+   "takeaway_short": "Đề phòng Pháo phản chiếu"
+  },
+  {
+   "id": "ma-stt-thu-hoa-xe",
+   "module": "Học phần 3 – Nghệ thuật thủ hòa",
+   "category": "Thủ Hòa",
+   "result": "D",
+   "title": "Mã Sĩ Tượng toàn thủ hòa Xe",
+   "short": "Mã Sĩ Tượng toàn chống Xe",
+   "material": [
+    "R",
+    "NAABB"
+   ],
+   "constraints": {
+    "a": [
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ],
+     [
+      4,
+      8
+     ]
+    ],
+    "b": [
+     [
+      2,
+      9
+     ],
+     [
+      6,
+      9
+     ],
+     [
+      4,
+      7
+     ]
+    ],
+    "k": [
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      8
+     ],
+     [
+      3,
+      9
+     ],
+     [
+      5,
+      9
+     ]
+    ]
+   },
+   "max_first_keep": 2,
+   "episodes": 2,
+   "theory": [
+    "Xe đơn đấu Mã Sĩ Tượng toàn: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, chín mươi lăm phần trăm là hòa.",
+    "Mã đứng trong đội hình Sĩ Tượng vừa được bảo vệ, vừa che chắn các điểm yếu. Xe không đủ sức phá một pháo đài như vậy.",
+    "Nhưng pháo đài chỉ vững khi các quân đứng đúng chỗ: đi sai một nước, Mã hoặc Sĩ Tượng có thể bị bắt."
+   ],
+   "bullets": [
+    "Xe vs Mã Sĩ Tượng toàn: 95% hòa",
+    "Mã được Sĩ Tượng bảo vệ",
+    "Pháo đài chỉ vững khi đứng đúng"
+   ],
+   "takeaway": "Mã Sĩ Tượng toàn là pháo đài vững chắc trước Xe đơn, miễn là các quân luôn bảo vệ lẫn nhau.",
+   "takeaway_short": "Các quân bảo vệ lẫn nhau"
   }
  ]
 }
