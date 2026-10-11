@@ -17,7 +17,7 @@ from common import episode
 from common.blocks import Blocks
 from common.kit import Formula, tx
 from common.theme import (AUTHOR, BG, CYAN, DIM, FRAME_H, FRAME_W, GOLD, GREEN, SERIES, SOFT,
-                          STROKE)
+                          STROKE, WHITE)
 
 config.background_color = BG
 config.frame_width = FRAME_W
@@ -106,6 +106,38 @@ class LessonScene(Blocks, Scene):
                                     stroke_width=0).move_to([x + w * k / 2, -3.42, 0]))
         self.fill = fills
         self.add(self.fill)
+
+    # -------------------------------------------------------------- mixed text + math
+    def TM(self, s, size=24, color=WHITE, bold=False, max_w=None):
+        """Label mixing Vietnamese text and Typst math: ``'đường ngoài: $y = sqrt(x)$'``.
+
+        Text parts use the series font; every ``$...$`` part is typeset by Typst
+        in the same colour, so formulas inside sentences look like real math.
+        """
+        from manim import SVGMobject
+        from common.kit import BAR_WIDTH, MATH_SCALE
+        from common.typst_build import compile_inline
+        parts = s.split('$')
+        group = VGroup()
+        k = size / 24 * 1.12
+        for i, part in enumerate(parts):
+            if not part.strip():
+                continue
+            if i % 2 == 0:
+                group.add(tx(part.strip(), size, color, bold=bold))
+            else:
+                svg = compile_inline(part, color, self.paths['typst_src'], self.paths['formulas'])
+                m = SVGMobject(str(svg), height=None, width=None).scale(MATH_SCALE * k)
+                for sub in m.family_members_with_points():
+                    if sub.get_fill_opacity() < .01 and sub.get_stroke_width() > 0:
+                        sub.set_stroke(width=BAR_WIDTH * k)
+                    else:
+                        sub.set_stroke(width=0)
+                group.add(m)
+        group.arrange(RIGHT, buff=.14)
+        if max_w is not None and group.width > max_w:
+            group.scale_to_fit_width(max_w)
+        return group
 
     # -------------------------------------------------------------- stage helpers
     def stage(self):

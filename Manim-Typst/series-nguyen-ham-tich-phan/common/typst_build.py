@@ -5,6 +5,7 @@ the series. Any Typst error stops the build (no silent fallback).
 """
 from __future__ import annotations
 
+import hashlib
 import shutil
 import subprocess
 from pathlib import Path
@@ -43,3 +44,25 @@ def build(formulas: dict[str, str], src_dir: Path, out_dir: Path) -> int:
         if not svg.exists() or svg.stat().st_size < 300:
             raise RuntimeError(f'Missing formula SVG: {key}')
     return len(formulas)
+
+
+def inline_key(expr: str, color: str) -> str:
+    return 'inl_' + hashlib.sha1(f'{color}|{expr}'.encode('utf-8')).hexdigest()[:12]
+
+
+def compile_inline(expr: str, color: str, src_dir: Path, out_dir: Path) -> Path:
+    """Math segment of a mixed text label (``$...$`` in ``LessonScene.TM``), cached by content."""
+    key = inline_key(expr, color)
+    svg = out_dir / f'{key}.svg'
+    if svg.exists() and svg.stat().st_size >= 300:
+        return svg
+    if not shutil.which('typst'):
+        raise RuntimeError('Typst CLI unavailable; install Typst >= 0.13 (the GitHub Action installs it)')
+    src_dir.mkdir(parents=True, exist_ok=True)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    typ = src_dir / f'{key}.typ'
+    typ.write_text(PREAMBLE + f'#set text(fill: rgb("{color}"))\n$ {expr} $\n', encoding='utf-8')
+    proc = subprocess.run(['typst', 'compile', '--format', 'svg', str(typ), str(svg)], capture_output=True, text=True)
+    if proc.returncode != 0:
+        raise RuntimeError(f'Typst failed on inline math: {expr}\n{proc.stderr}')
+    return svg

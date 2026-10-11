@@ -29,6 +29,15 @@ class Blocks:
         if target - self.renderer.time > 1.5 / 30:
             self.wait(target - self.renderer.time)
 
+    # ------------------------------------------------------------ labels
+    def lbl(self, s, size=24, color=WHITE, bold=False, max_w=None, width=None, center=False):
+        """Plain label, or mixed text + Typst math when ``s`` contains ``$...$`` (see LessonScene.TM)."""
+        if '$' in s:
+            return self.TM(s, size, color, bold=bold, max_w=max_w)
+        if width is not None:
+            return para(s, size, color, width=width, bold=bold, center=center, max_w=max_w)
+        return tx(s, size, color, bold=bold, max_w=max_w)
+
     # ------------------------------------------------------------ board
     def heading(self, text, color=GOLD):
         return tx(text, 22, color, bold=True)
@@ -55,7 +64,7 @@ class Blocks:
         frame = card(10.6, 4.4, CYAN, PANEL, radius=.3, stroke_width=2.4).move_to([0, .1, 0])
         tag = badge(f"TẬP {ep['number']:02d} / 36", CYAN, 20).move_to(frame.get_top() + DOWN * .55)
         title = tx(ep['title'].upper(), 58, WHITE, bold=True, max_w=9.8).move_to([0, .55, 0])
-        sub = tx(ep['subtitle'], 32, GOLD, max_w=9.6).next_to(title, DOWN, buff=.28)
+        sub = self.lbl(ep['subtitle'], 32, GOLD, max_w=9.6).next_to(title, DOWN, buff=.28)
         series = tx('Series Nguyên hàm – Tích phân – Ứng dụng chuyên sâu', 20, SOFT).next_to(sub, DOWN, buff=.42)
         self.play(FadeIn(frame), FadeIn(tag, shift=DOWN * .2), run_time=self.rt(.08))
         self.play(Write(title), run_time=self.rt(.14))
@@ -68,8 +77,8 @@ class Blocks:
             col = GOAL_COLORS[i % 3]
             c = card(4.05, 3.3, col).move_to([-4.3 + 4.3 * i, -.15, 0])
             num = tx(str(i + 1), 54, col, bold=True).move_to(c.get_top() + DOWN * .7)
-            t = para(title, 24, WHITE, width=18, bold=True, center=True).move_to(c.get_center() + DOWN * .05)
-            d = para(desc, 17, SOFT, width=24, center=True).move_to(c.get_bottom() + UP * .62)
+            t = self.lbl(title, 24, WHITE, bold=True, width=18, center=True, max_w=3.7).move_to(c.get_center() + DOWN * .05)
+            d = self.lbl(desc, 17, SOFT, width=24, center=True, max_w=3.7).move_to(c.get_bottom() + UP * .62)
             cards.add(VGroup(c, num, t, d))
         self.play(FadeIn(head), run_time=self.rt(.05))
         for frac, cd in zip(fracs, cards):
@@ -269,7 +278,7 @@ class Blocks:
             c = card(4.05, 4.4, col).move_to([-4.3 + 4.3 * i, -.35, 0])
             num = tx(str(i + 1), 46, col, bold=True).move_to(c.get_top() + DOWN * .6)
             t = tx(title, 24, WHITE, bold=True, max_w=3.7).next_to(num, DOWN, buff=.25)
-            nt = para(note, 18, SOFT, width=24, center=True).next_to(t, DOWN, buff=.3)
+            nt = self.lbl(note, 18, SOFT, width=24, center=True, max_w=3.7).next_to(t, DOWN, buff=.3)
             m = self.M(key, 1.05, max_w=3.6).move_to(c.get_bottom() + UP * .8)
             self.wait_until(fracs[i], t0)
             self.play(FadeIn(VGroup(c, num, t, nt), shift=UP * .2), Write(m), run_time=self.rt(.08))
@@ -280,7 +289,7 @@ class Blocks:
         self.play(FadeIn(head), run_time=self.rt(.03))
         group = VGroup()
         for i, (intro, key) in enumerate(rows):
-            r = VGroup(tx(f'{i + 1}.', 26, CYAN, bold=True), tx(intro, 24, WHITE), self.M(key, 1.2)) \
+            r = VGroup(tx(f'{i + 1}.', 26, CYAN, bold=True), self.lbl(intro, 24, WHITE), self.M(key, 1.2)) \
                 .arrange(RIGHT, buff=.25)
             if r.width > 8.6:
                 r.scale_to_fit_width(8.6)
@@ -304,7 +313,7 @@ class Blocks:
         ep = self.lesson.EPISODE
         box = card(10.8, 4.7, PURPLE, PANEL, radius=.3, stroke_width=2.4).move_to([0, .6, 0])
         tag = badge(f"TẬP SAU · {ep['next_code']}", PURPLE, 20).move_to(box.get_top() + DOWN * .55)
-        title = tx(ep['next_title'], 38, WHITE, bold=True, max_w=10).move_to(box.get_center() + UP * .75)
+        title = self.lbl(ep['next_title'], 38, WHITE, bold=True, max_w=10).move_to(box.get_center() + UP * .75)
         body = VGroup(*lines).arrange(DOWN, buff=.3).next_to(title, DOWN, buff=.4)
         if body.width > 10:
             body.scale_to_fit_width(10)
