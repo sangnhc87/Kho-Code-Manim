@@ -1,0 +1,6191 @@
+{
+ "source": "https://github.com/chasoft/community-xiangqi-games-database/tree/main/data/puzzles/68-Sat-Phap-Co-Ban",
+ "collection": "puzzles/68-Sat-Phap-Co-Ban",
+ "items": {
+  "am-jnms-g066": {
+   "title": "am-jnms-g066",
+   "start_fen": "3akab2/2r6/4b4/2C6/4N4/9/6R2/4Bn3/4p4/3K5 w",
+   "book_moves": [
+    "e5f7",
+    "c8f8",
+    "g3g8",
+    "f8f7",
+    "g8d8",
+    "e1e0",
+    "d0d1",
+    "f2e4",
+    "c6c9",
+    "d9e8",
+    "d8d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 8,
+    "fen": "3akab2/3R5/4br3/2C6/9/4n4/9/4B4/3K5/4p4 w",
+    "n": 2,
+    "firsts": [
+     "c6c9"
+    ],
+    "line": [
+     {
+      "move": "c6c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 19
+   }
+  },
+  "am-jnms-g109": {
+   "title": "am-jnms-g109",
+   "start_fen": "C2k1abr1/9/1R1c1a2c/9/3N5/7n1/9/4B4/4p4/2B2K3 w",
+   "book_moves": [
+    "b7b9",
+    "d9d8",
+    "b9b8",
+    "d8d9",
+    "d5c7",
+    "d9e9",
+    "c7b9",
+    "d7d9",
+    "b9d8",
+    "e9e8",
+    "d8b7",
+    "e8e7",
+    "a9a7",
+    "d9d7",
+    "b7d6",
+    "d7d9",
+    "b8b7",
+    "d9d7",
+    "b7d7",
+    "e7e8",
+    "d7f7",
+    "e8d8",
+    "f7d7",
+    "d8e8",
+    "d7i7",
+    "e8d8",
+    "i7d7",
+    "d8e8",
+    "d7f7",
+    "e8d8",
+    "d6b7",
+    "d8e8",
+    "b7c9",
+    "e8e9",
+    "f7f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 18,
+    "fen": "5abr1/9/CR1cka2c/3N5/9/7n1/9/4B4/4p4/2B2K3 w",
+    "n": 4,
+    "firsts": [
+     "b7b3",
+     "b7b4",
+     "b7b5"
+    ],
+    "line": [
+     {
+      "move": "b7b3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "b3b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b8b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 15,
+    "nodes": 826
+   }
+  },
+  "bk-1c1hp-am-jnms-g184": {
+   "title": "bk-1c1hp-am-jnms-g184",
+   "start_fen": "9/5kr2/9/5P3/9/9/9/2C1B4/5p3/4K4 w",
+   "book_moves": [
+    "e2g4",
+    "g8g4",
+    "c2f2",
+    "g4f4",
+    "f6f7",
+    "f8f9",
+    "f7f8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 2,
+    "fen": "9/5k3/9/5P3/9/6r2/9/2C6/5p3/4K4 w",
+    "n": 3,
+    "firsts": [
+     "c2f2"
+    ],
+    "line": [
+     {
+      "move": "c2f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "g4f4",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 6,
+    "nodes": 15
+   }
+  },
+  "bk-1c1p-am-jnms-g029": {
+   "title": "bk-1c1p-am-jnms-g029",
+   "start_fen": "3a5/4a4/5k3/6P2/9/9/2C6/5A3/5p1n1/4K4 w",
+   "book_moves": [
+    "g6f6",
+    "f7f8",
+    "c3f3",
+    "e8f7",
+    "f6f7",
+    "f8f7",
+    "f3f1"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a5/4a4/5k3/6P2/9/9/2C6/5A3/5p1n1/4K4 w",
+    "n": 4,
+    "firsts": [
+     "g6f6"
+    ],
+    "line": [
+     {
+      "move": "g6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c3f3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "f3f1",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 9,
+    "nodes": 33
+   }
+  },
+  "bk-1r1c1p-am-jqqq-g212": {
+   "title": "bk-1r1c1p-am-jqqq-g212",
+   "start_fen": "9/3ka2R1/2Pab4/9/6r2/4C4/4c4/4B4/4Ap3/3AK1B2 w",
+   "book_moves": [
+    "e4d4",
+    "g5d5",
+    "c7d7",
+    "d8d9",
+    "h8h9",
+    "e7g9",
+    "h9g9",
+    "e8f9",
+    "g9f9",
+    "e3e9",
+    "d7d8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/3ka2R1/2Pab4/9/6r2/4C4/4c4/4B4/4Ap3/3AK1B2 w",
+    "n": 5,
+    "firsts": [
+     "c7c8"
+    ],
+    "line": [
+     {
+      "move": "c7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h8h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "h9g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "b"
+     },
+     {
+      "move": "g5g9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "c8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 262
+   }
+  },
+  "bk-1r1c1p-am-jqqq-g214": {
+   "title": "bk-1r1c1p-am-jqqq-g214",
+   "start_fen": "6b1C/5k3/9/4P4/9/4r4/3R5/9/3KA2pc/9 w",
+   "book_moves": [
+    "d3d8",
+    "f8f7",
+    "d8d9",
+    "f7f8",
+    "d9f9",
+    "f8e8",
+    "f9e9",
+    "e8f8",
+    "d1d0",
+    "i1e1",
+    "e9f9",
+    "f8e8",
+    "e6f6",
+    "g9i7",
+    "f6f7",
+    "e4d4",
+    "d0e0",
+    "h1g1",
+    "f7f8",
+    "e8e7",
+    "f9h9",
+    "e7f7",
+    "f8g8",
+    "e1e7",
+    "h9f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 24,
+    "fen": "7RC/6P2/4ck2b/9/9/3r5/9/9/6p2/4K4 w",
+    "n": 1,
+    "firsts": [
+     "h9f9"
+    ],
+    "line": [
+     {
+      "move": "h9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 9,
+    "nodes": 3
+   }
+  },
+  "bk-1r1h1c-am-jnms-g011": {
+   "title": "bk-1r1h1c-am-jnms-g011",
+   "start_fen": "3akab1C/9/7Nn/9/3c5/5R3/9/4B4/r2p5/4KAB2 w",
+   "book_moves": [
+    "f4f9",
+    "e9e8",
+    "h7f6",
+    "e8e7",
+    "f6d5",
+    "e7e8",
+    "d5c7",
+    "e8e7",
+    "c7d9",
+    "e7d7",
+    "f9f7",
+    "d7d8",
+    "f7f8",
+    "d8d7",
+    "d9b8",
+    "d7e7",
+    "b8c6",
+    "e7d7",
+    "f8d8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 2,
+    "fen": "3a1Rb1C/4k4/7Nn/9/3c5/9/9/4B4/r2p5/4KAB2 w",
+    "n": 9,
+    "firsts": [
+     "h7f6"
+    ],
+    "line": [
+     {
+      "move": "h7f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f6d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d5c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f9f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f7f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b8c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 4949
+   }
+  },
+  "bk-1r1h1c-am-jnms-g012": {
+   "title": "bk-1r1h1c-am-jnms-g012",
+   "start_fen": "2baka3/9/6R2/6N1C/6r2/9/4c4/5A3/3p2p2/4KA3 w",
+   "book_moves": [
+    "i6i9",
+    "f9e8",
+    "g7g9",
+    "e8f9",
+    "g6i7",
+    "g5f5",
+    "g9f9",
+    "e9e8",
+    "f9f5",
+    "g1f1",
+    "f5e5",
+    "e8d8",
+    "e5d5",
+    "d8e8",
+    "d5d1",
+    "c9e7",
+    "i7g8",
+    "e8f8",
+    "d1d9",
+    "e3f3",
+    "i9i8",
+    "f8f7",
+    "d9d8",
+    "f1f0",
+    "e0e1",
+    "f3g3",
+    "d8f8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 26,
+    "fen": "9/3R2N1C/4bk3/9/9/9/6c2/5A3/4K4/5p3 w",
+    "n": 1,
+    "firsts": [
+     "d8f8",
+     "g8e9"
+    ],
+    "line": [
+     {
+      "move": "d8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 9,
+    "nodes": 4
+   }
+  },
+  "bk-1r1h1c-am-jnms-g013": {
+   "title": "bk-1r1h1c-am-jnms-g013",
+   "start_fen": "2C1k1b2/6R2/2N1b4/9/9/9/3r1p3/9/4p4/5K3 w",
+   "book_moves": [
+    "g8e8",
+    "e9f9",
+    "e8d8",
+    "d3d0",
+    "d8d0",
+    "f3f2",
+    "d0d9",
+    "f9f8",
+    "d9d8",
+    "f8f7",
+    "c9f9",
+    "f2f1",
+    "f9f1",
+    "e1f1",
+    "f0e0"
+   ],
+   "result": "??",
+   "proof": null
+  },
+  "bk-1r1h1c-am-jnms-g014": {
+   "title": "bk-1r1h1c-am-jnms-g014",
+   "start_fen": "2b1k4/4a4/4b4/2r4N1/4C4/9/9/4B4/1n1KA4/6BR1 w",
+   "book_moves": [
+    "h6f7",
+    "e9f9",
+    "e5f5",
+    "c6f6",
+    "h0h9",
+    "e7g9",
+    "h9g9",
+    "f9f8",
+    "g9g8",
+    "f8f9",
+    "g8e8",
+    "f6f5",
+    "f7h8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 12,
+    "fen": "2b2k3/4R4/5N3/9/5r3/9/9/4B4/1n1KA4/6B2 w",
+    "n": 1,
+    "firsts": [
+     "f7h8"
+    ],
+    "line": [
+     {
+      "move": "f7h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 4
+   }
+  },
+  "bk-1r1h1c-am-jnms-g033": {
+   "title": "bk-1r1h1c-am-jnms-g033",
+   "start_fen": "2b2a2R/3N1k3/bC7/9/9/9/9/9/4A4/4KArc1 w",
+   "book_moves": [
+    "i9f9",
+    "f8e8",
+    "f9f8",
+    "e8e7",
+    "d8c6",
+    "e7d7",
+    "f8d8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2b2a2R/3N1k3/bC7/9/9/9/9/9/4A4/4KArc1 w",
+    "n": 4,
+    "firsts": [
+     "i9f9"
+    ],
+    "line": [
+     {
+      "move": "i9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d8c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 146
+   }
+  },
+  "bk-1r1h1c-am-jnms-g065": {
+   "title": "bk-1r1h1c-am-jnms-g065",
+   "start_fen": "3k1ab2/4a4/4b4/9/9/5c3/1RNC5/4BA1rB/3pA4/4K3c w",
+   "book_moves": [
+    "b3b9",
+    "e7c9",
+    "b9c9",
+    "d9d8",
+    "c3d5",
+    "f4d4",
+    "d5e7",
+    "d4c4",
+    "e7c6",
+    "d8d7",
+    "c6e5",
+    "d7d8",
+    "c9c8",
+    "d8d9",
+    "e5d7",
+    "c4d4",
+    "c8c9",
+    "d9d8",
+    "d7b8",
+    "d4c4",
+    "c9c8",
+    "d8d9",
+    "c8c4",
+    "d9e9",
+    "d3e3",
+    "e8f7",
+    "b8d7",
+    "e9e8",
+    "c4c8",
+    "e8e7",
+    "d7e5"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 18,
+    "fen": "2R2ab2/3ka4/3N5/9/9/3c5/3C5/4BA1rB/3pA4/4K3c w",
+    "n": 7,
+    "firsts": [
+     "d7b8"
+    ],
+    "line": [
+     {
+      "move": "d7b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d4c4",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 9
+     },
+     {
+      "move": "c9c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8c4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d3e3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "b8d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c4c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 16,
+    "nodes": 18578
+   }
+  },
+  "bk-1r1h1c-am-jnms-g067": {
+   "title": "bk-1r1h1c-am-jnms-g067",
+   "start_fen": "2b2a3/4ak3/4b4/1N7/9/9/9/C1n1Bp3/8r/2B2K1R1 w",
+   "book_moves": [
+    "h0h8",
+    "f8f7",
+    "h8h7",
+    "f7f8",
+    "a2a8",
+    "e8d7",
+    "b6c8",
+    "f9e8",
+    "h7f7",
+    "f8f7",
+    "c8d6"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2b2a3/4ak3/4b4/1N7/9/9/9/C1n1Bp3/8r/2B2K1R1 w",
+    "n": 6,
+    "firsts": [
+     "a2a8",
+     "h0h8"
+    ],
+    "line": [
+     {
+      "move": "a2a8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "h0h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h8h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "h7h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 970
+   }
+  },
+  "bk-1r1h1c-am-jnms-g068": {
+   "title": "bk-1r1h1c-am-jnms-g068",
+   "start_fen": "3a1a1n1/4k4/4bc3/6R2/4N1b2/2p1C4/9/9/2rp5/4KA3 w",
+   "book_moves": [
+    "e5f7",
+    "e7c9",
+    "g6e6",
+    "c9e7",
+    "e6c6",
+    "e7c9",
+    "c6c8",
+    "e8e7",
+    "f7e5"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a1a1n1/4k4/4bc3/6R2/4N1b2/2p1C4/9/9/2rp5/4KA3 w",
+    "n": 5,
+    "firsts": [
+     "e5f7"
+    ],
+    "line": [
+     {
+      "move": "e5f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 5
+     },
+     {
+      "move": "g6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "e6a6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 5
+     },
+     {
+      "move": "a6a8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 15,
+    "nodes": 3197
+   }
+  },
+  "bk-1r1h1c-am-jnms-g089": {
+   "title": "bk-1r1h1c-am-jnms-g089",
+   "start_fen": "5a3/4k4/4ba1n1/9/4N4/4C4/3c5/6R2/2r1p4/3K2B2 w",
+   "book_moves": [
+    "g2g8",
+    "h7f8",
+    "g8f8",
+    "e8e9",
+    "e5d7",
+    "e9d9",
+    "e4d4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5a3/4k4/4ba1n1/9/4N4/4C4/3c5/6R2/2r1p4/3K2B2 w",
+    "n": 4,
+    "firsts": [
+     "g2g8"
+    ],
+    "line": [
+     {
+      "move": "g2g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "h7f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "n"
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e5d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 382
+   }
+  },
+  "bk-1r1h1c-am-jnms-g100": {
+   "title": "bk-1r1h1c-am-jnms-g100",
+   "start_fen": "2ba5/4ak3/2N1b4/1C7/9/7R1/9/9/r3r4/3K5 w",
+   "book_moves": [
+    "h4f4",
+    "e8f7",
+    "b6f6",
+    "f7e8",
+    "f6e6",
+    "e8f7",
+    "c7d9",
+    "f8f9",
+    "f4f7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2ba5/4ak3/2N1b4/1C7/9/7R1/9/9/r3r4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "h4f4"
+    ],
+    "line": [
+     {
+      "move": "h4f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f4f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 234
+   }
+  },
+  "bk-1r1h1c-am-jnms-g102": {
+   "title": "bk-1r1h1c-am-jnms-g102",
+   "start_fen": "3k1a3/9/5a2C/6NR1/9/9/3p5/3n5/6r2/5K3 w",
+   "book_moves": [
+    "g6e7",
+    "d9d8",
+    "h6h8",
+    "f7e8",
+    "e7c6",
+    "d8d9",
+    "i7i9"
+   ],
+   "result": "??",
+   "proof": null
+  },
+  "bk-1r1h1c-am-jnms-g103": {
+   "title": "bk-1r1h1c-am-jnms-g103",
+   "start_fen": "2bakab2/9/9/9/6N2/1R7/1C7/9/4p2r1/5K3 w",
+   "book_moves": [
+    "g5f7",
+    "e9e8",
+    "f7d6",
+    "e8e9",
+    "b4e4",
+    "d9e8",
+    "d6c8",
+    "e9d9",
+    "e4d4",
+    "e8d7",
+    "d4d7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2bakab2/9/9/9/6N2/1R7/1C7/9/4p2r1/5K3 w",
+    "n": 6,
+    "firsts": [
+     "g5f7"
+    ],
+    "line": [
+     {
+      "move": "g5f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "b4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d4d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 702
+   }
+  },
+  "bk-1r1h1c-am-jnms-g104": {
+   "title": "bk-1r1h1c-am-jnms-g104",
+   "start_fen": "2ba5/4ak1N1/9/1CR6/9/2B6/2r6/9/c3A4/1n1K1A3 w",
+   "book_moves": [
+    "b6b8",
+    "e8d7",
+    "c6c8",
+    "d9e8",
+    "c8c9",
+    "e8d9",
+    "c9c8",
+    "d9e8",
+    "h8g6",
+    "f8f9",
+    "c8c9"
+   ],
+   "result": "??",
+   "proof": null
+  },
+  "bk-1r1h1c-am-jnms-g105": {
+   "title": "bk-1r1h1c-am-jnms-g105",
+   "start_fen": "9/4k4/4Nr3/9/2C1R4/9/9/2n6/3p5/4K1B2 w",
+   "book_moves": [
+    "e7c6",
+    "e8f8",
+    "e5e8",
+    "f8f9",
+    "e8e9",
+    "f9f8",
+    "e9f9",
+    "f8f9",
+    "c6d8",
+    "f9f8",
+    "c5c8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/4k4/4Nr3/9/2C1R4/9/9/2n6/3p5/4K1B2 w",
+    "n": 6,
+    "firsts": [
+     "e7c6"
+    ],
+    "line": [
+     {
+      "move": "e7c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e5e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e8e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "c6d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c5c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 9,
+    "nodes": 145
+   }
+  },
+  "bk-1r1h1c-am-jnms-g106": {
+   "title": "bk-1r1h1c-am-jnms-g106",
+   "start_fen": "3ak1b2/9/4ba3/7N1/6p2/2R2C3/3r4c/9/4AK1n1/3A5 w",
+   "book_moves": [
+    "h6f7",
+    "e9e8",
+    "c4c8",
+    "d3d8",
+    "f4e4",
+    "e8f8",
+    "c8d8",
+    "d9e8",
+    "d8e8",
+    "f8f9",
+    "e4f4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3ak1b2/9/4ba3/7N1/6p2/2R2C3/3r4c/9/4AK1n1/3A5 w",
+    "n": 6,
+    "firsts": [
+     "h6f7"
+    ],
+    "line": [
+     {
+      "move": "h6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c4c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d3d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e4f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 15,
+    "nodes": 269
+   }
+  },
+  "bk-1r1h1c-am-jnms-g107": {
+   "title": "bk-1r1h1c-am-jnms-g107",
+   "start_fen": "5a3/9/3kb4/2N6/9/6C2/7R1/1n1r5/4p4/5K3 w",
+   "book_moves": [
+    "c6b8",
+    "d7d8",
+    "h3h8",
+    "f9e8",
+    "g4g8",
+    "e8f9",
+    "g8g7",
+    "f9e8",
+    "b8c6",
+    "d8d9",
+    "h8h9",
+    "e7g9",
+    "h9g9",
+    "e8f9",
+    "g9f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5a3/9/3kb4/2N6/9/6C2/7R1/1n1r5/4p4/5K3 w",
+    "n": 8,
+    "firsts": [
+     "c6b8"
+    ],
+    "line": [
+     {
+      "move": "c6b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h3h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g4g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "g8g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b8c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h8h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h9g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 2430
+   }
+  },
+  "bk-1r1h1c-am-jnms-g108": {
+   "title": "bk-1r1h1c-am-jnms-g108",
+   "start_fen": "1C2kab1c/2R1a4/4b4/7N1/2pc5/9/9/4B4/5p2r/3AK4 w",
+   "book_moves": [
+    "c8c9",
+    "e8d9",
+    "h6g8",
+    "e9e8",
+    "c9c8",
+    "d5d8",
+    "g8f6",
+    "e8f8",
+    "c8d8",
+    "d9e8",
+    "f6h7",
+    "f8f7",
+    "b9b7",
+    "e7g5",
+    "d8d7",
+    "g5e7",
+    "d7d4",
+    "e7c9",
+    "d4f4",
+    "f7e7",
+    "f4e4",
+    "e7f7",
+    "h7g9",
+    "f7f8",
+    "g9h7",
+    "f8f7",
+    "h7g5",
+    "f7f8",
+    "g5e6",
+    "f8f7",
+    "e4f4",
+    "f7e7",
+    "e6c7",
+    "e8d7",
+    "f4e4",
+    "e7f7",
+    "c7d9",
+    "d7e8",
+    "e4e7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 30,
+    "fen": "2b2a2c/4a4/1C3k3/4N4/2p6/4R4/9/4B4/5p2r/3AK4 w",
+    "n": 3,
+    "firsts": [
+     "e6c7"
+    ],
+    "line": [
+     {
+      "move": "e6c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e4e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 136
+   }
+  },
+  "bk-1r1h1c-am-jnms-g112": {
+   "title": "bk-1r1h1c-am-jnms-g112",
+   "start_fen": "N2akab2/9/1R2b4/1C7/9/9/9/9/5pr2/4K2c1 w",
+   "book_moves": [
+    "a9c8",
+    "e9e8",
+    "b7e7",
+    "e8f8",
+    "b6b8",
+    "f9e8",
+    "e7f7",
+    "f8f7",
+    "c8d6"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "N2akab2/9/1R2b4/1C7/9/9/9/9/5pr2/4K2c1 w",
+    "n": 5,
+    "firsts": [
+     "a9c8"
+    ],
+    "line": [
+     {
+      "move": "a9c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "b"
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "b6b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "e7e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 304
+   }
+  },
+  "bk-1r1h1c-am-jnms-g116": {
+   "title": "bk-1r1h1c-am-jnms-g116",
+   "start_fen": "6N2/3ka4/5a3/1C7/9/1R7/9/9/4Ar3/4KAnc1 w",
+   "book_moves": [
+    "b4d4",
+    "e8d7",
+    "b6d6",
+    "d7e8",
+    "d6f6",
+    "e8d7",
+    "g9f7",
+    "d8e8",
+    "d4e4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "6N2/3ka4/5a3/1C7/9/1R7/9/9/4Ar3/4KAnc1 w",
+    "n": 5,
+    "firsts": [
+     "b4d4"
+    ],
+    "line": [
+     {
+      "move": "b4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d4d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 221
+   }
+  },
+  "bk-1r1h1c-am-jnms-g213": {
+   "title": "bk-1r1h1c-am-jnms-g213",
+   "start_fen": "2b1k4/9/n4a3/1N1R5/6p2/9/9/3C5/4p1r2/5K3 w",
+   "book_moves": [
+    "b6d7",
+    "e9e8",
+    "d7c9",
+    "e8e9",
+    "d6d9",
+    "e9e8",
+    "d9f9",
+    "e8d8",
+    "f9f8",
+    "f7e8",
+    "f8e8",
+    "d8d9",
+    "c9d7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2b1k4/9/n4a3/1N1R5/6p2/9/9/3C5/4p1r2/5K3 w",
+    "n": 6,
+    "firsts": [
+     "b6d7"
+    ],
+    "line": [
+     {
+      "move": "b6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d7c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "c9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d2f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 1179
+   }
+  },
+  "bk-1r1h1c-am-jnms-g214": {
+   "title": "bk-1r1h1c-am-jnms-g214",
+   "start_fen": "3k1ab2/1R1Na4/4b4/7n1/8C/9/9/r8/3p5/4KA3 w",
+   "book_moves": [
+    "i5d5",
+    "d9e9",
+    "b8b9",
+    "e8d9",
+    "b9d9",
+    "e9e8",
+    "d5e5",
+    "e7c5",
+    "d8e6",
+    "c5e7",
+    "e6g7",
+    "e8f8",
+    "d9f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3k1ab2/1R1Na4/4b4/7n1/8C/9/9/r8/3p5/4KA3 w",
+    "n": 7,
+    "firsts": [
+     "i5d5"
+    ],
+    "line": [
+     {
+      "move": "i5d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b8b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d5e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d8e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 1930
+   }
+  },
+  "bk-1r1h1c-am-jnms-g215": {
+   "title": "bk-1r1h1c-am-jnms-g215",
+   "start_fen": "3a1a3/1c1k3N1/7RC/9/9/9/9/4B4/2rpA4/4KAB2 w",
+   "book_moves": [
+    "h8f9",
+    "d8e8",
+    "f9g7",
+    "e8d8",
+    "g7e6",
+    "d8e8",
+    "h7e7",
+    "e8d8",
+    "e7e9",
+    "d8d7",
+    "e9d9",
+    "b8d8",
+    "d9d8",
+    "d7e7",
+    "e6g7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a1a3/1c1k3N1/7RC/9/9/9/9/4B4/2rpA4/4KAB2 w",
+    "n": 7,
+    "firsts": [
+     "h8f9"
+    ],
+    "line": [
+     {
+      "move": "h8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "g7e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "e7e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "b8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 14,
+    "nodes": 2171
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g098": {
+   "title": "bk-1r1h1c-am-jqqq-g098",
+   "start_fen": "6b2/4ak1C1/2N2a3/6R2/2b6/3n2B2/1r7/4B4/4Ap3/4KA3 w",
+   "book_moves": [
+    "h8h9",
+    "g9i7",
+    "h9c9",
+    "b3b0",
+    "e1d0",
+    "f1f0",
+    "e0f0",
+    "b0d0",
+    "f0f1",
+    "c5e7",
+    "c7d9",
+    "e8d9",
+    "g6g8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 10,
+    "fen": "2C6/4ak3/2N1ba2b/6R2/9/3n2B2/9/4B4/5K3/3r5 w",
+    "n": 2,
+    "firsts": [
+     "c7d9"
+    ],
+    "line": [
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "g6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N"
+    ],
+    "pieces": 13,
+    "nodes": 12
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g100": {
+   "title": "bk-1r1h1c-am-jqqq-g100",
+   "start_fen": "2ba5/5k3/1CN1b4/9/9/9/9/4pr3/9/r1BK3R1 w",
+   "book_moves": [
+    "h0h8",
+    "f8f9",
+    "h8h9",
+    "e7g9",
+    "h9g9",
+    "f9f8",
+    "c7d9",
+    "f8e8",
+    "d9c7",
+    "e8f8",
+    "g9g8",
+    "f8f9",
+    "b7b9",
+    "c9e7",
+    "c7d9",
+    "e7c9",
+    "g8g9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2ba5/5k3/1CN1b4/9/9/9/9/4pr3/9/r1BK3R1 w",
+    "n": 9,
+    "firsts": [
+     "h0h8"
+    ],
+    "line": [
+     {
+      "move": "h0h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h8h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h9g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d9c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b7b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9a7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "a7c9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 9472
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g101": {
+   "title": "bk-1r1h1c-am-jqqq-g101",
+   "start_fen": "2b1ka3/4a4/9/2p3p2/1R1N5/C5B2/9/9/4p1r2/5K3 w",
+   "book_moves": [
+    "a4e4",
+    "e9d9",
+    "d5c7",
+    "d9d8",
+    "c7e6",
+    "d8d9",
+    "b5d5",
+    "d9e9",
+    "e6d8",
+    "e8d7",
+    "d8f7",
+    "e9e8",
+    "f7e5",
+    "c9e7",
+    "e5d7",
+    "e7g9",
+    "d7e5",
+    "g9e7",
+    "e5f7",
+    "e8f8",
+    "d5d8",
+    "f9e8",
+    "d8e8",
+    "f8f9",
+    "e4f4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 10,
+    "fen": "2b1ka3/3N5/3a5/2p3p2/3R5/4C1B2/9/9/4p1r2/5K3 w",
+    "n": 8,
+    "firsts": [
+     "d8f7"
+    ],
+    "line": [
+     {
+      "move": "d8f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f7e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e5d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 5
+     },
+     {
+      "move": "d7e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e5f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 5
+     },
+     {
+      "move": "d5d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e4f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 25806
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g118": {
+   "title": "bk-1r1h1c-am-jqqq-g118",
+   "start_fen": "3k5/9/3a5/6N2/9/C1R6/1r7/9/4r4/3K5 w",
+   "book_moves": [
+    "c4c9",
+    "d9d8",
+    "c9c8",
+    "d8d9",
+    "g6f8",
+    "d9e9",
+    "f8d7",
+    "e9d9",
+    "a4d4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3k5/9/3a5/6N2/9/C1R6/1r7/9/4r4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "c4c9",
+     "g6f8"
+    ],
+    "line": [
+     {
+      "move": "c4c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g6f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f8d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "a4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 8,
+    "nodes": 391
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g217": {
+   "title": "bk-1r1h1c-am-jqqq-g217",
+   "start_fen": "3ak1b2/4a4/1c2b4/3NR4/2p6/4C4/9/9/2r2p3/3K5 w",
+   "book_moves": [
+    "d6c8",
+    "e9f9",
+    "e4f4",
+    "f9f8",
+    "e6f6",
+    "e8f7",
+    "f6g6",
+    "f7e8",
+    "c8d6",
+    "e8d7",
+    "d6f7",
+    "f8e8",
+    "g6g8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 10,
+    "fen": "3a2b2/5k3/1c1ab4/3N2R2/2p6/5C3/9/9/2r2p3/3K5 w",
+    "n": 2,
+    "firsts": [
+     "d6f7",
+     "g6g8"
+    ],
+    "line": [
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "g6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N"
+    ],
+    "pieces": 13,
+    "nodes": 24
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g218": {
+   "title": "bk-1r1h1c-am-jqqq-g218",
+   "start_fen": "1r1k1c3/1NR1a4/4b4/4C4/9/9/9/4B1n2/3p5/4K4 w",
+   "book_moves": [
+    "c8c9",
+    "d9d8",
+    "b8c6",
+    "d8d7",
+    "c9c7",
+    "d7d8",
+    "c7c8",
+    "d8d9",
+    "c8d8",
+    "d9e9",
+    "d8e8",
+    "e9d9",
+    "e8e9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1r1k1c3/1NR1a4/4b4/4C4/9/9/9/4B1n2/3p5/4K4 w",
+    "n": 7,
+    "firsts": [
+     "c8c9"
+    ],
+    "line": [
+     {
+      "move": "c8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b8c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 874
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g219": {
+   "title": "bk-1r1h1c-am-jqqq-g219",
+   "start_fen": "3akab2/9/9/1n5N1/2p5C/7cR/9/4B4/4p4/1n1K2B2 w",
+   "book_moves": [
+    "h6g8",
+    "e9e8",
+    "i5i8",
+    "h4h8",
+    "g8f6",
+    "e8e9",
+    "i4e4",
+    "g9e7",
+    "i8i9",
+    "h8h9",
+    "e4e7",
+    "d9e8",
+    "e7e8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 10,
+    "fen": "3aka1cC/9/4b4/1n3N3/2p6/4R4/9/4B4/4p4/1n1K2B2 w",
+    "n": 2,
+    "firsts": [
+     "e4e7"
+    ],
+    "line": [
+     {
+      "move": "e4e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 15,
+    "nodes": 14
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g221": {
+   "title": "bk-1r1h1c-am-jqqq-g221",
+   "start_fen": "2ba5/4ak3/4b1N2/8C/1R7/9/9/4BA3/1rr6/3K2B2 w",
+   "book_moves": [
+    "g7h9",
+    "f8f9",
+    "b5f5",
+    "e8f7",
+    "f5f7",
+    "f9e9",
+    "i6i9",
+    "e7g9",
+    "h9g7",
+    "e9e8",
+    "f7f9",
+    "e8e7",
+    "g7f5",
+    "e7e8",
+    "f5d6",
+    "e8d8",
+    "f9d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2ba5/4ak3/4b1N2/8C/1R7/9/9/4BA3/1rr6/3K2B2 w",
+    "n": 9,
+    "firsts": [
+     "g7h9"
+    ],
+    "line": [
+     {
+      "move": "g7h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b5f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f5f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "i6i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h9g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "f7f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g7f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 5399
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g222": {
+   "title": "bk-1r1h1c-am-jqqq-g222",
+   "start_fen": "1cbak4/4a4/4b4/7N1/9/5r3/5C2R/9/4A4/4KAnc1 w",
+   "book_moves": [
+    "h6g8",
+    "f4f8",
+    "i3i9",
+    "e8f9",
+    "i9f9",
+    "e9e8",
+    "f9f8",
+    "e8e9",
+    "f8f4",
+    "e9e8",
+    "g8f6",
+    "e8e9",
+    "f3e3",
+    "e7g9",
+    "f6d7",
+    "e9e8",
+    "f4f8",
+    "e8e7",
+    "d7e5"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 2,
+    "fen": "1cbak4/4arN2/4b4/9/9/9/5C2R/9/4A4/4KAnc1 w",
+    "n": 9,
+    "firsts": [
+     "i3i9"
+    ],
+    "line": [
+     {
+      "move": "i3i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "h0h9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "i9h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "r"
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f8c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f3e3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "c8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e3f3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 8038
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g223": {
+   "title": "bk-1r1h1c-am-jqqq-g223",
+   "start_fen": "1Rb6/4k4/7N1/1C7/9/9/9/5K3/7rr/9 w",
+   "book_moves": [
+    "h7g9",
+    "e8d8",
+    "g9f7",
+    "d8e8",
+    "f7d6",
+    "e8d8",
+    "d6b7",
+    "d8e8",
+    "b7c9",
+    "e8d8",
+    "c9b7",
+    "d8e8",
+    "b7d6",
+    "e8d8",
+    "d6f7",
+    "d8e8",
+    "b9e9",
+    "e8f8",
+    "e9f9",
+    "f8e8",
+    "f7d6",
+    "e8d8",
+    "d6b7",
+    "d8e8",
+    "b7c9",
+    "e8d8",
+    "f9f8",
+    "d8d9",
+    "b6b9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 12,
+    "fen": "1R7/4k4/1N7/1C7/9/9/9/5K3/7rr/9 w",
+    "n": 9,
+    "firsts": [
+     "b7d6"
+    ],
+    "line": [
+     {
+      "move": "b7d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b9e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f7d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d6b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b7c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b6b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 7,
+    "nodes": 1244
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g225": {
+   "title": "bk-1r1h1c-am-jqqq-g225",
+   "start_fen": "5a3/5k3/2n6/4pN3/9/6R1C/9/5r3/3KAr3/2B6 w",
+   "book_moves": [
+    "g4g8",
+    "f8f7",
+    "g8f8",
+    "f7f8",
+    "f6h7",
+    "f8e8",
+    "i4e4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5a3/5k3/2n6/4pN3/9/6R1C/9/5r3/3KAr3/2B6 w",
+    "n": 4,
+    "firsts": [
+     "g4g8"
+    ],
+    "line": [
+     {
+      "move": "g4g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "f7f8",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "f6h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "i4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 99
+   }
+  },
+  "bk-1r1h1c-am-jqqq-g229": {
+   "title": "bk-1r1h1c-am-jqqq-g229",
+   "start_fen": "3a1a3/3k5/4b4/9/9/1N4R2/2p3C2/4BAr1r/4AK3/9 w",
+   "book_moves": [
+    "b4c6",
+    "d8e8",
+    "g3e3",
+    "e7c5",
+    "c6e5",
+    "c5e7",
+    "e5g6",
+    "e7c9",
+    "g4e4",
+    "e8d8",
+    "e4d4",
+    "d8e8",
+    "g6e5",
+    "c9e7",
+    "e5d7",
+    "e7g9",
+    "d7f6",
+    "e8e9",
+    "f6e4",
+    "f9e8",
+    "e4d6",
+    "e8d7",
+    "d6f7",
+    "e9e8",
+    "f7e5",
+    "g9e7",
+    "e5d7",
+    "e7g9",
+    "d7e5",
+    "g9e7",
+    "e5c6",
+    "e7g9",
+    "d4d8",
+    "e8e9",
+    "c6e7",
+    "d9e8",
+    "d8e8",
+    "e9f9",
+    "e8e9",
+    "f9f8",
+    "e9f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 28,
+    "fen": "3a2b2/4k4/3N5/9/9/3R5/2p1C4/4BAr1r/4AK3/9 w",
+    "n": 7,
+    "firsts": [
+     "d7e5"
+    ],
+    "line": [
+     {
+      "move": "d7e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "g9e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e5c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 5
+     },
+     {
+      "move": "d4d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e8e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 8923
+   }
+  },
+  "bk-1r1h1c1p-am-jqqq-g172": {
+   "title": "bk-1r1h1c1p-am-jqqq-g172",
+   "start_fen": "4k4/4a4/4Pa3/n8/5N3/6RC1/9/9/1r2p4/3K5 w",
+   "book_moves": [
+    "g4g9",
+    "e8f9",
+    "g9f9",
+    "e9f9",
+    "f5g7",
+    "f9f8",
+    "h4f4",
+    "f7e8",
+    "e7f7",
+    "f8f7",
+    "g7f5"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4k4/4a4/4Pa3/n8/5N3/6RC1/9/9/1r2p4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "g4g9"
+    ],
+    "line": [
+     {
+      "move": "g4g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "f5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 11,
+    "nodes": 520
+   }
+  },
+  "bk-1r1h1c1p-am-jqqq-g174": {
+   "title": "bk-1r1h1c1p-am-jqqq-g174",
+   "start_fen": "4ka3/4a4/4R4/4P2N1/3n3C1/9/9/1r1A4c/3KAp3/9 w",
+   "book_moves": [
+    "h6f7",
+    "e9d9",
+    "h5h9",
+    "d9d8",
+    "e7d7",
+    "d8d7",
+    "h9h7",
+    "d5e7",
+    "e6e7",
+    "d7d8",
+    "e7d7",
+    "d8d9",
+    "h7h9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4ka3/4a4/4R4/4P2N1/3n3C1/9/9/1r1A4c/3KAp3/9 w",
+    "n": 7,
+    "firsts": [
+     "h6f7"
+    ],
+    "line": [
+     {
+      "move": "h6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h5h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "h9h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d5e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "n"
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 14,
+    "nodes": 1110
+   }
+  },
+  "bk-1r1h1lp-am-jqqq-g211": {
+   "title": "bk-1r1h1lp-am-jqqq-g211",
+   "start_fen": "3ak1bP1/4a3R/4b4/1Np6/9/9/9/B8/4pr3/3K5 w",
+   "book_moves": [
+    "i8f8",
+    "e1e0",
+    "d0e0",
+    "f1d1",
+    "b6c8",
+    "d1d8",
+    "h9g9",
+    "d8c8",
+    "g9f9",
+    "e8f9",
+    "f8c8"
+   ],
+   "result": "??",
+   "proof": null
+  },
+  "bk-1r1h1p-am-jqqq-g208": {
+   "title": "bk-1r1h1p-am-jqqq-g208",
+   "start_fen": "2bak4/4a4/4b4/3NP4/3r5/5R3/7p1/B3B4/3p5/5K3 w",
+   "book_moves": [
+    "d6c8",
+    "d5d8",
+    "f4h4",
+    "e8f9",
+    "h4h9",
+    "d9e8",
+    "e6e7",
+    "e9d9",
+    "c8b6",
+    "d1e1",
+    "b6d7",
+    "h3g3",
+    "e7e8",
+    "d8e8",
+    "d7b8",
+    "d9d8",
+    "b8c6",
+    "d8d7",
+    "h9f9",
+    "e1e0",
+    "f0f1",
+    "e8h8",
+    "f9d9",
+    "h8d8",
+    "d9d8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 22,
+    "fen": "2b2R3/7r1/3k5/2N6/9/9/6p2/B3B4/5K3/4p4 w",
+    "n": 2,
+    "firsts": [
+     "f9d9",
+     "f9f7"
+    ],
+    "line": [
+     {
+      "move": "f9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "h8d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 21
+   }
+  },
+  "bk-1r1h1p-am-jqqq-g215": {
+   "title": "bk-1r1h1p-am-jqqq-g215",
+   "start_fen": "3ak1b2/4a4/4bP2n/1N7/9/6R2/9/9/2rp5/4K4 w",
+   "book_moves": [
+    "b6d7",
+    "e8d7",
+    "g4g9",
+    "e9e8",
+    "f7e7",
+    "e8f8",
+    "e7f7",
+    "f8f7",
+    "g9f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3ak1b2/4a4/4bP2n/1N7/9/6R2/9/9/2rp5/4K4 w",
+    "n": 5,
+    "firsts": [
+     "b6d7"
+    ],
+    "line": [
+     {
+      "move": "b6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "g4g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "g9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "P"
+    ],
+    "pieces": 12,
+    "nodes": 185
+   }
+  },
+  "bk-1r1h1p-am-jqqq-g216": {
+   "title": "bk-1r1h1p-am-jqqq-g216",
+   "start_fen": "5k3/4a4/4b1P2/7N1/9/1R7/9/9/2p6/3Kc3r w",
+   "book_moves": [
+    "b4f4",
+    "e8f7",
+    "f4f7",
+    "f9e9",
+    "h6g8",
+    "e9e8",
+    "f7e7",
+    "e8f8",
+    "g7f7",
+    "f8f9",
+    "e7e9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5k3/4a4/4b1P2/7N1/9/1R7/9/9/2p6/3Kc3r w",
+    "n": 6,
+    "firsts": [
+     "b4f4"
+    ],
+    "line": [
+     {
+      "move": "b4f4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f4f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 100
+   }
+  },
+  "bk-1r2c-am-jqqq-g199": {
+   "title": "bk-1r2c-am-jqqq-g199",
+   "start_fen": "2bakab2/7r1/9/C8/4p4/3R5/7n1/2C6/4p4/3K1cB2 w",
+   "book_moves": [
+    "c2e2",
+    "g9e7",
+    "a6e6",
+    "e7g9",
+    "e6e8",
+    "g9e7",
+    "e8e5",
+    "f9e8",
+    "d4d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 6,
+    "fen": "2baka3/4C2r1/4b4/9/4p4/3R5/7n1/4C4/4p4/3K1cB2 w",
+    "n": 2,
+    "firsts": [
+     "e8e5"
+    ],
+    "line": [
+     {
+      "move": "e8e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d4d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 15,
+    "nodes": 19
+   }
+  },
+  "bk-1r2c-kill-am-jqqq-g201": {
+   "title": "bk-1r2c-kill-am-jqqq-g201",
+   "start_fen": "4ka3/6C1C/5c3/7R1/4pr3/9/9/4B4/4p4/2BK5 w",
+   "book_moves": [
+    "g8g9",
+    "e9e8",
+    "h6h8",
+    "e8e7",
+    "i8i7",
+    "f7f8",
+    "h8h7",
+    "e7e8",
+    "h7f7",
+    "f5f7",
+    "g9g8",
+    "e8e9",
+    "i7i9",
+    "f9e8",
+    "g8g9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 10,
+    "fen": "5aC2/4kc3/5r2C/9/4p4/9/9/4B4/4p4/2BK5 w",
+    "n": 3,
+    "firsts": [
+     "g9g8"
+    ],
+    "line": [
+     {
+      "move": "g9g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "i7i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 12
+   }
+  },
+  "bk-1r2h-am-jqqq-g197": {
+   "title": "bk-1r2h-am-jqqq-g197",
+   "start_fen": "9/2N2k3/5a3/3R5/2b5N/9/9/4B1n2/r2p5/4K1B2 w",
+   "book_moves": [
+    "i5h7",
+    "f8e8",
+    "h7g9",
+    "e8f8",
+    "d6d8",
+    "f8f9",
+    "d8d9",
+    "f9f8",
+    "g9h7",
+    "f8e8",
+    "c8d6",
+    "e8e7",
+    "d9e9",
+    "e7d7",
+    "h7f6",
+    "d7d8",
+    "d6b7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/2N2k3/5a3/3R5/2b5N/9/9/4B1n2/r2p5/4K1B2 w",
+    "n": 9,
+    "firsts": [
+     "i5h7"
+    ],
+    "line": [
+     {
+      "move": "i5h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h7g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c8d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h7f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 2859
+   }
+  },
+  "bk-1r2h-am-jqqq-g202": {
+   "title": "bk-1r2h-am-jqqq-g202",
+   "start_fen": "9/4ak3/9/2N3rN1/9/9/4R3p/9/4A3r/4KA3 w",
+   "book_moves": [
+    "c6d8",
+    "g6h6",
+    "e1d0",
+    "e8f7",
+    "e3e9",
+    "f7e8",
+    "e9e8",
+    "f8f9",
+    "e8g8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 6,
+    "fen": "4R4/3Nak3/9/7r1/9/9/8p/9/8r/3AKA3 w",
+    "n": 2,
+    "firsts": [
+     "e9e8"
+    ],
+    "line": [
+     {
+      "move": "e9e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e8g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 35
+   }
+  },
+  "bk-1r2h-am-jqqq-g203": {
+   "title": "bk-1r2h-am-jqqq-g203",
+   "start_fen": "4kab2/9/3abR3/1N1N5/9/9/9/7r1/3p5/4K1p2 w",
+   "book_moves": [
+    "b6d7",
+    "e9e8",
+    "d7c9",
+    "e8e9",
+    "d6c8",
+    "e9d9",
+    "f7f9",
+    "d9d8",
+    "f9f8",
+    "d8d9",
+    "c8e7",
+    "d9e9",
+    "f8f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4kab2/9/3abR3/1N1N5/9/9/9/7r1/3p5/4K1p2 w",
+    "n": 7,
+    "firsts": [
+     "b6d7"
+    ],
+    "line": [
+     {
+      "move": "b6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d7c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c8e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 1794
+   }
+  },
+  "bk-2c-01": {
+   "title": "bk-2c-01",
+   "start_fen": "2bakab2/9/9/9/9/1C7/4C4/9/9/4K4 w",
+   "book_moves": [
+    "b4e4"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2bakab2/9/9/9/9/1C7/4C4/9/9/4K4 w",
+    "n": 1,
+    "firsts": [
+     "b4e4"
+    ],
+    "line": [
+     {
+      "move": "b4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 8,
+    "nodes": 2
+   }
+  },
+  "bk-2r1c-am-jnms-g005": {
+   "title": "bk-2r1c-am-jnms-g005",
+   "start_fen": "3a5/5k3/4b4/C1R6/5r3/9/9/4pA1R1/4r4/5K3 w",
+   "book_moves": [
+    "h2h8",
+    "f8f9",
+    "a6a9",
+    "e7c9",
+    "h8h9",
+    "f9f8",
+    "c6c8",
+    "d9e8",
+    "h9f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a5/5k3/4b4/C1R6/5r3/9/9/4pA1R1/4r4/5K3 w",
+    "n": 5,
+    "firsts": [
+     "h2h8"
+    ],
+    "line": [
+     {
+      "move": "h2h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "a6a7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "c6c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "h8h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 552
+   }
+  },
+  "bk-2r1c-am-jqqq-g161": {
+   "title": "bk-2r1c-am-jqqq-g161",
+   "start_fen": "3k1ab1C/9/4b1n2/4pR3/9/1R7/3p5/9/3K5/r1n6 w",
+   "book_moves": [
+    "b4b9",
+    "d9d8",
+    "f6f8",
+    "g7e8",
+    "b9d9",
+    "d8d9",
+    "f8f9",
+    "d9d8",
+    "f9d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 2,
+    "fen": "1R3ab1C/3k5/4b1n2/4pR3/9/9/3p5/9/3K5/r1n6 w",
+    "n": 4,
+    "firsts": [
+     "f6f8"
+    ],
+    "line": [
+     {
+      "move": "f6f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "g7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 147
+   }
+  },
+  "bk-2r1c-am-jqqq-g170": {
+   "title": "bk-2r1c-am-jqqq-g170",
+   "start_fen": "2bak4/4a4/4b4/C4R3/2p3p2/5R3/9/9/4A1r2/1cnA1K3 w",
+   "book_moves": [
+    "f6f9",
+    "e8f9",
+    "f4f9",
+    "e9e8",
+    "f9f8",
+    "e8e9",
+    "a6e6",
+    "d9e8",
+    "f8f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2bak4/4a4/4b4/C4R3/2p3p2/5R3/9/9/4A1r2/1cnA1K3 w",
+    "n": 5,
+    "firsts": [
+     "f6f9"
+    ],
+    "line": [
+     {
+      "move": "f6f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "f4f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 16,
+    "nodes": 37
+   }
+  },
+  "bk-2r1c-am-jqqq-g171": {
+   "title": "bk-2r1c-am-jqqq-g171",
+   "start_fen": "2b6/3kaR3/3ab4/1CR6/9/6r2/9/9/4p4/3K3c1 w",
+   "book_moves": [
+    "c6c8",
+    "d8d9",
+    "c8d8",
+    "d9e9",
+    "b6b9",
+    "c9a7",
+    "f8e8",
+    "d7e8",
+    "d8d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2b6/3kaR3/3ab4/1CR6/9/6r2/9/9/4p4/3K3c1 w",
+    "n": 5,
+    "firsts": [
+     "c6c8"
+    ],
+    "line": [
+     {
+      "move": "c6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b6b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9a7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "d8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 340
+   }
+  },
+  "bk-2r1h-am-jnms-g001": {
+   "title": "bk-2r1h-am-jnms-g001",
+   "start_fen": "1R1ak4/4a4/9/3R5/1N7/9/7p1/9/4p2r1/3K5 w",
+   "book_moves": [
+    "d6d9",
+    "e8d9",
+    "b9d9",
+    "e9e8",
+    "b5c7",
+    "e8e7",
+    "d9d7",
+    "e7e8",
+    "d7g7",
+    "e8f8",
+    "c7d9",
+    "f8e8",
+    "g7e7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1R1ak4/4a4/9/3R5/1N7/9/7p1/9/4p2r1/3K5 w",
+    "n": 7,
+    "firsts": [
+     "b9d9",
+     "d6d9"
+    ],
+    "line": [
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "d6d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b5c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7d2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "c7d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d2e2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 10,
+    "nodes": 585
+   }
+  },
+  "bk-2r1h-am-jqqq-g138": {
+   "title": "bk-2r1h-am-jqqq-g138",
+   "start_fen": "4ka1R1/1r2a4/4R4/3N5/2b6/9/9/4B4/3r1p3/2B1K4 w",
+   "book_moves": [
+    "d6f7",
+    "e9d9",
+    "h9f9",
+    "d9d8",
+    "e7b7",
+    "e8f7",
+    "b7b8",
+    "d8d7",
+    "f9f7",
+    "c5e7",
+    "b8b7",
+    "d7d8",
+    "f7f8",
+    "d8d9",
+    "b7b9",
+    "e7c9",
+    "b9c9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4ka1R1/1r2a4/4R4/3N5/2b6/9/9/4B4/3r1p3/2B1K4 w",
+    "n": 9,
+    "firsts": [
+     "d6f7"
+    ],
+    "line": [
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e7b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "b7b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f9f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b8b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b7b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 2681
+   }
+  },
+  "bk-2r1h-am-jqqq-g152": {
+   "title": "bk-2r1h-am-jqqq-g152",
+   "start_fen": "2brka3/9/9/2R2R2N/9/9/9/3AB4/1r2p4/3K2B2 w",
+   "book_moves": [
+    "f6f9",
+    "e9e8",
+    "i6g7",
+    "e8e7",
+    "c6e6",
+    "e7d7",
+    "f9d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2brka3/9/9/2R2R2N/9/9/9/3AB4/1r2p4/3K2B2 w",
+    "n": 4,
+    "firsts": [
+     "f6f9"
+    ],
+    "line": [
+     {
+      "move": "f6f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "i6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 341
+   }
+  },
+  "bk-2r1h-am-jqqq-g153": {
+   "title": "bk-2r1h-am-jqqq-g153",
+   "start_fen": "2bak1b2/4aR3/9/3NR4/9/n8/9/9/2r2p3/4K4 w",
+   "book_moves": [
+    "f8f9",
+    "e9f9",
+    "e6f6",
+    "f9e9",
+    "d6f7",
+    "e9f9",
+    "f7h8",
+    "f9e9",
+    "f6f9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2bak1b2/4aR3/9/3NR4/9/n8/9/9/2r2p3/4K4 w",
+    "n": 5,
+    "firsts": [
+     "f8f9"
+    ],
+    "line": [
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7h6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 97
+   }
+  },
+  "bk-2r1h-am-jqqq-g154": {
+   "title": "bk-2r1h-am-jqqq-g154",
+   "start_fen": "r3k4/4a4/1R2b4/5R1N1/9/9/9/9/3p2r2/4K4 w",
+   "book_moves": [
+    "h6f7",
+    "e9f9",
+    "f7h8",
+    "f9e9",
+    "f6f9",
+    "e8f9",
+    "h8f7",
+    "e9d9",
+    "b7d7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "r3k4/4a4/1R2b4/5R1N1/9/9/9/9/3p2r2/4K4 w",
+    "n": 5,
+    "firsts": [
+     "h6f7"
+    ],
+    "line": [
+     {
+      "move": "h6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "f7h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "h8f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "R"
+    ],
+    "pieces": 10,
+    "nodes": 683
+   }
+  },
+  "bk-2r1h-am-jqqq-g155": {
+   "title": "bk-2r1h-am-jqqq-g155",
+   "start_fen": "3ak4/4a4/4b4/9/6b2/1NB6/9/4B2R1/2r3pn1/3RK4 w",
+   "book_moves": [
+    "h2h9",
+    "e8f9",
+    "d0d9",
+    "e9d9",
+    "h9f9",
+    "d9d8",
+    "f9e9",
+    "g1f1",
+    "b4c6",
+    "d8d7",
+    "e9d9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 8,
+    "fen": "4R4/3k5/4b4/9/6b2/1NB6/9/4B4/2r2p1n1/4K4 w",
+    "n": 2,
+    "firsts": [
+     "b4c6"
+    ],
+    "line": [
+     {
+      "move": "b4c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 13
+   }
+  },
+  "bk-2r1h-am-jqqq-g156": {
+   "title": "bk-2r1h-am-jqqq-g156",
+   "start_fen": "4kab2/4a4/6c2/4p4/3N5/3R5/5p3/5n3/4r4/1R3K3 w",
+   "book_moves": [
+    "b0b9",
+    "e8d9",
+    "b9d9",
+    "e9e8",
+    "d5f6",
+    "g7f7",
+    "d4d8",
+    "e8e7",
+    "d9e9",
+    "f9e8",
+    "e9e8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4kab2/4a4/6c2/4p4/3N5/3R5/5p3/5n3/4r4/1R3K3 w",
+    "n": 6,
+    "firsts": [
+     "b0b9"
+    ],
+    "line": [
+     {
+      "move": "b0b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d5f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "d4d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 642
+   }
+  },
+  "bk-2r1h-am-jqqq-g157": {
+   "title": "bk-2r1h-am-jqqq-g157",
+   "start_fen": "3ak4/4a4/4b4/9/4N4/1R2R4/9/3A2n2/3r1p3/4K4 w",
+   "book_moves": [
+    "e5d7",
+    "e8d7",
+    "e4e7",
+    "d7e8",
+    "e7e8",
+    "d9e8",
+    "b4b9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 6,
+    "fen": "4k4/4a4/9/9/9/1R7/9/3A2n2/3r1p3/4K4 w",
+    "n": 1,
+    "firsts": [
+     "b4b9"
+    ],
+    "line": [
+     {
+      "move": "b4b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 8,
+    "nodes": 2
+   }
+  },
+  "bk-2r1h-am-jqqq-g177": {
+   "title": "bk-2r1h-am-jqqq-g177",
+   "start_fen": "3k5/4aN3/2R2a3/5n3/2R6/9/9/Br7/6p2/c4K3 w",
+   "book_moves": [
+    "c7c9",
+    "d9d8",
+    "c9c8",
+    "d8d9",
+    "c8e8",
+    "b2b0",
+    "e8e0",
+    "f7e8",
+    "c5c9",
+    "d9d8",
+    "f8e6",
+    "d8d7",
+    "c9c7"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 6,
+    "fen": "3k5/4RN3/5a3/5n3/2R6/9/9/B8/6p2/cr3K3 w",
+    "n": 4,
+    "firsts": [
+     "e8e0"
+    ],
+    "line": [
+     {
+      "move": "e8e0",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "c5c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 45
+   }
+  },
+  "bk-double-cannons-checkmate-am-jqqq-g183": {
+   "title": "bk-double-cannons-checkmate-am-jqqq-g183",
+   "start_fen": "2b2k3/5c3/cC7/9/9/9/9/3C5/4A4/5K3 w",
+   "book_moves": [
+    "b7b9",
+    "c9e7",
+    "d2d9",
+    "e7c9",
+    "d9d8"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2b2k3/5c3/cC7/9/9/9/9/3C5/4A4/5K3 w",
+    "n": 3,
+    "firsts": [
+     "b7b9"
+    ],
+    "line": [
+     {
+      "move": "b7b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d2d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d9d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 8,
+    "nodes": 13
+   }
+  },
+  "bk-double-cannons-checkmate-am-jqqq-g184": {
+   "title": "bk-double-cannons-checkmate-am-jqqq-g184",
+   "start_fen": "3a1a3/3k1C3/8b/9/6b2/7C1/9/9/9/4K4 w",
+   "book_moves": [
+    "h4h8",
+    "d8d7",
+    "f8f6",
+    "d7d8",
+    "e0e1",
+    "d8d7",
+    "h8h2",
+    "d7d8",
+    "h2d2",
+    "d9e8",
+    "f6d6"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 10,
+    "fen": "5a3/3ka4/8b/5C3/6b2/9/9/3C5/4K4/9 w",
+    "n": 1,
+    "firsts": [
+     "f6d6"
+    ],
+    "line": [
+     {
+      "move": "f6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 8,
+    "nodes": 3
+   }
+  },
+  "bk-double-cannons-smothered-checkmate": {
+   "title": "bk-double-cannons-smothered-checkmate",
+   "start_fen": "4kab2/4a4/4b4/6p2/9/9/9/6C2/9/4K1C2 w",
+   "book_moves": [
+    "g2g9",
+    "e7g9",
+    "g0g9"
+   ],
+   "result": "??",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4kab2/4a4/4b4/6p2/9/9/9/6C2/9/4K1C2 w",
+    "n": 2,
+    "firsts": [
+     "g2g9"
+    ],
+    "line": [
+     {
+      "move": "g2g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": "b"
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "g0g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     }
+    ],
+    "sacrifices": [
+     "C"
+    ],
+    "pieces": 9,
+    "nodes": 4
+   }
+  }
+ }
+}

@@ -1,0 +1,4203 @@
+{
+ "source": "https://github.com/chasoft/community-xiangqi-games-database/tree/main/data/puzzles/杀局宝典",
+ "collection": "puzzles/杀局宝典",
+ "items": {
+  "第-2-章-十步紧杀局": {
+   "title": "第-2-章-十步紧杀局",
+   "start_fen": "4k4/9/9/4p4/9/9/4P4/9/9/4K4 w",
+   "book_moves": [],
+   "result": "未知",
+   "proof": null
+  },
+  "第-3-章-宽紧胜杀局": {
+   "title": "第-3-章-宽紧胜杀局",
+   "start_fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w",
+   "book_moves": [],
+   "result": "未知",
+   "proof": null
+  },
+  "第-6-章-征答棋局": {
+   "title": "第-6-章-征答棋局",
+   "start_fen": "4k4/9/9/4p4/9/9/4P4/9/9/4K4 w",
+   "book_moves": [],
+   "result": "红胜",
+   "proof": null
+  },
+  "第001局-天马行空": {
+   "title": "第001局-天马行空",
+   "start_fen": "4r4/6P2/C2aNk3/9/9/9/9/9/2p1p2r1/3K5 w",
+   "book_moves": [
+    "e7f5",
+    "d7e8",
+    "f5d6",
+    "f7e7",
+    "d6b7",
+    "e8d7",
+    "b7c9",
+    "d7e8",
+    "c9d7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4r4/6P2/C2aNk3/9/9/9/9/9/2p1p2r1/3K5 w",
+    "n": 5,
+    "firsts": [
+     "e7f5"
+    ],
+    "line": [
+     {
+      "move": "e7f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b7c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 48
+   }
+  },
+  "第002局-慷慨就义": {
+   "title": "第002局-慷慨就义",
+   "start_fen": "3a5/7P1/3k5/9/5R3/5N3/9/6n2/3r1p2C/4K4 w",
+   "book_moves": [
+    "f5f7",
+    "d7d8",
+    "i1i8",
+    "d9e8",
+    "f4e6",
+    "d8d9",
+    "f7f9",
+    "e8f9",
+    "e6c7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a5/7P1/3k5/9/5R3/5N3/9/6n2/3r1p2C/4K4 w",
+    "n": 5,
+    "firsts": [
+     "f5f7"
+    ],
+    "line": [
+     {
+      "move": "f5f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f4e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "i1i8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 10,
+    "nodes": 123
+   }
+  },
+  "第003局-呆人呆福": {
+   "title": "第003局-呆人呆福",
+   "start_fen": "9/4ak3/1r3CP2/9/9/9/r3P4/5R3/2p1p4/3K5 w",
+   "book_moves": [
+    "f7e7",
+    "e8f7",
+    "f2f7",
+    "f8e8",
+    "e7e1",
+    "b7e7",
+    "f7e7",
+    "e8f8",
+    "e7f7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/4ak3/1r3CP2/9/9/9/r3P4/5R3/2p1p4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "f7e7"
+    ],
+    "line": [
+     {
+      "move": "f7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f2f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "f8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7e1",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     },
+     {
+      "move": "b7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     },
+     {
+      "move": "e8f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 327
+   }
+  },
+  "第004局-瓜熟蒂落": {
+   "title": "第004局-瓜熟蒂落",
+   "start_fen": "5a3/4c4/C4k3/1P3NP2/9/9/9/2n6/3p1p3/4K4 w",
+   "book_moves": [
+    "g6g7",
+    "f7f8",
+    "g7g8",
+    "f8f7",
+    "f6d7",
+    "e8e7",
+    "d7e9",
+    "e7e8",
+    "b6b7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5a3/4c4/C4k3/1P3NP2/9/9/9/2n6/3p1p3/4K4 w",
+    "n": 5,
+    "firsts": [
+     "g6g7"
+    ],
+    "line": [
+     {
+      "move": "g6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g7g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b6b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 11,
+    "nodes": 353
+   }
+  },
+  "第005局-瓜熟蒂落": {
+   "title": "第005局-瓜熟蒂落",
+   "start_fen": "4kan2/3Pa4/9/2PN5/9/1C7/9/3n5/4p4/5K3 w",
+   "book_moves": [
+    "d8d9",
+    "e9d9",
+    "b4d4",
+    "e8d7",
+    "d6f7",
+    "d7e8",
+    "c6d6",
+    "e8d7",
+    "d6d7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4kan2/3Pa4/9/2PN5/9/1C7/9/3n5/4p4/5K3 w",
+    "n": 5,
+    "firsts": [
+     "d8d9"
+    ],
+    "line": [
+     {
+      "move": "d8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "b4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 11,
+    "nodes": 189
+   }
+  },
+  "第006局-欧风美雨": {
+   "title": "第006局-欧风美雨",
+   "start_fen": "7P1/3R3P1/4kr3/9/2r3N2/9/n8/4C4/4p4/3K5 w",
+   "book_moves": [
+    "g5e6",
+    "c5e5",
+    "d8e8",
+    "e7e8",
+    "e6c7",
+    "e8f8",
+    "h8g8",
+    "f8f9",
+    "h9g9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "7P1/3R3P1/4kr3/9/2r3N2/9/n8/4C4/4p4/3K5 w",
+    "n": 3,
+    "firsts": [
+     "g5e6"
+    ],
+    "line": [
+     {
+      "move": "g5e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e5",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e5e2",
+      "side": "b",
+      "forced": false,
+      "capture": "C",
+      "n_replies": 9
+     },
+     {
+      "move": "c7d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 11,
+    "nodes": 122
+   }
+  },
+  "第007局-匹夫逞勇": {
+   "title": "第007局-匹夫逞勇",
+   "start_fen": "3aka3/5PP2/2N6/4c4/9/R8/9/3p5/2p1r4/3K5 w",
+   "book_moves": [
+    "f8f9",
+    "e9f9",
+    "g8f8",
+    "f9e9",
+    "f8e8",
+    "d9e8",
+    "a4a9",
+    "e8d9",
+    "a9d9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3aka3/5PP2/2N6/4c4/9/R8/9/3p5/2p1r4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "f8f9"
+    ],
+    "line": [
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "a4a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "P",
+     "P"
+    ],
+    "pieces": 12,
+    "nodes": 94
+   }
+  },
+  "第008局-背水列阵": {
+   "title": "第008局-背水列阵",
+   "start_fen": "1rr2ab2/2RRak3/9/1N7/9/9/9/9/2p1p4/3K5 w",
+   "book_moves": [
+    "b6d7",
+    "f8f7",
+    "d7e5",
+    "f7f8",
+    "e5g6",
+    "f8f7",
+    "d8d7",
+    "e8d7",
+    "c8f8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1rr2ab2/2RRak3/9/1N7/9/9/9/9/2p1p4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "b6d7"
+    ],
+    "line": [
+     {
+      "move": "b6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d8d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e5g6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7f7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 154
+   }
+  },
+  "第009局-出马建功": {
+   "title": "第009局-出马建功",
+   "start_fen": "3a5/1P1ka4/9/9/9/9/9/4Cp3/3Np1p2/3p1KC2 w",
+   "book_moves": [
+    "g0d0",
+    "e8d7",
+    "d1e3",
+    "d7e8",
+    "b8c8",
+    "d8d7",
+    "e3d5",
+    "e1d1",
+    "e2d2"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a5/1P1ka4/9/9/9/9/9/4Cp3/3Np1p2/3p1KC2 w",
+    "n": 5,
+    "firsts": [
+     "g0d0"
+    ],
+    "line": [
+     {
+      "move": "g0d0",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "p"
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d1e3",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b8c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e3d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e1d1",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e2d2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 485
+   }
+  },
+  "第010局-贯彻始终": {
+   "title": "第010局-贯彻始终",
+   "start_fen": "3a1k3/4a4/9/2rN1P1c1/9/9/9/1C7/3p2r2/4K1p2 w",
+   "book_moves": [
+    "b2f2",
+    "f9e9",
+    "d6f7",
+    "e9f9",
+    "f7h6",
+    "f9e9",
+    "h6f7",
+    "e9f9",
+    "f6e6"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a1k3/4a4/9/2rN1P1c1/9/9/9/1C7/3p2r2/4K1p2 w",
+    "n": 5,
+    "firsts": [
+     "b2f2"
+    ],
+    "line": [
+     {
+      "move": "b2f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7h6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "c6f6",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 182
+   }
+  },
+  "第011局-弄玉吹箫": {
+   "title": "第011局-弄玉吹箫",
+   "start_fen": "2P6/2r6/3kNaP2/9/9/9/9/1R2p1n2/5r3/1C2K4 w",
+   "book_moves": [
+    "b2b7",
+    "d7d8",
+    "e7f9",
+    "d8e8",
+    "b7e7",
+    "e8f8",
+    "g7g8",
+    "f8f9",
+    "b0b9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2P6/2r6/3kNaP2/9/9/9/9/1R2p1n2/5r3/1C2K4 w",
+    "n": 5,
+    "firsts": [
+     "b2b7"
+    ],
+    "line": [
+     {
+      "move": "b2b7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c8c7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b7c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b0b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 12,
+    "nodes": 265
+   }
+  },
+  "第012局-螳臂当车": {
+   "title": "第012局-螳臂当车",
+   "start_fen": "5k3/3Cc1P1r/2c2N3/9/9/9/9/9/3p2r2/3CKR3 w",
+   "book_moves": [
+    "f7h8",
+    "f9e9",
+    "f0f9",
+    "e9f9",
+    "g8f8",
+    "f9e9",
+    "f8e8",
+    "e9d9",
+    "e8e9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5k3/3Cc1P1r/2c2N3/9/9/9/9/9/3p2r2/3CKR3 w",
+    "n": 5,
+    "firsts": [
+     "f7h8"
+    ],
+    "line": [
+     {
+      "move": "f7h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "f0f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e8e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 12,
+    "nodes": 1241
+   }
+  },
+  "第013局-穷寇莫追": {
+   "title": "第013局-穷寇莫追",
+   "start_fen": "3ack3/3ra4/1P7/6N2/4P4/9/9/4K4/1r1pA4/5C3 w",
+   "book_moves": [
+    "g6h8",
+    "f9f8",
+    "h8f7",
+    "f8f7",
+    "e1f2",
+    "f7e7",
+    "e5e6",
+    "e7d7",
+    "b7c7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3ack3/3ra4/1P7/6N2/4P4/9/9/4K4/1r1pA4/5C3 w",
+    "n": 5,
+    "firsts": [
+     "g6h8"
+    ],
+    "line": [
+     {
+      "move": "g6h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h8f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "f8f7",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "e1f2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f7e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e5e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b7c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N"
+    ],
+    "pieces": 13,
+    "nodes": 62
+   }
+  },
+  "第014局-回马神枪": {
+   "title": "第014局-回马神枪",
+   "start_fen": "1R1C1k2c/3n2P1c/8N/2N3n2/9/9/9/4K4/1r6r/9 w",
+   "book_moves": [
+    "c6d8",
+    "i8d8",
+    "d9i9",
+    "b1b9",
+    "i7h9",
+    "i1i9",
+    "g8f8",
+    "g6f8",
+    "h9g7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1R1C1k2c/3n2P1c/8N/2N3n2/9/9/9/4K4/1r6r/9 w",
+    "n": 5,
+    "firsts": [
+     "c6d8",
+     "d9i9"
+    ],
+    "line": [
+     {
+      "move": "c6d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": "n"
+     },
+     {
+      "move": "i8d8",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "d9i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     },
+     {
+      "move": "b1b9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "i7h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "i1i9",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "g6f8",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "h9g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "P"
+    ],
+    "pieces": 13,
+    "nodes": 283
+   }
+  },
+  "第015局-援笔成文": {
+   "title": "第015局-援笔成文",
+   "start_fen": "1P2ka3/3Pa4/9/3NP4/1C7/9/9/3n5/4p4/r2c1K3 w",
+   "book_moves": [
+    "d8e8",
+    "f9e8",
+    "d6c8",
+    "e9d9",
+    "b9c9",
+    "d9d8",
+    "b5b8",
+    "d8d7",
+    "e6e7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1P2ka3/3Pa4/9/3NP4/1C7/9/9/3n5/4p4/r2c1K3 w",
+    "n": 5,
+    "firsts": [
+     "d8e8"
+    ],
+    "line": [
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b9c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b5b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 13,
+    "nodes": 91
+   }
+  },
+  "第016局-我武维扬": {
+   "title": "第016局-我武维扬",
+   "start_fen": "3ak1bR1/4a4/4bR1C1/9/9/4N4/9/2c6/4p4/3p1K3 w",
+   "book_moves": [
+    "h9g9",
+    "e7g9",
+    "h7h9",
+    "e8f9",
+    "f7f9",
+    "e9e8",
+    "e4d6",
+    "e8d8",
+    "f9d9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3ak1bR1/4a4/4bR1C1/9/9/4N4/9/2c6/4p4/3p1K3 w",
+    "n": 5,
+    "firsts": [
+     "h9g9"
+    ],
+    "line": [
+     {
+      "move": "h9g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "b"
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "h7h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "f7f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e4d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 3154
+   }
+  },
+  "第017局-车金入海": {
+   "title": "第017局-车金入海",
+   "start_fen": "3k5/4a4/3aP3n/9/9/9/6R2/6R2/2rc1pr2/1c2K4 w",
+   "book_moves": [
+    "g3g9",
+    "d9d8",
+    "e7e8",
+    "d7e8",
+    "g2d2",
+    "e8d7",
+    "g9d9",
+    "d8d9",
+    "d2d7"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3k5/4a4/3aP3n/9/9/9/6R2/6R2/2rc1pr2/1c2K4 w",
+    "n": 5,
+    "firsts": [
+     "g3g9"
+    ],
+    "line": [
+     {
+      "move": "g3g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e7e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "d7e8",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "g2d2",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "d2d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 206
+   }
+  },
+  "第018局-曹操逼宫": {
+   "title": "第018局-曹操逼宫",
+   "start_fen": "3a1a3/3k2P2/9/9/9/3Nr4/9/7C1/4A2c1/1crRKA3 w",
+   "book_moves": [
+    "d4e6",
+    "d8e8",
+    "e6g7",
+    "e8e9",
+    "h2h9",
+    "f9e8",
+    "g8g9",
+    "e8f9",
+    "g9f9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3a1a3/3k2P2/9/9/9/3Nr4/9/7C1/4A2c1/1crRKA3 w",
+    "n": 5,
+    "firsts": [
+     "d4e6"
+    ],
+    "line": [
+     {
+      "move": "d4e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h2h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 274
+   }
+  },
+  "第019局-冲锋肉搏": {
+   "title": "第019局-冲锋肉搏",
+   "start_fen": "2bk5/2P1a4/2RabP3/3PP4/9/9/9/5n3/2p1p4/3K5 w",
+   "book_moves": [
+    "c8d8",
+    "d9d8",
+    "d6d7",
+    "e8d7",
+    "c7d7",
+    "d8e8",
+    "e6e7",
+    "c9e7",
+    "d7e7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2bk5/2P1a4/2RabP3/3PP4/9/9/9/5n3/2p1p4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "c8d8"
+    ],
+    "line": [
+     {
+      "move": "c8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "d6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "c7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "b"
+     },
+     {
+      "move": "c9e7",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "d7e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "P",
+     "P"
+    ],
+    "pieces": 14,
+    "nodes": 204
+   }
+  },
+  "第020局-空穴来风": {
+   "title": "第020局-空穴来风",
+   "start_fen": "3nk4/2P1a3R/4r4/4P4/2NC5/9/9/9/4p1p2/2r1cK3 w",
+   "book_moves": [
+    "i8i9",
+    "e8f9",
+    "i9f9",
+    "e9e8",
+    "c8d8",
+    "e8d8",
+    "c5d7",
+    "d8e8",
+    "f9e9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3nk4/2P1a3R/4r4/4P4/2NC5/9/9/9/4p1p2/2r1cK3 w",
+    "n": 5,
+    "firsts": [
+     "i8i9"
+    ],
+    "line": [
+     {
+      "move": "i8i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "i9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "c5d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "d8d7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "e6d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "N"
+    ],
+    "pieces": 14,
+    "nodes": 143
+   }
+  },
+  "第021局-蜀犬吠日": {
+   "title": "第021局-蜀犬吠日",
+   "start_fen": "9/4R2N1/3kb4/4p1P2/4c4/9/9/3A2nC1/3p1p3/4K2c1 w",
+   "book_moves": [
+    "h2h7",
+    "e7c5",
+    "h8f7",
+    "c5e7",
+    "f7e9",
+    "e7c5",
+    "g6g7",
+    "c5e7",
+    "e8c8"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/4R2N1/3kb4/4p1P2/4c4/9/9/3A2nC1/3p1p3/4K2c1 w",
+    "n": 5,
+    "firsts": [
+     "h2h7"
+    ],
+    "line": [
+     {
+      "move": "h2h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "h8f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f7e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7c5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "g6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c5e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e8a8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 14,
+    "nodes": 697
+   }
+  },
+  "第022局-老骥伏枥": {
+   "title": "第022局-老骥伏枥",
+   "start_fen": "3N1ab2/3Ra2n1/4k1P2/7P1/9/9/9/5p3/4r1p2/5K2C w",
+   "book_moves": [
+    "i0i7",
+    "h8f7",
+    "g7f7",
+    "e7f7",
+    "d8d7",
+    "e8d7",
+    "h6h7",
+    "g9i7",
+    "h7g7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3N1ab2/3Ra2n1/4k1P2/7P1/9/9/9/5p3/4r1p2/5K2C w",
+    "n": 5,
+    "firsts": [
+     "i0i7"
+    ],
+    "line": [
+     {
+      "move": "i0i7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "h8f7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "g7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "n"
+     },
+     {
+      "move": "e7f7",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "d8d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 3
+     },
+     {
+      "move": "h6h7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "g9i7",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "h7g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "R"
+    ],
+    "pieces": 14,
+    "nodes": 2996
+   }
+  },
+  "第023局-安排香饵": {
+   "title": "第023局-安排香饵",
+   "start_fen": "3N2b2/2R3C1r/1N1k3n1/9/6p2/3c5/4R4/2r6/4p4/5K3 w",
+   "book_moves": [
+    "b7c5",
+    "c2c5",
+    "e3e7",
+    "g9e7",
+    "d9f8",
+    "h7f8",
+    "c8d8",
+    "d4d8",
+    "g8g7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3N2b2/2R3C1r/1N1k3n1/9/6p2/3c5/4R4/2r6/4p4/5K3 w",
+    "n": 5,
+    "firsts": [
+     "b7c5",
+     "e3e7"
+    ],
+    "line": [
+     {
+      "move": "b7c5",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "c2c5",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "e3e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "g9e7",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "d9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "h7f8",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "c8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d4d8",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "g8g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "R",
+     "N",
+     "R"
+    ],
+    "pieces": 14,
+    "nodes": 681
+   }
+  },
+  "第024局-马上威风": {
+   "title": "第024局-马上威风",
+   "start_fen": "2Rak1b2/4aN3/9/7C1/8C/7r1/9/9/3p1pc2/4K3c w",
+   "book_moves": [
+    "h6e6",
+    "e8f7",
+    "f8d7",
+    "e9e8",
+    "i5e5",
+    "e8d8",
+    "c9d9",
+    "d8d9",
+    "e6d6"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2Rak1b2/4aN3/9/7C1/8C/7r1/9/9/3p1pc2/4K3c w",
+    "n": 5,
+    "firsts": [
+     "h6e6",
+     "i5e5"
+    ],
+    "line": [
+     {
+      "move": "h6e6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "f8d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "i5e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e5d5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 14,
+    "nodes": 1973
+   }
+  },
+  "第025局-先声夺人": {
+   "title": "第025局-先声夺人",
+   "start_fen": "4c4/4ak3/5aP2/9/9/7R1/3r1r1RC/4p1n2/9/4K2c1 w",
+   "book_moves": [
+    "g7g8",
+    "f8f9",
+    "h4h9",
+    "h0h9",
+    "g8f8",
+    "f9f8",
+    "h3h8",
+    "f8f9",
+    "i3i9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "4c4/4ak3/5aP2/9/9/7R1/3r1r1RC/4p1n2/9/4K2c1 w",
+    "n": 5,
+    "firsts": [
+     "g7g8"
+    ],
+    "line": [
+     {
+      "move": "g7g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h4h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "h0h9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "h3h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "i3i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "P"
+    ],
+    "pieces": 14,
+    "nodes": 280
+   }
+  },
+  "第026局-崇祯殉国": {
+   "title": "第026局-崇祯殉国",
+   "start_fen": "9/3k5/4P3c/4N4/5Nn2/9/9/9/3p1pr2/4K1BCr w",
+   "book_moves": [
+    "e7f7",
+    "d8e8",
+    "f5d6",
+    "e8e9",
+    "d6c8",
+    "e9d9",
+    "e6f8",
+    "d9d8",
+    "h0h8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/3k5/4P3c/4N4/5Nn2/9/9/9/3p1pr2/4K1BCr w",
+    "n": 5,
+    "firsts": [
+     "e7f7"
+    ],
+    "line": [
+     {
+      "move": "e7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "f5d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "e6f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h0h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 13,
+    "nodes": 333
+   }
+  },
+  "第027局-桃李争春": {
+   "title": "第027局-桃李争春",
+   "start_fen": "3rka3/4a2C1/4b1n1C/9/9/9/9/2n1R4/9/2rAKA1R1 w",
+   "book_moves": [
+    "i7e7",
+    "e8f7",
+    "h8h9",
+    "g7h9",
+    "e7d7",
+    "f7e8",
+    "e2e8",
+    "f9e8",
+    "h0h9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 6,
+    "fen": "3rka1n1/4a4/3C5/9/9/9/9/2n1R4/9/2rAKA1R1 w",
+    "n": 2,
+    "firsts": [
+     "e2e8"
+    ],
+    "line": [
+     {
+      "move": "e2e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "h0h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "n"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 13,
+    "nodes": 11
+   }
+  },
+  "第028局-生火待发": {
+   "title": "第028局-生火待发",
+   "start_fen": "3aka3/n8/N4P3/9/1rRN5/1R7/1C7/9/2r1p4/3Kc4 w",
+   "book_moves": [
+    "a7c8",
+    "e9e8",
+    "b4e4",
+    "e0e4",
+    "d5c7",
+    "a8c7",
+    "c5e5",
+    "b5e5",
+    "b3b8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3aka3/n8/N4P3/9/1rRN5/1R7/1C7/9/2r1p4/3Kc4 w",
+    "n": 5,
+    "firsts": [
+     "a7c8",
+     "b4e4"
+    ],
+    "line": [
+     {
+      "move": "a7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "b4e4",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e0e4",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "d5c7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "a8c7",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "c5e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "b5e5",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "b3b8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "N",
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 610
+   }
+  },
+  "第029局-清者自清": {
+   "title": "第029局-清者自清",
+   "start_fen": "2caka1P1/1C1RnPP2/9/9/9/9/9/6n2/3r1p3/1c2K4 w",
+   "book_moves": [
+    "f8f9",
+    "e9f9",
+    "d8d9",
+    "d1d9",
+    "g8f8",
+    "f9e9",
+    "f8e8",
+    "e9f9",
+    "h9g9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2caka1P1/1C1RnPP2/9/9/9/9/9/6n2/3r1p3/1c2K4 w",
+    "n": 5,
+    "firsts": [
+     "f8f9"
+    ],
+    "line": [
+     {
+      "move": "f8f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "a"
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "d8d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "d1d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "n"
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h9g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 133
+   }
+  },
+  "第030局-画饼充饥": {
+   "title": "第030局-画饼充饥",
+   "start_fen": "2b6/4R4/b2k1N3/4p4/9/2n6/2p5R/8C/2cp1rn2/4K4 w",
+   "book_moves": [
+    "i3d3",
+    "c3d3",
+    "i2i7",
+    "c9e7",
+    "e8e7",
+    "d7d8",
+    "e7d7",
+    "d8e8",
+    "d7d8"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2b6/4R4/b2k1N3/4p4/9/2n6/2p5R/8C/2cp1rn2/4K4 w",
+    "n": 5,
+    "firsts": [
+     "i3d3"
+    ],
+    "line": [
+     {
+      "move": "i3d3",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "c3d3",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "i2i7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c9e7",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e8e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "d7d8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d7d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 1148
+   }
+  },
+  "第031局-后浪推前": {
+   "title": "第031局-后浪推前",
+   "start_fen": "3aka1NC/3R5/1r2n4/5N1nc/7Cc/9/9/9/4r4/3K5 w",
+   "book_moves": [
+    "d8e8",
+    "d9e8",
+    "h9i7",
+    "i6i9",
+    "i7g8",
+    "e7g8",
+    "f6g8",
+    "h6g8",
+    "h5h9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3aka1NC/3R5/1r2n4/5N1nc/7Cc/9/9/9/4r4/3K5 w",
+    "n": 5,
+    "firsts": [
+     "d8e8"
+    ],
+    "line": [
+     {
+      "move": "d8e8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "h9i7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "i6i9",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "f6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e7g8",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "i7g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": "n"
+     },
+     {
+      "move": "h6g8",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "h5h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "N",
+     "N"
+    ],
+    "pieces": 15,
+    "nodes": 700
+   }
+  },
+  "第032局-海底捞针": {
+   "title": "第032局-海底捞针",
+   "start_fen": "5k3/2P2n2R/6n2/9/9/C2R4r/9/3c5/1pp1p4/1C1Kc4 w",
+   "book_moves": [
+    "d4d9",
+    "f8d9",
+    "a4a9",
+    "d9c7",
+    "c8c9",
+    "d2d9",
+    "c9d9",
+    "c7b9",
+    "b0b9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5k3/2P2n2R/6n2/9/9/C2R4r/9/3c5/1pp1p4/1C1Kc4 w",
+    "n": 5,
+    "firsts": [
+     "d4d9"
+    ],
+    "line": [
+     {
+      "move": "d4d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "f8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "a4a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9c7",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 4
+     },
+     {
+      "move": "c8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c7b9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "b0b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "n"
+     },
+     {
+      "move": "d2d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "c"
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 997
+   }
+  },
+  "第033局-开门见山": {
+   "title": "第033局-开门见山",
+   "start_fen": "9/1C1cn4/3a1k3/2R5r/2C2P3/9/4R4/4p1n2/3r1p3/4K4 w",
+   "book_moves": [
+    "c6f6",
+    "i6f6",
+    "f5f6",
+    "e8f6",
+    "e3e7",
+    "f7e7",
+    "c5c7",
+    "d7e8",
+    "b8b7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "9/1C1cn4/3a1k3/2R5r/2C2P3/9/4R4/4p1n2/3r1p3/4K4 w",
+    "n": 3,
+    "firsts": [
+     "f5f6"
+    ],
+    "line": [
+     {
+      "move": "f5f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "e8f6",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 3
+     },
+     {
+      "move": "c5f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f6d5",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 3
+     },
+     {
+      "move": "c6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P"
+    ],
+    "pieces": 15,
+    "nodes": 122
+   }
+  },
+  "第034局-彩凤随鸦": {
+   "title": "第034局-彩凤随鸦",
+   "start_fen": "1R1a1k3/2Cna1P2/b3b1N2/9/9/9/9/4K1R2/3r1r3/5N3 w",
+   "book_moves": [
+    "g8f8",
+    "f9f8",
+    "g7h9",
+    "f8f9",
+    "b9d9",
+    "e8d9",
+    "g2g9",
+    "e7g9",
+    "h9g7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1R1a1k3/2Cna1P2/b3b1N2/9/9/9/9/4K1R2/3r1r3/5N3 w",
+    "n": 5,
+    "firsts": [
+     "g8f8"
+    ],
+    "line": [
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "f9f8",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "g7h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f8f9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "e8d9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "g2g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "h9g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "R",
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 285
+   }
+  },
+  "第035局-一波惊天": {
+   "title": "第035局-一波惊天",
+   "start_fen": "1NR5C/4R4/3a1k1N1/6n2/8r/9/5c3/2n3c2/3p1p3/4K4 w",
+   "book_moves": [
+    "c9f9",
+    "f3f9",
+    "e8f8",
+    "g6f8",
+    "h7g9",
+    "g2g8",
+    "b9d8",
+    "d7e8",
+    "i9f9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1NR5C/4R4/3a1k1N1/6n2/8r/9/5c3/2n3c2/3p1p3/4K4 w",
+    "n": 4,
+    "firsts": [
+     "c9f9",
+     "i9i7"
+    ],
+    "line": [
+     {
+      "move": "c9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "f3f9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "i9i7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "i5i7",
+      "side": "b",
+      "forced": false,
+      "capture": "C",
+      "n_replies": 2
+     },
+     {
+      "move": "e8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "g6f8",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "h7g5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "C",
+     "R"
+    ],
+    "pieces": 15,
+    "nodes": 455
+   }
+  },
+  "第036局-鸾凤和鸣": {
+   "title": "第036局-鸾凤和鸣",
+   "start_fen": "r3k4/3P3n1/4b3b/3N5/CRR3p2/9/9/3r5/4p1p2/5K1C1 w",
+   "book_moves": [
+    "b5b9",
+    "a9b9",
+    "c5c9",
+    "b9c9",
+    "a5e5",
+    "e7g9",
+    "d6f7",
+    "h8f7",
+    "h0h9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "r3k4/3P3n1/4b3b/3N5/CRR3p2/9/9/3r5/4p1p2/5K1C1 w",
+    "n": 5,
+    "firsts": [
+     "b5b9"
+    ],
+    "line": [
+     {
+      "move": "b5b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "a9b9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "c5c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "b9c9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "a5e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "d6f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "h8f7",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "h0h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R",
+     "N"
+    ],
+    "pieces": 16,
+    "nodes": 731
+   }
+  },
+  "第037局-螳螂捕蝉": {
+   "title": "第037局-螳螂捕蝉",
+   "start_fen": "3kcr3/4N4/4N4/9/9/R3p4/C8/3Ap4/2pR1rn2/c3K4 w",
+   "book_moves": [
+    "d2e1",
+    "c1d1",
+    "a4d4",
+    "e4d4",
+    "e8c9",
+    "e9e8",
+    "a3a9",
+    "d9d8",
+    "e7c6"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3kcr3/4N4/4N4/9/9/R3p4/C8/3Ap4/2pR1rn2/c3K4 w",
+    "n": 5,
+    "firsts": [
+     "d2e1"
+    ],
+    "line": [
+     {
+      "move": "d2e1",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "c1d1",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 3
+     },
+     {
+      "move": "a4d4",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "e4d4",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "e7c6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "a3a9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R"
+    ],
+    "pieces": 16,
+    "nodes": 4791
+   }
+  },
+  "第038局-攻其不备": {
+   "title": "第038局-攻其不备",
+   "start_fen": "1c1Ncab1C/R3R4/1r1kr4/2n3N2/9/9/9/3n5/4p4/5K3 w",
+   "book_moves": [
+    "a8d8",
+    "c6d8",
+    "e8e7",
+    "g9e7",
+    "g6e5",
+    "e9e5",
+    "d9f8",
+    "f9e8",
+    "i9d9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1c1Ncab1C/R3R4/1r1kr4/2n3N2/9/9/9/3n5/4p4/5K3 w",
+    "n": 5,
+    "firsts": [
+     "a8d8"
+    ],
+    "line": [
+     {
+      "move": "a8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "c6d8",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "e8e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "r"
+     },
+     {
+      "move": "g9e7",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "g6e5",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e9e5",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "d9f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "i9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R",
+     "N"
+    ],
+    "pieces": 16,
+    "nodes": 2487
+   }
+  },
+  "第039局-谒刺盈车": {
+   "title": "第039局-谒刺盈车",
+   "start_fen": "1R1a1k1c1/C5P1r/4bP2b/2N3n2/9/r8/9/9/4p1p2/5K3 w",
+   "book_moves": [
+    "f7f8",
+    "g6f8",
+    "c6e7",
+    "f9e9",
+    "e7c8",
+    "e9f9",
+    "g8g9",
+    "i7g9",
+    "b9d9"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1R1a1k1c1/C5P1r/4bP2b/2N3n2/9/r8/9/9/4p1p2/5K3 w",
+    "n": 5,
+    "firsts": [
+     "f7f8"
+    ],
+    "line": [
+     {
+      "move": "f7f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "g6f8",
+      "side": "b",
+      "forced": false,
+      "capture": "P",
+      "n_replies": 2
+     },
+     {
+      "move": "c6e7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e7c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "g8g9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "i7g9",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "b9d9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [
+     "P",
+     "P"
+    ],
+    "pieces": 16,
+    "nodes": 864
+   }
+  },
+  "第040局-瓮中捉鳖": {
+   "title": "第040局-瓮中捉鳖",
+   "start_fen": "1Pck5/1Pr5R/2c6/2p6/9/9/5n3/1R7/3p1p3/1C2K1p1r w",
+   "book_moves": [
+    "b2d2",
+    "f3d2",
+    "i8d8",
+    "d9d8",
+    "b8c8",
+    "d8d9",
+    "b9c9",
+    "c7c9",
+    "b0b9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "1Pck5/1Pr5R/2c6/2p6/9/9/5n3/1R7/3p1p3/1C2K1p1r w",
+    "n": 5,
+    "firsts": [
+     "b2d2",
+     "i8d8"
+    ],
+    "line": [
+     {
+      "move": "b2d2",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "f3d2",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 4
+     },
+     {
+      "move": "i8d8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "d9d8",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "b8c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     },
+     {
+      "move": "d8d9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "b9c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": "c"
+     },
+     {
+      "move": "c7c9",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "b0b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "R",
+     "P"
+    ],
+    "pieces": 16,
+    "nodes": 2190
+   }
+  },
+  "第041局-智珠在握": {
+   "title": "第041局-智珠在握",
+   "start_fen": "3aka3/9/4b4/1N2P4/6b2/7C1/4P4/9/2p1rR3/1p1K2c1r w",
+   "book_moves": [
+    "b6c8",
+    "e9e8",
+    "e6e7",
+    "g5e7",
+    "h4e4",
+    "e7c5",
+    "c8e7",
+    "e8e7",
+    "e4e1"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3aka3/9/4b4/1N2P4/6b2/7C1/4P4/9/2p1rR3/1p1K2c1r w",
+    "n": 4,
+    "firsts": [
+     "b6c8"
+    ],
+    "line": [
+     {
+      "move": "b6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "c8d6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e8e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h4h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "f1f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "a"
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 16,
+    "nodes": 174
+   }
+  },
+  "第042局-屏障尽撤": {
+   "title": "第042局-屏障尽撤",
+   "start_fen": "3P1k1r1/2C1a1R2/1C2b2c1/4n1n1N/9/9/9/9/1r1p1p3/4K4 w",
+   "book_moves": [
+    "g8f8",
+    "g6f8",
+    "c8c9",
+    "e7c9",
+    "b7f7",
+    "e8f7",
+    "i6g7",
+    "e6g7",
+    "d9e9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "3P1k1r1/2C1a1R2/1C2b2c1/4n1n1N/9/9/9/9/1r1p1p3/4K4 w",
+    "n": 5,
+    "firsts": [
+     "g8f8"
+    ],
+    "line": [
+     {
+      "move": "g8f8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "g6f8",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "c8c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "e7c9",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "b7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "e8f7",
+      "side": "b",
+      "forced": true,
+      "capture": "C",
+      "n_replies": 1
+     },
+     {
+      "move": "i6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e6g7",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "d9e9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "R",
+     "C",
+     "C",
+     "N"
+    ],
+    "pieces": 16,
+    "nodes": 306
+   }
+  },
+  "第043局-顶上圆光": {
+   "title": "第043局-顶上圆光",
+   "start_fen": "5kr2/3cP3C/nc2b2R1/CR2n3N/9/9/9/9/4r4/3K1p3 w",
+   "book_moves": [
+    "i8i9",
+    "g9i9",
+    "h7f7",
+    "b7f7",
+    "i6g7",
+    "e6g7",
+    "b6b9",
+    "a7b9",
+    "a6f6"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "5kr2/3cP3C/nc2b2R1/CR2n3N/9/9/9/9/4r4/3K1p3 w",
+    "n": 5,
+    "firsts": [
+     "i8i9"
+    ],
+    "line": [
+     {
+      "move": "i8i9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "C",
+      "capture": null
+     },
+     {
+      "move": "g9i9",
+      "side": "b",
+      "forced": false,
+      "capture": "C",
+      "n_replies": 10
+     },
+     {
+      "move": "h7f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "b7f7",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "b6b9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": null
+     },
+     {
+      "move": "a7b9",
+      "side": "b",
+      "forced": false,
+      "capture": "R",
+      "n_replies": 2
+     },
+     {
+      "move": "i6g7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "e6g7",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "a6f6",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "C",
+     "R",
+     "R",
+     "N"
+    ],
+    "pieces": 16,
+    "nodes": 14168
+   }
+  },
+  "第044局-五星连珠": {
+   "title": "第044局-五星连珠",
+   "start_fen": "2bak1Pc1/4a4/4b4/RN1r4N/4C4/9/9/9/2r2p3/4K3c w",
+   "book_moves": [
+    "b6d7",
+    "d6d7",
+    "g9f9",
+    "e9f9",
+    "i6h8",
+    "f9f8",
+    "a6f6",
+    "e8f7",
+    "f6f7"
+   ],
+   "result": "未知",
+   "proof": {
+    "start_ply": 0,
+    "fen": "2bak1Pc1/4a4/4b4/RN1r4N/4C4/9/9/9/2r2p3/4K3c w",
+    "n": 5,
+    "firsts": [
+     "b6d7"
+    ],
+    "line": [
+     {
+      "move": "b6d7",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "d6d7",
+      "side": "b",
+      "forced": true,
+      "capture": "N",
+      "n_replies": 1
+     },
+     {
+      "move": "g9f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "P",
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": "P",
+      "n_replies": 1
+     },
+     {
+      "move": "i6h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "f9e9",
+      "side": "b",
+      "forced": false,
+      "capture": null,
+      "n_replies": 2
+     },
+     {
+      "move": "h8f7",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9f9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "e5f5",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "P"
+    ],
+    "pieces": 16,
+    "nodes": 68
+   }
+  },
+  "第045局-一鸣惊人": {
+   "title": "第045局-一鸣惊人",
+   "start_fen": "3ak1b2/3Pa1P2/3Rb2R1/3Nr4/9/9/9/3n5/4r1pC1/5K3 w",
+   "book_moves": [
+    "d8d9",
+    "e8d9",
+    "d7e7",
+    "e6e7",
+    "h7e7",
+    "g9e7",
+    "d6c8",
+    "e9e8",
+    "h1h8"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 6,
+    "fen": "3ak4/6P2/4b4/3N5/9/9/9/3n5/4r1pC1/5K3 w",
+    "n": 2,
+    "firsts": [
+     "d6c8"
+    ],
+    "line": [
+     {
+      "move": "d6c8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "h1h8",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     }
+    ],
+    "sacrifices": [],
+    "pieces": 10,
+    "nodes": 20
+   }
+  },
+  "第046局-平沙落雁": {
+   "title": "第046局-平沙落雁",
+   "start_fen": "Ccbaka3/9/4b4/5N1n1/5R1C1/9/9/9/r2p1r3/4KR3 w",
+   "book_moves": [
+    "a9c9",
+    "d9e8",
+    "f6g8",
+    "h6g8",
+    "h5h9",
+    "e7g9",
+    "f5f9",
+    "f1f9",
+    "f0f9"
+   ],
+   "result": "红胜",
+   "proof": {
+    "start_ply": 0,
+    "fen": "Ccbaka3/9/4b4/5N1n1/5R1C1/9/9/9/r2p1r3/4KR3 w",
+    "n": 5,
+    "firsts": [
+     "a9c9"
+    ],
+    "line": [
+     {
+      "move": "a9c9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "b"
+     },
+     {
+      "move": "d9e8",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f6g8",
+      "side": "w",
+      "check": true,
+      "sacrifice": "N",
+      "capture": null
+     },
+     {
+      "move": "h6g8",
+      "side": "b",
+      "forced": false,
+      "capture": "N",
+      "n_replies": 2
+     },
+     {
+      "move": "h5h9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": null
+     },
+     {
+      "move": "e7g9",
+      "side": "b",
+      "forced": true,
+      "capture": null,
+      "n_replies": 1
+     },
+     {
+      "move": "f5f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": "R",
+      "capture": "a"
+     },
+     {
+      "move": "f1f9",
+      "side": "b",
+      "forced": true,
+      "capture": "R",
+      "n_replies": 1
+     },
+     {
+      "move": "f0f9",
+      "side": "w",
+      "check": true,
+      "sacrifice": null,
+      "capture": "r"
+     }
+    ],
+    "sacrifices": [
+     "N",
+     "R"
+    ],
+    "pieces": 16,
+    "nodes": 342
+   }
+  }
+ }
+}
