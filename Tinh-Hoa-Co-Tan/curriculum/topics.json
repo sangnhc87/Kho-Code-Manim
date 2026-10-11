@@ -164,7 +164,7 @@
     25
    ],
    "max_first_keep": 4,
-   "episodes": 3,
+   "episodes": 4,
    "theory": [
     "Đây là thế tàn nền tảng nhất: một Binh đã qua sông cùng Tướng, đấu với Tướng đơn.",
     "Kênh đã tra một trăm thế ngẫu nhiên trên bảng tra cờ tàn: chỉ cần Binh chưa xuống tới hàng đáy, Đỏ thắng trong tất cả các thế.",
@@ -195,7 +195,7 @@
     15
    ],
    "max_first_keep": 5,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Một Mã cùng Tướng có thắng được Tướng đơn không? Bảng tra trả lời: có. Trong năm mươi thế ngẫu nhiên kênh khảo sát, Đỏ thắng cả năm mươi thế, và thế dài nhất cũng chỉ cần sáu nước.",
     "Có hai luật giúp Mã làm được điều này. Thứ nhất, luật lộ mặt tướng: hai Tướng không được đối mặt trên cùng một lộ khi giữa chúng không có quân nào, nên Tướng Đỏ khống chế được cả một lộ.",
@@ -225,7 +225,7 @@
     15
    ],
    "max_first_keep": 5,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Pháo là quân mạnh nhưng có một điểm yếu: muốn chiếu thì phải có ngòi, tức là một quân đứng giữa Pháo và Tướng địch.",
     "Bảng tra xác nhận điều này rất rõ: Pháo đơn cùng Tướng đấu Tướng đơn thì cả năm mươi thế được thử đều hòa.",
@@ -256,7 +256,7 @@
     37
    ],
    "max_first_keep": 4,
-   "episodes": 3,
+   "episodes": 6,
    "theory": [
     "Mã đấu Sĩ đơn là bài học kỹ thuật kinh điển. Trong năm mươi thế ngẫu nhiên được tra, Đỏ thắng tất cả.",
     "Nhưng đường thắng không ngắn: trung bình khoảng mười lăm nước, có thế phải gần hai mươi nước.",
@@ -287,7 +287,7 @@
     29
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Một Binh đấu Sĩ đơn thường chỉ hòa: trong năm mươi thế kênh tra, chỉ khoảng sáu phần trăm thắng.",
     "Nhưng hai Binh thì khác hẳn: tỉ lệ thắng tăng lên gần chín phần mười.",
@@ -366,7 +366,7 @@
     25
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Binh đơn đấu Sĩ đơn về nguyên tắc là thế hòa: trong năm mươi thế ngẫu nhiên, chỉ khoảng sáu phần trăm Đỏ thắng được.",
     "Sĩ Đen chặn đường Binh, còn Tướng Đen có chỗ để thở. Muốn thắng, Đỏ cần những điều kiện đặc biệt: Binh đã áp sát cung, Tướng Đỏ khống chế đúng lộ, Sĩ Đen đứng lệch.",
@@ -396,7 +396,7 @@
     31
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Pháo Binh đấu Song Sĩ: bảng tra cho thấy gần chín phần mười số thế Đỏ thắng.",
     "Nhưng đổi Song Sĩ thành Song Tượng thì kết quả đảo ngược, chỉ khoảng sáu phần trăm thắng; còn gặp Sĩ Tượng toàn thì cả năm mươi thế được thử đều hòa.",
@@ -427,7 +427,7 @@
     29
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Nếu Mã thắng chắc Sĩ đơn, thì gặp Tượng đơn lại khó hơn nhiều: trong năm mươi thế được tra, chỉ khoảng ba phần mười Đỏ thắng.",
     "Tượng đứng xa Tướng nên không tự chặn Tướng như Sĩ, và Tượng có thể đổi chỗ liên tục để chờ nước.",
@@ -457,7 +457,7 @@
     37
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Hai Binh đấu Song Sĩ: trong năm mươi thế được tra, Đỏ thắng khoảng ba phần tư.",
     "Song Sĩ là bức tường che Tướng, nhưng cũng làm cung chật lại, khiến Tướng Đen ít chỗ chạy.",
@@ -487,7 +487,7 @@
     21
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe là quân mạnh nhất bàn cờ. Đấu với Song Sĩ, Xe thắng trong cả năm mươi thế ngẫu nhiên kênh đã tra.",
     "Song Sĩ đứng trong cung nên cản đường chính Tướng mình. Kỹ thuật là dùng Tướng Đỏ khống chế mặt Tướng, rồi dùng Xe ép Tướng Đen vào thế không còn ô thở.",
@@ -517,7 +517,7 @@
     21
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe đấu Song Tượng: bảng tra cho kết quả thắng trong cả năm mươi thế ngẫu nhiên.",
     "Khác với Sĩ, Tượng không đứng sát Tướng, nên Tướng Đen có nhiều chỗ chạy hơn, còn hai Tượng thì bảo vệ lẫn nhau.",
@@ -595,7 +595,7 @@
     21
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe đấu một Sĩ một Tượng: bảng tra cho thấy Đỏ thắng trong toàn bộ bốn mươi thế mà Sĩ Tượng đứng ở vị trí phòng thủ chuẩn.",
     "Thiếu một Sĩ và một Tượng, thế thủ của Đen có lỗ hổng. Xe dùng chiếu và đe doạ bắt quân để phá vỡ sự liên kết giữa Sĩ và Tượng."
@@ -623,7 +623,7 @@
     15
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe đấu Mã đơn, cả hai bên đều không có Sĩ Tượng. Trong năm mươi thế ngẫu nhiên, Xe thắng tất cả.",
     "Mã cần đứng gần Tướng để được bảo vệ. Xe khai thác bằng cách tách Mã khỏi Tướng, hoặc dùng Tướng Đỏ khống chế mặt Tướng để chiếu bí."
@@ -651,7 +651,7 @@
     15
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe đấu Pháo đơn: bảng tra cho kết quả thắng trong cả năm mươi thế ngẫu nhiên.",
     "Pháo không có ngòi thì gần như vô hại. Đỏ cần cảnh giác một điều: đừng tự tạo ngòi cho Pháo Đen chiếu Tướng mình."
@@ -713,7 +713,7 @@
     25
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Thêm một Sĩ, Mã có chỗ dựa tốt hơn. Dù vậy, trong bốn mươi thế kênh tra với Sĩ đứng ở vị trí phòng thủ, Xe vẫn thắng cả bốn mươi.",
     "Đường thắng dài hơn và cần chính xác hơn: phải tấn công vào điểm yếu nhất trong liên kết giữa Tướng, Sĩ và Mã."
@@ -775,7 +775,7 @@
     29
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Pháo Sĩ phòng thủ khéo hơn Pháo đơn, vì Sĩ có thể làm ngòi cho Pháo. Dù vậy, bốn mươi thế kênh tra đều là Xe thắng.",
     "Cẩn thận với những đòn phản công: Pháo Đen mượn Sĩ hoặc mượn chính quân Đỏ làm ngòi để chiếu."
@@ -851,7 +851,7 @@
     45
    ],
    "max_first_keep": 2,
-   "episodes": 3,
+   "episodes": 6,
    "theory": [
     "Xe đấu Sĩ Tượng toàn là đề tài kinh điển. Kênh tra bốn mươi thế mà Sĩ Tượng Đen đứng ở vị trí phòng thủ chuẩn: hai mươi bốn thế hòa, mười sáu thế Đỏ thắng.",
     "Nghĩa là khi Sĩ Tượng chỉnh tề, Xe đơn thường không phá nổi. Đỏ chỉ thắng khi thế thủ của Đen có khe hở, ví dụ Tướng hoặc Sĩ Tượng đứng chưa đúng chỗ.",
@@ -877,7 +877,7 @@
     "A"
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Bài trước ta đã thấy Binh đơn hiếm khi thắng được Sĩ đơn: trong năm mươi thế ngẫu nhiên, khoảng chín mươi bốn phần trăm là hòa.",
     "Nhưng hòa không có nghĩa là Đen đi thế nào cũng được. Có những thế Đen chỉ có một nước giữ hòa, đi sai một nước là bị chiếu bí.",
@@ -904,7 +904,7 @@
     "B"
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Binh đơn đấu Tượng đơn: kênh tra năm mươi thế ngẫu nhiên, chín mươi tám phần trăm là hòa.",
     "Tượng không chặn Binh trực tiếp như Sĩ, nhưng có thể đổi chỗ để chờ nước, còn Tướng Đen tự lo phòng thủ.",
@@ -977,7 +977,7 @@
     ]
    },
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Mã đơn thắng chắc Sĩ đơn, nhưng gặp Song Sĩ thì khác: trong năm mươi thế ngẫu nhiên, chín mươi phần trăm là hòa.",
     "Hai Sĩ bảo vệ lẫn nhau và che chắn quanh Tướng. Mã không thể vừa đe doạ Sĩ vừa chiếu Tướng.",
@@ -1050,7 +1050,7 @@
     ]
    },
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Mã đơn đấu Song Tượng: cả năm mươi thế ngẫu nhiên kênh tra đều hòa.",
     "Hai Tượng liên kết che chắn cho nhau. Mã muốn bắt Tượng thì Tượng kia bảo vệ.",
@@ -1137,7 +1137,7 @@
     ]
    },
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Pháo Binh thắng được Song Sĩ, nhưng gặp Sĩ Tượng toàn đứng chỉnh tề, cả bốn mươi thế kênh tra đều hòa.",
     "Tượng ngăn Binh, Sĩ che Tướng, và Đen luôn có nước chờ bằng Tượng.",
@@ -1288,7 +1288,7 @@
     35
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Mã đơn chỉ hòa Song Sĩ, nhưng thêm một Binh thì khác hẳn: bốn mươi thế kênh tra với Song Sĩ ở vị trí phòng thủ chuẩn, Đỏ thắng cả bốn mươi.",
     "Binh áp sát cung để khóa đường, Mã nhảy vào những điểm mà Sĩ không che được, Tướng Đỏ khống chế mặt Tướng."
@@ -1351,7 +1351,7 @@
     31
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Mã Binh đấu Song Tượng ở vị trí phòng thủ chuẩn: kênh tra bốn mươi thế, Đỏ thắng khoảng tám mươi lăm phần trăm.",
     "Song Tượng không che sát Tướng như Song Sĩ, nên Binh có thể tiến thẳng vào cung, còn Mã tìm cách bắt Tượng hoặc chiếu bí."
@@ -1427,7 +1427,7 @@
     41
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Mã Binh đấu một Sĩ một Tượng: bốn mươi thế kênh tra với Sĩ Tượng đứng chuẩn, Đỏ thắng cả bốn mươi.",
     "Thiếu quân phòng thủ, Đen không thể vừa che Tướng vừa chặn Binh. Đường thắng có thể khá dài nên phải kiên nhẫn."
@@ -1503,7 +1503,7 @@
     45
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Mã Binh gặp Sĩ Tượng toàn đứng chỉnh tề: kênh tra bốn mươi thế, chỉ hai thế Đỏ thắng, còn lại là hòa.",
     "Vì vậy những thế thắng là cực hiếm, thường nhờ thế thủ của Đen có một khe hở nhỏ. Hôm nay ta học cách khai thác một khe hở như thế."
@@ -1579,7 +1579,7 @@
     53
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Hai Mã đấu Sĩ Tượng toàn: bốn mươi thế kênh tra với Sĩ Tượng chỉnh tề, Đỏ thắng ba mươi chín thế.",
     "Hai Mã bảo vệ lẫn nhau và cùng khống chế nhiều điểm trong cung. Nhưng đường thắng rất dài, thường trên hai mươi nước."
@@ -1655,7 +1655,7 @@
     45
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Pháo Mã đấu Sĩ Tượng toàn chỉnh tề: cả bốn mươi thế kênh tra đều là Đỏ thắng.",
     "Mã làm ngòi cho Pháo, Pháo khống chế lộ cho Mã: đây là cặp phối hợp nổi tiếng nhất trong cờ tàn."
@@ -1731,7 +1731,7 @@
     45
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Pháo Binh đấu một Sĩ một Tượng: kênh tra bốn mươi thế phòng thủ chuẩn, Đỏ thắng khoảng ba phần tám.",
     "Pháo cần ngòi, Binh cần đường. Khi Sĩ Tượng đứng đúng chỗ, Đen thường hòa, nên những thế thắng đòi hỏi kỹ thuật cao."
@@ -1807,7 +1807,7 @@
     51
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Ba Binh qua sông đấu Sĩ Tượng toàn chỉnh tề: kênh tra bốn mươi thế, một nửa thắng, một nửa hòa.",
     "Binh chỉ tiến không lùi, nên thứ tự đẩy Binh quyết định tất cả: đẩy sai một Binh là mất cơ hội."
@@ -1855,7 +1855,7 @@
     43
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Binh đấu Xe đơn, Đen không có Sĩ Tượng: kênh tra bốn mươi thế mà quân Đỏ không bị treo, Đỏ thắng khoảng chín phần mười.",
     "Đây là tàn cuộc thực chiến phổ biến. Xe Đen sẽ chiếu liên tục để quấy rối, nên Tướng Đỏ phải biết tìm chỗ tránh chiếu."
@@ -1917,7 +1917,7 @@
     45
    ],
    "max_first_keep": 3,
-   "episodes": 3,
+   "episodes": 6,
    "theory": [
     "Xe Binh đấu Xe Sĩ là tàn cuộc rất hay gặp trong thực chiến. Kênh tra bốn mươi thế với Sĩ Đen ở vị trí phòng thủ: sáu phần mười Đỏ thắng, bốn phần mười hòa.",
     "Nghĩa là thắng hay hòa phụ thuộc vào từng chi tiết: vị trí Binh, vị trí Tướng Đỏ, và Xe Đen có chiếu quấy rối được hay không.",
@@ -1980,7 +1980,7 @@
     39
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Binh đấu Xe Tượng: kênh tra bốn mươi thế với Tượng Đen đứng phòng thủ, sáu phần mười Đỏ thắng.",
     "Tượng không che sát Tướng như Sĩ, nhưng có thể chặn Binh từ xa. Đỏ cần dùng Xe để đuổi Tượng hoặc khóa đường Tướng."
@@ -2056,7 +2056,7 @@
     33
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Thêm cả Sĩ lẫn Tượng, bên Đen phòng thủ tốt hơn hẳn: trong bốn mươi thế kênh tra, chỉ khoảng một phần ba Đỏ thắng.",
     "Những thế thắng thường đến từ đòn chiến thuật: chiếu đôi, bắt quân, hoặc Binh xông vào đúng lúc Đen sơ hở."
@@ -2104,7 +2104,7 @@
     21
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Mã đấu Xe đơn không Sĩ Tượng: kênh tra bốn mươi thế, Đỏ thắng ba mươi chín thế.",
     "Mã che chắn cho Tướng Đỏ trước các đòn chiếu của Xe Đen, đồng thời cùng Xe tạo thế chiếu bí."
@@ -2166,7 +2166,7 @@
     43
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Mã đấu Xe Sĩ: bốn mươi thế kênh tra với Sĩ Đen đứng phòng thủ, Đỏ thắng ba mươi chín thế.",
     "Thêm một Sĩ chỉ làm đường thắng dài hơn: trung bình khoảng mười một nước."
@@ -2242,7 +2242,7 @@
     61
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Mã đấu Xe Sĩ Tượng: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, Đỏ thắng chín phần mười.",
     "Nhưng đường thắng rất dài, trung bình khoảng mười sáu nước, có thế hơn ba mươi nước. Đây là bài học về kế hoạch dài hơi."
@@ -2290,7 +2290,7 @@
     33
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Pháo đấu Xe đơn: bốn mươi thế kênh tra, tám phần mười Đỏ thắng, hai phần mười hòa.",
     "So với Xe Mã đấu Xe, thắng ba mươi chín trên bốn mươi thế, thì Xe Pháo khó thắng hơn rõ rệt: Pháo cần ngòi mới chiếu được, nên đòn phối hợp với Xe hạn chế hơn.",
@@ -2353,7 +2353,7 @@
     51
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe Pháo đấu Xe Sĩ: bốn mươi thế kênh tra với Sĩ Đen đứng phòng thủ, khoảng sáu phần mười Đỏ thắng.",
     "Sĩ Đen vừa che Tướng, vừa có thể trở thành ngòi cho chính Pháo Đỏ. Biết mượn Sĩ Đen làm ngòi là chìa khoá của tàn cuộc này.",
@@ -2430,7 +2430,7 @@
     39
    ],
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Các danh thủ hay nói: vào tàn cuộc, Mã mạnh hơn Pháo. Bảng tra cho ta con số cụ thể.",
     "Xe Mã đấu Xe Sĩ Tượng: bốn mươi thế kênh tra, Đỏ thắng chín phần mười. Còn Xe Pháo đấu Xe Sĩ Tượng, cùng điều kiện: chỉ khoảng một phần tám Đỏ thắng.",
@@ -2509,7 +2509,7 @@
     23
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe đơn đấu Mã cùng một Sĩ một Tượng: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, Xe thắng cả bốn mươi.",
     "Đen có ba quân phòng thủ nhưng không quân nào đủ sức chống Xe. Đỏ tìm cách bắt quân hoặc tách quân khỏi Tướng."
@@ -2585,7 +2585,7 @@
     31
    ],
    "max_first_keep": 3,
-   "episodes": 2,
+   "episodes": 6,
    "theory": [
     "Xe đơn đấu Pháo cùng một Sĩ một Tượng: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, Xe thắng cả bốn mươi.",
     "Pháo Đen có sẵn ngòi là Sĩ và Tượng, nên Đỏ phải luôn để ý những đòn chiếu bất ngờ trong lúc tấn công."
@@ -2658,7 +2658,7 @@
     ]
    },
    "max_first_keep": 2,
-   "episodes": 2,
+   "episodes": 3,
    "theory": [
     "Xe đơn đấu Mã Sĩ Tượng toàn: bốn mươi thế kênh tra với Sĩ Tượng phòng thủ chuẩn, chín mươi lăm phần trăm là hòa.",
     "Mã đứng trong đội hình Sĩ Tượng vừa được bảo vệ, vừa che chắn các điểm yếu. Xe không đủ sức phá một pháo đài như vậy.",

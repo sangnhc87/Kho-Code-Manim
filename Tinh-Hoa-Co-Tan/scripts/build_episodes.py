@@ -90,6 +90,18 @@ def score(a):
             + 2 * len(a['traps']) + min(a['value']['dtm'], 50) / 12)
 
 
+def level(topic, variant):
+    """Thế thứ n của chủ đề khó dần: chia dải DTM thành 3 bậc, đi từ ngắn đến dài."""
+    if topic.get('result') == 'D' or 'dtm' not in topic:
+        return topic
+    lo, hi = topic['dtm']
+    n = 3
+    width = max(2, (hi - lo) // n)
+    i = (variant - 1) % n
+    band = [lo + i * width, hi if i == n - 1 else lo + (i + 1) * width + 2]
+    return {**topic, 'dtm': band, '_full_band': [lo, hi]}
+
+
 def find_position(topic, used, rng, samples, finalists):
     red, black = topic['material']
     constraints = {k: [tuple(s) for s in v] for k, v in topic.get('constraints', {}).items()}
@@ -110,6 +122,8 @@ def find_position(topic, used, rng, samples, finalists):
             used_now = key
             used = used | {used_now}
     cdb.flush()
+    if not pool and topic.get('_full_band'):
+        return find_position({**topic, 'dtm': topic['_full_band'], '_full_band': None}, used, rng, samples, finalists)
     if not pool:
         raise SystemExit(f'Không tìm được thế phù hợp cho chủ đề {topic["id"]}; tăng --samples.')
     pool.sort()
@@ -198,11 +212,11 @@ def episode_title(topic, a, variant_no, used_titles=()):
 
 def build(topic, ep, fen=None, rng=None, samples=400, finalists=6, catalog=None):
     used = {e['key'] for e in catalog['episodes']}
+    variant = 1 + sum(1 for e in catalog['episodes'] if e['topic'] == topic['id'])
     if fen:
         a = analyze(Position.from_fen(fen).fen())
     else:
-        a = find_position(topic, used, rng, samples, finalists)
-    variant = 1 + sum(1 for e in catalog['episodes'] if e['topic'] == topic['id'])
+        a = find_position(level(topic, variant), used, rng, samples, finalists)
     title = episode_title(topic, a, variant,
                           [e['title'] for e in catalog['episodes'] if e['topic'] == topic['id']])
     beats = build_episode(a, topic, ep)
@@ -223,14 +237,24 @@ def build(topic, ep, fen=None, rng=None, samples=400, finalists=6, catalog=None)
     return data
 
 
-def next_topics(topics, catalog, count):
+def next_topics(topics, catalog, count, per_pass=2):
+    """Thứ tự phát sóng theo vòng: mỗi vòng, mỗi chủ đề thêm tối đa per_pass tập.
+
+    Vòng 1 đi hết giáo trình ở mức cơ bản, các vòng sau quay lại với thế khó hơn,
+    tránh phát quá nhiều tập cùng một chủ đề liên tiếp.
+    """
     done = {}
     for e in catalog['episodes']:
         done[e['topic']] = done.get(e['topic'], 0) + 1
     out = []
-    for t in topics:
-        left = t.get('episodes', 1) - done.get(t['id'], 0)
-        out += [t] * max(0, left)
+    rounds = max(t.get('episodes', 1) for t in topics) // per_pass + 1
+    for r in range(rounds):
+        for t in topics:
+            target = min(t.get('episodes', 1), (r + 1) * per_pass)
+            have = done.get(t['id'], 0)
+            if have < target:
+                out += [t] * (target - have)
+                done[t['id']] = target
     return out[:count]
 
 
