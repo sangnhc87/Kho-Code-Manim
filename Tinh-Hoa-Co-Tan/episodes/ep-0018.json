@@ -1,0 +1,125 @@
+{
+ "id": "ep-0018",
+ "number": 18,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Triệu Khánh Các xin thua? (1978)",
+ "subtitle": "Sát cục",
+ "fen": "4kab2/4a4/9/C3p4/2b5P/6N2/3n5/3AB4/c3K4/3n1AB2 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 11
+ },
+ "mate": {
+  "n": 6,
+  "line": [
+   {
+    "move": "d0b1",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e1e0",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "b1d2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": "A"
+   },
+   {
+    "move": "e0d0",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "d2b1",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d0e0",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d3c1",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e0d0",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "c1b3",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d0e0",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "b3d2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "126-起马局",
+  "title": "126-起马局"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Triệu Khánh Các",
+  "year": "1978",
+  "resigned": true,
+  "red": "赵庆阁",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Triệu Khánh Các xin thua? (1978) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 6 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"126-起马局\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

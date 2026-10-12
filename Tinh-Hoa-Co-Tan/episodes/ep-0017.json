@@ -1,0 +1,85 @@
+{
+ "id": "ep-0017",
+ "number": 17,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Quý Bản Hàm xin thua? (1973)",
+ "subtitle": "Sát cục",
+ "fen": "4ka3/9/N1Ra5/p8/6p2/2P6/P3rn2P/C4K3/6r2/R1BA1A3 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 5
+ },
+ "mate": {
+  "n": 3,
+  "line": [
+   {
+    "move": "g1f1",
+    "side": "b",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "f2f1",
+    "side": "w",
+    "forced": true,
+    "capture": "r",
+    "n_replies": 1
+   },
+   {
+    "move": "f3h2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "a2g2",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "e3f3",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R"
+  ],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "083-中炮过河车对屏风马平炮兑车",
+  "title": "083-中炮过河车对屏风马平炮兑车"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Quý Bản Hàm",
+  "year": "1973",
+  "resigned": true,
+  "red": "季本涵",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Quý Bản Hàm xin thua? (1973) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 3 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"083-中炮过河车对屏风马平炮兑车\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
