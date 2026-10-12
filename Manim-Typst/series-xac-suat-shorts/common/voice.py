@@ -7,6 +7,7 @@ voice=off → durations are estimated from the text so layout can be reviewed.
 from __future__ import annotations
 
 import asyncio
+import os
 import hashlib
 import json
 import re
@@ -18,7 +19,7 @@ RATE = '+6%'           # Shorts: brisk but still clear
 PAD = 0.45         # silence after each beat's narration (seconds)
 LEAD = 0.15        # narration starts slightly after the beat's visual cue
 WORDS_PER_SEC = 3.45  # vi-VN-NamMinhNeural at +6% (estimate)
-ATTEMPTS = 6
+ATTEMPTS = int(os.environ.get('XSS_TTS_ATTEMPTS', 6))  # pack_voice.sh raises it: Edge often drops runs of requests
 
 
 def ffprobe_duration(path: Path) -> float:

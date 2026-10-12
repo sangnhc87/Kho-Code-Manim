@@ -3,6 +3,7 @@
 # CI unpacks it before prepare_voice.py, which reuses every clip whose text hash still matches.
 # usage: [FORCE=1] scripts/pack_voice.sh FIRST LAST [python]
 set -u
+export XSS_TTS_ATTEMPTS=${XSS_TTS_ATTEMPTS:-15}
 cd "$(dirname "$0")/.."
 FIRST=$1; LAST=$2; PY=${3:-python3}
 OUT=$(mktemp -d)
