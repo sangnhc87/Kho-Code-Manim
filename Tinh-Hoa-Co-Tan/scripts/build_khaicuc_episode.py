@@ -202,6 +202,19 @@ def auto_theory(slug, main_nodes, ev):
             'closing': fam['closing'], 'cta': cta}
 
 
+def yt_title(tag, name, part, parts, tagline):
+    """Tiêu đề YouTube <= 100 ký tự: tên hệ có thể dài (chứa chuỗi nước đi) nên cắt ở ranh giới nước đi."""
+    suffix = f' – phần {part}/{parts}' if parts > 1 else ''
+    full = f'{tag} Khai cục {name}{suffix}'
+    if len(full) <= 100:
+        return full
+    head, _, sig = name.partition(': ')
+    budget = 100 - len(f'{tag} Khai cục {head}: …{suffix}')
+    cut = sig[:max(budget, 0)]
+    cut = cut[:cut.rfind(' ')] if ' ' in cut else cut
+    return f'{tag} Khai cục {head}: {cut}…{suffix}'
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--opening', required=True)
@@ -285,7 +298,7 @@ def main():
            'outro_text': 'Series khai cục chuyên sâu ra đều đặn. Bấm đăng ký để nhận phần tiếp theo. Thấy hay thì ủng hộ kênh một ly cà phê nhé! ☕',
            'chapters': [{'title': c[0]['headline'], 'beats': c} for c in chapters],
            'est_minutes': round(total / 60, 1),
-           'youtube': {'title': f'{series_tag} {title}',
+           'youtube': {'title': yt_title(series_tag, name, a.part, len(parts), theory['tagline']),
                        'tags': ['cờ tướng', 'khai cục', 'khai cục cờ tướng', name.lower(), 'phân tích khai cục', 'cờ tướng chuyên sâu',
                                 'series khai cục chuyên sâu', 'xiangqi', 'chinese chess opening', 'tinh hoa cờ tàn', 'học cờ tướng']}}
     dest = ROOT / 'khaicuc' / 'episodes'
