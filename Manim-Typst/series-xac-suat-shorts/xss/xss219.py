@@ -64,7 +64,7 @@ class XSS219(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.5
-        self.urns = urn_row([('RRB', 'hộp I', GOLD), ('RBB', 'hộp II', PURPLE)], y=1.5, buff=1.4)
+        self.urns = urn_row([('RRB', 'hộp I', GOLD), ('RBB', 'hộp II', PURPLE)], y=1.15, buff=1.4)
         self.go = transfer_arrow(self.urns[0], self.urns[1], 'đi')
         self.wait_until(.6, t0)
         self.play(FadeIn(self.urns, lag_ratio=.3), FadeIn(self.go), run_time=self.rt(.1))
@@ -72,7 +72,7 @@ class XSS219(TreeMixin, ShortScene):
     def beat_s1(self, T):
         self.play(self.urns.animate.set_opacity(0), self.go.animate.set_opacity(0), run_time=self.rt(.03))
         self.remove(self.urns, self.go)
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.9), dy=1.2, width=7.0, root_label='đi → về → rút',
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.9), dy=1.2, width=7.0, root_label='đi, về, rút',
                                                   r=.34, edge_size=26)
         self.play(FadeIn(self.levels[0]), FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.1))
 

@@ -61,8 +61,8 @@ class XSS209(TreeMixin, ShortScene):
     N = 209
 
     def hook_visual(self, t0):
-        self.board_top = -1.6
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.7), dy=1.05, width=6.4, root_label='An rút',
+        self.board_top = -1.8
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.7), dy=.92, width=6.4, root_label='An rút',
                                                   r=.34, edge_size=26)
         self.wait_until(.75, t0)
         self.play(FadeIn(self.levels[0]), run_time=self.rt(.04))
@@ -78,7 +78,7 @@ class XSS209(TreeMixin, ShortScene):
         self.play(FadeIn(self.levels[3], lag_ratio=.3), run_time=self.rt(.1))
         self.wait_until(.5, t0)
         self.play(FadeIn(self.levels[4], lag_ratio=.3), run_time=self.rt(.1))
-        self.play(FadeIn(self.TM('A: An thắng   B: Bình thắng   x: xanh', 20, SOFT).move_to([0, -1.35, 0])), run_time=self.rt(.04))
+        self.play(FadeIn(self.TM('A: An thắng   B: Bình thắng   x: xanh', 20, SOFT).move_to([0, -1.45, 0])), run_time=self.rt(.04))
 
     def beat_s3(self, T):
         wins = [n for n, path in self.leaves if path[-1][0] == 'A']

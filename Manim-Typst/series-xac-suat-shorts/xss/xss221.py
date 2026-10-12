@@ -44,7 +44,7 @@ BEATS = [
 ]
 
 FORMULAS = formulas('32/75', OPTIONS,
-                    move='P(Đ Đ) = P(X X) = 3/15, quad P(Đ X) = 9/15',
+                    move='P(Đ Đ) = P(X X) = 3/15',
                     lik='7/15, quad 6/15, quad 7/15',
                     tot='P = (3 dot 7 + 9 dot 6 + 3 dot 7)/225 = 32/75')
 
@@ -72,7 +72,7 @@ class XSS221(TreeMixin, ShortScene):
         t0 = self.now()
         self.play(FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.15))
         self.wait_until(.45, t0)
-        self.write_board(self.M('move', 1.6))
+        self.write_board(self.M('move', 2.0))
 
     def beat_s2(self, T):
         t0 = self.now()

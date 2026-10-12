@@ -18,8 +18,8 @@ PROBLEM = ['Túi có $1$ bi, đỏ hoặc trắng (như nhau).',
 OPTIONS = ['1/2', '2/3', '3/4']
 CORRECT = 1
 ANSWER_VALUE = 2 / 3
-BRANCHES = [('Đ', CORAL, '1/2', [('rút Đ', GOLD, '1', [])]),
-            ('T', SOFT, '1/2', [('rút Đ', GOLD, '1/2', []), ('rút T', WHITE, '1/2', [])])]
+BRANCHES = [('Đ', CORAL, '1/2', [('Đ', GOLD, '1', [])]),
+            ('T', SOFT, '1/2', [('Đ', GOLD, '1/2', []), ('T', WHITE, '1/2', [])])]
 
 BEATS = [
     Beat('hook', 'hook', 'Bài toán của Lewis Carroll, tác giả Alice ở xứ sở thần tiên. Túi có một bi, đỏ hoặc trắng với khả năng như nhau. '
@@ -67,7 +67,7 @@ class XSS191(TreeMixin, ShortScene):
         t0 = self.now()
         self.clear_board(.03)
         self.play(FadeIn(self.levels[2], lag_ratio=.2), run_time=self.rt(.15))
-        red = [n for n, path in self.leaves if path[-1][0] == 'rút Đ']
+        red = [n for n, path in self.leaves if path[-1][0] == 'Đ' and len(path) == 2]
         self.wait_until(.55, t0)
         self.play(*[n.animate.scale(1.25) for n in red], self.leaves[-1][0].animate.set_opacity(.15), run_time=self.rt(.05))
         self.write_board(self.M('leaves', 1.7))

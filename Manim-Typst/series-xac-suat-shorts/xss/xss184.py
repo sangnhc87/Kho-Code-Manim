@@ -21,8 +21,8 @@ PROBLEM = ['Hộp $6$ đỏ $4$ xanh. An lấy $1$ bi, Bình',
 OPTIONS = ['3/5', '4/7', '8/15']
 CORRECT = 1
 ANSWER_VALUE = 4 / 7
-BRANCHES = [('Đ', CORAL, '6/10', [('cùng', GOLD, '16/36', [])]),
-            ('X', CYAN, '4/10', [('cùng', GOLD, '18/36', [])])]
+BRANCHES = [('Đ', CORAL, '6/10', [('=', GOLD, '16/36', [])]),
+            ('X', CYAN, '4/10', [('=', GOLD, '18/36', [])])]
 
 BEATS = [
     Beat('hook', 'hook', 'Hộp có sáu bi đỏ và bốn bi xanh. An lấy một bi giấu đi, rồi Bình lấy tiếp hai bi, và hai bi của Bình cùng màu. '
@@ -62,7 +62,7 @@ class XSS184(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.4
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.0), dy=1.75, width=5.8, root_label='An lấy', edge_size=28, r=.55)
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.0), dy=1.75, width=5.8, root_label='An lấy', edge_size=28)
         self.wait_until(.7, t0)
         self.play(FadeIn(self.levels[0]), FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.06))
 
@@ -71,7 +71,7 @@ class XSS184(TreeMixin, ShortScene):
         self.play(FadeIn(self.levels[2][:3]), run_time=self.rt(.08))
         self.wait_until(.45, t0)
         self.write_board(self.M('red', 1.7))
-        self.play(FadeIn(tx('cùng: hai bi của Bình cùng màu', 22, SOFT).move_to([0, -1.0, 0])), run_time=self.rt(.04))
+        self.play(FadeIn(tx('=: hai bi của Bình cùng màu', 22, SOFT).move_to([0, -1.0, 0])), run_time=self.rt(.04))
 
     def beat_s2(self, T):
         t0 = self.now()

@@ -41,7 +41,8 @@ BEATS = [
 ]
 
 FORMULAS = formulas('11/50', OPTIONS,
-                    lik='P(Đ Đ | "chuyển Đ") = (C_3^2)/(C_5^2) = 3/10, quad P(Đ Đ | "chuyển X") = (C_2^2)/(C_5^2) = 1/10',
+                    lik='P(Đ Đ | "chuyển Đ") = (C_3^2)/(C_5^2) = 3/10',
+                    lik2='P(Đ Đ | "chuyển X") = (C_2^2)/(C_5^2) = 1/10',
                     tot='P = 3/5 dot 3/10 + 2/5 dot 1/10 = 11/50')
 
 
@@ -57,7 +58,7 @@ class XSS217(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.4
-        self.urns = urn_row([('RRRBB', 'hộp I', GOLD), ('RRBB', 'hộp II', PURPLE)], y=1.5)
+        self.urns = urn_row([('RRRBB', 'hộp I', GOLD), ('RRBB', 'hộp II', PURPLE)], y=1.15)
         self.arrow = transfer_arrow(self.urns[0], self.urns[1], 'chuyển 1 bi')
         self.wait_until(.6, t0)
         self.play(FadeIn(self.urns, lag_ratio=.3), run_time=self.rt(.08))
@@ -75,7 +76,8 @@ class XSS217(TreeMixin, ShortScene):
         t0 = self.now()
         self.play(FadeIn(self.levels[2], lag_ratio=.3), run_time=self.rt(.12))
         self.wait_until(.4, t0)
-        self.write_board(self.M('lik', 1.2))
+        self.write_board(self.M('lik', 1.6))
+        self.write_board(self.M('lik2', 1.6))
 
     def beat_s3(self, T):
         self.clear_board(.03)

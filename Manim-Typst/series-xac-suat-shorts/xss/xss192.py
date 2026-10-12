@@ -13,9 +13,9 @@ from common.short import PARTS, Beat, ShortScene, formulas, outro_text  # noqa: 
 from common.theme import CORAL, CYAN, GOLD, GREEN, PANEL, SOFT, STROKE  # noqa: E402
 
 EPISODE = {'code': 'XSS192', 'answer': 'B (83 % so với 78 %)'}
-PROBLEM = ['Thuốc A khỏi $81/87$ ca nhẹ, $192/263$ ca',
-           'nặng; thuốc B khỏi $234/270$ và $55/80$.',
-           'Thuốc nào khỏi chung nhiều hơn?']
+PROBLEM = ['A khỏi $81\\/87$ ca nhẹ, $192\\/263$ ca nặng;',
+           'B khỏi $234\\/270$ và $55\\/80$. Thuốc',
+           'nào có tỉ lệ khỏi chung cao hơn?']
 OPTIONS = ['"Thuốc A"', '"Thuốc B"', '"Như nhau"']
 CORRECT = 1
 ANSWER_VALUE = None
@@ -66,7 +66,7 @@ class XSS192(ShortScene):
             line = VGroup(*[self.cell(t, .9 if j == 0 else 1.9, CYAN if i == 1 else (CORAL if i == 2 else SOFT))
                             for j, t in enumerate(r)]).arrange(buff=.08)
             self.tab.add(line)
-        self.tab.arrange([0, -1, 0], buff=.08).move_to([0, 1.7, 0])
+        self.tab.arrange([0, -1, 0], buff=.08).move_to([0, 1.45, 0])
         self.wait_until(.75, t0)
         self.play(FadeIn(VGroup(*[r[:3] for r in self.tab]), lag_ratio=.1), run_time=self.rt(.08))
 

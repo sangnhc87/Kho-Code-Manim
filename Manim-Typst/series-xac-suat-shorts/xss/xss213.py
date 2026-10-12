@@ -34,7 +34,7 @@ BEATS = [
 ]
 
 FORMULAS = formulas('1/8', OPTIONS,
-                    cnt='n(A) = C_6^2 = 15, quad n(Omega) = C_10^3 = 120',
+                    cnt='n(A) = C_6^2 = 15',
                     prob='P = 15/120 = 1/8')
 
 
@@ -65,7 +65,7 @@ class XSS213(ShortScene):
         t0 = self.now()
         self.play(*[self.nums[k][0].animate.set_fill(CORAL) for k in range(6)], run_time=self.rt(.05))
         self.wait_until(.35, t0)
-        self.write_board(self.M('cnt', 1.6))
+        self.write_board(self.M('cnt', 2.1))
 
     def beat_s3(self, T):
         self.clear_board(.03)

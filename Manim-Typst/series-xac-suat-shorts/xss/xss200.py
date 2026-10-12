@@ -50,8 +50,8 @@ class XSS200(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        self.doors = VGroup(*[card(.5, .6, SOFT, PANEL, radius=.05, stroke_width=1.5) for _ in range(100)]) \
-            .arrange_in_grid(10, 10, buff=.08).move_to([0, 1.4, 0])
+        self.doors = VGroup(*[card(.42, .4, SOFT, PANEL, radius=.05, stroke_width=1.5) for _ in range(100)]) \
+            .arrange_in_grid(10, 10, buff=.07).move_to([0, 1.05, 0])
         self.wait_until(.6, t0)
         self.play(FadeIn(self.doors, lag_ratio=.003), run_time=self.rt(.12))
 

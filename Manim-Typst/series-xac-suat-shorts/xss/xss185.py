@@ -19,8 +19,8 @@ PROBLEM = ['$45%$ học sinh thích bóng đá; trong số đó',
 OPTIONS = ['"0,45"', '18/29 approx "0,62"', '"0,6"']
 CORRECT = 1
 ANSWER_VALUE = 18 / 29
-BRANCHES = [('BĐ', GOLD, '"0,45"', [('nam', CYAN, '"0,6"', []), ('nữ', CORAL, '"0,4"', [])]),
-            ('ko', SOFT, '"0,55"', [('nam', CYAN, '"0,3"', []), ('nữ', CORAL, '"0,7"', [])])]
+BRANCHES = [('BĐ', GOLD, '"0,45"', [('T', CYAN, '"0,6"', []), ('G', CORAL, '"0,4"', [])]),
+            ('ko', SOFT, '"0,55"', [('T', CYAN, '"0,3"', []), ('G', CORAL, '"0,7"', [])])]
 
 BEATS = [
     Beat('hook', 'hook', 'Bốn mươi lăm phần trăm học sinh thích bóng đá. Trong nhóm thích bóng đá, sáu mươi phần trăm là nam; '
@@ -51,7 +51,7 @@ class XSS185(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.6
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.0), dy=1.7, width=6.8, root_label='học sinh', r=.55)
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 3.0), dy=1.7, width=6.8, root_label='học sinh')
         self.wait_until(.75, t0)
         self.play(FadeIn(self.levels[0]), run_time=self.rt(.04))
 
@@ -60,9 +60,9 @@ class XSS185(TreeMixin, ShortScene):
         self.play(FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.1))
         self.wait_until(.35, t0)
         self.play(FadeIn(self.levels[2], lag_ratio=.15), run_time=self.rt(.15))
-        self.play(FadeIn(tx('BĐ: thích bóng đá   ko: không thích', 22, SOFT).move_to([0, -1.2, 0])), run_time=self.rt(.04))
-        boys = [n for n, path in self.leaves if path[-1][0] == 'nam']
-        girls = [n for n, path in self.leaves if path[-1][0] == 'nữ']
+        self.play(FadeIn(tx('BĐ: thích bóng đá   ko: không   T: nam   G: nữ', 20, SOFT).move_to([0, -1.2, 0])), run_time=self.rt(.04))
+        boys = [n for n, path in self.leaves if path[-1][0] == 'T']
+        girls = [n for n, path in self.leaves if path[-1][0] == 'G']
         self.play(*[n.animate.set_opacity(.15) for n in girls], *[n.animate.scale(1.3) for n in boys], run_time=self.rt(.05))
 
     def beat_s2(self, T):
