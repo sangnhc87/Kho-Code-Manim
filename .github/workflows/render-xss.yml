@@ -184,28 +184,65 @@ jobs:
             --privacy public
           echo "uploaded=true" >> "$GITHUB_OUTPUT"
 
-      - name: Commit YouTube history
-        if: ${{ steps.upload.outputs.uploaded == 'true' }}
+      - name: Upload to Facebook Reels (ConicTypst)
+        id: upload_fb
+        if: ${{ env.UPLOAD == 'true' && env.QUALITY == 'full' && env.VOICE == 'on' }}
+        continue-on-error: true
+        env:
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || '1249523211575010' }}
+        run: |
+          if [ -z "$FB_PAGE_ACCESS_TOKEN" ]; then
+            echo "FB_PAGE_ACCESS_TOKEN not configured in GitHub Secrets, skipping Facebook upload."
+            exit 0
+          fi
+          git fetch -q origin main
+          if git show origin/main:facebook_uploaded_history.json 2>/dev/null | python -c "import json,sys,os; sys.exit(0 if os.environ['KEY'] in json.load(sys.stdin) else 1)" 2>/dev/null; then
+            echo "$KEY already on Facebook Reels, skipping"; exit 0
+          fi
+          python ../../scripts/upload_to_facebook_reel.py \
+            --file "$VIDEO" \
+            --title "$(cat /tmp/title.txt)" \
+            --description-file /tmp/desc.txt \
+            --history-key "$KEY"
+          echo "uploaded_fb=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit upload history
+        if: ${{ steps.upload.outputs.uploaded == 'true' || steps.upload_fb.outputs.uploaded_fb == 'true' }}
         run: |
           python - "$KEY" <<'PY'
-          import json, sys
+          import json, sys, os
           key = sys.argv[1]
-          data = json.load(open('../../youtube_uploaded_history.json', encoding='utf-8'))
-          json.dump({key: data[key]}, open('/tmp/xss_entry.json', 'w', encoding='utf-8'), ensure_ascii=False)
+          yt_path = '../../youtube_uploaded_history.json'
+          if os.path.exists(yt_path):
+              yt = json.load(open(yt_path, encoding='utf-8'))
+              if key in yt:
+                  json.dump({key: yt[key]}, open('/tmp/yt_entry.json', 'w', encoding='utf-8'), ensure_ascii=False)
+          fb_path = '../../facebook_uploaded_history.json'
+          if os.path.exists(fb_path):
+              fb = json.load(open(fb_path, encoding='utf-8'))
+              if key in fb:
+                  json.dump({key: fb[key]}, open('/tmp/fb_entry.json', 'w', encoding='utf-8'), ensure_ascii=False)
           PY
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           for i in 1 2 3 4 5 6; do
             git fetch -q origin main && git reset -q --hard origin/main
             python - <<'PY'
-          import json
-          path = '../../youtube_uploaded_history.json'
-          data = json.load(open(path, encoding='utf-8'))
-          data.update(json.load(open('/tmp/xss_entry.json', encoding='utf-8')))
-          json.dump(data, open(path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+          import json, os
+          yt_path = '../../youtube_uploaded_history.json'
+          if os.path.exists('/tmp/yt_entry.json') and os.path.exists(yt_path):
+              yt = json.load(open(yt_path, encoding='utf-8'))
+              yt.update(json.load(open('/tmp/yt_entry.json', encoding='utf-8')))
+              json.dump(yt, open(yt_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+          fb_path = '../../facebook_uploaded_history.json'
+          if os.path.exists('/tmp/fb_entry.json') and os.path.exists(fb_path):
+              fb = json.load(open(fb_path, encoding='utf-8'))
+              fb.update(json.load(open('/tmp/fb_entry.json', encoding='utf-8')))
+              json.dump(fb, open(fb_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
           PY
-            git add ../../youtube_uploaded_history.json
-            git commit -q -m "docs(xss): auto-update youtube_uploaded_history.json for $SH" || { echo "No changes"; exit 0; }
+            git add ../../youtube_uploaded_history.json ../../facebook_uploaded_history.json 2>/dev/null || true
+            git commit -q -m "docs(xss): auto-update upload history for $SH" || { echo "No changes"; exit 0; }
             git push -q origin HEAD:main && exit 0
             echo "push failed, retry $i"; sleep $((i * 9))
           done
