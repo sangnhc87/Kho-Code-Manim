@@ -49,6 +49,16 @@
     "Chuyển sang tấn công mới hầu thắng nhanh."
    ],
    "closing": "Ghi nhớ ba điều: Tượng ra giữa để giữ trung lộ, giữ thế vững trước rồi mới tấn công, và để Mã Xe ra đúng nhịp."
+  },
+  "trap": {
+   "label": "Bẫy khai cục",
+   "mnemonic": [
+    "Thấy mồi chớ vội ăn ngay,",
+    "Ba nước trước đã tính này mới an.",
+    "Xe bị hãm, tiếc muộn màng,",
+    "Nhìn kỹ đường lui rồi sang ăn quân."
+   ],
+   "closing": "Ghi nhớ ba điều: thấy quân dâng tận miệng phải nghi ngờ, luôn tính đường lui của Xe trước khi ăn, và kiểm tra ba nước tiếp theo của đối phương."
   }
  },
  "syllabus": [
@@ -65,6 +75,14 @@
    "family": "phaodau-pao",
    "tagline": "Hai Pháo vào lộ giữa từ hai cánh ngược nhau",
    "reviewed": true
+  },
+  {
+   "slug": "@traps",
+   "group": 1,
+   "name": "Bẫy khai cục, tuyển tập 1",
+   "family": "trap",
+   "tagline": "",
+   "reviewed": false
   },
   {
    "slug": "cquacung",
@@ -127,6 +145,14 @@
    "name": "Pháo đầu đối Bình phong mã, Xe qua hà",
    "family": "phaodau-bpm",
    "tagline": "Xe qua hà sớm, Binh 7 tiến 1",
+   "reviewed": false
+  },
+  {
+   "slug": "@traps",
+   "group": 2,
+   "name": "Bẫy khai cục, tuyển tập 2",
+   "family": "trap",
+   "tagline": "",
    "reviewed": false
   },
   {
@@ -193,6 +219,14 @@
    "reviewed": false
   },
   {
+   "slug": "@traps",
+   "group": 3,
+   "name": "Bẫy khai cục, tuyển tập 3",
+   "family": "trap",
+   "tagline": "",
+   "reviewed": false
+  },
+  {
    "slug": "tiennhan1",
    "name": "Tiên Nhân Chỉ Lộ, Pháo giữa",
    "family": "dinh-khac",
@@ -253,6 +287,14 @@
    "name": "Chống Sĩ Giác Pháo",
    "family": "phaodau-pao",
    "tagline": "Cách đối phó Sĩ Giác Pháo",
+   "reviewed": false
+  },
+  {
+   "slug": "@traps",
+   "group": 4,
+   "name": "Bẫy khai cục, tuyển tập 4",
+   "family": "trap",
+   "tagline": "",
    "reviewed": false
   },
   {
@@ -319,6 +361,14 @@
    "reviewed": false
   },
   {
+   "slug": "@traps",
+   "group": 5,
+   "name": "Bẫy khai cục, tuyển tập 5",
+   "family": "trap",
+   "tagline": "",
+   "reviewed": false
+  },
+  {
    "slug": "thiet-hoat-xa2",
    "name": "Thiết Hoạt Xa, nhánh phụ",
    "family": "phaodau-pao",
@@ -382,6 +432,14 @@
    "reviewed": false
   },
   {
+   "slug": "@traps",
+   "group": 6,
+   "name": "Bẫy khai cục, tuyển tập 6",
+   "family": "trap",
+   "tagline": "",
+   "reviewed": false
+  },
+  {
    "slug": "cap-tan-trung-binh",
    "name": "Bình phong mã, thế cặp Tốt",
    "family": "phaodau-bpm",
@@ -442,6 +500,14 @@
    "name": "Khởi Mã Cục, hệ chi tiết",
    "family": "dinh-khac",
    "tagline": "Khởi Mã Cục, dữ liệu mở rộng",
+   "reviewed": false
+  },
+  {
+   "slug": "@traps",
+   "group": 7,
+   "name": "Bẫy khai cục, tuyển tập 7",
+   "family": "trap",
+   "tagline": "",
    "reviewed": false
   },
   {

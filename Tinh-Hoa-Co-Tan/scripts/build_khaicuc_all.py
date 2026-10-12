@@ -10,6 +10,15 @@ ROOT = Path(__file__).resolve().parents[1]
 meta = json.loads((ROOT / 'khaicuc' / 'meta.json').read_text(encoding='utf-8'))
 number, index = 1, []
 for item in meta['syllabus']:
+    if item['slug'] == '@traps':
+        out = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'build_khaicuc_traps.py'), '--group', str(item['group']),
+                              '--size', '6', '--number', str(number)], capture_output=True, text=True, check=True).stdout
+        m = re.search(r'ước tính (\d+) phút', out)
+        index.append({'id': f'kc-{number:04d}', 'opening': f'bay-nhom-{item["group"]}', 'name': item['name'], 'part': 1, 'parts': 1,
+                      'minutes': int(m.group(1)), 'reviewed': False})
+        print(out.strip())
+        number += 1
+        continue
     part, total = 1, 1
     while part <= total:
         out = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'build_khaicuc_episode.py'), '--opening', item['slug'],
