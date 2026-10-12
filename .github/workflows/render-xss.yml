@@ -138,6 +138,9 @@ jobs:
             && tar -xzf "/tmp/xv/$SH.tar.gz" && echo "using cached narration for $SH" || echo "no cached narration for $SH"
 
       - name: Narration and runtime plan (≤ 3 minutes)
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}       # optional: official Azure TTS, same NamMinh voice
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
         run: python scripts/prepare_voice.py --short "$SH" --voice "$VOICE"
 
       - name: Render

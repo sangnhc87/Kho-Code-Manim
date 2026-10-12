@@ -44,7 +44,26 @@ def estimate(text: str) -> tuple[float, list[dict]]:
     return t, sentences
 
 
+def _azure_once(text: str, path: Path, voice: str) -> list[dict]:
+    """Official Azure Speech REST (same neural voices as Edge, allowed from cloud IPs); used when AZURE_SPEECH_KEY is set."""
+    import urllib.request
+    from xml.sax.saxutils import escape
+    region = os.environ.get('AZURE_SPEECH_REGION') or 'southeastasia'
+    ssml = (f"<speak version='1.0' xml:lang='vi-VN'><voice name='{voice}'>"
+            f"<prosody rate='{RATE}'>{escape(text)}</prosody></voice></speak>")
+    req = urllib.request.Request(f'https://{region}.tts.speech.microsoft.com/cognitiveservices/v1', data=ssml.encode('utf-8'),
+                                 headers={'Ocp-Apim-Subscription-Key': os.environ['AZURE_SPEECH_KEY'],
+                                          'Content-Type': 'application/ssml+xml',
+                                          'X-Microsoft-OutputFormat': 'audio-24khz-48kbitrate-mono-mp3',
+                                          'User-Agent': 'xss-shorts'})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        path.write_bytes(resp.read())
+    return []  # no boundaries from REST: synthesize() scales the estimated sentence timings to the audio length
+
+
 async def _synth_once(text: str, path: Path, voice: str) -> list[dict]:
+    if os.environ.get('AZURE_SPEECH_KEY'):
+        return _azure_once(text, path, voice)
     import edge_tts
     comm = edge_tts.Communicate(text, voice=voice, rate=RATE, boundary='SentenceBoundary')
     sentences = []
