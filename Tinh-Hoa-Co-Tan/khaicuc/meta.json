@@ -1,0 +1,211 @@
+{
+ "families": {
+  "phaodau-pao": {
+   "label": "Pháo đầu đối Pháo",
+   "mnemonic": [
+    "Pháo đầu chiếm lộ giữa bàn,",
+    "Mã ra giữ Tốt, Xe sang cánh ngoài.",
+    "Pháo đối Pháo, tiên ai nhanh,",
+    "Tính xong từng nước mới thành thế hay."
+   ],
+   "closing": "Ghi nhớ ba điều: Pháo chiếm lộ giữa, Mã ra giữ Tốt đầu, và Xe chiếm lộ sớm để cầm tiên."
+  },
+  "phaodau-bpm": {
+   "label": "Pháo đầu đối Bình phong mã",
+   "mnemonic": [
+    "Pháo đầu đối Bình phong mã,",
+    "Mã Xe triển khai, thế nhà vững vàng.",
+    "Binh thế mở lối sang ngang,",
+    "Đổi quân tính trước, tiên sang phía mình."
+   ],
+   "closing": "Ghi nhớ ba điều: Mã và Xe triển khai đúng nhịp, Binh mở lối cho Xe, và chỉ đổi quân khi đã tính xong."
+  },
+  "dinh-khac": {
+   "label": "Khai cục thế trận",
+   "mnemonic": [
+    "Khai cục chớ vội tấn công,",
+    "Giữ thế vững chắc rồi dòng quân sang.",
+    "Mã Xe ra đúng đường ngang,",
+    "Tiên cơ có được mới toan đổi quờn."
+   ],
+   "closing": "Ghi nhớ ba điều: ra quân đúng nhịp, giữ thế trận vững, và chỉ chuyển sang tấn công khi đã nắm tiên."
+  }
+ },
+ "syllabus": [
+  {
+   "slug": "thuanphao",
+   "name": "Thuận Pháo",
+   "family": "phaodau-pao",
+   "tagline": "Hai Pháo đối đầu trên lộ giữa",
+   "reviewed": true
+  },
+  {
+   "slug": "nghichphao",
+   "name": "Nghịch Pháo",
+   "family": "phaodau-pao",
+   "tagline": "Hai Pháo vào lộ giữa từ hai cánh ngược nhau",
+   "reviewed": true
+  },
+  {
+   "slug": "cquacung",
+   "name": "Quá Cung Pháo",
+   "family": "phaodau-pao",
+   "tagline": "Pháo Đỏ qua cung, Đen đối Pháo giữa",
+   "reviewed": false
+  },
+  {
+   "slug": "sigiacphao",
+   "name": "Sĩ Giác Pháo",
+   "family": "phaodau-pao",
+   "tagline": "Pháo Đỏ về góc cung Sĩ",
+   "reviewed": false
+  },
+  {
+   "slug": "phancung",
+   "name": "Phản Cung Mã",
+   "family": "phaodau-pao",
+   "tagline": "Đen đáp Mã rồi Pháo về cung",
+   "reviewed": false
+  },
+  {
+   "slug": "uyenuong",
+   "name": "Uyên Ương",
+   "family": "phaodau-pao",
+   "tagline": "Đen đáp Mã, Đỏ chuyển sang Tốt 3",
+   "reviewed": false
+  },
+  {
+   "slug": "pd-donema",
+   "name": "Pháo đầu đối Mã (Mã 8 tiến 9)",
+   "family": "phaodau-pao",
+   "tagline": "Đen ra cả hai Mã, Mã biên tiến sớm",
+   "reviewed": false
+  },
+  {
+   "slug": "pd-binh3",
+   "name": "Pháo đầu, Binh 3 tiến 1 sớm",
+   "family": "phaodau-bpm",
+   "tagline": "Đỏ đẩy Binh 3 ngay nước thứ hai",
+   "reviewed": false
+  },
+  {
+   "slug": "bpm-binh3",
+   "name": "Pháo đầu đối Bình phong mã, Binh 3 tiến 1",
+   "family": "phaodau-bpm",
+   "tagline": "Xe trực rồi đẩy Binh 3",
+   "reviewed": false
+  },
+  {
+   "slug": "bpm-pdmd",
+   "name": "Pháo đầu đối Bình phong mã, hai Mã ra sớm",
+   "family": "phaodau-bpm",
+   "tagline": "Đỏ ra Mã biên thay vì Xe",
+   "reviewed": false
+  },
+  {
+   "slug": "pd-binh7-2",
+   "name": "Pháo đầu đối Bình phong mã, Xe qua hà",
+   "family": "phaodau-bpm",
+   "tagline": "Xe qua hà sớm, Binh 7 tiến 1",
+   "reviewed": false
+  },
+  {
+   "slug": "phaodaub7-1",
+   "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+   "family": "phaodau-bpm",
+   "tagline": "Xe qua hà rồi đẩy Binh 7",
+   "reviewed": false
+  },
+  {
+   "slug": "tamabanha",
+   "name": "Pháo đầu đối Bình phong mã, Mã 7 tiến 6",
+   "family": "phaodau-bpm",
+   "tagline": "Mã Đen lộ 7 tiến sang lộ 6",
+   "reviewed": false
+  },
+  {
+   "slug": "bp-phe-ma",
+   "name": "Pháo đầu đối Bình phong mã, Tượng đón Mã",
+   "family": "phaodau-bpm",
+   "tagline": "Đen kéo Tượng 3 tiến 5 giữ trung lộ",
+   "reviewed": false
+  },
+  {
+   "slug": "capttb",
+   "name": "Pháo đầu đối Bình phong mã, Xe trực, Binh 7",
+   "family": "phaodau-bpm",
+   "tagline": "Xe qua hà đối Pháo biên",
+   "reviewed": false
+  },
+  {
+   "slug": "spquaha",
+   "name": "Pháo đầu đối Bình phong mã, Pháo tiến 4",
+   "family": "phaodau-bpm",
+   "tagline": "Đen tiến cả hai Pháo sang cánh",
+   "reviewed": false
+  },
+  {
+   "slug": "pd-hoanh-xe",
+   "name": "Pháo đầu đối Bình phong mã, Xe hoành",
+   "family": "phaodau-bpm",
+   "tagline": "Đỏ đẩy Binh 7 trước, Xe sang ngang",
+   "reviewed": false
+  },
+  {
+   "slug": "tamboho",
+   "name": "Pháo đầu, Binh 3 tiến 1, Pháo biên",
+   "family": "phaodau-bpm",
+   "tagline": "Đen đưa Pháo biên sang lộ 9",
+   "reviewed": false
+  },
+  {
+   "slug": "ckhoimacuoc",
+   "name": "Khởi Mã Cục",
+   "family": "dinh-khac",
+   "tagline": "Đỏ mở đầu bằng Mã",
+   "reviewed": false
+  },
+  {
+   "slug": "ctiennhan",
+   "name": "Tiên Nhân Chỉ Lộ",
+   "family": "dinh-khac",
+   "tagline": "Đỏ mở bằng Binh 7 tiến 1",
+   "reviewed": false
+  },
+  {
+   "slug": "tiennhan1",
+   "name": "Tiên Nhân Chỉ Lộ, Pháo giữa",
+   "family": "dinh-khac",
+   "tagline": "Binh 7 rồi Pháo vào lộ giữa",
+   "reviewed": false
+  },
+  {
+   "slug": "doibinh1",
+   "name": "Đối Binh Cục",
+   "family": "dinh-khac",
+   "tagline": "Hai bên cùng đẩy Binh 7",
+   "reviewed": false
+  },
+  {
+   "slug": "cphituong",
+   "name": "Phi Tượng Cục",
+   "family": "dinh-khac",
+   "tagline": "Đỏ mở bằng Tượng 3 tiến 5",
+   "reviewed": false
+  },
+  {
+   "slug": "phi-tuong-1",
+   "name": "Phi Tượng Cục, hệ chính",
+   "family": "dinh-khac",
+   "tagline": "Phi Tượng với Pháo 8 bình 5",
+   "reviewed": false
+  },
+  {
+   "slug": "phituong2",
+   "name": "Phi Tượng Cục, nhánh phụ",
+   "family": "dinh-khac",
+   "tagline": "Đen đáp Sĩ 6 tiến 5",
+   "reviewed": false
+  }
+ ]
+}

@@ -1,0 +1,26 @@
+name: Khai Cuc - dung kich ban tat ca tap
+# Dựng lại khaicuc/episodes/*.json và khaicuc/index.json từ cây biến, điểm Pikafish, lý thuyết và meta.json.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - working-directory: Tinh-Hoa-Co-Tan
+        run: |
+          python scripts/build_khaicuc_all.py | tail -5
+          for f in khaicuc/episodes/kc-*.json; do python scripts/produce_khaicuc.py --episode "$(basename $f .json)" --check >/dev/null || { echo "LỖI $f"; exit 1; }; done
+          echo "Tất cả kịch bản hợp lệ"
+      - name: Lưu kịch bản
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add Tinh-Hoa-Co-Tan/khaicuc
+          git commit -m "data(khaicuc): dựng lại toàn bộ kịch bản tập" || exit 0
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep $((i*4)); done

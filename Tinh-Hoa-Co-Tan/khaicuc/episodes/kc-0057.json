@@ -1,0 +1,1576 @@
+{
+ "id": "kc-0057",
+ "number": 57,
+ "opening": "spquaha",
+ "part": 3,
+ "parts": 3,
+ "title": "Khai cục Pháo đầu đối Bình phong mã, Pháo tiến 4 – phần 3: Đen tiến cả hai Pháo sang cánh",
+ "subtitle": "Đen tiến cả hai Pháo sang cánh",
+ "category": "Khai cục",
+ "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w",
+ "card_note": "Phân tích kèm điểm đánh giá của Pikafish",
+ "outro_title": "ĐĂNG KÝ KÊNH ĐỂ KHÔNG BỎ LỠ!",
+ "outro_text": "Series khai cục chuyên sâu ra đều đặn. Bấm đăng ký để nhận phần tiếp theo. Thấy hay thì ủng hộ kênh một ly cà phê nhé! ☕",
+ "chapters": [
+  {
+   "title": "Pháo đầu đối Bình phong mã, Pháo tiến 4: tiếp tục các biến phụ",
+   "beats": [
+    {
+     "kind": "theory",
+     "label": "PHẦN 3",
+     "headline": "Pháo đầu đối Bình phong mã, Pháo tiến 4: tiếp tục các biến phụ",
+     "fen": "rnbakabnr/9/1c5c1/p1p1p1p1p/9/9/P1P1P1P1P/1C5C1/9/RNBAKABNR w",
+     "panel": {
+      "bullets": [
+       "Phần 3/3",
+       "Mỗi biến có điểm đánh giá của máy",
+       "Dừng lại tự chọn nước ở các điểm rẽ"
+      ]
+     },
+     "steps": [
+      {
+       "say": "Chào mừng bạn đến phần 3 của chuyên đề Pháo đầu đối Bình phong mã, Pháo tiến 4. Ta tiếp tục các biến phụ, mỗi biến đều có đánh giá của máy."
+      }
+     ]
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 26",
+     "headline": "Thay vì Pháo 8 tiến 4: Pháo 8 tiến 5",
+     "fen": "1rbakabr1/9/2n3nc1/p1p1p3p/6p2/2PN5/P3P1c1P/1C2C1N2/9/1RBAKABR1 w",
+     "start_no": 8,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 7, Đen đi Xe 1 bình 2. Biến chính đi Pháo 8 tiến 4, còn hướng ta xét bây giờ là Pháo 8 tiến 5. Máy xếp Pháo 8 tiến 4 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Pháo 8 tiến 4, Đen hơn 0,06; Pháo 8 tiến 6, Đen hơn 0,33; Pháo 8 tiến 5, Đen hơn 0,48.",
+       "rows": [
+        {
+         "vn": "Pháo 8 tiến 4",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,06"
+        },
+        {
+         "vn": "Pháo 8 tiến 6",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,33"
+        },
+        {
+         "vn": "Pháo 8 tiến 5",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,48"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 8 tiến 5. Gây sức ép lên Mã Đen lộ 7.",
+       "move": "b2b7",
+       "ply": 15,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,48)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 16,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,54)"
+      },
+      {
+       "say": "Pháo 5 bình 7.",
+       "move": "e2c2",
+       "ply": 17,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,49)"
+      },
+      {
+       "say": "Pháo 8 bình 9.",
+       "move": "h7i7",
+       "ply": 18,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,52)"
+      },
+      {
+       "say": "Tượng 3 tiến 5.",
+       "move": "g0e2",
+       "ply": 19,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,52)"
+      },
+      {
+       "say": "Xe 8 tiến 9. Xe ăn Xe Đỏ lộ 2, bên kia sẽ ăn lại nên đây là nước đổi quân, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "h9h0",
+       "ply": 20,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,47)"
+      },
+      {
+       "say": "Mã 3 thoái 2. Mã ăn Xe Đen lộ 8 mà không bị ăn lại.",
+       "move": "g2h0",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,46)"
+      },
+      {
+       "say": "Tốt 7 bình 6.",
+       "move": "g4f4",
+       "ply": 22,
+       "status": "Máy: thế cờ cân bằng (-0,12)"
+      },
+      {
+       "say": "Xe 8 tiến 5. Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "b0b5",
+       "ply": 23,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,41)"
+      },
+      {
+       "say": "Tốt 3 tiến 1.",
+       "move": "c6c5",
+       "ply": 24,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,44)"
+      },
+      {
+       "say": "Xe 8 bình 7. Xe ăn Tốt lộ 3 mà không bị ăn lại.",
+       "move": "b5c5",
+       "ply": 25,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,42)"
+      },
+      {
+       "say": "Xe 2 tiến 2. Xe ăn Pháo Đỏ lộ 8 mà không bị ăn lại.",
+       "move": "b9b7",
+       "ply": 26,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,44)"
+      },
+      {
+       "say": "Xe 7 bình 3. Đe dọa ăn Pháo Đen lộ 7.",
+       "move": "c5g5",
+       "ply": 27,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,44)"
+      },
+      {
+       "say": "Trong biến này có 4 lần ăn quân: Xe Đen ăn Xe Đỏ; Mã Đỏ ăn Xe Đen; Xe Đỏ ăn Tốt Đen; Xe Đen ăn Pháo Đỏ. Kết thúc biến, Đen nhỉnh hơn một chút, máy chấm -0,44."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 27",
+     "headline": "Thay vì Pháo 8 tiến 4: Pháo 8 tiến 6",
+     "fen": "1rbakabr1/9/2n3nc1/p1p1p3p/6p2/2PN5/P3P1c1P/1C2C1N2/9/1RBAKABR1 w",
+     "start_no": 8,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 7, Đen đi Xe 1 bình 2. Biến chính đi Pháo 8 tiến 4, còn hướng ta xét bây giờ là Pháo 8 tiến 6. Máy xếp Pháo 8 tiến 4 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Pháo 8 tiến 4, Đen hơn 0,06; Pháo 8 tiến 6, Đen hơn 0,33; Pháo 8 tiến 5, Đen hơn 0,48.",
+       "rows": [
+        {
+         "vn": "Pháo 8 tiến 4",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,06"
+        },
+        {
+         "vn": "Pháo 8 tiến 6",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,33"
+        },
+        {
+         "vn": "Pháo 8 tiến 5",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,48"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 8 tiến 6.",
+       "move": "b2b8",
+       "ply": 15,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,33)"
+      },
+      {
+       "say": "Xe 8 tiến 1. Gây sức ép lên Pháo Đỏ lộ 8.",
+       "move": "h9h8",
+       "ply": 16,
+       "status": "Máy: thế cờ cân bằng (-0,15)"
+      },
+      {
+       "say": "Mã 6 tiến 7. Mã ăn Tốt lộ 3 mà không bị ăn lại.",
+       "move": "d4c6",
+       "ply": 17,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 18,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,31)"
+      },
+      {
+       "say": "Tượng 3 tiến 1.",
+       "move": "g0i2",
+       "ply": 19,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Pháo 8 tiến 2.",
+       "move": "h7h5",
+       "ply": 20,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,35)"
+      },
+      {
+       "say": "Pháo 8 thoái 3.",
+       "move": "b8b5",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,30)"
+      },
+      {
+       "say": "Tượng 7 tiến 5.",
+       "move": "g9e7",
+       "ply": 22,
+       "status": "Máy: thế cờ cân bằng (-0,19)"
+      },
+      {
+       "say": "Tượng 1 tiến 3. Tượng ăn Tốt lộ 7 mà không bị ăn lại.",
+       "move": "i2g4",
+       "ply": 23,
+       "status": "Máy: thế cờ cân bằng (-0,15)"
+      },
+      {
+       "say": "Xe 2 tiến 3. Đe dọa ăn Mã Đỏ lộ 7.",
+       "move": "b9b6",
+       "ply": 24,
+       "status": "Máy: thế cờ cân bằng (-0,12)"
+      },
+      {
+       "say": "Binh 7 tiến 1. Binh qua sông, mở thêm hướng tấn công.",
+       "move": "c4c5",
+       "ply": 25,
+       "status": "Máy: thế cờ cân bằng (-0,17)"
+      },
+      {
+       "say": "Tượng 5 tiến 3. Tượng ăn Binh lộ 7 mà không bị ăn lại.",
+       "move": "e7c5",
+       "ply": 26,
+       "status": "Máy: thế cờ cân bằng (-0,17)"
+      },
+      {
+       "say": "Pháo 8 bình 2. Pháo ăn Pháo Đen lộ 8, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "b5h5",
+       "ply": 27,
+       "status": "Máy: thế cờ cân bằng (-0,13)"
+      },
+      {
+       "say": "Xe 2 tiến 6. Xe ăn Xe Đỏ lộ 8 mà không bị ăn lại, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "b6b0",
+       "ply": 28,
+       "status": "Máy: thế cờ cân bằng (-0,14)"
+      },
+      {
+       "say": "Pháo 2 bình 5. Chiếu Tướng Đen, đưa Pháo vào lộ giữa, nhắm vào Tốt đầu của đối phương.",
+       "move": "h5e5",
+       "ply": 29,
+       "status": "Máy: thế cờ cân bằng (-0,16)"
+      },
+      {
+       "say": "Xe 8 bình 5.",
+       "move": "h8e8",
+       "ply": 30,
+       "status": "Máy: thế cờ cân bằng (-0,11)"
+      },
+      {
+       "say": "Pháo trước tiến 3. Pháo ăn Xe Đen lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "e5e8",
+       "ply": 31,
+       "status": "Máy: thế cờ cân bằng (-0,14)"
+      },
+      {
+       "say": "Sĩ 6 tiến 5. Sĩ ăn Pháo Đỏ lộ 5 mà không bị ăn lại.",
+       "move": "f9e8",
+       "ply": 32,
+       "status": "Máy: thế cờ cân bằng (-0,08)"
+      },
+      {
+       "say": "Xe 2 tiến 3. Đe dọa ăn Pháo Đen lộ 7.",
+       "move": "h0h3",
+       "ply": 33,
+       "status": "Máy: thế cờ cân bằng (-0,11)"
+      },
+      {
+       "say": "Pháo 7 bình 1. Pháo ăn Binh lộ 9 mà không bị ăn lại.",
+       "move": "g3a3",
+       "ply": 34,
+       "status": "Máy: thế cờ cân bằng (-0,10)"
+      },
+      {
+       "say": "Trong biến này có 8 lần ăn quân: Mã Đỏ ăn Tốt Đen; Tượng Đỏ ăn Tốt Đen; Tượng Đen ăn Binh Đỏ; Pháo Đỏ ăn Pháo Đen.... Kết thúc biến, thế cờ cân bằng, máy chấm -0,10."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 28",
+     "headline": "Thay vì Xe 9 bình 8: Pháo 8 tiến 4",
+     "fen": "r1bakabr1/9/2n3nc1/p1p1p3p/6p2/2PN5/P3P1c1P/1C2C1N2/9/R1BAKABR1 w",
+     "start_no": 7,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 6, Đen đi Pháo 2 bình 7. Biến chính đi Xe 9 bình 8, còn hướng ta xét bây giờ là Pháo 8 tiến 4. Máy xếp Xe 9 bình 8 lên đầu, nhưng khoảng cách với hướng sau không lớn. Theo thứ tự: Xe 9 bình 8, cân bằng; Pháo 8 tiến 4, Đen hơn 0,07; Mã 6 tiến 5, Đen hơn 0,25; các hướng còn lại kém hơn.",
+       "rows": [
+        {
+         "vn": "Xe 9 bình 8",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy +0,00"
+        },
+        {
+         "vn": "Pháo 8 tiến 4",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,07"
+        },
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,25"
+        },
+        {
+         "vn": "Pháo 8 bình 7",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,97"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 8 tiến 4.",
+       "move": "b2b6",
+       "ply": 13,
+       "status": "Máy: thế cờ cân bằng (-0,07)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 14,
+       "status": "Máy: thế cờ cân bằng (-0,02)"
+      },
+      {
+       "say": "Mã 6 tiến 5. Mã ăn Tốt lộ 5 nhưng có thể bị ăn lại, nên phải tính kỹ.",
+       "move": "d4e6",
+       "ply": 15,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,25)"
+      },
+      {
+       "say": "Mã 7 tiến 5. Mã ăn Mã Đỏ lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "g7e6",
+       "ply": 16,
+       "status": "Máy: thế cờ cân bằng (-0,08)"
+      },
+      {
+       "say": "Pháo 8 bình 5. Pháo ăn Mã Đen lộ 5 nhưng có thể bị ăn lại, nên phải tính kỹ, đưa Pháo vào lộ giữa, nhắm vào Tốt đầu của đối phương.",
+       "move": "b6e6",
+       "ply": 17,
+       "status": "Máy: thế cờ cân bằng (-0,18)"
+      },
+      {
+       "say": "Mã 3 tiến 5. Mã ăn Pháo Đỏ lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "c7e6",
+       "ply": 18,
+       "status": "Máy: thế cờ cân bằng (-0,15)"
+      },
+      {
+       "say": "Pháo 5 tiến 4. Pháo ăn Mã Đen lộ 5 mà không bị ăn lại.",
+       "move": "e2e6",
+       "ply": 19,
+       "status": "Máy: thế cờ cân bằng (-0,14)"
+      },
+      {
+       "say": "Xe 1 bình 2. Xuất Xe, chiếm lộ 2, lộ này thông thẳng tới đáy đối phương.",
+       "move": "a9b9",
+       "ply": 20,
+       "status": "Máy: thế cờ cân bằng (-0,12)"
+      },
+      {
+       "say": "Xe 9 tiến 1. Xuất Xe, chiếm lộ 9.",
+       "move": "a0a1",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,27)"
+      },
+      {
+       "say": "Pháo 8 tiến 4.",
+       "move": "h7h3",
+       "ply": 22,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,28)"
+      },
+      {
+       "say": "Binh 5 tiến 1.",
+       "move": "e3e4",
+       "ply": 23,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Xe 2 tiến 4. Xe tuần hà, canh giữ bờ sông và sẵn sàng sang cánh.",
+       "move": "b9b5",
+       "ply": 24,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Tượng 3 tiến 5.",
+       "move": "g0e2",
+       "ply": 25,
+       "status": "Máy: thế cờ cân bằng (-0,24)"
+      },
+      {
+       "say": "Pháo 8 thoái 1.",
+       "move": "h3h4",
+       "ply": 26,
+       "status": "Máy: thế cờ cân bằng (-0,06)"
+      },
+      {
+       "say": "Sĩ 4 tiến 5.",
+       "move": "f0e1",
+       "ply": 27,
+       "status": "Máy: thế cờ cân bằng (-0,03)"
+      },
+      {
+       "say": "Xe 8 tiến 4. Xe tuần hà, canh giữ bờ sông và sẵn sàng sang cánh.",
+       "move": "h9h5",
+       "ply": 28,
+       "status": "Máy: thế cờ cân bằng (-0,02)"
+      },
+      {
+       "say": "Xe 9 bình 6.",
+       "move": "a1d1",
+       "ply": 29,
+       "status": "Máy: thế cờ cân bằng (-0,01)"
+      },
+      {
+       "say": "Pháo 8 bình 5. Pháo ăn Binh lộ 5 mà không bị ăn lại, Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa.",
+       "move": "h4e4",
+       "ply": 30,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Xe 2 tiến 5. Xe ăn Xe Đen lộ 8, bên kia sẽ ăn lại nên đây là nước đổi quân, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "h0h5",
+       "ply": 31,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Xe 2 bình 8. Xe ăn Xe Đỏ lộ 2 mà không bị ăn lại.",
+       "move": "b5h5",
+       "ply": 32,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Xe 6 tiến 2. Gây sức ép lên Pháo Đen lộ 7.",
+       "move": "d1d3",
+       "ply": 33,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Xe 8 thoái 1. Đe dọa ăn Pháo Đỏ lộ 5.",
+       "move": "h5h6",
+       "ply": 34,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Pháo 5 thoái 1.",
+       "move": "e6e5",
+       "ply": 35,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Xe 8 tiến 1. Đe dọa ăn Pháo Đỏ lộ 5, Xe tuần hà, canh giữ bờ sông và sẵn sàng sang cánh.",
+       "move": "h6h5",
+       "ply": 36,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Pháo 5 tiến 1.",
+       "move": "e5e6",
+       "ply": 37,
+       "status": "Máy: thế cờ cân bằng (+0,00)"
+      },
+      {
+       "say": "Trong biến này có 8 lần ăn quân: Mã Đỏ ăn Tốt Đen; Mã Đen ăn Mã Đỏ; Pháo Đỏ ăn Mã Đen; Mã Đen ăn Pháo Đỏ.... Kết thúc biến, thế cờ cân bằng, máy chấm +0,00."
+      }
+     ],
+     "continue": false
+    }
+   ]
+  },
+  {
+   "title": "Thay vì Xe 9 bình 8: Pháo 8 bình 7",
+   "beats": [
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 29",
+     "headline": "Thay vì Xe 9 bình 8: Pháo 8 bình 7",
+     "fen": "r1bakabr1/9/2n3nc1/p1p1p3p/6p2/2PN5/P3P1c1P/1C2C1N2/9/R1BAKABR1 w",
+     "start_no": 7,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 6, Đen đi Pháo 2 bình 7. Biến chính đi Xe 9 bình 8, còn hướng ta xét bây giờ là Pháo 8 bình 7. Máy xếp Xe 9 bình 8 lên đầu, nhưng khoảng cách với hướng sau không lớn. Theo thứ tự: Xe 9 bình 8, cân bằng; Pháo 8 tiến 4, Đen hơn 0,07; Mã 6 tiến 5, Đen hơn 0,25; các hướng còn lại kém hơn.",
+       "rows": [
+        {
+         "vn": "Xe 9 bình 8",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy +0,00"
+        },
+        {
+         "vn": "Pháo 8 tiến 4",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,07"
+        },
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,25"
+        },
+        {
+         "vn": "Pháo 8 bình 7",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,97"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 8 bình 7. Thế cờ đổi sắc thái: từ thế cờ cân bằng sang Đen hơn nhẹ.",
+       "move": "b2c2",
+       "ply": 13,
+       "status": "Máy: Đen hơn nhẹ (-0,97)"
+      },
+      {
+       "say": "Xe 1 bình 2. Xuất Xe, chiếm lộ 2, lộ này thông thẳng tới đáy đối phương.",
+       "move": "a9b9",
+       "ply": 14,
+       "status": "Máy: Đen hơn nhẹ (-0,87)"
+      },
+      {
+       "say": "Đến đây có 2 hướng: Binh 7 tiến 1, Mã 6 tiến 7. Máy xếp Binh 7 tiến 1 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Binh 7 tiến 1, Đen hơn 0,88; Mã 6 tiến 7, Đen hơn 2,04.",
+       "rows": [
+        {
+         "vn": "Binh 7 tiến 1",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,88"
+        },
+        {
+         "vn": "Mã 6 tiến 7",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -2,04"
+        }
+       ]
+      },
+      {
+       "say": "Binh 7 tiến 1. Binh qua sông, mở thêm hướng tấn công.",
+       "move": "c4c5",
+       "ply": 15,
+       "status": "Máy: Đen hơn nhẹ (-0,88)"
+      },
+      {
+       "say": "Tốt 3 tiến 1. Tốt ăn Binh lộ 7 mà không bị ăn lại.",
+       "move": "c6c5",
+       "ply": 16,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,35)"
+      },
+      {
+       "say": "Pháo 7 tiến 5. Pháo ăn Mã Đen lộ 3 nhưng có thể bị ăn lại, nên phải tính kỹ.",
+       "move": "c2c7",
+       "ply": 17,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Pháo 8 bình 3. Pháo ăn Pháo Đỏ lộ 7 mà không bị ăn lại.",
+       "move": "h7c7",
+       "ply": 18,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,37)"
+      },
+      {
+       "say": "Đến đây có 2 hướng: Mã 6 tiến 5, Xe 2 tiến 9. Máy xếp Mã 6 tiến 5 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Mã 6 tiến 5, Đen hơn 0,40; Xe 2 tiến 9, Đen hơn 1,57.",
+       "rows": [
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,40"
+        },
+        {
+         "vn": "Xe 2 tiến 9",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -1,57"
+        }
+       ]
+      },
+      {
+       "say": "Mã 6 tiến 5. Mã ăn Tốt lộ 5 nhưng có thể bị ăn lại, nên phải tính kỹ.",
+       "move": "d4e6",
+       "ply": 19,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,40)"
+      },
+      {
+       "say": "Pháo 3 bình 5. Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa.",
+       "move": "c7e7",
+       "ply": 20,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,33)"
+      },
+      {
+       "say": "Mã 5 thoái 3. Mã ăn Tốt lộ 7 mà không bị ăn lại.",
+       "move": "e6g5",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Sĩ 4 tiến 5.",
+       "move": "d9e8",
+       "ply": 22,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Pháo 5 tiến 5. Pháo ăn Pháo Đen lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân, chiếu Tướng Đen.",
+       "move": "e2e7",
+       "ply": 23,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Tượng 7 tiến 5. Tượng ăn Pháo Đỏ lộ 5 mà không bị ăn lại.",
+       "move": "g9e7",
+       "ply": 24,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Mã trước thoái 5. Đe dọa ăn Pháo Đen lộ 7.",
+       "move": "g5e4",
+       "ply": 25,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Xe 8 tiến 9. Xe ăn Xe Đỏ lộ 2, bên kia sẽ ăn lại nên đây là nước đổi quân, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "h9h0",
+       "ply": 26,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,26)"
+      },
+      {
+       "say": "Mã 3 thoái 2. Mã ăn Xe Đen lộ 8 mà không bị ăn lại.",
+       "move": "g2h0",
+       "ply": 27,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Pháo 7 bình 8.",
+       "move": "g3h3",
+       "ply": 28,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,26)"
+      },
+      {
+       "say": "Xe 9 tiến 1. Xuất Xe, chiếm lộ 9.",
+       "move": "a0a1",
+       "ply": 29,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Xe 2 tiến 3.",
+       "move": "b9b6",
+       "ply": 30,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,30)"
+      },
+      {
+       "say": "Trong biến này có 9 lần ăn quân: Tốt Đen ăn Binh Đỏ; Pháo Đỏ ăn Mã Đen; Pháo Đen ăn Pháo Đỏ; Mã Đỏ ăn Tốt Đen.... Kết thúc biến, Đen nhỉnh hơn một chút, máy chấm -0,30."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 30",
+     "headline": "Thay vì Mã 6 tiến 5: Xe 2 tiến 9",
+     "fen": "1rbakabr1/9/2c3n2/p3p3p/2p3p2/3N5/P3P1c1P/4C1N2/9/R1BAKABR1 w",
+     "start_no": 10,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 9, Đen đi Pháo 8 bình 3. Biến chính đi Mã 6 tiến 5, còn hướng ta xét bây giờ là Xe 2 tiến 9. Máy xếp Mã 6 tiến 5 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Mã 6 tiến 5, Đen hơn 0,40; Xe 2 tiến 9, Đen hơn 1,57.",
+       "rows": [
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,40"
+        },
+        {
+         "vn": "Xe 2 tiến 9",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -1,57"
+        }
+       ]
+      },
+      {
+       "say": "Xe 2 tiến 9. Xe ăn Xe Đen lộ 8, bên kia sẽ ăn lại nên đây là nước đổi quân, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương. Thế cờ đổi sắc thái: từ Đen nhỉnh hơn một chút sang Đen chiếm ưu thế rõ.",
+       "move": "h0h9",
+       "ply": 19,
+       "status": "Máy: Đen chiếm ưu thế rõ (-1,57)"
+      },
+      {
+       "say": "Pháo 7 tiến 3. Pháo ăn Tượng Đỏ lộ 3 mà không bị ăn lại, chiếu Tướng Đỏ.",
+       "move": "g3g0",
+       "ply": 20,
+       "status": "Máy: Đen chiếm ưu thế rõ (-1,57)"
+      },
+      {
+       "say": "Sĩ 4 tiến 5.",
+       "move": "f0e1",
+       "ply": 21,
+       "status": "Máy: Đen hơn nhẹ (-1,47)"
+      },
+      {
+       "say": "Mã 7 thoái 8. Mã ăn Xe Đỏ lộ 2 mà không bị ăn lại.",
+       "move": "g7h9",
+       "ply": 22,
+       "status": "Máy: Đen hơn nhẹ (-1,46)"
+      },
+      {
+       "say": "Đến đây có 2 hướng: Mã 6 tiến 5, Pháo 5 tiến 4. Máy xếp Mã 6 tiến 5 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Mã 6 tiến 5, Đen hơn 1,43; Pháo 5 tiến 4, Đen hơn 2,80.",
+       "rows": [
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -1,43"
+        },
+        {
+         "vn": "Pháo 5 tiến 4",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -2,80"
+        }
+       ]
+      },
+      {
+       "say": "Mã 6 tiến 5. Mã ăn Tốt lộ 5 mà không bị ăn lại.",
+       "move": "d4e6",
+       "ply": 23,
+       "status": "Máy: Đen hơn nhẹ (-1,43)"
+      },
+      {
+       "say": "Pháo 3 bình 5. Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa.",
+       "move": "c7e7",
+       "ply": 24,
+       "status": "Máy: Đen chiếm ưu thế rõ (-1,54)"
+      },
+      {
+       "say": "Trong biến này có 4 lần ăn quân: Xe Đỏ ăn Xe Đen; Pháo Đen ăn Tượng Đỏ; Mã Đen ăn Xe Đỏ; Mã Đỏ ăn Tốt Đen. Kết thúc biến, Đen chiếm ưu thế rõ, máy chấm -1,54."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 31",
+     "headline": "Thay vì Mã 6 tiến 5: Pháo 5 tiến 4",
+     "fen": "1rbakabn1/9/2c6/p3p3p/2p3p2/3N5/P3P3P/4C1N2/4A4/R1BAK1c2 w",
+     "start_no": 12,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 11, Đen đi Mã 7 thoái 8. Biến chính đi Mã 6 tiến 5, còn hướng ta xét bây giờ là Pháo 5 tiến 4. Máy xếp Mã 6 tiến 5 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Mã 6 tiến 5, Đen hơn 1,43; Pháo 5 tiến 4, Đen hơn 2,80.",
+       "rows": [
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -1,43"
+        },
+        {
+         "vn": "Pháo 5 tiến 4",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -2,80"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 5 tiến 4. Pháo ăn Tốt lộ 5 mà không bị ăn lại. Thế cờ đổi sắc thái: từ Đen hơn nhẹ sang Đen chiếm ưu thế rõ.",
+       "move": "e2e6",
+       "ply": 23,
+       "status": "Máy: Đen chiếm ưu thế rõ (-2,80)"
+      },
+      {
+       "say": "Tốt 3 tiến 1. Đe dọa ăn Mã Đỏ lộ 6, Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "c5c4",
+       "ply": 24,
+       "status": "Máy: Đen chiếm ưu thế rõ (-2,24)"
+      },
+      {
+       "say": "Trong biến này có 1 lần ăn quân: Pháo Đỏ ăn Tốt Đen. Kết thúc biến, Đen chiếm ưu thế rõ, máy chấm -2,24."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 32",
+     "headline": "Thay vì Binh 7 tiến 1: Mã 6 tiến 7",
+     "fen": "1rbakabr1/9/2n3nc1/p1p1p3p/6p2/2PN5/P3P1c1P/2C1C1N2/9/R1BAKABR1 w",
+     "start_no": 8,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 7, Đen đi Xe 1 bình 2. Biến chính đi Binh 7 tiến 1, còn hướng ta xét bây giờ là Mã 6 tiến 7. Máy xếp Binh 7 tiến 1 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Binh 7 tiến 1, Đen hơn 0,88; Mã 6 tiến 7, Đen hơn 2,04.",
+       "rows": [
+        {
+         "vn": "Binh 7 tiến 1",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,88"
+        },
+        {
+         "vn": "Mã 6 tiến 7",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -2,04"
+        }
+       ]
+      },
+      {
+       "say": "Mã 6 tiến 7. Mã ăn Tốt lộ 3 mà không bị ăn lại. Thế cờ đổi sắc thái: từ Đen hơn nhẹ sang Đen chiếm ưu thế rõ.",
+       "move": "d4c6",
+       "ply": 15,
+       "status": "Máy: Đen chiếm ưu thế rõ (-2,04)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 16,
+       "status": "Máy: Đen chiếm ưu thế rõ (-1,88)"
+      },
+      {
+       "say": "Mã 7 thoái 6.",
+       "move": "c6d4",
+       "ply": 17,
+       "status": "Máy: Đen chiếm ưu thế rõ (-2,45)"
+      },
+      {
+       "say": "Mã 3 tiến 4.",
+       "move": "c7d5",
+       "ply": 18,
+       "status": "Máy: Đen chiếm ưu thế rõ (-2,48)"
+      },
+      {
+       "say": "Binh 7 tiến 1. Đe dọa ăn Mã Đen lộ 4, Binh qua sông, mở thêm hướng tấn công.",
+       "move": "c4c5",
+       "ply": 19,
+       "status": "Máy: Đen chiếm ưu thế lớn (-3,00)"
+      },
+      {
+       "say": "Mã 4 tiến 6. Gây sức ép lên Pháo Đỏ lộ 5.",
+       "move": "d5f4",
+       "ply": 20,
+       "status": "Máy: Đen chiếm ưu thế lớn (-3,00)"
+      },
+      {
+       "say": "Trong biến này có 1 lần ăn quân: Mã Đỏ ăn Tốt Đen. Kết thúc biến, Đen chiếm ưu thế lớn, máy chấm -3,00."
+      }
+     ],
+     "continue": false
+    }
+   ]
+  },
+  {
+   "title": "Thay vì Xe 9 bình 8: Mã 6 tiến 5",
+   "beats": [
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 33",
+     "headline": "Thay vì Xe 9 bình 8: Mã 6 tiến 5",
+     "fen": "r1bakabr1/9/2n3nc1/p1p1p3p/6p2/2PN5/P3P1c1P/1C2C1N2/9/R1BAKABR1 w",
+     "start_no": 7,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 6, Đen đi Pháo 2 bình 7. Biến chính đi Xe 9 bình 8, còn hướng ta xét bây giờ là Mã 6 tiến 5. Máy xếp Xe 9 bình 8 lên đầu, nhưng khoảng cách với hướng sau không lớn. Theo thứ tự: Xe 9 bình 8, cân bằng; Pháo 8 tiến 4, Đen hơn 0,07; Mã 6 tiến 5, Đen hơn 0,25; các hướng còn lại kém hơn.",
+       "rows": [
+        {
+         "vn": "Xe 9 bình 8",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy +0,00"
+        },
+        {
+         "vn": "Pháo 8 tiến 4",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,07"
+        },
+        {
+         "vn": "Mã 6 tiến 5",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,25"
+        },
+        {
+         "vn": "Pháo 8 bình 7",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,97"
+        }
+       ]
+      },
+      {
+       "say": "Mã 6 tiến 5. Mã ăn Tốt lộ 5 nhưng có thể bị ăn lại, nên phải tính kỹ.",
+       "move": "d4e6",
+       "ply": 13,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,25)"
+      },
+      {
+       "say": "Mã 3 tiến 5. Mã ăn Mã Đỏ lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "c7e6",
+       "ply": 14,
+       "status": "Máy: thế cờ cân bằng (-0,24)"
+      },
+      {
+       "say": "Pháo 5 tiến 4. Pháo ăn Mã Đen lộ 5 nhưng có thể bị ăn lại, nên phải tính kỹ.",
+       "move": "e2e6",
+       "ply": 15,
+       "status": "Máy: thế cờ cân bằng (-0,21)"
+      },
+      {
+       "say": "Pháo 8 tiến 5. Đe dọa ăn Pháo Đỏ lộ 8.",
+       "move": "h7h2",
+       "ply": 16,
+       "status": "Máy: thế cờ cân bằng (-0,21)"
+      },
+      {
+       "say": "Pháo 8 bình 5. Gây sức ép lên Pháo Đen lộ 8, đưa Pháo vào lộ giữa, nhắm vào Tốt đầu của đối phương.",
+       "move": "b2e2",
+       "ply": 17,
+       "status": "Máy: thế cờ cân bằng (-0,17)"
+      },
+      {
+       "say": "Pháo 8 bình 5. Pháo ăn Pháo Đỏ lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân, Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa.",
+       "move": "h2e2",
+       "ply": 18,
+       "status": "Máy: thế cờ cân bằng (-0,09)"
+      },
+      {
+       "say": "Pháo 5 thoái 4. Pháo ăn Pháo Đen lộ 5 mà không bị ăn lại, chiếu Tướng Đen.",
+       "move": "e6e2",
+       "ply": 19,
+       "status": "Máy: thế cờ cân bằng (-0,07)"
+      },
+      {
+       "say": "Tượng 7 tiến 5.",
+       "move": "g9e7",
+       "ply": 20,
+       "status": "Máy: thế cờ cân bằng (-0,06)"
+      },
+      {
+       "say": "Tượng 3 tiến 1.",
+       "move": "g0i2",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,33)"
+      },
+      {
+       "say": "Xe 8 tiến 9. Xe ăn Xe Đỏ lộ 2, bên kia sẽ ăn lại nên đây là nước đổi quân, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "h9h0",
+       "ply": 22,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Mã 3 thoái 2. Mã ăn Xe Đen lộ 8 mà không bị ăn lại.",
+       "move": "g2h0",
+       "ply": 23,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,26)"
+      },
+      {
+       "say": "Xe 1 bình 2. Xuất Xe, chiếm lộ 2, lộ này thông thẳng tới đáy đối phương.",
+       "move": "a9b9",
+       "ply": 24,
+       "status": "Máy: thế cờ cân bằng (-0,23)"
+      },
+      {
+       "say": "Trong biến này có 7 lần ăn quân: Mã Đỏ ăn Tốt Đen; Mã Đen ăn Mã Đỏ; Pháo Đỏ ăn Mã Đen; Pháo Đen ăn Pháo Đỏ.... Kết thúc biến, thế cờ cân bằng, máy chấm -0,23."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 34",
+     "headline": "Thay vì Mã 8 tiến 7: Pháo 8 bình 7",
+     "fen": "r1bakabr1/9/1cn3nc1/p1p1p3p/6p2/2P6/P3P1P1P/1C2C1N2/9/RNBAKABR1 w",
+     "start_no": 5,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 4, Đen đi Tốt 7 tiến 1. Biến chính đi Mã 8 tiến 7, còn hướng ta xét bây giờ là Pháo 8 bình 7. Máy đánh giá các hướng này gần như ngang nhau, chọn hướng nào là tùy phong cách. Theo thứ tự: Pháo 8 bình 7, Đỏ hơn 0,07; Mã 8 tiến 7, cân bằng.",
+       "rows": [
+        {
+         "vn": "Pháo 8 bình 7",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy +0,07"
+        },
+        {
+         "vn": "Mã 8 tiến 7",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy +0,03"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 8 bình 7.",
+       "move": "b2c2",
+       "ply": 9,
+       "status": "Máy: thế cờ cân bằng (+0,07)"
+      },
+      {
+       "say": "Pháo 2 tiến 4.",
+       "move": "b7b3",
+       "ply": 10,
+       "status": "Máy: thế cờ cân bằng (+0,14)"
+      },
+      {
+       "say": "Đến đây có 2 hướng: Binh 5 tiến 1, Mã 8 tiến 9. Máy xếp Binh 5 tiến 1 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Binh 5 tiến 1, cân bằng; Mã 8 tiến 9, Đen hơn 0,38.",
+       "rows": [
+        {
+         "vn": "Binh 5 tiến 1",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,01"
+        },
+        {
+         "vn": "Mã 8 tiến 9",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,38"
+        }
+       ]
+      },
+      {
+       "say": "Binh 5 tiến 1.",
+       "move": "e3e4",
+       "ply": 11,
+       "status": "Máy: thế cờ cân bằng (-0,01)"
+      },
+      {
+       "say": "Pháo 8 tiến 2.",
+       "move": "h7h5",
+       "ply": 12,
+       "status": "Máy: thế cờ cân bằng (-0,05)"
+      },
+      {
+       "say": "Mã 8 tiến 9. Nhảy Mã ra quân.",
+       "move": "b0a2",
+       "ply": 13,
+       "status": "Máy: thế cờ cân bằng (-0,08)"
+      },
+      {
+       "say": "Tượng 3 tiến 5.",
+       "move": "c9e7",
+       "ply": 14,
+       "status": "Máy: thế cờ cân bằng (-0,09)"
+      },
+      {
+       "say": "Xe 9 bình 8. Đe dọa ăn Pháo Đen lộ 2, xuất Xe, chiếm lộ 8.",
+       "move": "a0b0",
+       "ply": 15,
+       "status": "Máy: thế cờ cân bằng (-0,05)"
+      },
+      {
+       "say": "Xe 1 bình 2. Xuất Xe, chiếm lộ 2.",
+       "move": "a9b9",
+       "ply": 16,
+       "status": "Máy: thế cờ cân bằng (-0,14)"
+      },
+      {
+       "say": "Xe 2 tiến 4. Gây sức ép lên Pháo Đen lộ 8, Xe tuần hà, canh giữ bờ sông và sẵn sàng sang cánh.",
+       "move": "h0h4",
+       "ply": 17,
+       "status": "Máy: thế cờ cân bằng (-0,15)"
+      },
+      {
+       "say": "Mã 7 tiến 6.",
+       "move": "g7f5",
+       "ply": 18,
+       "status": "Máy: thế cờ cân bằng (-0,06)"
+      },
+      {
+       "say": "Sĩ 6 tiến 5.",
+       "move": "d0e1",
+       "ply": 19,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,32)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Đe dọa ăn Xe Đỏ lộ 2, Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 20,
+       "status": "Máy: thế cờ cân bằng (-0,24)"
+      },
+      {
+       "say": "Xe 2 bình 3. Xe ăn Tốt lộ 7 mà không bị ăn lại.",
+       "move": "h4g4",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,28)"
+      },
+      {
+       "say": "Mã 6 tiến 4. Đe dọa ăn Pháo Đỏ lộ 7.",
+       "move": "f5d4",
+       "ply": 22,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,25)"
+      },
+      {
+       "say": "Pháo 7 bình 6.",
+       "move": "c2d2",
+       "ply": 23,
+       "status": "Máy: thế cờ cân bằng (-0,24)"
+      },
+      {
+       "say": "Pháo 8 bình 7.",
+       "move": "h5g5",
+       "ply": 24,
+       "status": "Máy: thế cờ cân bằng (-0,02)"
+      },
+      {
+       "say": "Xe 3 bình 4.",
+       "move": "g4f4",
+       "ply": 25,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,34)"
+      },
+      {
+       "say": "Xe 8 tiến 6. Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "h9h3",
+       "ply": 26,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,27)"
+      },
+      {
+       "say": "Xe 4 thoái 1. Gây sức ép lên Pháo Đen lộ 2.",
+       "move": "f4f3",
+       "ply": 27,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,34)"
+      },
+      {
+       "say": "Mã 4 tiến 5. Mã ăn Pháo Đỏ lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "d4e2",
+       "ply": 28,
+       "status": "Máy: thế cờ cân bằng (-0,23)"
+      },
+      {
+       "say": "Tượng 3 tiến 5. Tượng ăn Mã Đen lộ 5 mà không bị ăn lại.",
+       "move": "g0e2",
+       "ply": 29,
+       "status": "Máy: thế cờ cân bằng (-0,22)"
+      },
+      {
+       "say": "Pháo 2 tiến 1.",
+       "move": "b3b2",
+       "ply": 30,
+       "status": "Máy: thế cờ cân bằng (-0,19)"
+      },
+      {
+       "say": "Mã 3 thoái 1. Đe dọa ăn Xe Đen lộ 8.",
+       "move": "g2i1",
+       "ply": 31,
+       "status": "Máy: thế cờ cân bằng (-0,18)"
+      },
+      {
+       "say": "Xe 8 bình 9. Xe ăn Binh lộ 1 mà không bị ăn lại.",
+       "move": "h3i3",
+       "ply": 32,
+       "status": "Máy: thế cờ cân bằng (-0,21)"
+      },
+      {
+       "say": "Mã 1 thoái 3.",
+       "move": "i1g0",
+       "ply": 33,
+       "status": "Máy: thế cờ cân bằng (-0,24)"
+      },
+      {
+       "say": "Xe 9 thoái 1.",
+       "move": "i3i4",
+       "ply": 34,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,25)"
+      },
+      {
+       "say": "Mã 3 tiến 4.",
+       "move": "g0f2",
+       "ply": 35,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,29)"
+      },
+      {
+       "say": "Pháo 7 bình 8.",
+       "move": "g5h5",
+       "ply": 36,
+       "status": "Máy: thế cờ cân bằng (-0,21)"
+      },
+      {
+       "say": "Trong biến này có 4 lần ăn quân: Xe Đỏ ăn Tốt Đen; Mã Đen ăn Pháo Đỏ; Tượng Đỏ ăn Mã Đen; Xe Đen ăn Binh Đỏ. Kết thúc biến, thế cờ cân bằng, máy chấm -0,21."
+      }
+     ],
+     "continue": false
+    }
+   ]
+  },
+  {
+   "title": "Thay vì Binh 5 tiến 1: Mã 8 tiến 9",
+   "beats": [
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 35",
+     "headline": "Thay vì Binh 5 tiến 1: Mã 8 tiến 9",
+     "fen": "r1bakabr1/9/2n3nc1/p1p1p3p/6p2/2P6/Pc2P1P1P/2C1C1N2/9/RNBAKABR1 w",
+     "start_no": 6,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 5, Đen đi Pháo 2 tiến 4. Biến chính đi Binh 5 tiến 1, còn hướng ta xét bây giờ là Mã 8 tiến 9. Máy xếp Binh 5 tiến 1 lên đầu, hơn hẳn các hướng còn lại. Theo thứ tự: Binh 5 tiến 1, cân bằng; Mã 8 tiến 9, Đen hơn 0,38.",
+       "rows": [
+        {
+         "vn": "Binh 5 tiến 1",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,01"
+        },
+        {
+         "vn": "Mã 8 tiến 9",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,38"
+        }
+       ]
+      },
+      {
+       "say": "Mã 8 tiến 9. Nhảy Mã ra quân.",
+       "move": "b0a2",
+       "ply": 11,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,38)"
+      },
+      {
+       "say": "Pháo 2 bình 7. Pháo ăn Binh lộ 3 mà không bị ăn lại.",
+       "move": "b3g3",
+       "ply": 12,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,26)"
+      },
+      {
+       "say": "Xe 9 bình 8. Xuất Xe, chiếm lộ 8, lộ này thông thẳng tới đáy đối phương.",
+       "move": "a0b0",
+       "ply": 13,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,35)"
+      },
+      {
+       "say": "Xe 1 bình 2. Gây sức ép lên Xe Đỏ lộ 8, xuất Xe, chiếm lộ 2.",
+       "move": "a9b9",
+       "ply": 14,
+       "status": "Máy: thế cờ cân bằng (-0,15)"
+      },
+      {
+       "say": "Xe 8 tiến 9. Xe ăn Xe Đen lộ 2, bên kia sẽ ăn lại nên đây là nước đổi quân, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "b0b9",
+       "ply": 15,
+       "status": "Máy: thế cờ cân bằng (-0,20)"
+      },
+      {
+       "say": "Mã 3 thoái 2. Mã ăn Xe Đỏ lộ 8 mà không bị ăn lại.",
+       "move": "c7b9",
+       "ply": 16,
+       "status": "Máy: thế cờ cân bằng (-0,21)"
+      },
+      {
+       "say": "Đến đây có 2 hướng: Pháo 7 tiến 1, Tượng 3 tiến 1. Máy đánh giá các hướng này gần như ngang nhau, chọn hướng nào là tùy phong cách. Theo thứ tự: Pháo 7 tiến 1, Đen hơn 0,40; Tượng 3 tiến 1, Đen hơn 0,60.",
+       "rows": [
+        {
+         "vn": "Pháo 7 tiến 1",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,40"
+        },
+        {
+         "vn": "Tượng 3 tiến 1",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,60"
+        }
+       ]
+      },
+      {
+       "say": "Pháo 7 tiến 1. Đe dọa ăn Pháo Đen lộ 7.",
+       "move": "c2c3",
+       "ply": 17,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,40)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 18,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,46)"
+      },
+      {
+       "say": "Binh 5 tiến 1.",
+       "move": "e3e4",
+       "ply": 19,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,38)"
+      },
+      {
+       "say": "Pháo 8 tiến 6.",
+       "move": "h7h1",
+       "ply": 20,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,37)"
+      },
+      {
+       "say": "Binh 5 tiến 1. Binh qua sông, mở thêm hướng tấn công.",
+       "move": "e4e5",
+       "ply": 21,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,41)"
+      },
+      {
+       "say": "Sĩ 4 tiến 5.",
+       "move": "d9e8",
+       "ply": 22,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,39)"
+      },
+      {
+       "say": "Binh 5 tiến 1. Binh ăn Tốt lộ 5, bên kia sẽ ăn lại nên đây là nước đổi quân.",
+       "move": "e5e6",
+       "ply": 23,
+       "status": "Máy: Đen hơn nhẹ (-1,17)"
+      },
+      {
+       "say": "Mã 7 tiến 5. Mã ăn Binh lộ 5 mà không bị ăn lại.",
+       "move": "g7e6",
+       "ply": 24,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,39)"
+      },
+      {
+       "say": "Mã 3 tiến 5.",
+       "move": "g2e3",
+       "ply": 25,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,43)"
+      },
+      {
+       "say": "Mã 5 tiến 6. Gây sức ép lên Pháo Đỏ lộ 5.",
+       "move": "e6f4",
+       "ply": 26,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,35)"
+      },
+      {
+       "say": "Mã 5 tiến 3. Mã ăn Tốt lộ 7 mà không bị ăn lại, chiếu Tướng Đen.",
+       "move": "e3g4",
+       "ply": 27,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,53)"
+      },
+      {
+       "say": "Pháo 7 bình 5. Chiếu Tướng Đỏ, Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa.",
+       "move": "g3e3",
+       "ply": 28,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,45)"
+      },
+      {
+       "say": "Sĩ 6 tiến 5.",
+       "move": "d0e1",
+       "ply": 29,
+       "status": "Máy: Đen hơn nhẹ (-1,01)"
+      },
+      {
+       "say": "Xe 8 tiến 5. Đe dọa ăn Mã Đỏ lộ 3, Xe qua hà, đặt áp lực thẳng vào thế trận đối phương.",
+       "move": "h9h4",
+       "ply": 30,
+       "status": "Máy: Đen hơn nhẹ (-0,88)"
+      },
+      {
+       "say": "Mã 3 tiến 4.",
+       "move": "g4f6",
+       "ply": 31,
+       "status": "Máy: Đen hơn nhẹ (-1,39)"
+      },
+      {
+       "say": "Tướng 5 bình 4.",
+       "move": "e9d9",
+       "ply": 32,
+       "status": "Máy: Đen hơn nhẹ (-1,44)"
+      },
+      {
+       "say": "Trong biến này có 6 lần ăn quân: Pháo Đen ăn Binh Đỏ; Xe Đỏ ăn Xe Đen; Mã Đen ăn Xe Đỏ; Binh Đỏ ăn Tốt Đen.... Kết thúc biến, Đen hơn nhẹ, máy chấm -1,44."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "line",
+     "label": "BIẾN PHỤ 36",
+     "headline": "Thay vì Pháo 7 tiến 1: Tượng 3 tiến 1",
+     "fen": "1nbakabr1/9/6nc1/p1p1p3p/6p2/2P6/P3P1c1P/N1C1C1N2/9/2BAKABR1 w",
+     "start_no": 9,
+     "start_side": "w",
+     "steps": [
+      {
+       "say": "Quay lại thế sau nước 8, Đen đi Mã 3 thoái 2. Biến chính đi Pháo 7 tiến 1, còn hướng ta xét bây giờ là Tượng 3 tiến 1. Máy đánh giá các hướng này gần như ngang nhau, chọn hướng nào là tùy phong cách. Theo thứ tự: Pháo 7 tiến 1, Đen hơn 0,40; Tượng 3 tiến 1, Đen hơn 0,60.",
+       "rows": [
+        {
+         "vn": "Pháo 7 tiến 1",
+         "wdl": "D",
+         "good": true,
+         "best": true,
+         "result": "máy -0,40"
+        },
+        {
+         "vn": "Tượng 3 tiến 1",
+         "wdl": "D",
+         "good": false,
+         "best": false,
+         "result": "máy -0,60"
+        }
+       ]
+      },
+      {
+       "say": "Tượng 3 tiến 1.",
+       "move": "g0i2",
+       "ply": 17,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,60)"
+      },
+      {
+       "say": "Pháo 8 tiến 4.",
+       "move": "h7h3",
+       "ply": 18,
+       "status": "Máy: Đen nhỉnh hơn một chút (-0,62)"
+      },
+      {
+       "say": "Sĩ 4 tiến 5.",
+       "move": "f0e1",
+       "ply": 19,
+       "status": "Máy: Đen hơn nhẹ (-1,15)"
+      },
+      {
+       "say": "Tốt 7 tiến 1. Tốt qua sông, mở thêm hướng tấn công.",
+       "move": "g5g4",
+       "ply": 20,
+       "status": "Máy: Đen hơn nhẹ (-1,07)"
+      },
+      {
+       "say": "Xe 2 bình 4.",
+       "move": "h0f0",
+       "ply": 21,
+       "status": "Máy: Đen hơn nhẹ (-1,24)"
+      },
+      {
+       "say": "Tượng 7 tiến 5.",
+       "move": "g9e7",
+       "ply": 22,
+       "status": "Máy: Đen hơn nhẹ (-0,84)"
+      },
+      {
+       "say": "Binh 9 tiến 1.",
+       "move": "a3a4",
+       "ply": 23,
+       "status": "Máy: Đen hơn nhẹ (-0,96)"
+      },
+      {
+       "say": "Xe 8 tiến 4. Xe tuần hà, canh giữ bờ sông và sẵn sàng sang cánh.",
+       "move": "h9h5",
+       "ply": 24,
+       "status": "Máy: Đen hơn nhẹ (-0,92)"
+      },
+      {
+       "say": "Kết thúc biến, Đen hơn nhẹ, máy chấm -0,92."
+      }
+     ],
+     "continue": false
+    },
+    {
+     "kind": "mnemonic",
+     "label": "KHẨU QUYẾT",
+     "headline": "Pháo đầu đối Bình phong mã, Pháo tiến 4",
+     "panel": {
+      "bullets": [
+       "Pháo đầu đối Bình phong mã,",
+       "Mã Xe triển khai, thế nhà vững vàng.",
+       "Binh thế mở lối sang ngang,",
+       "Đổi quân tính trước, tiên sang phía mình."
+      ]
+     },
+     "steps": [
+      {
+       "say": "Khẩu quyết cho bài này. Pháo đầu đối Bình phong mã, Mã Xe triển khai, thế nhà vững vàng. Binh thế mở lối sang ngang, Đổi quân tính trước, tiên sang phía mình."
+      },
+      {
+       "say": "Ghi nhớ ba điều: Mã và Xe triển khai đúng nhịp, Binh mở lối cho Xe, và chỉ đổi quân khi đã tính xong."
+      }
+     ]
+    },
+    {
+     "kind": "cta",
+     "label": "CẢM ƠN BẠN",
+     "headline": "Đăng ký kênh và ủng hộ ly cà phê",
+     "steps": [
+      {
+       "say": "Nếu thấy bài phân tích hữu ích, bạn hãy bấm đăng ký kênh để không bỏ lỡ các phần tiếp theo của series khai cục chuyên sâu. Và nếu thấy hay, bạn có thể ủng hộ kênh một ly cà phê bằng mã QR trên màn hình. Cảm ơn bạn đã xem, hẹn gặp lại ở phần sau."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "est_minutes": 24.6,
+ "youtube": {
+  "title": "[Khai cục chuyên sâu #57] Khai cục Pháo đầu đối Bình phong mã, Pháo tiến 4 – phần 3: Đen tiến cả hai Pháo sang cánh",
+  "tags": [
+   "cờ tướng",
+   "khai cục",
+   "khai cục cờ tướng",
+   "pháo đầu đối bình phong mã, pháo tiến 4",
+   "phân tích khai cục",
+   "cờ tướng chuyên sâu",
+   "series khai cục chuyên sâu",
+   "xiangqi",
+   "chinese chess opening",
+   "tinh hoa cờ tàn",
+   "học cờ tướng"
+  ]
+ }
+}

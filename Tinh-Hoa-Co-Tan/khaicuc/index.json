@@ -1,0 +1,794 @@
+[
+ {
+  "id": "kc-0001",
+  "opening": "thuanphao",
+  "name": "Thuận Pháo",
+  "part": 1,
+  "parts": 3,
+  "minutes": 28,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0002",
+  "opening": "thuanphao",
+  "name": "Thuận Pháo",
+  "part": 2,
+  "parts": 3,
+  "minutes": 27,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0003",
+  "opening": "thuanphao",
+  "name": "Thuận Pháo",
+  "part": 3,
+  "parts": 3,
+  "minutes": 28,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0004",
+  "opening": "nghichphao",
+  "name": "Nghịch Pháo",
+  "part": 1,
+  "parts": 4,
+  "minutes": 32,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0005",
+  "opening": "nghichphao",
+  "name": "Nghịch Pháo",
+  "part": 2,
+  "parts": 4,
+  "minutes": 33,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0006",
+  "opening": "nghichphao",
+  "name": "Nghịch Pháo",
+  "part": 3,
+  "parts": 4,
+  "minutes": 33,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0007",
+  "opening": "nghichphao",
+  "name": "Nghịch Pháo",
+  "part": 4,
+  "parts": 4,
+  "minutes": 27,
+  "reviewed": true
+ },
+ {
+  "id": "kc-0008",
+  "opening": "cquacung",
+  "name": "Quá Cung Pháo",
+  "part": 1,
+  "parts": 2,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0009",
+  "opening": "cquacung",
+  "name": "Quá Cung Pháo",
+  "part": 2,
+  "parts": 2,
+  "minutes": 28,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0010",
+  "opening": "sigiacphao",
+  "name": "Sĩ Giác Pháo",
+  "part": 1,
+  "parts": 2,
+  "minutes": 22,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0011",
+  "opening": "sigiacphao",
+  "name": "Sĩ Giác Pháo",
+  "part": 2,
+  "parts": 2,
+  "minutes": 22,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0012",
+  "opening": "phancung",
+  "name": "Phản Cung Mã",
+  "part": 1,
+  "parts": 2,
+  "minutes": 25,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0013",
+  "opening": "phancung",
+  "name": "Phản Cung Mã",
+  "part": 2,
+  "parts": 2,
+  "minutes": 24,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0014",
+  "opening": "uyenuong",
+  "name": "Uyên Ương",
+  "part": 1,
+  "parts": 2,
+  "minutes": 28,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0015",
+  "opening": "uyenuong",
+  "name": "Uyên Ương",
+  "part": 2,
+  "parts": 2,
+  "minutes": 31,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0016",
+  "opening": "pd-donema",
+  "name": "Pháo đầu đối Mã (Mã 8 tiến 9)",
+  "part": 1,
+  "parts": 4,
+  "minutes": 36,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0017",
+  "opening": "pd-donema",
+  "name": "Pháo đầu đối Mã (Mã 8 tiến 9)",
+  "part": 2,
+  "parts": 4,
+  "minutes": 37,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0018",
+  "opening": "pd-donema",
+  "name": "Pháo đầu đối Mã (Mã 8 tiến 9)",
+  "part": 3,
+  "parts": 4,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0019",
+  "opening": "pd-donema",
+  "name": "Pháo đầu đối Mã (Mã 8 tiến 9)",
+  "part": 4,
+  "parts": 4,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0020",
+  "opening": "pd-binh3",
+  "name": "Pháo đầu, Binh 3 tiến 1 sớm",
+  "part": 1,
+  "parts": 5,
+  "minutes": 39,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0021",
+  "opening": "pd-binh3",
+  "name": "Pháo đầu, Binh 3 tiến 1 sớm",
+  "part": 2,
+  "parts": 5,
+  "minutes": 31,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0022",
+  "opening": "pd-binh3",
+  "name": "Pháo đầu, Binh 3 tiến 1 sớm",
+  "part": 3,
+  "parts": 5,
+  "minutes": 38,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0023",
+  "opening": "pd-binh3",
+  "name": "Pháo đầu, Binh 3 tiến 1 sớm",
+  "part": 4,
+  "parts": 5,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0024",
+  "opening": "pd-binh3",
+  "name": "Pháo đầu, Binh 3 tiến 1 sớm",
+  "part": 5,
+  "parts": 5,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0025",
+  "opening": "bpm-binh3",
+  "name": "Pháo đầu đối Bình phong mã, Binh 3 tiến 1",
+  "part": 1,
+  "parts": 5,
+  "minutes": 35,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0026",
+  "opening": "bpm-binh3",
+  "name": "Pháo đầu đối Bình phong mã, Binh 3 tiến 1",
+  "part": 2,
+  "parts": 5,
+  "minutes": 35,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0027",
+  "opening": "bpm-binh3",
+  "name": "Pháo đầu đối Bình phong mã, Binh 3 tiến 1",
+  "part": 3,
+  "parts": 5,
+  "minutes": 31,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0028",
+  "opening": "bpm-binh3",
+  "name": "Pháo đầu đối Bình phong mã, Binh 3 tiến 1",
+  "part": 4,
+  "parts": 5,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0029",
+  "opening": "bpm-binh3",
+  "name": "Pháo đầu đối Bình phong mã, Binh 3 tiến 1",
+  "part": 5,
+  "parts": 5,
+  "minutes": 31,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0030",
+  "opening": "bpm-pdmd",
+  "name": "Pháo đầu đối Bình phong mã, hai Mã ra sớm",
+  "part": 1,
+  "parts": 4,
+  "minutes": 38,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0031",
+  "opening": "bpm-pdmd",
+  "name": "Pháo đầu đối Bình phong mã, hai Mã ra sớm",
+  "part": 2,
+  "parts": 4,
+  "minutes": 38,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0032",
+  "opening": "bpm-pdmd",
+  "name": "Pháo đầu đối Bình phong mã, hai Mã ra sớm",
+  "part": 3,
+  "parts": 4,
+  "minutes": 34,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0033",
+  "opening": "bpm-pdmd",
+  "name": "Pháo đầu đối Bình phong mã, hai Mã ra sớm",
+  "part": 4,
+  "parts": 4,
+  "minutes": 34,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0034",
+  "opening": "pd-binh7-2",
+  "name": "Pháo đầu đối Bình phong mã, Xe qua hà",
+  "part": 1,
+  "parts": 4,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0035",
+  "opening": "pd-binh7-2",
+  "name": "Pháo đầu đối Bình phong mã, Xe qua hà",
+  "part": 2,
+  "parts": 4,
+  "minutes": 27,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0036",
+  "opening": "pd-binh7-2",
+  "name": "Pháo đầu đối Bình phong mã, Xe qua hà",
+  "part": 3,
+  "parts": 4,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0037",
+  "opening": "pd-binh7-2",
+  "name": "Pháo đầu đối Bình phong mã, Xe qua hà",
+  "part": 4,
+  "parts": 4,
+  "minutes": 25,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0038",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 1,
+  "parts": 7,
+  "minutes": 36,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0039",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 2,
+  "parts": 7,
+  "minutes": 33,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0040",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 3,
+  "parts": 7,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0041",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 4,
+  "parts": 7,
+  "minutes": 37,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0042",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 5,
+  "parts": 7,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0043",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 6,
+  "parts": 7,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0044",
+  "opening": "phaodaub7-1",
+  "name": "Pháo đầu đối Bình phong mã, Binh 7 tiến 1",
+  "part": 7,
+  "parts": 7,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0045",
+  "opening": "tamabanha",
+  "name": "Pháo đầu đối Bình phong mã, Mã 7 tiến 6",
+  "part": 1,
+  "parts": 4,
+  "minutes": 33,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0046",
+  "opening": "tamabanha",
+  "name": "Pháo đầu đối Bình phong mã, Mã 7 tiến 6",
+  "part": 2,
+  "parts": 4,
+  "minutes": 38,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0047",
+  "opening": "tamabanha",
+  "name": "Pháo đầu đối Bình phong mã, Mã 7 tiến 6",
+  "part": 3,
+  "parts": 4,
+  "minutes": 35,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0048",
+  "opening": "tamabanha",
+  "name": "Pháo đầu đối Bình phong mã, Mã 7 tiến 6",
+  "part": 4,
+  "parts": 4,
+  "minutes": 28,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0049",
+  "opening": "bp-phe-ma",
+  "name": "Pháo đầu đối Bình phong mã, Tượng đón Mã",
+  "part": 1,
+  "parts": 3,
+  "minutes": 37,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0050",
+  "opening": "bp-phe-ma",
+  "name": "Pháo đầu đối Bình phong mã, Tượng đón Mã",
+  "part": 2,
+  "parts": 3,
+  "minutes": 40,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0051",
+  "opening": "bp-phe-ma",
+  "name": "Pháo đầu đối Bình phong mã, Tượng đón Mã",
+  "part": 3,
+  "parts": 3,
+  "minutes": 29,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0052",
+  "opening": "capttb",
+  "name": "Pháo đầu đối Bình phong mã, Xe trực, Binh 7",
+  "part": 1,
+  "parts": 3,
+  "minutes": 38,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0053",
+  "opening": "capttb",
+  "name": "Pháo đầu đối Bình phong mã, Xe trực, Binh 7",
+  "part": 2,
+  "parts": 3,
+  "minutes": 34,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0054",
+  "opening": "capttb",
+  "name": "Pháo đầu đối Bình phong mã, Xe trực, Binh 7",
+  "part": 3,
+  "parts": 3,
+  "minutes": 28,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0055",
+  "opening": "spquaha",
+  "name": "Pháo đầu đối Bình phong mã, Pháo tiến 4",
+  "part": 1,
+  "parts": 3,
+  "minutes": 33,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0056",
+  "opening": "spquaha",
+  "name": "Pháo đầu đối Bình phong mã, Pháo tiến 4",
+  "part": 2,
+  "parts": 3,
+  "minutes": 25,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0057",
+  "opening": "spquaha",
+  "name": "Pháo đầu đối Bình phong mã, Pháo tiến 4",
+  "part": 3,
+  "parts": 3,
+  "minutes": 25,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0058",
+  "opening": "pd-hoanh-xe",
+  "name": "Pháo đầu đối Bình phong mã, Xe hoành",
+  "part": 1,
+  "parts": 3,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0059",
+  "opening": "pd-hoanh-xe",
+  "name": "Pháo đầu đối Bình phong mã, Xe hoành",
+  "part": 2,
+  "parts": 3,
+  "minutes": 25,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0060",
+  "opening": "pd-hoanh-xe",
+  "name": "Pháo đầu đối Bình phong mã, Xe hoành",
+  "part": 3,
+  "parts": 3,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0061",
+  "opening": "tamboho",
+  "name": "Pháo đầu, Binh 3 tiến 1, Pháo biên",
+  "part": 1,
+  "parts": 4,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0062",
+  "opening": "tamboho",
+  "name": "Pháo đầu, Binh 3 tiến 1, Pháo biên",
+  "part": 2,
+  "parts": 4,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0063",
+  "opening": "tamboho",
+  "name": "Pháo đầu, Binh 3 tiến 1, Pháo biên",
+  "part": 3,
+  "parts": 4,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0064",
+  "opening": "tamboho",
+  "name": "Pháo đầu, Binh 3 tiến 1, Pháo biên",
+  "part": 4,
+  "parts": 4,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0065",
+  "opening": "ckhoimacuoc",
+  "name": "Khởi Mã Cục",
+  "part": 1,
+  "parts": 4,
+  "minutes": 30,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0066",
+  "opening": "ckhoimacuoc",
+  "name": "Khởi Mã Cục",
+  "part": 2,
+  "parts": 4,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0067",
+  "opening": "ckhoimacuoc",
+  "name": "Khởi Mã Cục",
+  "part": 3,
+  "parts": 4,
+  "minutes": 31,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0068",
+  "opening": "ckhoimacuoc",
+  "name": "Khởi Mã Cục",
+  "part": 4,
+  "parts": 4,
+  "minutes": 26,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0069",
+  "opening": "ctiennhan",
+  "name": "Tiên Nhân Chỉ Lộ",
+  "part": 1,
+  "parts": 3,
+  "minutes": 28,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0070",
+  "opening": "ctiennhan",
+  "name": "Tiên Nhân Chỉ Lộ",
+  "part": 2,
+  "parts": 3,
+  "minutes": 25,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0071",
+  "opening": "ctiennhan",
+  "name": "Tiên Nhân Chỉ Lộ",
+  "part": 3,
+  "parts": 3,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0072",
+  "opening": "tiennhan1",
+  "name": "Tiên Nhân Chỉ Lộ, Pháo giữa",
+  "part": 1,
+  "parts": 3,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0073",
+  "opening": "tiennhan1",
+  "name": "Tiên Nhân Chỉ Lộ, Pháo giữa",
+  "part": 2,
+  "parts": 3,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0074",
+  "opening": "tiennhan1",
+  "name": "Tiên Nhân Chỉ Lộ, Pháo giữa",
+  "part": 3,
+  "parts": 3,
+  "minutes": 26,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0075",
+  "opening": "doibinh1",
+  "name": "Đối Binh Cục",
+  "part": 1,
+  "parts": 2,
+  "minutes": 34,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0076",
+  "opening": "doibinh1",
+  "name": "Đối Binh Cục",
+  "part": 2,
+  "parts": 2,
+  "minutes": 32,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0077",
+  "opening": "cphituong",
+  "name": "Phi Tượng Cục",
+  "part": 1,
+  "parts": 2,
+  "minutes": 33,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0078",
+  "opening": "cphituong",
+  "name": "Phi Tượng Cục",
+  "part": 2,
+  "parts": 2,
+  "minutes": 29,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0079",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 1,
+  "parts": 9,
+  "minutes": 38,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0080",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 2,
+  "parts": 9,
+  "minutes": 34,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0081",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 3,
+  "parts": 9,
+  "minutes": 26,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0082",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 4,
+  "parts": 9,
+  "minutes": 27,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0083",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 5,
+  "parts": 9,
+  "minutes": 23,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0084",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 6,
+  "parts": 9,
+  "minutes": 34,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0085",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 7,
+  "parts": 9,
+  "minutes": 27,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0086",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 8,
+  "parts": 9,
+  "minutes": 31,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0087",
+  "opening": "phi-tuong-1",
+  "name": "Phi Tượng Cục, hệ chính",
+  "part": 9,
+  "parts": 9,
+  "minutes": 9,
+  "reviewed": false
+ },
+ {
+  "id": "kc-0088",
+  "opening": "phituong2",
+  "name": "Phi Tượng Cục, nhánh phụ",
+  "part": 1,
+  "parts": 1,
+  "minutes": 14,
+  "reviewed": false
+ }
+]

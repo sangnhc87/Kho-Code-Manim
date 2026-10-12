@@ -172,6 +172,36 @@ def chapterize(beats, target):
     return chapters
 
 
+def auto_theory(slug, main_nodes, ev):
+    """Lý thuyết tối thiểu khi chưa có file viết tay: lời giới thiệu sinh từ chính các nước đầu của biến chính."""
+    meta = json.loads((ROOT / 'khaicuc' / 'meta.json').read_text(encoding='utf-8'))
+    item = next(x for x in meta['syllabus'] if x['slug'] == slug)
+    fam = meta['families'][item['family']]
+    name = item['name']
+    titles = [('MỞ ĐẦU', 'Hai nước khởi đầu'), ('Ý ĐỒ 1', 'Triển khai quân'), ('Ý ĐỒ 2', 'Định hình thế trận')]
+    intro = []
+    for b, (label, head) in enumerate(titles):
+        steps = []
+        for ply in (2 * b + 1, 2 * b + 2):
+            n = main_nodes[ply - 1]
+            parts, _ = explain(n['pos'], n['m'], ev)
+            say = f'{SIDE[n["pos"].turn]} đi {vn_move(n["pos"], n["m"])}.'
+            if parts:
+                say += ' ' + sentence(parts)
+            steps.append({'say': say, 'ply': ply})
+        if b == 0:
+            steps.insert(0, {'say': f'Hôm nay ta phân tích {name}. {item["tagline"]}.'})
+        intro.append({'label': label, 'headline': head, 'steps': steps})
+    intro[-1]['steps'] += [
+        {'say': 'Một lưu ý để xem điểm máy cho đúng. Vì Đỏ đi trước, máy thường cho Đỏ hơn vài phần mười điểm ngay từ khai cuộc. '
+                'Đó là lợi thế của người đi trước, không có nghĩa Đen đã đi sai.'},
+        {'say': 'Từ đây ta đi sâu vào biến chính, rồi các biến phụ. Mỗi điểm rẽ nhánh sẽ có bảng xếp hạng của máy, '
+                'và vài lần dừng lại để bạn tự chọn nước.'}]
+    cta = json.loads((ROOT / 'khaicuc' / 'theory' / 'thuanphao.json').read_text(encoding='utf-8'))['cta']
+    return {'slug': slug, 'name': name, 'tagline': item['tagline'], 'intro': intro, 'mnemonic': fam['mnemonic'],
+            'closing': fam['closing'], 'cta': cta}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--opening', required=True)
@@ -180,12 +210,15 @@ def main():
     ap.add_argument('--number', type=int, default=1)
     a = ap.parse_args()
     data = json.loads((ROOT / 'khaicuc' / 'openings' / f'{a.opening}.json').read_text(encoding='utf-8'))
-    theory = json.loads((ROOT / 'khaicuc' / 'theory' / f'{a.opening}.json').read_text(encoding='utf-8'))
+    theory_path = ROOT / 'khaicuc' / 'theory' / f'{a.opening}.json'
+    theory = json.loads(theory_path.read_text(encoding='utf-8')) if theory_path.exists() else None
     ev_path = ROOT / 'khaicuc' / 'eval' / f'{a.opening}.json'
     ev = json.loads(ev_path.read_text(encoding='utf-8')) if ev_path.exists() else None
     start = Position.from_fen(data['fen'])
     segs = segments(data['tree'], start)
     # chia các đoạn thành các phần theo ngân sách số nước đi
+    if theory is None:
+        theory = auto_theory(a.opening, segs[0]['nodes'], ev)
     total_nodes = sum(len(s['nodes']) for s in segs)
     n_parts = -(-total_nodes // a.budget)
     limit = -(-total_nodes // n_parts) + 15     # chia đều các phần, dư 15 nước để không cắt giữa biến
