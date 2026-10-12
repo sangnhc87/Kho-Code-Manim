@@ -1,0 +1,109 @@
+name: Khai Cuc - cham diem Pikafish
+# Chấm điểm mọi thế trong cây khai cục (khaicuc/openings/*.json) bằng Pikafish,
+# lưu khaicuc/eval/<slug>.json. Không chạy engine trên máy cá nhân.
+on:
+  workflow_dispatch:
+    inputs:
+      openings:
+        description: 'all hoặc danh sách slug phân cách bằng dấu phẩy (vd: thuanphao,uyenuong)'
+        type: string
+        default: all
+      movetime:
+        description: 'Mili-giây cho mỗi thế'
+        type: number
+        default: 400
+permissions:
+  contents: write
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: m
+        working-directory: Tinh-Hoa-Co-Tan
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os, pathlib
+          sel = "${{ inputs.openings }}".strip()
+          all_ = sorted(p.stem for p in pathlib.Path('khaicuc/openings').glob('*.json'))
+          pick = all_ if sel in ('', 'all') else [s.strip() for s in sel.split(',') if s.strip()]
+          bad = [s for s in pick if s not in all_]
+          assert not bad, f'Không có hệ: {bad}'
+          print('matrix=' + json.dumps({'include': [{'opening': s} for s in pick]}, separators=(',', ':')))
+          PY
+  eval:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    defaults:
+      run:
+        working-directory: Tinh-Hoa-Co-Tan
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Tải Pikafish
+        id: pf
+        run: |
+          python -m pip install -q py7zr
+          gh release download --repo official-pikafish/Pikafish --pattern '*.7z' --dir /tmp/pf
+          python - <<'PY'
+          import glob, py7zr
+          f = glob.glob('/tmp/pf/*.7z')[0]
+          with py7zr.SevenZipFile(f) as z:
+              z.extractall('/tmp/pf/x')
+          PY
+          find /tmp/pf/x -maxdepth 3 | head -60
+          NNUE=$(find /tmp/pf/x -name '*.nnue' | head -1)
+          echo "nnue=$NNUE"
+          mkdir -p /tmp/engine
+          best=""
+          for v in avxvnni avx2 bmi2 sse41-popcnt ssse3 sse2 ; do
+            for f in $(find /tmp/pf/x -type f -ipath '*linux*' -name "*pikafish*$v*" ! -name '*.nnue' 2>/dev/null); do
+              chmod +x "$f"
+              cp "$f" /tmp/engine/pikafish; [ -n "$NNUE" ] && cp "$NNUE" /tmp/engine/
+              if echo uci | (cd /tmp/engine && timeout 20 ./pikafish) | grep -q uciok; then best="$f"; break 2; fi
+            done
+          done
+          [ -n "$best" ] || { echo "Không tìm được binary Pikafish chạy được"; find /tmp/pf/x -type f; exit 1; }
+          echo "Dùng $best"
+          echo "engine=/tmp/engine/pikafish" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Chấm điểm
+        run: python scripts/khaicuc_eval.py --opening "${{ matrix.opening }}" --engine "${{ steps.pf.outputs.engine }}" --movetime "${{ inputs.movetime }}" --threads 3
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-${{ matrix.opening }}
+          path: Tinh-Hoa-Co-Tan/khaicuc/eval/${{ matrix.opening }}.json
+          retention-days: 7
+  collect:
+    needs: eval
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: eval-*
+          path: /tmp/ev
+          merge-multiple: true
+      - name: Lưu kết quả
+        run: |
+          mkdir -p Tinh-Hoa-Co-Tan/khaicuc/eval
+          cp /tmp/ev/*.json Tinh-Hoa-Co-Tan/khaicuc/eval/
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add Tinh-Hoa-Co-Tan/khaicuc/eval
+          git commit -m "data(khaicuc): điểm Pikafish cho $(ls /tmp/ev | wc -l) hệ khai cục" || exit 0
+          for i in 1 2 3 4; do
+            git pull -q --rebase origin main && git push -q origin HEAD:main && break
+            sleep $((i*4))
+          done
