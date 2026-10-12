@@ -72,7 +72,14 @@ def attacked_enemy(pos, sq):
 def defended_friends(pos, sq):
     me = side_of(pos.cells[sq])
     return [(q, p) for q, p in pos.cells.items()
-            if q != sq and side_of(p) == me and p.upper() != 'K' and pos.attacks(sq, q)]
+            if q != sq and side_of(p) == me and p.upper() in 'RCNP' and pos.attacks(sq, q)]
+
+
+def desc(piece, sq):
+    """'Binh lộ 5' – gọi quân theo lộ để người nghe định vị được."""
+    side = side_of(piece)
+    who = '' if piece.upper() == 'P' else f' {SIDE[side]}'
+    return f'{name(piece)}{who} lộ {file_no(sq[0], side)}'
 
 
 def file_open_ahead(pos, sq, side):
@@ -87,7 +94,7 @@ def file_open_ahead(pos, sq, side):
 
 
 def clauses(pos, move):
-    """Các mệnh đề mục đích, theo thứ tự ưu tiên."""
+    """Các mệnh đề mục đích, theo thứ tự ưu tiên (tối đa 3 được đọc)."""
     src, dst = parse_sq(move[:2]), parse_sq(move[2:])
     piece = pos.cells[src]
     side = side_of(piece)
@@ -98,37 +105,56 @@ def clauses(pos, move):
     out = []
     if victim:
         recapture = any(side_of(p) != side and new.attacks(q, dst) for q, p in new.cells.items())
-        if recapture and VALUE[victim.upper()] <= VALUE[u]:
-            out.append(f'{name(piece)} ăn {name(victim)}, hai bên sẽ đổi quân' if VALUE[victim.upper()] >= VALUE[u]
-                       else f'{name(piece)} ăn {name(victim)} nhưng bị ăn lại')
+        if recapture and VALUE[victim.upper()] >= VALUE[u]:
+            out.append(f'{name(piece)} ăn {desc(victim, dst)}, bên kia sẽ ăn lại nên đây là nước đổi quân')
+        elif recapture:
+            out.append(f'{name(piece)} ăn {desc(victim, dst)} nhưng có thể bị ăn lại, nên phải tính kỹ')
         else:
-            out.append(f'{name(piece)} ăn {name(victim)} của {foe}')
+            out.append(f'{name(piece)} ăn {desc(victim, dst)} mà không bị ăn lại')
     if new.in_check(new.turn):
         out.append(f'chiếu Tướng {foe}')
-    threats = [(q, p, d) for q, p, d in attacked_enemy(new, dst) if VALUE[p.upper()] >= 4 and (q != dst)]
-    loose = [name(p) for q, p, d in threats if not d]
+    threats = [(q, p, d) for q, p, d in attacked_enemy(new, dst) if q != dst]
+    big = [(q, p, d) for q, p, d in threats if VALUE[p.upper()] >= 4]
+    loose = [desc(p, q) for q, p, d in big if not d]
     if loose and not victim:
-        out.append(f'đe dọa ăn {loose[0]} chưa được bảo vệ')
-    elif threats and not victim and not loose:
-        out.append(f'gây sức ép lên {name(threats[0][1])} của {foe}')
+        out.append(f'đe dọa ăn {loose[0]} vì quân này chưa có ai bảo vệ')
+    elif big and not victim:
+        out.append(f'gây sức ép lên {desc(big[0][1], big[0][0])} của {foe}')
     if u == 'C' and dst[0] == 4 and src[0] != 4:
-        out.append('đưa Pháo vào lộ giữa, nhắm vào Tốt đầu và cung đối phương')
+        rival = any(p == ('c' if side == RED else 'C') and q[0] == 4 for q, p in pos.cells.items())
+        out.append('Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa' if rival else
+                   'đưa Pháo vào lộ giữa, nhắm vào Tốt đầu của đối phương')
     elif u == 'N' and src in HOME['N']:
-        guards = [name(p) for q, p in defended_friends(new, dst)][:2]
-        out.append('nhảy Mã ra quân' + (f', bảo vệ {" và ".join(guards)}' if guards else ''))
+        guards = []
+        for q, p in defended_friends(new, dst):
+            d = desc(p, q)
+            if d not in guards:
+                guards.append(d)
+        out.append('nhảy Mã ra quân' + (f', bảo vệ {" và ".join(guards[:2])}' if guards else ''))
     elif u == 'R' and src in HOME['R']:
         n = file_no(dst[0], side)
         block = file_open_ahead(new, dst, side)
-        out.append(f'xuất Xe, chiếm lộ {n}' + (', lộ này thông tới tận đáy đối phương' if block is None else ''))
+        out.append(f'xuất Xe, chiếm lộ {n}' + (', lộ này thông thẳng tới đáy đối phương' if block is None else
+                                                f', phía trước còn {desc(block, (dst[0], 0))}' if False else ''))
     elif u == 'R' and ((dst[1] > 4) if side == RED else (dst[1] < 5)) and ((src[1] <= 4) if side == RED else (src[1] >= 5)):
         out.append('Xe vượt sông, ép vào thế trận đối phương')
     elif u == 'R' and src[0] != dst[0]:
         out.append(f'Xe chuyển sang lộ {file_no(dst[0], side)}')
     elif u == 'P':
         crossing = (dst[1] > 4 and src[1] <= 4) if side == RED else (dst[1] < 5 and src[1] >= 5)
-        out.append('Tốt qua sông, tăng sức công kích' if crossing else 'tiến Tốt mở đường cho Mã và Xe')
+        out.append(f'{name(piece)} qua sông, tăng sức công kích' if crossing else f'tiến {name(piece)} mở đường cho Mã và Xe')
     elif u in 'AB':
         out.append('củng cố phòng ngự quanh Tướng')
+    if not out:
+        fwd = (dst[1] - src[1]) * (1 if side == RED else -1)
+        if u in 'CRK' and src[0] == dst[0]:
+            out.append(f'{name(piece)} {"tiến lên" if fwd > 0 else "lùi về"} để {"áp sát đối phương" if fwd > 0 else "giữ vị trí phòng thủ"}')
+        elif u in 'CR':
+            out.append(f'{name(piece)} sang lộ {file_no(dst[0], side)} để đổi hướng tác chiến')
+        elif u == 'N':
+            guards = [desc(p, q) for q, p in defended_friends(new, dst)][:2]
+            out.append(f'Mã {"tiến" if fwd > 0 else "lùi"} sang lộ {file_no(dst[0], side)}' +
+                       (f', bảo vệ {" và ".join(guards)}' if guards else ', tìm vị trí tốt hơn'))
     return out
 
 
