@@ -20,9 +20,9 @@ PROBLEM = ['Như trên (chuyển $2$ bi I: $3$ đỏ $3$ xanh →',
 OPTIONS = ['1/5', '3/8', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 3 / 8
-BRANCHES = [('ĐĐ', CORAL, '3/15', [('rút ĐĐ', GOLD, '6/15', [])]),
-            ('ĐX', PURPLE, '9/15', [('rút ĐĐ', GOLD, '3/15', [])]),
-            ('XX', CYAN, '3/15', [('rút ĐĐ', GOLD, '1/15', [])])]
+BRANCHES = [('ĐĐ', CORAL, '3/15', [('ĐĐ', GOLD, '6/15', [])]),
+            ('ĐX', PURPLE, '9/15', [('ĐĐ', GOLD, '3/15', [])]),
+            ('XX', CYAN, '3/15', [('ĐĐ', GOLD, '1/15', [])])]
 
 
 def rr(box):

@@ -19,10 +19,10 @@ PROBLEM = ['Hộp I: $3$ đỏ $1$ xanh; II: $1$ đỏ $3$ xanh.',
 OPTIONS = ['3/4', '5/8', '1/2']
 CORRECT = 1
 ANSWER_VALUE = 5 / 8
-BRANCHES = [('Đ↔Đ', GOLD, '3/16', [('Đ', CORAL, '3/4', [])]),
-            ('Đ↔X', CYAN, '9/16', [('Đ', CORAL, '2/4', [])]),
-            ('X↔Đ', GREEN, '1/16', [('Đ', CORAL, '4/4', [])]),
-            ('X↔X', PURPLE, '3/16', [('Đ', CORAL, '3/4', [])])]
+BRANCHES = [('ĐĐ', GOLD, '3/16', [('Đ', CORAL, '3/4', [])]),
+            ('ĐX', CYAN, '9/16', [('Đ', CORAL, '2/4', [])]),
+            ('XĐ', GREEN, '1/16', [('Đ', CORAL, '4/4', [])]),
+            ('XX', PURPLE, '3/16', [('Đ', CORAL, '3/4', [])])]
 
 
 def after_swap():
@@ -49,7 +49,7 @@ BEATS = [
 ]
 
 FORMULAS = formulas('5/8', OPTIONS,
-                    tot='P = 3/16 dot 3/4 + 9/16 dot 2/4 + 1/16 dot 1 + 3/16 dot 3/4 = 5/8')
+                    tot='P = 9/64 + 18/64 + 4/64 + 9/64 = 40/64 = 5/8')
 
 
 def validate() -> bool:
@@ -82,6 +82,6 @@ class XSS223(TreeMixin, ShortScene):
         self.play(*[FadeIn(lv, lag_ratio=.2) for lv in self.levels], run_time=self.rt(.25))
 
     def beat_s3(self, T):
-        m = self.M('tot', 1.3)
+        m = self.M('tot', 1.8)
         self.write_board(m)
         self.frame(m)
