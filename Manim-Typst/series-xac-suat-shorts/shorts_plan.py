@@ -1316,7 +1316,7 @@ SHORTS = [
     ('Ngày kia mưa thì mai?', 'Hôm nay mưa; mưa thì mai mưa 0,6, tạnh thì mai mưa 0,2. Biết ngày kia mưa: P(ngày mai mưa)?',
      '9/11', 'tree', 'XS25', F(36, 100) / F(44, 100), F(9, 11)),
     ('Hai sản phẩm cùng lô', 'Dây chuyền I (60 %) lỗi 3 %, II (40 %) lỗi 5 %. Lấy 2 sản phẩm cùng một dây chuyền, cả 2 lỗi. '
-     'P(dây chuyền II)?', '27/77', 'tree', 'XS26',
+     'P(dây chuyền I)?', '27/77', 'tree', 'XS26',
      F(6, 10) * F(9, 10000) / (F(6, 10) * F(9, 10000) + F(4, 10) * F(25, 10000)), F(27, 77)),
     ('Ba trạm trung chuyển', 'Tín hiệu qua 3 trạm, mỗi trạm lật bit với xác suất 0,1. P(tín hiệu nhận được đúng)?', '0,756', 'tree',
      'XS22', round(.9 ** 3 + 3 * .9 * .01, 3), .756),

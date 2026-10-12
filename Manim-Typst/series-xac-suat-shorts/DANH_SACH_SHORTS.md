@@ -516,7 +516,7 @@
 | **XSS393** | Ba đồng xu, tung lại | Ba xu: chuẩn, hai mặt ngửa, hai mặt sấp. Chọn 1, tung ra ngửa; tung lại đồng đó. P(lại ngửa)? | 5/6 | tree | XS26 |
 | **XSS394** | Hai xét nghiệm trái ngược | Bệnh 2 %. Test A: nhạy 0,9, dương giả 0,1; test B: nhạy 0,8, dương giả 0,05. A dương, B âm: P(bệnh)? | 36/967 ≈ 0,037 | tree | XS27 |
 | **XSS395** | Ngày kia mưa thì mai? | Hôm nay mưa; mưa thì mai mưa 0,6, tạnh thì mai mưa 0,2. Biết ngày kia mưa: P(ngày mai mưa)? | 9/11 | tree | XS25 |
-| **XSS396** | Hai sản phẩm cùng lô | Dây chuyền I (60 %) lỗi 3 %, II (40 %) lỗi 5 %. Lấy 2 sản phẩm cùng một dây chuyền, cả 2 lỗi. P(dây chuyền II)? | 27/77 | tree | XS26 |
+| **XSS396** | Hai sản phẩm cùng lô | Dây chuyền I (60 %) lỗi 3 %, II (40 %) lỗi 5 %. Lấy 2 sản phẩm cùng một dây chuyền, cả 2 lỗi. P(dây chuyền I)? | 27/77 | tree | XS26 |
 | **XSS397** | Ba trạm trung chuyển | Tín hiệu qua 3 trạm, mỗi trạm lật bit với xác suất 0,1. P(tín hiệu nhận được đúng)? | 0,756 | tree | XS22 |
 | **XSS398** | Tin đồn qua ba người | A kể B, B kể C; mỗi lần kể đúng 0,8, sai thì đảo nghĩa. Sự thật "có" hay "không" như nhau. C nghe "có": P(sự thật là có)? | 0,68 | tree | XS27 |
 | **XSS399** | Thắng hai ván liên tiếp | Ai thắng 2 ván liên tiếp trước là vô địch; A thắng mỗi ván 0,6. P(A vô địch)? | 63/95 | tree | XS30 |
