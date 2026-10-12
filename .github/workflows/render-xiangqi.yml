@@ -136,6 +136,7 @@ jobs:
         env:
           ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
           COTAN_TTS_ENGINE: ${{ env.VOICE == 'edge' && 'vieneu' || '' }}
+          COTAN_TTS_VOICE: "Thiện Minh"
         run: |
           if [ "$TARGETS" != "short" ]; then
             python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"

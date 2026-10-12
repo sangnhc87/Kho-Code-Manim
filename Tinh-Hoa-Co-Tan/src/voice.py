@@ -15,7 +15,8 @@ import urllib.request
 from pathlib import Path
 
 EDGE_VOICE = 'vi-VN-NamMinhNeural'
-NAMMINH_WPS = 3.28
+# Preset VieNeu tương ứng mẫu 03_vieneu_Thiện_Minh.wav. Giữ nhịp gốc của preset.
+VIENEU_PRESET = os.environ.get('COTAN_TTS_VOICE', 'Thiện Minh')
 _VIENEU = None
 
 
@@ -75,20 +76,15 @@ def _zalo(text, out):
 
 
 def _vieneu(text, out):
-    """Giọng NamMinh đọc offline. Edge từ chối IP máy chủ GitHub."""
+    """Giọng Thiện Minh (preset VieNeu). Edge từ chối IP máy chủ GitHub."""
     global _VIENEU
     if _VIENEU is None:
         from vieneu import Vieneu
         _VIENEU = Vieneu()
-    ref = (Path(__file__).resolve().parents[2] / 'Manim-Typst' / 'series-xac-suat-shorts'
-           / 'assets_voice' / 'namminh_ref.wav')
-    if not ref.exists():
-        raise RuntimeError(f'Thiếu giọng mẫu NamMinh: {ref}')
+    voice = _VIENEU.get_preset_voice(VIENEU_PRESET)
     raw = out.with_suffix('.raw.wav')
-    _VIENEU.save(_VIENEU.infer(text, ref_audio=str(ref)), str(raw))
-    target = max(1.2, len(text.split()) / NAMMINH_WPS)
-    tempo = min(1.05, max(0.6, duration(raw) / target))
-    run(['ffmpeg', '-y', '-v', 'error', '-i', str(raw), '-filter:a', f'atempo={tempo:.3f}', str(out)])
+    _VIENEU.save(_VIENEU.infer(text, voice=voice), str(raw))
+    run(['ffmpeg', '-y', '-v', 'error', '-i', str(raw), str(out)])
     raw.unlink(missing_ok=True)
 
 
@@ -122,7 +118,8 @@ def generate_voice(data, folder, provider='edge'):
         for s, step in enumerate(beat['steps']):
             text = speakable(step['say'])
             engine = _resolve_provider(provider)
-            digest = hashlib.sha1(f'{engine}|{EDGE_VOICE}|{text}'.encode()).hexdigest()[:12]
+            voice_id = VIENEU_PRESET if engine == 'vieneu' else EDGE_VOICE
+            digest = hashlib.sha1(f'{engine}|{voice_id}|{text}'.encode()).hexdigest()[:12]
             wav = folder / f'v{b:02d}_{s:02d}_{digest}.wav'
             if not wav.exists():
                 raw = folder / f'raw_{digest}{".wav" if provider == "mock" else ".mp3"}'
