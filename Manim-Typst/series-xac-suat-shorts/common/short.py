@@ -517,7 +517,7 @@ class TreeMixin:
 
         def build(branch):
             label, color, prob, kids = branch
-            node = {'m': token(label, color, r), 'e': self.TM(f'${prob}$', edge_size, SOFT),
+            node = {'m': token(label, color, r), 'e': self.TM(f'${prob}$', edge_size, SOFT) if prob else None,
                     'kids': [build(k) for k in kids]}
             node['branch'] = branch
             return node
