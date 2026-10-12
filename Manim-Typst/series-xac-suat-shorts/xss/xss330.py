@@ -59,9 +59,8 @@ class XSS330(ShortScene):
     def beat_s1(self, T):
         t0 = self.now()
         rows = VGroup()
-        for i, (cols, key) in enumerate((('RRBB', 'k2'), ('RRRB', 'k3'), ('RRRR', 'k4'))):
-            r = VGroup(ball_row(cols, r=.24, buff=.1), self.M(key, 1.0)).arrange(buff=.5)
-            rows.add(r)
+        for cols, m in (('RRBB', self.M('k2', 1.0)), ('RRRB', self.M('k3', 1.0)), ('RRRR', self.M('k4', 1.0))):
+            rows.add(VGroup(ball_row(cols, r=.24, buff=.1), m).arrange(buff=.5))
         rows.arrange(DOWN, buff=.3, aligned_edge=[-1, 0, 0]).move_to([0, .1, 0])
         self.rows = rows
         for i, frac in enumerate((.1, .4, .7)):
