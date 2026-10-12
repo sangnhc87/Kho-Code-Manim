@@ -48,7 +48,7 @@ class XSS296(ShortScene):
 
     def P(self, i, t, h):
         col, row = i % 3, i // 3
-        return [-2.4 + 2.4 * col + .4 * t - .8, 1.6 - 1.6 * row + .35 * h, 0]
+        return [-2.4 + 2.4 * col + .4 * t - .8, 1.05 - 1.55 * row + .35 * h, 0]
 
     def path(self, i, w, color):
         pts, h = [self.P(i, 0, 0)], 0
@@ -60,7 +60,7 @@ class XSS296(ShortScene):
         return m
 
     def hook_visual(self, t0):
-        self.board_top = -1.25
+        self.board_top = -1.65
         self.axes = VGroup(*[Line(self.P(i, 0, 0), self.P(i, 4, 0), color=STROKE, stroke_width=2) for i in range(6)])
         self.wait_until(.6, t0)
         self.play(Create(self.axes), run_time=self.rt(.06))
