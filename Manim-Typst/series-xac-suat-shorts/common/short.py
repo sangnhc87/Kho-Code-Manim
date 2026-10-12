@@ -489,13 +489,13 @@ class ShortScene(Scene):
 class DiceGridMixin:
     """Helpers for Shorts built on the 6 × 6 table of two dice."""
 
-    def show_grid(self, frac=.35, sums=False, center=(.1, 1.0)):
+    def show_grid(self, frac=.35, sums=False, center=(.1, 1.0), scale=1.0):
         from common.visuals import dice_grid
         self.board_top = -1.65
-        self.g = dice_grid(.66, .5).move_to([center[0], center[1], 0])
+        self.g = dice_grid(.66 * scale, .5 * scale).move_to([center[0], center[1], 0])
         self.play(FadeIn(self.g, lag_ratio=.01), run_time=self.rt(frac))
         if sums:
-            self.sum_labels = VGroup(*[self.MNum(i + j + 2, 0, SOFT, 22).move_to(self.g.cells[j][i])
+            self.sum_labels = VGroup(*[self.MNum(i + j + 2, 0, SOFT, int(22 * scale)).move_to(self.g.cells[j][i])
                                        for i in range(6) for j in range(6)])
             self.play(FadeIn(self.sum_labels, lag_ratio=.01), run_time=self.rt(.15))
         return self.g

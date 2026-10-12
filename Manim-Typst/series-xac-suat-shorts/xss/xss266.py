@@ -58,7 +58,7 @@ class XSS266(DiceGridMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.wait_until(.75, t0)
-        self.show_grid(.12, sums=True, center=(.1, .1))
+        self.show_grid(.12, sums=True, center=(.1, .5), scale=.82)
 
     def beat_s1(self, T):
         t0 = self.now()
