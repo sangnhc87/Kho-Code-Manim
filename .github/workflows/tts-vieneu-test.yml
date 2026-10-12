@@ -1,0 +1,50 @@
+name: TTS test - VieNeu voice clone (XSS)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: Manim-Typst/series-xac-suat-shorts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install
+        run: |
+          sudo apt-get update && sudo apt-get install -y espeak-ng ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install vieneu
+      - name: Clone NamMinh and read one hook
+        run: |
+          mkdir -p /tmp/out
+          python - <<'PY'
+          import time
+          from vieneu import Vieneu
+          t = time.time()
+          tts = Vieneu()
+          print('load', round(time.time() - t, 1), 's', flush=True)
+          texts = {
+              'hook': 'Một bàn rắn và thang mini: đi từ ô không tới ô bốn. Tung xu, ngửa tiến một ô, sấp tiến hai ô. Nhưng ô ba có con rắn, đáp vào là bị đẩy về ô một. Trung bình mấy lượt mới về đích?',
+              'math': 'Bằng mười sáu nghìn tám trăm lẻ bảy phần bốn mươi sáu nghìn sáu trăm năm mươi sáu, khoảng ba mươi sáu phần trăm.',
+          }
+          for k, s in texts.items():
+              t = time.time()
+              audio = tts.infer(s, ref_audio='assets_voice/namminh_ref.wav')
+              tts.save(audio, f'/tmp/out/clone_{k}.wav')
+              print(k, 'synth', round(time.time() - t, 1), 's', flush=True)
+          try:
+              print('voices:', tts.list_voices() if hasattr(tts, 'list_voices') else 'n/a')
+          except Exception as e:
+              print('voices err', e)
+          PY
+          for f in /tmp/out/*.wav; do echo "$f $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")"; done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vieneu-test
+          path: /tmp/out/
