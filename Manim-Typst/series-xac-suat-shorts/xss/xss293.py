@@ -56,7 +56,7 @@ class XSS293(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.3
-        self.row = pads(range(1, 5), y=1.7, gap=1.4)
+        self.row = pads(range(1, 5), y=1.15, gap=1.4)
         self.row[0].set_fill(CORAL, .8)
         self.row[-1].set_fill(GREEN, .8)
         self.labs = VGroup(*[self.TM(f'${k}$', 26, SOFT).next_to(q, [0, -1, 0], buff=.15) for k, q in zip(range(1, 5), self.row)])

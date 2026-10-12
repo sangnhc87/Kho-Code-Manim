@@ -63,7 +63,7 @@ class XSS299(ShortScene):
         self.board_top = -1.25
         steps = VGroup()
         for k in range(6):
-            x, y = -2.7 + .9 * k, -.2 + .5 * k
+            x, y = -2.7 + .9 * k, -.7 + .5 * k
             steps.add(Line([x, y, 0], [x + .9, y, 0], color=GOLD if k == 4 else SOFT, stroke_width=6),
                       Line([x + .9, y, 0], [x + .9, y + .5, 0], color=SOFT, stroke_width=6))
         self.wait_until(.6, t0)

@@ -50,7 +50,7 @@ class XSS301(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        self.L = Lattice(3, 3, origin=(-1.5, -.3), step=1.0)
+        self.L = Lattice(3, 3, origin=(-1.5, -.75), step=1.0)
         self.g = self.L.grid()
         self.bad = Cross(Dot(self.L.P(1, 1), radius=.2), stroke_color=CORAL, stroke_width=6)
         self.goal = Dot(self.L.P(2, 2), radius=.14, color=GOLD)

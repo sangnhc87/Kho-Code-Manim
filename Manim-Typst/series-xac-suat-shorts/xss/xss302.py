@@ -70,7 +70,7 @@ class XSS302(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        self.L = Lattice(3, 3, origin=(-1.5, -.3), step=1.0)
+        self.L = Lattice(3, 3, origin=(-1.5, -.75), step=1.0)
         self.g = self.L.grid()
         self.corner = Dot(self.L.P(3, 0), radius=.15, color=GOLD)
         self.wait_until(.7, t0)

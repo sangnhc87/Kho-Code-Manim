@@ -59,7 +59,7 @@ class XSS291(TreeMixin, ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.5
-        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.9), dy=1.15, width=5.6, root_label='bước 1', r=.38)
+        self.levels, self.leaves = self.prob_tree(BRANCHES, top=(0, 2.9), dy=1.15, width=6.4, r=.38)
         self.wait_until(.8, t0)
         self.play(FadeIn(self.levels[0]), FadeIn(self.levels[1], lag_ratio=.3), run_time=self.rt(.08))
 

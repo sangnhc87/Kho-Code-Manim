@@ -48,7 +48,7 @@ class XSS296(ShortScene):
 
     def P(self, i, t, h):
         col, row = i % 3, i // 3
-        return [-2.4 + 2.4 * col + .4 * t - .8, 2.2 - 1.6 * row + .35 * h, 0]
+        return [-2.4 + 2.4 * col + .4 * t - .8, 1.6 - 1.6 * row + .35 * h, 0]
 
     def path(self, i, w, color):
         pts, h = [self.P(i, 0, 0)], 0
