@@ -151,6 +151,17 @@ jobs:
           retention-days: 14
           if-no-files-found: warn
 
+      - name: Prepare publishing metadata
+        run: |
+          META="artifacts/${SH}_youtube.json"
+          python - "$META" <<'PY'
+          import json, sys
+          m = json.load(open(sys.argv[1], encoding='utf-8'))
+          open('/tmp/desc.txt', 'w', encoding='utf-8').write(m['description'])
+          open('/tmp/title.txt', 'w', encoding='utf-8').write(m['title'])
+          open('/tmp/tags.txt', 'w', encoding='utf-8').write(m['tags'])
+          PY
+
       - name: Upload to YouTube Shorts
         id: upload
         if: ${{ env.UPLOAD == 'true' && env.QUALITY == 'full' && env.VOICE == 'on' }}
@@ -165,14 +176,6 @@ jobs:
             echo "$KEY already on YouTube, skipping"; exit 0
           fi
           python -m pip install -q google-api-python-client google-auth-oauthlib google-auth-httplib2
-          META="artifacts/${SH}_youtube.json"
-          python - "$META" <<'PY'
-          import json, sys
-          m = json.load(open(sys.argv[1], encoding='utf-8'))
-          open('/tmp/desc.txt', 'w', encoding='utf-8').write(m['description'])
-          open('/tmp/title.txt', 'w', encoding='utf-8').write(m['title'])
-          open('/tmp/tags.txt', 'w', encoding='utf-8').write(m['tags'])
-          PY
           python ../../scripts/upload_to_youtube.py \
             --file "$VIDEO" \
             --title "$(cat /tmp/title.txt)" \
