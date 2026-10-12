@@ -31,3 +31,16 @@ def transfer_arrow(src, dst, label='', color=None):
     if label:
         g.add(tx(label, 22, color or GOLD).next_to(a, [0, 1, 0], buff=.05))
     return g
+
+
+def ball_row(colors, y=0.0, r=.3, buff=.16, labels=None, size=22):
+    """Balls in a line (draw order), optionally numbered; 'W' is a white ball."""
+    from common.theme import INK, WHITE
+    from common.visuals import ball
+    g = VGroup()
+    for i, c in enumerate(colors):
+        b = ball(WHITE if c == 'W' else c, r)
+        if labels:
+            b.add(tx(str(labels[i]), size, INK, bold=True).move_to(b[0]))
+        g.add(b)
+    return g.arrange(buff=buff).move_to([0, y, 0])
