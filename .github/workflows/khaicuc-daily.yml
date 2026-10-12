@@ -1,0 +1,39 @@
+name: Khai Cuc - dang moi ngay
+# Mỗi ngày chọn các tập khai cục chưa đăng (theo thứ tự số tập) và gọi khaicuc-render.yml
+# (1080p + đăng YouTube). Chỉ chạy khi biến repo KHAICUC_DAILY = true.
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Số tập đăng trong lượt này'
+        type: number
+        default: 1
+  schedule:
+    - cron: '0 1 * * *'
+    - cron: '0 13 * * *'
+permissions:
+  contents: read
+  actions: write
+jobs:
+  pick:
+    if: github.event_name != 'schedule' || vars.KHAICUC_DAILY == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Chọn tập chưa đăng và dựng + đăng
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COUNT: ${{ github.event_name == 'schedule' && 1 || inputs.count }}
+        run: |
+          python3 - <<'PY' > picks.txt
+          import json, os, pathlib
+          hist = json.load(open('youtube_uploaded_history.json', encoding='utf-8'))
+          eps = sorted(p.stem for p in pathlib.Path('Tinh-Hoa-Co-Tan/khaicuc/episodes').glob('kc-*.json'))
+          todo = [e for e in eps if f'khaicuc_{e}' not in hist]
+          print('\n'.join(todo[:int(os.environ['COUNT'])]))
+          PY
+          cat picks.txt
+          [ -s picks.txt ] || { echo "Không còn tập nào chưa đăng"; exit 0; }
+          while read -r ep; do
+            [ -n "$ep" ] && gh workflow run khaicuc-render.yml -f episode="$ep" -f quality=full -f publish=true
+          done < picks.txt

@@ -186,9 +186,12 @@ def main():
     start = Position.from_fen(data['fen'])
     segs = segments(data['tree'], start)
     # chia các đoạn thành các phần theo ngân sách số nước đi
+    total_nodes = sum(len(s['nodes']) for s in segs)
+    n_parts = -(-total_nodes // a.budget)
+    limit = -(-total_nodes // n_parts) + 15     # chia đều các phần, dư 15 nước để không cắt giữa biến
     parts, cur, count = [], [], 0
     for s in segs:
-        if cur and count + len(s['nodes']) > a.budget:
+        if cur and count + len(s['nodes']) > limit:
             parts.append(cur)
             cur, count = [], 0
         cur.append(s)
