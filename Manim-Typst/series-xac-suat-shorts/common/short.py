@@ -69,8 +69,9 @@ def outro_text(n: int) -> str:
     plan = json.loads((shortlib.ROOT / 'shorts_plan.json').read_text('utf-8'))['shorts']
     if n < len(plan):
         nxt = plan[n]
+        title = nxt['title'].replace(' = ', ' bằng ')  # narration is spoken words
         return (f'Bạn trả lời đúng chưa? Bình luận đáp án của bạn nhé! '
-                f'Thử thách số {n + 1} tiếp theo: {nxt["title"]}. Theo dõi kênh để không bỏ lỡ!')
+                f'Thử thách số {n + 1} tiếp theo: {title}. Theo dõi kênh để không bỏ lỡ!')
     return 'Bạn đã đi hết toàn bộ chuỗi thử thách xác suất. Bình luận câu bạn thích nhất nhé!'
 
 
