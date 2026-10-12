@@ -51,3 +51,23 @@ class PolyMixin:
             self.play(*([FadeOut(cur)] if cur else []), FadeIn(new), run_time=self.rt(step))
             cur = new
         return cur
+
+
+CUBE = [(x, y, z) for x in (0, 1) for y in (0, 1) for z in (0, 1)]
+
+
+def d2(a, b):
+    return sum((i - j) ** 2 for i, j in zip(a, b))
+
+
+def cube_view(v, s=1.9, o=(-1.25, -.2)):
+    """Oblique projection of a unit-cube vertex."""
+    return [o[0] + s * v[0] + .85 * v[2], o[1] + s * v[1] + .7 * v[2], 0]
+
+
+def cube_mob():
+    from manim import Line
+    edges = VGroup(*[Line(cube_view(a), cube_view(b), color=STROKE, stroke_width=3)
+                     for a, b in combinations(CUBE, 2) if d2(a, b) == 1])
+    dots = VGroup(*[Dot(cube_view(v), radius=.11, color=WHITE) for v in CUBE])
+    return VGroup(edges, dots)
