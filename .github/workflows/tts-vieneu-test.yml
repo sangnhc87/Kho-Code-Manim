@@ -1,4 +1,4 @@
-name: TTS test - VieNeu voice clone (XSS)
+name: TTS test - voice samples (XSS)
 
 on:
   workflow_dispatch:
@@ -18,32 +18,55 @@ jobs:
       - name: Install
         run: |
           python -m pip install --upgrade pip
-          python -m pip install vieneu "onnxruntime==1.22.1"
-      - name: Clone NamMinh and read one hook
+          python -m pip install vieneu "onnxruntime==1.22.1" gTTS edge-tts
+      - name: Same hook, many voices
         run: |
           mkdir -p /tmp/out
           python - <<'PY'
-          import time
-          from vieneu import Vieneu
-          t = time.time()
-          tts = Vieneu()
-          print('load', round(time.time() - t, 1), 's', flush=True)
-          texts = {
-              'hook': 'Một bàn rắn và thang mini: đi từ ô không tới ô bốn. Tung xu, ngửa tiến một ô, sấp tiến hai ô. Nhưng ô ba có con rắn, đáp vào là bị đẩy về ô một. Trung bình mấy lượt mới về đích?',
-              'math': 'Bằng mười sáu nghìn tám trăm lẻ bảy phần bốn mươi sáu nghìn sáu trăm năm mươi sáu, khoảng ba mươi sáu phần trăm.',
-          }
-          for k, s in texts.items():
-              t = time.time()
-              audio = tts.infer(s, ref_audio='assets_voice/namminh_ref.wav')
-              tts.save(audio, f'/tmp/out/clone_{k}.wav')
-              print(k, 'synth', round(time.time() - t, 1), 's', flush=True)
+          import asyncio, subprocess
+          TEXT = ('Một bàn rắn và thang mini: đi từ ô không tới ô bốn. Tung xu, ngửa tiến một ô, sấp tiến hai ô. '
+                  'Nhưng ô ba có con rắn, đáp vào là bị đẩy về ô một. Trung bình mấy lượt mới về đích?')
+          words = len(TEXT.split())
+
+          def report(name, path):
+              d = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+                                                 '-of', 'csv=p=0', path], text=True))
+              print(f'{name:30s} {d:6.2f}s  {words / d:4.2f} words/s', flush=True)
+
           try:
-              print('voices:', tts.list_voices() if hasattr(tts, 'list_voices') else 'n/a')
+              import edge_tts
+              async def edge():
+                  await edge_tts.Communicate(TEXT, voice='vi-VN-NamMinhNeural', rate='+6%').save('/tmp/out/00_edge_namminh.mp3')
+              asyncio.run(edge())
+              report('00 edge NamMinh', '/tmp/out/00_edge_namminh.mp3')
           except Exception as e:
-              print('voices err', e)
+              print('00 edge NamMinh FAILED:', str(e)[:80])
+
+          from vieneu import Vieneu
+          tts = Vieneu()
+          names = ['Minh Đức', 'Hải Đăng', 'Thiện Minh', 'Phạm Tuyên', 'Quốc Tuấn', 'Xuân Vĩnh', 'Minh Triết', 'Adam bựa',
+                   'Mai Anh', 'Ngọc Huyền']
+          for i, n in enumerate(names, 1):
+              try:
+                  v = tts.get_preset_voice(n)
+                  a = tts.infer(TEXT, voice=v)
+                  p = f'/tmp/out/{i:02d}_vieneu_{n.replace(" ", "_")}.wav'
+                  tts.save(a, p)
+                  report(f'{i:02d} vieneu {n}', p)
+              except Exception as e:
+                  print(n, 'FAILED', str(e)[:100])
+          a = tts.infer(TEXT, ref_audio='assets_voice/namminh_ref.wav')
+          tts.save(a, '/tmp/out/11_vieneu_clone_namminh_raw.wav')
+          report('11 vieneu clone (no stretch)', '/tmp/out/11_vieneu_clone_namminh_raw.wav')
+
+          from gtts import gTTS
+          try:
+              gTTS(TEXT, lang='vi').save('/tmp/out/12_google_translate.mp3')
+              report('12 google translate', '/tmp/out/12_google_translate.mp3')
+          except Exception as e:
+              print('gtts FAILED', e)
           PY
-          for f in /tmp/out/*.wav; do echo "$f $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$f")"; done
       - uses: actions/upload-artifact@v4
         with:
-          name: vieneu-test
+          name: voice-samples
           path: /tmp/out/
