@@ -135,8 +135,7 @@ jobs:
       - name: Render MP4
         env:
           ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
-          COTAN_TTS_ENGINE: ${{ env.VOICE == 'edge' && 'vieneu' || '' }}
-          COTAN_TTS_VOICE: "Thiện Minh"
+          COTAN_TTS_FALLBACK: vieneu
         run: |
           if [ "$TARGETS" != "short" ]; then
             python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"
@@ -220,6 +219,24 @@ jobs:
             echo "Không phải Cờ Tàn Thực Dụng, bỏ qua Reel."
             exit 0
           fi
+          python - "$EP" <<'PY'
+          import json, os, urllib.error, urllib.parse, urllib.request, sys
+          ep = sys.argv[1]
+          token = os.environ.get('FB_PAGE_ACCESS_TOKEN', '')
+          path = '../facebook_uploaded_history.json'
+          fb = json.load(open(path, encoding='utf-8')) if os.path.exists(path) else {}
+          item = fb.pop(f'cotan3_reel_{ep}', None)
+          vid = (item or {}).get('video_id')
+          if vid and token:
+              body = urllib.parse.urlencode({'access_token': token}).encode()
+              req = urllib.request.Request(f'https://graph.facebook.com/v20.0/{vid}', data=body, method='DELETE')
+              try:
+                  with urllib.request.urlopen(req, timeout=40) as r:
+                      print(f'Đã xoá Reel cũ {vid}: {r.status}')
+              except urllib.error.HTTPError as e:
+                  print(f'Không xoá được Reel cũ {vid}: HTTP {e.code}')
+          open(path, 'w', encoding='utf-8').write(json.dumps(fb, ensure_ascii=False, indent=2) + '\n')
+          PY
           python ../scripts/upload_to_facebook_reel.py \
             --file "$SHORT" \
             --title "$(cat yt_short_title.txt)" \

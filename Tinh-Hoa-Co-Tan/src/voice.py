@@ -15,9 +15,11 @@ import urllib.request
 from pathlib import Path
 
 EDGE_VOICE = 'vi-VN-NamMinhNeural'
-# Preset VieNeu tương ứng mẫu 03_vieneu_Thiện_Minh.wav. Giữ nhịp gốc của preset.
+EDGE_RATE = '+8%'
 VIENEU_PRESET = os.environ.get('COTAN_TTS_VOICE', 'Thiện Minh')
+CACHE = Path(__file__).resolve().parents[1] / 'voice_cache'
 _VIENEU = None
+_MODE = None  # một tập không trộn hai giọng
 
 
 def run(args):
@@ -41,7 +43,7 @@ async def _edge(text, out):
     import edge_tts
     for attempt in range(6):
         try:
-            await edge_tts.Communicate(text, voice=EDGE_VOICE, rate='-4%').save(str(out))
+            await edge_tts.Communicate(text, voice=EDGE_VOICE, rate=EDGE_RATE).save(str(out))
             if out.exists() and out.stat().st_size > 800:
                 return
         except Exception:
@@ -94,10 +96,23 @@ def _resolve_provider(provider):
 
 
 def _render_one(text, raw, provider):
+    """Đọc trên chính máy đang chạy. Edge bị GitHub chặn thì chuyển VieNeu, không cần cache local."""
+    global _MODE
     provider = _resolve_provider(provider)
     if provider == 'edge':
-        asyncio.run(_edge(text, raw))
-    elif provider == 'vieneu':
+        if _MODE != 'vieneu':
+            try:
+                asyncio.run(_edge(text, raw))
+                _MODE = 'edge'
+                return 'edge'
+            except Exception as exc:
+                if os.environ.get('COTAN_TTS_FALLBACK', 'vieneu') != 'vieneu':
+                    raise
+                _MODE = 'vieneu'
+                print(f'Edge từ chối ({type(exc).__name__}). Runner đọc bằng VieNeu "{VIENEU_PRESET}".', flush=True)
+        _vieneu(text, raw)
+        return 'vieneu'
+    if provider == 'vieneu':
         _vieneu(text, raw)
     elif provider == 'zalo':
         _zalo(text, raw)
@@ -107,6 +122,7 @@ def _render_one(text, raw, provider):
              '-t', f'{secs:.2f}', str(raw)])
     else:
         raise ValueError('provider phải là edge, vieneu, zalo hoặc mock')
+    return provider
 
 
 def generate_voice(data, folder, provider='edge'):
@@ -117,16 +133,25 @@ def generate_voice(data, folder, provider='edge'):
         clips = []
         for s, step in enumerate(beat['steps']):
             text = speakable(step['say'])
-            engine = _resolve_provider(provider)
+            engine = _MODE or _resolve_provider(provider)
             voice_id = VIENEU_PRESET if engine == 'vieneu' else EDGE_VOICE
-            digest = hashlib.sha1(f'{engine}|{voice_id}|{text}'.encode()).hexdigest()[:12]
+            digest = hashlib.sha1(f'{engine}|{voice_id}|{EDGE_RATE}|{text}'.encode()).hexdigest()[:12]
             wav = folder / f'v{b:02d}_{s:02d}_{digest}.wav'
+            cached = CACHE / f'{digest}.wav'
+            if not wav.exists() and cached.exists():
+                wav.write_bytes(cached.read_bytes())
             if not wav.exists():
-                raw = folder / f'raw_{digest}{".wav" if provider == "mock" else ".mp3"}'
-                _render_one(text, raw, provider)
+                raw = folder / f'raw_{digest}.mp3'
+                engine = _render_one(text, raw, provider)
+                voice_id = VIENEU_PRESET if engine == 'vieneu' else EDGE_VOICE
+                digest = hashlib.sha1(f'{engine}|{voice_id}|{EDGE_RATE}|{text}'.encode()).hexdigest()[:12]
+                wav = folder / f'v{b:02d}_{s:02d}_{digest}.wav'
+                cached = CACHE / f'{digest}.wav'
                 run(['ffmpeg', '-y', '-v', 'error', '-i', str(raw), '-ac', '2', '-ar', '44100',
                      '-c:a', 'pcm_s16le', str(wav)])
                 raw.unlink(missing_ok=True)
+                CACHE.mkdir(parents=True, exist_ok=True)
+                cached.write_bytes(wav.read_bytes())
             clips.append({'audio': str(wav.resolve()), 'seconds': round(duration(wav), 3)})
         timing.append(clips)
     (folder / 'timing.json').write_text(json.dumps(timing, ensure_ascii=False, indent=1), encoding='utf-8')

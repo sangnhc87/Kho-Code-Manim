@@ -163,33 +163,62 @@ def reel_copy(data):
     return {'title': title, 'description': '\n'.join(x for x in desc.splitlines())}
 
 
-def _bite(ply, side_name):
-    """Một câu ngắn, đổi theo nước — không lặp một câu đệm."""
+_SO = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười']
+
+
+def _so(n):
+    try:
+        n = int(n)
+    except (TypeError, ValueError):
+        return str(n)
+    return _SO[n] if 0 <= n <= 10 else str(n)
+
+
+def _fact(ply, i):
+    """Chỉ nói điều bảng tra xác nhận. Không thêm câu đệm."""
+    from xq.commentary import word
     if ply.get('mate'):
-        return 'Hết cờ. Không còn ô nào để chạy.'
-    if ply.get('capture') and ply.get('check'):
-        return 'Ăn quân và chiếu. Đòn này mới đau.'
-    if ply.get('capture'):
-        return 'Ăn được. Nhưng chưa phải lúc mừng.'
+        return f'Ăn {word(ply["capture"])}, hết cờ.' if ply.get('capture') else 'Hết cờ.'
+    if ply.get('n_legal') == 1:
+        return 'Không còn nước nào khác.'
     if ply.get('only') and ply.get('wdl') == 'D':
-        return 'Chỉ nước này giữ hòa. Đi khác là thua.'
-    if ply.get('only'):
-        return 'Nước duy nhất. Đi lệch một ô là hỏng.'
+        return ('Chỉ nước này giữ hòa.', 'Đi khác là thua.', 'Phải đi đúng ô này.')[i % 3]
+    if ply.get('only') and ply.get('wdl') == 'W':
+        return ('Chỉ nước này còn thắng.', 'Đi khác là tuột thắng.', 'Một nước thôi.')[i % 3]
+    keep, legal = ply.get('n_keep') or 0, ply.get('n_legal') or 0
+    if 0 < keep < legal and keep <= 2:
+        giu = 'còn thắng' if ply.get('wdl') == 'W' else 'giữ hòa'
+        return f'Chỉ {_so(keep)} nước {giu}.'
+    bits = []
+    if ply.get('capture'):
+        bits.append(f'ăn {word(ply["capture"])}')
     if ply.get('check'):
-        return 'Chiếu. Tướng đối phương hết đường thở.'
-    piece = ply.get('piece') or ''
-    if piece in ('P', 'p'):
-        return 'Binh tiến đúng một nhịp. Vội là chết.'
-    if piece in ('K', 'k'):
-        verb = 'lùi' if 'thoái' in ply.get('vn', '') else 'tiến' if 'tiến' in ply.get('vn', '') else 'dịch'
-        return f'{side_name} {verb} Tướng, chưa vội ăn. Nước chờ này mới khóa được thế.'
-    if piece in ('R', 'r'):
-        return 'Xe chiếm thông lộ. Đừng đổi sớm.'
-    if piece in ('N', 'n'):
-        return 'Mã nhảy vào đúng mắt. Nhìn kỹ chân Mã.'
-    if piece in ('C', 'c'):
-        return 'Pháo cần giá. Nước này dựng giá.'
-    return 'Chưa ăn quân. Ép đối phương trước.'
+        bits.append('chiếu')
+    if bits:
+        text = ', '.join(bits)
+        return text[0].upper() + text[1:] + '.'
+    note = _positional(ply)
+    return note
+
+
+def _positional(ply):
+    piece = (ply.get('piece') or '').upper()
+    if piece not in ('K', 'P') or ply.get('check') or ply.get('capture'):
+        return ''
+    from xq.board import Position, parse_sq
+    from xq.commentary import facing_files
+    before = Position.from_fen(ply['fen'])
+    after = before.play(ply['move'])
+    if piece == 'K':
+        if set(facing_files(after)) - set(facing_files(before)):
+            return 'Chiếm lộ, Tướng đối phương không bước sang được.'
+        return ''
+    dest = parse_sq(ply['move'][2:])
+    if 3 <= dest[0] <= 5 and dest[1] >= 7:
+        before_in = any(3 <= sq[0] <= 5 and sq[1] >= 7 and p == 'P' for sq, p in before.cells.items())
+        if not before_in:
+            return 'Binh áp sát cung.'
+    return ''
 
 
 def classic_reel(data, max_plies):
@@ -203,66 +232,64 @@ def classic_reel(data, max_plies):
     root_side = 'Đỏ' if a['fen'].split()[1] == 'w' else 'Đen'
     first = main[0]
     quiet = not first.get('check') and not first.get('capture')
+    bad = next((m for m in first.get('ranked') or [] if m.get('wdl') != first.get('wdl')), None)
+    nword = _so(num)
+    legal = _so(first.get('n_legal') or 0)
     if val['wdl'] == 'D':
         headline = f'Thế {num}: giữ hòa được không?'
         tag = '5 GIÂY • THỦ HÒA'
-        verdict = 'Hòa — nếu không tham'
-        ask = f'{sub}. {root_side} đi. Một nước nghe rất ngon, nhưng đi là thua. Bạn có thấy nước giữ hòa không?'
-        flash = f'THẾ {num} • ĐỪNG THAM'
-    elif quiet:
-        headline = f'Thế {num}: đừng chiếu vội!'
-        tag = '5 GIÂY • NƯỚC CHỜ'
-        verdict = f'Thắng sau {moves_count(val["dtm"])} nước'
-        ask = f'{sub}. {root_side} đi trước. Nước thắng không chiếu, không ăn quân. Bạn dám đi không?'
-        flash = f'THẾ {num} • NƯỚC CHỜ'
+        verdict = 'Hòa, nếu không tham'
+        if bad and bad.get('wdl') == 'L':
+            ask = f'{sub}. {root_side} đi. {bad["vn"]} nhìn hợp, nhưng đi là thua. Nước nào giữ hòa?'
+        elif first.get('only'):
+            ask = f'{sub}. {root_side} đi. {legal.capitalize()} nước, chỉ một nước giữ hòa. Bạn thấy không?'
+        elif first.get('n_bad'):
+            ask = f'{sub}. {root_side} đi. Có nước giữ hòa, có nước thua. Bạn chọn nước nào?'
+        else:
+            ask = f'{sub}. {root_side} đi. Nước đầu chưa phân thắng bại. Khó là những nước sau, phải giữ đúng từng ô.'
+        flash = f'THẾ {num} • GIỮ HÒA'
+        ending = 'Hòa, nếu giữ đúng những nước bắt buộc. Bạn theo kịp không?'
     elif first.get('only'):
-        headline = f'Thế {num}: chỉ một nước!'
-        tag = '5 GIÂY • DUY NHẤT'
-        verdict = f'Thắng sau {moves_count(val["dtm"])} nước'
-        ask = f'{sub}. Chỉ đúng một nước thắng. Đi khác là tuột. Bạn tìm ra không?'
+        headline = f'Thế {num}: chỉ một nước'
+        tag = '5 GIÂY • MỘT NƯỚC'
+        verdict = f'Thắng sau {_so(moves_count(val["dtm"]))} nước'
+        ask = f'{sub}. {root_side} có {legal} nước. Chỉ một nước thắng. Bạn tìm ra không?'
         flash = f'THẾ {num} • MỘT NƯỚC'
-    else:
-        headline = f'Thế {num}: bạn thấy bẫy chưa?'
-        tag = '5 GIÂY • TÌM NƯỚC THẮNG'
-        verdict = f'Thắng sau {moves_count(val["dtm"])} nước'
-        ask = f'{sub}. {root_side} đi trước. Nhìn thì dễ. Đi thật mới thấy bẫy. Nước nào thắng?'
-        flash = f'THẾ {num} • CÓ BẪY'
-    steps = [{'say': f'Cờ Tàn Thực Dụng, thế số {num}. {ask}', 'countdown': 5}]
-    if first.get('only'):
-        why = ' Chỉ một nước đúng.'
+        ending = f'Đi đúng nước đầu, Đỏ thắng sau {_so(moves_count(val["dtm"]))} nước. Bạn có tìm ra không?'
     elif quiet:
-        why = ' Không chiếu. Không ăn. Vậy mà thắng.'
-    elif first.get('n_bad'):
-        why = f' Có {first["n_bad"]} nước nhìn ngon mà hỏng.'
+        headline = f'Thế {num}: đừng chiếu vội'
+        tag = '5 GIÂY • NƯỚC CHỜ'
+        verdict = f'Thắng sau {_so(moves_count(val["dtm"]))} nước'
+        ask = f'{sub}. {root_side} đi. Nước thắng không chiếu, không ăn quân. Bạn dám đi không?'
+        flash = f'THẾ {num} • NƯỚC CHỜ'
+        ending = f'Đi đúng nước đầu, Đỏ thắng sau {_so(moves_count(val["dtm"]))} nước. Bạn có tìm ra không?'
     else:
-        why = ' Đây là nước nhanh nhất.'
-    steps.append({'say': f'Đáp án: {first["vn"]}!{why}', 'move': first['move'], 'mark': 'answer'})
-    bad = next((m for m in first.get('ranked') or [] if m.get('wdl') != first.get('wdl')), None)
-    if bad:
-        steps.append({'say': f'Nhiều người sẽ đi {bad["vn"]}. Nghe hợp lý. Đi xong là mất thế.'})
-    seen = set()
-    alts = [
-        'Cứ ép, đừng đổi quân.',
-        'Giữ nhịp. Đối phương đang hết chỗ.',
-        'Nhìn cung trước khi ăn.',
-    ]
-    alt_i = 0
-    for ply in main[1:]:
-        who = 'Đỏ' if ply.get('side') == 'w' else 'Đen'
-        bite = _bite(ply, who)
-        if bite in seen:
-            bite = alts[alt_i % len(alts)]
-            alt_i += 1
-        seen.add(bite)
+        headline = f'Thế {num}: tìm nước thắng'
+        tag = '5 GIÂY • TÌM NƯỚC'
+        verdict = f'Thắng sau {_so(moves_count(val["dtm"]))} nước'
+        ask = f'{sub}. {root_side} đi trước. {legal.capitalize()} nước hợp lệ, không phải nước nào cũng thắng. Nước nào thắng?'
+        flash = f'THẾ {num} • TÌM NƯỚC'
+        ending = f'Đi đúng nước đầu, Đỏ thắng sau {_so(moves_count(val["dtm"]))} nước. Bạn có tìm ra không?'
+    steps = [{'say': f'Cờ tàn thực dụng, thế số {nword}. {ask}', 'countdown': 5}]
+    answer = f'Đáp án: {first["vn"]}.'
+    why = _fact(first, 0)
+    if why:
+        answer += ' ' + why
+    if bad and bad['vn'] not in answer:
+        if bad.get('wdl') == 'L':
+            answer += f' Đi {bad["vn"]} là thua.'
+        elif bad.get('wdl') == 'D':
+            answer += f' Đi {bad["vn"]} thì chỉ hòa.'
+        else:
+            answer += f' Đừng đi {bad["vn"]}.'
+    steps.append({'say': answer, 'move': first['move'], 'mark': 'answer'})
+    for i, ply in enumerate(main[1:], 1):
+        fact = _fact(ply, i)
+        say = f'{ply["vn"]}.' + (f' {fact}' if fact else '')
         mark = 'only' if ply.get('only') and ply.get('wdl') == 'W' else (
             'hold' if ply.get('only') and ply.get('wdl') == 'D' else None)
-        steps.append({'say': f'{ply["vn"]}. {bite}', 'move': ply['move'], 'mark': mark})
-    lure = next((t for t in a.get('traps') or [] if t.get('lure')), None)
-    if lure and lure['lure']['vn'] != (bad or {}).get('vn'):
-        steps.append({'say': f'Còn một bẫy ngọt hơn: {lure["lure"]["vn"]}. Đối phương hóa giải, và bạn thành người thua.'})
-    take = topic.get('takeaway') or topic.get('takeaway_short') or verdict
-    steps.append({'say': f'Nhớ một câu: {take} Bảng tra xác nhận: {verdict}.'})
-    steps.append({'say': 'Bạn đi đúng nước đầu không? Comment đáp án, rồi xem thế tiếp theo.'})
+        steps.append({'say': say, 'move': ply['move'], 'mark': mark})
+    steps.append({'say': ending})
     return {
         'number': data['number'], 'fen': a['fen'], 'headline': headline, 'tag': tag,
         'verdict': verdict, 'wdl': val['wdl'], 'steps': steps,
@@ -310,6 +337,7 @@ def main():
     ap.add_argument('--episode', required=True)
     ap.add_argument('--quality', choices=['preview', 'full'], default='preview')
     ap.add_argument('--voice', choices=['edge', 'zalo', 'mock'], default='edge')
+    ap.add_argument('--no-render', action='store_true', help='Chỉ tạo lời đọc, không dựng hình')
     args = ap.parse_args()
     data = json.loads((ROOT / 'episodes' / f'{args.episode}.json').read_text(encoding='utf-8'))
     out = ROOT / 'output' / args.episode
@@ -325,6 +353,11 @@ def main():
             break
         plies -= 1
     (out / 'short.json').write_text(json.dumps(short, ensure_ascii=False, indent=1), encoding='utf-8')
+    if args.no_render:
+        print(f'SCRIPT {args.episode} | {plies} nước | ~{total:.0f} giây')
+        for step in short['steps']:
+            print(' -', step['say'])
+        return
     env = os.environ.copy()
     env['XIANGQI_OUTPUT'] = str(out)
     env['PYTHONPATH'] = str(ROOT)
