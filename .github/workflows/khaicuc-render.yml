@@ -106,6 +106,19 @@ jobs:
           sudo apt-get install -y ffmpeg >/dev/null 2>&1 || true
           python scripts/produce_khaicuc.py --episode "$EPISODE" --concat "output/$EPISODE"
           cat "output/$EPISODE/yt_desc.txt"
+      - name: Cắt khung hình kiểm tra (nhẹ, để xem mà không cần tải video)
+        run: |
+          D="output/$EPISODE"; mkdir -p "$D/frames"
+          T=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$D/$EPISODE.mp4" | cut -d. -f1)
+          for t in 8 25 60 300 $((T/2)) $((T-30)) $((T-12)) $((T-3)); do
+            ffmpeg -v error -y -ss "$t" -i "$D/$EPISODE.mp4" -frames:v 1 -vf scale=960:-1 "$D/frames/f_$(printf %05d $t).png" || true
+          done
+          ls "$D/frames"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}-frames
+          path: Tinh-Hoa-Co-Tan/output/${{ inputs.episode }}/frames
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.episode }}-final
