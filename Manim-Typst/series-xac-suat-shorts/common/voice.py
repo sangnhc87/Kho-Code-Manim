@@ -21,9 +21,10 @@ LEAD = 0.15        # narration starts slightly after the beat's visual cue
 WORDS_PER_SEC = 3.45  # vi-VN-NamMinhNeural at +6% (estimate)
 ATTEMPTS = int(os.environ.get('XSS_TTS_ATTEMPTS', 6))  # pack_voice.sh raises it: Edge often drops runs of requests
 # Edge refuses datacenter IPs (GitHub runners, 2026-10). XSS_TTS_ENGINE=vieneu clones NamMinh offline on the runner
-# with VieNeu-TTS from assets_voice/namminh_ref.wav; its pace is a bit quicker, so it is slowed with atempo.
+# with VieNeu-TTS from assets_voice/namminh_ref.wav; VieNeu talks faster, so every clip is stretched (atempo) to
+# NamMinh's own pace, measured on 733 Edge clips of this series: median 3.28 words per second.
 ENGINE = os.environ.get('XSS_TTS_ENGINE', 'edge')
-VIENEU_TEMPO = float(os.environ.get('XSS_VIENEU_TEMPO', '0.9'))
+NAMMINH_WPS = float(os.environ.get('XSS_NAMMINH_WPS', '3.28'))
 VIENEU_REF = Path(__file__).resolve().parents[1] / 'assets_voice' / 'namminh_ref.wav'
 _VIENEU = None
 
@@ -74,7 +75,9 @@ def _vieneu_once(text: str, path: Path) -> list[dict]:
         _VIENEU = Vieneu()
     raw = path.with_suffix('.raw.wav')
     _VIENEU.save(_VIENEU.infer(text, ref_audio=str(VIENEU_REF)), str(raw))
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(raw), '-filter:a', f'atempo={VIENEU_TEMPO}',
+    target = len(text.split()) / NAMMINH_WPS
+    tempo = min(1.05, max(.6, ffprobe_duration(raw) / target))  # < 1 slows the clip down to NamMinh's pace
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(raw), '-filter:a', f'atempo={tempo:.3f}',
                     '-ac', '1', '-ar', '24000', '-b:a', '64k', str(path)], check=True)
     raw.unlink(missing_ok=True)
     return []  # no boundaries: synthesize() scales the estimated sentence timings to the audio length
