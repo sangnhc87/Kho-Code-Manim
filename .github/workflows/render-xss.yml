@@ -120,6 +120,15 @@ jobs:
       - name: Typst formulas
         run: python scripts/build_typst.py --short "$SH"
 
+      - name: Narration made off-CI (Edge TTS may refuse runner IPs)
+        if: ${{ env.VOICE == 'on' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # stale or missing files are harmless: prepare_voice only reuses audio whose text hash matches
+          gh release download xss-voice --pattern "$SH.tar.gz" --dir /tmp/xv --clobber 2>/dev/null \
+            && tar -xzf "/tmp/xv/$SH.tar.gz" && echo "using cached narration for $SH" || echo "no cached narration for $SH"
+
       - name: Narration and runtime plan (≤ 3 minutes)
         run: python scripts/prepare_voice.py --short "$SH" --voice "$VOICE"
 
