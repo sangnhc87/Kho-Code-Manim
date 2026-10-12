@@ -37,12 +37,12 @@ class XiangqiShort(Scene):
         out = Path(os.environ['XIANGQI_OUTPUT'])
         data = json.loads((out / 'short.json').read_text(encoding='utf-8'))
         clips = json.loads((out / 'voice_short' / 'timing.json').read_text(encoding='utf-8'))[0]
-        board = Board(data['fen'], center=(0, -.33), step=.44)
-        brand = label('TINH HOA CỜ TÀN', 22, GOLD, bold=True, max_w=W - .4).move_to([0, 3.66, 0])
-        title = label(data['headline'], 26, LIGHT, bold=True, wrap=30, lines=2, max_w=W - .3, max_h=.75).move_to([0, 3.08, 0])
-        tag = label(data['tag'], 17, GREEN, bold=True, max_w=W - .4).move_to([0, 2.42, 0])
-        cap_bg = RoundedRectangle(width=W - .2, height=.95, corner_radius=.12, stroke_width=0,
-                                  fill_color='#0F1B2D', fill_opacity=1).move_to([0, -3.27, 0])
+        board = Board(data['fen'], center=(0, -.02), step=.465, crisp=True)
+        brand = label(data.get('brand') or 'TINH HOA CỜ TÀN', 20, GOLD, bold=True, max_w=W - .4).move_to([0, 3.72, 0])
+        title = label(data['headline'], 28, LIGHT, bold=True, wrap=24, lines=2, max_w=W - .28, max_h=.72).move_to([0, 3.18, 0])
+        tag = label(data['tag'], 16, GREEN, bold=True, max_w=W - .4).move_to([0, 2.68, 0])
+        cap_bg = RoundedRectangle(width=W - .16, height=1.05, corner_radius=.12, stroke_width=1.5,
+                                  stroke_color=GOLD, fill_color='#101A2C', fill_opacity=1).move_to([0, -3.22, 0])
         foot = label(data.get('footer') or f'Lời giải đầy đủ: Tập {data["number"]} trên kênh', 14, MUTED,
                      max_w=W - .4).move_to([0, -3.9, 0])
         self.add(board, brand, title, tag, cap_bg, foot)

@@ -79,13 +79,16 @@ def pages(text, limit=135):
 
 
 class Board(VGroup):
-    def __init__(self, fen, center=(BOARD_CENTER_X, BOARD_CENTER_Y), step=BOARD_GRID_STEP):
+    def __init__(self, fen, center=(BOARD_CENTER_X, BOARD_CENTER_Y), step=BOARD_GRID_STEP, crisp=False):
         super().__init__()
         assert_safe_layout()
         self.step = step
+        self.crisp = crisp
         self.ox, self.oy = center
         self.frame = None
+        self.marks = VGroup()
         self.add(self.art())
+        self.add(self.marks)
         self.pieces = {}
         self.state = Position.from_fen(fen)
         for sq, p in self.state.cells.items():
@@ -105,7 +108,12 @@ class Board(VGroup):
                                       fill_color='#E4C89B', fill_opacity=1, stroke_width=4,
                                       stroke_color='#856344').move_to(self.xy((4, 4.5)))
         g.add(self.frame)
-        kw = dict(stroke_color=LINE, stroke_width=1.65)
+        if self.crisp:
+            for palace, tint in (((3, 0), '#C94346'), ((3, 7), '#1C140E')):
+                box = Rectangle(width=s * 2, height=s * 2, stroke_width=0, fill_color=tint, fill_opacity=.07)
+                box.move_to((self.xy(palace) + self.xy((palace[0] + 2, palace[1] + 2))) / 2)
+                g.add(box)
+        kw = dict(stroke_color='#6E4A28' if self.crisp else LINE, stroke_width=2.35 if self.crisp else 1.65)
         for y in range(10):
             g.add(Line(self.xy((0, y)), self.xy((8, y)), **kw))
         for x in range(9):
@@ -122,20 +130,31 @@ class Board(VGroup):
         k = s / BOARD_GRID_STEP
         bottom = self.xy((4, 0))[1] - .26 * k - .225 * k
         top = self.xy((4, 9))[1] + .26 * k + .165 * k
+        num_size = 18 * k if self.crisp else 13 * k
         for x in range(9):
-            g.add(Text(str(9 - x), font=FONT, font_size=13 * k, color=LIGHT).move_to(
+            g.add(Text(str(9 - x), font=FONT, font_size=num_size, weight=BOLD if self.crisp else NORMAL, color=GOLD).move_to(
                 [self.xy((x, 0))[0], bottom, 0]))
-            g.add(Text(str(x + 1), font=FONT, font_size=13 * k, color=MUTED).move_to(
+            g.add(Text(str(x + 1), font=FONT, font_size=num_size, weight=BOLD if self.crisp else NORMAL,
+                       color=LIGHT if self.crisp else MUTED).move_to(
                 [self.xy((x, 9))[0], top, 0]))
         return g
 
     def make_piece(self, p):
         red = p.isupper()
-        col = RED if red else INK
+        col = '#9B1C23' if red else '#16120E'
         k = self.step / BOARD_GRID_STEP
-        return VGroup(Circle(radius=.235 * k, fill_color='#F5E4C3', fill_opacity=1, stroke_width=2.6, stroke_color=col),
-                      Circle(radius=.205 * k, stroke_color=col, stroke_width=.75, stroke_opacity=.55),
-                      Text(GLYPH[p], font=CJK, font_size=24 * k, weight=BOLD, color=col))
+        radius = .255 * k if self.crisp else .235 * k
+        face = '#FFF8EC' if self.crisp else '#F5E4C3'
+        glyph = Text(GLYPH[p], font=CJK, font_size=(28 if self.crisp else 24) * k, weight=BOLD, color=col)
+        if glyph.width > radius * 1.35:
+            glyph.scale_to_fit_width(radius * 1.35)
+        disc = VGroup(
+            Circle(radius=radius, fill_color=face, fill_opacity=1, stroke_width=3.1 if self.crisp else 2.6, stroke_color=col),
+            Circle(radius=radius * .84, stroke_color=col, stroke_width=.9, stroke_opacity=.5),
+            glyph,
+        )
+        disc.set_z_index(3)
+        return disc
 
     def _spawn(self, sq, p):
         mob = self.make_piece(p).move_to(self.xy(sq))
@@ -158,6 +177,17 @@ class Board(VGroup):
 
     def move(self, scene, uci, color=CYAN, tag=None):
         src, dst = parse_sq(uci[:2]), parse_sq(uci[2:])
+        if self.crisp:
+            self.marks.set_z_index(1)
+            for piece in self.pieces.values():
+                piece.set_z_index(3)
+            for old in list(self.marks):
+                self.marks.remove(old)
+            k = self.step / BOARD_GRID_STEP
+            for sq, tint in ((src, GOLD), (dst, color)):
+                spot = Square(side_length=self.step * .92, stroke_width=0, fill_color=tint, fill_opacity=.28)
+                spot.move_to(self.xy(sq))
+                self.marks.add(spot)
         mob = self.pieces.pop(src)
         victim = self.pieces.pop(dst, None)
         k = self.step / BOARD_GRID_STEP

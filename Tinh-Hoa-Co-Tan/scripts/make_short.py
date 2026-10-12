@@ -18,6 +18,8 @@ from src.voice import generate_voice  # noqa: E402
 from xq.commentary import moves_count  # noqa: E402
 
 MAX_SECONDS = 52
+# Facebook Reel tối đa 90 giây. Ước lượng giọng + đệm; phần đếm ngược/chữ nổi cộng thêm khoảng 6 giây.
+REEL_MAX_SECONDS = 82
 
 
 def game_short(data, max_plies):
@@ -120,6 +122,155 @@ def mate_short(data):
             'flash': f'{side.upper()} ĐI • BÍ {n} NƯỚC'}
 
 
+def is_thuc_dung(data):
+    classic = data.get('classic') or {}
+    topic = data.get('topic_data') or {}
+    return classic.get('collection') == 'Co-Tan-Thuc-Dung' or topic.get('id') == 'classic-Co-Tan-Thuc-Dung'
+
+
+def reel_copy(data):
+    """Tiêu đề/mô tả dùng chung cho YouTube Short và Facebook Reel."""
+    topic = data.get('topic_data') or {}
+    raw = str(topic.get('book_number') or data.get('number') or '')
+    num = f'{int(raw):03d}' if raw.isdigit() else raw
+    sub = (data.get('subtitle') or topic.get('short') or 'Cờ tàn').strip()
+    wdl = (data.get('verdict') or {}).get('wdl', 'W')
+    first = ((data.get('analysis') or {}).get('main') or [{}])[0]
+    quiet = first and not first.get('check') and not first.get('capture')
+    if wdl == 'D':
+        hook = 'giữ hòa được không?'
+    elif quiet:
+        hook = 'đừng chiếu vội!'
+    elif first.get('only'):
+        hook = 'chỉ một nước đúng!'
+    else:
+        hook = 'bạn thấy bẫy chưa?'
+    title = f'Cờ Tàn Thực Dụng #{num} · {sub} – {hook} #Shorts'
+    if len(title) > 100:
+        title = f'Cờ Tàn Thực Dụng #{num} · {hook} #Shorts'
+    if len(title) > 100:
+        title = f'Cờ Tàn Thực Dụng #{num} #Shorts'
+    take = topic.get('takeaway_short') or ''
+    desc = '\n'.join([
+        f'Cờ Tàn Thực Dụng, thế số {num}. {sub}.',
+        'Dừng video, tự tìm nước, rồi xem lời giải trên bàn cờ.',
+        f'Điểm nhớ: {take}' if take else '',
+        'Kết luận kiểm chứng bằng bảng tra cờ tàn chessdb.cn.',
+        'Sách: Tượng kỳ thực dụng tàn cục – Đồ Cảnh Minh.',
+        '',
+        '#Shorts #CoTuong #CoTan #CoTanThucDung',
+    ])
+    return {'title': title, 'description': '\n'.join(x for x in desc.splitlines())}
+
+
+def _bite(ply, side_name):
+    """Một câu ngắn, đổi theo nước — không lặp một câu đệm."""
+    if ply.get('mate'):
+        return 'Hết cờ. Không còn ô nào để chạy.'
+    if ply.get('capture') and ply.get('check'):
+        return 'Ăn quân và chiếu. Đòn này mới đau.'
+    if ply.get('capture'):
+        return 'Ăn được. Nhưng chưa phải lúc mừng.'
+    if ply.get('only') and ply.get('wdl') == 'D':
+        return 'Chỉ nước này giữ hòa. Đi khác là thua.'
+    if ply.get('only'):
+        return 'Nước duy nhất. Đi lệch một ô là hỏng.'
+    if ply.get('check'):
+        return 'Chiếu. Tướng đối phương hết đường thở.'
+    piece = ply.get('piece') or ''
+    if piece in ('P', 'p'):
+        return 'Binh tiến đúng một nhịp. Vội là chết.'
+    if piece in ('K', 'k'):
+        verb = 'lùi' if 'thoái' in ply.get('vn', '') else 'tiến' if 'tiến' in ply.get('vn', '') else 'dịch'
+        return f'{side_name} {verb} Tướng, chưa vội ăn. Nước chờ này mới khóa được thế.'
+    if piece in ('R', 'r'):
+        return 'Xe chiếm thông lộ. Đừng đổi sớm.'
+    if piece in ('N', 'n'):
+        return 'Mã nhảy vào đúng mắt. Nhìn kỹ chân Mã.'
+    if piece in ('C', 'c'):
+        return 'Pháo cần giá. Nước này dựng giá.'
+    return 'Chưa ăn quân. Ép đối phương trước.'
+
+
+def classic_reel(data, max_plies):
+    """Short/Reel khoảng 85 giây: câu đố có bẫy, nước then chốt, biến chính, điểm nhớ."""
+    topic = data.get('topic_data') or {}
+    a = data['analysis']
+    main = a['main'][:max_plies]
+    val = a['value']
+    num = topic.get('book_number') or data.get('number')
+    sub = data.get('subtitle') or topic.get('short') or 'thế này'
+    root_side = 'Đỏ' if a['fen'].split()[1] == 'w' else 'Đen'
+    first = main[0]
+    quiet = not first.get('check') and not first.get('capture')
+    if val['wdl'] == 'D':
+        headline = f'Thế {num}: giữ hòa được không?'
+        tag = '5 GIÂY • THỦ HÒA'
+        verdict = 'Hòa — nếu không tham'
+        ask = f'{sub}. {root_side} đi. Một nước nghe rất ngon, nhưng đi là thua. Bạn có thấy nước giữ hòa không?'
+        flash = f'THẾ {num} • ĐỪNG THAM'
+    elif quiet:
+        headline = f'Thế {num}: đừng chiếu vội!'
+        tag = '5 GIÂY • NƯỚC CHỜ'
+        verdict = f'Thắng sau {moves_count(val["dtm"])} nước'
+        ask = f'{sub}. {root_side} đi trước. Nước thắng không chiếu, không ăn quân. Bạn dám đi không?'
+        flash = f'THẾ {num} • NƯỚC CHỜ'
+    elif first.get('only'):
+        headline = f'Thế {num}: chỉ một nước!'
+        tag = '5 GIÂY • DUY NHẤT'
+        verdict = f'Thắng sau {moves_count(val["dtm"])} nước'
+        ask = f'{sub}. Chỉ đúng một nước thắng. Đi khác là tuột. Bạn tìm ra không?'
+        flash = f'THẾ {num} • MỘT NƯỚC'
+    else:
+        headline = f'Thế {num}: bạn thấy bẫy chưa?'
+        tag = '5 GIÂY • TÌM NƯỚC THẮNG'
+        verdict = f'Thắng sau {moves_count(val["dtm"])} nước'
+        ask = f'{sub}. {root_side} đi trước. Nhìn thì dễ. Đi thật mới thấy bẫy. Nước nào thắng?'
+        flash = f'THẾ {num} • CÓ BẪY'
+    steps = [{'say': f'Cờ Tàn Thực Dụng, thế số {num}. {ask}', 'countdown': 5}]
+    if first.get('only'):
+        why = ' Chỉ một nước đúng.'
+    elif quiet:
+        why = ' Không chiếu. Không ăn. Vậy mà thắng.'
+    elif first.get('n_bad'):
+        why = f' Có {first["n_bad"]} nước nhìn ngon mà hỏng.'
+    else:
+        why = ' Đây là nước nhanh nhất.'
+    steps.append({'say': f'Đáp án: {first["vn"]}!{why}', 'move': first['move'], 'mark': 'answer'})
+    bad = next((m for m in first.get('ranked') or [] if m.get('wdl') != first.get('wdl')), None)
+    if bad:
+        steps.append({'say': f'Nhiều người sẽ đi {bad["vn"]}. Nghe hợp lý. Đi xong là mất thế.'})
+    seen = set()
+    alts = [
+        'Cứ ép, đừng đổi quân.',
+        'Giữ nhịp. Đối phương đang hết chỗ.',
+        'Nhìn cung trước khi ăn.',
+    ]
+    alt_i = 0
+    for ply in main[1:]:
+        who = 'Đỏ' if ply.get('side') == 'w' else 'Đen'
+        bite = _bite(ply, who)
+        if bite in seen:
+            bite = alts[alt_i % len(alts)]
+            alt_i += 1
+        seen.add(bite)
+        mark = 'only' if ply.get('only') and ply.get('wdl') == 'W' else (
+            'hold' if ply.get('only') and ply.get('wdl') == 'D' else None)
+        steps.append({'say': f'{ply["vn"]}. {bite}', 'move': ply['move'], 'mark': mark})
+    lure = next((t for t in a.get('traps') or [] if t.get('lure')), None)
+    if lure and lure['lure']['vn'] != (bad or {}).get('vn'):
+        steps.append({'say': f'Còn một bẫy ngọt hơn: {lure["lure"]["vn"]}. Đối phương hóa giải, và bạn thành người thua.'})
+    take = topic.get('takeaway') or topic.get('takeaway_short') or verdict
+    steps.append({'say': f'Nhớ một câu: {take} Bảng tra xác nhận: {verdict}.'})
+    steps.append({'say': 'Bạn đi đúng nước đầu không? Comment đáp án, rồi xem thế tiếp theo.'})
+    return {
+        'number': data['number'], 'fen': a['fen'], 'headline': headline, 'tag': tag,
+        'verdict': verdict, 'wdl': val['wdl'], 'steps': steps,
+        'brand': 'CỜ TÀN THỰC DỤNG', 'flash': flash,
+        'footer': f'Thực dụng tàn cục • thế số {num}',
+    }
+
+
 def short_script(data, max_plies):
     if data.get('kind') == 'mate':
         return mate_short(data)
@@ -163,12 +314,14 @@ def main():
     data = json.loads((ROOT / 'episodes' / f'{args.episode}.json').read_text(encoding='utf-8'))
     out = ROOT / 'output' / args.episode
     out.mkdir(parents=True, exist_ok=True)
-    plies = min(len(data['analysis']['main']), 9) if data.get('analysis') else 7
+    classic = is_thuc_dung(data)
+    cap = REEL_MAX_SECONDS if classic else MAX_SECONDS
+    plies = min(len(data['analysis']['main']), 14 if classic else 9) if data.get('analysis') else 7
     while True:
-        short = short_script(data, plies)
+        short = classic_reel(data, plies) if classic else short_script(data, plies)
         timing = generate_voice({'beats': [{'steps': short['steps']}]}, out / 'voice_short', args.voice)
         total = sum(c['seconds'] + .5 for c in timing[0]) + 6.5
-        if total <= MAX_SECONDS or plies <= 2 or data.get('kind') == 'mate':
+        if total <= cap or plies <= 2 or data.get('kind') == 'mate':
             break
         plies -= 1
     (out / 'short.json').write_text(json.dumps(short, ensure_ascii=False, indent=1), encoding='utf-8')

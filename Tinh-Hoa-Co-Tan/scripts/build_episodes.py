@@ -237,7 +237,7 @@ def build(topic, ep, fen=None, rng=None, samples=400, finalists=6, catalog=None)
     return data
 
 
-def next_classics(collection, catalog, min_pieces=0):
+def next_classics(collection, catalog, min_pieces=0, include_brief=False):
     """Các thế chưa dựng của một cuốn sách, theo đúng thứ tự trong sách, chỉ lấy thế có bảng tra."""
     data = load_json(ROOT / 'curriculum' / 'classics' / f'{collection}.json', {'items': {}})
     done = {e.get('source_file') for e in catalog['episodes']}
@@ -246,8 +246,8 @@ def next_classics(collection, catalog, min_pieces=0):
     for f, item in data['items'].items():
         if f in done or item['tb'].get('status') != 'egtb' or canonical(item['fen']) in used:
             continue
-        if item['tb']['wdl'] == 'W' and item['tb']['dtm'] < 5:
-            continue  # chiếu bí 1-2 nước: không đủ nội dung cho một tập
+        if not include_brief and item['tb']['wdl'] == 'W' and item['tb']['dtm'] < 5:
+            continue  # chiếu bí 1-2 nước: không đủ nội dung cho một tập dài
         if item.get('pieces', 99) < min_pieces:
             continue
         out.append((f, item))
@@ -277,6 +277,12 @@ def build_classic(collection, file_name, item, ep, topics, catalog):
                                                        'book_moves': item.get('book_moves', [])},
         'topic_data': topic, 'beats': beats, 'youtube': meta, 'analysis': a,
     }
+    if collection == 'Co-Tan-Thuc-Dung':
+        import importlib.util
+        spec = importlib.util.spec_from_file_location('make_short', ROOT / 'scripts' / 'make_short.py')
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        data['youtube_short'] = mod.reel_copy(data)
     (EPISODES / f'ep-{ep:04d}.json').write_text(json.dumps(data, ensure_ascii=False, indent=1) + '\n',
                                                encoding='utf-8')
     catalog['episodes'].append({'ep': ep, 'topic': topic['id'], 'fen': a['fen'], 'key': canonical(a['fen']),
@@ -476,6 +482,8 @@ def main():
     ap.add_argument('--finalists', type=int, default=6)
     ap.add_argument('--seed', type=int)
     ap.add_argument('--classic', help='tên bộ sưu tập trong curriculum/classics (mặc định theo giáo trình)')
+    ap.add_argument('--min-pieces', type=int, default=None,
+                    help='bỏ qua thế ít quân hơn mức này; 0 = đi đúng thứ tự sách, kể cả tàn ít quân')
     args = ap.parse_args()
     cur = load_json(CURRICULUM, {})
     topics = cur['topics']
@@ -516,7 +524,9 @@ def main():
                 c, f, g = games[0]
                 build_game(c, f, g, ep, catalog)
             else:
-                todo = [(c, f, it) for c in collections for f, it in next_classics(c, catalog, cur.get('classics_min_pieces', 0))
+                min_pieces = cur.get('classics_min_pieces', 0) if args.min_pieces is None else args.min_pieces
+                todo = [(c, f, it) for c in collections
+                        for f, it in next_classics(c, catalog, min_pieces, include_brief=args.min_pieces == 0)
                         if f not in skip]
                 if not todo:
                     break

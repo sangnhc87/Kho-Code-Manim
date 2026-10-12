@@ -186,17 +186,47 @@ jobs:
               --category-id 27 \
               --privacy public || echo "Short chưa đăng được"
           fi
+      - name: Đăng Facebook Reel (Cờ Tàn Thực Dụng)
+        if: env.QUALITY == 'full'
+        continue-on-error: true
+        env:
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID || '1249523211575010' }}
+        run: |
+          EP="${{ matrix.episode }}"
+          SHORT="output/$EP/${EP}_short.mp4"
+          if [ ! -f "$SHORT" ] || [ -z "$FB_PAGE_ACCESS_TOKEN" ]; then
+            echo "Bỏ qua Facebook Reel."
+            exit 0
+          fi
+          if ! python - "$EP" <<'PY'
+          import json, sys
+          d = json.load(open(f'episodes/{sys.argv[1]}.json', encoding='utf-8'))
+          classic = (d.get('classic') or {}).get('collection')
+          raise SystemExit(0 if classic == 'Co-Tan-Thuc-Dung' else 1)
+          PY
+          then
+            echo "Không phải Cờ Tàn Thực Dụng, bỏ qua Reel."
+            exit 0
+          fi
+          python ../scripts/upload_to_facebook_reel.py \
+            --file "$SHORT" \
+            --title "$(cat yt_short_title.txt)" \
+            --description-file yt_short_desc.txt \
+            --history-key "cotan3_reel_$EP" \
+            --page-id "${FB_PAGE_ID}"
       - name: Lưu lịch sử đăng
         if: env.QUALITY == 'full'
         run: |
           cp ../youtube_uploaded_history.json /tmp/mine.json
+          cp ../facebook_uploaded_history.json /tmp/mine_fb.json 2>/dev/null || echo '{}' > /tmp/mine_fb.json
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           for i in 1 2 3 4 5 6; do
             git fetch -q origin main && git reset -q --hard origin/main
             # Chỉ chèn các mục của tập này vào bản lịch sử mới nhất (nhiều job ghi song song).
             python - "${{ matrix.episode }}" <<'PY'
-          import json, sys
+          import json, os, sys
           ep = sys.argv[1]
           mine = json.load(open('/tmp/mine.json', encoding='utf-8'))
           path = '../youtube_uploaded_history.json'
@@ -205,8 +235,15 @@ jobs:
               if k in mine:
                   cur[k] = mine[k]
           open(path, 'w', encoding='utf-8').write(json.dumps(cur, ensure_ascii=False, indent=2) + '\n')
+          fb_path = '../facebook_uploaded_history.json'
+          mine_fb = json.load(open('/tmp/mine_fb.json', encoding='utf-8'))
+          fb = json.load(open(fb_path, encoding='utf-8')) if os.path.exists(fb_path) else {}
+          key = f'cotan3_reel_{ep}'
+          if key in mine_fb:
+              fb[key] = mine_fb[key]
+              open(fb_path, 'w', encoding='utf-8').write(json.dumps(fb, ensure_ascii=False, indent=2) + '\n')
           PY
-            git add ../youtube_uploaded_history.json
+            git add ../youtube_uploaded_history.json ../facebook_uploaded_history.json
             git commit -q -m "docs(cotan): youtube history for ${{ matrix.episode }}" || break
             git push -q origin HEAD:main && break
             sleep $((i*4))

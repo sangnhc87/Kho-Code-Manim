@@ -1,0 +1,1506 @@
+{
+ "id": "ep-0022",
+ "number": 22,
+ "topic": "classic-Co-Tan-Thuc-Dung",
+ "category": "Tàn Binh",
+ "title": "Song Binh đấu Song Sĩ – Thực dụng tàn cục số 6: Một nước sai là thua",
+ "subtitle": "Song Binh đấu Song Sĩ",
+ "fen": "3a5/3Pak3/7P1/9/9/9/9/9/9/4K4 w",
+ "verdict": {
+  "wdl": "D",
+  "dtm": 0
+ },
+ "source": "chessdb.cn EGTB (DTM)",
+ "classic": {
+  "collection": "Co-Tan-Thuc-Dung",
+  "file": "006-eg-xqsycj-tjm-006-2lp-hw-2a",
+  "book_result": "D",
+  "book_moves": [
+   "h7g7",
+   "e8d7",
+   "d8d9",
+   "d7e8",
+   "d9e9",
+   "e8d7",
+   "e0e1",
+   "d7e8"
+  ]
+ },
+ "topic_data": {
+  "id": "classic-Co-Tan-Thuc-Dung",
+  "kind": "classic",
+  "category": "Tàn Binh",
+  "title": "Song Binh đấu Song Sĩ – Thực dụng tàn cục số 6",
+  "short": "Song Binh đấu Song Sĩ",
+  "theory": [
+   "Thế cờ hôm nay là thế số 6 trong cuốn Tượng kỳ thực dụng tàn cục của Đồ Cảnh Minh, một giáo trình cờ tàn kinh điển.",
+   "Đỏ còn Tướng, hai Binh; Đen còn Tướng, hai Sĩ.",
+   "Sách kết luận hòa, và bảng tra cờ tàn chessdb xác nhận: hòa.",
+   "Nước đầu trong sách là Binh 2 bình 3, cũng chính là nước bảng tra chọn."
+  ],
+  "bullets": [
+   "Song Binh vs Song Sĩ: khoảng 3/4 thắng",
+   "Song Sĩ làm cung chật",
+   "Hai Binh áp sát cung",
+   "Không để Binh xuống đáy vô ích"
+  ],
+  "takeaway": "Khi phòng thủ bằng Song Sĩ, cung cấm trở nên chật chội. Hai Binh áp sát cùng Tướng khống chế là đủ để phá thế.",
+  "takeaway_short": "Song Sĩ làm cung chật",
+  "book": {
+   "name": "Tượng kỳ thực dụng tàn cục",
+   "author": "Đồ Cảnh Minh",
+   "short": "Thực dụng tàn cục"
+  },
+  "book_number": "6",
+  "source_file": "006-eg-xqsycj-tjm-006-2lp-hw-2a"
+ },
+ "beats": [
+  {
+   "kind": "intro",
+   "label": "THẾ CỜ",
+   "headline": "Song Binh đấu Song Sĩ – Thực dụng tàn cục số 6",
+   "panel": {
+    "bullets": [
+     "Đỏ: Tướng, hai Binh",
+     "Đen: Tướng, hai Sĩ",
+     "Đỏ đi trước"
+    ]
+   },
+   "fen": "3a5/3Pak3/7P1/9/9/9/9/9/9/4K4 w",
+   "steps": [
+    {
+     "say": "Thế cờ hôm nay là một bài kiểm tra phòng thủ: đi sai là thua. Chào mừng các bạn đến với Tinh Hoa Cờ Tàn, tập 22. Chủ đề hôm nay: Song Binh đấu Song Sĩ – Thực dụng tàn cục số 6. Bên Đỏ còn Tướng, hai Binh; bên Đen còn Tướng, hai Sĩ. Đỏ đi trước."
+    }
+   ]
+  },
+  {
+   "kind": "theory",
+   "label": "KIẾN THỨC NỀN",
+   "headline": "Song Binh đấu Song Sĩ",
+   "panel": {
+    "bullets": [
+     "Song Binh vs Song Sĩ: khoảng 3/4 thắng",
+     "Song Sĩ làm cung chật",
+     "Hai Binh áp sát cung",
+     "Không để Binh xuống đáy vô ích"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Thế cờ hôm nay là thế số 6 trong cuốn Tượng kỳ thực dụng tàn cục của Đồ Cảnh Minh, một giáo trình cờ tàn kinh điển."
+    },
+    {
+     "say": "Đỏ còn Tướng, hai Binh; Đen còn Tướng, hai Sĩ."
+    },
+    {
+     "say": "Sách kết luận hòa, và bảng tra cờ tàn chessdb xác nhận: hòa."
+    },
+    {
+     "say": "Nước đầu trong sách là Binh 2 bình 3, cũng chính là nước bảng tra chọn."
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Bạn sẽ đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Trước khi xem lời giải, bạn hãy tạm dừng video và tự suy nghĩ. Đỏ đi trước. Đen phải đi thế nào để giữ hòa?"
+    }
+   ]
+  },
+  {
+   "kind": "candidates",
+   "label": "BẢNG TRA",
+   "headline": "So sánh các nước đầu",
+   "panel": {
+    "rows": [
+     {
+      "move": "e0d0",
+      "vn": "Tướng 5 bình 6",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": false,
+      "good": true
+     },
+     {
+      "move": "e0e1",
+      "vn": "Tướng 5 tiến 1",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": false,
+      "good": true
+     },
+     {
+      "move": "h7h8",
+      "vn": "Binh 2 tiến 1",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": false,
+      "good": true
+     },
+     {
+      "move": "h7g7",
+      "vn": "Binh 2 bình 3",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": true,
+      "good": true
+     },
+     {
+      "move": "d8c8",
+      "vn": "Binh 6 bình 7",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": false,
+      "good": true
+     },
+     {
+      "move": "h7i7",
+      "vn": "Binh 2 bình 1",
+      "wdl": "D",
+      "result": "Hòa",
+      "best": false,
+      "good": true
+     }
+    ]
+   },
+   "steps": [
+    {
+     "say": "Theo bảng tra cờ tàn của chessdb, thế cờ này kết quả chỉ là hòa nếu hai bên cùng chơi chính xác. Đỏ có 8 nước đi nhưng không nước nào thắng được. Bài học nằm ở phía Đen: phòng thủ thế nào để giữ hòa."
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 1",
+   "headline": "Đen đứng vững",
+   "fen": "3a5/3Pak3/7P1/9/9/9/9/9/9/4K4 w",
+   "steps": [
+    {
+     "say": "Binh 2 bình 3.",
+     "move": "h7g7",
+     "ply": 0,
+     "mark": null,
+     "remain": null
+    },
+    {
+     "say": "Sĩ 5 tiến 4. Chỉ 2 nước giữ được hòa ở đây.",
+     "move": "e8d7",
+     "ply": 1,
+     "mark": null,
+     "remain": null
+    },
+    {
+     "say": "Binh 6 tiến 1, ăn Sĩ. Tướng Đen chỉ còn đúng một ô để di chuyển.",
+     "move": "d8d9",
+     "ply": 2,
+     "mark": null,
+     "remain": null
+    }
+   ]
+  },
+  {
+   "kind": "trap",
+   "label": "BẪY CẦN TRÁNH",
+   "headline": "Nếu Tướng 6 thoái 1?",
+   "fen": "3P5/5k3/3a2P2/9/9/9/9/9/9/4K4 b",
+   "return_fen": "3P5/5k3/3a2P2/9/9/9/9/9/9/4K4 b",
+   "steps": [
+    {
+     "say": "Dừng lại một chút. Ở thế này nếu Đen đi Tướng 6 thoái 1, một nước tưởng chừng vô hại, thì sao? Bảng tra trả lời: Đen bị chiếu bí sau 4 nước."
+    },
+    {
+     "say": "Tướng 6 thoái 1.",
+     "move": "f8f9",
+     "mark": "bad"
+    },
+    {
+     "say": "Binh 3 tiến 1.",
+     "move": "g7g8"
+    },
+    {
+     "say": "Sĩ 4 thoái 5.",
+     "move": "d7e8"
+    },
+    {
+     "say": "Binh 6 bình 5.",
+     "move": "d9e9"
+    },
+    {
+     "say": "Tướng 6 bình 5, ăn Binh.",
+     "move": "f9e9"
+    },
+    {
+     "say": "Binh 3 bình 4! Nước duy nhất, và chính là lời đáp chính xác.",
+     "move": "g8f8"
+    },
+    {
+     "say": "Tướng 5 bình 4.",
+     "move": "e9d9"
+    },
+    {
+     "say": "Binh 4 bình 5, ăn Sĩ. Hết cờ.",
+     "move": "f8e8"
+    },
+    {
+     "say": "Quay lại biến chính."
+    }
+   ],
+   "panel": {
+    "verdict": "Đen bị chiếu bí sau 4 nước"
+   }
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 2",
+   "headline": "Nước giữ hòa duy nhất!",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Sĩ 4 thoái 5. Đây là nước giữ hòa duy nhất của Đen.",
+     "move": "d7e8",
+     "ply": 3,
+     "mark": "hold",
+     "remain": null
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 3",
+   "headline": "Giữ vững đội hình",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Binh 6 bình 5. Tướng Đen không còn ô nào để đi, chỉ có thể đi quân khác.",
+     "move": "d9e9",
+     "ply": 4,
+     "mark": null,
+     "remain": null
+    }
+   ]
+  },
+  {
+   "kind": "trap",
+   "label": "BẪY CẦN TRÁNH",
+   "headline": "Nếu Sĩ 5 thoái 4?",
+   "fen": "4P4/4ak3/6P2/9/9/9/9/9/9/4K4 b",
+   "return_fen": "4P4/4ak3/6P2/9/9/9/9/9/9/4K4 b",
+   "steps": [
+    {
+     "say": "Dừng lại một chút. Ở thế này nếu Đen đi Sĩ 5 thoái 4, một nước tự nhiên, thì sao? Bảng tra trả lời: Đen bị chiếu bí sau 2 nước."
+    },
+    {
+     "say": "Sĩ 5 thoái 4.",
+     "move": "e8d9",
+     "mark": "bad"
+    },
+    {
+     "say": "Binh 5 bình 6, ăn Sĩ!",
+     "move": "e9d9"
+    },
+    {
+     "say": "Tướng 6 thoái 1.",
+     "move": "f8f9"
+    },
+    {
+     "say": "Binh 3 tiến 1. Hết cờ.",
+     "move": "g7g8"
+    },
+    {
+     "say": "Quay lại biến chính."
+    }
+   ],
+   "panel": {
+    "verdict": "Đen bị chiếu bí sau 2 nước"
+   }
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 4",
+   "headline": "Thêm một lần thử thách",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Sĩ 5 tiến 4. Đây là nước giữ hòa duy nhất của Đen.",
+     "move": "e8d7",
+     "ply": 5,
+     "mark": "hold",
+     "remain": null
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "BIẾN CHÍNH • CHẶNG 5",
+   "headline": "Đen đứng vững",
+   "fen": null,
+   "steps": [
+    {
+     "say": "Tướng 5 tiến 1.",
+     "move": "e0e1",
+     "ply": 6,
+     "mark": null,
+     "remain": null
+    },
+    {
+     "say": "Đen chỉ có một nước hợp lệ: Sĩ 4 thoái 5.",
+     "move": "d7e8",
+     "ply": 7,
+     "mark": null,
+     "remain": null
+    },
+    {
+     "say": "Tướng 5 thoái 1.",
+     "move": "e1e0",
+     "ply": 8,
+     "mark": null,
+     "remain": null
+    },
+    {
+     "say": "Đến đây Đen đã dựng được thế thủ vững chắc, Đỏ không còn cách nào tiến triển. Bảng tra xác nhận: hòa cờ."
+    }
+   ]
+  },
+  {
+   "kind": "summary",
+   "label": "TỔNG KẾT",
+   "headline": "Ghi nhớ",
+   "panel": {
+    "bullets": [
+     "Kết quả: Hòa nếu Đen phòng thủ chính xác",
+     "Nước đầu: Binh 2 bình 3",
+     "2 lần Đen chỉ có một nước giữ hòa",
+     "Song Sĩ làm cung chật"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Tóm tắt bài học. Với phòng thủ chính xác, Đen giữ được hòa."
+    },
+    {
+     "say": "Trên đường phòng thủ, có 2 lần Đen chỉ có đúng một nước giữ hòa. Phòng thủ trong cờ tàn đòi hỏi sự chính xác không kém gì tấn công."
+    },
+    {
+     "say": "Khi phòng thủ bằng Song Sĩ, cung cấm trở nên chật chội. Hai Binh áp sát cùng Tướng khống chế là đủ để phá thế."
+    },
+    {
+     "say": "Nếu thấy bài học hữu ích, hãy bấm thích, đăng ký kênh và chia sẻ cho bạn cờ. Hẹn gặp lại ở tập sau."
+    }
+   ]
+  }
+ ],
+ "youtube": {
+  "title": "Song Binh đấu Song Sĩ – Thực dụng tàn cục số 6: Một nước sai là thua | Tinh Hoa Cờ Tàn #22",
+  "description": "Song Binh đấu Song Sĩ – Thực dụng tàn cục số 6: Một nước sai là thua\n\nSong Binh đấu Song Sĩ — Hòa nếu Đen phòng thủ chính xác (theo bảng tra cờ tàn chessdb.cn, hai bên chơi tối ưu).\n\nThế cờ (FEN): 3a5/3Pak3/7P1/9/9/9/9/9/9/4K4 w\n\nBiến chính:\n1. Binh 2 bình 3   Sĩ 5 tiến 4\n2. Binh 6 tiến 1   Sĩ 4 thoái 5\n3. Binh 6 bình 5   Sĩ 5 tiến 4\n4. Tướng 5 tiến 1   Sĩ 4 thoái 5\n5. Tướng 5 thoái 1\n\nChuyên đề: Tàn Binh. Kiến thức nền: Khi phòng thủ bằng Song Sĩ, cung cấm trở nên chật chội. Hai Binh áp sát cùng Tướng khống chế là đủ để phá thế.\n\nThế cờ số 6 trong sách \"Tượng kỳ thực dụng tàn cục\" (Đồ Cảnh Minh); dữ liệu kỳ phổ từ kho cộng đồng vietcotuong.com.\n\nMọi kết luận thắng/hòa và số nước đều được tra từ bảng tra cờ tàn (endgame tablebase) của Cơ sở dữ liệu đám mây chessdb.cn.\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #TànBinh",
+  "tags": [
+   "cờ tướng",
+   "cờ tàn",
+   "tinh hoa cờ tàn",
+   "học cờ tướng",
+   "tàn binh",
+   "song binh đấu song sĩ",
+   "xiangqi",
+   "endgame"
+  ],
+  "playlist": "Tinh Hoa Cờ Tàn | Tượng kỳ thực dụng tàn cục"
+ },
+ "analysis": {
+  "fen": "3a5/3Pak3/7P1/9/9/9/9/9/9/4K4 w",
+  "attacker": "w",
+  "value": {
+   "wdl": "D",
+   "dtm": 0
+  },
+  "main": [
+   {
+    "move": "h7g7",
+    "vn": "Binh 2 bình 3",
+    "short": "B2-3",
+    "piece": "P",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "3a5/3Pak3/7P1/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 8,
+    "n_keep": 8,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e0d0",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e0e1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "h7h8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 2 tiến 1"
+     },
+     {
+      "move": "h7g7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 2 bình 3"
+     },
+     {
+      "move": "d8c8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 bình 7"
+     },
+     {
+      "move": "h7i7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 2 bình 1"
+     },
+     {
+      "move": "d8d9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 tiến 1"
+     },
+     {
+      "move": "d8e8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 bình 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e8d7",
+    "vn": "Sĩ 5 tiến 4",
+    "short": "S5.4",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "3a5/3Pak3/6P2/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 4,
+    "n_keep": 2,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e8d7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Sĩ 5 tiến 4"
+     },
+     {
+      "move": "e8f9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Sĩ 5 thoái 6"
+     },
+     {
+      "move": "f8f9",
+      "score": -29990,
+      "wdl": "L",
+      "dtm": 10,
+      "vn": "Tướng 6 thoái 1"
+     },
+     {
+      "move": "e8f7",
+      "score": -29992,
+      "wdl": "L",
+      "dtm": 8,
+      "vn": "Sĩ 5 tiến 6"
+     }
+    ],
+    "n_bad": 2
+   },
+   {
+    "move": "d8d9",
+    "vn": "Binh 6 tiến 1",
+    "short": "B6.1",
+    "piece": "P",
+    "capture": "a",
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "3a5/3P1k3/3a2P2/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 8,
+    "n_keep": 8,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e0d0",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e0e1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "d8c8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 bình 7"
+     },
+     {
+      "move": "g7h7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 2"
+     },
+     {
+      "move": "d8d9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 tiến 1"
+     },
+     {
+      "move": "g7g8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 tiến 1"
+     },
+     {
+      "move": "g7f7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 4"
+     },
+     {
+      "move": "d8e8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 bình 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "d7e8",
+    "vn": "Sĩ 4 thoái 5",
+    "short": "S4/5",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "3P5/5k3/3a2P2/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 2,
+    "n_keep": 1,
+    "only": true,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "d7e8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Sĩ 4 thoái 5"
+     },
+     {
+      "move": "f8f9",
+      "score": -29992,
+      "wdl": "L",
+      "dtm": 8,
+      "vn": "Tướng 6 thoái 1"
+     }
+    ],
+    "n_bad": 1
+   },
+   {
+    "move": "d9e9",
+    "vn": "Binh 6 bình 5",
+    "short": "B6-5",
+    "piece": "P",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "3P5/4ak3/6P2/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 7,
+    "n_keep": 7,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e0d0",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e0e1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "d9c9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 bình 7"
+     },
+     {
+      "move": "g7h7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 2"
+     },
+     {
+      "move": "d9e9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 6 bình 5"
+     },
+     {
+      "move": "g7g8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 tiến 1"
+     },
+     {
+      "move": "g7f7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 4"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e8d7",
+    "vn": "Sĩ 5 tiến 4",
+    "short": "S5.4",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "4P4/4ak3/6P2/9/9/9/9/9/9/4K4 b",
+    "side": "b",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 4,
+    "n_keep": 1,
+    "only": true,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e8d7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Sĩ 5 tiến 4"
+     },
+     {
+      "move": "e8f9",
+      "score": -29996,
+      "wdl": "L",
+      "dtm": 4,
+      "vn": "Sĩ 5 thoái 6"
+     },
+     {
+      "move": "e8d9",
+      "score": -29996,
+      "wdl": "L",
+      "dtm": 4,
+      "vn": "Sĩ 5 thoái 4"
+     },
+     {
+      "move": "e8f7",
+      "score": -29998,
+      "wdl": "L",
+      "dtm": 2,
+      "vn": "Sĩ 5 tiến 6"
+     }
+    ],
+    "n_bad": 3
+   },
+   {
+    "move": "e0e1",
+    "vn": "Tướng 5 tiến 1",
+    "short": "Tg5.1",
+    "piece": "K",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "4P4/5k3/3a2P2/9/9/9/9/9/9/4K4 w",
+    "side": "w",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 7,
+    "n_keep": 7,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e0d0",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e0e1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "e9d9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 5 bình 6"
+     },
+     {
+      "move": "g7h7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 2"
+     },
+     {
+      "move": "e9f9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 5 bình 4"
+     },
+     {
+      "move": "g7g8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 tiến 1"
+     },
+     {
+      "move": "g7f7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 4"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "d7e8",
+    "vn": "Sĩ 4 thoái 5",
+    "short": "S4/5",
+    "piece": "a",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": true,
+    "fen": "4P4/5k3/3a2P2/9/9/9/9/9/4K4/9 b",
+    "side": "b",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 1,
+    "n_keep": 1,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "d7e8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Sĩ 4 thoái 5"
+     }
+    ],
+    "n_bad": 0
+   },
+   {
+    "move": "e1e0",
+    "vn": "Tướng 5 thoái 1",
+    "short": "Tg5/1",
+    "piece": "K",
+    "capture": null,
+    "check": false,
+    "mate": false,
+    "book": false,
+    "fen": "4P4/4ak3/6P2/9/9/9/9/9/4K4/9 w",
+    "side": "w",
+    "wdl": "D",
+    "dtm": 0,
+    "n_legal": 8,
+    "n_keep": 8,
+    "only": false,
+    "only_fastest": false,
+    "ranked": [
+     {
+      "move": "e1e0",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 thoái 1"
+     },
+     {
+      "move": "e1d1",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 bình 6"
+     },
+     {
+      "move": "e1e2",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Tướng 5 tiến 1"
+     },
+     {
+      "move": "e9d9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 5 bình 6"
+     },
+     {
+      "move": "g7h7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 2"
+     },
+     {
+      "move": "e9f9",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 5 bình 4"
+     },
+     {
+      "move": "g7g8",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 tiến 1"
+     },
+     {
+      "move": "g7f7",
+      "score": 0,
+      "wdl": "D",
+      "dtm": 0,
+      "vn": "Binh 3 bình 4"
+     }
+    ],
+    "n_bad": 0
+   }
+  ],
+  "end_fen": "4P4/4ak3/6P2/9/9/9/9/9/9/4K4 b",
+  "mate": null,
+  "traps": [
+   {
+    "ply": 3,
+    "fen": "3P5/5k3/3a2P2/9/9/9/9/9/9/4K4 b",
+    "lure": {
+     "move": "f8f9",
+     "score": -29992,
+     "wdl": "L",
+     "dtm": 8,
+     "vn": "Tướng 6 thoái 1",
+     "short": "Tg6/1",
+     "piece": "k",
+     "capture": null,
+     "check": false,
+     "mate": false,
+     "kind": "other"
+    },
+    "line": [
+     {
+      "move": "g7g8",
+      "vn": "Binh 3 tiến 1",
+      "short": "B3.1",
+      "piece": "P",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "3P1k3/9/3a2P2/9/9/9/9/9/9/4K4 w",
+      "side": "w",
+      "wdl": "W",
+      "dtm": 7,
+      "n_legal": 7,
+      "n_keep": 2,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "g7g8",
+        "score": 29993,
+        "wdl": "W",
+        "dtm": 7,
+        "vn": "Binh 3 tiến 1"
+       },
+       {
+        "move": "g7f7",
+        "score": 29993,
+        "wdl": "W",
+        "dtm": 7,
+        "vn": "Binh 3 bình 4"
+       },
+       {
+        "move": "e0d0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 bình 6"
+       },
+       {
+        "move": "e0e1",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 tiến 1"
+       },
+       {
+        "move": "d9c9",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 6 bình 7"
+       },
+       {
+        "move": "g7h7",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 bình 2"
+       },
+       {
+        "move": "d9e9",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 6 bình 5"
+       }
+      ]
+     },
+     {
+      "move": "d7e8",
+      "vn": "Sĩ 4 thoái 5",
+      "short": "S4/5",
+      "piece": "a",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "3P1k3/6P2/3a5/9/9/9/9/9/9/4K4 b",
+      "side": "b",
+      "wdl": "L",
+      "dtm": 6,
+      "n_legal": 1,
+      "n_keep": 1,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "d7e8",
+        "score": -29994,
+        "wdl": "L",
+        "dtm": 6,
+        "vn": "Sĩ 4 thoái 5"
+       }
+      ]
+     },
+     {
+      "move": "d9e9",
+      "vn": "Binh 6 bình 5",
+      "short": "B6-5",
+      "piece": "P",
+      "capture": null,
+      "check": true,
+      "mate": false,
+      "book": false,
+      "fen": "3P1k3/4a1P2/9/9/9/9/9/9/9/4K4 w",
+      "side": "w",
+      "wdl": "W",
+      "dtm": 5,
+      "n_legal": 7,
+      "n_keep": 2,
+      "only": false,
+      "only_fastest": true,
+      "ranked": [
+       {
+        "move": "d9e9",
+        "score": 29995,
+        "wdl": "W",
+        "dtm": 5,
+        "vn": "Binh 6 bình 5"
+       },
+       {
+        "move": "d9c9",
+        "score": 29991,
+        "wdl": "W",
+        "dtm": 9,
+        "vn": "Binh 6 bình 7"
+       },
+       {
+        "move": "e0d0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 bình 6"
+       },
+       {
+        "move": "e0e1",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 tiến 1"
+       },
+       {
+        "move": "g8h8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 bình 2"
+       },
+       {
+        "move": "g8g9",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 tiến 1"
+       },
+       {
+        "move": "g8f8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 bình 4"
+       }
+      ]
+     },
+     {
+      "move": "f9e9",
+      "vn": "Tướng 6 bình 5",
+      "short": "Tg6-5",
+      "piece": "k",
+      "capture": "P",
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "4Pk3/4a1P2/9/9/9/9/9/9/9/4K4 b",
+      "side": "b",
+      "wdl": "L",
+      "dtm": 4,
+      "n_legal": 1,
+      "n_keep": 1,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "f9e9",
+        "score": -29996,
+        "wdl": "L",
+        "dtm": 4,
+        "vn": "Tướng 6 bình 5"
+       }
+      ]
+     },
+     {
+      "move": "g8f8",
+      "vn": "Binh 3 bình 4",
+      "short": "B3-4",
+      "piece": "P",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "4k4/4a1P2/9/9/9/9/9/9/9/4K4 w",
+      "side": "w",
+      "wdl": "W",
+      "dtm": 3,
+      "n_legal": 6,
+      "n_keep": 1,
+      "only": true,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "g8f8",
+        "score": 29997,
+        "wdl": "W",
+        "dtm": 3,
+        "vn": "Binh 3 bình 4"
+       },
+       {
+        "move": "e0f0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 bình 4"
+       },
+       {
+        "move": "e0d0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 bình 6"
+       },
+       {
+        "move": "e0e1",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 tiến 1"
+       },
+       {
+        "move": "g8g9",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 tiến 1"
+       },
+       {
+        "move": "g8h8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 bình 2"
+       }
+      ]
+     },
+     {
+      "move": "e9d9",
+      "vn": "Tướng 5 bình 4",
+      "short": "Tg5-4",
+      "piece": "k",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "4k4/4aP3/9/9/9/9/9/9/9/4K4 b",
+      "side": "b",
+      "wdl": "L",
+      "dtm": 2,
+      "n_legal": 1,
+      "n_keep": 1,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "e9d9",
+        "score": -29998,
+        "wdl": "L",
+        "dtm": 2,
+        "vn": "Tướng 5 bình 4"
+       }
+      ]
+     },
+     {
+      "move": "f8e8",
+      "vn": "Binh 4 bình 5",
+      "short": "B4-5",
+      "piece": "P",
+      "capture": "a",
+      "check": false,
+      "mate": true,
+      "book": false,
+      "fen": "3k5/4aP3/9/9/9/9/9/9/9/4K4 w",
+      "side": "w",
+      "wdl": "W",
+      "dtm": 1,
+      "n_legal": 5,
+      "n_keep": 1,
+      "only": true,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "f8e8",
+        "score": 29999,
+        "wdl": "W",
+        "dtm": 1,
+        "vn": "Binh 4 bình 5"
+       },
+       {
+        "move": "e0f0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 bình 4"
+       },
+       {
+        "move": "e0e1",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 tiến 1"
+       },
+       {
+        "move": "f8f9",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 4 tiến 1"
+       },
+       {
+        "move": "f8g8",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 4 bình 3"
+       }
+      ]
+     }
+    ],
+    "final_fen": "3k5/4P4/9/9/9/9/9/9/9/4K4 b",
+    "final_mate": true
+   },
+   {
+    "ply": 5,
+    "fen": "4P4/4ak3/6P2/9/9/9/9/9/9/4K4 b",
+    "lure": {
+     "move": "e8d9",
+     "score": -29996,
+     "wdl": "L",
+     "dtm": 4,
+     "vn": "Sĩ 5 thoái 4",
+     "short": "S5/4",
+     "piece": "a",
+     "capture": null,
+     "check": false,
+     "mate": false,
+     "kind": "same_piece"
+    },
+    "line": [
+     {
+      "move": "e9d9",
+      "vn": "Binh 5 bình 6",
+      "short": "B5-6",
+      "piece": "P",
+      "capture": "a",
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "3aP4/5k3/6P2/9/9/9/9/9/9/4K4 w",
+      "side": "w",
+      "wdl": "W",
+      "dtm": 3,
+      "n_legal": 7,
+      "n_keep": 2,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "e9d9",
+        "score": 29997,
+        "wdl": "W",
+        "dtm": 3,
+        "vn": "Binh 5 bình 6"
+       },
+       {
+        "move": "g7g8",
+        "score": 29997,
+        "wdl": "W",
+        "dtm": 3,
+        "vn": "Binh 3 tiến 1"
+       },
+       {
+        "move": "e0d0",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 bình 6"
+       },
+       {
+        "move": "e0e1",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Tướng 5 tiến 1"
+       },
+       {
+        "move": "g7h7",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 bình 2"
+       },
+       {
+        "move": "e9f9",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 5 bình 4"
+       },
+       {
+        "move": "g7f7",
+        "score": 0,
+        "wdl": "D",
+        "dtm": 0,
+        "vn": "Binh 3 bình 4"
+       }
+      ]
+     },
+     {
+      "move": "f8f9",
+      "vn": "Tướng 6 thoái 1",
+      "short": "Tg6/1",
+      "piece": "k",
+      "capture": null,
+      "check": false,
+      "mate": false,
+      "book": false,
+      "fen": "3P5/5k3/6P2/9/9/9/9/9/9/4K4 b",
+      "side": "b",
+      "wdl": "L",
+      "dtm": 2,
+      "n_legal": 1,
+      "n_keep": 1,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "f8f9",
+        "score": -29998,
+        "wdl": "L",
+        "dtm": 2,
+        "vn": "Tướng 6 thoái 1"
+       }
+      ]
+     },
+     {
+      "move": "g7g8",
+      "vn": "Binh 3 tiến 1",
+      "short": "B3.1",
+      "piece": "P",
+      "capture": null,
+      "check": false,
+      "mate": true,
+      "book": false,
+      "fen": "3P1k3/9/6P2/9/9/9/9/9/9/4K4 w",
+      "side": "w",
+      "wdl": "W",
+      "dtm": 1,
+      "n_legal": 7,
+      "n_keep": 7,
+      "only": false,
+      "only_fastest": false,
+      "ranked": [
+       {
+        "move": "g7g8",
+        "score": 29999,
+        "wdl": "W",
+        "dtm": 1,
+        "vn": "Binh 3 tiến 1"
+       },
+       {
+        "move": "g7f7",
+        "score": 29999,
+        "wdl": "W",
+        "dtm": 1,
+        "vn": "Binh 3 bình 4"
+       },
+       {
+        "move": "e0e1",
+        "score": 29997,
+        "wdl": "W",
+        "dtm": 3,
+        "vn": "Tướng 5 tiến 1"
+       },
+       {
+        "move": "d9e9",
+        "score": 29997,
+        "wdl": "W",
+        "dtm": 3,
+        "vn": "Binh 6 bình 5"
+       },
+       {
+        "move": "e0d0",
+        "score": 29995,
+        "wdl": "W",
+        "dtm": 5,
+        "vn": "Tướng 5 bình 6"
+       },
+       {
+        "move": "d9c9",
+        "score": 29995,
+        "wdl": "W",
+        "dtm": 5,
+        "vn": "Binh 6 bình 7"
+       },
+       {
+        "move": "g7h7",
+        "score": 29995,
+        "wdl": "W",
+        "dtm": 5,
+        "vn": "Binh 3 bình 2"
+       }
+      ]
+     }
+    ],
+    "final_fen": "3P1k3/6P2/9/9/9/9/9/9/9/4K4 b",
+    "final_mate": true
+   }
+  ]
+ },
+ "youtube_short": {
+  "title": "Cờ Tàn Thực Dụng #006 · Song Binh đấu Song Sĩ – giữ hòa được không? #Shorts",
+  "description": "Cờ Tàn Thực Dụng, thế số 006. Song Binh đấu Song Sĩ.\nDừng video, tự tìm nước, rồi xem lời giải trên bàn cờ.\nĐiểm nhớ: Song Sĩ làm cung chật\nKết luận kiểm chứng bằng bảng tra cờ tàn chessdb.cn.\nSách: Tượng kỳ thực dụng tàn cục – Đồ Cảnh Minh.\n\n#Shorts #CoTuong #CoTan #CoTanThucDung"
+ }
+}
