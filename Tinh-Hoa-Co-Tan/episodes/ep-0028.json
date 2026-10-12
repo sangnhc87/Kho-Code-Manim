@@ -1,0 +1,647 @@
+{
+ "id": "ep-0028",
+ "number": 28,
+ "kind": "game",
+ "topic": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Thực chiến danh thủ",
+ "title": "Thực chiến: Dương Quan Lân – Hồ Vinh Hoa (1965): Sai lầm ở tàn cuộc",
+ "subtitle": "Tàn cuộc thực chiến",
+ "fen": "2Rak4/5r3/6P2/9/6b2/9/9/4B4/4K4/6B2 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 71
+ },
+ "base_status": "Bảng tra chessdb",
+ "source": "chessdb.cn EGTB (DTM)",
+ "game": {
+  "red": "杨官麟",
+  "black": "胡荣华",
+  "event": "全国象棋个人锦标赛",
+  "date": "65-11-12",
+  "result": "红胜",
+  "title": "117-五八炮对屏风马"
+ },
+ "beats": [
+  {
+   "kind": "intro",
+   "label": "THỰC CHIẾN DANH THỦ",
+   "headline": "Dương Quan Lân – Hồ Vinh Hoa",
+   "fen": "2Rak4/5r3/6P2/9/6b2/9/9/4B4/4K4/6B2 w",
+   "panel": {
+    "bullets": [
+     "Đỏ: Dương Quan Lân",
+     "Đen: Hồ Vinh Hoa",
+     "Năm 1965",
+     "Vào tàn cuộc ở hiệp 59"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Hôm nay là tàn cuộc thực chiến: Dương Quan Lân cầm quân Đỏ gặp Hồ Vinh Hoa cầm quân Đen, năm 1965. Sau 58 hiệp, trên bàn còn 9 quân: Đỏ có Tướng, Xe, hai Tượng, Binh; Đen có Tướng, Xe, Sĩ, Tượng. Đỏ đi."
+    }
+   ]
+  },
+  {
+   "kind": "theory",
+   "label": "BẢNG TRA CHẤM ĐIỂM",
+   "headline": "Thắng, hòa hay thua?",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Đỏ thắng, chiếu bí sau 36 nước",
+     "Ván thật: Đỏ thắng",
+     "2 sai lầm • 5 nước duy nhất"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Từ thời điểm này, số quân đã đủ ít để bảng tra cờ tàn chessdb chấm chính xác từng nước. Kết luận của bảng tra: Đỏ thắng, chiếu bí sau 36 nước."
+    },
+    {
+     "say": "Kết quả thực tế của ván đấu: Đỏ thắng."
+    },
+    {
+     "say": "Giữa hai điều đó là 2 sai lầm làm thay đổi kết quả. Hãy cùng tìm xem chúng nằm ở đâu."
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đỏ đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đỏ có 18 nước đi, nhưng chỉ đúng một nước giữ được kết quả Đỏ thắng. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 1",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Dương Quan Lân đi Xe 7 thoái 4! Đây là nước duy nhất giữ được kết quả Đỏ thắng, và danh thủ đã tìm ra.",
+     "move": "c9c5",
+     "mark": "only",
+     "status": "Bảng tra: Đỏ thắng • còn 36 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 2",
+   "headline": "Diễn biến ván đấu",
+   "steps": [
+    {
+     "say": "Hồ Vinh Hoa đi Tượng 7 thoái 9.",
+     "move": "g5i7",
+     "status": "Bảng tra: Đỏ thắng • còn 35 nước"
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đỏ đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đỏ có 23 nước đi, nhưng chỉ 3 nước giữ được kết quả Đỏ thắng. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 3",
+   "headline": "Sai lầm quyết định",
+   "steps": [
+    {
+     "say": "Trong ván, Dương Quan Lân đi Xe 7 bình 5. Sai lầm! Trước nước này Đỏ đang thắng, nhưng sau nước này kết quả thành hòa. Nước đúng là Xe 7 bình 6.",
+     "move": "c5e5",
+     "mark": "bad",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "trap",
+   "label": "NƯỚC ĐÚNG LẼ RA",
+   "headline": "Xe 7 bình 6!",
+   "rewind": true,
+   "fen": "3ak4/5r3/6P1b/9/2R6/9/9/4B4/4K4/6B2 w",
+   "return_fen": "3ak4/5r3/6P1b/9/4R4/9/9/4B4/4K4/6B2 b",
+   "steps": [
+    {
+     "say": "Hãy quay lại xem nước đúng: Xe 7 bình 6."
+    },
+    {
+     "say": "Xe 7 bình 6.",
+     "move": "c5d5"
+    },
+    {
+     "say": "Tượng 9 thoái 7.",
+     "move": "i7g9"
+    },
+    {
+     "say": "Tướng 5 bình 6.",
+     "move": "e1d1"
+    },
+    {
+     "say": "Sĩ 4 tiến 5.",
+     "move": "d9e8"
+    },
+    {
+     "say": "Xe 6 bình 8.",
+     "move": "d5b5"
+    },
+    {
+     "say": "Sĩ 5 thoái 4.",
+     "move": "e8d9"
+    },
+    {
+     "say": "Như vậy, với Xe 7 bình 6, Đỏ giữ được kết quả Đỏ thắng. Quay lại ván đấu thật."
+    }
+   ],
+   "panel": {
+    "verdict": "Xe 7 bình 6: Đỏ thắng"
+   }
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đen đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đen có 3 nước đi, nhưng chỉ đúng một nước giữ được kết quả hòa. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 4",
+   "headline": "Sai lầm quyết định",
+   "steps": [
+    {
+     "say": "Trong ván, Hồ Vinh Hoa đi Sĩ 4 tiến 5. Sai lầm! Trước nước này Đen giữ được hòa, nhưng sau nước này kết quả thành Đỏ thắng. Nước đúng là Xe 6 bình 5.",
+     "move": "d9e8",
+     "mark": "bad",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    }
+   ]
+  },
+  {
+   "kind": "trap",
+   "label": "NƯỚC ĐÚNG LẼ RA",
+   "headline": "Xe 6 bình 5!",
+   "rewind": true,
+   "fen": "3ak4/5r3/6P1b/9/4R4/9/9/4B4/4K4/6B2 b",
+   "return_fen": "4k4/4ar3/6P1b/9/4R4/9/9/4B4/4K4/6B2 w",
+   "steps": [
+    {
+     "say": "Hãy quay lại xem nước đúng: Xe 6 bình 5."
+    },
+    {
+     "say": "Xe 6 bình 5.",
+     "move": "f8e8"
+    },
+    {
+     "say": "Xe 5 bình 1.",
+     "move": "e5i5"
+    },
+    {
+     "say": "Tượng 9 thoái 7.",
+     "move": "i7g9"
+    },
+    {
+     "say": "Xe 1 tiến 4.",
+     "move": "i5i9"
+    },
+    {
+     "say": "Xe 5 tiến 1.",
+     "move": "e8e7"
+    },
+    {
+     "say": "Binh 3 bình 4.",
+     "move": "g7f7"
+    },
+    {
+     "say": "Như vậy, với Xe 6 bình 5, Đen giữ được kết quả hòa. Quay lại ván đấu thật."
+    }
+   ],
+   "panel": {
+    "verdict": "Xe 6 bình 5: hòa"
+   }
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 5",
+   "headline": "Diễn biến ván đấu",
+   "steps": [
+    {
+     "say": "Đỏ đi Tượng 5 tiến 3.",
+     "move": "e2g4",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Tượng 9 thoái 7.",
+     "move": "i7g9",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Tượng sau tiến 1.",
+     "move": "g0i2",
+     "status": "Bảng tra: Đỏ thắng • còn 32 nước"
+    },
+    {
+     "say": "Đen đi Tướng 5 bình 4.",
+     "move": "e9d9",
+     "status": "Bảng tra: Đỏ thắng • còn 32 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 5 bình 6.",
+     "move": "e5d5",
+     "status": "Bảng tra: Đỏ thắng • còn 32 nước"
+    },
+    {
+     "say": "Đen đi Tướng 4 bình 5.",
+     "move": "d9e9",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 6 bình 8.",
+     "move": "d5b5",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Đen đi Tướng 5 bình 4.",
+     "move": "e9d9",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 6",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Tượng 3 thoái 5.",
+     "move": "g4e2",
+     "status": "Bảng tra: Đỏ thắng • còn 32 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Tướng 4 bình 5.",
+     "move": "d9e9",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Đỏ đi Tượng 5 thoái 3.",
+     "move": "e2g0",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Đen đi Tướng 5 bình 4.",
+     "move": "e9d9",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Đỏ đi Tướng 5 thoái 1.",
+     "move": "e1e0",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Tượng 7 tiến 9.",
+     "move": "g9i7",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Tượng 1 tiến 3.",
+     "move": "i2g4",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Đen đi Tượng 9 thoái 7.",
+     "move": "i7g9",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 7",
+   "headline": "Diễn biến ván đấu",
+   "steps": [
+    {
+     "say": "Đỏ đi Xe 8 bình 6.",
+     "move": "b5d5",
+     "status": "Bảng tra: Đỏ thắng • còn 31 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Tướng 4 bình 5.",
+     "move": "d9e9",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Xe 6 bình 9.",
+     "move": "d5a5",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Tướng 5 bình 4.",
+     "move": "e9d9",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Đỏ đi Xe 9 bình 8.",
+     "move": "a5b5",
+     "status": "Bảng tra: Đỏ thắng • còn 30 nước"
+    },
+    {
+     "say": "Đen đi Tượng 7 tiến 9.",
+     "move": "g9i7",
+     "status": "Bảng tra: Đỏ thắng • còn 29 nước"
+    },
+    {
+     "say": "Đỏ đi Xe 8 bình 6.",
+     "move": "b5d5",
+     "status": "Bảng tra: Đỏ thắng • còn 29 nước"
+    },
+    {
+     "say": "Đen đi Tướng 4 bình 5.",
+     "move": "d9e9",
+     "status": "Bảng tra: Đỏ thắng • còn 29 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 8",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Dương Quan Lân đi Xe 6 tiến 2.",
+     "move": "d5d7",
+     "status": "Bảng tra: Đỏ thắng • còn 29 nước"
+    },
+    {
+     "say": "Đen đi Tượng 9 thoái 7.",
+     "move": "i7g9",
+     "status": "Bảng tra: Đỏ thắng • còn 20 nước"
+    },
+    {
+     "say": "Binh 3 bình 4.",
+     "move": "g7f7",
+     "status": "Bảng tra: Đỏ thắng • còn 20 nước"
+    },
+    {
+     "say": "Đen đi Xe 6 bình 9.",
+     "move": "f8i8",
+     "status": "Bảng tra: Đỏ thắng • còn 20 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 6 tiến 1.",
+     "move": "d7d8",
+     "status": "Bảng tra: Đỏ thắng • còn 20 nước"
+    },
+    {
+     "say": "Xe 9 bình 8.",
+     "move": "i8h8",
+     "status": "Bảng tra: Đỏ thắng • còn 20 nước"
+    },
+    {
+     "say": "Đỏ đi Xe 6 thoái 3.",
+     "move": "d8d5",
+     "status": "Bảng tra: Đỏ thắng • còn 20 nước"
+    },
+    {
+     "say": "Đen đi Xe 8 tiến 1.",
+     "move": "h8h7",
+     "status": "Bảng tra: Đỏ thắng • còn 19 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 9",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Binh 4 tiến 1.",
+     "move": "f7f8",
+     "status": "Bảng tra: Đỏ thắng • còn 19 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Xe 8 bình 5.",
+     "move": "h7e7",
+     "status": "Bảng tra: Đỏ thắng • còn 18 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Tướng 5 bình 6! Đây là nước duy nhất giữ được kết quả Đỏ thắng, và danh thủ đã tìm ra.",
+     "move": "e0d0",
+     "mark": "only",
+     "status": "Bảng tra: Đỏ thắng • còn 18 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 10",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Hồ Vinh Hoa đi Tượng 7 tiến 9.",
+     "move": "g9i7",
+     "status": "Bảng tra: Đỏ thắng • còn 17 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 6 bình 8.",
+     "move": "d5b5",
+     "status": "Bảng tra: Đỏ thắng • còn 17 nước"
+    },
+    {
+     "say": "Xe 5 bình 4.",
+     "move": "e7d7",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Dương Quan Lân tiếp tục tìm đúng: Tướng 6 bình 5.",
+     "move": "d0e0",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Xe 4 bình 5.",
+     "move": "d7e7",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Tướng 5 bình 6.",
+     "move": "e0d0",
+     "status": "Bảng tra: Đỏ thắng • còn 17 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Xe 5 bình 4.",
+     "move": "e7d7",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Tướng 6 bình 5, lại là nước duy nhất.",
+     "move": "d0e0",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Đen đi Xe 4 bình 5.",
+     "move": "d7e7",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 11",
+   "headline": "Diễn biến ván đấu",
+   "steps": [
+    {
+     "say": "Dương Quan Lân đi Tướng 5 bình 6.",
+     "move": "e0d0",
+     "status": "Bảng tra: Đỏ thắng • còn 17 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Sĩ 5 thoái 4.",
+     "move": "e8d9",
+     "status": "Bảng tra: Đỏ thắng • còn 16 nước"
+    },
+    {
+     "say": "Đỏ đi Tượng sau tiến 5.",
+     "move": "g0e2",
+     "status": "Bảng tra: Đỏ thắng • còn 16 nước"
+    },
+    {
+     "say": "Đen đi Xe 5 bình 4.",
+     "move": "e7d7",
+     "status": "Bảng tra: Đỏ thắng • còn 14 nước"
+    },
+    {
+     "say": "Dương Quan Lân tiếp tục tìm đúng: Tướng 6 bình 5.",
+     "move": "d0e0",
+     "status": "Bảng tra: Đỏ thắng • còn 14 nước"
+    },
+    {
+     "say": "Xe 4 bình 5.",
+     "move": "d7e7",
+     "status": "Bảng tra: Đỏ thắng • còn 13 nước"
+    },
+    {
+     "say": "Đỏ đi Xe 8 bình 2.",
+     "move": "b5h5",
+     "status": "Bảng tra: Đỏ thắng • còn 13 nước"
+    },
+    {
+     "say": "Tượng 9 thoái 7.",
+     "move": "i7g9",
+     "status": "Bảng tra: Đỏ thắng • còn 12 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 12",
+   "headline": "Kết thúc ván đấu",
+   "steps": [
+    {
+     "say": "Đỏ đi Xe 2 tiến 4.",
+     "move": "h5h9",
+     "status": "Bảng tra: Đỏ thắng • còn 12 nước"
+    },
+    {
+     "say": "Xe 5 bình 7.",
+     "move": "e7g7",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 2 thoái 1.",
+     "move": "h9h8",
+     "status": "Bảng tra: Đỏ thắng • còn 11 nước"
+    },
+    {
+     "say": "Đen đi Xe 7 bình 5.",
+     "move": "g7e7",
+     "status": "Bảng tra: Đỏ thắng • còn 9 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 2 bình 3.",
+     "move": "h8g8",
+     "status": "Bảng tra: Đỏ thắng • còn 9 nước"
+    },
+    {
+     "say": "Tượng 7 tiến 9.",
+     "move": "g9i7",
+     "status": "Bảng tra: Đỏ thắng • còn 8 nước"
+    },
+    {
+     "say": "Dương Quan Lân đi Xe 3 bình 2.",
+     "move": "g8h8",
+     "status": "Bảng tra: Đỏ thắng • còn 8 nước"
+    },
+    {
+     "say": "Ván đấu kết thúc ở đây với kết quả: Đỏ thắng."
+    }
+   ]
+  },
+  {
+   "kind": "summary",
+   "label": "TỔNG KẾT",
+   "headline": "Bài học từ ván đấu",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Đỏ thắng, chiếu bí sau 36 nước; ván thật: Đỏ thắng",
+     "2 sai lầm làm đổi kết quả",
+     "5 nước duy nhất được tìm ra",
+     "Ngay cả danh thủ cũng có thể sai ở tàn cuộc"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Tóm tắt. Bảng tra kết luận Đỏ thắng, chiếu bí sau 36 nước ngay khi vào tàn cuộc, còn ván thật kết thúc Đỏ thắng."
+    },
+    {
+     "say": "Sai lầm đầu tiên là Xe 7 bình 5 của Dương Quan Lân; nước đúng là Xe 7 bình 6."
+    },
+    {
+     "say": "Đáng khen là 5 lần các kỳ thủ tìm ra nước duy nhất dưới áp lực thi đấu."
+    },
+    {
+     "say": "Ngay cả các danh thủ hàng đầu cũng có thể sai ở tàn cuộc, nhất là khi thời gian suy nghĩ đã cạn. Học kỹ tàn cuộc là cách chắc chắn nhất để không đánh rơi những ván thắng."
+    },
+    {
+     "say": "Nếu thấy hữu ích, hãy bấm thích, đăng ký kênh và chia sẻ cho bạn cờ. Hẹn gặp lại."
+    }
+   ]
+  }
+ ],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Danh thủ cũng đi sai! Bạn tìm ra nước đúng? (Dương Quan Lân – Hồ Vinh Hoa, 1965) #Shorts",
+  "description": "Thực chiến: Dương Quan Lân – Hồ Vinh Hoa (1965): Sai lầm ở tàn cuộc\n\nTàn cuộc trong ván đấu thật năm 1965, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Đỏ thắng, chiếu bí sau 36 nước • Ván thật: Đỏ thắng • 2 sai lầm • 5 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 2Rak4/5r3/6P2/9/6b2/9/9/4B4/4K4/6B2 w\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien #Shorts"
+ },
+ "youtube": {
+  "title": "Thực chiến: Dương Quan Lân – Hồ Vinh Hoa (1965): Sai lầm ở tàn cuộc | Tinh Hoa Cờ Tàn #28",
+  "description": "Thực chiến: Dương Quan Lân – Hồ Vinh Hoa (1965): Sai lầm ở tàn cuộc\n\nTàn cuộc trong ván đấu thật năm 1965, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Đỏ thắng, chiếu bí sau 36 nước • Ván thật: Đỏ thắng • 2 sai lầm • 5 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 2Rak4/5r3/6P2/9/6b2/9/9/4B4/4K4/6B2 w\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien",
+  "tags": [
+   "cờ tướng",
+   "cờ tàn",
+   "thực chiến",
+   "danh thủ",
+   "tinh hoa cờ tàn",
+   "xiangqi"
+  ],
+  "playlist": "Tinh Hoa Cờ Tàn | Thực chiến danh thủ"
+ }
+}

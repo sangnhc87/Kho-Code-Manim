@@ -1,0 +1,85 @@
+{
+ "id": "ep-0027",
+ "number": 27,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Liễu Đại Hoa xin thua? (1981)",
+ "subtitle": "Sát cục",
+ "fen": "5ab2/5k3/9/9/4R2PP/6B2/4n4/4C4/2n2r3/2BK5 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 5
+ },
+ "mate": {
+  "n": 3,
+  "line": [
+   {
+    "move": "c1e2",
+    "side": "b",
+    "check": true,
+    "sacrifice": "N",
+    "capture": "C"
+   },
+   {
+    "move": "c0e2",
+    "side": "w",
+    "forced": false,
+    "capture": "n",
+    "n_replies": 3
+   },
+   {
+    "move": "e3c2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d0e0",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f1e1",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "N"
+  ],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "158-飞相局对左过宫炮",
+  "title": "158-飞相局对左过宫炮"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Liễu Đại Hoa",
+  "year": "1981",
+  "resigned": true,
+  "red": "柳大华",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Liễu Đại Hoa xin thua? (1981) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 3 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"158-飞相局对左过宫炮\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
