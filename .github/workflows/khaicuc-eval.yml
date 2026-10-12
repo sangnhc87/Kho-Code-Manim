@@ -49,34 +49,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Tải Pikafish
+      - name: Cache Pikafish
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: /tmp/engine
+          key: pikafish-2026-09-06-avx2-v1
+      - name: Biên dịch Pikafish
         id: pf
-        run: |
-          python -m pip install -q py7zr
-          gh release download --repo official-pikafish/Pikafish --pattern '*.7z' --dir /tmp/pf
-          python - <<'PY'
-          import glob, py7zr
-          f = glob.glob('/tmp/pf/*.7z')[0]
-          with py7zr.SevenZipFile(f) as z:
-              z.extractall('/tmp/pf/x')
-          PY
-          find /tmp/pf/x -maxdepth 3 | head -60
-          NNUE=$(find /tmp/pf/x -name '*.nnue' | head -1)
-          echo "nnue=$NNUE"
-          mkdir -p /tmp/engine
-          best=""
-          for v in avxvnni avx2 bmi2 sse41-popcnt ssse3 sse2 ; do
-            for f in $(find /tmp/pf/x -type f -ipath '*linux*' -name "*pikafish*$v*" ! -name '*.nnue' 2>/dev/null); do
-              chmod +x "$f"
-              cp "$f" /tmp/engine/pikafish; [ -n "$NNUE" ] && cp "$NNUE" /tmp/engine/
-              if echo uci | (cd /tmp/engine && timeout 20 ./pikafish) | grep -q uciok; then best="$f"; break 2; fi
-            done
-          done
-          [ -n "$best" ] || { echo "Không tìm được binary Pikafish chạy được"; find /tmp/pf/x -type f; exit 1; }
-          echo "Dùng $best"
-          echo "engine=/tmp/engine/pikafish" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -x /tmp/engine/pikafish ]; then
+            python -m pip install -q py7zr
+            gh release download Pikafish-2026-09-06 --repo official-pikafish/Pikafish --pattern '*.7z' --dir /tmp/pf
+            python - <<'PY'
+          import glob, py7zr
+          with py7zr.SevenZipFile(glob.glob('/tmp/pf/*.7z')[0]) as z:
+              z.extractall('/tmp/pf/x')
+          PY
+            git clone -q --depth 1 --branch Pikafish-2026-09-06 https://github.com/official-pikafish/Pikafish /tmp/pf/src
+            (cd /tmp/pf/src/src && make -j4 build ARCH=x86-64-avx2 COMP=gcc >/tmp/pf/make.log 2>&1 || { tail -40 /tmp/pf/make.log; exit 1; })
+            mkdir -p /tmp/engine
+            cp /tmp/pf/src/src/pikafish /tmp/engine/pikafish
+            cp "$(find /tmp/pf/x -name '*.nnue' | head -1)" /tmp/engine/pikafish.nnue
+          fi
+          echo uci | (cd /tmp/engine && timeout 30 ./pikafish) | grep -E "uciok|id name"
+          echo "engine=/tmp/engine/pikafish" >> "$GITHUB_OUTPUT"
       - name: Chấm điểm
         run: python scripts/khaicuc_eval.py --opening "${{ matrix.opening }}" --engine "${{ steps.pf.outputs.engine }}" --movetime "${{ inputs.movetime }}" --threads 3
       - uses: actions/upload-artifact@v4
