@@ -124,6 +124,8 @@ class KhaiCucChapter(XiangqiLesson):
         png = out / 'cards' / 'outro.png'
         art = ImageMobject(str(png)).set_width(11.4).move_to(ORIGIN)
         scrim = Rectangle(width=14.5, height=8.3, fill_color=BG, fill_opacity=1, stroke_width=0)
+        scrim.set_z_index(100)   # quân cờ (z=3) không được lộ lên trên thẻ
+        art.set_z_index(101)
         self.play(FadeIn(scrim), FadeIn(art, scale=.97), run_time=.8)
         for step, clip in zip(beat['steps'], clips):
             self.add_sound(clip['audio'])
