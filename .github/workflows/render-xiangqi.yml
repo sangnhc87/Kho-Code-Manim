@@ -117,6 +117,15 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config fonts-noto-core fonts-noto-cjk
           python -m pip install -r requirements.txt
+          if [ "$VOICE" = "edge" ]; then
+            python -m pip install vieneu "onnxruntime==1.22.1"
+          fi
+      - name: Cache mô hình VieNeu
+        if: env.VOICE == 'edge'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: vieneu-hf-v1
       - uses: typst-community/setup-typst@v5
       - name: Kiểm tra kịch bản trước khi tạo âm thanh/video
         run: |
@@ -126,6 +135,7 @@ jobs:
       - name: Render MP4
         env:
           ZALO_API_KEY: ${{ secrets.ZALO_API_KEY }}
+          COTAN_TTS_ENGINE: ${{ env.VOICE == 'edge' && 'vieneu' || '' }}
         run: |
           if [ "$TARGETS" != "short" ]; then
             python scripts/produce.py --episode "${{ matrix.episode }}" --quality "$QUALITY" --voice "$VOICE"

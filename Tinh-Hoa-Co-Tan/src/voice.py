@@ -15,6 +15,8 @@ import urllib.request
 from pathlib import Path
 
 EDGE_VOICE = 'vi-VN-NamMinhNeural'
+NAMMINH_WPS = 3.28
+_VIENEU = None
 
 
 def run(args):
@@ -72,9 +74,35 @@ def _zalo(text, out):
         time.sleep(3 + attempt)
 
 
+def _vieneu(text, out):
+    """Giọng NamMinh đọc offline. Edge từ chối IP máy chủ GitHub."""
+    global _VIENEU
+    if _VIENEU is None:
+        from vieneu import Vieneu
+        _VIENEU = Vieneu()
+    ref = (Path(__file__).resolve().parents[2] / 'Manim-Typst' / 'series-xac-suat-shorts'
+           / 'assets_voice' / 'namminh_ref.wav')
+    if not ref.exists():
+        raise RuntimeError(f'Thiếu giọng mẫu NamMinh: {ref}')
+    raw = out.with_suffix('.raw.wav')
+    _VIENEU.save(_VIENEU.infer(text, ref_audio=str(ref)), str(raw))
+    target = max(1.2, len(text.split()) / NAMMINH_WPS)
+    tempo = min(1.05, max(0.6, duration(raw) / target))
+    run(['ffmpeg', '-y', '-v', 'error', '-i', str(raw), '-filter:a', f'atempo={tempo:.3f}', str(out)])
+    raw.unlink(missing_ok=True)
+
+
+def _resolve_provider(provider):
+    forced = os.environ.get('COTAN_TTS_ENGINE', '').strip()
+    return forced or provider
+
+
 def _render_one(text, raw, provider):
+    provider = _resolve_provider(provider)
     if provider == 'edge':
         asyncio.run(_edge(text, raw))
+    elif provider == 'vieneu':
+        _vieneu(text, raw)
     elif provider == 'zalo':
         _zalo(text, raw)
     elif provider == 'mock':
@@ -82,7 +110,7 @@ def _render_one(text, raw, provider):
         run(['ffmpeg', '-y', '-v', 'error', '-f', 'lavfi', '-i', 'anullsrc=channel_layout=stereo:sample_rate=44100',
              '-t', f'{secs:.2f}', str(raw)])
     else:
-        raise ValueError('provider phải là edge, zalo hoặc mock')
+        raise ValueError('provider phải là edge, vieneu, zalo hoặc mock')
 
 
 def generate_voice(data, folder, provider='edge'):
@@ -93,7 +121,8 @@ def generate_voice(data, folder, provider='edge'):
         clips = []
         for s, step in enumerate(beat['steps']):
             text = speakable(step['say'])
-            digest = hashlib.sha1(f'{provider}|{EDGE_VOICE}|{text}'.encode()).hexdigest()[:12]
+            engine = _resolve_provider(provider)
+            digest = hashlib.sha1(f'{engine}|{EDGE_VOICE}|{text}'.encode()).hexdigest()[:12]
             wav = folder / f'v{b:02d}_{s:02d}_{digest}.wav'
             if not wav.exists():
                 raw = folder / f'raw_{digest}{".wav" if provider == "mock" else ".mp3"}'
