@@ -47,7 +47,7 @@ class KhaiCucChapter(XiangqiLesson):
         out = Path(os.environ['KC_OUTPUT'])
         chapter = data['chapters'][ci]
         timing = json.loads((out / f'voice_{ci}' / 'timing.json').read_text(encoding='utf-8'))
-        first_fen = next(b['fen'] for b in chapter['beats'] if b.get('fen'))
+        first_fen = next((b['fen'] for b in chapter['beats'] if b.get('fen')), data['fen'])
         board = Board(first_fen)
         self.chrome(data, ci)
         self.add(board)
