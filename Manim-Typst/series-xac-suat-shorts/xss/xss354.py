@@ -51,7 +51,7 @@ class XSS354(ShortScene):
     N = 354
 
     def pick(self, idx, frac=.06):
-        new = VGroup(*[token('', CYAN, .26).move_to(self.pts[i]) for i in idx])
+        new = VGroup(*[token(' ', CYAN, .26).move_to(self.pts[i]) for i in idx])
         self.play(*([FadeOut(self.sel)] if self.sel else []), FadeIn(new), run_time=self.rt(frac))
         self.sel = new
 

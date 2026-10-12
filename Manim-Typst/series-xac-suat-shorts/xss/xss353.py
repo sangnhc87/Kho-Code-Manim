@@ -50,7 +50,7 @@ class XSS353(ShortScene):
     N = 353
 
     def place(self, idx, frac=.06):
-        new = seat([('', CYAN)] * 4, [self.seats[i] for i in idx], r=.22)
+        new = seat([(' ', CYAN)] * 4, [self.seats[i] for i in idx], r=.22)
         self.play(*([FadeOut(self.ppl)] if self.ppl else []), FadeIn(new), run_time=self.rt(frac))
         self.ppl = new
 
