@@ -1,4 +1,4 @@
-"""Narration for the Shorts (copied from the INT series, faster pace): Edge TTS per beat, exact durations, sentence timings, SRT.
+"""Narration for the Shorts (copied from the INT series, faster pace): Edge TTS (or VieNeu on CI) per beat, exact durations, sentence timings, SRT.
 
 voice=on  → every beat must get a real MP3 (retries, then hard failure; never
             publish a silent video pretending to be narrated).
@@ -20,6 +20,12 @@ PAD = 0.45         # silence after each beat's narration (seconds)
 LEAD = 0.15        # narration starts slightly after the beat's visual cue
 WORDS_PER_SEC = 3.45  # vi-VN-NamMinhNeural at +6% (estimate)
 ATTEMPTS = int(os.environ.get('XSS_TTS_ATTEMPTS', 6))  # pack_voice.sh raises it: Edge often drops runs of requests
+# Edge refuses datacenter IPs (GitHub runners, 2026-10). XSS_TTS_ENGINE=vieneu clones NamMinh offline on the runner
+# with VieNeu-TTS from assets_voice/namminh_ref.wav; its pace is a bit quicker, so it is slowed with atempo.
+ENGINE = os.environ.get('XSS_TTS_ENGINE', 'edge')
+VIENEU_TEMPO = float(os.environ.get('XSS_VIENEU_TEMPO', '0.9'))
+VIENEU_REF = Path(__file__).resolve().parents[1] / 'assets_voice' / 'namminh_ref.wav'
+_VIENEU = None
 
 
 def ffprobe_duration(path: Path) -> float:
@@ -61,7 +67,22 @@ def _azure_once(text: str, path: Path, voice: str) -> list[dict]:
     return []  # no boundaries from REST: synthesize() scales the estimated sentence timings to the audio length
 
 
+def _vieneu_once(text: str, path: Path) -> list[dict]:
+    global _VIENEU
+    if _VIENEU is None:
+        from vieneu import Vieneu
+        _VIENEU = Vieneu()
+    raw = path.with_suffix('.raw.wav')
+    _VIENEU.save(_VIENEU.infer(text, ref_audio=str(VIENEU_REF)), str(raw))
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', str(raw), '-filter:a', f'atempo={VIENEU_TEMPO}',
+                    '-ac', '1', '-ar', '24000', '-b:a', '64k', str(path)], check=True)
+    raw.unlink(missing_ok=True)
+    return []  # no boundaries: synthesize() scales the estimated sentence timings to the audio length
+
+
 async def _synth_once(text: str, path: Path, voice: str) -> list[dict]:
+    if ENGINE == 'vieneu':
+        return _vieneu_once(text, path)
     if os.environ.get('AZURE_SPEECH_KEY'):
         return _azure_once(text, path, voice)
     import edge_tts

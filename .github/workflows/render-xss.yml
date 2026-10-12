@@ -129,10 +129,20 @@ jobs:
           gh release download xss-voice --pattern "$SH.tar.gz" --dir /tmp/xv --clobber 2>/dev/null \
             && tar -xzf "/tmp/xv/$SH.tar.gz" && echo "using cached narration for $SH" || echo "no cached narration for $SH"
 
+      - name: Cache VieNeu model
+        if: ${{ env.VOICE == 'on' }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: vieneu-hf-v1
+
+      - name: Install VieNeu-TTS (Edge refuses runner IPs)
+        if: ${{ env.VOICE == 'on' }}
+        run: python -m pip install vieneu "onnxruntime==1.22.1"
+
       - name: Narration and runtime plan (≤ 3 minutes)
         env:
-          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}       # optional: official Azure TTS, same NamMinh voice
-          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          XSS_TTS_ENGINE: vieneu   # NamMinh voice cloned offline; Edge clips from release xss-voice are still reused
         run: python scripts/prepare_voice.py --short "$SH" --voice "$VOICE"
 
       - name: Render
