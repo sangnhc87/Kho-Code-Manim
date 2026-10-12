@@ -58,10 +58,10 @@ class XSS306(ShortScene):
         self.tails = VGroup(VGroup(coin('S', .3)), VGroup(coin('S', .3), coin('N', .3)), VGroup(coin('S', .3), coin('N', .3), coin('N', .3)))
         for t in self.tails:
             t.arrange(buff=.06)
-        self.tails.arrange([0, -1, 0], buff=.3, aligned_edge=[1, 0, 0]).move_to([.8, 1.6, 0])
+        self.tails.arrange([0, -1, 0], buff=.3, aligned_edge=[1, 0, 0]).move_to([.8, 1.15, 0])
         self.boxes = VGroup(*[self.TM(f'$a_(n-{k})$', 28, GOLD).next_to(t, [-1, 0, 0], buff=.3) for k, t in zip((1, 2, 3), self.tails)])
         self.wait_until(.6, t0)
-        self.play(FadeIn(VGroup(coin('N', .3), coin('N', .3), coin('N', .3)).arrange(buff=.06).move_to([0, 2.6, 0]).set_opacity(.5)),
+        self.play(FadeIn(VGroup(coin('N', .3), coin('N', .3), coin('N', .3)).arrange(buff=.06).move_to([0, 2.75, 0]).set_opacity(.5)),
                   run_time=self.rt(.05))
 
     def beat_s1(self, T):
