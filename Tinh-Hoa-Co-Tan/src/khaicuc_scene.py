@@ -19,7 +19,7 @@ from src.scene import (BG, CYAN, FONT, GOLD, GREEN, LIGHT, MUTED, ORANGE, PANEL_
 from xq.notation import vn_move  # noqa: E402
 
 
-GAP_MOVE, GAP_TALK = 0.9, 1.3   # nghỉ sau mỗi câu cho người xem kịp nhìn (khớp build_khaicuc_episode)
+GAP_MOVE, GAP_TALK = 1.6, 2.0   # nghỉ sau mỗi câu cho người xem kịp nhìn (khớp build_khaicuc_episode)
 
 
 class KMoveList(MoveList):
@@ -57,15 +57,18 @@ class KhaiCucChapter(XiangqiLesson):
         if len(timing) != len(chapter['beats']):
             raise ValueError('Số đoạn âm thanh khác số phân đoạn kịch bản')
         badges = []
+        movelist = None
         for beat, clips in zip(chapter['beats'], timing):
             for b in badges:
                 self.remove(b)
             badges = []
             kind = beat['kind']
+            if kind == 'cta':
+                self.play_cta(out, beat, clips)
+                continue
             if beat.get('fen'):
                 board.reset(self, beat['fen'])
             panel.set_header(beat['label'], beat['headline'], ORANGE if kind == 'line' and 'PHỤ' in beat['label'] else GREEN)
-            movelist = None
             if kind in ('hook', 'theory'):
                 panel.set_body(Panel.bullets(beat['panel']['bullets']))
             elif kind == 'mnemonic':
@@ -73,8 +76,11 @@ class KhaiCucChapter(XiangqiLesson):
                 rows.arrange(DOWN, aligned_edge=LEFT, buff=.32)
                 panel.set_body(rows)
             elif kind == 'line':
-                movelist = KMoveList(beat['start_no'], beat['start_side'])
-                panel.set_body(VGroup())
+                if beat.get('continue') and movelist is not None:
+                    panel.set_body(movelist.render(7))
+                else:
+                    movelist = KMoveList(beat['start_no'], beat['start_side'])
+                    panel.set_body(VGroup())
             for step, clip in zip(beat['steps'], clips):
                 start = self.time
                 cap_pages = pages(step['say'])
@@ -110,8 +116,20 @@ class KhaiCucChapter(XiangqiLesson):
                     panel.set_body(movelist.render(7))
                 if step.get('countdown'):
                     self.countdown(step['countdown'])
-        if ci == len(data['chapters']) - 1:
+        if ci == len(data['chapters']) - 1 and chapter['beats'][-1]['kind'] != 'cta':
             self.title_card(out / 'cards' / 'outro.png', 7.0)
+
+    def play_cta(self, out, beat, clips):
+        """Thẻ cuối có mã QR hiện suốt lúc đọc lời kêu gọi đăng ký / ủng hộ."""
+        png = out / 'cards' / 'outro.png'
+        art = ImageMobject(str(png)).set_width(11.4).move_to(ORIGIN)
+        scrim = Rectangle(width=14.5, height=8.3, fill_color=BG, fill_opacity=1, stroke_width=0)
+        self.play(FadeIn(scrim), FadeIn(art, scale=.97), run_time=.8)
+        for step, clip in zip(beat['steps'], clips):
+            self.add_sound(clip['audio'])
+            self.wait(clip['seconds'] + .5)
+        self.wait(5.0)
+        self.play(FadeOut(art), FadeOut(scrim), run_time=.6)
 
     def chrome(self, data, ci=0):
         brand = Text('TINH HOA CỜ TÀN', font=FONT, font_size=26, color=GOLD, weight=BOLD)

@@ -3,50 +3,68 @@
   "name": "Thuận Pháo",
   "series": "Khai cục từ A đến Z",
   "tagline": "Hai Pháo đối đầu trên lộ giữa",
-  "hook": "Hai nước đi đầu tiên, hai khẩu Pháo đã nhìn thẳng vào nhau trên lộ giữa. Từ đây, chỉ cần chậm một nhịp ra quân là mất tiên. Hôm nay ta mổ xẻ Thuận Pháo, một khai cục cổ điển, từng nước một.",
-  "ideas": [
-    {
-      "title": "Thuận Pháo là gì?",
-      "say": "Đỏ mở bằng Pháo hai bình năm. Nếu Đen đáp Pháo tám bình năm, hai Pháo cùng chiếm lộ giữa và đối đầu trực diện, đó là Thuận Pháo. Còn nếu Đen đáp Pháo hai bình năm, hai Pháo ngược chiều nhau, đó là Nghịch Pháo, một chuyên đề riêng.",
-      "bullets": [
-        "Đỏ: Pháo 2 bình 5",
-        "Đen: Pháo 8 bình 5",
-        "Hai Pháo đối đầu lộ giữa"
-      ]
-    },
-    {
-      "title": "Việc đầu tiên: giữ Tốt đầu",
-      "say": "Mỗi Pháo mượn Tốt đầu của chính mình làm ngòi, để nhắm vào Tốt đầu của đối phương. Vì vậy cả hai bên phải đưa Mã ra trước để canh giữ Tốt đầu. Máy xác nhận điều này: ở nước thứ ba, Mã hai tiến ba hơn các lựa chọn khác khoảng hai phần mười điểm.",
-      "bullets": [
-        "Pháo nhắm Tốt đầu đối phương",
-        "Mã ra trước để canh giữ",
-        "Nước 3: Mã 2 tiến 3 hơn ~0,2"
-      ]
-    },
-    {
-      "title": "Cuộc đua Xe",
-      "say": "Sau Mã là Xe. Đỏ thường chọn Xe một bình hai, đưa Xe ra lộ hai, gọi là Xe trực. Đen hay đáp bằng Xe chín tiến một, gọi là Xe hoành. Xe nào chiếm được lộ quan trọng trước sẽ cầm tiên.",
-      "bullets": [
-        "Đỏ: Xe 1 bình 2 (Xe trực)",
-        "Đen: Xe 9 tiến 1 (Xe hoành)",
-        "Chiếm lộ trước, cầm tiên"
-      ]
-    },
-    {
-      "title": "Lợi thế đi trước là bình thường",
-      "say": "Một lưu ý để xem điểm máy cho đúng. Vì Đỏ đi trước, máy gần như luôn cho Đỏ hơn khoảng hai đến sáu phần mười điểm ngay từ khai cuộc. Đó là lợi thế của người đi trước, không có nghĩa Đen đã đi sai.",
-      "bullets": [
-        "Đỏ đi trước: +0,2 đến +0,6 là bình thường",
-        "Chỉ chênh lớn mới đáng lo",
-        "Điểm máy là tham khảo"
-      ]
-    }
-  ],
   "mnemonic": [
     "Pháo đối Pháo, giành lộ giữa,",
     "Mã che Tốt đầu, chớ bỏ qua.",
     "Xe ra cho sớm, lộ thông thoáng,",
     "Đổi quân tính kỹ, kẻo sa chân."
   ],
-  "closing": "Ghi nhớ ba điều: Mã ra trước để giữ Tốt đầu, Xe chiếm lộ sớm, và mỗi lần đổi quân phải tính xem ai còn cầm tiên."
+  "closing": "Ghi nhớ ba điều: Mã ra trước để giữ Tốt đầu, Xe chiếm lộ sớm, và mỗi lần đổi quân phải tính xem ai còn cầm tiên.",
+  "intro": [
+    {
+      "label": "MỞ ĐẦU",
+      "headline": "Hai Pháo đối đầu lộ giữa",
+      "steps": [
+        {
+          "say": "Đỏ mở bằng Pháo hai bình năm, đưa Pháo vào lộ giữa.",
+          "ply": 1
+        },
+        {
+          "say": "Đen đáp lại bằng Pháo tám bình năm. Hai khẩu Pháo cùng chiếm lộ giữa và nhìn thẳng vào nhau.",
+          "ply": 2
+        },
+        {
+          "say": "Đó là Thuận Pháo, một khai cục cổ điển. Nếu Đen đáp Pháo hai bình năm, hai Pháo ngược chiều nhau, ta gọi là Nghịch Pháo, một chuyên đề riêng."
+        }
+      ]
+    },
+    {
+      "label": "Ý ĐỒ 1",
+      "headline": "Việc đầu tiên: giữ Tốt đầu",
+      "steps": [
+        {
+          "say": "Mỗi Pháo mượn chính Tốt đầu của mình làm ngòi, để nhắm vào Tốt đầu của đối phương. Vì vậy, Mã phải ra trước để canh giữ. Đỏ nhảy Mã hai tiến ba.",
+          "ply": 3
+        },
+        {
+          "say": "Đen đáp bằng Mã tám tiến bảy, cùng một ý đồ.",
+          "ply": 4
+        },
+        {
+          "say": "Máy xác nhận điều này: ở nước thứ ba, Mã hai tiến ba hơn các lựa chọn khác khoảng hai phần mười điểm."
+        }
+      ]
+    },
+    {
+      "label": "Ý ĐỒ 2",
+      "headline": "Cuộc đua Xe",
+      "steps": [
+        {
+          "say": "Sau Mã là Xe. Đỏ đưa Xe một bình hai, ra lộ hai. Đây là thế Xe trực.",
+          "ply": 5
+        },
+        {
+          "say": "Đen đáp Xe chín tiến một, thế Xe hoành. Bên nào chiếm được lộ quan trọng trước sẽ cầm tiên.",
+          "ply": 6
+        },
+        {
+          "say": "Một lưu ý để xem điểm máy cho đúng. Vì Đỏ đi trước, máy gần như luôn cho Đỏ hơn khoảng hai đến sáu phần mười điểm ngay từ khai cuộc. Đó là lợi thế của người đi trước, không có nghĩa Đen đã đi sai."
+        },
+        {
+          "say": "Từ đây ta đi sâu vào biến chính, rồi các biến phụ. Mỗi điểm rẽ nhánh sẽ có bảng xếp hạng của máy, và vài lần dừng lại để bạn tự chọn nước."
+        }
+      ]
+    }
+  ],
+  "cta": "Nếu thấy bài phân tích hữu ích, bạn hãy bấm đăng ký kênh để không bỏ lỡ các phần tiếp theo của series khai cục chuyên sâu. Và nếu thấy hay, bạn có thể ủng hộ kênh một ly cà phê bằng mã QR trên màn hình. Cảm ơn bạn đã xem, hẹn gặp lại ở phần sau."
 }

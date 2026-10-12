@@ -20,7 +20,7 @@ from xq.opening_commentary import (SIDE, exchange_words, explain, fmt, grade, ra
 
 WPS = 3.9            # từ/giây của giọng đọc (Thiện Minh ~4,2)
 STEP_PAD = 1.5       # giây hoạt ảnh mỗi nước
-GAP_MOVE, GAP_TALK = 0.9, 1.3   # nhịp nghỉ sau mỗi câu (cảnh Manim cộng thêm đúng số này)
+GAP_MOVE, GAP_TALK = 1.6, 2.0   # nhịp nghỉ sau mỗi câu (cảnh Manim cộng thêm đúng số này)
 CHAPTER_SECONDS = 420
 SWING = 90           # điểm lệch (centipawn) coi là bước ngoặt
 
@@ -200,32 +200,58 @@ def main():
     base_idx = sum(len(p) for p in parts[:a.part - 1])
     beats = []
     name = theory['name']
-    if a.part == 1:
-        beats.append({'kind': 'hook', 'label': 'MỞ ĐẦU', 'headline': f'{name}: {theory["tagline"]}', 'fen': start.fen(),
-                      'panel': {'bullets': [theory['tagline'], f'{len(segs)} đường biến trong tư liệu',
-                                            f'{sum(len(s["nodes"]) for s in segs)} nước đi được phân tích']},
-                      'steps': [{'say': theory['hook']},
-                                {'say': 'Mỗi nước đi đều có điểm đánh giá của máy Pikafish, ý đồ hai bên, và cuối bài là khẩu quyết dễ nhớ.'}]})
-        for i, idea in enumerate(theory['ideas'], 1):
-            beats.append({'kind': 'theory', 'label': f'Ý TƯỞNG {i}', 'headline': idea['title'], 'fen': start.fen(),
-                          'panel': {'bullets': idea['bullets']}, 'steps': [{'say': idea['say']}]})
+    skip = 0
+    if a.part == 1 and theory.get('intro'):
+        # Phần giới thiệu: nói gọn, đi nước ngay trong lúc nói (các nước của biến chính)
+        main_nodes = segs[0]['nodes']
+        for blk in theory['intro']:
+            steps, first_ply = [], None
+            for st in blk['steps']:
+                step = {'say': st['say']}
+                if st.get('ply'):
+                    n = main_nodes[st['ply'] - 1]
+                    step.update(move=n['m'], ply=n['ply'])
+                    first_ply = first_ply or n
+                    skip = max(skip, st['ply'])
+                    if ev:
+                        cp = red_cp(ev.get(n['pos'].play(n['m']).fen()))
+                        if cp is not None:
+                            step['status'] = f'Máy: {grade(cp)} ({fmt(cp)})'
+                steps.append(step)
+            fen_node = first_ply or main_nodes[skip]
+            beats.append({'kind': 'line', 'label': blk['label'], 'headline': blk['headline'], 'fen': fen_node['pos'].fen(),
+                          'continue': bool(beats),
+                          'start_no': (fen_node['ply'] + 1) // 2, 'start_side': fen_node['pos'].turn, 'steps': steps})
+        mine[0] = dict(mine[0], nodes=main_nodes[skip:], start=main_nodes[skip]['pos'])
+    elif a.part > 1:
+        beats.append({'kind': 'theory', 'label': f'PHẦN {a.part}', 'headline': f'{name}: tiếp tục các biến phụ', 'fen': start.fen(),
+                      'panel': {'bullets': [f'Phần {a.part}/{len(parts)}', 'Mỗi biến có điểm đánh giá của máy', 'Dừng lại tự chọn nước ở các điểm rẽ']},
+                      'steps': [{'say': f'Chào mừng bạn đến phần {a.part} của chuyên đề {name}. Ta tiếp tục các biến phụ, mỗi biến đều có đánh giá của máy.'}]})
     quiz = [3, -99]
     for j, s in enumerate(mine):
-        beats.append(line_beat(s, base_idx + j, ev, quiz))
+        beat = line_beat(s, base_idx + j, ev, quiz)
+        beat['continue'] = bool(a.part == 1 and j == 0 and theory.get('intro'))
+        beats.append(beat)
     beats.append({'kind': 'mnemonic', 'label': 'KHẨU QUYẾT', 'headline': name, 'panel': {'bullets': theory['mnemonic']},
                   'steps': [{'say': 'Khẩu quyết cho bài này. ' + ' '.join(theory['mnemonic'])},
-                            {'say': theory['closing'] + ' Hẹn gặp lại bạn ở phần tiếp theo của chuyên đề khai cục.'}]})
+                            {'say': theory['closing']}]})
+    beats.append({'kind': 'cta', 'label': 'CẢM ƠN BẠN', 'headline': 'Đăng ký kênh và ủng hộ ly cà phê',
+                  'steps': [{'say': theory['cta']}]})
     chapters = chapterize(beats, CHAPTER_SECONDS)
     total = sum(est(s) for b in beats for s in b['steps'])
     ep_id = f'kc-{a.number:04d}'
     title = f'Khai cục {name} – phần {a.part}: {theory["tagline"]}'
+    series_tag = f'[Khai cục chuyên sâu #{a.number}]'
     out = {'id': ep_id, 'number': a.number, 'opening': a.opening, 'part': a.part, 'parts': len(parts),
            'title': title, 'subtitle': theory['tagline'], 'category': 'Khai cục', 'fen': start.fen(),
            'card_note': 'Phân tích kèm điểm đánh giá của Pikafish',
+           'outro_title': 'ĐĂNG KÝ KÊNH ĐỂ KHÔNG BỎ LỠ!',
+           'outro_text': 'Series khai cục chuyên sâu ra đều đặn. Bấm đăng ký để nhận phần tiếp theo. Thấy hay thì ủng hộ kênh một ly cà phê nhé! ☕',
            'chapters': [{'title': c[0]['headline'], 'beats': c} for c in chapters],
            'est_minutes': round(total / 60, 1),
-           'youtube': {'title': f'{title} | Tinh Hoa Cờ Tàn',
-                       'tags': ['cờ tướng', 'khai cục', name.lower(), 'phân tích khai cục', 'tinh hoa cờ tàn']}}
+           'youtube': {'title': f'{series_tag} {title}',
+                       'tags': ['cờ tướng', 'khai cục', 'khai cục cờ tướng', name.lower(), 'phân tích khai cục', 'cờ tướng chuyên sâu',
+                                'series khai cục chuyên sâu', 'xiangqi', 'chinese chess opening', 'tinh hoa cờ tàn', 'học cờ tướng']}}
     dest = ROOT / 'khaicuc' / 'episodes'
     dest.mkdir(parents=True, exist_ok=True)
     (dest / f'{ep_id}.json').write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding='utf-8')

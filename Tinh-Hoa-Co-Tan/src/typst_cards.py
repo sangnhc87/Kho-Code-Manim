@@ -102,6 +102,13 @@ def make_cards(data, folder):
 #text(size: 9.5pt, fill: rgb("#E9B66E"))[☕ Mời tôi ly cà phê — VPBank: 10389821115 (Ung ho ca phe)]
 '''
 
+    # Tập có lời kêu gọi riêng (series khai cục): thay tiêu đề và lời cảm ơn trên thẻ cuối.
+    if data.get('outro_title'):
+        outro_src = outro_src.replace('BẠN ĐÃ NẮM ĐƯỢC BÍ QUYẾT?', data['outro_title'])
+    if data.get('outro_text'):
+        outro_src = outro_src.replace(
+            'Cảm ơn bạn đã theo dõi! Nếu thấy bài phân tích hữu ích, hãy ủng hộ kênh một ly cà phê để tiếp thêm năng lượng sáng tạo nhé! ☕',
+            data['outro_text'])
     cards = [('intro', intro_src), ('outro', outro_src)]
     for kind, src_text in cards:
         src_file = folder / f'{kind}.typ'

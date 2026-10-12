@@ -91,9 +91,13 @@ def concat(ep, data, folder):
         t += info['seconds']
     if lines and not lines[0].startswith('0:00'):
         lines[0] = '0:00' + lines[0][len(lines[0].split()[0]):]
-    desc = (f'{data["title"]}\n\nPhân tích khai cục từng nước, có điểm đánh giá của máy Pikafish, ý đồ hai bên và khẩu quyết.\n\n'
+    desc = (f'{data["title"]}\n\n'
+            'Series KHAI CỤC CHUYÊN SÂU – phân tích từng nước đi, có điểm đánh giá của máy Pikafish, '
+            'ý đồ hai bên, các biến phụ và khẩu quyết dễ nhớ.\n\n'
+            '🔔 ĐĂNG KÝ KÊNH để không bỏ lỡ các phần tiếp theo của series!\n\n'
             'MỤC LỤC\n' + '\n'.join(lines) +
-            '\n\n☕ Ủng hộ kênh: VPBank 10389821115\n\n#cotuong #khaicuc #xiangqi #tinhhoacotan')
+            '\n\n☕ Thấy hay, mời mình một ly cà phê: VPBank 10389821115 (quét mã QR cuối video, nội dung: Ung ho ca phe)\n\n'
+            '#cotuong #khaicuc #xiangqi #tinhhoacotan #khaicucchuyensau')
     (folder / 'yt_title.txt').write_text(data['youtube']['title'], encoding='utf-8')
     (folder / 'yt_desc.txt').write_text(desc, encoding='utf-8')
     (folder / 'yt_tags.txt').write_text(','.join(data['youtube']['tags']), encoding='utf-8')

@@ -117,7 +117,7 @@ def clauses(pos, move):
     big = [(q, p, d) for q, p, d in threats if VALUE[p.upper()] >= 4]
     loose = [desc(p, q) for q, p, d in big if not d]
     if loose and not victim:
-        out.append(f'đe dọa ăn {loose[0]} vì quân này chưa có ai bảo vệ')
+        out.append(f'đe dọa ăn {loose[0]}')
     elif big and not victim:
         out.append(f'gây sức ép lên {desc(big[0][1], big[0][0])}')
     if u == 'C' and dst[0] == 4 and src[0] != 4:
