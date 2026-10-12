@@ -120,14 +120,6 @@ jobs:
       - name: Typst formulas
         run: python scripts/build_typst.py --short "$SH"
 
-      - name: Route traffic through Cloudflare WARP (Edge TTS refuses GitHub runner IPs)
-        if: ${{ env.VOICE == 'on' }}
-        continue-on-error: true
-        uses: fscarmen/warp-on-actions@v1.4
-        with:
-          stack: dual
-          mode: wireguard
-
       - name: Narration made off-CI (Edge TTS may refuse runner IPs)
         if: ${{ env.VOICE == 'on' }}
         env:
