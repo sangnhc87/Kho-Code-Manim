@@ -2,6 +2,7 @@
 """
 Script upload video lên Facebook Reels cho Trang (Facebook Page) tự động.
 Hỗ trợ tích hợp với GitHub Actions và quy trình render Manim.
+Sử dụng curl subprocess để đảm bảo độ tin cậy, tốc độ cao và vượt qua lỗi chứng chỉ SSL trên macOS/Linux.
 
 Tác giả: Thầy Nguyễn Văn Sang
 Trang mặc định: ConicTypst (Page ID: 1249523211575010)
@@ -10,17 +11,26 @@ Trang mặc định: ConicTypst (Page ID: 1249523211575010)
 import argparse
 import json
 import os
+import subprocess
 import sys
 import time
 from pathlib import Path
-import urllib.parse
-import urllib.request
-import urllib.error
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
 HISTORY_FILE = REPO_ROOT / "facebook_uploaded_history.json"
 GRAPH_API_VERSION = "v20.0"
+
+
+def run_curl(args: list[str], timeout: int = 60) -> dict:
+    cmd = ["curl", "-s", "--max-time", str(timeout)] + args
+    res = subprocess.run(cmd, capture_output=True, text=True)
+    if res.returncode != 0:
+        raise RuntimeError(f"Lệnh curl thất bại ({res.returncode}): {res.stderr.strip()}")
+    try:
+        return json.loads(res.stdout)
+    except Exception:
+        return {"raw": res.stdout.strip()}
 
 
 def load_history() -> dict:
@@ -56,22 +66,13 @@ def get_token(args_token: str | None) -> str:
 
 
 def get_page_info(token: str, page_id: str | None = None) -> tuple[str, str]:
-    """Lấy Page ID và tên Trang từ token hoặc page_id."""
     target_id = page_id or os.environ.get("FB_PAGE_ID") or "me"
     url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{target_id}?fields=id,name&access_token={token}"
-    
-    try:
-        req = urllib.request.Request(url)
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
-            return str(data.get("id")), data.get("name", "Unknown Page")
-    except urllib.error.HTTPError as e:
-        error_body = e.read().decode("utf-8")
-        print(f"❌ Lỗi khi xác thực token Facebook: {e.code} - {error_body}")
+    data = run_curl([url])
+    if "error" in data:
+        print(f"❌ Lỗi xác thực token Facebook: {data['error']}")
         sys.exit(1)
-    except Exception as e:
-        print(f"❌ Lỗi kết nối Graph API: {e}")
-        sys.exit(1)
+    return str(data.get("id")), data.get("name", "Unknown Page")
 
 
 def upload_reel(
@@ -81,7 +82,6 @@ def upload_reel(
     page_id: str,
     page_name: str
 ) -> str:
-    """Quy trình 3 bước đẩy video lên Facebook Reels."""
     file_size = video_path.stat().st_size
     print(f"🎬 Bắt đầu đăng Facebook Reel:")
     print(f"   - File: {video_path.name} ({file_size / 1024 / 1024:.2f} MB)")
@@ -89,74 +89,67 @@ def upload_reel(
 
     # BƯỚC 1: Khởi tạo phiên upload (upload_phase=start)
     start_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{page_id}/video_reels"
-    start_payload = urllib.parse.urlencode({
-        "upload_phase": "start",
-        "access_token": token
-    }).encode("utf-8")
+    res1 = run_curl([
+        "-X", "POST",
+        "-d", f"upload_phase=start&access_token={token}",
+        start_url
+    ])
 
-    try:
-        req = urllib.request.Request(start_url, data=start_payload, method="POST")
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            res_data = json.loads(resp.read().decode("utf-8"))
-            video_id = str(res_data["video_id"])
-            upload_url = res_data["upload_url"]
-            print(f"   ✅ Khởi tạo phiên upload thành công: video_id={video_id}")
-    except urllib.error.HTTPError as e:
-        print(f"❌ Bước 1 (start) thất bại: {e.code} - {e.read().decode('utf-8')}")
+    if "error" in res1:
+        print(f"❌ Bước 1 (start) thất bại: {res1['error']}")
         sys.exit(1)
+
+    video_id = str(res1.get("video_id"))
+    upload_url = res1.get("upload_url")
+    print(f"   ✅ Khởi tạo phiên upload thành công: video_id={video_id}")
 
     # BƯỚC 2: Tải dữ liệu video lên rupload.facebook.com
-    print(f"   🚀 Đang tải file nhị phân lên Meta rupload...")
-    with open(video_path, "rb") as f:
-        video_data = f.read()
-
-    upload_req = urllib.request.Request(upload_url, data=video_data, method="POST")
-    upload_req.add_header("Authorization", f"OAuth {token}")
-    upload_req.add_header("offset", "0")
-    upload_req.add_header("file_size", str(file_size))
-    upload_req.add_header("Content-Type", "application/octet-stream")
-
-    try:
-        with urllib.request.urlopen(upload_req, timeout=300) as resp:
-            raw = resp.read().decode("utf-8")
-            print(f"   ✅ Tải file lên rupload hoàn tất: {raw}")
-    except urllib.error.HTTPError as e:
-        print(f"❌ Bước 2 (upload) thất bại: {e.code} - {e.read().decode('utf-8')}")
+    print(f"   🚀 Đang tải file nhị phân ({file_size / 1024 / 1024:.2f} MB) lên Meta rupload...")
+    cmd_upload = [
+        "curl", "-s", "--max-time", "600",
+        "-X", "POST",
+        "-H", f"Authorization: OAuth {token}",
+        "-H", "offset: 0",
+        "-H", f"file_size: {file_size}",
+        "-H", "Content-Type: application/octet-stream",
+        "--data-binary", f"@{video_path}",
+        upload_url
+    ]
+    res2_raw = subprocess.run(cmd_upload, capture_output=True, text=True)
+    if res2_raw.returncode != 0:
+        print(f"❌ Bước 2 (upload) thất bại: {res2_raw.stderr}")
         sys.exit(1)
+    print(f"   ✅ Tải file lên rupload hoàn tất: {res2_raw.stdout.strip()}")
 
     # BƯỚC 3: Xuất bản Reel (upload_phase=finish)
     print(f"   📢 Đang xuất bản (publish) Reel...")
     finish_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{page_id}/video_reels"
-    finish_payload = urllib.parse.urlencode({
-        "upload_phase": "finish",
-        "video_id": video_id,
-        "video_state": "PUBLISHED",
-        "description": description,
-        "access_token": token
-    }).encode("utf-8")
+    res3 = run_curl([
+        "-X", "POST",
+        "--data-urlencode", "upload_phase=finish",
+        "--data-urlencode", f"video_id={video_id}",
+        "--data-urlencode", "video_state=PUBLISHED",
+        "--data-urlencode", f"description={description}",
+        "--data-urlencode", f"access_token={token}",
+        finish_url
+    ])
 
-    try:
-        req = urllib.request.Request(finish_url, data=finish_payload, method="POST")
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            finish_res = json.loads(resp.read().decode("utf-8"))
-            print(f"   🎉 Xuất bản thành công: {finish_res}")
-    except urllib.error.HTTPError as e:
-        print(f"❌ Bước 3 (finish) thất bại: {e.code} - {e.read().decode('utf-8')}")
+    if "error" in res3:
+        print(f"❌ Bước 3 (finish) thất bại: {res3['error']}")
         sys.exit(1)
+    print(f"   🎉 Xuất bản thành công: {res3}")
 
-    # BƯỚC 4: Kiểm tra trạng thái xử lý video (polling 3 lần)
+    # BƯỚC 4: Kiểm tra trạng thái xử lý video (polling)
     print("   ⏳ Kiểm tra trạng thái xử lý video từ Meta...")
     status_url = f"https://graph.facebook.com/{GRAPH_API_VERSION}/{video_id}?fields=status&access_token={token}"
-    for attempt in range(1, 4):
+    for attempt in range(1, 6):
         time.sleep(3)
         try:
-            req = urllib.request.Request(status_url)
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                status_res = json.loads(resp.read().decode("utf-8"))
-                video_status = status_res.get("status", {}).get("video_status")
-                print(f"      [Lần {attempt}] Trạng thái: {video_status}")
-                if video_status in ("ready", "complete"):
-                    break
+            status_res = run_curl([status_url])
+            video_status = status_res.get("status", {}).get("video_status")
+            print(f"      [Lần {attempt}] Trạng thái: {video_status}")
+            if video_status in ("ready", "complete"):
+                break
         except Exception:
             pass
 
@@ -170,7 +163,7 @@ def main():
     parser.add_argument("--file", required=True, help="Đường dẫn tới file video .mp4")
     parser.add_argument("--title", default="", help="Tiêu đề video")
     parser.add_argument("--description", default="", help="Mô tả / Caption cho Reel")
-    parser.add_argument("--description-file", help="File chứa mô tả video")
+    parser.add_argument("--description-file", help="File chứa mô tả video hoặc file JSON metadata")
     parser.add_argument("--history-key", help="Khóa định danh để lưu vào facebook_uploaded_history.json")
     parser.add_argument("--token", help="Page Access Token của Facebook")
     parser.add_argument("--page-id", help="Page ID (mặc định lấy từ /me)")
@@ -184,17 +177,30 @@ def main():
         sys.exit(1)
 
     # Đọc mô tả
-    desc_parts = []
-    if args.title:
-        desc_parts.append(args.title)
+    desc_text = args.description.strip()
+    title_text = args.title.strip()
+
     if args.description_file and Path(args.description_file).exists():
-        desc_parts.append(Path(args.description_file).read_text(encoding="utf-8").strip())
-    elif args.description:
-        desc_parts.append(args.description.strip())
+        raw_content = Path(args.description_file).read_text(encoding="utf-8").strip()
+        try:
+            meta = json.loads(raw_content)
+            if isinstance(meta, dict):
+                title_text = meta.get("title", title_text)
+                desc_text = meta.get("description", desc_text)
+            else:
+                desc_text = raw_content
+        except Exception:
+            desc_text = raw_content
+
+    desc_parts = []
+    if title_text:
+        desc_parts.append(title_text)
+    if desc_text and desc_text != title_text:
+        desc_parts.append(desc_text)
 
     final_description = "\n\n".join(desc_parts).strip()
-    if not final_description and args.title:
-        final_description = args.title
+    if not final_description and title_text:
+        final_description = title_text
 
     # Kiểm tra lịch sử
     history = load_history()
