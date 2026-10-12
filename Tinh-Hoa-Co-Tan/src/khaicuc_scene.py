@@ -108,7 +108,7 @@ class KhaiCucChapter(XiangqiLesson):
     def chrome(self, data, ci=0):
         brand = Text('TINH HOA CỜ TÀN', font=FONT, font_size=26, color=GOLD, weight=BOLD)
         brand.move_to([-6.34, 3.57, 0], aligned_edge=LEFT)
-        series = label(f'KHAI CỤC • {data["title"].split(":")[0].upper()} • CHƯƠNG {ci + 1}/{len(data["chapters"])}',
+        series = label(f'{data["title"].split(":")[0].upper()} • CHƯƠNG {ci + 1}/{len(data["chapters"])}',
                        15, MUTED, max_w=8)
         series.move_to([6.27, 3.57, 0], aligned_edge=RIGHT)
         hline = Line([-6.35, HEADER_LINE_Y, 0], [6.34, HEADER_LINE_Y, 0], color='#35465D', stroke_width=1.3)

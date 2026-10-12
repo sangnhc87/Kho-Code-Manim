@@ -119,7 +119,7 @@ def clauses(pos, move):
     if loose and not victim:
         out.append(f'đe dọa ăn {loose[0]} vì quân này chưa có ai bảo vệ')
     elif big and not victim:
-        out.append(f'gây sức ép lên {desc(big[0][1], big[0][0])} của {foe}')
+        out.append(f'gây sức ép lên {desc(big[0][1], big[0][0])}')
     if u == 'C' and dst[0] == 4 and src[0] != 4:
         rival = any(p == ('c' if side == RED else 'C') and q[0] == 4 for q, p in pos.cells.items())
         out.append('Pháo đối Pháo: hai Pháo nhìn thẳng nhau trên lộ giữa' if rival else
