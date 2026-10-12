@@ -15,10 +15,9 @@ from common.theme import CORAL, CYAN, GOLD, STROKE  # noqa: E402
 from common.visuals import token  # noqa: E402
 
 EPISODE = {'code': 'XSS278', 'answer': '7/27'}
-PROBLEM = ['$4$ bạn, mỗi lần chuyền bóng ngẫu nhiên',
-           'cho $1$ trong $3$ bạn kia. A cầm bóng đầu',
-           'tiên. Xác suất sau $4$ lần chuyền bóng về',
-           'A?']
+PROBLEM = ['$4$ bạn chuyền bóng, mỗi lần ngẫu nhiên',
+           'cho $1$ trong $3$ bạn kia. A cầm bóng đầu.',
+           'Xác suất sau $4$ lần bóng về lại A?']
 OPTIONS = ['1/4', '7/27', '2/9']
 CORRECT = 1
 ANSWER_VALUE = 7 / 27
@@ -68,7 +67,7 @@ class XSS278(ShortScene):
 
     def hook_visual(self, t0):
         self.board_top = -1.25
-        pos = [[1.6 * math.cos(math.pi / 2 + k * math.pi / 2), 1.5 + 1.4 * math.sin(math.pi / 2 + k * math.pi / 2), 0] for k in range(4)]
+        pos = [[1.6 * math.cos(math.pi / 2 + k * math.pi / 2), 1.05 + 1.4 * math.sin(math.pi / 2 + k * math.pi / 2), 0] for k in range(4)]
         self.kids = VGroup(*[token(n, CORAL if n == "A" else CYAN, .4).move_to(p) for n, p in zip('ABCD', pos)])
         self.links = VGroup(*[Line(pos[i], pos[j], color=STROKE, stroke_width=2) for i in range(4) for j in range(i + 1, 4)])
         self.wait_until(.6, t0)

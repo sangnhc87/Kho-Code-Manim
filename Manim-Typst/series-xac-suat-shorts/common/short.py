@@ -39,10 +39,10 @@ CAPTION_Y = -4.22
 LEVEL_NAMES = {'L1': 'MỞ ĐẦU', 'L2': 'CƠ BẢN', 'L3': 'THÔNG HIỂU', 'L4': 'VẬN DỤNG', 'L5': 'KHÓ', 'L6': 'RẤT KHÓ',
                'L7': 'SƠ ĐỒ CÂY', 'L8': 'CÓ ĐIỀU KIỆN', 'L9': 'TOÀN PHẦN – BAYES', 'L10': 'CHẶN ĐIỂM 8-9-10',
                'L11': 'HỌC SINH GIỎI', 'L12': 'BỐC BI ĐA HỘP', 'L13': 'CHUYỂN BI', 'L14': 'ĐA ĐIỀU KIỆN',
-               'L15': 'THAM SỐ XUÔI – NGƯỢC', 'L16': 'CÂY HAY – LẠ', 'L17': 'ẾCH NHẢY', 'L18': 'QUY HOẠCH ĐỘNG',
-               'L19': 'HÌNH HỌC CÓ ĐIỀU KIỆN', 'L20': 'BI VẬN DỤNG CAO', 'L21': 'XẾP CHỖ – TOA TÀU',
-               'L22': 'ĐA HÀNH ĐỘNG', 'L23': 'ĐIỀU KIỆN DỪNG', 'L24': 'CÂY VẬN DỤNG CAO', 'L25': 'HAY – LẠ – ĐỘC ĐÁO',
-               'L26': 'MẸO ĐẾM – ĐỐI XỨNG'}
+               'L15': 'THAM SỐ', 'L16': 'CÂY HAY – LẠ', 'L17': 'ẾCH NHẢY', 'L18': 'QUY HOẠCH ĐỘNG',
+               'L19': 'HÌNH HỌC', 'L20': 'BI VDC', 'L21': 'XẾP CHỖ',
+               'L22': 'ĐA HÀNH ĐỘNG', 'L23': 'ĐIỀU KIỆN DỪNG', 'L24': 'CÂY VDC', 'L25': 'ĐỘC ĐÁO',
+               'L26': 'MẸO ĐẾM'}
 
 
 @dataclass(frozen=True)
@@ -530,6 +530,8 @@ class TreeMixin:
             d = depth(branches)
             shift = top[1] - (self.problem_bottom - .62)
             top, dy = (top[0], top[1] - shift), dy - shift / max(d, 1)
+            if dy < 1.65:
+                root_label = ''  # a squeezed tree has no room for a caption above its root
         _, levels = tree(root, top=top, dy=dy, width=width)
         leaves = []
 
