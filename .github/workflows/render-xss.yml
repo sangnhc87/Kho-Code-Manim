@@ -142,7 +142,7 @@ jobs:
 
       - name: Narration and runtime plan (≤ 3 minutes)
         env:
-          XSS_TTS_ENGINE: vieneu   # NamMinh voice cloned offline; Edge clips from release xss-voice are still reused
+          XSS_TTS_ENGINE: vieneu   # try NamMinh (Edge) first; if refused, VieNeu preset "Thiện Minh" (user choice); release xss-voice clips are reused
         run: python scripts/prepare_voice.py --short "$SH" --voice "$VOICE"
 
       - name: Render
