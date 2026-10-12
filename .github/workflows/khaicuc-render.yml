@@ -1,0 +1,148 @@
+name: Khai Cuc - dung video dai
+# Dựng một tập khai cục theo chương (song song) -> ghép -> (tuỳ chọn) đăng YouTube.
+# Giọng đọc VieNeu "Thiện Minh" ép dùng cho mọi chương để không lẫn hai giọng.
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: 'Tập khai cục, ví dụ kc-0001 (khaicuc/episodes/)'
+        type: string
+        default: kc-0001
+      quality:
+        description: 'preview = 480p xem thử; full = 1080p'
+        type: choice
+        options: [preview, full]
+        default: preview
+      publish:
+        description: 'Đăng YouTube sau khi ghép (chỉ khi quality = full)'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+env:
+  EPISODE: ${{ inputs.episode }}
+  QUALITY: ${{ inputs.quality }}
+  COTAN_TTS_ENGINE: vieneu
+  COTAN_TTS_FALLBACK: vieneu
+jobs:
+  plan:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: Tinh-Hoa-Co-Tan
+    outputs:
+      matrix: ${{ steps.m.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Kiểm tra kịch bản (mọi nước đi hợp lệ)
+        run: python scripts/produce_khaicuc.py --episode "$EPISODE" --check
+      - id: m
+        run: echo "matrix=$(python scripts/produce_khaicuc.py --episode "$EPISODE" --matrix)" >> "$GITHUB_OUTPUT"
+  chapter:
+    needs: plan
+    runs-on: ubuntu-24.04
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: ${{ fromJson(needs.plan.outputs.matrix) }}
+    defaults:
+      run:
+        working-directory: Tinh-Hoa-Co-Tan
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: Tinh-Hoa-Co-Tan/requirements.txt
+      - name: Cài đồ hoạ / âm thanh / phông
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config fonts-noto-core fonts-noto-cjk
+          python -m pip install -r requirements.txt
+          python -m pip install vieneu "onnxruntime==1.22.1"
+      - name: Cache mô hình VieNeu
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: vieneu-hf-v1
+      - uses: typst-community/setup-typst@v5
+      - name: Render chương ${{ matrix.chapter }}
+        run: python scripts/produce_khaicuc.py --episode "$EPISODE" --chapter "${{ matrix.chapter }}" --quality "$QUALITY" --voice vieneu
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}-c${{ matrix.chapter }}
+          path: |
+            Tinh-Hoa-Co-Tan/output/${{ inputs.episode }}/${{ inputs.episode }}_c${{ matrix.chapter }}.mp4
+            Tinh-Hoa-Co-Tan/output/${{ inputs.episode }}/${{ inputs.episode }}_c${{ matrix.chapter }}.json
+          retention-days: 14
+  join:
+    needs: chapter
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: Tinh-Hoa-Co-Tan
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ${{ inputs.episode }}-c*
+          path: Tinh-Hoa-Co-Tan/output/${{ inputs.episode }}
+          merge-multiple: true
+      - name: Ghép chương, tạo mô tả có mục lục
+        run: |
+          sudo apt-get install -y ffmpeg >/dev/null 2>&1 || true
+          python scripts/produce_khaicuc.py --episode "$EPISODE" --concat "output/$EPISODE"
+          cat "output/$EPISODE/yt_desc.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}-final
+          path: |
+            Tinh-Hoa-Co-Tan/output/${{ inputs.episode }}/${{ inputs.episode }}.mp4
+            Tinh-Hoa-Co-Tan/output/${{ inputs.episode }}/yt_*.txt
+          retention-days: 14
+      - name: Đăng YouTube
+        if: ${{ inputs.publish && inputs.quality == 'full' }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: |
+          python -m pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
+          D="output/$EPISODE"
+          python ../scripts/upload_to_youtube.py \
+            --file "$D/$EPISODE.mp4" \
+            --title "$(cat $D/yt_title.txt)" \
+            --description-file "$D/yt_desc.txt" \
+            --tags "$(cat $D/yt_tags.txt)" \
+            --history-key "khaicuc_$EPISODE" \
+            --category-id 27 \
+            --privacy public
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          cp ../youtube_uploaded_history.json /tmp/mine.json
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python - <<'PY'
+          import json, os
+          ep = os.environ['EPISODE']
+          mine = json.load(open('/tmp/mine.json', encoding='utf-8'))
+          path = '../youtube_uploaded_history.json'
+          cur = json.load(open(path, encoding='utf-8'))
+          k = f'khaicuc_{ep}'
+          if k in mine:
+              cur[k] = mine[k]
+          open(path, 'w', encoding='utf-8').write(json.dumps(cur, ensure_ascii=False, indent=2) + '\n')
+          PY
+            git add ../youtube_uploaded_history.json
+            git commit -q -m "docs(khaicuc): youtube history for $EPISODE" || break
+            git push -q origin HEAD:main && break
+            sleep $((i*4))
+          done

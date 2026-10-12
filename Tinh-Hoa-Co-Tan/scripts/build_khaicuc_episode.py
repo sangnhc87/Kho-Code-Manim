@@ -158,7 +158,9 @@ def main():
                                             f'{sum(len(s["nodes"]) for s in segs)} nước đi được phân tích']},
                       'steps': [{'say': theory['hook']},
                                 {'say': f'Trong video này ta phân tích {name} từng nước một, có điểm đánh giá của máy Pikafish, '
-                                        'ý đồ của mỗi bên và khẩu quyết dễ nhớ ở cuối bài.'}]})
+                                        'ý đồ của mỗi bên và khẩu quyết dễ nhớ ở cuối bài.'},
+                                {'say': 'Một lưu ý trước khi bắt đầu. Vì Đỏ đi trước, máy thường cho Đỏ hơn khoảng ba đến năm phần mười điểm '
+                                        'ngay từ đầu. Đó là lợi thế của người đi trước, không có nghĩa là Đen đã đi sai.'}]})
         for i, idea in enumerate(theory['ideas'], 1):
             beats.append({'kind': 'theory', 'label': f'Ý TƯỞNG {i}', 'headline': idea['title'], 'fen': start.fen(),
                           'panel': {'bullets': idea['bullets']}, 'steps': [{'say': idea['say']}]})
