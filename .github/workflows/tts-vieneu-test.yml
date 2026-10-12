@@ -18,7 +18,7 @@ jobs:
       - name: Install
         run: |
           python -m pip install --upgrade pip
-          python -m pip install vieneu "onnxruntime==1.22.1" gTTS edge-tts
+          python -m pip install vieneu "onnxruntime==1.22.1" gTTS edge-tts soundfile mutagen
       - name: Same hook, many voices
         run: |
           mkdir -p /tmp/out
@@ -29,9 +29,16 @@ jobs:
           words = len(TEXT.split())
 
           def report(name, path):
-              d = float(subprocess.check_output(['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
-                                                 '-of', 'csv=p=0', path], text=True))
-              print(f'{name:30s} {d:6.2f}s  {words / d:4.2f} words/s', flush=True)
+              try:
+                  if path.endswith('.wav'):
+                      import soundfile
+                      d = soundfile.info(path).duration
+                  else:
+                      from mutagen.mp3 import MP3
+                      d = MP3(path).info.length
+                  print(f'{name:30s} {d:6.2f}s  {words / d:4.2f} words/s', flush=True)
+              except Exception as e:
+                  print(name, 'saved, duration n/a', e)
 
           try:
               import edge_tts
@@ -67,6 +74,7 @@ jobs:
               print('gtts FAILED', e)
           PY
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: voice-samples
           path: /tmp/out/
