@@ -15,10 +15,12 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from xq.board import Position  # noqa: E402
 from xq.notation import vn_move  # noqa: E402
-from xq.opening_commentary import SIDE, explain, grade, red_cp, sentence  # noqa: E402
+from xq.opening_commentary import (SIDE, exchange_words, explain, fmt, grade, rank_choices, red_cp,  # noqa: E402
+                                   sentence, spoken_cp)
 
 WPS = 3.9            # từ/giây của giọng đọc (Thiện Minh ~4,2)
 STEP_PAD = 1.5       # giây hoạt ảnh mỗi nước
+GAP_MOVE, GAP_TALK = 0.9, 1.3   # nhịp nghỉ sau mỗi câu (cảnh Manim cộng thêm đúng số này)
 CHAPTER_SECONDS = 420
 SWING = 90           # điểm lệch (centipawn) coi là bước ngoặt
 
@@ -35,7 +37,7 @@ def segments(tree, start):
             for alt in kids[1:]:
                 alts.append((len(nodes), alt, p, kids[0]))
             c = kids[0]
-            nodes.append({'m': c['m'], 'ply': c['ply'], 'pos': p})
+            nodes.append({'m': c['m'], 'ply': c['ply'], 'pos': p, 'kids': [k['m'] for k in kids]})
             p = p.play(c['m'])
             cur = c
         out.append({'prefix': list(prefix), 'branch': branch_from, 'start': pos, 'nodes': nodes})
@@ -44,7 +46,7 @@ def segments(tree, start):
             pref = prefix + [(n['ply'], n['pos'], n['m']) for n in nodes[:idx]]
             # alt là nút con thay thế: đoạn mới bắt đầu bằng chính nó
             wrapper = {'c': [alt]}
-            chain(wrapper, bpos, pref, {'main': main_kid['m'], 'pos': bpos})
+            chain(wrapper, bpos, pref, {'main': main_kid['m'], 'pos': bpos, 'kids': nodes[idx]['kids']})
 
     chain(tree, start, [], None)
     return out
@@ -55,7 +57,8 @@ def words(text):
 
 
 def est(step):
-    return words(step['say']) / WPS + (STEP_PAD if step.get('move') else 0.4) + step.get('countdown', 0)
+    return (words(step['say']) / WPS + (STEP_PAD + GAP_MOVE if step.get('move') else 0.4 + GAP_TALK)
+            + step.get('countdown', 0))
 
 
 def hist(prefix):
@@ -66,46 +69,91 @@ def hist(prefix):
     return f'nước {(ply + 1) // 2}, {SIDE[pos.turn]} đi {vn_move(pos, m)}'
 
 
+def ranking_rows(pos, kids, ev):
+    rows = rank_choices(pos, kids, ev)
+    if not rows:
+        return None, None
+    panel = [{'vn': vn, 'wdl': 'D', 'good': i == 0, 'best': i == 0, 'result': f'máy {fmt(cp)}'}
+             for i, (vn, cp) in enumerate(rows)]
+    return rows, panel
+
+
+def verdict_text(rows, turn):
+    """Câu nhận định về thứ tự các lựa chọn, chỉ dựa trên chênh lệch điểm máy đủ lớn (>= 0,25)."""
+    gaps = [abs(rows[i][1] - rows[0][1]) for i in range(1, len(rows))]
+    order = '; '.join(f'{vn}, {spoken_cp(cp)}' for vn, cp in rows[:3]) + ('; các hướng còn lại kém hơn' if len(rows) > 3 else '')
+    if gaps and min(gaps) >= 25:
+        lead = f'Máy xếp {rows[0][0]} lên đầu, hơn hẳn các hướng còn lại'
+    elif gaps and max(gaps) < 25:
+        lead = 'Máy đánh giá các hướng này gần như ngang nhau, chọn hướng nào là tùy phong cách'
+    else:
+        lead = f'Máy xếp {rows[0][0]} lên đầu, nhưng khoảng cách với hướng sau không lớn'
+    return f'{lead}. Theo thứ tự: {order}.'
+
+
 def line_beat(seg, idx, ev, quiz_left):
     nodes = seg['nodes']
     first = nodes[0]
     pos0 = first['pos']
-    steps, last_cp = [], None
+    steps = []
     if seg['branch'] is None:
-        label, head = 'BIẾN CHÍNH', 'Đường đi chuẩn của Thuận Pháo' if idx == 0 else 'Biến chính'
-        intro = 'Ta bắt đầu với biến chính, từng nước một.'
+        label, head = 'BIẾN CHÍNH', 'Đường đi chuẩn' if idx == 0 else 'Biến chính'
+        steps.append({'say': 'Ta đi theo biến chính trước, từng nước một.'})
     else:
+        kids = seg['branch']['kids']
         main_vn = vn_move(seg['branch']['pos'], seg['branch']['main'])
         alt_vn = vn_move(pos0, first['m'])
-        label = f'BIẾN PHỤ {idx}'
-        head = f'Thay vì {main_vn}: {alt_vn}'
-        where = hist(seg['prefix'])
-        intro = (f'Quay lại thế sau {where}. Ở đây biến chính đi {main_vn}, '
-                 f'nhưng {SIDE[pos0.turn]} còn một lựa chọn khác là {alt_vn}.')
-    steps.append({'say': intro})
+        label, head = f'BIẾN PHỤ {idx}', f'Thay vì {main_vn}: {alt_vn}'
+        rows, panel_rows = ranking_rows(seg['branch']['pos'], kids, ev)
+        intro = (f'Quay lại thế sau {hist(seg["prefix"])}. Biến chính đi {main_vn}, '
+                 f'còn hướng ta xét bây giờ là {alt_vn}.')
+        step = {'say': intro}
+        if rows:
+            step['say'] += ' ' + verdict_text(rows, seg['branch']['pos'].turn)
+            step['rows'] = panel_rows
+        steps.append(step)
     pos = pos0
     prev_cp = red_cp(ev.get(pos.fen())) if ev else None
+    moves = []
     for k, n in enumerate(nodes):
+        if k > 0 and len(n['kids']) > 1:
+            rows, panel_rows = ranking_rows(pos, n['kids'], ev)
+            names = ', '.join(vn_move(pos, m) for m in n['kids'])
+            if rows and quiz_left[0] > 0 and n['ply'] >= 8 and len(n['kids']) >= 3 and n['ply'] - quiz_left[1] >= 14 and seg['branch'] is None:
+                quiz_left[0] -= 1
+                quiz_left[1] = n['ply']
+                steps.append({'say': f'Dừng lại một chút. Ở thế này, {SIDE[pos.turn]} có {len(n["kids"])} hướng trong tư liệu: '
+                                     f'{names}. Bạn sẽ chọn nước nào?', 'countdown': 5})
+                steps.append({'say': verdict_text(rows, pos.turn), 'rows': panel_rows})
+            elif rows:
+                steps.append({'say': f'Đến đây có {len(n["kids"])} hướng: {names}. ' + verdict_text(rows, pos.turn),
+                              'rows': panel_rows})
         vn = vn_move(pos, n['m'])
         parts, notes = explain(pos, n['m'], ev)
-        s = sentence(parts)
         new = pos.play(n['m'])
         cp = red_cp(ev.get(new.fen())) if ev else None
         extra = []
-        if cp is not None and prev_cp is not None and abs(cp - prev_cp) >= SWING and abs(prev_cp) < 9000:
-            extra.append(f'Đây là bước ngoặt: {grade(cp)}.')
-        if notes and (k < 2 or extra or 'tốt hơn khoảng' in notes[0]):
-            extra.append(notes[0] + '.')
-        step = {'say': f'{vn}. {s} {" ".join(extra)}'.strip(), 'move': n['m'], 'ply': n['ply']}
+        if cp is not None and prev_cp is not None and abs(cp - prev_cp) >= SWING and abs(prev_cp) < 9000 and abs(cp) < 9000:
+            extra.append(f'Thế cờ đổi sắc thái: từ {grade(prev_cp)} sang {grade(cp)}.')
+        extra += [x + '.' for x in notes[:1]]
+        say = f'{vn}.'
+        if parts:
+            say += ' ' + sentence(parts)
+        step = {'say': f'{say} {" ".join(extra)}'.strip(), 'move': n['m'], 'ply': n['ply']}
         if cp is not None:
-            step['status'] = f'Máy: {grade(cp)} ({cp / 100:+.2f})' if abs(cp) < 9000 else f'Máy: {grade(cp)}'
-        if quiz_left[0] > 0 and k == 0 and seg['branch'] is None and False:
-            pass
+            step['status'] = f'Máy: {grade(cp)} ({fmt(cp)})' if abs(cp) < 9000 else f'Máy: {grade(cp)}'
         steps.append(step)
+        moves.append(n['m'])
         prev_cp, pos = cp, new
     end = red_cp(ev.get(pos.fen())) if ev else None
+    swaps = exchange_words(pos0, moves)
+    tail = []
+    if swaps:
+        tail.append(f'Trong biến này có {len(swaps)} lần ăn quân: ' + '; '.join(swaps[:4]) + ('...' if len(swaps) > 4 else ''))
     if end is not None:
-        steps.append({'say': f'Kết thúc biến này: {grade(end)}.'})
+        tail.append(f'Kết thúc biến, {grade(end)}, máy chấm {fmt(end)}')
+    if tail:
+        steps.append({'say': '. '.join(tail) + '.'})
     return {'kind': 'line', 'label': label, 'headline': head, 'fen': pos0.fen(),
             'start_no': (first['ply'] + 1) // 2, 'start_side': pos0.turn, 'steps': steps}
 
@@ -128,7 +176,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--opening', required=True)
     ap.add_argument('--part', type=int, default=1)
-    ap.add_argument('--budget', type=int, default=300, help='số nước đi tối đa mỗi tập')
+    ap.add_argument('--budget', type=int, default=230, help='số nước đi tối đa mỗi tập')
     ap.add_argument('--number', type=int, default=1)
     a = ap.parse_args()
     data = json.loads((ROOT / 'khaicuc' / 'openings' / f'{a.opening}.json').read_text(encoding='utf-8'))
@@ -157,14 +205,11 @@ def main():
                       'panel': {'bullets': [theory['tagline'], f'{len(segs)} đường biến trong tư liệu',
                                             f'{sum(len(s["nodes"]) for s in segs)} nước đi được phân tích']},
                       'steps': [{'say': theory['hook']},
-                                {'say': f'Trong video này ta phân tích {name} từng nước một, có điểm đánh giá của máy Pikafish, '
-                                        'ý đồ của mỗi bên và khẩu quyết dễ nhớ ở cuối bài.'},
-                                {'say': 'Một lưu ý trước khi bắt đầu. Vì Đỏ đi trước, máy thường cho Đỏ hơn khoảng ba đến năm phần mười điểm '
-                                        'ngay từ đầu. Đó là lợi thế của người đi trước, không có nghĩa là Đen đã đi sai.'}]})
+                                {'say': 'Mỗi nước đi đều có điểm đánh giá của máy Pikafish, ý đồ hai bên, và cuối bài là khẩu quyết dễ nhớ.'}]})
         for i, idea in enumerate(theory['ideas'], 1):
             beats.append({'kind': 'theory', 'label': f'Ý TƯỞNG {i}', 'headline': idea['title'], 'fen': start.fen(),
                           'panel': {'bullets': idea['bullets']}, 'steps': [{'say': idea['say']}]})
-    quiz = [3]
+    quiz = [3, -99]
     for j, s in enumerate(mine):
         beats.append(line_beat(s, base_idx + j, ev, quiz))
     beats.append({'kind': 'mnemonic', 'label': 'KHẨU QUYẾT', 'headline': name, 'panel': {'bullets': theory['mnemonic']},

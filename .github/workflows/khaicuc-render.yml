@@ -61,8 +61,13 @@ jobs:
           cache-dependency-path: Tinh-Hoa-Co-Tan/requirements.txt
       - name: Cài đồ hoạ / âm thanh / phông
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg libcairo2-dev libpango1.0-dev pkg-config fonts-noto-core fonts-noto-cjk
+          # Máy chủ apt đôi lúc treo hàng chục phút: giới hạn thời gian và thử lại.
+          for i in 1 2 3; do
+            timeout 300 sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=20 update -qq \
+              && timeout 600 sudo apt-get -o Acquire::Retries=2 -o Acquire::http::Timeout=20 install -y \
+                   ffmpeg libcairo2-dev libpango1.0-dev pkg-config fonts-noto-core fonts-noto-cjk && break
+            echo "apt lần $i thất bại, thử lại"; sleep 10
+          done
           python -m pip install -r requirements.txt
           python -m pip install vieneu "onnxruntime==1.22.1"
       - name: Cache mô hình VieNeu

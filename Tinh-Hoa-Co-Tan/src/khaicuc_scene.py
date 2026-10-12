@@ -19,6 +19,9 @@ from src.scene import (BG, CYAN, FONT, GOLD, GREEN, LIGHT, MUTED, ORANGE, PANEL_
 from xq.notation import vn_move  # noqa: E402
 
 
+GAP_MOVE, GAP_TALK = 0.9, 1.3   # nghỉ sau mỗi câu cho người xem kịp nhìn (khớp build_khaicuc_episode)
+
+
 class KMoveList(MoveList):
     """Biên bản nước đi bắt đầu từ số hiệp và bên đi bất kỳ (đoạn biến phụ)."""
 
@@ -80,6 +83,8 @@ class KhaiCucChapter(XiangqiLesson):
                 self.add_sound(clip['audio'])
                 if step.get('status'):
                     panel.set_status(step['status'], GREEN)
+                if step.get('rows'):
+                    panel.set_body(Panel.candidates(step['rows']))
                 if step.get('move'):
                     for b in badges:
                         self.remove(b)
@@ -100,6 +105,9 @@ class KhaiCucChapter(XiangqiLesson):
                     panel.set_caption(page)
                     elapsed += len(page)
                 self.wait(max(.15, clip['seconds'] + .3 - (self.time - start)))
+                self.wait(GAP_MOVE if step.get('move') else GAP_TALK)
+                if step.get('rows') and movelist is not None:
+                    panel.set_body(movelist.render(7))
                 if step.get('countdown'):
                     self.countdown(step['countdown'])
         if ci == len(data['chapters']) - 1:

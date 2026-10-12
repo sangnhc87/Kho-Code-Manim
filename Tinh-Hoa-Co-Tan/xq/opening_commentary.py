@@ -137,24 +137,11 @@ def clauses(pos, move):
         out.append(f'xuất Xe, chiếm lộ {n}' + (', lộ này thông thẳng tới đáy đối phương' if block is None else
                                                 f', phía trước còn {desc(block, (dst[0], 0))}' if False else ''))
     elif u == 'R' and ((dst[1] > 4) if side == RED else (dst[1] < 5)) and ((src[1] <= 4) if side == RED else (src[1] >= 5)):
-        out.append('Xe vượt sông, ép vào thế trận đối phương')
-    elif u == 'R' and src[0] != dst[0]:
-        out.append(f'Xe chuyển sang lộ {file_no(dst[0], side)}')
-    elif u == 'P':
-        crossing = (dst[1] > 4 and src[1] <= 4) if side == RED else (dst[1] < 5 and src[1] >= 5)
-        out.append(f'{name(piece)} qua sông, tăng sức công kích' if crossing else f'tiến {name(piece)} mở đường cho Mã và Xe')
-    elif u in 'AB':
-        out.append('củng cố phòng ngự quanh Tướng')
-    if not out:
-        fwd = (dst[1] - src[1]) * (1 if side == RED else -1)
-        if u in 'CRK' and src[0] == dst[0]:
-            out.append(f'{name(piece)} {"tiến lên" if fwd > 0 else "lùi về"} để {"áp sát đối phương" if fwd > 0 else "giữ vị trí phòng thủ"}')
-        elif u in 'CR':
-            out.append(f'{name(piece)} sang lộ {file_no(dst[0], side)} để đổi hướng tác chiến')
-        elif u == 'N':
-            guards = [desc(p, q) for q, p in defended_friends(new, dst)][:2]
-            out.append(f'Mã {"tiến" if fwd > 0 else "lùi"} sang lộ {file_no(dst[0], side)}' +
-                       (f', bảo vệ {" và ".join(guards)}' if guards else ', tìm vị trí tốt hơn'))
+        out.append('Xe qua hà, đặt áp lực thẳng vào thế trận đối phương')
+    elif u == 'R' and dst[1] == (4 if side == RED else 5) and src[1] != dst[1]:
+        out.append('Xe tuần hà, canh giữ bờ sông và sẵn sàng sang cánh')
+    elif u == 'P' and ((dst[1] > 4 and src[1] <= 4) if side == RED else (dst[1] < 5 and src[1] >= 5)):
+        out.append(f'{name(piece)} qua sông, mở thêm hướng tấn công')
     return out
 
 
@@ -170,13 +157,10 @@ def explain(pos, move, ev=None, rng=None):
             sign = 1 if pos.turn == RED else -1
             loss = (b - a) * sign
             best = before['lines'][0]['pv'][0] if before['lines'][0].get('pv') else None
-            if best == move:
-                notes.append('Đây cũng là nước máy chọn đầu tiên')
-            elif best and loss >= 60:
-                notes.append(f'Máy đánh giá {vn_move(pos, best)} tốt hơn khoảng {int(loss)} điểm, '
-                             f'nhưng biến này vẫn thuộc lý thuyết khai cục')
-            elif best and loss < 25:
-                notes.append(f'Máy cho điểm gần ngang nước mạnh nhất {vn_move(pos, best)}')
+            if best and best != move and loss >= 150:
+                gap = str(round(loss / 100, 1)).replace('.', ',')
+                notes.append(f'Lưu ý, máy cho rằng {vn_move(pos, best)} mạnh hơn khoảng {gap} điểm, '
+                             f'nên biến này còn chỗ để cải tiến')
     return parts, notes
 
 
@@ -187,3 +171,40 @@ def sentence(parts):
     if len(parts) > 1:
         s += ', ' + ', '.join(parts[1:3])
     return s + '.'
+
+
+def rank_choices(pos, moves, ev):
+    """Xếp các nước moves của bên đang đi theo điểm máy: [(vn, cp_đỏ)] từ tốt nhất; None nếu thiếu dữ liệu."""
+    if not ev:
+        return None
+    rows = []
+    for m in moves:
+        cp = red_cp(ev.get(pos.play(m).fen()))
+        if cp is None:
+            return None
+        rows.append((vn_move(pos, m), cp))
+    rows.sort(key=lambda r: -r[1] if pos.turn == RED else r[1])
+    return rows
+
+
+def fmt(cp):
+    return f'{cp / 100:+.2f}'.replace('.', ',')
+
+
+def exchange_words(pos, moves):
+    """Các lần ăn quân trong chuỗi nước: ['Xe Đỏ ăn Pháo Đen', ...] (chỉ hình học, không đoán)."""
+    out = []
+    for m in moves:
+        victim = pos.cells.get(parse_sq(m[2:]))
+        if victim:
+            p = pos.cells[parse_sq(m[:2])]
+            out.append(f'{name(p)} {SIDE[side_of(p)]} ăn {name(victim)} {SIDE[side_of(victim)]}')
+        pos = pos.play(m)
+    return out
+
+
+def spoken_cp(cp):
+    """Đọc điểm máy thành lời: 'Đỏ hơn 0,44' / 'Đen hơn 0,12' / 'cân bằng'."""
+    if abs(cp) < 5:
+        return 'cân bằng'
+    return f'{"Đỏ" if cp > 0 else "Đen"} hơn {abs(cp) / 100:.2f}'.replace('.', ',')

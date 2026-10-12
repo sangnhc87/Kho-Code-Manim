@@ -3,27 +3,43 @@
   "name": "Thuận Pháo",
   "series": "Khai cục từ A đến Z",
   "tagline": "Hai Pháo đối đầu trên lộ giữa",
-  "hook": "Chỉ hai nước đi đầu tiên, cả hai bên đã đẩy Pháo vào lộ giữa và nhìn thẳng vào nhau. Đây là Thuận Pháo, một khai cục cổ điển mà ai học cờ tướng cũng phải gặp.",
+  "hook": "Hai nước đi đầu tiên, hai khẩu Pháo đã nhìn thẳng vào nhau trên lộ giữa. Từ đây, chỉ cần chậm một nhịp ra quân là mất tiên. Hôm nay ta mổ xẻ Thuận Pháo, một khai cục cổ điển, từng nước một.",
   "ideas": [
     {
-      "title": "Vì sao gọi là Thuận Pháo?",
-      "say": "Đỏ mở bằng Pháo hai bình năm, đưa Pháo vào lộ giữa. Nếu Đen đáp lại bằng Pháo tám bình năm, hai Pháo cùng chiếm lộ giữa và đối đầu trực diện, ta gọi là Thuận Pháo. Còn nếu Đen đáp bằng Pháo hai bình năm, Pháo hai bên đi ngược chiều nhau, đó là Nghịch Pháo, một chuyên đề riêng.",
-      "bullets": ["1. Pháo 2 bình 5", "Đen: Pháo 8 bình 5", "Hai Pháo đối đầu lộ giữa"]
+      "title": "Thuận Pháo là gì?",
+      "say": "Đỏ mở bằng Pháo hai bình năm. Nếu Đen đáp Pháo tám bình năm, hai Pháo cùng chiếm lộ giữa và đối đầu trực diện, đó là Thuận Pháo. Còn nếu Đen đáp Pháo hai bình năm, hai Pháo ngược chiều nhau, đó là Nghịch Pháo, một chuyên đề riêng.",
+      "bullets": [
+        "Đỏ: Pháo 2 bình 5",
+        "Đen: Pháo 8 bình 5",
+        "Hai Pháo đối đầu lộ giữa"
+      ]
     },
     {
-      "title": "Điểm yếu của lộ giữa",
-      "say": "Tốt đầu ở lộ giữa là điểm yếu của cả hai bên lúc mới khai cuộc, vì chưa có quân nào bảo vệ. Vì thế cả hai đều phải nhanh chóng đưa Mã ra để che chắn cho Tốt đầu. Hai nước Mã tiến ba và Mã tiến bảy gần như là bắt buộc.",
-      "bullets": ["Tốt đầu chưa có quân bảo vệ", "Mã ra quân để che chắn", "Ai chậm tay sẽ bị gây sức ép"]
+      "title": "Việc đầu tiên: giữ Tốt đầu",
+      "say": "Mỗi Pháo mượn Tốt đầu của chính mình làm ngòi, để nhắm vào Tốt đầu của đối phương. Vì vậy cả hai bên phải đưa Mã ra trước để canh giữ Tốt đầu. Máy xác nhận điều này: ở nước thứ ba, Mã hai tiến ba hơn các lựa chọn khác khoảng hai phần mười điểm.",
+      "bullets": [
+        "Pháo nhắm Tốt đầu đối phương",
+        "Mã ra trước để canh giữ",
+        "Nước 3: Mã 2 tiến 3 hơn ~0,2"
+      ]
     },
     {
       "title": "Cuộc đua Xe",
-      "say": "Sau khi Mã ra, câu hỏi lớn là Xe. Đỏ đưa Xe một bình hai, đây là hướng Xe trực. Đen có thể ra Xe chín tiến một, tạo thế Xe hoành, hoặc chọn những cách ra quân khác. Bên nào đưa Xe vào lộ quan trọng sớm hơn thường nắm quyền chủ động.",
-      "bullets": ["Đỏ: Xe 1 bình 2 (Xe trực)", "Đen: Xe 9 tiến 1 (Xe hoành)", "Ai chiếm lộ trước nắm tiên"]
+      "say": "Sau Mã là Xe. Đỏ thường chọn Xe một bình hai, đưa Xe ra lộ hai, gọi là Xe trực. Đen hay đáp bằng Xe chín tiến một, gọi là Xe hoành. Xe nào chiếm được lộ quan trọng trước sẽ cầm tiên.",
+      "bullets": [
+        "Đỏ: Xe 1 bình 2 (Xe trực)",
+        "Đen: Xe 9 tiến 1 (Xe hoành)",
+        "Chiếm lộ trước, cầm tiên"
+      ]
     },
     {
-      "title": "Đổi quân hay giữ căng?",
-      "say": "Trong Thuận Pháo, đổi Pháo, đổi Xe hay đổi Mã đều xuất hiện liên tục. Mỗi lần đổi quân thay đổi hoàn toàn cấu trúc thế trận, nên hãy luôn tự hỏi trước khi đổi: sau khi đổi, quân nào của mình còn cầm tiên và quân nào của đối phương bị lộ điểm yếu?",
-      "bullets": ["Đổi quân đổi cấu trúc", "Trước khi đổi: ai còn tiên?", "Chú ý quân bị lộ sau khi đổi"]
+      "title": "Lợi thế đi trước là bình thường",
+      "say": "Một lưu ý để xem điểm máy cho đúng. Vì Đỏ đi trước, máy gần như luôn cho Đỏ hơn khoảng hai đến sáu phần mười điểm ngay từ khai cuộc. Đó là lợi thế của người đi trước, không có nghĩa Đen đã đi sai.",
+      "bullets": [
+        "Đỏ đi trước: +0,2 đến +0,6 là bình thường",
+        "Chỉ chênh lớn mới đáng lo",
+        "Điểm máy là tham khảo"
+      ]
     }
   ],
   "mnemonic": [
@@ -32,5 +48,5 @@
     "Xe ra cho sớm, lộ thông thoáng,",
     "Đổi quân tính kỹ, kẻo sa chân."
   ],
-  "closing": "Thuận Pháo là bài học nền tảng về nhịp độ: ra quân nhanh, chiếm lộ sớm và tính trước mỗi lần đổi quân."
+  "closing": "Ghi nhớ ba điều: Mã ra trước để giữ Tốt đầu, Xe chiếm lộ sớm, và mỗi lần đổi quân phải tính xem ai còn cầm tiên."
 }
