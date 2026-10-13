@@ -1,0 +1,280 @@
+{
+ "id": "ep-0032",
+ "number": 32,
+ "kind": "game",
+ "topic": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Thực chiến danh thủ",
+ "title": "Thực chiến: Hồ Vinh Hoa – Lữ Khâm (1984): Nước duy nhất của danh thủ",
+ "subtitle": "Tàn cuộc thực chiến",
+ "fen": "3a1a3/1P2k4/9/1N7/2b6/9/9/4B4/4A4/4KAB2 b",
+ "verdict": {
+  "wdl": "D",
+  "dtm": 0
+ },
+ "base_status": "Bảng tra chessdb",
+ "source": "chessdb.cn EGTB (DTM)",
+ "game": {
+  "red": "胡荣华",
+  "black": "吕钦",
+  "event": "全国象棋个人锦标赛",
+  "date": "84-12-6",
+  "result": "和局",
+  "title": "217-五九炮对屏风马"
+ },
+ "beats": [
+  {
+   "kind": "intro",
+   "label": "THỰC CHIẾN DANH THỦ",
+   "headline": "Hồ Vinh Hoa – Lữ Khâm",
+   "fen": "3a1a3/1P2k4/9/1N7/2b6/9/9/4B4/4A4/4KAB2 b",
+   "panel": {
+    "bullets": [
+     "Đỏ: Hồ Vinh Hoa",
+     "Đen: Lữ Khâm",
+     "Năm 1984",
+     "Vào tàn cuộc ở hiệp 77"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Hôm nay là tàn cuộc thực chiến: Hồ Vinh Hoa cầm quân Đỏ gặp Lữ Khâm cầm quân Đen, năm 1984. Sau 76 hiệp, trên bàn còn 11 quân: Đỏ có Tướng, Mã, hai Sĩ, hai Tượng, Binh; Đen có Tướng, hai Sĩ, Tượng. Đen đi."
+    }
+   ]
+  },
+  {
+   "kind": "theory",
+   "label": "BẢNG TRA CHẤM ĐIỂM",
+   "headline": "Thắng, hòa hay thua?",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Hòa",
+     "Ván thật: Hòa",
+     "0 sai lầm • 5 nước duy nhất"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Từ thời điểm này, số quân đã đủ ít để bảng tra cờ tàn chessdb chấm chính xác từng nước. Kết luận của bảng tra: hòa."
+    },
+    {
+     "say": "Kết quả thực tế của ván đấu: hòa."
+    },
+    {
+     "say": "Trên đường đi có 5 lần một bên chỉ có đúng một nước giữ được kết quả. Liệu các danh thủ có tìm ra?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 1",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Lữ Khâm đi Tướng 5 bình 6.",
+     "move": "e8f8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đỏ đi Mã 8 tiến 6.",
+     "move": "b6d7",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đen đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đen có 3 nước đi, nhưng chỉ đúng một nước giữ được kết quả hòa. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 2",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Lữ Khâm đi Tượng 3 thoái 5! Đây là nước duy nhất giữ được kết quả hòa, và danh thủ đã tìm ra.",
+     "move": "c5e7",
+     "mark": "hold",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 3",
+   "headline": "Diễn biến ván đấu",
+   "steps": [
+    {
+     "say": "Mã 6 thoái 5.",
+     "move": "d7e5",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Sĩ 4 tiến 5.",
+     "move": "d9e8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Sĩ 5 tiến 6.",
+     "move": "e1d2",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tượng 5 tiến 3.",
+     "move": "e7c5",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Tướng 5 tiến 1.",
+     "move": "e0e1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lữ Khâm đi Tượng 3 thoái 1.",
+     "move": "c5a7",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Binh 8 bình 7.",
+     "move": "b8c8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lữ Khâm đi Tượng 1 tiến 3.",
+     "move": "a7c5",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 4",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Hồ Vinh Hoa đi Binh 7 bình 6.",
+     "move": "c8d8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tượng 3 thoái 1.",
+     "move": "c5a7",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Tượng 5 thoái 7.",
+     "move": "e2c0",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lữ Khâm đi Tượng 1 tiến 3! Đây là nước duy nhất giữ được kết quả hòa, và danh thủ đã tìm ra.",
+     "move": "a7c5",
+     "mark": "hold",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 5",
+   "headline": "Kết thúc ván đấu",
+   "steps": [
+    {
+     "say": "Tướng 5 tiến 1.",
+     "move": "e1e2",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lữ Khâm tiếp tục tìm đúng: Tượng 3 thoái 1.",
+     "move": "c5a7",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Mã 5 tiến 3.",
+     "move": "e5g6",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Tướng 6 tiến 1.",
+     "move": "f8f7",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đỏ đi Mã 3 thoái 5.",
+     "move": "g6e5",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lữ Khâm tiếp tục tìm đúng: Tướng 6 thoái 1.",
+     "move": "f7f8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Mã 5 tiến 7.",
+     "move": "e5c6",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tượng 1 tiến 3, lại là nước duy nhất.",
+     "move": "a7c5",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Ván đấu kết thúc ở đây với kết quả: hòa."
+    }
+   ]
+  },
+  {
+   "kind": "summary",
+   "label": "TỔNG KẾT",
+   "headline": "Bài học từ ván đấu",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Hòa; ván thật: Hòa",
+     "5 nước duy nhất được tìm ra",
+     "Ngay cả danh thủ cũng có thể sai ở tàn cuộc"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Tóm tắt. Bảng tra kết luận hòa ngay khi vào tàn cuộc, còn ván thật kết thúc hòa."
+    },
+    {
+     "say": "Đáng khen là 5 lần các kỳ thủ tìm ra nước duy nhất dưới áp lực thi đấu."
+    },
+    {
+     "say": "Ngay cả các danh thủ hàng đầu cũng có thể sai ở tàn cuộc, nhất là khi thời gian suy nghĩ đã cạn. Học kỹ tàn cuộc là cách chắc chắn nhất để không đánh rơi những ván thắng."
+    },
+    {
+     "say": "Nếu thấy hữu ích, hãy bấm thích, đăng ký kênh và chia sẻ cho bạn cờ. Hẹn gặp lại."
+    }
+   ]
+  }
+ ],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Chỉ một nước đúng – danh thủ có tìm ra? (Hồ Vinh Hoa – Lữ Khâm, 1984) #Shorts",
+  "description": "Thực chiến: Hồ Vinh Hoa – Lữ Khâm (1984): Nước duy nhất của danh thủ\n\nTàn cuộc trong ván đấu thật năm 1984, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Hòa • Ván thật: Hòa • 0 sai lầm • 5 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 3a1a3/1P2k4/9/1N7/2b6/9/9/4B4/4A4/4KAB2 b\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien #Shorts"
+ },
+ "youtube": {
+  "title": "Thực chiến: Hồ Vinh Hoa – Lữ Khâm (1984): Nước duy nhất của danh thủ | Tinh Hoa Cờ Tàn #32",
+  "description": "Thực chiến: Hồ Vinh Hoa – Lữ Khâm (1984): Nước duy nhất của danh thủ\n\nTàn cuộc trong ván đấu thật năm 1984, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Hòa • Ván thật: Hòa • 0 sai lầm • 5 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 3a1a3/1P2k4/9/1N7/2b6/9/9/4B4/4A4/4KAB2 b\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien",
+  "tags": [
+   "cờ tướng",
+   "cờ tàn",
+   "thực chiến",
+   "danh thủ",
+   "tinh hoa cờ tàn",
+   "xiangqi"
+  ],
+  "playlist": "Tinh Hoa Cờ Tàn | Thực chiến danh thủ"
+ }
+}

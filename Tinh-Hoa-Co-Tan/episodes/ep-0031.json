@@ -1,0 +1,97 @@
+{
+ "id": "ep-0031",
+ "number": 31,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Lữ Khâm xin thua? (1996)",
+ "subtitle": "Sát cục",
+ "fen": "5ab2/4k1N2/2Nc3c1/3C4p/2b1C2n1/2B3p2/4P3P/9/4A4/2BAK4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 7
+ },
+ "mate": {
+  "n": 4,
+  "line": [
+   {
+    "move": "d6e6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "c7b9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d8d9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e5d5",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d7d0",
+    "side": "b",
+    "forced": false,
+    "capture": "A",
+    "n_replies": 7
+   },
+   {
+    "move": "e6d6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "305-飞相局对士角炮",
+  "title": "305-飞相局对士角炮"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Lữ Khâm",
+  "year": "1996",
+  "resigned": true,
+  "red": "胡荣华",
+  "black": "吕钦"
+ },
+ "youtube_short": {
+  "title": "Vì sao Lữ Khâm xin thua? (1996) Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 4 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"305-飞相局对士角炮\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
