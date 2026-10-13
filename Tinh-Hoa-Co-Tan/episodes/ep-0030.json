@@ -1,0 +1,71 @@
+{
+ "id": "ep-0030",
+ "number": 30,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Đới Vinh Quang xin thua? (1965)",
+ "subtitle": "Sát cục",
+ "fen": "2bak4/4anC2/4c4/5r2p/pC2N1b2/2B2N3/Pc2P3P/7R1/4A4/2BAK4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 3
+ },
+ "mate": {
+  "n": 2,
+  "line": [
+   {
+    "move": "e5d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": null
+   },
+   {
+    "move": "e8d7",
+    "side": "b",
+    "forced": false,
+    "capture": "N",
+    "n_replies": 2
+   },
+   {
+    "move": "h2h9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "N"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "107-飞相局对边马局",
+  "title": "107-飞相局对边马局"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Đới Vinh Quang",
+  "year": "1965",
+  "resigned": true,
+  "red": "胡荣华",
+  "black": "戴荣光"
+ },
+ "youtube_short": {
+  "title": "Vì sao Đới Vinh Quang xin thua? (1965) Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 2 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"107-飞相局对边马局\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
