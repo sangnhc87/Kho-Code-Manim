@@ -1,0 +1,83 @@
+{
+ "id": "ep-0034",
+ "number": 34,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Đen xin thua? (1978)",
+ "subtitle": "Sát cục",
+ "fen": "4ka3/9/3aN4/p2r4p/5R1n1/1N3p3/c6r1/2R1B3B/9/3AKA3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 5
+ },
+ "mate": {
+  "n": 3,
+  "line": [
+   {
+    "move": "e7g8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e9d9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "f5f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   },
+   {
+    "move": "d9d8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "c2c8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "141-中炮过河车对屏风马平炮兑车",
+  "title": "141-中炮过河车对屏风马平炮兑车"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": null,
+  "year": "1978",
+  "resigned": true,
+  "red": "胡荣华",
+  "black": "蒋志梁"
+ },
+ "youtube_short": {
+  "title": "Vì sao Đen xin thua? (1978) Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 3 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"141-中炮过河车对屏风马平炮兑车\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

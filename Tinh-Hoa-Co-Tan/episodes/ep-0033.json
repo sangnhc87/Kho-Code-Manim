@@ -1,0 +1,111 @@
+{
+ "id": "ep-0033",
+ "number": 33,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Đỏ xin thua? (1973)",
+ "subtitle": "Sát cục",
+ "fen": "4ka3/4a4/2R1N4/p7p/6p2/2P1c4/P7P/6r2/5n3/3AKA3 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "f1d2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e0e1",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d2f3",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e1e0",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 3
+   },
+   {
+    "move": "g2e2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d0e1",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "f3d2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e0d0",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e4d4",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": false,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "017-中炮七路马对屏风马",
+  "title": "017-中炮七路马对屏风马"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": null,
+  "year": "1973",
+  "resigned": true,
+  "red": "潘德宝",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Đỏ xin thua? (1973) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"017-中炮七路马对屏风马\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
