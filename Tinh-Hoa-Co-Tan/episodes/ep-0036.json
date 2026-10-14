@@ -1,0 +1,270 @@
+{
+ "id": "ep-0036",
+ "number": 36,
+ "kind": "game",
+ "topic": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Thực chiến danh thủ",
+ "title": "Thực chiến: Lý Lai Quần – Hồ Vinh Hoa (1983): Sai lầm ở tàn cuộc",
+ "subtitle": "Tàn cuộc thực chiến",
+ "fen": "4k4/4a4/3a5/5C3/2P1c1b2/4c4/9/9/3K5/9 w",
+ "verdict": {
+  "wdl": "L",
+  "dtm": 52
+ },
+ "base_status": "Bảng tra chessdb",
+ "source": "chessdb.cn EGTB (DTM)",
+ "game": {
+  "red": "李来群",
+  "black": "胡荣华",
+  "event": "全国象棋团体锦标赛",
+  "date": "83-6-4",
+  "result": "和局",
+  "title": "221-五六炮进七兵对反宫马飞左象"
+ },
+ "beats": [
+  {
+   "kind": "intro",
+   "label": "THỰC CHIẾN DANH THỦ",
+   "headline": "Lý Lai Quần – Hồ Vinh Hoa",
+   "fen": "4k4/4a4/3a5/5C3/2P1c1b2/4c4/9/9/3K5/9 w",
+   "panel": {
+    "bullets": [
+     "Đỏ: Lý Lai Quần",
+     "Đen: Hồ Vinh Hoa",
+     "Năm 1983",
+     "Vào tàn cuộc ở hiệp 81"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Hôm nay là tàn cuộc thực chiến: Lý Lai Quần cầm quân Đỏ gặp Hồ Vinh Hoa cầm quân Đen, năm 1983. Sau 80 hiệp, trên bàn còn 9 quân: Đỏ có Tướng, Pháo, Binh; Đen có Tướng, hai Pháo, hai Sĩ, Tượng. Đỏ đi."
+    }
+   ]
+  },
+  {
+   "kind": "theory",
+   "label": "BẢNG TRA CHẤM ĐIỂM",
+   "headline": "Thắng, hòa hay thua?",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Đen thắng, chiếu bí sau 26 nước",
+     "Ván thật: Hòa",
+     "1 sai lầm • 1 nước duy nhất"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Từ thời điểm này, số quân đã đủ ít để bảng tra cờ tàn chessdb chấm chính xác từng nước. Kết luận của bảng tra: Đen thắng, chiếu bí sau 26 nước."
+    },
+    {
+     "say": "Kết quả thực tế của ván đấu: hòa."
+    },
+    {
+     "say": "Giữa hai điều đó là 1 sai lầm làm thay đổi kết quả. Hãy cùng tìm xem chúng nằm ở đâu."
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 1",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Binh 7 bình 6.",
+     "move": "c5d5",
+     "status": "Bảng tra: Đen thắng • còn 26 nước"
+    },
+    {
+     "say": "Đen đi Pháo sau thoái 2.",
+     "move": "e5e7",
+     "status": "Bảng tra: Đen thắng • còn 26 nước"
+    },
+    {
+     "say": "Đỏ đi Binh 6 tiến 1.",
+     "move": "d5d6",
+     "status": "Bảng tra: Đen thắng • còn 22 nước"
+    },
+    {
+     "say": "Đen đi Pháo trước bình 1.",
+     "move": "e4a4",
+     "status": "Bảng tra: Đen thắng • còn 23 nước"
+    },
+    {
+     "say": "Đỏ đi Pháo 4 bình 5.",
+     "move": "f6e6",
+     "status": "Bảng tra: Đen thắng • còn 19 nước"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Tướng 5 bình 6.",
+     "move": "e9f9",
+     "status": "Bảng tra: Đen thắng • còn 19 nước"
+    },
+    {
+     "say": "Đỏ đi Pháo 5 thoái 4.",
+     "move": "e6e2",
+     "status": "Bảng tra: Đen thắng • còn 18 nước"
+    },
+    {
+     "say": "Pháo 1 thoái 5.",
+     "move": "a4a9",
+     "status": "Bảng tra: Đen thắng • còn 18 nước"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 2",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Lý Lai Quần đi Pháo 5 bình 6.",
+     "move": "e2d2",
+     "status": "Bảng tra: Đen thắng • còn 17 nước"
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đen đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đen có 29 nước đi, nhưng chỉ 25 nước giữ được kết quả Đen thắng. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 3",
+   "headline": "Sai lầm quyết định",
+   "steps": [
+    {
+     "say": "Trong ván, Hồ Vinh Hoa đi Pháo 1 bình 4. Sai lầm! Trước nước này Đen đang thắng, nhưng sau nước này kết quả thành hòa. Nước đúng là Tướng 6 tiến 1.",
+     "move": "a9d9",
+     "mark": "bad",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "trap",
+   "label": "NƯỚC ĐÚNG LẼ RA",
+   "headline": "Tướng 6 tiến 1!",
+   "rewind": true,
+   "fen": "c4k3/4a4/3ac4/3P5/6b2/9/9/3C5/3K5/9 b",
+   "return_fen": "3c1k3/4a4/3ac4/3P5/6b2/9/9/3C5/3K5/9 w",
+   "steps": [
+    {
+     "say": "Hãy quay lại xem nước đúng: Tướng 6 tiến 1."
+    },
+    {
+     "say": "Tướng 6 tiến 1.",
+     "move": "f9f8"
+    },
+    {
+     "say": "Binh 6 bình 5.",
+     "move": "d6e6"
+    },
+    {
+     "say": "Pháo 5 bình 9.",
+     "move": "e7i7"
+    },
+    {
+     "say": "Pháo 6 bình 7.",
+     "move": "d2c2"
+    },
+    {
+     "say": "Pháo 1 bình 4.",
+     "move": "a9d9"
+    },
+    {
+     "say": "Tướng 6 bình 5.",
+     "move": "d1e1"
+    },
+    {
+     "say": "Như vậy, với Tướng 6 tiến 1, Đen giữ được kết quả Đen thắng. Quay lại ván đấu thật."
+    }
+   ],
+   "panel": {
+    "verdict": "Tướng 6 tiến 1: Đen thắng"
+   }
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đỏ đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đỏ có 17 nước đi, nhưng chỉ đúng một nước giữ được kết quả hòa. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 4",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Lý Lai Quần đi Binh 6 tiến 1! Đây là nước duy nhất giữ được kết quả hòa, và danh thủ đã tìm ra.",
+     "move": "d6d7",
+     "mark": "hold",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "summary",
+   "label": "TỔNG KẾT",
+   "headline": "Bài học từ ván đấu",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Đen thắng, chiếu bí sau 26 nước; ván thật: Hòa",
+     "1 sai lầm làm đổi kết quả",
+     "1 nước duy nhất được tìm ra",
+     "Ngay cả danh thủ cũng có thể sai ở tàn cuộc"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Tóm tắt. Bảng tra kết luận Đen thắng, chiếu bí sau 26 nước ngay khi vào tàn cuộc, còn ván thật kết thúc hòa."
+    },
+    {
+     "say": "Sai lầm đầu tiên là Pháo 1 bình 4 của Hồ Vinh Hoa; nước đúng là Tướng 6 tiến 1."
+    },
+    {
+     "say": "Đáng khen là 1 lần các kỳ thủ tìm ra nước duy nhất dưới áp lực thi đấu."
+    },
+    {
+     "say": "Ngay cả các danh thủ hàng đầu cũng có thể sai ở tàn cuộc, nhất là khi thời gian suy nghĩ đã cạn. Học kỹ tàn cuộc là cách chắc chắn nhất để không đánh rơi những ván thắng."
+    },
+    {
+     "say": "Nếu thấy hữu ích, hãy bấm thích, đăng ký kênh và chia sẻ cho bạn cờ. Hẹn gặp lại."
+    }
+   ]
+  }
+ ],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Danh thủ cũng đi sai! Bạn tìm ra nước đúng? (Lý Lai Quần – Hồ Vinh Hoa, 1983) #Shorts",
+  "description": "Thực chiến: Lý Lai Quần – Hồ Vinh Hoa (1983): Sai lầm ở tàn cuộc\n\nTàn cuộc trong ván đấu thật năm 1983, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Đen thắng, chiếu bí sau 26 nước • Ván thật: Hòa • 1 sai lầm • 1 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 4k4/4a4/3a5/5C3/2P1c1b2/4c4/9/9/3K5/9 w\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien #Shorts"
+ },
+ "youtube": {
+  "title": "Thực chiến: Lý Lai Quần – Hồ Vinh Hoa (1983): Sai lầm ở tàn cuộc | Tinh Hoa Cờ Tàn #36",
+  "description": "Thực chiến: Lý Lai Quần – Hồ Vinh Hoa (1983): Sai lầm ở tàn cuộc\n\nTàn cuộc trong ván đấu thật năm 1983, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Đen thắng, chiếu bí sau 26 nước • Ván thật: Hòa • 1 sai lầm • 1 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 4k4/4a4/3a5/5C3/2P1c1b2/4c4/9/9/3K5/9 w\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien",
+  "tags": [
+   "cờ tướng",
+   "cờ tàn",
+   "thực chiến",
+   "danh thủ",
+   "tinh hoa cờ tàn",
+   "xiangqi"
+  ],
+  "playlist": "Tinh Hoa Cờ Tàn | Thực chiến danh thủ"
+ }
+}

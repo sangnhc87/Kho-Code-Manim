@@ -1,0 +1,69 @@
+{
+ "id": "ep-0035",
+ "number": 35,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Đới Vinh Quang xin thua? (1973)",
+ "subtitle": "Sát cục",
+ "fen": "3k1c3/4R4/9/p7p/2p3b2/1N7/P3n1r2/9/3C5/2BAKAB2 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 3
+ },
+ "mate": {
+  "n": 2,
+  "line": [
+   {
+    "move": "b4d5",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e3d1",
+    "side": "b",
+    "forced": true,
+    "capture": "C",
+    "n_replies": 1
+   },
+   {
+    "move": "d5c7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "025-中炮对三步虎",
+  "title": "025-中炮对三步虎"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Đới Vinh Quang",
+  "year": "1973",
+  "resigned": true,
+  "red": "胡荣华",
+  "black": "戴荣光"
+ },
+ "youtube_short": {
+  "title": "Vì sao Đới Vinh Quang xin thua? (1973) Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 2 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"025-中炮对三步虎\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
