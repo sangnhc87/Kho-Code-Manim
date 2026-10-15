@@ -1,0 +1,339 @@
+{
+ "id": "ep-0040",
+ "number": 40,
+ "kind": "game",
+ "topic": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Thực chiến danh thủ",
+ "title": "Thực chiến: Lưu Điện Trung – Hồ Vinh Hoa (1965): Nước duy nhất của danh thủ",
+ "subtitle": "Tàn cuộc thực chiến",
+ "fen": "3a5/5k3/b8/9/N1n6/7p1/9/5A3/4K4/6B2 b",
+ "verdict": {
+  "wdl": "D",
+  "dtm": 0
+ },
+ "base_status": "Bảng tra chessdb",
+ "source": "chessdb.cn EGTB (DTM)",
+ "game": {
+  "red": "刘殿中",
+  "black": "胡荣华",
+  "event": "全国象棋个人锦标赛",
+  "date": "65-11-15",
+  "result": "和局",
+  "title": "105-中炮进中兵对反宫马"
+ },
+ "beats": [
+  {
+   "kind": "intro",
+   "label": "THỰC CHIẾN DANH THỦ",
+   "headline": "Lưu Điện Trung – Hồ Vinh Hoa",
+   "fen": "3a5/5k3/b8/9/N1n6/7p1/9/5A3/4K4/6B2 b",
+   "panel": {
+    "bullets": [
+     "Đỏ: Lưu Điện Trung",
+     "Đen: Hồ Vinh Hoa",
+     "Năm 1965",
+     "Vào tàn cuộc ở hiệp 56"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Hôm nay là tàn cuộc thực chiến: Lưu Điện Trung cầm quân Đỏ gặp Hồ Vinh Hoa cầm quân Đen, năm 1965. Sau 55 hiệp, trên bàn còn 9 quân: Đỏ có Tướng, Mã, Sĩ, Tượng; Đen có Tướng, Mã, Sĩ, Tượng, Tốt. Đen đi."
+    }
+   ]
+  },
+  {
+   "kind": "theory",
+   "label": "BẢNG TRA CHẤM ĐIỂM",
+   "headline": "Thắng, hòa hay thua?",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Hòa",
+     "Ván thật: Hòa",
+     "0 sai lầm • 2 nước duy nhất"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Từ thời điểm này, số quân đã đủ ít để bảng tra cờ tàn chessdb chấm chính xác từng nước. Kết luận của bảng tra: hòa."
+    },
+    {
+     "say": "Kết quả thực tế của ván đấu: hòa."
+    },
+    {
+     "say": "Trên đường đi có 2 lần một bên chỉ có đúng một nước giữ được kết quả. Liệu các danh thủ có tìm ra?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 1",
+   "headline": "Diễn biến ván đấu",
+   "steps": [
+    {
+     "say": "Hồ Vinh Hoa đi Mã 3 tiến 4.",
+     "move": "c5d3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lưu Điện Trung đi Tướng 5 bình 4.",
+     "move": "e1f1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tốt 8 bình 7.",
+     "move": "h4g4",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lưu Điện Trung đi Mã 9 thoái 7.",
+     "move": "a5c4",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tốt 7 tiến 1.",
+     "move": "g4g3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Mã 7 thoái 5.",
+     "move": "c4e3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Tốt 7 bình 6.",
+     "move": "g3f3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đỏ đi Sĩ 4 thoái 5.",
+     "move": "f2e1",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 2",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Hồ Vinh Hoa đi Tướng 6 bình 5.",
+     "move": "f8e8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đỏ đi Mã 5 tiến 4.",
+     "move": "e3f5",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Mã 4 tiến 5.",
+     "move": "d3e1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Mã 4 thoái 6.",
+     "move": "f5d4",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tượng 1 thoái 3.",
+     "move": "a7c9",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tượng 3 tiến 1.",
+     "move": "g0i2",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Mã 5 thoái 4.",
+     "move": "e1d3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Mã 6 thoái 4.",
+     "move": "d4f3",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 3",
+   "headline": "Tiếp tục tàn cuộc",
+   "steps": [
+    {
+     "say": "Tướng 5 bình 6.",
+     "move": "e8f8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đỏ đi Tượng 1 thoái 3.",
+     "move": "i2g0",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Hồ Vinh Hoa đi Mã 4 thoái 5.",
+     "move": "d3e5",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lưu Điện Trung đi Tướng 4 bình 5.",
+     "move": "f1e1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Mã 5 tiến 6.",
+     "move": "e5f3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tướng 5 bình 6.",
+     "move": "e1d1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Tướng 6 bình 5.",
+     "move": "f8e8",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tướng 6 thoái 1.",
+     "move": "d1d0",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 4",
+   "headline": "Hai bên giằng co",
+   "steps": [
+    {
+     "say": "Đen đi Mã 6 tiến 4.",
+     "move": "f3d2",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tướng 6 tiến 1.",
+     "move": "d0d1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Mã 4 tiến 2.",
+     "move": "d2b1",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "puzzle",
+   "label": "THỬ THÁCH",
+   "headline": "Đỏ đi thế nào?",
+   "panel": {
+    "countdown": 5
+   },
+   "steps": [
+    {
+     "say": "Ở thế này Đỏ có 2 nước đi, nhưng chỉ đúng một nước giữ được kết quả hòa. Bạn sẽ chọn nước nào?"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 5",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Lưu Điện Trung đi Tượng 3 tiến 1! Đây là nước duy nhất giữ được kết quả hòa, và danh thủ đã tìm ra.",
+     "move": "g0i2",
+     "mark": "hold",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "line",
+   "label": "DIỄN BIẾN • CHẶNG 6",
+   "headline": "Nước duy nhất!",
+   "steps": [
+    {
+     "say": "Đen đi Mã 2 thoái 3.",
+     "move": "b1c3",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tướng 6 thoái 1.",
+     "move": "d1d0",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Mã 3 tiến 5.",
+     "move": "c3e2",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Tướng 6 tiến 1.",
+     "move": "d0d1",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Đen đi Mã 5 tiến 6.",
+     "move": "e2f0",
+     "status": "Bảng tra: Hòa"
+    },
+    {
+     "say": "Lưu Điện Trung đi Tướng 6 thoái 1! Đây là nước duy nhất giữ được kết quả hòa, và danh thủ đã tìm ra.",
+     "move": "d1d0",
+     "mark": "hold",
+     "status": "Bảng tra: Hòa"
+    }
+   ]
+  },
+  {
+   "kind": "summary",
+   "label": "TỔNG KẾT",
+   "headline": "Bài học từ ván đấu",
+   "panel": {
+    "bullets": [
+     "Bảng tra: Hòa; ván thật: Hòa",
+     "2 nước duy nhất được tìm ra",
+     "Ngay cả danh thủ cũng có thể sai ở tàn cuộc"
+    ]
+   },
+   "steps": [
+    {
+     "say": "Tóm tắt. Bảng tra kết luận hòa ngay khi vào tàn cuộc, còn ván thật kết thúc hòa."
+    },
+    {
+     "say": "Đáng khen là 2 lần các kỳ thủ tìm ra nước duy nhất dưới áp lực thi đấu."
+    },
+    {
+     "say": "Ngay cả các danh thủ hàng đầu cũng có thể sai ở tàn cuộc, nhất là khi thời gian suy nghĩ đã cạn. Học kỹ tàn cuộc là cách chắc chắn nhất để không đánh rơi những ván thắng."
+    },
+    {
+     "say": "Nếu thấy hữu ích, hãy bấm thích, đăng ký kênh và chia sẻ cho bạn cờ. Hẹn gặp lại."
+    }
+   ]
+  }
+ ],
+ "analysis": null,
+ "youtube_short": {
+  "title": "Chỉ một nước đúng – danh thủ có tìm ra? (Lưu Điện Trung – Hồ Vinh Hoa, 1965) #Shorts",
+  "description": "Thực chiến: Lưu Điện Trung – Hồ Vinh Hoa (1965): Nước duy nhất của danh thủ\n\nTàn cuộc trong ván đấu thật năm 1965, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Hòa • Ván thật: Hòa • 0 sai lầm • 2 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 3a5/5k3/b8/9/N1n6/7p1/9/5A3/4K4/6B2 b\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien #Shorts"
+ },
+ "youtube": {
+  "title": "Thực chiến: Lưu Điện Trung – Hồ Vinh Hoa (1965): Nước duy nhất của danh thủ | Tinh Hoa Cờ Tàn #40",
+  "description": "Thực chiến: Lưu Điện Trung – Hồ Vinh Hoa (1965): Nước duy nhất của danh thủ\n\nTàn cuộc trong ván đấu thật năm 1965, được bảng tra cờ tàn chessdb.cn chấm chính xác từng nước.\nBảng tra: Hòa • Ván thật: Hòa • 0 sai lầm • 2 nước duy nhất.\n\nThế vào tàn cuộc (FEN): 3a5/5k3/b8/9/N1n6/7p1/9/5A3/4K4/6B2 b\nKỳ phổ: Đại sư kỳ lộ Hồ Vinh Hoa (kho cộng đồng vietcotuong.com).\n\n☕ Ủng hộ kênh một ly cà phê: VPBank 10389821115 (Quét VietQR cuối video).\n\n#CoTuong #CoTan #TinhHoaCoTan #ThucChien",
+  "tags": [
+   "cờ tướng",
+   "cờ tàn",
+   "thực chiến",
+   "danh thủ",
+   "tinh hoa cờ tàn",
+   "xiangqi"
+  ],
+  "playlist": "Tinh Hoa Cờ Tàn | Thực chiến danh thủ"
+ }
+}

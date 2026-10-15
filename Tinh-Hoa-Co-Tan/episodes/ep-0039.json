@@ -1,0 +1,69 @@
+{
+ "id": "ep-0039",
+ "number": 39,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Hồ Vinh Hoa xin thua? (1960)",
+ "subtitle": "Sát cục",
+ "fen": "9/4k4/5a3/9/p7P/3n5/P4R3/4p4/3KA4/5C3 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 3
+ },
+ "mate": {
+  "n": 2,
+  "line": [
+   {
+    "move": "e2e1",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": "A"
+   },
+   {
+    "move": "d1d0",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "d4c2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "097-中炮高左炮对左马盘河",
+  "title": "097-中炮高左炮对左马盘河"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Thái Phúc Như",
+  "loser": "Hồ Vinh Hoa",
+  "year": "1960",
+  "resigned": true,
+  "red": "胡荣华",
+  "black": "蔡福如"
+ },
+ "youtube_short": {
+  "title": "Vì sao Hồ Vinh Hoa xin thua? (1960) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 2 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"097-中炮高左炮对左马盘河\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
