@@ -1,0 +1,69 @@
+{
+ "id": "ep-0038",
+ "number": 38,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Đỏ xin thua? (1960)",
+ "subtitle": "Sát cục",
+ "fen": "5a3/3k4C/5a3/8p/2P1R4/6B2/2r6/9/4Ap3/4KABc1 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 3
+ },
+ "mate": {
+  "n": 2,
+  "line": [
+   {
+    "move": "c3c0",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e1d0",
+    "side": "w",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "c0d0",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": "A"
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "068-中炮七路马对屏风马",
+  "title": "068-中炮七路马对屏风马"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": null,
+  "year": "1960",
+  "resigned": true,
+  "red": "孟立国",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Đỏ xin thua? (1960) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 2 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"068-中炮七路马对屏风马\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

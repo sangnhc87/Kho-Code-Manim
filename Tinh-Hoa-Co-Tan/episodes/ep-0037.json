@@ -1,0 +1,69 @@
+{
+ "id": "ep-0037",
+ "number": 37,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Đỏ xin thua? (1973)",
+ "subtitle": "Sát cục",
+ "fen": "2bakab2/9/5c3/p1C1nC2p/4p4/5c3/P1P3p1P/2NnB4/4A2N1/2BA1K3 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 3
+ },
+ "mate": {
+  "n": 2,
+  "line": [
+   {
+    "move": "g3f3",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e1f2",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "f3f2",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": "A"
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "039-仙人指路对中炮",
+  "title": "039-仙人指路对中炮"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": null,
+  "year": "1973",
+  "resigned": true,
+  "red": "徐学良",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Đỏ xin thua? (1973) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 2 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"039-仙人指路对中炮\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
