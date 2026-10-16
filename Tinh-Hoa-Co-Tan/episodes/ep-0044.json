@@ -1,0 +1,162 @@
+{
+ "id": "ep-0044",
+ "number": 44,
+ "kind": "mate",
+ "topic": "mate-弃车绝杀",
+ "category": "Sát cục",
+ "title": "Sát cục #44: Đỏ đi, chiếu bí trong 9 nước!",
+ "subtitle": "Sát cục",
+ "fen": "1Rb1ka3/4a1P2/b1N6/8p/3P5/7r1/4c1n1P/C1CAB4/2prA4/5K2c w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 17
+ },
+ "mate": {
+  "n": 9,
+  "line": [
+   {
+    "move": "b9c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "b"
+   },
+   {
+    "move": "a7c9",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "a2a9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "c9a7",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 3
+   },
+   {
+    "move": "c7b9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "b9a7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "b"
+   },
+   {
+    "move": "e9e8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "g8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "a7c6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d8d7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d5d6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d7e7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d6e6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e7d7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e6e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "弃车绝杀",
+  "file": "妙弃双车-9",
+  "title": "妙弃双车-9"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #44: Đỏ đi, chiếu bí trong 9 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 9 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"妙弃双车-9\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

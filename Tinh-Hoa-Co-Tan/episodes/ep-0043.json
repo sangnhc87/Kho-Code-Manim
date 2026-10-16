@@ -1,0 +1,69 @@
+{
+ "id": "ep-0043",
+ "number": 43,
+ "kind": "mate",
+ "topic": "mate-game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+ "category": "Sát cục",
+ "title": "Vì sao Triệu Quốc Vinh xin thua? (1983)",
+ "subtitle": "Sát cục",
+ "fen": "1nb1ka3/C3a4/4b4/R3pR3/8p/4r4/4c3P/1r6B/9/3AKA1N1 b",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 3
+ },
+ "mate": {
+  "n": 2,
+  "line": [
+   {
+    "move": "e3c3",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d0e1",
+    "side": "w",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "b2b0",
+    "side": "b",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đen"
+ },
+ "source": {
+  "collection": "game-Dai-Su-Ky-Lo-Ho-Vinh-Hoa",
+  "file": "220-五六炮进七兵对反宫马飞左象",
+  "title": "220-五六炮进七兵对反宫马飞左象"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": {
+  "winner": "Hồ Vinh Hoa",
+  "loser": "Triệu Quốc Vinh",
+  "year": "1983",
+  "resigned": true,
+  "red": "赵国荣",
+  "black": "胡荣华"
+ },
+ "youtube_short": {
+  "title": "Vì sao Triệu Quốc Vinh xin thua? (1983) Bạn giải được không? #Shorts",
+  "description": "Đen đi trước, chiếu bí trong 2 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"220-五六炮进七兵对反宫马飞左象\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
