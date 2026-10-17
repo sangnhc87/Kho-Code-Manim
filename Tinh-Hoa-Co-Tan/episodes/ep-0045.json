@@ -1,0 +1,79 @@
+{
+ "id": "ep-0045",
+ "number": 45,
+ "kind": "mate",
+ "topic": "mate-弃车绝杀",
+ "category": "Sát cục",
+ "title": "Sát cục #45: Đỏ đi, chiếu bí trong 3 nước!",
+ "subtitle": "Sát cục",
+ "fen": "6b1C/4ak1N1/4b1n2/4p4/9/6B2/P1nrP1P2/9/4AC3/c1BAK4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 5
+ },
+ "mate": {
+  "n": 3,
+  "line": [
+   {
+    "move": "i9i8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "C",
+    "capture": null
+   },
+   {
+    "move": "g7i8",
+    "side": "b",
+    "forced": true,
+    "capture": "C",
+    "n_replies": 1
+   },
+   {
+    "move": "h8f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": null
+   },
+   {
+    "move": "f8f7",
+    "side": "b",
+    "forced": true,
+    "capture": "N",
+    "n_replies": 1
+   },
+   {
+    "move": "e1f2",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "C",
+   "N"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "弃车绝杀",
+  "file": "妙弃双车-7",
+  "title": "妙弃双车-7"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #45: Đỏ đi, chiếu bí trong 3 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 3 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"妙弃双车-7\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

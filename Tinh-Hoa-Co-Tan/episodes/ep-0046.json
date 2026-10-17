@@ -1,0 +1,120 @@
+{
+ "id": "ep-0046",
+ "number": 46,
+ "kind": "mate",
+ "topic": "mate-弃车绝杀",
+ "category": "Sát cục",
+ "title": "Sát cục #46: Đỏ đi, chiếu bí trong 6 nước!",
+ "subtitle": "Sát cục",
+ "fen": "4k1b2/C1R1a4/b5n2/pn2p1P1p/9/3R5/P5r1P/5C1c1/5p3/r1BK1AB1c w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 11
+ },
+ "mate": {
+  "n": 6,
+  "line": [
+   {
+    "move": "c8c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "a7c9",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "a8a9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 3
+   },
+   {
+    "move": "d4d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   },
+   {
+    "move": "e9e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d9e9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8f8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "g6f6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "g3f3",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "f6f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "弃车绝杀",
+  "file": "弃车攻杀-7",
+  "title": "弃车攻杀-7"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #46: Đỏ đi, chiếu bí trong 6 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 6 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"弃车攻杀-7\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
