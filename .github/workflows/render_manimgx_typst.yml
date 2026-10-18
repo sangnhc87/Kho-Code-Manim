@@ -32,7 +32,6 @@ jobs:
           sudo apt-get install -y \
             libvulkan1 \
             mesa-vulkan-drivers \
-            libegl1-mesa \
             ffmpeg \
             fonts-dejavu-core \
             fonts-noto-core
