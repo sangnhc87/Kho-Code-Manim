@@ -18,7 +18,7 @@ on:
 
 jobs:
   render-manimgx:
-    name: Render with ManimGX (Rust + GPU/Lavapipe + Typst)
+    name: Render with ManimGX (Rust + Typst) + Edge-TTS Voiceover
     runs-on: ubuntu-latest
     timeout-minutes: 25
 
@@ -26,7 +26,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install system dependencies (Vulkan, Mesa Lavapipe, Fonts)
+      - name: Install system dependencies (Vulkan, Mesa Lavapipe, FFmpeg, Fonts)
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -41,20 +41,25 @@ jobs:
         with:
           version: "latest"
 
-      - name: Install ManimGX (Python 3.14 via uv)
+      - name: Install ManimGX and Edge-TTS (Python 3.14 via uv)
         run: |
           uv tool install --python 3.14 manimgx
           echo "$HOME/.local/bin" >> $GITHUB_PATH
+          uv pip install --system edge-tts
 
       - name: Verify ManimGX version
         run: |
           manimgx --version
 
-      - name: Inspect Scene (Generate Storyboard & Layout Preflight)
+      - name: Generate AI Voiceover & Measure Timings (Edge TTS)
+        run: |
+          python ManimGX-Typst/build_narration.py
+
+      - name: Inspect Scene (Storyboard & Layout Preflight)
         run: |
           manimgx inspect ManimGX-Typst/bai_toan_san_xuat_mu.py || true
 
-      - name: Render Video
+      - name: Render Raw Video with ManimGX
         id: render
         run: |
           RES="${{ github.event.inputs.resolution || '1920x1080' }}"
@@ -62,26 +67,31 @@ jobs:
           echo "Rendering with Resolution: $RES, FPS: $FPS"
 
           manimgx render ManimGX-Typst/bai_toan_san_xuat_mu.py \
-            -o bai_toan_san_xuat_mu_1080p.mp4 \
+            -o ManimGX-Typst/raw_video.mp4 \
             -r "$RES" \
             --fps "$FPS" \
             --preset fast
 
-      - name: Verify generated video
+      - name: Merge Video and Voiceover (FFmpeg Muxing)
         run: |
-          ls -lh bai_toan_san_xuat_mu_1080p.mp4
+          python ManimGX-Typst/mux_audio.py
+
+      - name: Verify Final Video with Audio
+        run: |
+          ls -lh ManimGX-Typst/bai_toan_san_xuat_mu_1080p_WITH_AUDIO.mp4
           ffprobe -v error \
             -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
             -show_entries format=duration,size \
-            -of json bai_toan_san_xuat_mu_1080p.mp4
+            -of json ManimGX-Typst/bai_toan_san_xuat_mu_1080p_WITH_AUDIO.mp4
 
       - name: Upload Video and Storyboard Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ManimGX-Video-SanXuatMu-1080p
+          name: ManimGX-Video-SanXuatMu-1080p-WITH-AUDIO
           path: |
-            bai_toan_san_xuat_mu_1080p.mp4
+            ManimGX-Typst/bai_toan_san_xuat_mu_1080p_WITH_AUDIO.mp4
             ManimGX-Typst/*.png
+            ManimGX-Typst/audio_cache/*.mp3
             *.png
           if-no-files-found: warn
           retention-days: 14
