@@ -1,0 +1,90 @@
+{
+ "id": "ep-0049",
+ "number": 49,
+ "kind": "mate",
+ "topic": "mate-连将带杀",
+ "category": "Sát cục",
+ "title": "Sát cục #49: Đỏ đi, chiếu bí trong 4 nước!",
+ "subtitle": "Sát cục",
+ "fen": "2b1ka3/2NR5/4b4/8p/N5pn1/9/9/4p4/4A2r1/4KAB1c w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 7
+ },
+ "mate": {
+  "n": 4,
+  "line": [
+   {
+    "move": "d8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e9d9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f8f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   },
+   {
+    "move": "d9d8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "a5b7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d8d7",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "c8b6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "连将带杀",
+  "file": "0262",
+  "title": "0262"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #49: Đỏ đi, chiếu bí trong 4 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 4 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"0262\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

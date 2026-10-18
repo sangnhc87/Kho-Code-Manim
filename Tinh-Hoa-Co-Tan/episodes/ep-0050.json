@@ -1,0 +1,136 @@
+{
+ "id": "ep-0050",
+ "number": 50,
+ "kind": "mate",
+ "topic": "mate-妙局杀法",
+ "category": "Sát cục",
+ "title": "Sát cục #50: Đỏ đi, chiếu bí trong 7 nước!",
+ "subtitle": "Sát cục",
+ "fen": "4k1b2/3Ca2R1/3cba3/p1CN4p/6p2/2n2r3/P3c3P/4B4/4Ar3/1R2KAB2 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 13
+ },
+ "mate": {
+  "n": 7,
+  "line": [
+   {
+    "move": "b0b9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "c6c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "d9e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "c9c8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d6f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": "a"
+   },
+   {
+    "move": "f4f7",
+    "side": "b",
+    "forced": false,
+    "capture": "N",
+    "n_replies": 3
+   },
+   {
+    "move": "h8e8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "b9d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "a"
+   },
+   {
+    "move": "d7d9",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "c8c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "N",
+   "R",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "妙局杀法",
+  "file": "各种杀法综合运用妙局赏析之九",
+  "title": "各种杀法综合运用妙局赏析之九"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #50: Đỏ đi, chiếu bí trong 7 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 7 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"各种杀法综合运用妙局赏析之九\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
