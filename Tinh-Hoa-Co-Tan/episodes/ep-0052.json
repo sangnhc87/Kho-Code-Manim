@@ -1,0 +1,163 @@
+{
+ "id": "ep-0052",
+ "number": 52,
+ "kind": "mate",
+ "topic": "mate-妙局杀法",
+ "category": "Sát cục",
+ "title": "Sát cục #52: Đỏ đi, chiếu bí trong 9 nước!",
+ "subtitle": "Sát cục",
+ "fen": "3a2b2/4k3C/9/1Np6/6p2/R2C5/Pc2P2r1/4B1n2/3r2p2/1cBA1K3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 17
+ },
+ "mate": {
+  "n": 9,
+  "line": [
+   {
+    "move": "a4a8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8e7",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "b6c8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e7e8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "c8d6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8e9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "d6f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d4f4",
+    "side": "w",
+    "check": true,
+    "sacrifice": "C",
+    "capture": null
+   },
+   {
+    "move": "g2f4",
+    "side": "b",
+    "forced": true,
+    "capture": "C",
+    "n_replies": 1
+   },
+   {
+    "move": "a8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "f9e9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "f8g8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "g8g9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "b"
+   },
+   {
+    "move": "f9f8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f7h8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "C",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "妙局杀法",
+  "file": "各种杀法综合运用妙局赏析之十二",
+  "title": "各种杀法综合运用妙局赏析之十二"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #52: Đỏ đi, chiếu bí trong 9 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 9 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"各种杀法综合运用妙局赏析之十二\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
