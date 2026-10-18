@@ -1,0 +1,88 @@
+name: Render ManimGX-Typst Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      resolution:
+        description: "Video Resolution (e.g. 1920x1080 or 1280x720)"
+        required: false
+        default: "1920x1080"
+      fps:
+        description: "Frames per second (e.g. 30 or 60)"
+        required: false
+        default: "30"
+  push:
+    paths:
+      - "ManimGX-Typst/**"
+      - ".github/workflows/render_manimgx_typst.yml"
+
+jobs:
+  render-manimgx:
+    name: Render with ManimGX (Rust + GPU/Lavapipe + Typst)
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies (Vulkan, Mesa Lavapipe, Fonts)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libvulkan1 \
+            mesa-vulkan-drivers \
+            libegl1-mesa \
+            ffmpeg \
+            fonts-dejavu-core \
+            fonts-noto-core
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "latest"
+
+      - name: Install ManimGX (Python 3.14 via uv)
+        run: |
+          uv tool install --python 3.14 manimgx
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Verify ManimGX version
+        run: |
+          manimgx --version
+
+      - name: Inspect Scene (Generate Storyboard & Layout Preflight)
+        run: |
+          manimgx inspect ManimGX-Typst/bai_toan_san_xuat_mu.py || true
+
+      - name: Render Video
+        id: render
+        run: |
+          RES="${{ github.event.inputs.resolution || '1920x1080' }}"
+          FPS="${{ github.event.inputs.fps || '30' }}"
+          echo "Rendering with Resolution: $RES, FPS: $FPS"
+
+          manimgx render ManimGX-Typst/bai_toan_san_xuat_mu.py \
+            -o bai_toan_san_xuat_mu_1080p.mp4 \
+            -r "$RES" \
+            --fps "$FPS" \
+            --preset fast
+
+      - name: Verify generated video
+        run: |
+          ls -lh bai_toan_san_xuat_mu_1080p.mp4
+          ffprobe -v error \
+            -show_entries stream=codec_type,codec_name,width,height,r_frame_rate \
+            -show_entries format=duration,size \
+            -of json bai_toan_san_xuat_mu_1080p.mp4
+
+      - name: Upload Video and Storyboard Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ManimGX-Video-SanXuatMu-1080p
+          path: |
+            bai_toan_san_xuat_mu_1080p.mp4
+            ManimGX-Typst/*.png
+            *.png
+          if-no-files-found: warn
+          retention-days: 14
