@@ -41,11 +41,10 @@ jobs:
         with:
           version: "latest"
 
-      - name: Install ManimGX and Edge-TTS (Python 3.14 via uv)
+      - name: Install ManimGX (Python 3.14 via uv)
         run: |
           uv tool install --python 3.14 manimgx
           echo "$HOME/.local/bin" >> $GITHUB_PATH
-          uv pip install --system edge-tts
 
       - name: Verify ManimGX version
         run: |
@@ -53,7 +52,7 @@ jobs:
 
       - name: Generate AI Voiceover & Measure Timings (Edge TTS)
         run: |
-          python ManimGX-Typst/build_narration.py
+          uv run --with edge-tts python ManimGX-Typst/build_narration.py
 
       - name: Inspect Scene (Storyboard & Layout Preflight)
         run: |
@@ -74,7 +73,7 @@ jobs:
 
       - name: Merge Video and Voiceover (FFmpeg Muxing)
         run: |
-          python ManimGX-Typst/mux_audio.py
+          uv run python ManimGX-Typst/mux_audio.py
 
       - name: Verify Final Video with Audio
         run: |
