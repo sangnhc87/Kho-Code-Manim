@@ -1,0 +1,148 @@
+{
+ "id": "ep-0058",
+ "number": 58,
+ "kind": "mate",
+ "topic": "mate-妙局杀法",
+ "category": "Sát cục",
+ "title": "Sát cục #58: Đỏ đi, chiếu bí trong 8 nước!",
+ "subtitle": "Sát cục",
+ "fen": "5a3/9/3Rbk3/p3N1pc1/6bNp/2P2n3/P3C3P/4BA3/3p1r3/c1rAK1R2 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 15
+ },
+ "mate": {
+  "n": 8,
+  "line": [
+   {
+    "move": "d7e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "b"
+   },
+   {
+    "move": "g5e7",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "e3f3",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f4h5",
+    "side": "b",
+    "forced": false,
+    "capture": "N",
+    "n_replies": 5
+   },
+   {
+    "move": "e6f4",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "h5f6",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f4g6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "p"
+   },
+   {
+    "move": "f6g4",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 4
+   },
+   {
+    "move": "f3f1",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "r"
+   },
+   {
+    "move": "g4f6",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "g6h8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f7f8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "g0g8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f8f7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "g8a8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "妙局杀法",
+  "file": "综合杀法妙局赏析之三",
+  "title": "综合杀法妙局赏析之三"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #58: Đỏ đi, chiếu bí trong 8 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 8 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"综合杀法妙局赏析之三\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
