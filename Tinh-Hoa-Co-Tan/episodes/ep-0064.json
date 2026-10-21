@@ -1,0 +1,90 @@
+{
+ "id": "ep-0064",
+ "number": 64,
+ "kind": "mate",
+ "topic": "mate-妙局杀法",
+ "category": "Sát cục",
+ "title": "Sát cục #64: Đỏ đi, chiếu bí trong 4 nước!",
+ "subtitle": "Sát cục",
+ "fen": "3aR1b2/5k3/4Na1n1/p7p/5P3/2B2C3/P7P/3A5/4K4/c4rB2 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 7
+ },
+ "mate": {
+  "n": 4,
+  "line": [
+   {
+    "move": "e9f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f8e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f4e4",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8e7",
+    "side": "b",
+    "forced": false,
+    "capture": "N",
+    "n_replies": 2
+   },
+   {
+    "move": "f5e5",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e7d7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f9d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   }
+  ],
+  "sacrifices": [],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "妙局杀法",
+  "file": "李义庭选局之二",
+  "title": "李义庭选局之二"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #64: Đỏ đi, chiếu bí trong 4 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 4 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"李义庭选局之二\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
