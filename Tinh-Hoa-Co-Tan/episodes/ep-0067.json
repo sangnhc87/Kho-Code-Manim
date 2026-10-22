@@ -1,0 +1,109 @@
+{
+ "id": "ep-0067",
+ "number": 67,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #67: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "3N2b2/2R3C1r/1N1k3n1/9/6p2/3c5/4R4/2r6/4p4/5K3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "b7c5",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": null
+   },
+   {
+    "move": "c2c5",
+    "side": "b",
+    "forced": true,
+    "capture": "N",
+    "n_replies": 1
+   },
+   {
+    "move": "e3e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "g9e7",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "d9f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": null
+   },
+   {
+    "move": "h7f8",
+    "side": "b",
+    "forced": true,
+    "capture": "N",
+    "n_replies": 1
+   },
+   {
+    "move": "c8d8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "d4d8",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "g8g7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "N",
+   "R",
+   "N",
+   "R"
+  ],
+  "unique": false,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第023局-安排香饵",
+  "title": "第023局-安排香饵"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #67: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第023局-安排香饵\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
