@@ -1,0 +1,109 @@
+{
+ "id": "ep-0065",
+ "number": 65,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #65: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "3P1k1r1/2C1a1R2/1C2b2c1/4n1n1N/9/9/9/9/1r1p1p3/4K4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "g8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "g6f8",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "c8c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "C",
+    "capture": null
+   },
+   {
+    "move": "e7c9",
+    "side": "b",
+    "forced": true,
+    "capture": "C",
+    "n_replies": 1
+   },
+   {
+    "move": "b7f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "C",
+    "capture": null
+   },
+   {
+    "move": "e8f7",
+    "side": "b",
+    "forced": true,
+    "capture": "C",
+    "n_replies": 1
+   },
+   {
+    "move": "i6g7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": null
+   },
+   {
+    "move": "e6g7",
+    "side": "b",
+    "forced": true,
+    "capture": "N",
+    "n_replies": 1
+   },
+   {
+    "move": "d9e9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R",
+   "C",
+   "C",
+   "N"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第042局-屏障尽撤",
+  "title": "第042局-屏障尽撤"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #65: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第042局-屏障尽撤\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
