@@ -1,0 +1,108 @@
+{
+ "id": "ep-0069",
+ "number": 69,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #69: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "2bk5/2P1a4/2RabP3/3PP4/9/9/9/5n3/2p1p4/3K5 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "c8d8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": null
+   },
+   {
+    "move": "d9d8",
+    "side": "b",
+    "forced": false,
+    "capture": "P",
+    "n_replies": 2
+   },
+   {
+    "move": "d6d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": "a"
+   },
+   {
+    "move": "e8d7",
+    "side": "b",
+    "forced": false,
+    "capture": "P",
+    "n_replies": 2
+   },
+   {
+    "move": "c7d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   },
+   {
+    "move": "d8e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e6e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": "b"
+   },
+   {
+    "move": "c9e7",
+    "side": "b",
+    "forced": false,
+    "capture": "P",
+    "n_replies": 2
+   },
+   {
+    "move": "d7e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "b"
+   }
+  ],
+  "sacrifices": [
+   "P",
+   "P",
+   "P"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第019局-冲锋肉搏",
+  "title": "第019局-冲锋肉搏"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #69: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第019局-冲锋肉搏\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
