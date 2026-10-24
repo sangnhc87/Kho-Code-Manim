@@ -1,0 +1,108 @@
+{
+ "id": "ep-0075",
+ "number": 75,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #75: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "1Pck5/1Pr5R/2c6/2p6/9/9/5n3/1R7/3p1p3/1C2K1p1r w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "b2d2",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "f3d2",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 4
+   },
+   {
+    "move": "i8d8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "d9d8",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "b8c8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "r"
+   },
+   {
+    "move": "d8d9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "b9c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": "c"
+   },
+   {
+    "move": "c7c9",
+    "side": "b",
+    "forced": true,
+    "capture": "P",
+    "n_replies": 1
+   },
+   {
+    "move": "b0b9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R",
+   "R",
+   "P"
+  ],
+  "unique": false,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第040局-瓮中捉鳖",
+  "title": "第040局-瓮中捉鳖"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #75: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第040局-瓮中捉鳖\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
