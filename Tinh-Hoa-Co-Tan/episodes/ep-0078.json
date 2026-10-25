@@ -1,0 +1,107 @@
+{
+ "id": "ep-0078",
+ "number": 78,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #78: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "3N1ab2/3Ra2n1/4k1P2/7P1/9/9/9/5p3/4r1p2/5K2C w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "i0i7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "h8f7",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "g7f7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": "n"
+   },
+   {
+    "move": "e7f7",
+    "side": "b",
+    "forced": true,
+    "capture": "P",
+    "n_replies": 1
+   },
+   {
+    "move": "d8d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "e8d7",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 3
+   },
+   {
+    "move": "h6h7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "g9i7",
+    "side": "b",
+    "forced": true,
+    "capture": "C",
+    "n_replies": 1
+   },
+   {
+    "move": "h7g7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "P",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第022局-老骥伏枥",
+  "title": "第022局-老骥伏枥"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #78: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第022局-老骥伏枥\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
