@@ -1,0 +1,107 @@
+{
+ "id": "ep-0079",
+ "number": 79,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #79: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "4c4/4ak3/5aP2/9/9/7R1/3r1r1RC/4p1n2/9/4K2c1 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "g7g8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f8f9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "h4h9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "h0h9",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "g8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": null
+   },
+   {
+    "move": "f9f8",
+    "side": "b",
+    "forced": true,
+    "capture": "P",
+    "n_replies": 1
+   },
+   {
+    "move": "h3h8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f8f9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "i3i9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R",
+   "P"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第025局-先声夺人",
+  "title": "第025局-先声夺人"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #79: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第025局-先声夺人\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}

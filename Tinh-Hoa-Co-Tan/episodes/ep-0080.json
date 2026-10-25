@@ -1,0 +1,107 @@
+{
+ "id": "ep-0080",
+ "number": 80,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #80: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "2caka1P1/1C1RnPP2/9/9/9/9/9/6n2/3r1p3/1c2K4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "f8f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": "a"
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": true,
+    "capture": "P",
+    "n_replies": 1
+   },
+   {
+    "move": "d8d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "a"
+   },
+   {
+    "move": "d1d9",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "g8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f9e9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f8e8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "n"
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "h9g9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "P",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第029局-清者自清",
+  "title": "第029局-清者自清"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #80: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第029局-清者自清\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
