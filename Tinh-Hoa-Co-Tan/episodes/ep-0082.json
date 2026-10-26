@@ -1,0 +1,107 @@
+{
+ "id": "ep-0082",
+ "number": 82,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #82: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "1R1a1k1c1/C5P1r/4bP2b/2N3n2/9/r8/9/9/4p1p2/5K3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "f7f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": null
+   },
+   {
+    "move": "g6f8",
+    "side": "b",
+    "forced": false,
+    "capture": "P",
+    "n_replies": 2
+   },
+   {
+    "move": "c6e7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "b"
+   },
+   {
+    "move": "f9e9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e7c8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e9f9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "g8g9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": null
+   },
+   {
+    "move": "i7g9",
+    "side": "b",
+    "forced": true,
+    "capture": "P",
+    "n_replies": 1
+   },
+   {
+    "move": "b9d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   }
+  ],
+  "sacrifices": [
+   "P",
+   "P"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第039局-谒刺盈车",
+  "title": "第039局-谒刺盈车"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #82: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第039局-谒刺盈车\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
