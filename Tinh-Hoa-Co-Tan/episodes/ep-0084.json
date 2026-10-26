@@ -1,0 +1,107 @@
+{
+ "id": "ep-0084",
+ "number": 84,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #84: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "Ccbaka3/9/4b4/5N1n1/5R1C1/9/9/9/r2p1r3/4KR3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "a9c9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "b"
+   },
+   {
+    "move": "d9e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f6g8",
+    "side": "w",
+    "check": true,
+    "sacrifice": "N",
+    "capture": null
+   },
+   {
+    "move": "h6g8",
+    "side": "b",
+    "forced": false,
+    "capture": "N",
+    "n_replies": 2
+   },
+   {
+    "move": "h5h9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e7g9",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "f5f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "a"
+   },
+   {
+    "move": "f1f9",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "f0f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "r"
+   }
+  ],
+  "sacrifices": [
+   "N",
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第046局-平沙落雁",
+  "title": "第046局-平沙落雁"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #84: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第046局-平沙落雁\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
