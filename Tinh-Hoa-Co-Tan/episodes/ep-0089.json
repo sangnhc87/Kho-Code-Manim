@@ -1,0 +1,106 @@
+{
+ "id": "ep-0089",
+ "number": 89,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #89: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "1rr2ab2/2RRak3/9/1N7/9/9/9/9/2p1p4/3K5 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "b6d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f8f7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "d7e5",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f7e7",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "d8d7",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": null
+   },
+   {
+    "move": "e8d7",
+    "side": "b",
+    "forced": true,
+    "capture": "R",
+    "n_replies": 1
+   },
+   {
+    "move": "e5g6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e7f7",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "c8f8",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第008局-背水列阵",
+  "title": "第008局-背水列阵"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #89: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第008局-背水列阵\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
