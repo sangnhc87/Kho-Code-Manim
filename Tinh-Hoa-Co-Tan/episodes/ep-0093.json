@@ -1,0 +1,106 @@
+{
+ "id": "ep-0093",
+ "number": 93,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #93: Đỏ đi, chiếu bí trong 5 nước!",
+ "subtitle": "Sát cục",
+ "fen": "3ak1bR1/4a4/4bR1C1/9/9/4N4/9/2c6/4p4/3p1K3 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 9
+ },
+ "mate": {
+  "n": 5,
+  "line": [
+   {
+    "move": "h9g9",
+    "side": "w",
+    "check": true,
+    "sacrifice": "R",
+    "capture": "b"
+   },
+   {
+    "move": "e7g9",
+    "side": "b",
+    "forced": false,
+    "capture": "R",
+    "n_replies": 2
+   },
+   {
+    "move": "h7h9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8f9",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 3
+   },
+   {
+    "move": "f7f9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   },
+   {
+    "move": "e9e8",
+    "side": "b",
+    "forced": true,
+    "capture": null,
+    "n_replies": 1
+   },
+   {
+    "move": "e4d6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "e8d8",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 2
+   },
+   {
+    "move": "f9d9",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": "a"
+   }
+  ],
+  "sacrifices": [
+   "R"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第016局-我武维扬",
+  "title": "第016局-我武维扬"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #93: Đỏ đi, chiếu bí trong 5 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 5 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第016局-我武维扬\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
