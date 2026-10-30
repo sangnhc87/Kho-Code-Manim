@@ -1,0 +1,78 @@
+{
+ "id": "ep-0098",
+ "number": 98,
+ "kind": "mate",
+ "topic": "mate-杀局宝典",
+ "category": "Sát cục",
+ "title": "Sát cục #98: Đỏ đi, chiếu bí trong 3 nước!",
+ "subtitle": "Sát cục",
+ "fen": "9/1C1cn4/3a1k3/2R5r/2C2P3/9/4R4/4p1n2/3r1p3/4K4 w",
+ "verdict": {
+  "wdl": "W",
+  "dtm": 5
+ },
+ "mate": {
+  "n": 3,
+  "line": [
+   {
+    "move": "f5f6",
+    "side": "w",
+    "check": true,
+    "sacrifice": "P",
+    "capture": null
+   },
+   {
+    "move": "e8f6",
+    "side": "b",
+    "forced": false,
+    "capture": "P",
+    "n_replies": 3
+   },
+   {
+    "move": "c5f5",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   },
+   {
+    "move": "f6d5",
+    "side": "b",
+    "forced": false,
+    "capture": null,
+    "n_replies": 3
+   },
+   {
+    "move": "c6f6",
+    "side": "w",
+    "check": true,
+    "sacrifice": null,
+    "capture": null
+   }
+  ],
+  "sacrifices": [
+   "P"
+  ],
+  "unique": true,
+  "side": "Đỏ"
+ },
+ "source": {
+  "collection": "杀局宝典",
+  "file": "第033局-开门见山",
+  "title": "第033局-开门见山"
+ },
+ "beats": [],
+ "analysis": null,
+ "game": null,
+ "youtube_short": {
+  "title": "Sát cục #98: Đỏ đi, chiếu bí trong 3 nước! Bạn giải được không? #Shorts",
+  "description": "Đỏ đi trước, chiếu bí trong 3 nước. Bạn tìm ra không? Đáp án trong video.\nThế cờ: \"第033局-开门见山\" – kho kỳ phổ cộng đồng vietcotuong.com.\n\n#Shorts #CoTuong #SatCuc #TinhHoaCoTan",
+  "tags": [
+   "shorts",
+   "cờ tướng",
+   "sát cục",
+   "câu đố cờ tướng",
+   "tinh hoa cờ tàn"
+  ]
+ }
+}
